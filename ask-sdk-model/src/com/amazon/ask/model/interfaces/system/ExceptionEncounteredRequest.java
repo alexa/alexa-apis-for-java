@@ -32,6 +32,9 @@ public final class ExceptionEncounteredRequest extends com.amazon.ask.model.Requ
   @JsonProperty("cause")
   private com.amazon.ask.model.interfaces.system.ErrorCause cause = null;
 
+  @JsonProperty("locale")
+  private String locale = null;
+
   public static Builder builder() {
     return new Builder();
   }
@@ -42,9 +45,9 @@ public final class ExceptionEncounteredRequest extends com.amazon.ask.model.Requ
     this.type = discriminatorValue;
     this.requestId = builder.requestId;
     this.timestamp = builder.timestamp;
-    this.locale = builder.locale;
     this.error = builder.error;
     this.cause = builder.cause;
+    this.locale = builder.locale;
   }
 
   /**
@@ -63,6 +66,14 @@ public final class ExceptionEncounteredRequest extends com.amazon.ask.model.Requ
     return cause;
   }
 
+  /**
+    * A string indicating the user’s locale. For example: en-US.
+  * @return locale
+  **/
+  public String getLocale() {
+    return locale;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -74,12 +85,13 @@ public final class ExceptionEncounteredRequest extends com.amazon.ask.model.Requ
     ExceptionEncounteredRequest interfacesSystemExceptionEncounteredRequest = (ExceptionEncounteredRequest) o;
     return Objects.equals(this.error, interfacesSystemExceptionEncounteredRequest.error) &&
         Objects.equals(this.cause, interfacesSystemExceptionEncounteredRequest.cause) &&
+        Objects.equals(this.locale, interfacesSystemExceptionEncounteredRequest.locale) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(error, cause, super.hashCode());
+    return Objects.hash(error, cause, locale, super.hashCode());
   }
 
   @Override
@@ -89,6 +101,7 @@ public final class ExceptionEncounteredRequest extends com.amazon.ask.model.Requ
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    error: ").append(toIndentedString(error)).append("\n");
     sb.append("    cause: ").append(toIndentedString(cause)).append("\n");
+    sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -107,9 +120,9 @@ public final class ExceptionEncounteredRequest extends com.amazon.ask.model.Requ
   public static class Builder {
     private String requestId;
     private OffsetDateTime timestamp;
-    private String locale;
     private com.amazon.ask.model.interfaces.system.Error error;
     private com.amazon.ask.model.interfaces.system.ErrorCause cause;
+    private String locale;
 
     private Builder() { }
       
@@ -128,13 +141,6 @@ public final class ExceptionEncounteredRequest extends com.amazon.ask.model.Requ
     }
       
 
-    @JsonProperty("locale")
-    public Builder withLocale(String locale) {
-      this.locale = locale;
-      return this;
-    }
-      
-
     @JsonProperty("error")
     public Builder withError(com.amazon.ask.model.interfaces.system.Error error) {
       this.error = error;
@@ -145,6 +151,13 @@ public final class ExceptionEncounteredRequest extends com.amazon.ask.model.Requ
     @JsonProperty("cause")
     public Builder withCause(com.amazon.ask.model.interfaces.system.ErrorCause cause) {
       this.cause = cause;
+      return this;
+    }
+      
+
+    @JsonProperty("locale")
+    public Builder withLocale(String locale) {
+      this.locale = locale;
       return this;
     }
       

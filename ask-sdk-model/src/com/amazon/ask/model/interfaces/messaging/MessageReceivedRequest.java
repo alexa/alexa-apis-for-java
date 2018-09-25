@@ -42,7 +42,6 @@ public final class MessageReceivedRequest extends com.amazon.ask.model.Request {
     this.type = discriminatorValue;
     this.requestId = builder.requestId;
     this.timestamp = builder.timestamp;
-    this.locale = builder.locale;
     this.message = builder.message;
   }
 
@@ -96,7 +95,6 @@ public final class MessageReceivedRequest extends com.amazon.ask.model.Request {
   public static class Builder {
     private String requestId;
     private OffsetDateTime timestamp;
-    private String locale;
     private Map<String, Object> message;
 
     private Builder() { }
@@ -112,13 +110,6 @@ public final class MessageReceivedRequest extends com.amazon.ask.model.Request {
     @JsonProperty("timestamp")
     public Builder withTimestamp(OffsetDateTime timestamp) {
       this.timestamp = timestamp;
-      return this;
-    }
-      
-
-    @JsonProperty("locale")
-    public Builder withLocale(String locale) {
-      this.locale = locale;
       return this;
     }
       

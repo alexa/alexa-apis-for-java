@@ -29,6 +29,12 @@ public final class ListDeletedEventRequest extends com.amazon.ask.model.Request 
   @JsonProperty("body")
   private com.amazon.ask.model.services.listManagement.ListBody body = null;
 
+  @JsonProperty("eventCreationTime")
+  private OffsetDateTime eventCreationTime = null;
+
+  @JsonProperty("eventPublishingTime")
+  private OffsetDateTime eventPublishingTime = null;
+
   public static Builder builder() {
     return new Builder();
   }
@@ -39,8 +45,9 @@ public final class ListDeletedEventRequest extends com.amazon.ask.model.Request 
     this.type = discriminatorValue;
     this.requestId = builder.requestId;
     this.timestamp = builder.timestamp;
-    this.locale = builder.locale;
     this.body = builder.body;
+    this.eventCreationTime = builder.eventCreationTime;
+    this.eventPublishingTime = builder.eventPublishingTime;
   }
 
   /**
@@ -49,6 +56,22 @@ public final class ListDeletedEventRequest extends com.amazon.ask.model.Request 
   **/
   public com.amazon.ask.model.services.listManagement.ListBody getBody() {
     return body;
+  }
+
+  /**
+    * Get eventCreationTime
+  * @return eventCreationTime
+  **/
+  public OffsetDateTime getEventCreationTime() {
+    return eventCreationTime;
+  }
+
+  /**
+    * Get eventPublishingTime
+  * @return eventPublishingTime
+  **/
+  public OffsetDateTime getEventPublishingTime() {
+    return eventPublishingTime;
   }
 
   @Override
@@ -61,12 +84,14 @@ public final class ListDeletedEventRequest extends com.amazon.ask.model.Request 
     }
     ListDeletedEventRequest servicesListManagementListDeletedEventRequest = (ListDeletedEventRequest) o;
     return Objects.equals(this.body, servicesListManagementListDeletedEventRequest.body) &&
+        Objects.equals(this.eventCreationTime, servicesListManagementListDeletedEventRequest.eventCreationTime) &&
+        Objects.equals(this.eventPublishingTime, servicesListManagementListDeletedEventRequest.eventPublishingTime) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(body, super.hashCode());
+    return Objects.hash(body, eventCreationTime, eventPublishingTime, super.hashCode());
   }
 
   @Override
@@ -75,6 +100,8 @@ public final class ListDeletedEventRequest extends com.amazon.ask.model.Request 
     sb.append("class ListDeletedEventRequest {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    body: ").append(toIndentedString(body)).append("\n");
+    sb.append("    eventCreationTime: ").append(toIndentedString(eventCreationTime)).append("\n");
+    sb.append("    eventPublishingTime: ").append(toIndentedString(eventPublishingTime)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -93,8 +120,9 @@ public final class ListDeletedEventRequest extends com.amazon.ask.model.Request 
   public static class Builder {
     private String requestId;
     private OffsetDateTime timestamp;
-    private String locale;
     private com.amazon.ask.model.services.listManagement.ListBody body;
+    private OffsetDateTime eventCreationTime;
+    private OffsetDateTime eventPublishingTime;
 
     private Builder() { }
       
@@ -113,16 +141,23 @@ public final class ListDeletedEventRequest extends com.amazon.ask.model.Request 
     }
       
 
-    @JsonProperty("locale")
-    public Builder withLocale(String locale) {
-      this.locale = locale;
+    @JsonProperty("body")
+    public Builder withBody(com.amazon.ask.model.services.listManagement.ListBody body) {
+      this.body = body;
       return this;
     }
       
 
-    @JsonProperty("body")
-    public Builder withBody(com.amazon.ask.model.services.listManagement.ListBody body) {
-      this.body = body;
+    @JsonProperty("eventCreationTime")
+    public Builder withEventCreationTime(OffsetDateTime eventCreationTime) {
+      this.eventCreationTime = eventCreationTime;
+      return this;
+    }
+      
+
+    @JsonProperty("eventPublishingTime")
+    public Builder withEventPublishingTime(OffsetDateTime eventPublishingTime) {
+      this.eventPublishingTime = eventPublishingTime;
       return this;
     }
       

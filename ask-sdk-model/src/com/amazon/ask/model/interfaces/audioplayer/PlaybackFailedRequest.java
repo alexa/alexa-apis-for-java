@@ -35,6 +35,9 @@ public final class PlaybackFailedRequest extends com.amazon.ask.model.Request {
   @JsonProperty("token")
   private String token = null;
 
+  @JsonProperty("locale")
+  private String locale = null;
+
   public static Builder builder() {
     return new Builder();
   }
@@ -45,10 +48,10 @@ public final class PlaybackFailedRequest extends com.amazon.ask.model.Request {
     this.type = discriminatorValue;
     this.requestId = builder.requestId;
     this.timestamp = builder.timestamp;
-    this.locale = builder.locale;
     this.currentPlaybackState = builder.currentPlaybackState;
     this.error = builder.error;
     this.token = builder.token;
+    this.locale = builder.locale;
   }
 
   /**
@@ -75,6 +78,14 @@ public final class PlaybackFailedRequest extends com.amazon.ask.model.Request {
     return token;
   }
 
+  /**
+    * A string indicating the user’s locale. For example: en-US.
+  * @return locale
+  **/
+  public String getLocale() {
+    return locale;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -87,12 +98,13 @@ public final class PlaybackFailedRequest extends com.amazon.ask.model.Request {
     return Objects.equals(this.currentPlaybackState, interfacesAudioplayerPlaybackFailedRequest.currentPlaybackState) &&
         Objects.equals(this.error, interfacesAudioplayerPlaybackFailedRequest.error) &&
         Objects.equals(this.token, interfacesAudioplayerPlaybackFailedRequest.token) &&
+        Objects.equals(this.locale, interfacesAudioplayerPlaybackFailedRequest.locale) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(currentPlaybackState, error, token, super.hashCode());
+    return Objects.hash(currentPlaybackState, error, token, locale, super.hashCode());
   }
 
   @Override
@@ -103,6 +115,7 @@ public final class PlaybackFailedRequest extends com.amazon.ask.model.Request {
     sb.append("    currentPlaybackState: ").append(toIndentedString(currentPlaybackState)).append("\n");
     sb.append("    error: ").append(toIndentedString(error)).append("\n");
     sb.append("    token: ").append(toIndentedString(token)).append("\n");
+    sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -121,10 +134,10 @@ public final class PlaybackFailedRequest extends com.amazon.ask.model.Request {
   public static class Builder {
     private String requestId;
     private OffsetDateTime timestamp;
-    private String locale;
     private com.amazon.ask.model.interfaces.audioplayer.CurrentPlaybackState currentPlaybackState;
     private com.amazon.ask.model.interfaces.audioplayer.Error error;
     private String token;
+    private String locale;
 
     private Builder() { }
       
@@ -139,13 +152,6 @@ public final class PlaybackFailedRequest extends com.amazon.ask.model.Request {
     @JsonProperty("timestamp")
     public Builder withTimestamp(OffsetDateTime timestamp) {
       this.timestamp = timestamp;
-      return this;
-    }
-      
-
-    @JsonProperty("locale")
-    public Builder withLocale(String locale) {
-      this.locale = locale;
       return this;
     }
       
@@ -167,6 +173,13 @@ public final class PlaybackFailedRequest extends com.amazon.ask.model.Request {
     @JsonProperty("token")
     public Builder withToken(String token) {
       this.token = token;
+      return this;
+    }
+      
+
+    @JsonProperty("locale")
+    public Builder withLocale(String locale) {
+      this.locale = locale;
       return this;
     }
       

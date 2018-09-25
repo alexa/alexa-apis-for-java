@@ -26,6 +26,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = LaunchRequest.Builder.class)
 public final class LaunchRequest extends com.amazon.ask.model.Request {
 
+  @JsonProperty("locale")
+  private String locale = null;
+
   public static Builder builder() {
     return new Builder();
   }
@@ -39,6 +42,14 @@ public final class LaunchRequest extends com.amazon.ask.model.Request {
     this.locale = builder.locale;
   }
 
+  /**
+    * A string indicating the user’s locale. For example: en-US.
+  * @return locale
+  **/
+  public String getLocale() {
+    return locale;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -47,12 +58,14 @@ public final class LaunchRequest extends com.amazon.ask.model.Request {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    return super.equals(o);
+    LaunchRequest launchRequest = (LaunchRequest) o;
+    return Objects.equals(this.locale, launchRequest.locale) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(super.hashCode());
+    return Objects.hash(locale, super.hashCode());
   }
 
   @Override
@@ -60,6 +73,7 @@ public final class LaunchRequest extends com.amazon.ask.model.Request {
     StringBuilder sb = new StringBuilder();
     sb.append("class LaunchRequest {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -76,6 +76,18 @@ public class SubTypesManifest {
     requestSubTypes.put("PlaybackController.PlayCommandIssued", com.amazon.ask.model.interfaces.playbackcontroller.PlayCommandIssuedRequest.class);
     baseTypes.put(com.amazon.ask.model.Request.class, requestSubTypes);
 
+    Map<String, Class> interfacesAmazonpayModelRequestBaseAmazonPayEntitySubTypes = new HashMap<>();
+    interfacesAmazonpayModelRequestBaseAmazonPayEntitySubTypes.put("AuthorizeAttributes", com.amazon.ask.model.interfaces.amazonpay.model.request.AuthorizeAttributes.class);
+    interfacesAmazonpayModelRequestBaseAmazonPayEntitySubTypes.put("SellerBillingAgreementAttributes", com.amazon.ask.model.interfaces.amazonpay.model.request.SellerBillingAgreementAttributes.class);
+    interfacesAmazonpayModelRequestBaseAmazonPayEntitySubTypes.put("SetupAmazonPayRequest", com.amazon.ask.model.interfaces.amazonpay.request.SetupAmazonPayRequest.class);
+    interfacesAmazonpayModelRequestBaseAmazonPayEntitySubTypes.put("ProviderCredit", com.amazon.ask.model.interfaces.amazonpay.model.request.ProviderCredit.class);
+    interfacesAmazonpayModelRequestBaseAmazonPayEntitySubTypes.put("Price", com.amazon.ask.model.interfaces.amazonpay.model.request.Price.class);
+    interfacesAmazonpayModelRequestBaseAmazonPayEntitySubTypes.put("ChargeAmazonPayRequest", com.amazon.ask.model.interfaces.amazonpay.request.ChargeAmazonPayRequest.class);
+    interfacesAmazonpayModelRequestBaseAmazonPayEntitySubTypes.put("BillingAgreementAttributes", com.amazon.ask.model.interfaces.amazonpay.model.request.BillingAgreementAttributes.class);
+    interfacesAmazonpayModelRequestBaseAmazonPayEntitySubTypes.put("SellerOrderAttributes", com.amazon.ask.model.interfaces.amazonpay.model.request.SellerOrderAttributes.class);
+    interfacesAmazonpayModelRequestBaseAmazonPayEntitySubTypes.put("ProviderAttributes", com.amazon.ask.model.interfaces.amazonpay.model.request.ProviderAttributes.class);
+    baseTypes.put(com.amazon.ask.model.interfaces.amazonpay.model.request.BaseAmazonPayEntity.class, interfacesAmazonpayModelRequestBaseAmazonPayEntitySubTypes);
+
     Map<String, Class> interfacesDisplayHintSubTypes = new HashMap<>();
     interfacesDisplayHintSubTypes.put("PlainText", com.amazon.ask.model.interfaces.display.PlainTextHint.class);
     baseTypes.put(com.amazon.ask.model.interfaces.display.Hint.class, interfacesDisplayHintSubTypes);

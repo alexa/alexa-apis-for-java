@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * Exception thrown by a Service client when an error response was received or some operation failed.
  */
-public class ServiceException extends Exception {
+public class ServiceException extends RuntimeException {
 
   private int statusCode;
   private List<Pair<String, String>> headers;

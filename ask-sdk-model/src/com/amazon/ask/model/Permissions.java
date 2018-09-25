@@ -15,6 +15,9 @@
 package com.amazon.ask.model;
 
 import java.util.Objects;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -28,12 +31,16 @@ public final class Permissions{
   @JsonProperty("consentToken")
   private String consentToken = null;
 
+  @JsonProperty("scopes")
+  private Map<String, com.amazon.ask.model.Scope> scopes = new HashMap<String, com.amazon.ask.model.Scope>();
+
   public static Builder builder() {
     return new Builder();
   }
 
   private Permissions(Builder builder) {
     this.consentToken = builder.consentToken;
+    this.scopes = builder.scopes;
   }
 
   /**
@@ -42,6 +49,14 @@ public final class Permissions{
   **/
   public String getConsentToken() {
     return consentToken;
+  }
+
+  /**
+    * A map where the key is a LoginWithAmazon(LWA) scope and value is a list of key:value pairs which describe the state of user actions on the LWA scope. For e.g. \"scopes\" :{ \"alexa::devices:all:geolocation:read\":{\"status\":\"GRANTED\"}} This value of \"alexa::devices:all:geolocation:read\" will determine if the Geolocation data access is granted by the user, or else it will show a card of type AskForPermissionsConsent to the user to get this permission.
+  * @return scopes
+  **/
+  public Map<String, com.amazon.ask.model.Scope> getScopes() {
+    return scopes;
   }
 
   @Override
@@ -53,12 +68,13 @@ public final class Permissions{
       return false;
     }
     Permissions permissions = (Permissions) o;
-    return Objects.equals(this.consentToken, permissions.consentToken);
+    return Objects.equals(this.consentToken, permissions.consentToken) &&
+        Objects.equals(this.scopes, permissions.scopes);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(consentToken);
+    return Objects.hash(consentToken, scopes);
   }
 
   @Override
@@ -67,6 +83,7 @@ public final class Permissions{
     sb.append("class Permissions {\n");
     
     sb.append("    consentToken: ").append(toIndentedString(consentToken)).append("\n");
+    sb.append("    scopes: ").append(toIndentedString(scopes)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -84,6 +101,7 @@ public final class Permissions{
 
   public static class Builder {
     private String consentToken;
+    private Map<String, com.amazon.ask.model.Scope> scopes;
 
     private Builder() { }
 
@@ -93,6 +111,20 @@ public final class Permissions{
       return this;
     }
       
+
+    @JsonProperty("scopes")
+    public Builder withScopes(Map<String, com.amazon.ask.model.Scope> scopes) {
+      this.scopes = scopes;
+      return this;
+    }
+      
+    public Builder putScopesItem(String key, com.amazon.ask.model.Scope scopesItem) {
+      if (this.scopes == null) {
+        this.scopes = new HashMap<String, com.amazon.ask.model.Scope>();
+      }
+      this.scopes.put(key, scopesItem);
+      return this;
+    }
 
     public Permissions build() {
       return new Permissions(this);

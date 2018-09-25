@@ -5,7 +5,7 @@
   <artifactId>ask-sdk-model</artifactId>
   <packaging>jar</packaging>
   <name>ask-sdk-model</name>
-  <version>1.5.0</version>
+  <version>1.6.0</version>
   <url>http://developer.amazon.com/ask</url>
   <description>Contains models and api clients for Alexa</description>
 

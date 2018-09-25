@@ -32,6 +32,9 @@ public final class IntentRequest extends com.amazon.ask.model.Request {
   @JsonProperty("intent")
   private com.amazon.ask.model.Intent intent = null;
 
+  @JsonProperty("locale")
+  private String locale = null;
+
   public static Builder builder() {
     return new Builder();
   }
@@ -42,9 +45,9 @@ public final class IntentRequest extends com.amazon.ask.model.Request {
     this.type = discriminatorValue;
     this.requestId = builder.requestId;
     this.timestamp = builder.timestamp;
-    this.locale = builder.locale;
     this.dialogState = builder.dialogState;
     this.intent = builder.intent;
+    this.locale = builder.locale;
   }
 
   /**
@@ -63,6 +66,14 @@ public final class IntentRequest extends com.amazon.ask.model.Request {
     return intent;
   }
 
+  /**
+    * A string indicating the user’s locale. For example: en-US.
+  * @return locale
+  **/
+  public String getLocale() {
+    return locale;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -74,12 +85,13 @@ public final class IntentRequest extends com.amazon.ask.model.Request {
     IntentRequest intentRequest = (IntentRequest) o;
     return Objects.equals(this.dialogState, intentRequest.dialogState) &&
         Objects.equals(this.intent, intentRequest.intent) &&
+        Objects.equals(this.locale, intentRequest.locale) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(dialogState, intent, super.hashCode());
+    return Objects.hash(dialogState, intent, locale, super.hashCode());
   }
 
   @Override
@@ -89,6 +101,7 @@ public final class IntentRequest extends com.amazon.ask.model.Request {
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    dialogState: ").append(toIndentedString(dialogState)).append("\n");
     sb.append("    intent: ").append(toIndentedString(intent)).append("\n");
+    sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -107,9 +120,9 @@ public final class IntentRequest extends com.amazon.ask.model.Request {
   public static class Builder {
     private String requestId;
     private OffsetDateTime timestamp;
-    private String locale;
     private com.amazon.ask.model.DialogState dialogState;
     private com.amazon.ask.model.Intent intent;
+    private String locale;
 
     private Builder() { }
       
@@ -128,13 +141,6 @@ public final class IntentRequest extends com.amazon.ask.model.Request {
     }
       
 
-    @JsonProperty("locale")
-    public Builder withLocale(String locale) {
-      this.locale = locale;
-      return this;
-    }
-      
-
     @JsonProperty("dialogState")
     public Builder withDialogState(com.amazon.ask.model.DialogState dialogState) {
       this.dialogState = dialogState;
@@ -145,6 +151,13 @@ public final class IntentRequest extends com.amazon.ask.model.Request {
     @JsonProperty("intent")
     public Builder withIntent(com.amazon.ask.model.Intent intent) {
       this.intent = intent;
+      return this;
+    }
+      
+
+    @JsonProperty("locale")
+    public Builder withLocale(String locale) {
+      this.locale = locale;
       return this;
     }
       

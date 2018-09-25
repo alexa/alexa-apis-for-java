@@ -26,6 +26,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = SkillDisabledRequest.Builder.class)
 public final class SkillDisabledRequest extends com.amazon.ask.model.Request {
 
+  @JsonProperty("eventCreationTime")
+  private OffsetDateTime eventCreationTime = null;
+
+  @JsonProperty("eventPublishingTime")
+  private OffsetDateTime eventPublishingTime = null;
+
   public static Builder builder() {
     return new Builder();
   }
@@ -36,7 +42,24 @@ public final class SkillDisabledRequest extends com.amazon.ask.model.Request {
     this.type = discriminatorValue;
     this.requestId = builder.requestId;
     this.timestamp = builder.timestamp;
-    this.locale = builder.locale;
+    this.eventCreationTime = builder.eventCreationTime;
+    this.eventPublishingTime = builder.eventPublishingTime;
+  }
+
+  /**
+    * Get eventCreationTime
+  * @return eventCreationTime
+  **/
+  public OffsetDateTime getEventCreationTime() {
+    return eventCreationTime;
+  }
+
+  /**
+    * Get eventPublishingTime
+  * @return eventPublishingTime
+  **/
+  public OffsetDateTime getEventPublishingTime() {
+    return eventPublishingTime;
   }
 
   @Override
@@ -47,12 +70,15 @@ public final class SkillDisabledRequest extends com.amazon.ask.model.Request {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    return super.equals(o);
+    SkillDisabledRequest eventsSkilleventsSkillDisabledRequest = (SkillDisabledRequest) o;
+    return Objects.equals(this.eventCreationTime, eventsSkilleventsSkillDisabledRequest.eventCreationTime) &&
+        Objects.equals(this.eventPublishingTime, eventsSkilleventsSkillDisabledRequest.eventPublishingTime) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(super.hashCode());
+    return Objects.hash(eventCreationTime, eventPublishingTime, super.hashCode());
   }
 
   @Override
@@ -60,6 +86,8 @@ public final class SkillDisabledRequest extends com.amazon.ask.model.Request {
     StringBuilder sb = new StringBuilder();
     sb.append("class SkillDisabledRequest {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("    eventCreationTime: ").append(toIndentedString(eventCreationTime)).append("\n");
+    sb.append("    eventPublishingTime: ").append(toIndentedString(eventPublishingTime)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -78,7 +106,8 @@ public final class SkillDisabledRequest extends com.amazon.ask.model.Request {
   public static class Builder {
     private String requestId;
     private OffsetDateTime timestamp;
-    private String locale;
+    private OffsetDateTime eventCreationTime;
+    private OffsetDateTime eventPublishingTime;
 
     private Builder() { }
       
@@ -97,9 +126,16 @@ public final class SkillDisabledRequest extends com.amazon.ask.model.Request {
     }
       
 
-    @JsonProperty("locale")
-    public Builder withLocale(String locale) {
-      this.locale = locale;
+    @JsonProperty("eventCreationTime")
+    public Builder withEventCreationTime(OffsetDateTime eventCreationTime) {
+      this.eventCreationTime = eventCreationTime;
+      return this;
+    }
+      
+
+    @JsonProperty("eventPublishingTime")
+    public Builder withEventPublishingTime(OffsetDateTime eventPublishingTime) {
+      this.eventPublishingTime = eventPublishingTime;
       return this;
     }
       

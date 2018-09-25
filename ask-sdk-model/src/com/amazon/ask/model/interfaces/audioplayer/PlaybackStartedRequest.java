@@ -32,6 +32,9 @@ public final class PlaybackStartedRequest extends com.amazon.ask.model.Request {
   @JsonProperty("token")
   private String token = null;
 
+  @JsonProperty("locale")
+  private String locale = null;
+
   public static Builder builder() {
     return new Builder();
   }
@@ -42,9 +45,9 @@ public final class PlaybackStartedRequest extends com.amazon.ask.model.Request {
     this.type = discriminatorValue;
     this.requestId = builder.requestId;
     this.timestamp = builder.timestamp;
-    this.locale = builder.locale;
     this.offsetInMilliseconds = builder.offsetInMilliseconds;
     this.token = builder.token;
+    this.locale = builder.locale;
   }
 
   /**
@@ -63,6 +66,14 @@ public final class PlaybackStartedRequest extends com.amazon.ask.model.Request {
     return token;
   }
 
+  /**
+    * A string indicating the user’s locale. For example: en-US.
+  * @return locale
+  **/
+  public String getLocale() {
+    return locale;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -74,12 +85,13 @@ public final class PlaybackStartedRequest extends com.amazon.ask.model.Request {
     PlaybackStartedRequest interfacesAudioplayerPlaybackStartedRequest = (PlaybackStartedRequest) o;
     return Objects.equals(this.offsetInMilliseconds, interfacesAudioplayerPlaybackStartedRequest.offsetInMilliseconds) &&
         Objects.equals(this.token, interfacesAudioplayerPlaybackStartedRequest.token) &&
+        Objects.equals(this.locale, interfacesAudioplayerPlaybackStartedRequest.locale) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(offsetInMilliseconds, token, super.hashCode());
+    return Objects.hash(offsetInMilliseconds, token, locale, super.hashCode());
   }
 
   @Override
@@ -89,6 +101,7 @@ public final class PlaybackStartedRequest extends com.amazon.ask.model.Request {
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    offsetInMilliseconds: ").append(toIndentedString(offsetInMilliseconds)).append("\n");
     sb.append("    token: ").append(toIndentedString(token)).append("\n");
+    sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -107,9 +120,9 @@ public final class PlaybackStartedRequest extends com.amazon.ask.model.Request {
   public static class Builder {
     private String requestId;
     private OffsetDateTime timestamp;
-    private String locale;
     private Long offsetInMilliseconds;
     private String token;
+    private String locale;
 
     private Builder() { }
       
@@ -128,13 +141,6 @@ public final class PlaybackStartedRequest extends com.amazon.ask.model.Request {
     }
       
 
-    @JsonProperty("locale")
-    public Builder withLocale(String locale) {
-      this.locale = locale;
-      return this;
-    }
-      
-
     @JsonProperty("offsetInMilliseconds")
     public Builder withOffsetInMilliseconds(Long offsetInMilliseconds) {
       this.offsetInMilliseconds = offsetInMilliseconds;
@@ -145,6 +151,13 @@ public final class PlaybackStartedRequest extends com.amazon.ask.model.Request {
     @JsonProperty("token")
     public Builder withToken(String token) {
       this.token = token;
+      return this;
+    }
+      
+
+    @JsonProperty("locale")
+    public Builder withLocale(String locale) {
+      this.locale = locale;
       return this;
     }
       

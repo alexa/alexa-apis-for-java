@@ -20,13 +20,15 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Product type. * 'SUBSCRIPTION' - Once purchased, customers will own the content for the subscription period. * 'ENTITLEMENT' - Once purchased, customers will own the content forever.
+ * Product type. * 'SUBSCRIPTION' - Once purchased, customers will own the content for the subscription period. * 'ENTITLEMENT' - Once purchased, customers will own the content forever. * 'CONSUMABLE' - Once purchased, customers will be entitled to the content until it is consumed. It can also be re-purchased.
  */
 public enum ProductType {
   
   SUBSCRIPTION("SUBSCRIPTION"),
   
-  ENTITLEMENT("ENTITLEMENT");
+  ENTITLEMENT("ENTITLEMENT"),
+  
+  CONSUMABLE("CONSUMABLE");
 
   private Object value;
 

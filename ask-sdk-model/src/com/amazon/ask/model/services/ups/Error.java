@@ -49,7 +49,7 @@ public final class Error{
   }
 
   /**
-    * A human readable description of error. 
+    * A human readable description of error.
   * @return message
   **/
   public String getMessage() {
