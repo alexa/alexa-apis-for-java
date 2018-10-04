@@ -88,6 +88,19 @@ public class SubTypesManifest {
     interfacesAmazonpayModelRequestBaseAmazonPayEntitySubTypes.put("ProviderAttributes", com.amazon.ask.model.interfaces.amazonpay.model.request.ProviderAttributes.class);
     baseTypes.put(com.amazon.ask.model.interfaces.amazonpay.model.request.BaseAmazonPayEntity.class, interfacesAmazonpayModelRequestBaseAmazonPayEntitySubTypes);
 
+    Map<String, Class> interfacesConnectionsEntitiesBaseEntitySubTypes = new HashMap<>();
+    interfacesConnectionsEntitiesBaseEntitySubTypes.put("Restaurant", com.amazon.ask.model.interfaces.connections.entities.Restaurant.class);
+    interfacesConnectionsEntitiesBaseEntitySubTypes.put("PostalAddress", com.amazon.ask.model.interfaces.connections.entities.PostalAddress.class);
+    baseTypes.put(com.amazon.ask.model.interfaces.connections.entities.BaseEntity.class, interfacesConnectionsEntitiesBaseEntitySubTypes);
+
+    Map<String, Class> interfacesConnectionsRequestsBaseRequestSubTypes = new HashMap<>();
+    interfacesConnectionsRequestsBaseRequestSubTypes.put("ScheduleFoodEstablishmentReservationRequest", com.amazon.ask.model.interfaces.connections.requests.ScheduleFoodEstablishmentReservationRequest.class);
+    interfacesConnectionsRequestsBaseRequestSubTypes.put("PrintPDFRequest", com.amazon.ask.model.interfaces.connections.requests.PrintPDFRequest.class);
+    interfacesConnectionsRequestsBaseRequestSubTypes.put("PrintImageRequest", com.amazon.ask.model.interfaces.connections.requests.PrintImageRequest.class);
+    interfacesConnectionsRequestsBaseRequestSubTypes.put("ScheduleTaxiReservationRequest", com.amazon.ask.model.interfaces.connections.requests.ScheduleTaxiReservationRequest.class);
+    interfacesConnectionsRequestsBaseRequestSubTypes.put("PrintWebPageRequest", com.amazon.ask.model.interfaces.connections.requests.PrintWebPageRequest.class);
+    baseTypes.put(com.amazon.ask.model.interfaces.connections.requests.BaseRequest.class, interfacesConnectionsRequestsBaseRequestSubTypes);
+
     Map<String, Class> interfacesDisplayHintSubTypes = new HashMap<>();
     interfacesDisplayHintSubTypes.put("PlainText", com.amazon.ask.model.interfaces.display.PlainTextHint.class);
     baseTypes.put(com.amazon.ask.model.interfaces.display.Hint.class, interfacesDisplayHintSubTypes);
