@@ -48,9 +48,6 @@ ISSUES MISSING IMPORTANT INFORMATION MAY BE CLOSED WITHOUT INVESTIGATION.
 
 ## Your Environment
 <!--- Include as many relevant details about the environment where the bug was discovered -->
-* ASK SDK Models for Python used: x.x.x
-* ASK SDK for Python used: x.x.x
+* ASK SDK Models for Java used: x.x.x
+* ASK SDK for Java used: x.x.x
 * Operating System and version:
-
-## Python version info
-* Python version used for development:
