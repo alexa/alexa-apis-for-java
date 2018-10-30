@@ -12,7 +12,7 @@
 */
 
 
-package com.amazon.ask.model.interfaces.monetization.v1;
+package com.amazon.ask.model.interfaces.alexa.presentation.apl;
 
 import java.util.Objects;
 
@@ -20,23 +20,17 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Response from purchase directives:   * ACCEPTED - User have accepted the offer to purchase the product   * DECLINED - User have declined the offer to purchase the product   * NOT_ENTITLED - User tries to cancel/return a product he/she is  not entitled to.   * ALREADY_PURCHASED - User has already purchased the product   * ERROR - An internal error occurred 
+ * How highlighting is applied: on a line-by-line basis, or to the entire block. Defaults to block.
  */
-public enum PurchaseResult {
+public enum HighlightMode {
   
-  ACCEPTED("ACCEPTED"),
+  BLOCK("BLOCK"),
   
-  DECLINED("DECLINED"),
-  
-  NOT_ENTITLED("NOT_ENTITLED"),
-  
-  ERROR("ERROR"),
-  
-  ALREADY_PURCHASED("ALREADY_PURCHASED");
+  LINE("LINE");
 
   private String value;
 
-  PurchaseResult(String value) {
+  HighlightMode(String value) {
     this.value = value;
   }
 
@@ -51,8 +45,8 @@ public enum PurchaseResult {
   }
 
   @JsonCreator
-  public static PurchaseResult fromValue(String text) {
-    for (PurchaseResult b : PurchaseResult.values()) {
+  public static HighlightMode fromValue(String text) {
+    for (HighlightMode b : HighlightMode.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }

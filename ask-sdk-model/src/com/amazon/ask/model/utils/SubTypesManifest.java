@@ -30,6 +30,7 @@ public class SubTypesManifest {
     directiveSubTypes.put("AudioPlayer.Stop", com.amazon.ask.model.interfaces.audioplayer.StopDirective.class);
     directiveSubTypes.put("Dialog.ConfirmSlot", com.amazon.ask.model.dialog.ConfirmSlotDirective.class);
     directiveSubTypes.put("AudioPlayer.Play", com.amazon.ask.model.interfaces.audioplayer.PlayDirective.class);
+    directiveSubTypes.put("Alexa.Presentation.APL.ExecuteCommands", com.amazon.ask.model.interfaces.alexa.presentation.apl.ExecuteCommandsDirective.class);
     directiveSubTypes.put("Connections.SendRequest", com.amazon.ask.model.interfaces.connections.SendRequestDirective.class);
     directiveSubTypes.put("Display.RenderTemplate", com.amazon.ask.model.interfaces.display.RenderTemplateDirective.class);
     directiveSubTypes.put("GadgetController.SetLight", com.amazon.ask.model.interfaces.gadgetController.SetLightDirective.class);
@@ -39,6 +40,7 @@ public class SubTypesManifest {
     directiveSubTypes.put("GameEngine.StartInputHandler", com.amazon.ask.model.interfaces.gameEngine.StartInputHandlerDirective.class);
     directiveSubTypes.put("VideoApp.Launch", com.amazon.ask.model.interfaces.videoapp.LaunchDirective.class);
     directiveSubTypes.put("GameEngine.StopInputHandler", com.amazon.ask.model.interfaces.gameEngine.StopInputHandlerDirective.class);
+    directiveSubTypes.put("Alexa.Presentation.APL.RenderDocument", com.amazon.ask.model.interfaces.alexa.presentation.apl.RenderDocumentDirective.class);
     directiveSubTypes.put("Connections.SendResponse", com.amazon.ask.model.interfaces.connections.SendResponseDirective.class);
     directiveSubTypes.put("Dialog.ElicitSlot", com.amazon.ask.model.dialog.ElicitSlotDirective.class);
     directiveSubTypes.put("AudioPlayer.ClearQueue", com.amazon.ask.model.interfaces.audioplayer.ClearQueueDirective.class);
@@ -48,6 +50,7 @@ public class SubTypesManifest {
     requestSubTypes.put("AudioPlayer.PlaybackFinished", com.amazon.ask.model.interfaces.audioplayer.PlaybackFinishedRequest.class);
     requestSubTypes.put("AlexaSkillEvent.SkillEnabled", com.amazon.ask.model.events.skillevents.SkillEnabledRequest.class);
     requestSubTypes.put("AlexaHouseholdListEvent.ListUpdated", com.amazon.ask.model.services.listManagement.ListUpdatedEventRequest.class);
+    requestSubTypes.put("Alexa.Presentation.APL.UserEvent", com.amazon.ask.model.interfaces.alexa.presentation.apl.UserEvent.class);
     requestSubTypes.put("AlexaSkillEvent.SkillDisabled", com.amazon.ask.model.events.skillevents.SkillDisabledRequest.class);
     requestSubTypes.put("Display.ElementSelected", com.amazon.ask.model.interfaces.display.ElementSelectedRequest.class);
     requestSubTypes.put("AlexaSkillEvent.SkillPermissionChanged", com.amazon.ask.model.events.skillevents.PermissionChangedRequest.class);
@@ -75,6 +78,12 @@ public class SubTypesManifest {
     requestSubTypes.put("PlaybackController.PauseCommandIssued", com.amazon.ask.model.interfaces.playbackcontroller.PauseCommandIssuedRequest.class);
     requestSubTypes.put("PlaybackController.PlayCommandIssued", com.amazon.ask.model.interfaces.playbackcontroller.PlayCommandIssuedRequest.class);
     baseTypes.put(com.amazon.ask.model.Request.class, requestSubTypes);
+
+    Map<String, Class> interfacesAlexaPresentationAplCommandSubTypes = new HashMap<>();
+    interfacesAlexaPresentationAplCommandSubTypes.put("SetPage", com.amazon.ask.model.interfaces.alexa.presentation.apl.SetPageCommand.class);
+    interfacesAlexaPresentationAplCommandSubTypes.put("SpeakItem", com.amazon.ask.model.interfaces.alexa.presentation.apl.SpeakItemCommand.class);
+    interfacesAlexaPresentationAplCommandSubTypes.put("AutoPage", com.amazon.ask.model.interfaces.alexa.presentation.apl.AutoPageCommand.class);
+    baseTypes.put(com.amazon.ask.model.interfaces.alexa.presentation.apl.Command.class, interfacesAlexaPresentationAplCommandSubTypes);
 
     Map<String, Class> interfacesAmazonpayModelRequestBaseAmazonPayEntitySubTypes = new HashMap<>();
     interfacesAmazonpayModelRequestBaseAmazonPayEntitySubTypes.put("AuthorizeAttributes", com.amazon.ask.model.interfaces.amazonpay.model.request.AuthorizeAttributes.class);

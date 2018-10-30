@@ -25,6 +25,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = SupportedInterfaces.Builder.class)
 public final class SupportedInterfaces{
 
+  @JsonProperty("Alexa.Presentation.APL")
+  private com.amazon.ask.model.interfaces.alexa.presentation.apl.AlexaPresentationAplInterface alexaPresentationAPL = null;
+
   @JsonProperty("AudioPlayer")
   private com.amazon.ask.model.interfaces.audioplayer.AudioPlayerInterface audioPlayer = null;
 
@@ -39,9 +42,18 @@ public final class SupportedInterfaces{
   }
 
   private SupportedInterfaces(Builder builder) {
+    this.alexaPresentationAPL = builder.alexaPresentationAPL;
     this.audioPlayer = builder.audioPlayer;
     this.display = builder.display;
     this.videoApp = builder.videoApp;
+  }
+
+  /**
+    * Get alexaPresentationAPL
+  * @return alexaPresentationAPL
+  **/
+  public com.amazon.ask.model.interfaces.alexa.presentation.apl.AlexaPresentationAplInterface getAlexaPresentationAPL() {
+    return alexaPresentationAPL;
   }
 
   /**
@@ -77,14 +89,15 @@ public final class SupportedInterfaces{
       return false;
     }
     SupportedInterfaces supportedInterfaces = (SupportedInterfaces) o;
-    return Objects.equals(this.audioPlayer, supportedInterfaces.audioPlayer) &&
+    return Objects.equals(this.alexaPresentationAPL, supportedInterfaces.alexaPresentationAPL) &&
+        Objects.equals(this.audioPlayer, supportedInterfaces.audioPlayer) &&
         Objects.equals(this.display, supportedInterfaces.display) &&
         Objects.equals(this.videoApp, supportedInterfaces.videoApp);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(audioPlayer, display, videoApp);
+    return Objects.hash(alexaPresentationAPL, audioPlayer, display, videoApp);
   }
 
   @Override
@@ -92,6 +105,7 @@ public final class SupportedInterfaces{
     StringBuilder sb = new StringBuilder();
     sb.append("class SupportedInterfaces {\n");
     
+    sb.append("    alexaPresentationAPL: ").append(toIndentedString(alexaPresentationAPL)).append("\n");
     sb.append("    audioPlayer: ").append(toIndentedString(audioPlayer)).append("\n");
     sb.append("    display: ").append(toIndentedString(display)).append("\n");
     sb.append("    videoApp: ").append(toIndentedString(videoApp)).append("\n");
@@ -111,11 +125,19 @@ public final class SupportedInterfaces{
   }
 
   public static class Builder {
+    private com.amazon.ask.model.interfaces.alexa.presentation.apl.AlexaPresentationAplInterface alexaPresentationAPL;
     private com.amazon.ask.model.interfaces.audioplayer.AudioPlayerInterface audioPlayer;
     private com.amazon.ask.model.interfaces.display.DisplayInterface display;
     private com.amazon.ask.model.interfaces.videoapp.VideoAppInterface videoApp;
 
     private Builder() { }
+
+    @JsonProperty("Alexa.Presentation.APL")
+    public Builder withAlexaPresentationAPL(com.amazon.ask.model.interfaces.alexa.presentation.apl.AlexaPresentationAplInterface alexaPresentationAPL) {
+      this.alexaPresentationAPL = alexaPresentationAPL;
+      return this;
+    }
+      
 
     @JsonProperty("AudioPlayer")
     public Builder withAudioPlayer(com.amazon.ask.model.interfaces.audioplayer.AudioPlayerInterface audioPlayer) {

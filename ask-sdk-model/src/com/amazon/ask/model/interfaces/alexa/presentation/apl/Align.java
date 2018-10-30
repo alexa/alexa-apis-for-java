@@ -12,7 +12,7 @@
 */
 
 
-package com.amazon.ask.model.interfaces.monetization.v1;
+package com.amazon.ask.model.interfaces.alexa.presentation.apl;
 
 import java.util.Objects;
 
@@ -20,23 +20,21 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Response from purchase directives:   * ACCEPTED - User have accepted the offer to purchase the product   * DECLINED - User have declined the offer to purchase the product   * NOT_ENTITLED - User tries to cancel/return a product he/she is  not entitled to.   * ALREADY_PURCHASED - User has already purchased the product   * ERROR - An internal error occurred 
+ * The alignment of the item after scrolling. Defaults to visible.
  */
-public enum PurchaseResult {
+public enum Align {
   
-  ACCEPTED("ACCEPTED"),
+  CENTER("CENTER"),
   
-  DECLINED("DECLINED"),
+  FIRST("FIRST"),
   
-  NOT_ENTITLED("NOT_ENTITLED"),
+  LAST("LAST"),
   
-  ERROR("ERROR"),
-  
-  ALREADY_PURCHASED("ALREADY_PURCHASED");
+  VISIBLE("VISIBLE");
 
   private String value;
 
-  PurchaseResult(String value) {
+  Align(String value) {
     this.value = value;
   }
 
@@ -51,8 +49,8 @@ public enum PurchaseResult {
   }
 
   @JsonCreator
-  public static PurchaseResult fromValue(String text) {
-    for (PurchaseResult b : PurchaseResult.values()) {
+  public static Align fromValue(String text) {
+    for (Align b : Align.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }

@@ -12,7 +12,7 @@
 */
 
 
-package com.amazon.ask.model.interfaces.monetization.v1;
+package com.amazon.ask.model.interfaces.viewport;
 
 import java.util.Objects;
 
@@ -20,23 +20,17 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Response from purchase directives:   * ACCEPTED - User have accepted the offer to purchase the product   * DECLINED - User have declined the offer to purchase the product   * NOT_ENTITLED - User tries to cancel/return a product he/she is  not entitled to.   * ALREADY_PURCHASED - User has already purchased the product   * ERROR - An internal error occurred 
+ * The shape of the viewport.
  */
-public enum PurchaseResult {
+public enum Shape {
   
-  ACCEPTED("ACCEPTED"),
+  RECTANGLE("RECTANGLE"),
   
-  DECLINED("DECLINED"),
-  
-  NOT_ENTITLED("NOT_ENTITLED"),
-  
-  ERROR("ERROR"),
-  
-  ALREADY_PURCHASED("ALREADY_PURCHASED");
+  ROUND("ROUND");
 
   private String value;
 
-  PurchaseResult(String value) {
+  Shape(String value) {
     this.value = value;
   }
 
@@ -51,8 +45,8 @@ public enum PurchaseResult {
   }
 
   @JsonCreator
-  public static PurchaseResult fromValue(String text) {
-    for (PurchaseResult b : PurchaseResult.values()) {
+  public static Shape fromValue(String text) {
+    for (Shape b : Shape.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }
