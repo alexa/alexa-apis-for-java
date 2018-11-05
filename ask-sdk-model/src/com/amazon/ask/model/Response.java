@@ -42,6 +42,9 @@ public final class Response{
   @JsonProperty("shouldEndSession")
   private Boolean shouldEndSession = null;
 
+  @JsonProperty("canFulfillIntent")
+  private com.amazon.ask.model.canfulfill.CanFulfillIntent canFulfillIntent = null;
+
   public static Builder builder() {
     return new Builder();
   }
@@ -52,6 +55,7 @@ public final class Response{
     this.reprompt = builder.reprompt;
     this.directives = builder.directives;
     this.shouldEndSession = builder.shouldEndSession;
+    this.canFulfillIntent = builder.canFulfillIntent;
   }
 
   /**
@@ -94,6 +98,14 @@ public final class Response{
     return shouldEndSession;
   }
 
+  /**
+    * Get canFulfillIntent
+  * @return canFulfillIntent
+  **/
+  public com.amazon.ask.model.canfulfill.CanFulfillIntent getCanFulfillIntent() {
+    return canFulfillIntent;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -107,12 +119,13 @@ public final class Response{
         Objects.equals(this.card, response.card) &&
         Objects.equals(this.reprompt, response.reprompt) &&
         Objects.equals(this.directives, response.directives) &&
-        Objects.equals(this.shouldEndSession, response.shouldEndSession);
+        Objects.equals(this.shouldEndSession, response.shouldEndSession) &&
+        Objects.equals(this.canFulfillIntent, response.canFulfillIntent);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(outputSpeech, card, reprompt, directives, shouldEndSession);
+    return Objects.hash(outputSpeech, card, reprompt, directives, shouldEndSession, canFulfillIntent);
   }
 
   @Override
@@ -125,6 +138,7 @@ public final class Response{
     sb.append("    reprompt: ").append(toIndentedString(reprompt)).append("\n");
     sb.append("    directives: ").append(toIndentedString(directives)).append("\n");
     sb.append("    shouldEndSession: ").append(toIndentedString(shouldEndSession)).append("\n");
+    sb.append("    canFulfillIntent: ").append(toIndentedString(canFulfillIntent)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -146,6 +160,7 @@ public final class Response{
     private com.amazon.ask.model.ui.Reprompt reprompt;
     private List<com.amazon.ask.model.Directive> directives;
     private Boolean shouldEndSession;
+    private com.amazon.ask.model.canfulfill.CanFulfillIntent canFulfillIntent;
 
     private Builder() { }
 
@@ -187,6 +202,13 @@ public final class Response{
     @JsonProperty("shouldEndSession")
     public Builder withShouldEndSession(Boolean shouldEndSession) {
       this.shouldEndSession = shouldEndSession;
+      return this;
+    }
+      
+
+    @JsonProperty("canFulfillIntent")
+    public Builder withCanFulfillIntent(com.amazon.ask.model.canfulfill.CanFulfillIntent canFulfillIntent) {
+      this.canFulfillIntent = canFulfillIntent;
       return this;
     }
       

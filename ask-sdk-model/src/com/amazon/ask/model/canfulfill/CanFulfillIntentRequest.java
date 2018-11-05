@@ -1,0 +1,170 @@
+/*
+* Copyright 2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file
+* except in compliance with the License. A copy of the License is located at
+*
+* http://aws.amazon.com/apache2.0/
+*
+* or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for
+* the specific language governing permissions and limitations under the License.
+*/
+
+
+package com.amazon.ask.model.canfulfill;
+
+import java.util.Objects;
+import java.time.OffsetDateTime;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+/**
+ * An object that represents a request made to skill to query whether the skill can understand and fulfill the intent request with detected slots, before actually asking the skill to take action. Skill should be aware this is not to actually take action, skill should handle this request without causing side-effect, skill should not modify some state outside its scope or has an observable interaction with its calling functions or the outside world besides returning a value, such as playing sound,turning on/off lights, committing a transaction or a charge.
+ */
+
+@JsonDeserialize(builder = CanFulfillIntentRequest.Builder.class)
+public final class CanFulfillIntentRequest extends com.amazon.ask.model.Request {
+
+  @JsonProperty("dialogState")
+  private com.amazon.ask.model.DialogState dialogState = null;
+
+  @JsonProperty("intent")
+  private com.amazon.ask.model.Intent intent = null;
+
+  @JsonProperty("locale")
+  private String locale = null;
+
+  public static Builder builder() {
+    return new Builder();
+  }
+
+  private CanFulfillIntentRequest(Builder builder) {
+    String discriminatorValue = "CanFulfillIntentRequest";
+
+    this.type = discriminatorValue;
+    this.requestId = builder.requestId;
+    this.timestamp = builder.timestamp;
+    this.dialogState = builder.dialogState;
+    this.intent = builder.intent;
+    this.locale = builder.locale;
+  }
+
+  /**
+    * Get dialogState
+  * @return dialogState
+  **/
+  public com.amazon.ask.model.DialogState getDialogState() {
+    return dialogState;
+  }
+
+  /**
+    * Get intent
+  * @return intent
+  **/
+  public com.amazon.ask.model.Intent getIntent() {
+    return intent;
+  }
+
+  /**
+    * A string indicating the user’s locale. For example: en-US.
+  * @return locale
+  **/
+  public String getLocale() {
+    return locale;
+  }
+
+  @Override
+  public boolean equals(java.lang.Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    CanFulfillIntentRequest canfulfillCanFulfillIntentRequest = (CanFulfillIntentRequest) o;
+    return Objects.equals(this.dialogState, canfulfillCanFulfillIntentRequest.dialogState) &&
+        Objects.equals(this.intent, canfulfillCanFulfillIntentRequest.intent) &&
+        Objects.equals(this.locale, canfulfillCanFulfillIntentRequest.locale) &&
+        super.equals(o);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(dialogState, intent, locale, super.hashCode());
+  }
+
+  @Override
+  public String toString() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("class CanFulfillIntentRequest {\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("    dialogState: ").append(toIndentedString(dialogState)).append("\n");
+    sb.append("    intent: ").append(toIndentedString(intent)).append("\n");
+    sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
+    sb.append("}");
+    return sb.toString();
+  }
+
+  /**
+   * Convert the given object to string with each line indented by 4 spaces
+   * (except the first line).
+   */
+  private String toIndentedString(java.lang.Object o) {
+    if (o == null) {
+      return "null";
+    }
+    return o.toString().replace("\n", "\n    ");
+  }
+
+  public static class Builder {
+    private String requestId;
+    private OffsetDateTime timestamp;
+    private com.amazon.ask.model.DialogState dialogState;
+    private com.amazon.ask.model.Intent intent;
+    private String locale;
+
+    private Builder() { }
+      
+
+    @JsonProperty("requestId")
+    public Builder withRequestId(String requestId) {
+      this.requestId = requestId;
+      return this;
+    }
+      
+
+    @JsonProperty("timestamp")
+    public Builder withTimestamp(OffsetDateTime timestamp) {
+      this.timestamp = timestamp;
+      return this;
+    }
+      
+
+    @JsonProperty("dialogState")
+    public Builder withDialogState(com.amazon.ask.model.DialogState dialogState) {
+      this.dialogState = dialogState;
+      return this;
+    }
+      
+
+    @JsonProperty("intent")
+    public Builder withIntent(com.amazon.ask.model.Intent intent) {
+      this.intent = intent;
+      return this;
+    }
+      
+
+    @JsonProperty("locale")
+    public Builder withLocale(String locale) {
+      this.locale = locale;
+      return this;
+    }
+      
+
+    public CanFulfillIntentRequest build() {
+      return new CanFulfillIntentRequest(this);
+    }
+  }
+}
+

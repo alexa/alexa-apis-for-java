@@ -38,6 +38,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
   @JsonSubTypes.Type(value = com.amazon.ask.model.SessionEndedRequest.class, name = "SessionEndedRequest"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.IntentRequest.class, name = "IntentRequest"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.audioplayer.PlaybackFailedRequest.class, name = "AudioPlayer.PlaybackFailed"),
+  @JsonSubTypes.Type(value = com.amazon.ask.model.canfulfill.CanFulfillIntentRequest.class, name = "CanFulfillIntentRequest"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.LaunchRequest.class, name = "LaunchRequest"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.audioplayer.PlaybackStoppedRequest.class, name = "AudioPlayer.PlaybackStopped"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.playbackcontroller.PreviousCommandIssuedRequest.class, name = "PlaybackController.PreviousCommandIssued"),
