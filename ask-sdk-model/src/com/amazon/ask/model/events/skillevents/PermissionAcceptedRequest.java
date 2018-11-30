@@ -45,6 +45,7 @@ public final class PermissionAcceptedRequest extends com.amazon.ask.model.Reques
     this.type = discriminatorValue;
     this.requestId = builder.requestId;
     this.timestamp = builder.timestamp;
+    this.locale = builder.locale;
     this.body = builder.body;
     this.eventCreationTime = builder.eventCreationTime;
     this.eventPublishingTime = builder.eventPublishingTime;
@@ -120,6 +121,7 @@ public final class PermissionAcceptedRequest extends com.amazon.ask.model.Reques
   public static class Builder {
     private String requestId;
     private OffsetDateTime timestamp;
+    private String locale;
     private com.amazon.ask.model.events.skillevents.PermissionBody body;
     private OffsetDateTime eventCreationTime;
     private OffsetDateTime eventPublishingTime;
@@ -137,6 +139,13 @@ public final class PermissionAcceptedRequest extends com.amazon.ask.model.Reques
     @JsonProperty("timestamp")
     public Builder withTimestamp(OffsetDateTime timestamp) {
       this.timestamp = timestamp;
+      return this;
+    }
+      
+
+    @JsonProperty("locale")
+    public Builder withLocale(String locale) {
+      this.locale = locale;
       return this;
     }
       

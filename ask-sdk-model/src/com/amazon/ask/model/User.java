@@ -53,7 +53,7 @@ public final class User{
   }
 
   /**
-    *  a token identifying the user in another system. This is only provided if the user has successfully linked their account. See Linking an Alexa User with a User in Your System for more details.
+    * A token identifying the user in another system. This is only provided if the user has successfully linked their account. See Linking an Alexa User with a User in Your System for more details.
   * @return accessToken
   **/
   public String getAccessToken() {

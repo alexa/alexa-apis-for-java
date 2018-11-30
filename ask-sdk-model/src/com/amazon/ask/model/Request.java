@@ -70,6 +70,9 @@ public abstract class Request{
   @JsonProperty("timestamp")
   protected OffsetDateTime timestamp = null;
 
+  @JsonProperty("locale")
+  protected String locale = null;
+
   protected Request() {
   }
 
@@ -98,6 +101,14 @@ public abstract class Request{
     return timestamp;
   }
 
+  /**
+    * A string indicating the user’s locale. For example: en-US. This value is only provided with certain request types.
+  * @return locale
+  **/
+  public String getLocale() {
+    return locale;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -109,12 +120,13 @@ public abstract class Request{
     Request request = (Request) o;
     return Objects.equals(this.type, request.type) &&
         Objects.equals(this.requestId, request.requestId) &&
-        Objects.equals(this.timestamp, request.timestamp);
+        Objects.equals(this.timestamp, request.timestamp) &&
+        Objects.equals(this.locale, request.locale);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type, requestId, timestamp);
+    return Objects.hash(type, requestId, timestamp, locale);
   }
 
   @Override
@@ -125,6 +137,7 @@ public abstract class Request{
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
     sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
     sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
+    sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
     sb.append("}");
     return sb.toString();
   }

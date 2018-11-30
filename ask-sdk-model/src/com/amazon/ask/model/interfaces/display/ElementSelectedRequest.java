@@ -29,9 +29,6 @@ public final class ElementSelectedRequest extends com.amazon.ask.model.Request {
   @JsonProperty("token")
   private String token = null;
 
-  @JsonProperty("locale")
-  private String locale = null;
-
   public static Builder builder() {
     return new Builder();
   }
@@ -42,8 +39,8 @@ public final class ElementSelectedRequest extends com.amazon.ask.model.Request {
     this.type = discriminatorValue;
     this.requestId = builder.requestId;
     this.timestamp = builder.timestamp;
-    this.token = builder.token;
     this.locale = builder.locale;
+    this.token = builder.token;
   }
 
   /**
@@ -52,14 +49,6 @@ public final class ElementSelectedRequest extends com.amazon.ask.model.Request {
   **/
   public String getToken() {
     return token;
-  }
-
-  /**
-    * A string indicating the user’s locale. For example: en-US.
-  * @return locale
-  **/
-  public String getLocale() {
-    return locale;
   }
 
   @Override
@@ -72,13 +61,12 @@ public final class ElementSelectedRequest extends com.amazon.ask.model.Request {
     }
     ElementSelectedRequest interfacesDisplayElementSelectedRequest = (ElementSelectedRequest) o;
     return Objects.equals(this.token, interfacesDisplayElementSelectedRequest.token) &&
-        Objects.equals(this.locale, interfacesDisplayElementSelectedRequest.locale) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(token, locale, super.hashCode());
+    return Objects.hash(token, super.hashCode());
   }
 
   @Override
@@ -87,7 +75,6 @@ public final class ElementSelectedRequest extends com.amazon.ask.model.Request {
     sb.append("class ElementSelectedRequest {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    token: ").append(toIndentedString(token)).append("\n");
-    sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -106,8 +93,8 @@ public final class ElementSelectedRequest extends com.amazon.ask.model.Request {
   public static class Builder {
     private String requestId;
     private OffsetDateTime timestamp;
-    private String token;
     private String locale;
+    private String token;
 
     private Builder() { }
       
@@ -126,16 +113,16 @@ public final class ElementSelectedRequest extends com.amazon.ask.model.Request {
     }
       
 
-    @JsonProperty("token")
-    public Builder withToken(String token) {
-      this.token = token;
+    @JsonProperty("locale")
+    public Builder withLocale(String locale) {
+      this.locale = locale;
       return this;
     }
       
 
-    @JsonProperty("locale")
-    public Builder withLocale(String locale) {
-      this.locale = locale;
+    @JsonProperty("token")
+    public Builder withToken(String token) {
+      this.token = token;
       return this;
     }
       

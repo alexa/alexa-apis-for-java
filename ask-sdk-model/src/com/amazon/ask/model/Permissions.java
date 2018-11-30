@@ -44,7 +44,7 @@ public final class Permissions{
   }
 
   /**
-    * A token listing all the permissions granted for this user
+    * A token listing all the permissions granted for this user.
   * @return consentToken
   **/
   public String getConsentToken() {

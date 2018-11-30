@@ -26,9 +26,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = PauseCommandIssuedRequest.Builder.class)
 public final class PauseCommandIssuedRequest extends com.amazon.ask.model.Request {
 
-  @JsonProperty("locale")
-  private String locale = null;
-
   public static Builder builder() {
     return new Builder();
   }
@@ -42,14 +39,6 @@ public final class PauseCommandIssuedRequest extends com.amazon.ask.model.Reques
     this.locale = builder.locale;
   }
 
-  /**
-    * A string indicating the user’s locale. For example: en-US.
-  * @return locale
-  **/
-  public String getLocale() {
-    return locale;
-  }
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -58,14 +47,12 @@ public final class PauseCommandIssuedRequest extends com.amazon.ask.model.Reques
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    PauseCommandIssuedRequest interfacesPlaybackcontrollerPauseCommandIssuedRequest = (PauseCommandIssuedRequest) o;
-    return Objects.equals(this.locale, interfacesPlaybackcontrollerPauseCommandIssuedRequest.locale) &&
-        super.equals(o);
+    return super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(locale, super.hashCode());
+    return Objects.hash(super.hashCode());
   }
 
   @Override
@@ -73,7 +60,6 @@ public final class PauseCommandIssuedRequest extends com.amazon.ask.model.Reques
     StringBuilder sb = new StringBuilder();
     sb.append("class PauseCommandIssuedRequest {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
     sb.append("}");
     return sb.toString();
   }

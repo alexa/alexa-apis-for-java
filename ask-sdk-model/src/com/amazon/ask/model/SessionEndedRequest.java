@@ -32,9 +32,6 @@ public final class SessionEndedRequest extends com.amazon.ask.model.Request {
   @JsonProperty("error")
   private com.amazon.ask.model.SessionEndedError error = null;
 
-  @JsonProperty("locale")
-  private String locale = null;
-
   public static Builder builder() {
     return new Builder();
   }
@@ -45,9 +42,9 @@ public final class SessionEndedRequest extends com.amazon.ask.model.Request {
     this.type = discriminatorValue;
     this.requestId = builder.requestId;
     this.timestamp = builder.timestamp;
+    this.locale = builder.locale;
     this.reason = builder.reason;
     this.error = builder.error;
-    this.locale = builder.locale;
   }
 
   /**
@@ -66,14 +63,6 @@ public final class SessionEndedRequest extends com.amazon.ask.model.Request {
     return error;
   }
 
-  /**
-    * A string indicating the user’s locale. For example: en-US.
-  * @return locale
-  **/
-  public String getLocale() {
-    return locale;
-  }
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -85,13 +74,12 @@ public final class SessionEndedRequest extends com.amazon.ask.model.Request {
     SessionEndedRequest sessionEndedRequest = (SessionEndedRequest) o;
     return Objects.equals(this.reason, sessionEndedRequest.reason) &&
         Objects.equals(this.error, sessionEndedRequest.error) &&
-        Objects.equals(this.locale, sessionEndedRequest.locale) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(reason, error, locale, super.hashCode());
+    return Objects.hash(reason, error, super.hashCode());
   }
 
   @Override
@@ -101,7 +89,6 @@ public final class SessionEndedRequest extends com.amazon.ask.model.Request {
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
     sb.append("    error: ").append(toIndentedString(error)).append("\n");
-    sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -120,9 +107,9 @@ public final class SessionEndedRequest extends com.amazon.ask.model.Request {
   public static class Builder {
     private String requestId;
     private OffsetDateTime timestamp;
+    private String locale;
     private com.amazon.ask.model.SessionEndedReason reason;
     private com.amazon.ask.model.SessionEndedError error;
-    private String locale;
 
     private Builder() { }
       
@@ -141,6 +128,13 @@ public final class SessionEndedRequest extends com.amazon.ask.model.Request {
     }
       
 
+    @JsonProperty("locale")
+    public Builder withLocale(String locale) {
+      this.locale = locale;
+      return this;
+    }
+      
+
     @JsonProperty("reason")
     public Builder withReason(com.amazon.ask.model.SessionEndedReason reason) {
       this.reason = reason;
@@ -151,13 +145,6 @@ public final class SessionEndedRequest extends com.amazon.ask.model.Request {
     @JsonProperty("error")
     public Builder withError(com.amazon.ask.model.SessionEndedError error) {
       this.error = error;
-      return this;
-    }
-      
-
-    @JsonProperty("locale")
-    public Builder withLocale(String locale) {
-      this.locale = locale;
       return this;
     }
       

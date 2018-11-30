@@ -31,9 +31,6 @@ public final class InputHandlerEventRequest extends com.amazon.ask.model.Request
   @JsonProperty("events")
   private List<com.amazon.ask.model.services.gameEngine.InputHandlerEvent> events = new ArrayList<com.amazon.ask.model.services.gameEngine.InputHandlerEvent>();
 
-  @JsonProperty("locale")
-  private String locale = null;
-
   public static Builder builder() {
     return new Builder();
   }
@@ -44,8 +41,8 @@ public final class InputHandlerEventRequest extends com.amazon.ask.model.Request
     this.type = discriminatorValue;
     this.requestId = builder.requestId;
     this.timestamp = builder.timestamp;
-    this.events = builder.events;
     this.locale = builder.locale;
+    this.events = builder.events;
   }
 
   /**
@@ -54,14 +51,6 @@ public final class InputHandlerEventRequest extends com.amazon.ask.model.Request
   **/
   public List<com.amazon.ask.model.services.gameEngine.InputHandlerEvent> getEvents() {
     return events;
-  }
-
-  /**
-    * A string indicating the user’s locale. For example: en-US.
-  * @return locale
-  **/
-  public String getLocale() {
-    return locale;
   }
 
   @Override
@@ -74,13 +63,12 @@ public final class InputHandlerEventRequest extends com.amazon.ask.model.Request
     }
     InputHandlerEventRequest interfacesGameEngineInputHandlerEventRequest = (InputHandlerEventRequest) o;
     return Objects.equals(this.events, interfacesGameEngineInputHandlerEventRequest.events) &&
-        Objects.equals(this.locale, interfacesGameEngineInputHandlerEventRequest.locale) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(events, locale, super.hashCode());
+    return Objects.hash(events, super.hashCode());
   }
 
   @Override
@@ -89,7 +77,6 @@ public final class InputHandlerEventRequest extends com.amazon.ask.model.Request
     sb.append("class InputHandlerEventRequest {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    events: ").append(toIndentedString(events)).append("\n");
-    sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -108,8 +95,8 @@ public final class InputHandlerEventRequest extends com.amazon.ask.model.Request
   public static class Builder {
     private String requestId;
     private OffsetDateTime timestamp;
-    private List<com.amazon.ask.model.services.gameEngine.InputHandlerEvent> events;
     private String locale;
+    private List<com.amazon.ask.model.services.gameEngine.InputHandlerEvent> events;
 
     private Builder() { }
       
@@ -128,6 +115,13 @@ public final class InputHandlerEventRequest extends com.amazon.ask.model.Request
     }
       
 
+    @JsonProperty("locale")
+    public Builder withLocale(String locale) {
+      this.locale = locale;
+      return this;
+    }
+      
+
     @JsonProperty("events")
     public Builder withEvents(List<com.amazon.ask.model.services.gameEngine.InputHandlerEvent> events) {
       this.events = events;
@@ -141,13 +135,6 @@ public final class InputHandlerEventRequest extends com.amazon.ask.model.Request
       this.events.add(eventsItem);
       return this;
     }
-
-    @JsonProperty("locale")
-    public Builder withLocale(String locale) {
-      this.locale = locale;
-      return this;
-    }
-      
 
     public InputHandlerEventRequest build() {
       return new InputHandlerEventRequest(this);

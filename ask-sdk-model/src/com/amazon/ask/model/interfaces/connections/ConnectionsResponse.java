@@ -41,9 +41,6 @@ public final class ConnectionsResponse extends com.amazon.ask.model.Request {
   @JsonProperty("token")
   private String token = null;
 
-  @JsonProperty("locale")
-  private String locale = null;
-
   public static Builder builder() {
     return new Builder();
   }
@@ -54,11 +51,11 @@ public final class ConnectionsResponse extends com.amazon.ask.model.Request {
     this.type = discriminatorValue;
     this.requestId = builder.requestId;
     this.timestamp = builder.timestamp;
+    this.locale = builder.locale;
     this.status = builder.status;
     this.name = builder.name;
     this.payload = builder.payload;
     this.token = builder.token;
-    this.locale = builder.locale;
   }
 
   /**
@@ -93,14 +90,6 @@ public final class ConnectionsResponse extends com.amazon.ask.model.Request {
     return token;
   }
 
-  /**
-    * A string indicating the user’s locale. For example: en-US.
-  * @return locale
-  **/
-  public String getLocale() {
-    return locale;
-  }
-
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -114,13 +103,12 @@ public final class ConnectionsResponse extends com.amazon.ask.model.Request {
         Objects.equals(this.name, interfacesConnectionsConnectionsResponse.name) &&
         Objects.equals(this.payload, interfacesConnectionsConnectionsResponse.payload) &&
         Objects.equals(this.token, interfacesConnectionsConnectionsResponse.token) &&
-        Objects.equals(this.locale, interfacesConnectionsConnectionsResponse.locale) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(status, name, payload, token, locale, super.hashCode());
+    return Objects.hash(status, name, payload, token, super.hashCode());
   }
 
   @Override
@@ -132,7 +120,6 @@ public final class ConnectionsResponse extends com.amazon.ask.model.Request {
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("    payload: ").append(toIndentedString(payload)).append("\n");
     sb.append("    token: ").append(toIndentedString(token)).append("\n");
-    sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -151,11 +138,11 @@ public final class ConnectionsResponse extends com.amazon.ask.model.Request {
   public static class Builder {
     private String requestId;
     private OffsetDateTime timestamp;
+    private String locale;
     private com.amazon.ask.model.interfaces.connections.ConnectionsStatus status;
     private String name;
     private Map<String, Object> payload;
     private String token;
-    private String locale;
 
     private Builder() { }
       
@@ -170,6 +157,13 @@ public final class ConnectionsResponse extends com.amazon.ask.model.Request {
     @JsonProperty("timestamp")
     public Builder withTimestamp(OffsetDateTime timestamp) {
       this.timestamp = timestamp;
+      return this;
+    }
+      
+
+    @JsonProperty("locale")
+    public Builder withLocale(String locale) {
+      this.locale = locale;
       return this;
     }
       
@@ -205,13 +199,6 @@ public final class ConnectionsResponse extends com.amazon.ask.model.Request {
     @JsonProperty("token")
     public Builder withToken(String token) {
       this.token = token;
-      return this;
-    }
-      
-
-    @JsonProperty("locale")
-    public Builder withLocale(String locale) {
-      this.locale = locale;
       return this;
     }
       
