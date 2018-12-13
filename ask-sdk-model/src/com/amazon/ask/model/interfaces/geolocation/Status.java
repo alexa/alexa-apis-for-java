@@ -12,7 +12,7 @@
 */
 
 
-package com.amazon.ask.model.interfaces.geolocation.locationServices;
+package com.amazon.ask.model.interfaces.geolocation;
 
 import java.util.Objects;
 

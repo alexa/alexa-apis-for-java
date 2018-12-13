@@ -26,10 +26,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public final class LocationServices{
 
   @JsonProperty("status")
-  private com.amazon.ask.model.interfaces.geolocation.locationServices.Status status = null;
+  private com.amazon.ask.model.interfaces.geolocation.Status status = null;
 
   @JsonProperty("access")
-  private com.amazon.ask.model.interfaces.geolocation.locationServices.Access access = null;
+  private com.amazon.ask.model.interfaces.geolocation.Access access = null;
 
   public static Builder builder() {
     return new Builder();
@@ -44,7 +44,7 @@ public final class LocationServices{
     * A string representing the status of whether location services is currently running or not on the host OS of device.
   * @return status
   **/
-  public com.amazon.ask.model.interfaces.geolocation.locationServices.Status getStatus() {
+  public com.amazon.ask.model.interfaces.geolocation.Status getStatus() {
     return status;
   }
 
@@ -52,7 +52,7 @@ public final class LocationServices{
     * A string representing if Alexa has access to location services running on the hostOS of device.
   * @return access
   **/
-  public com.amazon.ask.model.interfaces.geolocation.locationServices.Access getAccess() {
+  public com.amazon.ask.model.interfaces.geolocation.Access getAccess() {
     return access;
   }
 
@@ -97,20 +97,20 @@ public final class LocationServices{
   }
 
   public static class Builder {
-    private com.amazon.ask.model.interfaces.geolocation.locationServices.Status status;
-    private com.amazon.ask.model.interfaces.geolocation.locationServices.Access access;
+    private com.amazon.ask.model.interfaces.geolocation.Status status;
+    private com.amazon.ask.model.interfaces.geolocation.Access access;
 
     private Builder() { }
 
     @JsonProperty("status")
-    public Builder withStatus(com.amazon.ask.model.interfaces.geolocation.locationServices.Status status) {
+    public Builder withStatus(com.amazon.ask.model.interfaces.geolocation.Status status) {
       this.status = status;
       return this;
     }
       
 
     @JsonProperty("access")
-    public Builder withAccess(com.amazon.ask.model.interfaces.geolocation.locationServices.Access access) {
+    public Builder withAccess(com.amazon.ask.model.interfaces.geolocation.Access access) {
       this.access = access;
       return this;
     }
