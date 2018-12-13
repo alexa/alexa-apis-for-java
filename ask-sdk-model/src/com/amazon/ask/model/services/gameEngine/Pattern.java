@@ -36,6 +36,9 @@ public final class Pattern{
   @JsonProperty("action")
   private com.amazon.ask.model.services.gameEngine.InputEventActionType action = null;
 
+  @JsonProperty("repeat")
+  private Integer repeat = null;
+
   public static Builder builder() {
     return new Builder();
   }
@@ -44,6 +47,7 @@ public final class Pattern{
     this.gadgetIds = builder.gadgetIds;
     this.colors = builder.colors;
     this.action = builder.action;
+    this.repeat = builder.repeat;
   }
 
   /**
@@ -70,6 +74,16 @@ public final class Pattern{
     return action;
   }
 
+  /**
+    * The number of times that the specified action must occur to be considered complete.
+    * minimum: 1
+    * maximum: 99999
+  * @return repeat
+  **/
+  public Integer getRepeat() {
+    return repeat;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -81,12 +95,13 @@ public final class Pattern{
     Pattern servicesGameEnginePattern = (Pattern) o;
     return Objects.equals(this.gadgetIds, servicesGameEnginePattern.gadgetIds) &&
         Objects.equals(this.colors, servicesGameEnginePattern.colors) &&
-        Objects.equals(this.action, servicesGameEnginePattern.action);
+        Objects.equals(this.action, servicesGameEnginePattern.action) &&
+        Objects.equals(this.repeat, servicesGameEnginePattern.repeat);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(gadgetIds, colors, action);
+    return Objects.hash(gadgetIds, colors, action, repeat);
   }
 
   @Override
@@ -97,6 +112,7 @@ public final class Pattern{
     sb.append("    gadgetIds: ").append(toIndentedString(gadgetIds)).append("\n");
     sb.append("    colors: ").append(toIndentedString(colors)).append("\n");
     sb.append("    action: ").append(toIndentedString(action)).append("\n");
+    sb.append("    repeat: ").append(toIndentedString(repeat)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -116,6 +132,7 @@ public final class Pattern{
     private List<String> gadgetIds;
     private List<String> colors;
     private com.amazon.ask.model.services.gameEngine.InputEventActionType action;
+    private Integer repeat;
 
     private Builder() { }
 
@@ -150,6 +167,13 @@ public final class Pattern{
     @JsonProperty("action")
     public Builder withAction(com.amazon.ask.model.services.gameEngine.InputEventActionType action) {
       this.action = action;
+      return this;
+    }
+      
+
+    @JsonProperty("repeat")
+    public Builder withRepeat(Integer repeat) {
+      this.repeat = repeat;
       return this;
     }
       

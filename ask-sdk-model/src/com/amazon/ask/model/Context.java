@@ -34,6 +34,9 @@ public final class Context{
   @JsonProperty("Display")
   private com.amazon.ask.model.interfaces.display.DisplayState display = null;
 
+  @JsonProperty("Geolocation")
+  private com.amazon.ask.model.interfaces.geolocation.GeolocationState geolocation = null;
+
   @JsonProperty("Viewport")
   private com.amazon.ask.model.interfaces.viewport.ViewportState viewport = null;
 
@@ -45,6 +48,7 @@ public final class Context{
     this.system = builder.system;
     this.audioPlayer = builder.audioPlayer;
     this.display = builder.display;
+    this.geolocation = builder.geolocation;
     this.viewport = builder.viewport;
   }
 
@@ -73,6 +77,14 @@ public final class Context{
   }
 
   /**
+    * Provides the last gathered geolocation information of the device.
+  * @return geolocation
+  **/
+  public com.amazon.ask.model.interfaces.geolocation.GeolocationState getGeolocation() {
+    return geolocation;
+  }
+
+  /**
     * Provides the characteristics of a device's viewport.
   * @return viewport
   **/
@@ -92,12 +104,13 @@ public final class Context{
     return Objects.equals(this.system, context.system) &&
         Objects.equals(this.audioPlayer, context.audioPlayer) &&
         Objects.equals(this.display, context.display) &&
+        Objects.equals(this.geolocation, context.geolocation) &&
         Objects.equals(this.viewport, context.viewport);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(system, audioPlayer, display, viewport);
+    return Objects.hash(system, audioPlayer, display, geolocation, viewport);
   }
 
   @Override
@@ -108,6 +121,7 @@ public final class Context{
     sb.append("    system: ").append(toIndentedString(system)).append("\n");
     sb.append("    audioPlayer: ").append(toIndentedString(audioPlayer)).append("\n");
     sb.append("    display: ").append(toIndentedString(display)).append("\n");
+    sb.append("    geolocation: ").append(toIndentedString(geolocation)).append("\n");
     sb.append("    viewport: ").append(toIndentedString(viewport)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -128,6 +142,7 @@ public final class Context{
     private com.amazon.ask.model.interfaces.system.SystemState system;
     private com.amazon.ask.model.interfaces.audioplayer.AudioPlayerState audioPlayer;
     private com.amazon.ask.model.interfaces.display.DisplayState display;
+    private com.amazon.ask.model.interfaces.geolocation.GeolocationState geolocation;
     private com.amazon.ask.model.interfaces.viewport.ViewportState viewport;
 
     private Builder() { }
@@ -149,6 +164,13 @@ public final class Context{
     @JsonProperty("Display")
     public Builder withDisplay(com.amazon.ask.model.interfaces.display.DisplayState display) {
       this.display = display;
+      return this;
+    }
+      
+
+    @JsonProperty("Geolocation")
+    public Builder withGeolocation(com.amazon.ask.model.interfaces.geolocation.GeolocationState geolocation) {
+      this.geolocation = geolocation;
       return this;
     }
       

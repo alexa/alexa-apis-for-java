@@ -28,6 +28,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = InputHandlerEventRequest.Builder.class)
 public final class InputHandlerEventRequest extends com.amazon.ask.model.Request {
 
+  @JsonProperty("originatingRequestId")
+  private String originatingRequestId = null;
+
   @JsonProperty("events")
   private List<com.amazon.ask.model.services.gameEngine.InputHandlerEvent> events = new ArrayList<com.amazon.ask.model.services.gameEngine.InputHandlerEvent>();
 
@@ -42,7 +45,16 @@ public final class InputHandlerEventRequest extends com.amazon.ask.model.Request
     this.requestId = builder.requestId;
     this.timestamp = builder.timestamp;
     this.locale = builder.locale;
+    this.originatingRequestId = builder.originatingRequestId;
     this.events = builder.events;
+  }
+
+  /**
+    * The corresponding identifier of the request that started the input handler.
+  * @return originatingRequestId
+  **/
+  public String getOriginatingRequestId() {
+    return originatingRequestId;
   }
 
   /**
@@ -62,13 +74,14 @@ public final class InputHandlerEventRequest extends com.amazon.ask.model.Request
       return false;
     }
     InputHandlerEventRequest interfacesGameEngineInputHandlerEventRequest = (InputHandlerEventRequest) o;
-    return Objects.equals(this.events, interfacesGameEngineInputHandlerEventRequest.events) &&
+    return Objects.equals(this.originatingRequestId, interfacesGameEngineInputHandlerEventRequest.originatingRequestId) &&
+        Objects.equals(this.events, interfacesGameEngineInputHandlerEventRequest.events) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(events, super.hashCode());
+    return Objects.hash(originatingRequestId, events, super.hashCode());
   }
 
   @Override
@@ -76,6 +89,7 @@ public final class InputHandlerEventRequest extends com.amazon.ask.model.Request
     StringBuilder sb = new StringBuilder();
     sb.append("class InputHandlerEventRequest {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("    originatingRequestId: ").append(toIndentedString(originatingRequestId)).append("\n");
     sb.append("    events: ").append(toIndentedString(events)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -96,6 +110,7 @@ public final class InputHandlerEventRequest extends com.amazon.ask.model.Request
     private String requestId;
     private OffsetDateTime timestamp;
     private String locale;
+    private String originatingRequestId;
     private List<com.amazon.ask.model.services.gameEngine.InputHandlerEvent> events;
 
     private Builder() { }
@@ -118,6 +133,13 @@ public final class InputHandlerEventRequest extends com.amazon.ask.model.Request
     @JsonProperty("locale")
     public Builder withLocale(String locale) {
       this.locale = locale;
+      return this;
+    }
+      
+
+    @JsonProperty("originatingRequestId")
+    public Builder withOriginatingRequestId(String originatingRequestId) {
+      this.originatingRequestId = originatingRequestId;
       return this;
     }
       
