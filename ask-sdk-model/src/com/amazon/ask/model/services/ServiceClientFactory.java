@@ -19,6 +19,7 @@ import com.amazon.ask.model.services.deviceAddress.DeviceAddressServiceClient;
 import com.amazon.ask.model.services.directive.DirectiveServiceClient;
 import com.amazon.ask.model.services.listManagement.ListManagementServiceClient;
 import com.amazon.ask.model.services.monetization.MonetizationServiceClient;
+import com.amazon.ask.model.services.reminderManagement.ReminderManagementServiceClient;
 import com.amazon.ask.model.services.ups.UpsServiceClient;
 
 /**
@@ -62,6 +63,13 @@ public class ServiceClientFactory {
             return new MonetizationServiceClient(this.defaultApiConfiguration);
         } catch(Exception ex) {
             throw new IllegalStateException("Error while initializing MonetizationServiceClient: " + ex.getMessage(), ex);
+        }
+    }
+    public ReminderManagementServiceClient getReminderManagementService() {
+        try {
+            return new ReminderManagementServiceClient(this.defaultApiConfiguration);
+        } catch(Exception ex) {
+            throw new IllegalStateException("Error while initializing ReminderManagementServiceClient: " + ex.getMessage(), ex);
         }
     }
     public UpsServiceClient getUpsService() {

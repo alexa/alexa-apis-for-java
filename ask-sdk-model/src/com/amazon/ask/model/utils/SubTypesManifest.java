@@ -55,11 +55,14 @@ public class SubTypesManifest {
     requestSubTypes.put("Display.ElementSelected", com.amazon.ask.model.interfaces.display.ElementSelectedRequest.class);
     requestSubTypes.put("AlexaSkillEvent.SkillPermissionChanged", com.amazon.ask.model.events.skillevents.PermissionChangedRequest.class);
     requestSubTypes.put("AlexaHouseholdListEvent.ItemsCreated", com.amazon.ask.model.services.listManagement.ListItemsCreatedEventRequest.class);
+    requestSubTypes.put("Reminders.ReminderUpdated", com.amazon.ask.model.services.reminderManagement.ReminderUpdatedEventRequest.class);
     requestSubTypes.put("SessionEndedRequest", com.amazon.ask.model.SessionEndedRequest.class);
     requestSubTypes.put("IntentRequest", com.amazon.ask.model.IntentRequest.class);
     requestSubTypes.put("AudioPlayer.PlaybackFailed", com.amazon.ask.model.interfaces.audioplayer.PlaybackFailedRequest.class);
     requestSubTypes.put("CanFulfillIntentRequest", com.amazon.ask.model.canfulfill.CanFulfillIntentRequest.class);
+    requestSubTypes.put("Reminders.ReminderStarted", com.amazon.ask.model.services.reminderManagement.ReminderStartedEventRequest.class);
     requestSubTypes.put("LaunchRequest", com.amazon.ask.model.LaunchRequest.class);
+    requestSubTypes.put("Reminders.ReminderCreated", com.amazon.ask.model.services.reminderManagement.ReminderCreatedEventRequest.class);
     requestSubTypes.put("AudioPlayer.PlaybackStopped", com.amazon.ask.model.interfaces.audioplayer.PlaybackStoppedRequest.class);
     requestSubTypes.put("PlaybackController.PreviousCommandIssued", com.amazon.ask.model.interfaces.playbackcontroller.PreviousCommandIssuedRequest.class);
     requestSubTypes.put("AlexaHouseholdListEvent.ItemsUpdated", com.amazon.ask.model.services.listManagement.ListItemsUpdatedEventRequest.class);
@@ -67,7 +70,9 @@ public class SubTypesManifest {
     requestSubTypes.put("AlexaHouseholdListEvent.ListCreated", com.amazon.ask.model.services.listManagement.ListCreatedEventRequest.class);
     requestSubTypes.put("AudioPlayer.PlaybackStarted", com.amazon.ask.model.interfaces.audioplayer.PlaybackStartedRequest.class);
     requestSubTypes.put("AudioPlayer.PlaybackNearlyFinished", com.amazon.ask.model.interfaces.audioplayer.PlaybackNearlyFinishedRequest.class);
+    requestSubTypes.put("Reminders.ReminderStatusChanged", com.amazon.ask.model.services.reminderManagement.ReminderStatusChangedEventRequest.class);
     requestSubTypes.put("AlexaHouseholdListEvent.ItemsDeleted", com.amazon.ask.model.services.listManagement.ListItemsDeletedEventRequest.class);
+    requestSubTypes.put("Reminders.ReminderDeleted", com.amazon.ask.model.services.reminderManagement.ReminderDeletedEventRequest.class);
     requestSubTypes.put("Connections.Response", com.amazon.ask.model.interfaces.connections.ConnectionsResponse.class);
     requestSubTypes.put("Messaging.MessageReceived", com.amazon.ask.model.interfaces.messaging.MessageReceivedRequest.class);
     requestSubTypes.put("Connections.Request", com.amazon.ask.model.interfaces.connections.ConnectionsRequest.class);
