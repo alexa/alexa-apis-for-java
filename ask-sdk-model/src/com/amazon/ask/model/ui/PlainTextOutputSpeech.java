@@ -36,6 +36,7 @@ public final class PlainTextOutputSpeech extends com.amazon.ask.model.ui.OutputS
     String discriminatorValue = "PlainText";
 
     this.type = discriminatorValue;
+    this.playBehavior = builder.playBehavior;
     this.text = builder.text;
   }
 
@@ -87,9 +88,17 @@ public final class PlainTextOutputSpeech extends com.amazon.ask.model.ui.OutputS
   }
 
   public static class Builder {
+    private com.amazon.ask.model.ui.PlayBehavior playBehavior;
     private String text;
 
     private Builder() { }
+      
+
+    @JsonProperty("playBehavior")
+    public Builder withPlayBehavior(com.amazon.ask.model.ui.PlayBehavior playBehavior) {
+      this.playBehavior = playBehavior;
+      return this;
+    }
       
 
     @JsonProperty("text")

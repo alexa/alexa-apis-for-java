@@ -36,6 +36,7 @@ public final class SsmlOutputSpeech extends com.amazon.ask.model.ui.OutputSpeech
     String discriminatorValue = "SSML";
 
     this.type = discriminatorValue;
+    this.playBehavior = builder.playBehavior;
     this.ssml = builder.ssml;
   }
 
@@ -87,9 +88,17 @@ public final class SsmlOutputSpeech extends com.amazon.ask.model.ui.OutputSpeech
   }
 
   public static class Builder {
+    private com.amazon.ask.model.ui.PlayBehavior playBehavior;
     private String ssml;
 
     private Builder() { }
+      
+
+    @JsonProperty("playBehavior")
+    public Builder withPlayBehavior(com.amazon.ask.model.ui.PlayBehavior playBehavior) {
+      this.playBehavior = playBehavior;
+      return this;
+    }
       
 
     @JsonProperty("ssml")

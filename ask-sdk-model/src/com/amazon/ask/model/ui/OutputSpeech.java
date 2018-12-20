@@ -34,6 +34,9 @@ public abstract class OutputSpeech{
 
   protected String type = null;
 
+  @JsonProperty("playBehavior")
+  protected com.amazon.ask.model.ui.PlayBehavior playBehavior = null;
+
   protected OutputSpeech() {
   }
 
@@ -46,6 +49,14 @@ public abstract class OutputSpeech{
     return type;
   }
 
+  /**
+    * Get playBehavior
+  * @return playBehavior
+  **/
+  public com.amazon.ask.model.ui.PlayBehavior getPlayBehavior() {
+    return playBehavior;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -55,12 +66,13 @@ public abstract class OutputSpeech{
       return false;
     }
     OutputSpeech uiOutputSpeech = (OutputSpeech) o;
-    return Objects.equals(this.type, uiOutputSpeech.type);
+    return Objects.equals(this.type, uiOutputSpeech.type) &&
+        Objects.equals(this.playBehavior, uiOutputSpeech.playBehavior);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(type);
+    return Objects.hash(type, playBehavior);
   }
 
   @Override
@@ -69,6 +81,7 @@ public abstract class OutputSpeech{
     sb.append("class OutputSpeech {\n");
     
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    playBehavior: ").append(toIndentedString(playBehavior)).append("\n");
     sb.append("}");
     return sb.toString();
   }

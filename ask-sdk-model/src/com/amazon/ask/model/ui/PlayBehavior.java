@@ -12,7 +12,7 @@
 */
 
 
-package com.amazon.ask.model.services.reminderManagement;
+package com.amazon.ask.model.ui;
 
 import java.util.Objects;
 
@@ -20,22 +20,24 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Status of reminder
+ * Determines whether Alexa will queue or play this output speech immediately interrupting other speech
  */
-public enum Status {
+public enum PlayBehavior {
   
-  ON("ON"),
+  ENQUEUE("ENQUEUE"),
   
-  COMPLETED("COMPLETED");
+  REPLACE_ALL("REPLACE_ALL"),
+  
+  REPLACE_ENQUEUED("REPLACE_ENQUEUED");
 
-  private String value;
+  private Object value;
 
-  Status(String value) {
+  PlayBehavior(Object value) {
     this.value = value;
   }
 
   @JsonValue
-  public String getValue() {
+  public Object getValue() {
     return value;
   }
 
@@ -45,8 +47,8 @@ public enum Status {
   }
 
   @JsonCreator
-  public static Status fromValue(String text) {
-    for (Status b : Status.values()) {
+  public static PlayBehavior fromValue(String text) {
+    for (PlayBehavior b : PlayBehavior.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }
