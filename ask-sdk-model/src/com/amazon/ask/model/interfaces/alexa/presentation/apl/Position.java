@@ -24,9 +24,9 @@ import com.fasterxml.jackson.annotation.JsonValue;
  */
 public enum Position {
   
-  ABSOLUTE("ABSOLUTE"),
+  ABSOLUTE("absolute"),
   
-  RELATIVE("RELATIVE");
+  RELATIVE("relative");
 
   private String value;
 

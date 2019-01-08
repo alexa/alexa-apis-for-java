@@ -24,9 +24,9 @@ import com.fasterxml.jackson.annotation.JsonValue;
  */
 public enum HighlightMode {
   
-  BLOCK("BLOCK"),
+  BLOCK("block"),
   
-  LINE("LINE");
+  LINE("line");
 
   private String value;
 

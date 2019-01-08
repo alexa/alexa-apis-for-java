@@ -24,13 +24,13 @@ import com.fasterxml.jackson.annotation.JsonValue;
  */
 public enum Align {
   
-  CENTER("CENTER"),
+  CENTER("center"),
   
-  FIRST("FIRST"),
+  FIRST("first"),
   
-  LAST("LAST"),
+  LAST("last"),
   
-  VISIBLE("VISIBLE");
+  VISIBLE("visible");
 
   private String value;
 
