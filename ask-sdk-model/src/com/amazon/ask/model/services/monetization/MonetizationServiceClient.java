@@ -1,5 +1,5 @@
 /*
-* Copyright 2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file
 * except in compliance with the License. A copy of the License is located at
@@ -14,6 +14,7 @@
 package com.amazon.ask.model.services.monetization;
 
 import com.amazon.ask.model.services.*;
+import com.amazon.ask.model.services.lwa.*;
 import java.math.BigDecimal;
 
 import java.util.ArrayList;
@@ -26,7 +27,7 @@ import java.util.HashMap;
 public class MonetizationServiceClient extends BaseServiceClient implements MonetizationService {
 
   public MonetizationServiceClient(ApiConfiguration apiConfiguration) {
-    super(apiConfiguration);
+      super(apiConfiguration);
   }
 
   /**
@@ -74,16 +75,17 @@ public class MonetizationServiceClient extends BaseServiceClient implements Mone
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
+    String path = "/v1/users/~current/skills/~current/inSkillProducts";
+
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.monetization.InSkillProductsResponse.class, 200, "Returns a list of In-Skill products on success."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.monetization.Error.class, 400, "Invalid request"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.monetization.Error.class, 401, "The authentication token is invalid or doesn't have access to make this request"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.monetization.Error.class, 500, "Internal Server Error"));
 
-    return (com.amazon.ask.model.services.monetization.InSkillProductsResponse)this.invoke("GET", this.apiEndpoint, "/v1/users/~current/skills/~current/inSkillProducts", queryParams, headerParams,
+    return (com.amazon.ask.model.services.monetization.InSkillProductsResponse)this.invoke("GET", this.apiEndpoint, path, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null ,com.amazon.ask.model.services.monetization.InSkillProductsResponse.class);
-  }
-  /**
+  }  /**
    * 
    * Get In-Skill Product information based on user context for the Skill.
    * @param acceptLanguage User&#39;s locale/language in context (required)
@@ -105,6 +107,8 @@ public class MonetizationServiceClient extends BaseServiceClient implements Mone
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
+    String path = "/v1/users/~current/skills/~current/inSkillProducts/{productId}";
+
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.monetization.InSkillProduct.class, 200, "Returns an In-Skill Product on success."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.monetization.Error.class, 400, "Invalid request."));
@@ -112,7 +116,7 @@ public class MonetizationServiceClient extends BaseServiceClient implements Mone
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.monetization.Error.class, 404, "Requested resource not found."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.monetization.Error.class, 500, "Internal Server Error."));
 
-    return (com.amazon.ask.model.services.monetization.InSkillProduct)this.invoke("GET", this.apiEndpoint, "/v1/users/~current/skills/~current/inSkillProducts/{productId}", queryParams, headerParams,
+    return (com.amazon.ask.model.services.monetization.InSkillProduct)this.invoke("GET", this.apiEndpoint, path, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null ,com.amazon.ask.model.services.monetization.InSkillProduct.class);
   }
 }

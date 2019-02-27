@@ -1,5 +1,5 @@
 /*
-* Copyright 2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file
 * except in compliance with the License. A copy of the License is located at
@@ -14,6 +14,7 @@
 package com.amazon.ask.model.services.ups;
 
 import com.amazon.ask.model.services.*;
+import com.amazon.ask.model.services.lwa.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +26,7 @@ import java.util.HashMap;
 public class UpsServiceClient extends BaseServiceClient implements UpsService {
 
   public UpsServiceClient(ApiConfiguration apiConfiguration) {
-    super(apiConfiguration);
+      super(apiConfiguration);
   }
 
   /**
@@ -43,6 +44,8 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
+    String path = "/v2/accounts/~current/settings/Profile.email";
+
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(String.class, 200, "Successfully retrieved the requested information."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 204, "The query did not return any results."));
@@ -51,10 +54,9 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 429, "The skill has been throttled due to an excessive number of requests."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 0, "An unexpected error occurred."));
 
-    return (String)this.invoke("GET", this.apiEndpoint, "/v2/accounts/~current/settings/Profile.email", queryParams, headerParams,
+    return (String)this.invoke("GET", this.apiEndpoint, path, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null ,String.class);
-  }
-  /**
+  }  /**
    * 
    * Gets the given name (first name) of the customer associated with the current enablement. Requires customer consent for scopes: [alexa::profile:given_name:read] 
    * @return String
@@ -69,6 +71,8 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
+    String path = "/v2/accounts/~current/settings/Profile.givenName";
+
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(String.class, 200, "Successfully retrieved the requested information."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 204, "The query did not return any results."));
@@ -77,10 +81,9 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 429, "The skill has been throttled due to an excessive number of requests."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 0, "An unexpected error occurred."));
 
-    return (String)this.invoke("GET", this.apiEndpoint, "/v2/accounts/~current/settings/Profile.givenName", queryParams, headerParams,
+    return (String)this.invoke("GET", this.apiEndpoint, path, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null ,String.class);
-  }
-  /**
+  }  /**
    * 
    * Gets the mobile phone number of the customer associated with the current enablement. Requires customer consent for scopes: [alexa::profile:mobile_number:read] 
    * @return com.amazon.ask.model.services.ups.PhoneNumber
@@ -95,6 +98,8 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
+    String path = "/v2/accounts/~current/settings/Profile.mobileNumber";
+
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.PhoneNumber.class, 200, "Successfully retrieved the requested information."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 204, "The query did not return any results."));
@@ -103,10 +108,9 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 429, "The skill has been throttled due to an excessive number of requests."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 0, "An unexpected error occurred."));
 
-    return (com.amazon.ask.model.services.ups.PhoneNumber)this.invoke("GET", this.apiEndpoint, "/v2/accounts/~current/settings/Profile.mobileNumber", queryParams, headerParams,
+    return (com.amazon.ask.model.services.ups.PhoneNumber)this.invoke("GET", this.apiEndpoint, path, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null ,com.amazon.ask.model.services.ups.PhoneNumber.class);
-  }
-  /**
+  }  /**
    * 
    * Gets the full name of the customer associated with the current enablement. Requires customer consent for scopes: [alexa::profile:name:read] 
    * @return String
@@ -121,6 +125,8 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
+    String path = "/v2/accounts/~current/settings/Profile.name";
+
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(String.class, 200, "Successfully retrieved the requested information."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 204, "The query did not return any results."));
@@ -129,10 +135,9 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 429, "The skill has been throttled due to an excessive number of requests."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 0, "An unexpected error occurred."));
 
-    return (String)this.invoke("GET", this.apiEndpoint, "/v2/accounts/~current/settings/Profile.name", queryParams, headerParams,
+    return (String)this.invoke("GET", this.apiEndpoint, path, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null ,String.class);
-  }
-  /**
+  }  /**
    * 
    * Gets the distance measurement unit of the device. Does not require explict customer consent. 
    * @param deviceId The device Id (required)
@@ -149,6 +154,8 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
+    String path = "/v2/devices/{deviceId}/settings/System.distanceUnits";
+
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.DistanceUnits.class, 200, "Successfully get the setting"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 204, "The query did not return any results."));
@@ -157,10 +164,9 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 429, "The skill has been throttled due to an excessive number of requests."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 0, "An unexpected error occurred."));
 
-    return (com.amazon.ask.model.services.ups.DistanceUnits)this.invoke("GET", this.apiEndpoint, "/v2/devices/{deviceId}/settings/System.distanceUnits", queryParams, headerParams,
+    return (com.amazon.ask.model.services.ups.DistanceUnits)this.invoke("GET", this.apiEndpoint, path, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null ,com.amazon.ask.model.services.ups.DistanceUnits.class);
-  }
-  /**
+  }  /**
    * 
    * Gets the temperature measurement units of the device. Does not require explict customer consent. 
    * @param deviceId The device Id (required)
@@ -177,6 +183,8 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
+    String path = "/v2/devices/{deviceId}/settings/System.temperatureUnit";
+
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.TemperatureUnit.class, 200, "Successfully get the setting"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 204, "The query did not return any results."));
@@ -185,10 +193,9 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 429, "The skill has been throttled due to an excessive number of requests."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 0, "An unexpected error occurred."));
 
-    return (com.amazon.ask.model.services.ups.TemperatureUnit)this.invoke("GET", this.apiEndpoint, "/v2/devices/{deviceId}/settings/System.temperatureUnit", queryParams, headerParams,
+    return (com.amazon.ask.model.services.ups.TemperatureUnit)this.invoke("GET", this.apiEndpoint, path, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null ,com.amazon.ask.model.services.ups.TemperatureUnit.class);
-  }
-  /**
+  }  /**
    * 
    * Gets the time zone of the device. Does not require explict customer consent. 
    * @param deviceId The device Id (required)
@@ -205,6 +212,8 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
+    String path = "/v2/devices/{deviceId}/settings/System.timeZone";
+
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(String.class, 200, "Successfully get the setting"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 204, "The query did not return any results."));
@@ -213,7 +222,7 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 429, "The skill has been throttled due to an excessive number of requests."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 0, "An unexpected error occurred."));
 
-    return (String)this.invoke("GET", this.apiEndpoint, "/v2/devices/{deviceId}/settings/System.timeZone", queryParams, headerParams,
+    return (String)this.invoke("GET", this.apiEndpoint, path, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null ,String.class);
   }
 }

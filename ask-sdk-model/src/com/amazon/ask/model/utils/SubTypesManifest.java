@@ -1,5 +1,5 @@
 /*
-* Copyright 2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file
 * except in compliance with the License. A copy of the License is located at
@@ -50,6 +50,7 @@ public class SubTypesManifest {
     requestSubTypes.put("AudioPlayer.PlaybackFinished", com.amazon.ask.model.interfaces.audioplayer.PlaybackFinishedRequest.class);
     requestSubTypes.put("AlexaSkillEvent.SkillEnabled", com.amazon.ask.model.events.skillevents.SkillEnabledRequest.class);
     requestSubTypes.put("AlexaHouseholdListEvent.ListUpdated", com.amazon.ask.model.services.listManagement.ListUpdatedEventRequest.class);
+    requestSubTypes.put("AlexaSkillEvent.ProactiveSubscriptionChanged", com.amazon.ask.model.events.skillevents.ProactiveSubscriptionChangedRequest.class);
     requestSubTypes.put("Alexa.Presentation.APL.UserEvent", com.amazon.ask.model.interfaces.alexa.presentation.apl.UserEvent.class);
     requestSubTypes.put("AlexaSkillEvent.SkillDisabled", com.amazon.ask.model.events.skillevents.SkillDisabledRequest.class);
     requestSubTypes.put("Display.ElementSelected", com.amazon.ask.model.interfaces.display.ElementSelectedRequest.class);

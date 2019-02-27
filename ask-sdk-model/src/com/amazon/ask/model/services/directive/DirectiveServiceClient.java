@@ -1,5 +1,5 @@
 /*
-* Copyright 2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file
 * except in compliance with the License. A copy of the License is located at
@@ -14,6 +14,7 @@
 package com.amazon.ask.model.services.directive;
 
 import com.amazon.ask.model.services.*;
+import com.amazon.ask.model.services.lwa.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +26,7 @@ import java.util.HashMap;
 public class DirectiveServiceClient extends BaseServiceClient implements DirectiveService {
 
   public DirectiveServiceClient(ApiConfiguration apiConfiguration) {
-    super(apiConfiguration);
+      super(apiConfiguration);
   }
 
   /**
@@ -43,6 +44,8 @@ public class DirectiveServiceClient extends BaseServiceClient implements Directi
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
+    String path = "/v1/directives";
+
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "Directive sent successfully."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.directive.Error.class, 400, "Directive not valid."));
@@ -50,7 +53,7 @@ public class DirectiveServiceClient extends BaseServiceClient implements Directi
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.directive.Error.class, 403, "The skill is not allowed to send directives at the moment."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.directive.Error.class, 0, "Unexpected error."));
 
-    this.invoke("POST", this.apiEndpoint, "/v1/directives", queryParams, headerParams,
+    this.invoke("POST", this.apiEndpoint, path, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, sendDirectiveRequest ,null);
   }
 }

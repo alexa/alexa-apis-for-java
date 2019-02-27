@@ -1,5 +1,5 @@
 /*
-* Copyright 2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file
 * except in compliance with the License. A copy of the License is located at
@@ -19,6 +19,7 @@ import com.amazon.ask.model.services.deviceAddress.DeviceAddressServiceClient;
 import com.amazon.ask.model.services.directive.DirectiveServiceClient;
 import com.amazon.ask.model.services.listManagement.ListManagementServiceClient;
 import com.amazon.ask.model.services.monetization.MonetizationServiceClient;
+import com.amazon.ask.model.services.proactiveEvents.ProactiveEventsServiceClient;
 import com.amazon.ask.model.services.reminderManagement.ReminderManagementServiceClient;
 import com.amazon.ask.model.services.ups.UpsServiceClient;
 

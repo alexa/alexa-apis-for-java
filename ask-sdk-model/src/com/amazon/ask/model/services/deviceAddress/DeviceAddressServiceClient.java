@@ -1,5 +1,5 @@
 /*
-* Copyright 2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file
 * except in compliance with the License. A copy of the License is located at
@@ -14,6 +14,7 @@
 package com.amazon.ask.model.services.deviceAddress;
 
 import com.amazon.ask.model.services.*;
+import com.amazon.ask.model.services.lwa.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +26,7 @@ import java.util.HashMap;
 public class DeviceAddressServiceClient extends BaseServiceClient implements DeviceAddressService {
 
   public DeviceAddressServiceClient(ApiConfiguration apiConfiguration) {
-    super(apiConfiguration);
+      super(apiConfiguration);
   }
 
   /**
@@ -45,6 +46,8 @@ public class DeviceAddressServiceClient extends BaseServiceClient implements Dev
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
+    String path = "/v1/devices/{deviceId}/settings/address/countryAndPostalCode";
+
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.deviceAddress.ShortAddress.class, 200, "Successfully get the country and postal code of the deviceId"));
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "No content could be queried out"));
@@ -53,10 +56,9 @@ public class DeviceAddressServiceClient extends BaseServiceClient implements Dev
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.deviceAddress.Error.class, 429, "The request is throttled"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.deviceAddress.Error.class, 0, "Unexpected error"));
 
-    return (com.amazon.ask.model.services.deviceAddress.ShortAddress)this.invoke("GET", this.apiEndpoint, "/v1/devices/{deviceId}/settings/address/countryAndPostalCode", queryParams, headerParams,
+    return (com.amazon.ask.model.services.deviceAddress.ShortAddress)this.invoke("GET", this.apiEndpoint, path, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null ,com.amazon.ask.model.services.deviceAddress.ShortAddress.class);
-  }
-  /**
+  }  /**
    * 
    * Gets the address of a device 
    * @param deviceId The device Id for which to get the address (required)
@@ -73,6 +75,8 @@ public class DeviceAddressServiceClient extends BaseServiceClient implements Dev
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
+    String path = "/v1/devices/{deviceId}/settings/address";
+
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.deviceAddress.Address.class, 200, "Successfully get the address of the device"));
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "No content could be queried out"));
@@ -81,7 +85,7 @@ public class DeviceAddressServiceClient extends BaseServiceClient implements Dev
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.deviceAddress.Error.class, 429, "The request is throttled"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.deviceAddress.Error.class, 0, "Unexpected error"));
 
-    return (com.amazon.ask.model.services.deviceAddress.Address)this.invoke("GET", this.apiEndpoint, "/v1/devices/{deviceId}/settings/address", queryParams, headerParams,
+    return (com.amazon.ask.model.services.deviceAddress.Address)this.invoke("GET", this.apiEndpoint, path, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null ,com.amazon.ask.model.services.deviceAddress.Address.class);
   }
 }

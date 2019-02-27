@@ -1,5 +1,5 @@
 /*
-* Copyright 2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+* Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file
 * except in compliance with the License. A copy of the License is located at
@@ -24,7 +24,6 @@ public interface ReminderManagementService {
     void deleteReminder(String alertToken) throws com.amazon.ask.model.services.ServiceException;
     com.amazon.ask.model.services.reminderManagement.GetReminderResponse getReminder(String alertToken) throws com.amazon.ask.model.services.ServiceException;
     com.amazon.ask.model.services.reminderManagement.ReminderResponse updateReminder(String alertToken, com.amazon.ask.model.services.reminderManagement.ReminderRequest reminderRequest) throws com.amazon.ask.model.services.ServiceException;
-    void deleteReminders() throws com.amazon.ask.model.services.ServiceException;
     com.amazon.ask.model.services.reminderManagement.GetRemindersResponse getReminders() throws com.amazon.ask.model.services.ServiceException;
     com.amazon.ask.model.services.reminderManagement.ReminderResponse createReminder(com.amazon.ask.model.services.reminderManagement.ReminderRequest reminderRequest) throws com.amazon.ask.model.services.ServiceException;
 }

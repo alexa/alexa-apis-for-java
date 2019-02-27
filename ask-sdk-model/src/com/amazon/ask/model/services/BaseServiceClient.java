@@ -29,6 +29,9 @@ public abstract class BaseServiceClient {
   protected String apiEndpoint;
 
   protected BaseServiceClient(ApiConfiguration apiConfiguration) {
+    if (apiConfiguration == null) {
+        throw new IllegalArgumentException("ApiConfiguration must be provided");
+    }
     this.apiClient = apiConfiguration.getApiClient();
     this.serializer = apiConfiguration.getSerializer();
     this.authorizationValue = apiConfiguration.getAuthorizationValue();
@@ -54,13 +57,41 @@ public abstract class BaseServiceClient {
   protected Object invoke(String method, String endpoint, String path, List<Pair<String, String>> queryParams,
       List<Pair<String, String>> headerParams, Map<String, String> pathParams,
       List<ServiceClientResponse> responseDefinitions, Object body, Class responseType) throws ServiceException {
+    return invoke(method, endpoint, path, queryParams, headerParams, pathParams, responseDefinitions, body, responseType, false);
+  }
 
-    ApiClientRequest request = new ApiClientRequest();
+
+    /**
+     * Calls the ApiClient based on the ServiceClient specific data provided as well as handles the
+     * well-known responses from the Api
+     * @param method Http Method
+     * @param endpoint Base Endpoint to make the request to
+     * @param path Specific path to hit. It might contain variables to be interpolated with pathParams.
+     * @param queryParams Parameter values to be sent as part of the query string
+     * @param headerParams Parameter values to be sent as headers
+     * @param pathParams Parameter values to be interpolated in the path
+     * @param responseDefinitions Well-known expected responses by the ServiceClient
+     * @param body Request body
+     * @param responseType Type of the expected Response if applicable
+     * @return Response object instance of the responseType provided
+     * @throws ServiceException Thrown when a failure happens or when getting an Error Response from
+     * the Api.
+     */
+    protected Object invoke(String method, String endpoint, String path, List<Pair<String, String>> queryParams,
+            List<Pair<String, String>> headerParams, Map<String, String> pathParams,
+            List<ServiceClientResponse> responseDefinitions, Object body, Class responseType, boolean rawRequest) throws ServiceException {
+
+
+      ApiClientRequest request = new ApiClientRequest();
     request.setUrl(buildUrl(endpoint, path, queryParams, pathParams));
     request.setMethod(method);
     request.setHeaders(headerParams);
     if (body != null) {
-      request.setBody(this.serializer.serialize(body));
+      if (!rawRequest) {
+        request.setBody(this.serializer.serialize(body));
+      } else {
+        request.setBody((String) body);
+      }
     }
 
     ApiClientResponse response;
