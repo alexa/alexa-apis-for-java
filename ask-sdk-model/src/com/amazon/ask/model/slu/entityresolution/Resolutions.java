@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.ArrayList;
 
 /**
  * Represents the results of resolving the words captured from the user&#39;s utterance. This is included for slots that use a custom slot type or a built-in slot type that you have extended with your own values. Note that resolutions is not included for built-in slot types that you have not extended.

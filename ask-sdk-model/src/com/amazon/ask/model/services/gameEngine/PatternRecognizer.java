@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.ArrayList;
 
 /**
  * This recognizer is true when all of the specified events have occurred in the specified order.

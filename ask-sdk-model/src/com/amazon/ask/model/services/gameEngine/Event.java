@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.ArrayList;
 
 /**
  * The events object is where you define the conditions that must be met for your skill to be notified of Echo Button input. You must define at least one event.

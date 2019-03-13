@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.ArrayList;
 
 /**
  * Sends Alexa a command to modify the behavior of connected Echo Buttons.

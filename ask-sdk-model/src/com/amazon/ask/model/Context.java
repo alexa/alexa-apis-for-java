@@ -31,6 +31,9 @@ public final class Context{
   @JsonProperty("AudioPlayer")
   private com.amazon.ask.model.interfaces.audioplayer.AudioPlayerState audioPlayer = null;
 
+  @JsonProperty("Automotive")
+  private com.amazon.ask.model.interfaces.automotive.AutomotiveState automotive = null;
+
   @JsonProperty("Display")
   private com.amazon.ask.model.interfaces.display.DisplayState display = null;
 
@@ -47,6 +50,7 @@ public final class Context{
   private Context(Builder builder) {
     this.system = builder.system;
     this.audioPlayer = builder.audioPlayer;
+    this.automotive = builder.automotive;
     this.display = builder.display;
     this.geolocation = builder.geolocation;
     this.viewport = builder.viewport;
@@ -66,6 +70,14 @@ public final class Context{
   **/
   public com.amazon.ask.model.interfaces.audioplayer.AudioPlayerState getAudioPlayer() {
     return audioPlayer;
+  }
+
+  /**
+    * Provides the automotive specific information of the device.
+  * @return automotive
+  **/
+  public com.amazon.ask.model.interfaces.automotive.AutomotiveState getAutomotive() {
+    return automotive;
   }
 
   /**
@@ -103,6 +115,7 @@ public final class Context{
     Context context = (Context) o;
     return Objects.equals(this.system, context.system) &&
         Objects.equals(this.audioPlayer, context.audioPlayer) &&
+        Objects.equals(this.automotive, context.automotive) &&
         Objects.equals(this.display, context.display) &&
         Objects.equals(this.geolocation, context.geolocation) &&
         Objects.equals(this.viewport, context.viewport);
@@ -110,7 +123,7 @@ public final class Context{
 
   @Override
   public int hashCode() {
-    return Objects.hash(system, audioPlayer, display, geolocation, viewport);
+    return Objects.hash(system, audioPlayer, automotive, display, geolocation, viewport);
   }
 
   @Override
@@ -120,6 +133,7 @@ public final class Context{
     
     sb.append("    system: ").append(toIndentedString(system)).append("\n");
     sb.append("    audioPlayer: ").append(toIndentedString(audioPlayer)).append("\n");
+    sb.append("    automotive: ").append(toIndentedString(automotive)).append("\n");
     sb.append("    display: ").append(toIndentedString(display)).append("\n");
     sb.append("    geolocation: ").append(toIndentedString(geolocation)).append("\n");
     sb.append("    viewport: ").append(toIndentedString(viewport)).append("\n");
@@ -141,6 +155,7 @@ public final class Context{
   public static class Builder {
     private com.amazon.ask.model.interfaces.system.SystemState system;
     private com.amazon.ask.model.interfaces.audioplayer.AudioPlayerState audioPlayer;
+    private com.amazon.ask.model.interfaces.automotive.AutomotiveState automotive;
     private com.amazon.ask.model.interfaces.display.DisplayState display;
     private com.amazon.ask.model.interfaces.geolocation.GeolocationState geolocation;
     private com.amazon.ask.model.interfaces.viewport.ViewportState viewport;
@@ -157,6 +172,13 @@ public final class Context{
     @JsonProperty("AudioPlayer")
     public Builder withAudioPlayer(com.amazon.ask.model.interfaces.audioplayer.AudioPlayerState audioPlayer) {
       this.audioPlayer = audioPlayer;
+      return this;
+    }
+      
+
+    @JsonProperty("Automotive")
+    public Builder withAutomotive(com.amazon.ask.model.interfaces.automotive.AutomotiveState automotive) {
+      this.automotive = automotive;
       return this;
     }
       

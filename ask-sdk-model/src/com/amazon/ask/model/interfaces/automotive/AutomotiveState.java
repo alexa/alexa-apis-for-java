@@ -12,39 +12,24 @@
 */
 
 
-package com.amazon.ask.model.services.reminderManagement;
+package com.amazon.ask.model.interfaces.automotive;
 
 import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.util.ArrayList;
 
 /**
- * ReminderDeletedEvent
+ * This object contains the automotive specific information of the device
  */
 
-@JsonDeserialize(builder = ReminderDeletedEvent.Builder.class)
-public final class ReminderDeletedEvent{
-
-  @JsonProperty("alertTokens")
-  private List<String> alertTokens = new ArrayList<String>();
+@JsonDeserialize(builder = AutomotiveState.Builder.class)
+public final class AutomotiveState{
 
   public static Builder builder() {
     return new Builder();
   }
 
-  private ReminderDeletedEvent(Builder builder) {
-    this.alertTokens = builder.alertTokens;
-  }
-
-  /**
-    * Get alertTokens
-  * @return alertTokens
-  **/
-  public List<String> getAlertTokens() {
-    return alertTokens;
+  private AutomotiveState(Builder builder) {
   }
 
   @Override
@@ -55,21 +40,19 @@ public final class ReminderDeletedEvent{
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ReminderDeletedEvent servicesReminderManagementReminderDeletedEvent = (ReminderDeletedEvent) o;
-    return Objects.equals(this.alertTokens, servicesReminderManagementReminderDeletedEvent.alertTokens);
+    return true;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(alertTokens);
+    return Objects.hash();
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ReminderDeletedEvent {\n");
+    sb.append("class AutomotiveState {\n");
     
-    sb.append("    alertTokens: ").append(toIndentedString(alertTokens)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -86,26 +69,11 @@ public final class ReminderDeletedEvent{
   }
 
   public static class Builder {
-    private List<String> alertTokens;
 
     private Builder() { }
 
-    @JsonProperty("alertTokens")
-    public Builder withAlertTokens(List<String> alertTokens) {
-      this.alertTokens = alertTokens;
-      return this;
-    }
-      
-    public Builder addAlertTokensItem(String alertTokensItem) {
-      if (this.alertTokens == null) {
-        this.alertTokens = new ArrayList<String>();
-      }
-      this.alertTokens.add(alertTokensItem);
-      return this;
-    }
-
-    public ReminderDeletedEvent build() {
-      return new ReminderDeletedEvent(this);
+    public AutomotiveState build() {
+      return new AutomotiveState(this);
     }
   }
 }
