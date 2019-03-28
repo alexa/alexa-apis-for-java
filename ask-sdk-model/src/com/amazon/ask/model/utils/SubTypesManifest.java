@@ -32,6 +32,7 @@ public class SubTypesManifest {
     directiveSubTypes.put("AudioPlayer.Play", com.amazon.ask.model.interfaces.audioplayer.PlayDirective.class);
     directiveSubTypes.put("Alexa.Presentation.APL.ExecuteCommands", com.amazon.ask.model.interfaces.alexa.presentation.apl.ExecuteCommandsDirective.class);
     directiveSubTypes.put("Connections.SendRequest", com.amazon.ask.model.interfaces.connections.SendRequestDirective.class);
+    directiveSubTypes.put("Dialog.UpdateDynamicEntities", com.amazon.ask.model.dialog.DynamicEntitiesDirective.class);
     directiveSubTypes.put("Display.RenderTemplate", com.amazon.ask.model.interfaces.display.RenderTemplateDirective.class);
     directiveSubTypes.put("GadgetController.SetLight", com.amazon.ask.model.interfaces.gadgetController.SetLightDirective.class);
     directiveSubTypes.put("Dialog.Delegate", com.amazon.ask.model.dialog.DelegateDirective.class);

@@ -31,6 +31,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.audioplayer.PlayDirective.class, name = "AudioPlayer.Play"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.ExecuteCommandsDirective.class, name = "Alexa.Presentation.APL.ExecuteCommands"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.connections.SendRequestDirective.class, name = "Connections.SendRequest"),
+  @JsonSubTypes.Type(value = com.amazon.ask.model.dialog.DynamicEntitiesDirective.class, name = "Dialog.UpdateDynamicEntities"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.display.RenderTemplateDirective.class, name = "Display.RenderTemplate"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.gadgetController.SetLightDirective.class, name = "GadgetController.SetLight"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.dialog.DelegateDirective.class, name = "Dialog.Delegate"),
