@@ -21,6 +21,7 @@ import com.amazon.ask.model.services.listManagement.ListManagementServiceClient;
 import com.amazon.ask.model.services.monetization.MonetizationServiceClient;
 import com.amazon.ask.model.services.proactiveEvents.ProactiveEventsServiceClient;
 import com.amazon.ask.model.services.reminderManagement.ReminderManagementServiceClient;
+import com.amazon.ask.model.services.skillMessaging.SkillMessagingServiceClient;
 import com.amazon.ask.model.services.ups.UpsServiceClient;
 
 /**
