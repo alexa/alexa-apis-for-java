@@ -56,6 +56,9 @@ public final class ViewportState{
   @JsonProperty("keyboard")
   private List<com.amazon.ask.model.interfaces.viewport.Keyboard> keyboard = new ArrayList<com.amazon.ask.model.interfaces.viewport.Keyboard>();
 
+  @JsonProperty("video")
+  private com.amazon.ask.model.interfaces.viewport.ViewportStateVideo video = null;
+
   public static Builder builder() {
     return new Builder();
   }
@@ -70,6 +73,7 @@ public final class ViewportState{
     this.currentPixelHeight = builder.currentPixelHeight;
     this.touch = builder.touch;
     this.keyboard = builder.keyboard;
+    this.video = builder.video;
   }
 
   /**
@@ -144,6 +148,14 @@ public final class ViewportState{
     return keyboard;
   }
 
+  /**
+    * Get video
+  * @return video
+  **/
+  public com.amazon.ask.model.interfaces.viewport.ViewportStateVideo getVideo() {
+    return video;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -161,12 +173,13 @@ public final class ViewportState{
         Objects.equals(this.currentPixelWidth, interfacesViewportViewportState.currentPixelWidth) &&
         Objects.equals(this.currentPixelHeight, interfacesViewportViewportState.currentPixelHeight) &&
         Objects.equals(this.touch, interfacesViewportViewportState.touch) &&
-        Objects.equals(this.keyboard, interfacesViewportViewportState.keyboard);
+        Objects.equals(this.keyboard, interfacesViewportViewportState.keyboard) &&
+        Objects.equals(this.video, interfacesViewportViewportState.video);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(experiences, shape, pixelWidth, pixelHeight, dpi, currentPixelWidth, currentPixelHeight, touch, keyboard);
+    return Objects.hash(experiences, shape, pixelWidth, pixelHeight, dpi, currentPixelWidth, currentPixelHeight, touch, keyboard, video);
   }
 
   @Override
@@ -183,6 +196,7 @@ public final class ViewportState{
     sb.append("    currentPixelHeight: ").append(toIndentedString(currentPixelHeight)).append("\n");
     sb.append("    touch: ").append(toIndentedString(touch)).append("\n");
     sb.append("    keyboard: ").append(toIndentedString(keyboard)).append("\n");
+    sb.append("    video: ").append(toIndentedString(video)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -208,6 +222,7 @@ public final class ViewportState{
     private BigDecimal currentPixelHeight;
     private List<com.amazon.ask.model.interfaces.viewport.Touch> touch;
     private List<com.amazon.ask.model.interfaces.viewport.Keyboard> keyboard;
+    private com.amazon.ask.model.interfaces.viewport.ViewportStateVideo video;
 
     private Builder() { }
 
@@ -294,6 +309,13 @@ public final class ViewportState{
       this.keyboard.add(keyboardItem);
       return this;
     }
+
+    @JsonProperty("video")
+    public Builder withVideo(com.amazon.ask.model.interfaces.viewport.ViewportStateVideo video) {
+      this.video = video;
+      return this;
+    }
+      
 
     public ViewportState build() {
       return new ViewportState(this);
