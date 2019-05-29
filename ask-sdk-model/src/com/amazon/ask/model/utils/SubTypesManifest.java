@@ -99,6 +99,7 @@ public class SubTypesManifest {
     interfacesAlexaPresentationAplCommandSubTypes.put("ScrollToIndex", com.amazon.ask.model.interfaces.alexa.presentation.apl.ScrollToIndexCommand.class);
     interfacesAlexaPresentationAplCommandSubTypes.put("Scroll", com.amazon.ask.model.interfaces.alexa.presentation.apl.ScrollCommand.class);
     interfacesAlexaPresentationAplCommandSubTypes.put("Idle", com.amazon.ask.model.interfaces.alexa.presentation.apl.IdleCommand.class);
+    interfacesAlexaPresentationAplCommandSubTypes.put("SetValue", com.amazon.ask.model.interfaces.alexa.presentation.apl.SetValueCommand.class);
     interfacesAlexaPresentationAplCommandSubTypes.put("SendEvent", com.amazon.ask.model.interfaces.alexa.presentation.apl.SendEventCommand.class);
     interfacesAlexaPresentationAplCommandSubTypes.put("SpeakList", com.amazon.ask.model.interfaces.alexa.presentation.apl.SpeakListCommand.class);
     baseTypes.put(com.amazon.ask.model.interfaces.alexa.presentation.apl.Command.class, interfacesAlexaPresentationAplCommandSubTypes);

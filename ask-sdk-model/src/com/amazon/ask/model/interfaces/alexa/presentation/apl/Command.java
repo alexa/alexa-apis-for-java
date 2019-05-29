@@ -37,6 +37,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.ScrollToIndexCommand.class, name = "ScrollToIndex"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.ScrollCommand.class, name = "Scroll"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.IdleCommand.class, name = "Idle"),
+  @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.SetValueCommand.class, name = "SetValue"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.SendEventCommand.class, name = "SendEvent"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.SpeakListCommand.class, name = "SpeakList"),
 })
