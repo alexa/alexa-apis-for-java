@@ -104,17 +104,17 @@ public final class AudioItem{
 
     @JsonProperty("stream")
     public Builder withStream(com.amazon.ask.model.interfaces.audioplayer.Stream stream) {
-      this.stream = stream;
-      return this;
+        this.stream = stream;
+        return this;
     }
-      
+
 
     @JsonProperty("metadata")
     public Builder withMetadata(com.amazon.ask.model.interfaces.audioplayer.AudioItemMetadata metadata) {
-      this.metadata = metadata;
-      return this;
+        this.metadata = metadata;
+        return this;
     }
-      
+
 
     public AudioItem build() {
       return new AudioItem(this);

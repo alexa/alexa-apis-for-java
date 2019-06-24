@@ -104,17 +104,17 @@ public final class CreateListRequest{
 
     @JsonProperty("name")
     public Builder withName(String name) {
-      this.name = name;
-      return this;
+        this.name = name;
+        return this;
     }
-      
+
 
     @JsonProperty("state")
     public Builder withState(com.amazon.ask.model.services.listManagement.ListState state) {
-      this.state = state;
-      return this;
+        this.state = state;
+        return this;
     }
-      
+
 
     public CreateListRequest build() {
       return new CreateListRequest(this);

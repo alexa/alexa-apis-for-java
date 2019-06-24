@@ -151,38 +151,38 @@ public final class Trigger{
 
     @JsonProperty("type")
     public Builder withType(com.amazon.ask.model.services.reminderManagement.TriggerType type) {
-      this.type = type;
-      return this;
+        this.type = type;
+        return this;
     }
-      
+
 
     @JsonProperty("scheduledTime")
     public Builder withScheduledTime(LocalDateTime scheduledTime) {
-      this.scheduledTime = scheduledTime;
-      return this;
+        this.scheduledTime = scheduledTime;
+        return this;
     }
-      
+
 
     @JsonProperty("offsetInSeconds")
     public Builder withOffsetInSeconds(Integer offsetInSeconds) {
-      this.offsetInSeconds = offsetInSeconds;
-      return this;
+        this.offsetInSeconds = offsetInSeconds;
+        return this;
     }
-      
+
 
     @JsonProperty("timeZoneId")
     public Builder withTimeZoneId(String timeZoneId) {
-      this.timeZoneId = timeZoneId;
-      return this;
+        this.timeZoneId = timeZoneId;
+        return this;
     }
-      
+
 
     @JsonProperty("recurrence")
     public Builder withRecurrence(com.amazon.ask.model.services.reminderManagement.Recurrence recurrence) {
-      this.recurrence = recurrence;
-      return this;
+        this.recurrence = recurrence;
+        return this;
     }
-      
+
 
     public Trigger build() {
       return new Trigger(this);

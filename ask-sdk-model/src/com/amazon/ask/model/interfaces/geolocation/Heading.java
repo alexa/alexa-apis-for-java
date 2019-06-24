@@ -104,17 +104,17 @@ public final class Heading{
 
     @JsonProperty("directionInDegrees")
     public Builder withDirectionInDegrees(Double directionInDegrees) {
-      this.directionInDegrees = directionInDegrees;
-      return this;
+        this.directionInDegrees = directionInDegrees;
+        return this;
     }
-      
+
 
     @JsonProperty("accuracyInDegrees")
     public Builder withAccuracyInDegrees(Double accuracyInDegrees) {
-      this.accuracyInDegrees = accuracyInDegrees;
-      return this;
+        this.accuracyInDegrees = accuracyInDegrees;
+        return this;
     }
-      
+
 
     public Heading build() {
       return new Heading(this);

@@ -104,17 +104,17 @@ public final class CreateListItemRequest{
 
     @JsonProperty("value")
     public Builder withValue(String value) {
-      this.value = value;
-      return this;
+        this.value = value;
+        return this;
     }
-      
+
 
     @JsonProperty("status")
     public Builder withStatus(com.amazon.ask.model.services.listManagement.ListItemState status) {
-      this.status = status;
-      return this;
+        this.status = status;
+        return this;
     }
-      
+
 
     public CreateListItemRequest build() {
       return new CreateListItemRequest(this);

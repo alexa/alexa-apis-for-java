@@ -92,21 +92,20 @@ public final class PlainTextOutputSpeech extends com.amazon.ask.model.ui.OutputS
     private String text;
 
     private Builder() { }
-      
 
     @JsonProperty("playBehavior")
     public Builder withPlayBehavior(com.amazon.ask.model.ui.PlayBehavior playBehavior) {
-      this.playBehavior = playBehavior;
-      return this;
+        this.playBehavior = playBehavior;
+        return this;
     }
-      
+
 
     @JsonProperty("text")
     public Builder withText(String text) {
-      this.text = text;
-      return this;
+        this.text = text;
+        return this;
     }
-      
+
 
     public PlainTextOutputSpeech build() {
       return new PlainTextOutputSpeech(this);

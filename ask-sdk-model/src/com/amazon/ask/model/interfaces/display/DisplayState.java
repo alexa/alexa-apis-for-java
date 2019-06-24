@@ -89,10 +89,10 @@ public final class DisplayState{
 
     @JsonProperty("token")
     public Builder withToken(String token) {
-      this.token = token;
-      return this;
+        this.token = token;
+        return this;
     }
-      
+
 
     public DisplayState build() {
       return new DisplayState(this);

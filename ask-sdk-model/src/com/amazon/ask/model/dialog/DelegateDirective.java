@@ -90,14 +90,13 @@ public final class DelegateDirective extends com.amazon.ask.model.Directive {
     private com.amazon.ask.model.Intent updatedIntent;
 
     private Builder() { }
-      
 
     @JsonProperty("updatedIntent")
     public Builder withUpdatedIntent(com.amazon.ask.model.Intent updatedIntent) {
-      this.updatedIntent = updatedIntent;
-      return this;
+        this.updatedIntent = updatedIntent;
+        return this;
     }
-      
+
 
     public DelegateDirective build() {
       return new DelegateDirective(this);

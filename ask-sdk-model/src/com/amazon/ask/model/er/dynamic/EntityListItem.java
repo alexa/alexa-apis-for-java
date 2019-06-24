@@ -107,17 +107,17 @@ public final class EntityListItem{
 
     @JsonProperty("name")
     public Builder withName(String name) {
-      this.name = name;
-      return this;
+        this.name = name;
+        return this;
     }
-      
+
 
     @JsonProperty("values")
     public Builder withValues(List<com.amazon.ask.model.er.dynamic.Entity> values) {
-      this.values = values;
-      return this;
+        this.values = values;
+        return this;
     }
-      
+
     public Builder addValuesItem(com.amazon.ask.model.er.dynamic.Entity valuesItem) {
       if (this.values == null) {
         this.values = new ArrayList<com.amazon.ask.model.er.dynamic.Entity>();

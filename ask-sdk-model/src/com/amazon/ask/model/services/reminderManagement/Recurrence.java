@@ -122,17 +122,17 @@ public final class Recurrence{
 
     @JsonProperty("freq")
     public Builder withFreq(com.amazon.ask.model.services.reminderManagement.RecurrenceFreq freq) {
-      this.freq = freq;
-      return this;
+        this.freq = freq;
+        return this;
     }
-      
+
 
     @JsonProperty("byDay")
     public Builder withByDay(List<com.amazon.ask.model.services.reminderManagement.RecurrenceDay> byDay) {
-      this.byDay = byDay;
-      return this;
+        this.byDay = byDay;
+        return this;
     }
-      
+
     public Builder addByDayItem(com.amazon.ask.model.services.reminderManagement.RecurrenceDay byDayItem) {
       if (this.byDay == null) {
         this.byDay = new ArrayList<com.amazon.ask.model.services.reminderManagement.RecurrenceDay>();
@@ -143,10 +143,10 @@ public final class Recurrence{
 
     @JsonProperty("interval")
     public Builder withInterval(Integer interval) {
-      this.interval = interval;
-      return this;
+        this.interval = interval;
+        return this;
     }
-      
+
 
     public Recurrence build() {
       return new Recurrence(this);

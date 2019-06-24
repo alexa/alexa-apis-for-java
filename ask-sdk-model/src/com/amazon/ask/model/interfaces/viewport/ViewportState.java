@@ -228,10 +228,10 @@ public final class ViewportState{
 
     @JsonProperty("experiences")
     public Builder withExperiences(List<com.amazon.ask.model.interfaces.viewport.Experience> experiences) {
-      this.experiences = experiences;
-      return this;
+        this.experiences = experiences;
+        return this;
     }
-      
+
     public Builder addExperiencesItem(com.amazon.ask.model.interfaces.viewport.Experience experiencesItem) {
       if (this.experiences == null) {
         this.experiences = new ArrayList<com.amazon.ask.model.interfaces.viewport.Experience>();
@@ -242,52 +242,52 @@ public final class ViewportState{
 
     @JsonProperty("shape")
     public Builder withShape(com.amazon.ask.model.interfaces.viewport.Shape shape) {
-      this.shape = shape;
-      return this;
+        this.shape = shape;
+        return this;
     }
-      
+
 
     @JsonProperty("pixelWidth")
     public Builder withPixelWidth(BigDecimal pixelWidth) {
-      this.pixelWidth = pixelWidth;
-      return this;
+        this.pixelWidth = pixelWidth;
+        return this;
     }
-      
+
 
     @JsonProperty("pixelHeight")
     public Builder withPixelHeight(BigDecimal pixelHeight) {
-      this.pixelHeight = pixelHeight;
-      return this;
+        this.pixelHeight = pixelHeight;
+        return this;
     }
-      
+
 
     @JsonProperty("dpi")
     public Builder withDpi(BigDecimal dpi) {
-      this.dpi = dpi;
-      return this;
+        this.dpi = dpi;
+        return this;
     }
-      
+
 
     @JsonProperty("currentPixelWidth")
     public Builder withCurrentPixelWidth(BigDecimal currentPixelWidth) {
-      this.currentPixelWidth = currentPixelWidth;
-      return this;
+        this.currentPixelWidth = currentPixelWidth;
+        return this;
     }
-      
+
 
     @JsonProperty("currentPixelHeight")
     public Builder withCurrentPixelHeight(BigDecimal currentPixelHeight) {
-      this.currentPixelHeight = currentPixelHeight;
-      return this;
+        this.currentPixelHeight = currentPixelHeight;
+        return this;
     }
-      
+
 
     @JsonProperty("touch")
     public Builder withTouch(List<com.amazon.ask.model.interfaces.viewport.Touch> touch) {
-      this.touch = touch;
-      return this;
+        this.touch = touch;
+        return this;
     }
-      
+
     public Builder addTouchItem(com.amazon.ask.model.interfaces.viewport.Touch touchItem) {
       if (this.touch == null) {
         this.touch = new ArrayList<com.amazon.ask.model.interfaces.viewport.Touch>();
@@ -298,10 +298,10 @@ public final class ViewportState{
 
     @JsonProperty("keyboard")
     public Builder withKeyboard(List<com.amazon.ask.model.interfaces.viewport.Keyboard> keyboard) {
-      this.keyboard = keyboard;
-      return this;
+        this.keyboard = keyboard;
+        return this;
     }
-      
+
     public Builder addKeyboardItem(com.amazon.ask.model.interfaces.viewport.Keyboard keyboardItem) {
       if (this.keyboard == null) {
         this.keyboard = new ArrayList<com.amazon.ask.model.interfaces.viewport.Keyboard>();
@@ -312,10 +312,10 @@ public final class ViewportState{
 
     @JsonProperty("video")
     public Builder withVideo(com.amazon.ask.model.interfaces.viewport.ViewportStateVideo video) {
-      this.video = video;
-      return this;
+        this.video = video;
+        return this;
     }
-      
+
 
     public ViewportState build() {
       return new ViewportState(this);

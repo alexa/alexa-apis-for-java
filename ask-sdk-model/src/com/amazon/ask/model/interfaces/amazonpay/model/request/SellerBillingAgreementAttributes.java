@@ -125,32 +125,31 @@ public final class SellerBillingAgreementAttributes extends com.amazon.ask.model
 
     @JsonProperty("sellerBillingAgreementId")
     public Builder withSellerBillingAgreementId(String sellerBillingAgreementId) {
-      this.sellerBillingAgreementId = sellerBillingAgreementId;
-      return this;
+        this.sellerBillingAgreementId = sellerBillingAgreementId;
+        return this;
     }
-      
+
 
     @JsonProperty("storeName")
     public Builder withStoreName(String storeName) {
-      this.storeName = storeName;
-      return this;
+        this.storeName = storeName;
+        return this;
     }
-      
+
 
     @JsonProperty("customInformation")
     public Builder withCustomInformation(String customInformation) {
-      this.customInformation = customInformation;
-      return this;
+        this.customInformation = customInformation;
+        return this;
     }
-      
-      
+
 
     @JsonProperty("@version")
     public Builder withVersion(String version) {
-      this.version = version;
-      return this;
+        this.version = version;
+        return this;
     }
-      
+
 
     public SellerBillingAgreementAttributes build() {
       return new SellerBillingAgreementAttributes(this);

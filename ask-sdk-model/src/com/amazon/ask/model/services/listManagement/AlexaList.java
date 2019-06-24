@@ -167,38 +167,38 @@ public final class AlexaList{
 
     @JsonProperty("listId")
     public Builder withListId(String listId) {
-      this.listId = listId;
-      return this;
+        this.listId = listId;
+        return this;
     }
-      
+
 
     @JsonProperty("name")
     public Builder withName(String name) {
-      this.name = name;
-      return this;
+        this.name = name;
+        return this;
     }
-      
+
 
     @JsonProperty("state")
     public Builder withState(com.amazon.ask.model.services.listManagement.ListState state) {
-      this.state = state;
-      return this;
+        this.state = state;
+        return this;
     }
-      
+
 
     @JsonProperty("version")
     public Builder withVersion(Long version) {
-      this.version = version;
-      return this;
+        this.version = version;
+        return this;
     }
-      
+
 
     @JsonProperty("items")
     public Builder withItems(List<com.amazon.ask.model.services.listManagement.AlexaListItem> items) {
-      this.items = items;
-      return this;
+        this.items = items;
+        return this;
     }
-      
+
     public Builder addItemsItem(com.amazon.ask.model.services.listManagement.AlexaListItem itemsItem) {
       if (this.items == null) {
         this.items = new ArrayList<com.amazon.ask.model.services.listManagement.AlexaListItem>();
@@ -209,10 +209,10 @@ public final class AlexaList{
 
     @JsonProperty("links")
     public Builder withLinks(com.amazon.ask.model.services.listManagement.Links links) {
-      this.links = links;
-      return this;
+        this.links = links;
+        return this;
     }
-      
+
 
     public AlexaList build() {
       return new AlexaList(this);

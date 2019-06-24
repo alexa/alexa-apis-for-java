@@ -122,17 +122,17 @@ public final class Intent{
 
     @JsonProperty("name")
     public Builder withName(String name) {
-      this.name = name;
-      return this;
+        this.name = name;
+        return this;
     }
-      
+
 
     @JsonProperty("slots")
     public Builder withSlots(Map<String, com.amazon.ask.model.Slot> slots) {
-      this.slots = slots;
-      return this;
+        this.slots = slots;
+        return this;
     }
-      
+
     public Builder putSlotsItem(String key, com.amazon.ask.model.Slot slotsItem) {
       if (this.slots == null) {
         this.slots = new HashMap<String, com.amazon.ask.model.Slot>();
@@ -143,10 +143,10 @@ public final class Intent{
 
     @JsonProperty("confirmationStatus")
     public Builder withConfirmationStatus(com.amazon.ask.model.IntentConfirmationStatus confirmationStatus) {
-      this.confirmationStatus = confirmationStatus;
-      return this;
+        this.confirmationStatus = confirmationStatus;
+        return this;
     }
-      
+
 
     public Intent build() {
       return new Intent(this);

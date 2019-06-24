@@ -89,10 +89,10 @@ public final class Permission{
 
     @JsonProperty("scope")
     public Builder withScope(String scope) {
-      this.scope = scope;
-      return this;
+        this.scope = scope;
+        return this;
     }
-      
+
 
     public Permission build() {
       return new Permission(this);

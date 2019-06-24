@@ -104,17 +104,17 @@ public final class Metadata{
 
     @JsonProperty("title")
     public Builder withTitle(String title) {
-      this.title = title;
-      return this;
+        this.title = title;
+        return this;
     }
-      
+
 
     @JsonProperty("subtitle")
     public Builder withSubtitle(String subtitle) {
-      this.subtitle = subtitle;
-      return this;
+        this.subtitle = subtitle;
+        return this;
     }
-      
+
 
     public Metadata build() {
       return new Metadata(this);

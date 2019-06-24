@@ -122,24 +122,24 @@ public final class SetLightParameters{
 
     @JsonProperty("triggerEvent")
     public Builder withTriggerEvent(com.amazon.ask.model.services.gadgetController.TriggerEventType triggerEvent) {
-      this.triggerEvent = triggerEvent;
-      return this;
+        this.triggerEvent = triggerEvent;
+        return this;
     }
-      
+
 
     @JsonProperty("triggerEventTimeMs")
     public Builder withTriggerEventTimeMs(Integer triggerEventTimeMs) {
-      this.triggerEventTimeMs = triggerEventTimeMs;
-      return this;
+        this.triggerEventTimeMs = triggerEventTimeMs;
+        return this;
     }
-      
+
 
     @JsonProperty("animations")
     public Builder withAnimations(List<com.amazon.ask.model.services.gadgetController.LightAnimation> animations) {
-      this.animations = animations;
-      return this;
+        this.animations = animations;
+        return this;
     }
-      
+
     public Builder addAnimationsItem(com.amazon.ask.model.services.gadgetController.LightAnimation animationsItem) {
       if (this.animations == null) {
         this.animations = new ArrayList<com.amazon.ask.model.services.gadgetController.LightAnimation>();

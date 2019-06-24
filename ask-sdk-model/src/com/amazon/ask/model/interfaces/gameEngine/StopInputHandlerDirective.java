@@ -90,14 +90,13 @@ public final class StopInputHandlerDirective extends com.amazon.ask.model.Direct
     private String originatingRequestId;
 
     private Builder() { }
-      
 
     @JsonProperty("originatingRequestId")
     public Builder withOriginatingRequestId(String originatingRequestId) {
-      this.originatingRequestId = originatingRequestId;
-      return this;
+        this.originatingRequestId = originatingRequestId;
+        return this;
     }
-      
+
 
     public StopInputHandlerDirective build() {
       return new StopInputHandlerDirective(this);

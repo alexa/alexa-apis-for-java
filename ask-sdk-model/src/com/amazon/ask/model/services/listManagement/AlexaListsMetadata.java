@@ -92,10 +92,10 @@ public final class AlexaListsMetadata{
 
     @JsonProperty("lists")
     public Builder withLists(List<com.amazon.ask.model.services.listManagement.AlexaListMetadata> lists) {
-      this.lists = lists;
-      return this;
+        this.lists = lists;
+        return this;
     }
-      
+
     public Builder addListsItem(com.amazon.ask.model.services.listManagement.AlexaListMetadata listsItem) {
       if (this.lists == null) {
         this.lists = new ArrayList<com.amazon.ask.model.services.listManagement.AlexaListMetadata>();

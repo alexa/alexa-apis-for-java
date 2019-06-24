@@ -120,28 +120,27 @@ public final class StandardCard extends com.amazon.ask.model.ui.Card {
     private com.amazon.ask.model.ui.Image image;
 
     private Builder() { }
-      
 
     @JsonProperty("title")
     public Builder withTitle(String title) {
-      this.title = title;
-      return this;
+        this.title = title;
+        return this;
     }
-      
+
 
     @JsonProperty("text")
     public Builder withText(String text) {
-      this.text = text;
-      return this;
+        this.text = text;
+        return this;
     }
-      
+
 
     @JsonProperty("image")
     public Builder withImage(com.amazon.ask.model.ui.Image image) {
-      this.image = image;
-      return this;
+        this.image = image;
+        return this;
     }
-      
+
 
     public StandardCard build() {
       return new StandardCard(this);

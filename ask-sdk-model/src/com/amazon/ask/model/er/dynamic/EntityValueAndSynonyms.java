@@ -107,17 +107,17 @@ public final class EntityValueAndSynonyms{
 
     @JsonProperty("value")
     public Builder withValue(String value) {
-      this.value = value;
-      return this;
+        this.value = value;
+        return this;
     }
-      
+
 
     @JsonProperty("synonyms")
     public Builder withSynonyms(List<String> synonyms) {
-      this.synonyms = synonyms;
-      return this;
+        this.synonyms = synonyms;
+        return this;
     }
-      
+
     public Builder addSynonymsItem(String synonymsItem) {
       if (this.synonyms == null) {
         this.synonyms = new ArrayList<String>();

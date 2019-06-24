@@ -26,7 +26,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public final class ScrollCommand extends com.amazon.ask.model.interfaces.alexa.presentation.apl.Command {
 
   @JsonProperty("distance")
-  private Integer distance = null;
+  private String distance = String.valueOf(null);
 
   @JsonProperty("componentId")
   private String componentId = null;
@@ -50,7 +50,7 @@ public final class ScrollCommand extends com.amazon.ask.model.interfaces.alexa.p
     * The number of pages to scroll. Defaults to 1.
   * @return distance
   **/
-  public Integer getDistance() {
+  public String getDistance() {
     return distance;
   }
 
@@ -104,49 +104,56 @@ public final class ScrollCommand extends com.amazon.ask.model.interfaces.alexa.p
   }
 
   public static class Builder {
-    private Integer delay;
+    private String delay;
     private String description;
     private Boolean when;
-    private Integer distance;
+    private String distance;
     private String componentId;
 
     private Builder() { }
-      
 
     @JsonProperty("delay")
     public Builder withDelay(Integer delay) {
-      this.delay = delay;
-      return this;
+        this.delay = String.valueOf(delay);
+        return this;
     }
-      
+
+    public Builder withDelay(String delayExpression) {
+        this.delay = delayExpression;
+        return this;
+    }
 
     @JsonProperty("description")
     public Builder withDescription(String description) {
-      this.description = description;
-      return this;
+        this.description = description;
+        return this;
     }
-      
+
 
     @JsonProperty("when")
     public Builder withWhen(Boolean when) {
-      this.when = when;
-      return this;
+        this.when = when;
+        return this;
     }
-      
+
 
     @JsonProperty("distance")
     public Builder withDistance(Integer distance) {
-      this.distance = distance;
-      return this;
+        this.distance = String.valueOf(distance);
+        return this;
     }
-      
+
+    public Builder withDistance(String distanceExpression) {
+        this.distance = distanceExpression;
+        return this;
+    }
 
     @JsonProperty("componentId")
     public Builder withComponentId(String componentId) {
-      this.componentId = componentId;
-      return this;
+        this.componentId = componentId;
+        return this;
     }
-      
+
 
     public ScrollCommand build() {
       return new ScrollCommand(this);

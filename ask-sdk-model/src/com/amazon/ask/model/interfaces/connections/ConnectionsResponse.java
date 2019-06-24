@@ -145,49 +145,48 @@ public final class ConnectionsResponse extends com.amazon.ask.model.Request {
     private String token;
 
     private Builder() { }
-      
 
     @JsonProperty("requestId")
     public Builder withRequestId(String requestId) {
-      this.requestId = requestId;
-      return this;
+        this.requestId = requestId;
+        return this;
     }
-      
+
 
     @JsonProperty("timestamp")
     public Builder withTimestamp(OffsetDateTime timestamp) {
-      this.timestamp = timestamp;
-      return this;
+        this.timestamp = timestamp;
+        return this;
     }
-      
+
 
     @JsonProperty("locale")
     public Builder withLocale(String locale) {
-      this.locale = locale;
-      return this;
+        this.locale = locale;
+        return this;
     }
-      
+
 
     @JsonProperty("status")
     public Builder withStatus(com.amazon.ask.model.interfaces.connections.ConnectionsStatus status) {
-      this.status = status;
-      return this;
+        this.status = status;
+        return this;
     }
-      
+
 
     @JsonProperty("name")
     public Builder withName(String name) {
-      this.name = name;
-      return this;
+        this.name = name;
+        return this;
     }
-      
+
 
     @JsonProperty("payload")
     public Builder withPayload(Map<String, Object> payload) {
-      this.payload = payload;
-      return this;
+        this.payload = payload;
+        return this;
     }
-      
+
     public Builder putPayloadItem(String key, Object payloadItem) {
       if (this.payload == null) {
         this.payload = new HashMap<String, Object>();
@@ -198,10 +197,10 @@ public final class ConnectionsResponse extends com.amazon.ask.model.Request {
 
     @JsonProperty("token")
     public Builder withToken(String token) {
-      this.token = token;
-      return this;
+        this.token = token;
+        return this;
     }
-      
+
 
     public ConnectionsResponse build() {
       return new ConnectionsResponse(this);

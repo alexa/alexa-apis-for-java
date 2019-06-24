@@ -104,17 +104,17 @@ public final class Event{
 
     @JsonProperty("name")
     public Builder withName(String name) {
-      this.name = name;
-      return this;
+        this.name = name;
+        return this;
     }
-      
+
 
     @JsonProperty("payload")
     public Builder withPayload(Object payload) {
-      this.payload = payload;
-      return this;
+        this.payload = payload;
+        return this;
     }
-      
+
 
     public Event build() {
       return new Event(this);

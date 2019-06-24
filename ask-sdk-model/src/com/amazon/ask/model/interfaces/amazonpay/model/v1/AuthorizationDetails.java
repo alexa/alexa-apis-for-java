@@ -273,52 +273,52 @@ public final class AuthorizationDetails{
 
     @JsonProperty("amazonAuthorizationId")
     public Builder withAmazonAuthorizationId(String amazonAuthorizationId) {
-      this.amazonAuthorizationId = amazonAuthorizationId;
-      return this;
+        this.amazonAuthorizationId = amazonAuthorizationId;
+        return this;
     }
-      
+
 
     @JsonProperty("authorizationReferenceId")
     public Builder withAuthorizationReferenceId(String authorizationReferenceId) {
-      this.authorizationReferenceId = authorizationReferenceId;
-      return this;
+        this.authorizationReferenceId = authorizationReferenceId;
+        return this;
     }
-      
+
 
     @JsonProperty("sellerAuthorizationNote")
     public Builder withSellerAuthorizationNote(String sellerAuthorizationNote) {
-      this.sellerAuthorizationNote = sellerAuthorizationNote;
-      return this;
+        this.sellerAuthorizationNote = sellerAuthorizationNote;
+        return this;
     }
-      
+
 
     @JsonProperty("authorizationAmount")
     public Builder withAuthorizationAmount(com.amazon.ask.model.interfaces.amazonpay.model.v1.Price authorizationAmount) {
-      this.authorizationAmount = authorizationAmount;
-      return this;
+        this.authorizationAmount = authorizationAmount;
+        return this;
     }
-      
+
 
     @JsonProperty("capturedAmount")
     public Builder withCapturedAmount(com.amazon.ask.model.interfaces.amazonpay.model.v1.Price capturedAmount) {
-      this.capturedAmount = capturedAmount;
-      return this;
+        this.capturedAmount = capturedAmount;
+        return this;
     }
-      
+
 
     @JsonProperty("authorizationFee")
     public Builder withAuthorizationFee(com.amazon.ask.model.interfaces.amazonpay.model.v1.Price authorizationFee) {
-      this.authorizationFee = authorizationFee;
-      return this;
+        this.authorizationFee = authorizationFee;
+        return this;
     }
-      
+
 
     @JsonProperty("idList")
     public Builder withIdList(List<String> idList) {
-      this.idList = idList;
-      return this;
+        this.idList = idList;
+        return this;
     }
-      
+
     public Builder addIdListItem(String idListItem) {
       if (this.idList == null) {
         this.idList = new ArrayList<String>();
@@ -329,45 +329,45 @@ public final class AuthorizationDetails{
 
     @JsonProperty("creationTimestamp")
     public Builder withCreationTimestamp(OffsetDateTime creationTimestamp) {
-      this.creationTimestamp = creationTimestamp;
-      return this;
+        this.creationTimestamp = creationTimestamp;
+        return this;
     }
-      
+
 
     @JsonProperty("expirationTimestamp")
     public Builder withExpirationTimestamp(OffsetDateTime expirationTimestamp) {
-      this.expirationTimestamp = expirationTimestamp;
-      return this;
+        this.expirationTimestamp = expirationTimestamp;
+        return this;
     }
-      
+
 
     @JsonProperty("authorizationStatus")
     public Builder withAuthorizationStatus(com.amazon.ask.model.interfaces.amazonpay.model.v1.AuthorizationStatus authorizationStatus) {
-      this.authorizationStatus = authorizationStatus;
-      return this;
+        this.authorizationStatus = authorizationStatus;
+        return this;
     }
-      
+
 
     @JsonProperty("softDecline")
     public Builder withSoftDecline(Boolean softDecline) {
-      this.softDecline = softDecline;
-      return this;
+        this.softDecline = softDecline;
+        return this;
     }
-      
+
 
     @JsonProperty("captureNow")
     public Builder withCaptureNow(Boolean captureNow) {
-      this.captureNow = captureNow;
-      return this;
+        this.captureNow = captureNow;
+        return this;
     }
-      
+
 
     @JsonProperty("softDescriptor")
     public Builder withSoftDescriptor(String softDescriptor) {
-      this.softDescriptor = softDescriptor;
-      return this;
+        this.softDescriptor = softDescriptor;
+        return this;
     }
-      
+
 
     public AuthorizationDetails build() {
       return new AuthorizationDetails(this);

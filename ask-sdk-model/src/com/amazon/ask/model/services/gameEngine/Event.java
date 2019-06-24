@@ -171,17 +171,17 @@ public final class Event{
 
     @JsonProperty("shouldEndInputHandler")
     public Builder withShouldEndInputHandler(Boolean shouldEndInputHandler) {
-      this.shouldEndInputHandler = shouldEndInputHandler;
-      return this;
+        this.shouldEndInputHandler = shouldEndInputHandler;
+        return this;
     }
-      
+
 
     @JsonProperty("meets")
     public Builder withMeets(List<String> meets) {
-      this.meets = meets;
-      return this;
+        this.meets = meets;
+        return this;
     }
-      
+
     public Builder addMeetsItem(String meetsItem) {
       if (this.meets == null) {
         this.meets = new ArrayList<String>();
@@ -192,10 +192,10 @@ public final class Event{
 
     @JsonProperty("fails")
     public Builder withFails(List<String> fails) {
-      this.fails = fails;
-      return this;
+        this.fails = fails;
+        return this;
     }
-      
+
     public Builder addFailsItem(String failsItem) {
       if (this.fails == null) {
         this.fails = new ArrayList<String>();
@@ -206,24 +206,24 @@ public final class Event{
 
     @JsonProperty("reports")
     public Builder withReports(com.amazon.ask.model.services.gameEngine.EventReportingType reports) {
-      this.reports = reports;
-      return this;
+        this.reports = reports;
+        return this;
     }
-      
+
 
     @JsonProperty("maximumInvocations")
     public Builder withMaximumInvocations(Integer maximumInvocations) {
-      this.maximumInvocations = maximumInvocations;
-      return this;
+        this.maximumInvocations = maximumInvocations;
+        return this;
     }
-      
+
 
     @JsonProperty("triggerTimeMilliseconds")
     public Builder withTriggerTimeMilliseconds(Long triggerTimeMilliseconds) {
-      this.triggerTimeMilliseconds = triggerTimeMilliseconds;
-      return this;
+        this.triggerTimeMilliseconds = triggerTimeMilliseconds;
+        return this;
     }
-      
+
 
     public Event build() {
       return new Event(this);

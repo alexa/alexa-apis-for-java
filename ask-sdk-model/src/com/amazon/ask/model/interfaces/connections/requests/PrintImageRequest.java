@@ -137,42 +137,41 @@ public final class PrintImageRequest extends com.amazon.ask.model.interfaces.con
     private String imageType;
 
     private Builder() { }
-      
 
     @JsonProperty("@version")
     public Builder withVersion(String version) {
-      this.version = version;
-      return this;
+        this.version = version;
+        return this;
     }
-      
+
 
     @JsonProperty("title")
     public Builder withTitle(String title) {
-      this.title = title;
-      return this;
+        this.title = title;
+        return this;
     }
-      
+
 
     @JsonProperty("url")
     public Builder withUrl(String url) {
-      this.url = url;
-      return this;
+        this.url = url;
+        return this;
     }
-      
+
 
     @JsonProperty("description")
     public Builder withDescription(String description) {
-      this.description = description;
-      return this;
+        this.description = description;
+        return this;
     }
-      
+
 
     @JsonProperty("imageType")
     public Builder withImageType(String imageType) {
-      this.imageType = imageType;
-      return this;
+        this.imageType = imageType;
+        return this;
     }
-      
+
 
     public PrintImageRequest build() {
       return new PrintImageRequest(this);

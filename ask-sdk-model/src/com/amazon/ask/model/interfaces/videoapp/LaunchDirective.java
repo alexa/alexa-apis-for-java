@@ -90,14 +90,13 @@ public final class LaunchDirective extends com.amazon.ask.model.Directive {
     private com.amazon.ask.model.interfaces.videoapp.VideoItem videoItem;
 
     private Builder() { }
-      
 
     @JsonProperty("videoItem")
     public Builder withVideoItem(com.amazon.ask.model.interfaces.videoapp.VideoItem videoItem) {
-      this.videoItem = videoItem;
-      return this;
+        this.videoItem = videoItem;
+        return this;
     }
-      
+
 
     public LaunchDirective build() {
       return new LaunchDirective(this);

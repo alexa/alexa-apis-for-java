@@ -104,17 +104,17 @@ public final class Speed{
 
     @JsonProperty("speedInMetersPerSecond")
     public Builder withSpeedInMetersPerSecond(Double speedInMetersPerSecond) {
-      this.speedInMetersPerSecond = speedInMetersPerSecond;
-      return this;
+        this.speedInMetersPerSecond = speedInMetersPerSecond;
+        return this;
     }
-      
+
 
     @JsonProperty("accuracyInMetersPerSecond")
     public Builder withAccuracyInMetersPerSecond(Double accuracyInMetersPerSecond) {
-      this.accuracyInMetersPerSecond = accuracyInMetersPerSecond;
-      return this;
+        this.accuracyInMetersPerSecond = accuracyInMetersPerSecond;
+        return this;
     }
-      
+
 
     public Speed build() {
       return new Speed(this);

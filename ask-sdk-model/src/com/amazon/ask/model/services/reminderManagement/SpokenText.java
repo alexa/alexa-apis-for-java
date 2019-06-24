@@ -119,24 +119,24 @@ public final class SpokenText{
 
     @JsonProperty("locale")
     public Builder withLocale(String locale) {
-      this.locale = locale;
-      return this;
+        this.locale = locale;
+        return this;
     }
-      
+
 
     @JsonProperty("ssml")
     public Builder withSsml(String ssml) {
-      this.ssml = ssml;
-      return this;
+        this.ssml = ssml;
+        return this;
     }
-      
+
 
     @JsonProperty("text")
     public Builder withText(String text) {
-      this.text = text;
-      return this;
+        this.text = text;
+        return this;
     }
-      
+
 
     public SpokenText build() {
       return new SpokenText(this);

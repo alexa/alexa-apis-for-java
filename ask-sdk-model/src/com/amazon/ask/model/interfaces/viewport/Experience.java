@@ -135,31 +135,31 @@ public final class Experience{
 
     @JsonProperty("arcMinuteWidth")
     public Builder withArcMinuteWidth(BigDecimal arcMinuteWidth) {
-      this.arcMinuteWidth = arcMinuteWidth;
-      return this;
+        this.arcMinuteWidth = arcMinuteWidth;
+        return this;
     }
-      
+
 
     @JsonProperty("arcMinuteHeight")
     public Builder withArcMinuteHeight(BigDecimal arcMinuteHeight) {
-      this.arcMinuteHeight = arcMinuteHeight;
-      return this;
+        this.arcMinuteHeight = arcMinuteHeight;
+        return this;
     }
-      
+
 
     @JsonProperty("canRotate")
     public Builder withCanRotate(Boolean canRotate) {
-      this.canRotate = canRotate;
-      return this;
+        this.canRotate = canRotate;
+        return this;
     }
-      
+
 
     @JsonProperty("canResize")
     public Builder withCanResize(Boolean canResize) {
-      this.canResize = canResize;
-      return this;
+        this.canResize = canResize;
+        return this;
     }
-      
+
 
     public Experience build() {
       return new Experience(this);

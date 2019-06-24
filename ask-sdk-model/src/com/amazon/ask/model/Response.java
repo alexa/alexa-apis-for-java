@@ -167,31 +167,31 @@ public final class Response{
 
     @JsonProperty("outputSpeech")
     public Builder withOutputSpeech(com.amazon.ask.model.ui.OutputSpeech outputSpeech) {
-      this.outputSpeech = outputSpeech;
-      return this;
+        this.outputSpeech = outputSpeech;
+        return this;
     }
-      
+
 
     @JsonProperty("card")
     public Builder withCard(com.amazon.ask.model.ui.Card card) {
-      this.card = card;
-      return this;
+        this.card = card;
+        return this;
     }
-      
+
 
     @JsonProperty("reprompt")
     public Builder withReprompt(com.amazon.ask.model.ui.Reprompt reprompt) {
-      this.reprompt = reprompt;
-      return this;
+        this.reprompt = reprompt;
+        return this;
     }
-      
+
 
     @JsonProperty("directives")
     public Builder withDirectives(List<com.amazon.ask.model.Directive> directives) {
-      this.directives = directives;
-      return this;
+        this.directives = directives;
+        return this;
     }
-      
+
     public Builder addDirectivesItem(com.amazon.ask.model.Directive directivesItem) {
       if (this.directives == null) {
         this.directives = new ArrayList<com.amazon.ask.model.Directive>();
@@ -202,17 +202,17 @@ public final class Response{
 
     @JsonProperty("shouldEndSession")
     public Builder withShouldEndSession(Boolean shouldEndSession) {
-      this.shouldEndSession = shouldEndSession;
-      return this;
+        this.shouldEndSession = shouldEndSession;
+        return this;
     }
-      
+
 
     @JsonProperty("canFulfillIntent")
     public Builder withCanFulfillIntent(com.amazon.ask.model.canfulfill.CanFulfillIntent canFulfillIntent) {
-      this.canFulfillIntent = canFulfillIntent;
-      return this;
+        this.canFulfillIntent = canFulfillIntent;
+        return this;
     }
-      
+
 
     public Response build() {
       return new Response(this);

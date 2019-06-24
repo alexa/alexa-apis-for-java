@@ -112,42 +112,41 @@ public final class ExceptionEncounteredRequest extends com.amazon.ask.model.Requ
     private com.amazon.ask.model.interfaces.system.ErrorCause cause;
 
     private Builder() { }
-      
 
     @JsonProperty("requestId")
     public Builder withRequestId(String requestId) {
-      this.requestId = requestId;
-      return this;
+        this.requestId = requestId;
+        return this;
     }
-      
+
 
     @JsonProperty("timestamp")
     public Builder withTimestamp(OffsetDateTime timestamp) {
-      this.timestamp = timestamp;
-      return this;
+        this.timestamp = timestamp;
+        return this;
     }
-      
+
 
     @JsonProperty("locale")
     public Builder withLocale(String locale) {
-      this.locale = locale;
-      return this;
+        this.locale = locale;
+        return this;
     }
-      
+
 
     @JsonProperty("error")
     public Builder withError(com.amazon.ask.model.interfaces.system.Error error) {
-      this.error = error;
-      return this;
+        this.error = error;
+        return this;
     }
-      
+
 
     @JsonProperty("cause")
     public Builder withCause(com.amazon.ask.model.interfaces.system.ErrorCause cause) {
-      this.cause = cause;
-      return this;
+        this.cause = cause;
+        return this;
     }
-      
+
 
     public ExceptionEncounteredRequest build() {
       return new ExceptionEncounteredRequest(this);

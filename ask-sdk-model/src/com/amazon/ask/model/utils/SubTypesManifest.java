@@ -87,6 +87,11 @@ public class SubTypesManifest {
     requestSubTypes.put("PlaybackController.PlayCommandIssued", com.amazon.ask.model.interfaces.playbackcontroller.PlayCommandIssuedRequest.class);
     baseTypes.put(com.amazon.ask.model.Request.class, requestSubTypes);
 
+    Map<String, Class> interfacesAlexaPresentationAplAnimatedPropertySubTypes = new HashMap<>();
+    interfacesAlexaPresentationAplAnimatedPropertySubTypes.put("opacity", com.amazon.ask.model.interfaces.alexa.presentation.apl.AnimatedOpacityProperty.class);
+    interfacesAlexaPresentationAplAnimatedPropertySubTypes.put("transform", com.amazon.ask.model.interfaces.alexa.presentation.apl.AnimatedTransformProperty.class);
+    baseTypes.put(com.amazon.ask.model.interfaces.alexa.presentation.apl.AnimatedProperty.class, interfacesAlexaPresentationAplAnimatedPropertySubTypes);
+
     Map<String, Class> interfacesAlexaPresentationAplCommandSubTypes = new HashMap<>();
     interfacesAlexaPresentationAplCommandSubTypes.put("SetPage", com.amazon.ask.model.interfaces.alexa.presentation.apl.SetPageCommand.class);
     interfacesAlexaPresentationAplCommandSubTypes.put("ControlMedia", com.amazon.ask.model.interfaces.alexa.presentation.apl.ControlMediaCommand.class);
@@ -95,11 +100,15 @@ public class SubTypesManifest {
     interfacesAlexaPresentationAplCommandSubTypes.put("SpeakItem", com.amazon.ask.model.interfaces.alexa.presentation.apl.SpeakItemCommand.class);
     interfacesAlexaPresentationAplCommandSubTypes.put("AutoPage", com.amazon.ask.model.interfaces.alexa.presentation.apl.AutoPageCommand.class);
     interfacesAlexaPresentationAplCommandSubTypes.put("Parallel", com.amazon.ask.model.interfaces.alexa.presentation.apl.ParallelCommand.class);
+    interfacesAlexaPresentationAplCommandSubTypes.put("OpenURL", com.amazon.ask.model.interfaces.alexa.presentation.apl.OpenUrlCommand.class);
     interfacesAlexaPresentationAplCommandSubTypes.put("PlayMedia", com.amazon.ask.model.interfaces.alexa.presentation.apl.PlayMediaCommand.class);
+    interfacesAlexaPresentationAplCommandSubTypes.put("ClearFocus", com.amazon.ask.model.interfaces.alexa.presentation.apl.ClearFocusCommand.class);
     interfacesAlexaPresentationAplCommandSubTypes.put("ScrollToIndex", com.amazon.ask.model.interfaces.alexa.presentation.apl.ScrollToIndexCommand.class);
     interfacesAlexaPresentationAplCommandSubTypes.put("Scroll", com.amazon.ask.model.interfaces.alexa.presentation.apl.ScrollCommand.class);
     interfacesAlexaPresentationAplCommandSubTypes.put("Idle", com.amazon.ask.model.interfaces.alexa.presentation.apl.IdleCommand.class);
+    interfacesAlexaPresentationAplCommandSubTypes.put("AnimateItem", com.amazon.ask.model.interfaces.alexa.presentation.apl.AnimateItemCommand.class);
     interfacesAlexaPresentationAplCommandSubTypes.put("SetValue", com.amazon.ask.model.interfaces.alexa.presentation.apl.SetValueCommand.class);
+    interfacesAlexaPresentationAplCommandSubTypes.put("SetFocus", com.amazon.ask.model.interfaces.alexa.presentation.apl.SetFocusCommand.class);
     interfacesAlexaPresentationAplCommandSubTypes.put("SendEvent", com.amazon.ask.model.interfaces.alexa.presentation.apl.SendEventCommand.class);
     interfacesAlexaPresentationAplCommandSubTypes.put("SpeakList", com.amazon.ask.model.interfaces.alexa.presentation.apl.SpeakListCommand.class);
     baseTypes.put(com.amazon.ask.model.interfaces.alexa.presentation.apl.Command.class, interfacesAlexaPresentationAplCommandSubTypes);

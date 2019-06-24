@@ -108,21 +108,20 @@ public final class DynamicEntitiesDirective extends com.amazon.ask.model.Directi
     private List<com.amazon.ask.model.er.dynamic.EntityListItem> types;
 
     private Builder() { }
-      
 
     @JsonProperty("updateBehavior")
     public Builder withUpdateBehavior(com.amazon.ask.model.er.dynamic.UpdateBehavior updateBehavior) {
-      this.updateBehavior = updateBehavior;
-      return this;
+        this.updateBehavior = updateBehavior;
+        return this;
     }
-      
+
 
     @JsonProperty("types")
     public Builder withTypes(List<com.amazon.ask.model.er.dynamic.EntityListItem> types) {
-      this.types = types;
-      return this;
+        this.types = types;
+        return this;
     }
-      
+
     public Builder addTypesItem(com.amazon.ask.model.er.dynamic.EntityListItem typesItem) {
       if (this.types == null) {
         this.types = new ArrayList<com.amazon.ask.model.er.dynamic.EntityListItem>();

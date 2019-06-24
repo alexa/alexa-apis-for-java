@@ -57,7 +57,7 @@ public abstract class BaseAmazonPayEntity{
   }
 
   /**
-    * Version of the Amazon Pay Entity. Can be 2 or greater.
+    * Version of the Amazon Pay Entity. Can be 1 or greater.
   * @return version
   **/
   public String getVersion() {

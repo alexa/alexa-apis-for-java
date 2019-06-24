@@ -149,38 +149,38 @@ public final class SystemState{
 
     @JsonProperty("application")
     public Builder withApplication(com.amazon.ask.model.Application application) {
-      this.application = application;
-      return this;
+        this.application = application;
+        return this;
     }
-      
+
 
     @JsonProperty("user")
     public Builder withUser(com.amazon.ask.model.User user) {
-      this.user = user;
-      return this;
+        this.user = user;
+        return this;
     }
-      
+
 
     @JsonProperty("device")
     public Builder withDevice(com.amazon.ask.model.Device device) {
-      this.device = device;
-      return this;
+        this.device = device;
+        return this;
     }
-      
+
 
     @JsonProperty("apiEndpoint")
     public Builder withApiEndpoint(String apiEndpoint) {
-      this.apiEndpoint = apiEndpoint;
-      return this;
+        this.apiEndpoint = apiEndpoint;
+        return this;
     }
-      
+
 
     @JsonProperty("apiAccessToken")
     public Builder withApiAccessToken(String apiAccessToken) {
-      this.apiAccessToken = apiAccessToken;
-      return this;
+        this.apiAccessToken = apiAccessToken;
+        return this;
     }
-      
+
 
     public SystemState build() {
       return new SystemState(this);

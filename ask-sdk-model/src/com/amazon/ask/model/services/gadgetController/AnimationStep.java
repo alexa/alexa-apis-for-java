@@ -121,24 +121,24 @@ public final class AnimationStep{
 
     @JsonProperty("durationMs")
     public Builder withDurationMs(Integer durationMs) {
-      this.durationMs = durationMs;
-      return this;
+        this.durationMs = durationMs;
+        return this;
     }
-      
+
 
     @JsonProperty("color")
     public Builder withColor(String color) {
-      this.color = color;
-      return this;
+        this.color = color;
+        return this;
     }
-      
+
 
     @JsonProperty("blend")
     public Builder withBlend(Boolean blend) {
-      this.blend = blend;
-      return this;
+        this.blend = blend;
+        return this;
     }
-      
+
 
     public AnimationStep build() {
       return new AnimationStep(this);

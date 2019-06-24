@@ -127,49 +127,48 @@ public final class AccountLinkedRequest extends com.amazon.ask.model.Request {
     private OffsetDateTime eventPublishingTime;
 
     private Builder() { }
-      
 
     @JsonProperty("requestId")
     public Builder withRequestId(String requestId) {
-      this.requestId = requestId;
-      return this;
+        this.requestId = requestId;
+        return this;
     }
-      
+
 
     @JsonProperty("timestamp")
     public Builder withTimestamp(OffsetDateTime timestamp) {
-      this.timestamp = timestamp;
-      return this;
+        this.timestamp = timestamp;
+        return this;
     }
-      
+
 
     @JsonProperty("locale")
     public Builder withLocale(String locale) {
-      this.locale = locale;
-      return this;
+        this.locale = locale;
+        return this;
     }
-      
+
 
     @JsonProperty("body")
     public Builder withBody(com.amazon.ask.model.events.skillevents.AccountLinkedBody body) {
-      this.body = body;
-      return this;
+        this.body = body;
+        return this;
     }
-      
+
 
     @JsonProperty("eventCreationTime")
     public Builder withEventCreationTime(OffsetDateTime eventCreationTime) {
-      this.eventCreationTime = eventCreationTime;
-      return this;
+        this.eventCreationTime = eventCreationTime;
+        return this;
     }
-      
+
 
     @JsonProperty("eventPublishingTime")
     public Builder withEventPublishingTime(OffsetDateTime eventPublishingTime) {
-      this.eventPublishingTime = eventPublishingTime;
-      return this;
+        this.eventPublishingTime = eventPublishingTime;
+        return this;
     }
-      
+
 
     public AccountLinkedRequest build() {
       return new AccountLinkedRequest(this);

@@ -89,10 +89,10 @@ public final class Runtime{
 
     @JsonProperty("maxVersion")
     public Builder withMaxVersion(String maxVersion) {
-      this.maxVersion = maxVersion;
-      return this;
+        this.maxVersion = maxVersion;
+        return this;
     }
-      
+
 
     public Runtime build() {
       return new Runtime(this);

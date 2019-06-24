@@ -167,56 +167,55 @@ public final class ChargeAmazonPayRequest extends com.amazon.ask.model.interface
     private com.amazon.ask.model.interfaces.amazonpay.model.request.ProviderAttributes providerAttributes;
 
     private Builder() { }
-      
 
     @JsonProperty("@version")
     public Builder withVersion(String version) {
-      this.version = version;
-      return this;
+        this.version = version;
+        return this;
     }
-      
+
 
     @JsonProperty("sellerId")
     public Builder withSellerId(String sellerId) {
-      this.sellerId = sellerId;
-      return this;
+        this.sellerId = sellerId;
+        return this;
     }
-      
+
 
     @JsonProperty("billingAgreementId")
     public Builder withBillingAgreementId(String billingAgreementId) {
-      this.billingAgreementId = billingAgreementId;
-      return this;
+        this.billingAgreementId = billingAgreementId;
+        return this;
     }
-      
+
 
     @JsonProperty("paymentAction")
     public Builder withPaymentAction(com.amazon.ask.model.interfaces.amazonpay.model.request.PaymentAction paymentAction) {
-      this.paymentAction = paymentAction;
-      return this;
+        this.paymentAction = paymentAction;
+        return this;
     }
-      
+
 
     @JsonProperty("authorizeAttributes")
     public Builder withAuthorizeAttributes(com.amazon.ask.model.interfaces.amazonpay.model.request.AuthorizeAttributes authorizeAttributes) {
-      this.authorizeAttributes = authorizeAttributes;
-      return this;
+        this.authorizeAttributes = authorizeAttributes;
+        return this;
     }
-      
+
 
     @JsonProperty("sellerOrderAttributes")
     public Builder withSellerOrderAttributes(com.amazon.ask.model.interfaces.amazonpay.model.request.SellerOrderAttributes sellerOrderAttributes) {
-      this.sellerOrderAttributes = sellerOrderAttributes;
-      return this;
+        this.sellerOrderAttributes = sellerOrderAttributes;
+        return this;
     }
-      
+
 
     @JsonProperty("providerAttributes")
     public Builder withProviderAttributes(com.amazon.ask.model.interfaces.amazonpay.model.request.ProviderAttributes providerAttributes) {
-      this.providerAttributes = providerAttributes;
-      return this;
+        this.providerAttributes = providerAttributes;
+        return this;
     }
-      
+
 
     public ChargeAmazonPayRequest build() {
       return new ChargeAmazonPayRequest(this);

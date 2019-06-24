@@ -164,45 +164,45 @@ public final class ReminderResponse{
 
     @JsonProperty("alertToken")
     public Builder withAlertToken(String alertToken) {
-      this.alertToken = alertToken;
-      return this;
+        this.alertToken = alertToken;
+        return this;
     }
-      
+
 
     @JsonProperty("createdTime")
     public Builder withCreatedTime(String createdTime) {
-      this.createdTime = createdTime;
-      return this;
+        this.createdTime = createdTime;
+        return this;
     }
-      
+
 
     @JsonProperty("updatedTime")
     public Builder withUpdatedTime(String updatedTime) {
-      this.updatedTime = updatedTime;
-      return this;
+        this.updatedTime = updatedTime;
+        return this;
     }
-      
+
 
     @JsonProperty("status")
     public Builder withStatus(com.amazon.ask.model.services.reminderManagement.Status status) {
-      this.status = status;
-      return this;
+        this.status = status;
+        return this;
     }
-      
+
 
     @JsonProperty("version")
     public Builder withVersion(String version) {
-      this.version = version;
-      return this;
+        this.version = version;
+        return this;
     }
-      
+
 
     @JsonProperty("href")
     public Builder withHref(String href) {
-      this.href = href;
-      return this;
+        this.href = href;
+        return this;
     }
-      
+
 
     public ReminderResponse build() {
       return new ReminderResponse(this);

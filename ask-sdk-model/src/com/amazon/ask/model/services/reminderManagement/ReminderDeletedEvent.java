@@ -92,10 +92,10 @@ public final class ReminderDeletedEvent{
 
     @JsonProperty("alertTokens")
     public Builder withAlertTokens(List<String> alertTokens) {
-      this.alertTokens = alertTokens;
-      return this;
+        this.alertTokens = alertTokens;
+        return this;
     }
-      
+
     public Builder addAlertTokensItem(String alertTokensItem) {
       if (this.alertTokens == null) {
         this.alertTokens = new ArrayList<String>();

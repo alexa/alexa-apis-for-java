@@ -179,52 +179,52 @@ public final class AlexaListItem{
 
     @JsonProperty("id")
     public Builder withId(String id) {
-      this.id = id;
-      return this;
+        this.id = id;
+        return this;
     }
-      
+
 
     @JsonProperty("version")
     public Builder withVersion(Long version) {
-      this.version = version;
-      return this;
+        this.version = version;
+        return this;
     }
-      
+
 
     @JsonProperty("value")
     public Builder withValue(String value) {
-      this.value = value;
-      return this;
+        this.value = value;
+        return this;
     }
-      
+
 
     @JsonProperty("status")
     public Builder withStatus(com.amazon.ask.model.services.listManagement.ListItemState status) {
-      this.status = status;
-      return this;
+        this.status = status;
+        return this;
     }
-      
+
 
     @JsonProperty("createdTime")
     public Builder withCreatedTime(String createdTime) {
-      this.createdTime = createdTime;
-      return this;
+        this.createdTime = createdTime;
+        return this;
     }
-      
+
 
     @JsonProperty("updatedTime")
     public Builder withUpdatedTime(String updatedTime) {
-      this.updatedTime = updatedTime;
-      return this;
+        this.updatedTime = updatedTime;
+        return this;
     }
-      
+
 
     @JsonProperty("href")
     public Builder withHref(String href) {
-      this.href = href;
-      return this;
+        this.href = href;
+        return this;
     }
-      
+
 
     public AlexaListItem build() {
       return new AlexaListItem(this);

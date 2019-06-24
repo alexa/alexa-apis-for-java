@@ -32,13 +32,13 @@ public final class SpeakListCommand extends com.amazon.ask.model.interfaces.alex
   private String componentId = null;
 
   @JsonProperty("count")
-  private Integer count = null;
+  private String count = String.valueOf(null);
 
   @JsonProperty("minimumDwellTime")
-  private Integer minimumDwellTime = null;
+  private String minimumDwellTime = String.valueOf(null);
 
   @JsonProperty("start")
-  private Integer start = null;
+  private String start = String.valueOf(null);
 
   public static Builder builder() {
     return new Builder();
@@ -78,7 +78,7 @@ public final class SpeakListCommand extends com.amazon.ask.model.interfaces.alex
     * The number of items to speak
   * @return count
   **/
-  public Integer getCount() {
+  public String getCount() {
     return count;
   }
 
@@ -86,7 +86,7 @@ public final class SpeakListCommand extends com.amazon.ask.model.interfaces.alex
     * The minimum number of milliseconds that an item will be highlighted for. Defaults to 0.
   * @return minimumDwellTime
   **/
-  public Integer getMinimumDwellTime() {
+  public String getMinimumDwellTime() {
     return minimumDwellTime;
   }
 
@@ -94,7 +94,7 @@ public final class SpeakListCommand extends com.amazon.ask.model.interfaces.alex
     * The 0-based index of the first item to speak
   * @return start
   **/
-  public Integer getStart() {
+  public String getStart() {
     return start;
   }
 
@@ -146,73 +146,88 @@ public final class SpeakListCommand extends com.amazon.ask.model.interfaces.alex
   }
 
   public static class Builder {
-    private Integer delay;
+    private String delay;
     private String description;
     private Boolean when;
     private com.amazon.ask.model.interfaces.alexa.presentation.apl.Align align;
     private String componentId;
-    private Integer count;
-    private Integer minimumDwellTime;
-    private Integer start;
+    private String count;
+    private String minimumDwellTime;
+    private String start;
 
     private Builder() { }
-      
 
     @JsonProperty("delay")
     public Builder withDelay(Integer delay) {
-      this.delay = delay;
-      return this;
+        this.delay = String.valueOf(delay);
+        return this;
     }
-      
+
+    public Builder withDelay(String delayExpression) {
+        this.delay = delayExpression;
+        return this;
+    }
 
     @JsonProperty("description")
     public Builder withDescription(String description) {
-      this.description = description;
-      return this;
+        this.description = description;
+        return this;
     }
-      
+
 
     @JsonProperty("when")
     public Builder withWhen(Boolean when) {
-      this.when = when;
-      return this;
+        this.when = when;
+        return this;
     }
-      
+
 
     @JsonProperty("align")
     public Builder withAlign(com.amazon.ask.model.interfaces.alexa.presentation.apl.Align align) {
-      this.align = align;
-      return this;
+        this.align = align;
+        return this;
     }
-      
+
 
     @JsonProperty("componentId")
     public Builder withComponentId(String componentId) {
-      this.componentId = componentId;
-      return this;
+        this.componentId = componentId;
+        return this;
     }
-      
+
 
     @JsonProperty("count")
     public Builder withCount(Integer count) {
-      this.count = count;
-      return this;
+        this.count = String.valueOf(count);
+        return this;
     }
-      
+
+    public Builder withCount(String countExpression) {
+        this.count = countExpression;
+        return this;
+    }
 
     @JsonProperty("minimumDwellTime")
     public Builder withMinimumDwellTime(Integer minimumDwellTime) {
-      this.minimumDwellTime = minimumDwellTime;
-      return this;
+        this.minimumDwellTime = String.valueOf(minimumDwellTime);
+        return this;
     }
-      
+
+    public Builder withMinimumDwellTime(String minimumDwellTimeExpression) {
+        this.minimumDwellTime = minimumDwellTimeExpression;
+        return this;
+    }
 
     @JsonProperty("start")
     public Builder withStart(Integer start) {
-      this.start = start;
-      return this;
+        this.start = String.valueOf(start);
+        return this;
     }
-      
+
+    public Builder withStart(String startExpression) {
+        this.start = startExpression;
+        return this;
+    }
 
     public SpeakListCommand build() {
       return new SpeakListCommand(this);

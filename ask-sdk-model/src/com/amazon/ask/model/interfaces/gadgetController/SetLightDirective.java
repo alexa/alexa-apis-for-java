@@ -123,21 +123,20 @@ public final class SetLightDirective extends com.amazon.ask.model.Directive {
     private com.amazon.ask.model.services.gadgetController.SetLightParameters parameters;
 
     private Builder() { }
-      
 
     @JsonProperty("version")
     public Builder withVersion(Integer version) {
-      this.version = version;
-      return this;
+        this.version = version;
+        return this;
     }
-      
+
 
     @JsonProperty("targetGadgets")
     public Builder withTargetGadgets(List<String> targetGadgets) {
-      this.targetGadgets = targetGadgets;
-      return this;
+        this.targetGadgets = targetGadgets;
+        return this;
     }
-      
+
     public Builder addTargetGadgetsItem(String targetGadgetsItem) {
       if (this.targetGadgets == null) {
         this.targetGadgets = new ArrayList<String>();
@@ -148,10 +147,10 @@ public final class SetLightDirective extends com.amazon.ask.model.Directive {
 
     @JsonProperty("parameters")
     public Builder withParameters(com.amazon.ask.model.services.gadgetController.SetLightParameters parameters) {
-      this.parameters = parameters;
-      return this;
+        this.parameters = parameters;
+        return this;
     }
-      
+
 
     public SetLightDirective build() {
       return new SetLightDirective(this);

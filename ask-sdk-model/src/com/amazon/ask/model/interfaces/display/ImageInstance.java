@@ -134,31 +134,31 @@ public final class ImageInstance{
 
     @JsonProperty("url")
     public Builder withUrl(String url) {
-      this.url = url;
-      return this;
+        this.url = url;
+        return this;
     }
-      
+
 
     @JsonProperty("size")
     public Builder withSize(com.amazon.ask.model.interfaces.display.ImageSize size) {
-      this.size = size;
-      return this;
+        this.size = size;
+        return this;
     }
-      
+
 
     @JsonProperty("widthPixels")
     public Builder withWidthPixels(Integer widthPixels) {
-      this.widthPixels = widthPixels;
-      return this;
+        this.widthPixels = widthPixels;
+        return this;
     }
-      
+
 
     @JsonProperty("heightPixels")
     public Builder withHeightPixels(Integer heightPixels) {
-      this.heightPixels = heightPixels;
-      return this;
+        this.heightPixels = heightPixels;
+        return this;
     }
-      
+
 
     public ImageInstance build() {
       return new ImageInstance(this);

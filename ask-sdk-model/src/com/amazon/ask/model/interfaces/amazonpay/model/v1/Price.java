@@ -104,17 +104,17 @@ public final class Price{
 
     @JsonProperty("amount")
     public Builder withAmount(String amount) {
-      this.amount = amount;
-      return this;
+        this.amount = amount;
+        return this;
     }
-      
+
 
     @JsonProperty("currencyCode")
     public Builder withCurrencyCode(String currencyCode) {
-      this.currencyCode = currencyCode;
-      return this;
+        this.currencyCode = currencyCode;
+        return this;
     }
-      
+
 
     public Price build() {
       return new Price(this);

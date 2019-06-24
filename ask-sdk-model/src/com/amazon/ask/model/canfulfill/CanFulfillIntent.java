@@ -107,17 +107,17 @@ public final class CanFulfillIntent{
 
     @JsonProperty("canFulfill")
     public Builder withCanFulfill(com.amazon.ask.model.canfulfill.CanFulfillIntentValues canFulfill) {
-      this.canFulfill = canFulfill;
-      return this;
+        this.canFulfill = canFulfill;
+        return this;
     }
-      
+
 
     @JsonProperty("slots")
     public Builder withSlots(Map<String, com.amazon.ask.model.canfulfill.CanFulfillSlot> slots) {
-      this.slots = slots;
-      return this;
+        this.slots = slots;
+        return this;
     }
-      
+
     public Builder putSlotsItem(String key, com.amazon.ask.model.canfulfill.CanFulfillSlot slotsItem) {
       if (this.slots == null) {
         this.slots = new HashMap<String, com.amazon.ask.model.canfulfill.CanFulfillSlot>();

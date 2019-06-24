@@ -118,7 +118,7 @@ public final class SetValueCommand extends com.amazon.ask.model.interfaces.alexa
   }
 
   public static class Builder {
-    private Integer delay;
+    private String delay;
     private String description;
     private Boolean when;
     private String componentId;
@@ -126,49 +126,52 @@ public final class SetValueCommand extends com.amazon.ask.model.interfaces.alexa
     private String value;
 
     private Builder() { }
-      
 
     @JsonProperty("delay")
     public Builder withDelay(Integer delay) {
-      this.delay = delay;
-      return this;
+        this.delay = String.valueOf(delay);
+        return this;
     }
-      
+
+    public Builder withDelay(String delayExpression) {
+        this.delay = delayExpression;
+        return this;
+    }
 
     @JsonProperty("description")
     public Builder withDescription(String description) {
-      this.description = description;
-      return this;
+        this.description = description;
+        return this;
     }
-      
+
 
     @JsonProperty("when")
     public Builder withWhen(Boolean when) {
-      this.when = when;
-      return this;
+        this.when = when;
+        return this;
     }
-      
+
 
     @JsonProperty("componentId")
     public Builder withComponentId(String componentId) {
-      this.componentId = componentId;
-      return this;
+        this.componentId = componentId;
+        return this;
     }
-      
+
 
     @JsonProperty("property")
     public Builder withProperty(String property) {
-      this.property = property;
-      return this;
+        this.property = property;
+        return this;
     }
-      
+
 
     @JsonProperty("value")
     public Builder withValue(String value) {
-      this.value = value;
-      return this;
+        this.value = value;
+        return this;
     }
-      
+
 
     public SetValueCommand build() {
       return new SetValueCommand(this);

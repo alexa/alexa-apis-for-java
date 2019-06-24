@@ -135,31 +135,31 @@ public final class ReminderRequest{
 
     @JsonProperty("requestTime")
     public Builder withRequestTime(OffsetDateTime requestTime) {
-      this.requestTime = requestTime;
-      return this;
+        this.requestTime = requestTime;
+        return this;
     }
-      
+
 
     @JsonProperty("trigger")
     public Builder withTrigger(com.amazon.ask.model.services.reminderManagement.Trigger trigger) {
-      this.trigger = trigger;
-      return this;
+        this.trigger = trigger;
+        return this;
     }
-      
+
 
     @JsonProperty("alertInfo")
     public Builder withAlertInfo(com.amazon.ask.model.services.reminderManagement.AlertInfo alertInfo) {
-      this.alertInfo = alertInfo;
-      return this;
+        this.alertInfo = alertInfo;
+        return this;
     }
-      
+
 
     @JsonProperty("pushNotification")
     public Builder withPushNotification(com.amazon.ask.model.services.reminderManagement.PushNotification pushNotification) {
-      this.pushNotification = pushNotification;
-      return this;
+        this.pushNotification = pushNotification;
+        return this;
     }
-      
+
 
     public ReminderRequest build() {
       return new ReminderRequest(this);

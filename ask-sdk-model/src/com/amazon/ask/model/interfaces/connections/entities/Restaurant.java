@@ -107,28 +107,27 @@ public final class Restaurant extends com.amazon.ask.model.interfaces.connection
     private com.amazon.ask.model.interfaces.connections.entities.PostalAddress location;
 
     private Builder() { }
-      
 
     @JsonProperty("@version")
     public Builder withVersion(String version) {
-      this.version = version;
-      return this;
+        this.version = version;
+        return this;
     }
-      
+
 
     @JsonProperty("name")
     public Builder withName(String name) {
-      this.name = name;
-      return this;
+        this.name = name;
+        return this;
     }
-      
+
 
     @JsonProperty("location")
     public Builder withLocation(com.amazon.ask.model.interfaces.connections.entities.PostalAddress location) {
-      this.location = location;
-      return this;
+        this.location = location;
+        return this;
     }
-      
+
 
     public Restaurant build() {
       return new Restaurant(this);

@@ -104,17 +104,17 @@ public final class VideoItem{
 
     @JsonProperty("source")
     public Builder withSource(String source) {
-      this.source = source;
-      return this;
+        this.source = source;
+        return this;
     }
-      
+
 
     @JsonProperty("metadata")
     public Builder withMetadata(com.amazon.ask.model.interfaces.videoapp.Metadata metadata) {
-      this.metadata = metadata;
-      return this;
+        this.metadata = metadata;
+        return this;
     }
-      
+
 
     public VideoItem build() {
       return new VideoItem(this);

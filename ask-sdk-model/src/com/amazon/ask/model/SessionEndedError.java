@@ -104,17 +104,17 @@ public final class SessionEndedError{
 
     @JsonProperty("type")
     public Builder withType(com.amazon.ask.model.SessionEndedErrorType type) {
-      this.type = type;
-      return this;
+        this.type = type;
+        return this;
     }
-      
+
 
     @JsonProperty("message")
     public Builder withMessage(String message) {
-      this.message = message;
-      return this;
+        this.message = message;
+        return this;
     }
-      
+
 
     public SessionEndedError build() {
       return new SessionEndedError(this);

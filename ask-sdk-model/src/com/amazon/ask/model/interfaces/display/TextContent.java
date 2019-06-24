@@ -119,24 +119,24 @@ public final class TextContent{
 
     @JsonProperty("primaryText")
     public Builder withPrimaryText(com.amazon.ask.model.interfaces.display.TextField primaryText) {
-      this.primaryText = primaryText;
-      return this;
+        this.primaryText = primaryText;
+        return this;
     }
-      
+
 
     @JsonProperty("secondaryText")
     public Builder withSecondaryText(com.amazon.ask.model.interfaces.display.TextField secondaryText) {
-      this.secondaryText = secondaryText;
-      return this;
+        this.secondaryText = secondaryText;
+        return this;
     }
-      
+
 
     @JsonProperty("tertiaryText")
     public Builder withTertiaryText(com.amazon.ask.model.interfaces.display.TextField tertiaryText) {
-      this.tertiaryText = tertiaryText;
-      return this;
+        this.tertiaryText = tertiaryText;
+        return this;
     }
-      
+
 
     public TextContent build() {
       return new TextContent(this);

@@ -122,24 +122,24 @@ public final class Resolution{
 
     @JsonProperty("authority")
     public Builder withAuthority(String authority) {
-      this.authority = authority;
-      return this;
+        this.authority = authority;
+        return this;
     }
-      
+
 
     @JsonProperty("status")
     public Builder withStatus(com.amazon.ask.model.slu.entityresolution.Status status) {
-      this.status = status;
-      return this;
+        this.status = status;
+        return this;
     }
-      
+
 
     @JsonProperty("values")
     public Builder withValues(List<com.amazon.ask.model.slu.entityresolution.ValueWrapper> values) {
-      this.values = values;
-      return this;
+        this.values = values;
+        return this;
     }
-      
+
     public Builder addValuesItem(com.amazon.ask.model.slu.entityresolution.ValueWrapper valuesItem) {
       if (this.values == null) {
         this.values = new ArrayList<com.amazon.ask.model.slu.entityresolution.ValueWrapper>();

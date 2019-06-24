@@ -89,10 +89,10 @@ public final class AccountLinkedBody{
 
     @JsonProperty("accessToken")
     public Builder withAccessToken(String accessToken) {
-      this.accessToken = accessToken;
-      return this;
+        this.accessToken = accessToken;
+        return this;
     }
-      
+
 
     public AccountLinkedBody build() {
       return new AccountLinkedBody(this);

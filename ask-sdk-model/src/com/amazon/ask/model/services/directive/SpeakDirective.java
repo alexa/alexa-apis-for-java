@@ -90,14 +90,13 @@ public final class SpeakDirective extends com.amazon.ask.model.services.directiv
     private String speech;
 
     private Builder() { }
-      
 
     @JsonProperty("speech")
     public Builder withSpeech(String speech) {
-      this.speech = speech;
-      return this;
+        this.speech = speech;
+        return this;
     }
-      
+
 
     public SpeakDirective build() {
       return new SpeakDirective(this);

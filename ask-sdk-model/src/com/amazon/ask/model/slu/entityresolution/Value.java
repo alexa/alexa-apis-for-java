@@ -104,17 +104,17 @@ public final class Value{
 
     @JsonProperty("name")
     public Builder withName(String name) {
-      this.name = name;
-      return this;
+        this.name = name;
+        return this;
     }
-      
+
 
     @JsonProperty("id")
     public Builder withId(String id) {
-      this.id = id;
-      return this;
+        this.id = id;
+        return this;
     }
-      
+
 
     public Value build() {
       return new Value(this);

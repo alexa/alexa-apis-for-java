@@ -33,11 +33,15 @@ import com.fasterxml.jackson.annotation.JsonProperty;
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.SpeakItemCommand.class, name = "SpeakItem"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.AutoPageCommand.class, name = "AutoPage"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.ParallelCommand.class, name = "Parallel"),
+  @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.OpenUrlCommand.class, name = "OpenURL"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.PlayMediaCommand.class, name = "PlayMedia"),
+  @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.ClearFocusCommand.class, name = "ClearFocus"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.ScrollToIndexCommand.class, name = "ScrollToIndex"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.ScrollCommand.class, name = "Scroll"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.IdleCommand.class, name = "Idle"),
+  @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.AnimateItemCommand.class, name = "AnimateItem"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.SetValueCommand.class, name = "SetValue"),
+  @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.SetFocusCommand.class, name = "SetFocus"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.SendEventCommand.class, name = "SendEvent"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.SpeakListCommand.class, name = "SpeakList"),
 })
@@ -47,7 +51,7 @@ public abstract class Command{
   protected String type = null;
 
   @JsonProperty("delay")
-  protected Integer delay = null;
+  protected String delay = String.valueOf(null);
 
   @JsonProperty("description")
   protected String description = null;
@@ -71,7 +75,7 @@ public abstract class Command{
     * The delay in milliseconds before this command starts executing; must be non-negative. Defaults to 0.
   * @return delay
   **/
-  public Integer getDelay() {
+  public String getDelay() {
     return delay;
   }
 

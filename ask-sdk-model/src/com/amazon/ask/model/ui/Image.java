@@ -104,17 +104,17 @@ public final class Image{
 
     @JsonProperty("smallImageUrl")
     public Builder withSmallImageUrl(String smallImageUrl) {
-      this.smallImageUrl = smallImageUrl;
-      return this;
+        this.smallImageUrl = smallImageUrl;
+        return this;
     }
-      
+
 
     @JsonProperty("largeImageUrl")
     public Builder withLargeImageUrl(String largeImageUrl) {
-      this.largeImageUrl = largeImageUrl;
-      return this;
+        this.largeImageUrl = largeImageUrl;
+        return this;
     }
-      
+
 
     public Image build() {
       return new Image(this);

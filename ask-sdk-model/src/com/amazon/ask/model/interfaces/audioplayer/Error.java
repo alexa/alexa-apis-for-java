@@ -104,17 +104,17 @@ public final class Error{
 
     @JsonProperty("message")
     public Builder withMessage(String message) {
-      this.message = message;
-      return this;
+        this.message = message;
+        return this;
     }
-      
+
 
     @JsonProperty("type")
     public Builder withType(com.amazon.ask.model.interfaces.audioplayer.ErrorType type) {
-      this.type = type;
-      return this;
+        this.type = type;
+        return this;
     }
-      
+
 
     public Error build() {
       return new Error(this);

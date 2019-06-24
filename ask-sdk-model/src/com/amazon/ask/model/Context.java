@@ -164,45 +164,45 @@ public final class Context{
 
     @JsonProperty("System")
     public Builder withSystem(com.amazon.ask.model.interfaces.system.SystemState system) {
-      this.system = system;
-      return this;
+        this.system = system;
+        return this;
     }
-      
+
 
     @JsonProperty("AudioPlayer")
     public Builder withAudioPlayer(com.amazon.ask.model.interfaces.audioplayer.AudioPlayerState audioPlayer) {
-      this.audioPlayer = audioPlayer;
-      return this;
+        this.audioPlayer = audioPlayer;
+        return this;
     }
-      
+
 
     @JsonProperty("Automotive")
     public Builder withAutomotive(com.amazon.ask.model.interfaces.automotive.AutomotiveState automotive) {
-      this.automotive = automotive;
-      return this;
+        this.automotive = automotive;
+        return this;
     }
-      
+
 
     @JsonProperty("Display")
     public Builder withDisplay(com.amazon.ask.model.interfaces.display.DisplayState display) {
-      this.display = display;
-      return this;
+        this.display = display;
+        return this;
     }
-      
+
 
     @JsonProperty("Geolocation")
     public Builder withGeolocation(com.amazon.ask.model.interfaces.geolocation.GeolocationState geolocation) {
-      this.geolocation = geolocation;
-      return this;
+        this.geolocation = geolocation;
+        return this;
     }
-      
+
 
     @JsonProperty("Viewport")
     public Builder withViewport(com.amazon.ask.model.interfaces.viewport.ViewportState viewport) {
-      this.viewport = viewport;
-      return this;
+        this.viewport = viewport;
+        return this;
     }
-      
+
 
     public Context build() {
       return new Context(this);

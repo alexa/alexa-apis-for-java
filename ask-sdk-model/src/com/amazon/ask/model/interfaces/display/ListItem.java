@@ -119,24 +119,24 @@ public final class ListItem{
 
     @JsonProperty("token")
     public Builder withToken(String token) {
-      this.token = token;
-      return this;
+        this.token = token;
+        return this;
     }
-      
+
 
     @JsonProperty("image")
     public Builder withImage(com.amazon.ask.model.interfaces.display.Image image) {
-      this.image = image;
-      return this;
+        this.image = image;
+        return this;
     }
-      
+
 
     @JsonProperty("textContent")
     public Builder withTextContent(com.amazon.ask.model.interfaces.display.TextContent textContent) {
-      this.textContent = textContent;
-      return this;
+        this.textContent = textContent;
+        return this;
     }
-      
+
 
     public ListItem build() {
       return new ListItem(this);

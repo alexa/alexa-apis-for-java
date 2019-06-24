@@ -89,10 +89,10 @@ public final class SetupAmazonPayResult{
 
     @JsonProperty("billingAgreementDetails")
     public Builder withBillingAgreementDetails(com.amazon.ask.model.interfaces.amazonpay.model.v1.BillingAgreementDetails billingAgreementDetails) {
-      this.billingAgreementDetails = billingAgreementDetails;
-      return this;
+        this.billingAgreementDetails = billingAgreementDetails;
+        return this;
     }
-      
+
 
     public SetupAmazonPayResult build() {
       return new SetupAmazonPayResult(this);

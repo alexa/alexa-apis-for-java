@@ -107,42 +107,45 @@ public final class SendEventCommand extends com.amazon.ask.model.interfaces.alex
   }
 
   public static class Builder {
-    private Integer delay;
+    private String delay;
     private String description;
     private Boolean when;
     private List<String> arguments;
     private List<String> components;
 
     private Builder() { }
-      
 
     @JsonProperty("delay")
     public Builder withDelay(Integer delay) {
-      this.delay = delay;
-      return this;
+        this.delay = String.valueOf(delay);
+        return this;
     }
-      
+
+    public Builder withDelay(String delayExpression) {
+        this.delay = delayExpression;
+        return this;
+    }
 
     @JsonProperty("description")
     public Builder withDescription(String description) {
-      this.description = description;
-      return this;
+        this.description = description;
+        return this;
     }
-      
+
 
     @JsonProperty("when")
     public Builder withWhen(Boolean when) {
-      this.when = when;
-      return this;
+        this.when = when;
+        return this;
     }
-      
+
 
     @JsonProperty("arguments")
     public Builder withArguments(List<String> arguments) {
-      this.arguments = arguments;
-      return this;
+        this.arguments = arguments;
+        return this;
     }
-      
+
     public Builder addArgumentsItem(String argumentsItem) {
       if (this.arguments == null) {
         this.arguments = new ArrayList<String>();
@@ -153,10 +156,10 @@ public final class SendEventCommand extends com.amazon.ask.model.interfaces.alex
 
     @JsonProperty("components")
     public Builder withComponents(List<String> components) {
-      this.components = components;
-      return this;
+        this.components = components;
+        return this;
     }
-      
+
     public Builder addComponentsItem(String componentsItem) {
       if (this.components == null) {
         this.components = new ArrayList<String>();

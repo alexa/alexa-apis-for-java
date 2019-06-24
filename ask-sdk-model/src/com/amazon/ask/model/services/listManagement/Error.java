@@ -104,17 +104,17 @@ public final class Error{
 
     @JsonProperty("type")
     public Builder withType(String type) {
-      this.type = type;
-      return this;
+        this.type = type;
+        return this;
     }
-      
+
 
     @JsonProperty("message")
     public Builder withMessage(String message) {
-      this.message = message;
-      return this;
+        this.message = message;
+        return this;
     }
-      
+
 
     public Error build() {
       return new Error(this);

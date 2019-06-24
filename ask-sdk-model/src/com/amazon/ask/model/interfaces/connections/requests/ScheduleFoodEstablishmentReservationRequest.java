@@ -122,35 +122,34 @@ public final class ScheduleFoodEstablishmentReservationRequest extends com.amazo
     private com.amazon.ask.model.interfaces.connections.entities.Restaurant restaurant;
 
     private Builder() { }
-      
 
     @JsonProperty("@version")
     public Builder withVersion(String version) {
-      this.version = version;
-      return this;
+        this.version = version;
+        return this;
     }
-      
+
 
     @JsonProperty("startTime")
     public Builder withStartTime(String startTime) {
-      this.startTime = startTime;
-      return this;
+        this.startTime = startTime;
+        return this;
     }
-      
+
 
     @JsonProperty("partySize")
     public Builder withPartySize(String partySize) {
-      this.partySize = partySize;
-      return this;
+        this.partySize = partySize;
+        return this;
     }
-      
+
 
     @JsonProperty("restaurant")
     public Builder withRestaurant(com.amazon.ask.model.interfaces.connections.entities.Restaurant restaurant) {
-      this.restaurant = restaurant;
-      return this;
+        this.restaurant = restaurant;
+        return this;
     }
-      
+
 
     public ScheduleFoodEstablishmentReservationRequest build() {
       return new ScheduleFoodEstablishmentReservationRequest(this);

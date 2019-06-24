@@ -124,42 +124,41 @@ public final class BodyTemplate1 extends com.amazon.ask.model.interfaces.display
     private com.amazon.ask.model.interfaces.display.TextContent textContent;
 
     private Builder() { }
-      
 
     @JsonProperty("token")
     public Builder withToken(String token) {
-      this.token = token;
-      return this;
+        this.token = token;
+        return this;
     }
-      
+
 
     @JsonProperty("backButton")
     public Builder withBackButton(com.amazon.ask.model.interfaces.display.BackButtonBehavior backButton) {
-      this.backButton = backButton;
-      return this;
+        this.backButton = backButton;
+        return this;
     }
-      
+
 
     @JsonProperty("backgroundImage")
     public Builder withBackgroundImage(com.amazon.ask.model.interfaces.display.Image backgroundImage) {
-      this.backgroundImage = backgroundImage;
-      return this;
+        this.backgroundImage = backgroundImage;
+        return this;
     }
-      
+
 
     @JsonProperty("title")
     public Builder withTitle(String title) {
-      this.title = title;
-      return this;
+        this.title = title;
+        return this;
     }
-      
+
 
     @JsonProperty("textContent")
     public Builder withTextContent(com.amazon.ask.model.interfaces.display.TextContent textContent) {
-      this.textContent = textContent;
-      return this;
+        this.textContent = textContent;
+        return this;
     }
-      
+
 
     public BodyTemplate1 build() {
       return new BodyTemplate1(this);

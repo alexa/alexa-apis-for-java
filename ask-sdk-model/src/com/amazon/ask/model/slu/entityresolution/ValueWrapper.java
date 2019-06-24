@@ -89,10 +89,10 @@ public final class ValueWrapper{
 
     @JsonProperty("value")
     public Builder withValue(com.amazon.ask.model.slu.entityresolution.Value value) {
-      this.value = value;
-      return this;
+        this.value = value;
+        return this;
     }
-      
+
 
     public ValueWrapper build() {
       return new ValueWrapper(this);

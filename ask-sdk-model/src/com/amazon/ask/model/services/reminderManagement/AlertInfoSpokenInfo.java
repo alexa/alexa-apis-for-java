@@ -92,10 +92,10 @@ public final class AlertInfoSpokenInfo{
 
     @JsonProperty("content")
     public Builder withContent(List<com.amazon.ask.model.services.reminderManagement.SpokenText> content) {
-      this.content = content;
-      return this;
+        this.content = content;
+        return this;
     }
-      
+
     public Builder addContentItem(com.amazon.ask.model.services.reminderManagement.SpokenText contentItem) {
       if (this.content == null) {
         this.content = new ArrayList<com.amazon.ask.model.services.reminderManagement.SpokenText>();

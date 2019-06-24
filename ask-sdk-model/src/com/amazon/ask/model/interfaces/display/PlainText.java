@@ -90,14 +90,13 @@ public final class PlainText extends com.amazon.ask.model.interfaces.display.Tex
     private String text;
 
     private Builder() { }
-      
 
     @JsonProperty("text")
     public Builder withText(String text) {
-      this.text = text;
-      return this;
+        this.text = text;
+        return this;
     }
-      
+
 
     public PlainText build() {
       return new PlainText(this);

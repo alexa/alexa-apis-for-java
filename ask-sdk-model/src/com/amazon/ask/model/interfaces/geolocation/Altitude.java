@@ -104,17 +104,17 @@ public final class Altitude{
 
     @JsonProperty("altitudeInMeters")
     public Builder withAltitudeInMeters(Double altitudeInMeters) {
-      this.altitudeInMeters = altitudeInMeters;
-      return this;
+        this.altitudeInMeters = altitudeInMeters;
+        return this;
     }
-      
+
 
     @JsonProperty("accuracyInMeters")
     public Builder withAccuracyInMeters(Double accuracyInMeters) {
-      this.accuracyInMeters = accuracyInMeters;
-      return this;
+        this.accuracyInMeters = accuracyInMeters;
+        return this;
     }
-      
+
 
     public Altitude build() {
       return new Altitude(this);

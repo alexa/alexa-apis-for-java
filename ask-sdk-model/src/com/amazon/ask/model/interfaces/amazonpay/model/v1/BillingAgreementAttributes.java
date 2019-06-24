@@ -119,24 +119,24 @@ public final class BillingAgreementAttributes{
 
     @JsonProperty("platformId")
     public Builder withPlatformId(String platformId) {
-      this.platformId = platformId;
-      return this;
+        this.platformId = platformId;
+        return this;
     }
-      
+
 
     @JsonProperty("sellerNote")
     public Builder withSellerNote(String sellerNote) {
-      this.sellerNote = sellerNote;
-      return this;
+        this.sellerNote = sellerNote;
+        return this;
     }
-      
+
 
     @JsonProperty("sellerBillingAgreementAttributes")
     public Builder withSellerBillingAgreementAttributes(com.amazon.ask.model.interfaces.amazonpay.model.v1.SellerBillingAgreementAttributes sellerBillingAgreementAttributes) {
-      this.sellerBillingAgreementAttributes = sellerBillingAgreementAttributes;
-      return this;
+        this.sellerBillingAgreementAttributes = sellerBillingAgreementAttributes;
+        return this;
     }
-      
+
 
     public BillingAgreementAttributes build() {
       return new BillingAgreementAttributes(this);

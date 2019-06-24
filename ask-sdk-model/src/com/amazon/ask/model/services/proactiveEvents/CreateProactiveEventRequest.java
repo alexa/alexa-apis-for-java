@@ -168,38 +168,38 @@ public final class CreateProactiveEventRequest{
 
     @JsonProperty("timestamp")
     public Builder withTimestamp(OffsetDateTime timestamp) {
-      this.timestamp = timestamp;
-      return this;
+        this.timestamp = timestamp;
+        return this;
     }
-      
+
 
     @JsonProperty("referenceId")
     public Builder withReferenceId(String referenceId) {
-      this.referenceId = referenceId;
-      return this;
+        this.referenceId = referenceId;
+        return this;
     }
-      
+
 
     @JsonProperty("expiryTime")
     public Builder withExpiryTime(OffsetDateTime expiryTime) {
-      this.expiryTime = expiryTime;
-      return this;
+        this.expiryTime = expiryTime;
+        return this;
     }
-      
+
 
     @JsonProperty("event")
     public Builder withEvent(com.amazon.ask.model.services.proactiveEvents.Event event) {
-      this.event = event;
-      return this;
+        this.event = event;
+        return this;
     }
-      
+
 
     @JsonProperty("localizedAttributes")
     public Builder withLocalizedAttributes(List<Object> localizedAttributes) {
-      this.localizedAttributes = localizedAttributes;
-      return this;
+        this.localizedAttributes = localizedAttributes;
+        return this;
     }
-      
+
     public Builder addLocalizedAttributesItem(Object localizedAttributesItem) {
       if (this.localizedAttributes == null) {
         this.localizedAttributes = new ArrayList<Object>();
@@ -210,10 +210,10 @@ public final class CreateProactiveEventRequest{
 
     @JsonProperty("relevantAudience")
     public Builder withRelevantAudience(com.amazon.ask.model.services.proactiveEvents.RelevantAudience relevantAudience) {
-      this.relevantAudience = relevantAudience;
-      return this;
+        this.relevantAudience = relevantAudience;
+        return this;
     }
-      
+
 
     public CreateProactiveEventRequest build() {
       return new CreateProactiveEventRequest(this);

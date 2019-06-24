@@ -104,17 +104,17 @@ public final class Entity{
 
     @JsonProperty("id")
     public Builder withId(String id) {
-      this.id = id;
-      return this;
+        this.id = id;
+        return this;
     }
-      
+
 
     @JsonProperty("name")
     public Builder withName(com.amazon.ask.model.er.dynamic.EntityValueAndSynonyms name) {
-      this.name = name;
-      return this;
+        this.name = name;
+        return this;
     }
-      
+
 
     public Entity build() {
       return new Entity(this);

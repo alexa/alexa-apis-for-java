@@ -89,10 +89,10 @@ public final class PushNotification{
 
     @JsonProperty("status")
     public Builder withStatus(com.amazon.ask.model.services.reminderManagement.PushNotificationStatus status) {
-      this.status = status;
-      return this;
+        this.status = status;
+        return this;
     }
-      
+
 
     public PushNotification build() {
       return new PushNotification(this);

@@ -145,42 +145,41 @@ public final class UserEvent extends com.amazon.ask.model.Request {
     private Object components;
 
     private Builder() { }
-      
 
     @JsonProperty("requestId")
     public Builder withRequestId(String requestId) {
-      this.requestId = requestId;
-      return this;
+        this.requestId = requestId;
+        return this;
     }
-      
+
 
     @JsonProperty("timestamp")
     public Builder withTimestamp(OffsetDateTime timestamp) {
-      this.timestamp = timestamp;
-      return this;
+        this.timestamp = timestamp;
+        return this;
     }
-      
+
 
     @JsonProperty("locale")
     public Builder withLocale(String locale) {
-      this.locale = locale;
-      return this;
+        this.locale = locale;
+        return this;
     }
-      
+
 
     @JsonProperty("token")
     public Builder withToken(String token) {
-      this.token = token;
-      return this;
+        this.token = token;
+        return this;
     }
-      
+
 
     @JsonProperty("arguments")
     public Builder withArguments(List<Object> arguments) {
-      this.arguments = arguments;
-      return this;
+        this.arguments = arguments;
+        return this;
     }
-      
+
     public Builder addArgumentsItem(Object argumentsItem) {
       if (this.arguments == null) {
         this.arguments = new ArrayList<Object>();
@@ -191,17 +190,17 @@ public final class UserEvent extends com.amazon.ask.model.Request {
 
     @JsonProperty("source")
     public Builder withSource(Object source) {
-      this.source = source;
-      return this;
+        this.source = source;
+        return this;
     }
-      
+
 
     @JsonProperty("components")
     public Builder withComponents(Object components) {
-      this.components = components;
-      return this;
+        this.components = components;
+        return this;
     }
-      
+
 
     public UserEvent build() {
       return new UserEvent(this);

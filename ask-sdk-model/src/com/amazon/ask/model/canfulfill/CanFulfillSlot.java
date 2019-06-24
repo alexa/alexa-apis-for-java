@@ -104,17 +104,17 @@ public final class CanFulfillSlot{
 
     @JsonProperty("canUnderstand")
     public Builder withCanUnderstand(com.amazon.ask.model.canfulfill.CanUnderstandSlotValues canUnderstand) {
-      this.canUnderstand = canUnderstand;
-      return this;
+        this.canUnderstand = canUnderstand;
+        return this;
     }
-      
+
 
     @JsonProperty("canFulfill")
     public Builder withCanFulfill(com.amazon.ask.model.canfulfill.CanFulfillSlotValues canFulfill) {
-      this.canFulfill = canFulfill;
-      return this;
+        this.canFulfill = canFulfill;
+        return this;
     }
-      
+
 
     public CanFulfillSlot build() {
       return new CanFulfillSlot(this);

@@ -75,33 +75,36 @@ public final class IdleCommand extends com.amazon.ask.model.interfaces.alexa.pre
   }
 
   public static class Builder {
-    private Integer delay;
+    private String delay;
     private String description;
     private Boolean when;
 
     private Builder() { }
-      
 
     @JsonProperty("delay")
     public Builder withDelay(Integer delay) {
-      this.delay = delay;
-      return this;
+        this.delay = String.valueOf(delay);
+        return this;
     }
-      
+
+    public Builder withDelay(String delayExpression) {
+        this.delay = delayExpression;
+        return this;
+    }
 
     @JsonProperty("description")
     public Builder withDescription(String description) {
-      this.description = description;
-      return this;
+        this.description = description;
+        return this;
     }
-      
+
 
     @JsonProperty("when")
     public Builder withWhen(Boolean when) {
-      this.when = when;
-      return this;
+        this.when = when;
+        return this;
     }
-      
+
 
     public IdleCommand build() {
       return new IdleCommand(this);

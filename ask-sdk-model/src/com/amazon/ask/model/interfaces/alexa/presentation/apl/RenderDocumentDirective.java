@@ -140,21 +140,20 @@ public final class RenderDocumentDirective extends com.amazon.ask.model.Directiv
     private List<Object> packages;
 
     private Builder() { }
-      
 
     @JsonProperty("token")
     public Builder withToken(String token) {
-      this.token = token;
-      return this;
+        this.token = token;
+        return this;
     }
-      
+
 
     @JsonProperty("document")
     public Builder withDocument(Map<String, Object> document) {
-      this.document = document;
-      return this;
+        this.document = document;
+        return this;
     }
-      
+
     public Builder putDocumentItem(String key, Object documentItem) {
       if (this.document == null) {
         this.document = new HashMap<String, Object>();
@@ -165,10 +164,10 @@ public final class RenderDocumentDirective extends com.amazon.ask.model.Directiv
 
     @JsonProperty("datasources")
     public Builder withDatasources(Map<String, Object> datasources) {
-      this.datasources = datasources;
-      return this;
+        this.datasources = datasources;
+        return this;
     }
-      
+
     public Builder putDatasourcesItem(String key, Object datasourcesItem) {
       if (this.datasources == null) {
         this.datasources = new HashMap<String, Object>();
@@ -179,10 +178,10 @@ public final class RenderDocumentDirective extends com.amazon.ask.model.Directiv
 
     @JsonProperty("packages")
     public Builder withPackages(List<Object> packages) {
-      this.packages = packages;
-      return this;
+        this.packages = packages;
+        return this;
     }
-      
+
     public Builder addPackagesItem(Object packagesItem) {
       if (this.packages == null) {
         this.packages = new ArrayList<Object>();

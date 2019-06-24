@@ -107,17 +107,17 @@ public final class ListItemBody{
 
     @JsonProperty("listId")
     public Builder withListId(String listId) {
-      this.listId = listId;
-      return this;
+        this.listId = listId;
+        return this;
     }
-      
+
 
     @JsonProperty("listItemIds")
     public Builder withListItemIds(List<String> listItemIds) {
-      this.listItemIds = listItemIds;
-      return this;
+        this.listItemIds = listItemIds;
+        return this;
     }
-      
+
     public Builder addListItemIdsItem(String listItemIdsItem) {
       if (this.listItemIds == null) {
         this.listItemIds = new ArrayList<String>();

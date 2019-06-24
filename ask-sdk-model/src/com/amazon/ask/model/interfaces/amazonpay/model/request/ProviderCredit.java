@@ -110,25 +110,24 @@ public final class ProviderCredit extends com.amazon.ask.model.interfaces.amazon
 
     @JsonProperty("providerId")
     public Builder withProviderId(String providerId) {
-      this.providerId = providerId;
-      return this;
+        this.providerId = providerId;
+        return this;
     }
-      
+
 
     @JsonProperty("credit")
     public Builder withCredit(com.amazon.ask.model.interfaces.amazonpay.model.request.Price credit) {
-      this.credit = credit;
-      return this;
+        this.credit = credit;
+        return this;
     }
-      
-      
+
 
     @JsonProperty("@version")
     public Builder withVersion(String version) {
-      this.version = version;
-      return this;
+        this.version = version;
+        return this;
     }
-      
+
 
     public ProviderCredit build() {
       return new ProviderCredit(this);

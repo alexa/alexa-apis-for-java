@@ -134,31 +134,31 @@ public final class Stream{
 
     @JsonProperty("expectedPreviousToken")
     public Builder withExpectedPreviousToken(String expectedPreviousToken) {
-      this.expectedPreviousToken = expectedPreviousToken;
-      return this;
+        this.expectedPreviousToken = expectedPreviousToken;
+        return this;
     }
-      
+
 
     @JsonProperty("token")
     public Builder withToken(String token) {
-      this.token = token;
-      return this;
+        this.token = token;
+        return this;
     }
-      
+
 
     @JsonProperty("url")
     public Builder withUrl(String url) {
-      this.url = url;
-      return this;
+        this.url = url;
+        return this;
     }
-      
+
 
     @JsonProperty("offsetInMilliseconds")
     public Builder withOffsetInMilliseconds(Long offsetInMilliseconds) {
-      this.offsetInMilliseconds = offsetInMilliseconds;
-      return this;
+        this.offsetInMilliseconds = offsetInMilliseconds;
+        return this;
     }
-      
+
 
     public Stream build() {
       return new Stream(this);

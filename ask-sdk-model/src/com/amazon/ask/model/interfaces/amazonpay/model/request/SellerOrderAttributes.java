@@ -140,39 +140,38 @@ public final class SellerOrderAttributes extends com.amazon.ask.model.interfaces
 
     @JsonProperty("sellerOrderId")
     public Builder withSellerOrderId(String sellerOrderId) {
-      this.sellerOrderId = sellerOrderId;
-      return this;
+        this.sellerOrderId = sellerOrderId;
+        return this;
     }
-      
+
 
     @JsonProperty("storeName")
     public Builder withStoreName(String storeName) {
-      this.storeName = storeName;
-      return this;
+        this.storeName = storeName;
+        return this;
     }
-      
+
 
     @JsonProperty("customInformation")
     public Builder withCustomInformation(String customInformation) {
-      this.customInformation = customInformation;
-      return this;
+        this.customInformation = customInformation;
+        return this;
     }
-      
+
 
     @JsonProperty("sellerNote")
     public Builder withSellerNote(String sellerNote) {
-      this.sellerNote = sellerNote;
-      return this;
+        this.sellerNote = sellerNote;
+        return this;
     }
-      
-      
+
 
     @JsonProperty("@version")
     public Builder withVersion(String version) {
-      this.version = version;
-      return this;
+        this.version = version;
+        return this;
     }
-      
+
 
     public SellerOrderAttributes build() {
       return new SellerOrderAttributes(this);

@@ -35,7 +35,7 @@ public final class SpeakItemCommand extends com.amazon.ask.model.interfaces.alex
   private com.amazon.ask.model.interfaces.alexa.presentation.apl.HighlightMode highlightMode = null;
 
   @JsonProperty("minimumDwellTime")
-  private Integer minimumDwellTime = null;
+  private String minimumDwellTime = String.valueOf(null);
 
   public static Builder builder() {
     return new Builder();
@@ -82,7 +82,7 @@ public final class SpeakItemCommand extends com.amazon.ask.model.interfaces.alex
     * The minimum number of milliseconds that an item should be highlighted for. Defaults to 0.
   * @return minimumDwellTime
   **/
-  public Integer getMinimumDwellTime() {
+  public String getMinimumDwellTime() {
     return minimumDwellTime;
   }
 
@@ -132,65 +132,72 @@ public final class SpeakItemCommand extends com.amazon.ask.model.interfaces.alex
   }
 
   public static class Builder {
-    private Integer delay;
+    private String delay;
     private String description;
     private Boolean when;
     private com.amazon.ask.model.interfaces.alexa.presentation.apl.Align align;
     private String componentId;
     private com.amazon.ask.model.interfaces.alexa.presentation.apl.HighlightMode highlightMode;
-    private Integer minimumDwellTime;
+    private String minimumDwellTime;
 
     private Builder() { }
-      
 
     @JsonProperty("delay")
     public Builder withDelay(Integer delay) {
-      this.delay = delay;
-      return this;
+        this.delay = String.valueOf(delay);
+        return this;
     }
-      
+
+    public Builder withDelay(String delayExpression) {
+        this.delay = delayExpression;
+        return this;
+    }
 
     @JsonProperty("description")
     public Builder withDescription(String description) {
-      this.description = description;
-      return this;
+        this.description = description;
+        return this;
     }
-      
+
 
     @JsonProperty("when")
     public Builder withWhen(Boolean when) {
-      this.when = when;
-      return this;
+        this.when = when;
+        return this;
     }
-      
+
 
     @JsonProperty("align")
     public Builder withAlign(com.amazon.ask.model.interfaces.alexa.presentation.apl.Align align) {
-      this.align = align;
-      return this;
+        this.align = align;
+        return this;
     }
-      
+
 
     @JsonProperty("componentId")
     public Builder withComponentId(String componentId) {
-      this.componentId = componentId;
-      return this;
+        this.componentId = componentId;
+        return this;
     }
-      
+
 
     @JsonProperty("highlightMode")
     public Builder withHighlightMode(com.amazon.ask.model.interfaces.alexa.presentation.apl.HighlightMode highlightMode) {
-      this.highlightMode = highlightMode;
-      return this;
+        this.highlightMode = highlightMode;
+        return this;
     }
-      
+
 
     @JsonProperty("minimumDwellTime")
     public Builder withMinimumDwellTime(Integer minimumDwellTime) {
-      this.minimumDwellTime = minimumDwellTime;
-      return this;
+        this.minimumDwellTime = String.valueOf(minimumDwellTime);
+        return this;
     }
-      
+
+    public Builder withMinimumDwellTime(String minimumDwellTimeExpression) {
+        this.minimumDwellTime = minimumDwellTimeExpression;
+        return this;
+    }
 
     public SpeakItemCommand build() {
       return new SpeakItemCommand(this);

@@ -89,10 +89,10 @@ public final class ListBody{
 
     @JsonProperty("listId")
     public Builder withListId(String listId) {
-      this.listId = listId;
-      return this;
+        this.listId = listId;
+        return this;
     }
-      
+
 
     public ListBody build() {
       return new ListBody(this);

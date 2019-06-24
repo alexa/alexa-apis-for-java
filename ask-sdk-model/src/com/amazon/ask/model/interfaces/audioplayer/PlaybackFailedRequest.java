@@ -127,49 +127,48 @@ public final class PlaybackFailedRequest extends com.amazon.ask.model.Request {
     private String token;
 
     private Builder() { }
-      
 
     @JsonProperty("requestId")
     public Builder withRequestId(String requestId) {
-      this.requestId = requestId;
-      return this;
+        this.requestId = requestId;
+        return this;
     }
-      
+
 
     @JsonProperty("timestamp")
     public Builder withTimestamp(OffsetDateTime timestamp) {
-      this.timestamp = timestamp;
-      return this;
+        this.timestamp = timestamp;
+        return this;
     }
-      
+
 
     @JsonProperty("locale")
     public Builder withLocale(String locale) {
-      this.locale = locale;
-      return this;
+        this.locale = locale;
+        return this;
     }
-      
+
 
     @JsonProperty("currentPlaybackState")
     public Builder withCurrentPlaybackState(com.amazon.ask.model.interfaces.audioplayer.CurrentPlaybackState currentPlaybackState) {
-      this.currentPlaybackState = currentPlaybackState;
-      return this;
+        this.currentPlaybackState = currentPlaybackState;
+        return this;
     }
-      
+
 
     @JsonProperty("error")
     public Builder withError(com.amazon.ask.model.interfaces.audioplayer.Error error) {
-      this.error = error;
-      return this;
+        this.error = error;
+        return this;
     }
-      
+
 
     @JsonProperty("token")
     public Builder withToken(String token) {
-      this.token = token;
-      return this;
+        this.token = token;
+        return this;
     }
-      
+
 
     public PlaybackFailedRequest build() {
       return new PlaybackFailedRequest(this);

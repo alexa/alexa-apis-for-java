@@ -137,17 +137,17 @@ public final class ResponseEnvelope{
 
     @JsonProperty("version")
     public Builder withVersion(String version) {
-      this.version = version;
-      return this;
+        this.version = version;
+        return this;
     }
-      
+
 
     @JsonProperty("sessionAttributes")
     public Builder withSessionAttributes(Map<String, Object> sessionAttributes) {
-      this.sessionAttributes = sessionAttributes;
-      return this;
+        this.sessionAttributes = sessionAttributes;
+        return this;
     }
-      
+
     public Builder putSessionAttributesItem(String key, Object sessionAttributesItem) {
       if (this.sessionAttributes == null) {
         this.sessionAttributes = new HashMap<String, Object>();
@@ -158,17 +158,17 @@ public final class ResponseEnvelope{
 
     @JsonProperty("userAgent")
     public Builder withUserAgent(String userAgent) {
-      this.userAgent = userAgent;
-      return this;
+        this.userAgent = userAgent;
+        return this;
     }
-      
+
 
     @JsonProperty("response")
     public Builder withResponse(com.amazon.ask.model.Response response) {
-      this.response = response;
-      return this;
+        this.response = response;
+        return this;
     }
-      
+
 
     public ResponseEnvelope build() {
       return new ResponseEnvelope(this);

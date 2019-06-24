@@ -89,10 +89,10 @@ public final class Scope{
 
     @JsonProperty("status")
     public Builder withStatus(com.amazon.ask.model.PermissionStatus status) {
-      this.status = status;
-      return this;
+        this.status = status;
+        return this;
     }
-      
+
 
     public Scope build() {
       return new Scope(this);

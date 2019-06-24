@@ -108,21 +108,20 @@ public final class SendResponseDirective extends com.amazon.ask.model.Directive 
     private Map<String, Object> payload;
 
     private Builder() { }
-      
 
     @JsonProperty("status")
     public Builder withStatus(com.amazon.ask.model.interfaces.connections.ConnectionsStatus status) {
-      this.status = status;
-      return this;
+        this.status = status;
+        return this;
     }
-      
+
 
     @JsonProperty("payload")
     public Builder withPayload(Map<String, Object> payload) {
-      this.payload = payload;
-      return this;
+        this.payload = payload;
+        return this;
     }
-      
+
     public Builder putPayloadItem(String key, Object payloadItem) {
       if (this.payload == null) {
         this.payload = new HashMap<String, Object>();

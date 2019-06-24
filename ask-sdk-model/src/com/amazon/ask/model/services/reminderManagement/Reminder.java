@@ -195,59 +195,59 @@ public final class Reminder{
 
     @JsonProperty("alertToken")
     public Builder withAlertToken(String alertToken) {
-      this.alertToken = alertToken;
-      return this;
+        this.alertToken = alertToken;
+        return this;
     }
-      
+
 
     @JsonProperty("createdTime")
     public Builder withCreatedTime(OffsetDateTime createdTime) {
-      this.createdTime = createdTime;
-      return this;
+        this.createdTime = createdTime;
+        return this;
     }
-      
+
 
     @JsonProperty("updatedTime")
     public Builder withUpdatedTime(OffsetDateTime updatedTime) {
-      this.updatedTime = updatedTime;
-      return this;
+        this.updatedTime = updatedTime;
+        return this;
     }
-      
+
 
     @JsonProperty("status")
     public Builder withStatus(com.amazon.ask.model.services.reminderManagement.Status status) {
-      this.status = status;
-      return this;
+        this.status = status;
+        return this;
     }
-      
+
 
     @JsonProperty("trigger")
     public Builder withTrigger(com.amazon.ask.model.services.reminderManagement.Trigger trigger) {
-      this.trigger = trigger;
-      return this;
+        this.trigger = trigger;
+        return this;
     }
-      
+
 
     @JsonProperty("alertInfo")
     public Builder withAlertInfo(com.amazon.ask.model.services.reminderManagement.AlertInfo alertInfo) {
-      this.alertInfo = alertInfo;
-      return this;
+        this.alertInfo = alertInfo;
+        return this;
     }
-      
+
 
     @JsonProperty("pushNotification")
     public Builder withPushNotification(com.amazon.ask.model.services.reminderManagement.PushNotification pushNotification) {
-      this.pushNotification = pushNotification;
-      return this;
+        this.pushNotification = pushNotification;
+        return this;
     }
-      
+
 
     @JsonProperty("version")
     public Builder withVersion(String version) {
-      this.version = version;
-      return this;
+        this.version = version;
+        return this;
     }
-      
+
 
     public Reminder build() {
       return new Reminder(this);

@@ -152,49 +152,48 @@ public final class PostalAddress extends com.amazon.ask.model.interfaces.connect
     private String country;
 
     private Builder() { }
-      
 
     @JsonProperty("@version")
     public Builder withVersion(String version) {
-      this.version = version;
-      return this;
+        this.version = version;
+        return this;
     }
-      
+
 
     @JsonProperty("streetAddress")
     public Builder withStreetAddress(String streetAddress) {
-      this.streetAddress = streetAddress;
-      return this;
+        this.streetAddress = streetAddress;
+        return this;
     }
-      
+
 
     @JsonProperty("locality")
     public Builder withLocality(String locality) {
-      this.locality = locality;
-      return this;
+        this.locality = locality;
+        return this;
     }
-      
+
 
     @JsonProperty("region")
     public Builder withRegion(String region) {
-      this.region = region;
-      return this;
+        this.region = region;
+        return this;
     }
-      
+
 
     @JsonProperty("postalCode")
     public Builder withPostalCode(String postalCode) {
-      this.postalCode = postalCode;
-      return this;
+        this.postalCode = postalCode;
+        return this;
     }
-      
+
 
     @JsonProperty("country")
     public Builder withCountry(String country) {
-      this.country = country;
-      return this;
+        this.country = country;
+        return this;
     }
-      
+
 
     public PostalAddress build() {
       return new PostalAddress(this);

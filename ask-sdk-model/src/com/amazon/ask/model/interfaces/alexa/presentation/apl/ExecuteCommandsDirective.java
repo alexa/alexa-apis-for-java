@@ -108,14 +108,13 @@ public final class ExecuteCommandsDirective extends com.amazon.ask.model.Directi
     private String token;
 
     private Builder() { }
-      
 
     @JsonProperty("commands")
     public Builder withCommands(List<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command> commands) {
-      this.commands = commands;
-      return this;
+        this.commands = commands;
+        return this;
     }
-      
+
     public Builder addCommandsItem(com.amazon.ask.model.interfaces.alexa.presentation.apl.Command commandsItem) {
       if (this.commands == null) {
         this.commands = new ArrayList<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command>();
@@ -126,10 +125,10 @@ public final class ExecuteCommandsDirective extends com.amazon.ask.model.Directi
 
     @JsonProperty("token")
     public Builder withToken(String token) {
-      this.token = token;
-      return this;
+        this.token = token;
+        return this;
     }
-      
+
 
     public ExecuteCommandsDirective build() {
       return new ExecuteCommandsDirective(this);

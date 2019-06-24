@@ -100,35 +100,34 @@ public final class MessageReceivedRequest extends com.amazon.ask.model.Request {
     private Map<String, Object> message;
 
     private Builder() { }
-      
 
     @JsonProperty("requestId")
     public Builder withRequestId(String requestId) {
-      this.requestId = requestId;
-      return this;
+        this.requestId = requestId;
+        return this;
     }
-      
+
 
     @JsonProperty("timestamp")
     public Builder withTimestamp(OffsetDateTime timestamp) {
-      this.timestamp = timestamp;
-      return this;
+        this.timestamp = timestamp;
+        return this;
     }
-      
+
 
     @JsonProperty("locale")
     public Builder withLocale(String locale) {
-      this.locale = locale;
-      return this;
+        this.locale = locale;
+        return this;
     }
-      
+
 
     @JsonProperty("message")
     public Builder withMessage(Map<String, Object> message) {
-      this.message = message;
-      return this;
+        this.message = message;
+        return this;
     }
-      
+
     public Builder putMessageItem(String key, Object messageItem) {
       if (this.message == null) {
         this.message = new HashMap<String, Object>();

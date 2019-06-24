@@ -106,17 +106,17 @@ public final class SendSkillMessagingRequest{
 
     @JsonProperty("data")
     public Builder withData(Object data) {
-      this.data = data;
-      return this;
+        this.data = data;
+        return this;
     }
-      
+
 
     @JsonProperty("expiresAfterSeconds")
     public Builder withExpiresAfterSeconds(Long expiresAfterSeconds) {
-      this.expiresAfterSeconds = expiresAfterSeconds;
-      return this;
+        this.expiresAfterSeconds = expiresAfterSeconds;
+        return this;
     }
-      
+
 
     public SendSkillMessagingRequest build() {
       return new SendSkillMessagingRequest(this);

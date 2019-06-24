@@ -119,24 +119,24 @@ public final class AudioPlayerState{
 
     @JsonProperty("offsetInMilliseconds")
     public Builder withOffsetInMilliseconds(Long offsetInMilliseconds) {
-      this.offsetInMilliseconds = offsetInMilliseconds;
-      return this;
+        this.offsetInMilliseconds = offsetInMilliseconds;
+        return this;
     }
-      
+
 
     @JsonProperty("token")
     public Builder withToken(String token) {
-      this.token = token;
-      return this;
+        this.token = token;
+        return this;
     }
-      
+
 
     @JsonProperty("playerActivity")
     public Builder withPlayerActivity(com.amazon.ask.model.interfaces.audioplayer.PlayerActivity playerActivity) {
-      this.playerActivity = playerActivity;
-      return this;
+        this.playerActivity = playerActivity;
+        return this;
     }
-      
+
 
     public AudioPlayerState build() {
       return new AudioPlayerState(this);

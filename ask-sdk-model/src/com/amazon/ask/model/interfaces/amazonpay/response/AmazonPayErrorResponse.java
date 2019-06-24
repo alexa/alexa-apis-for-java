@@ -104,17 +104,17 @@ public final class AmazonPayErrorResponse{
 
     @JsonProperty("errorCode")
     public Builder withErrorCode(String errorCode) {
-      this.errorCode = errorCode;
-      return this;
+        this.errorCode = errorCode;
+        return this;
     }
-      
+
 
     @JsonProperty("errorMessage")
     public Builder withErrorMessage(String errorMessage) {
-      this.errorMessage = errorMessage;
-      return this;
+        this.errorMessage = errorMessage;
+        return this;
     }
-      
+
 
     public AmazonPayErrorResponse build() {
       return new AmazonPayErrorResponse(this);

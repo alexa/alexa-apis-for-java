@@ -29,16 +29,16 @@ public final class VideoSource{
   private String description = null;
 
   @JsonProperty("duration")
-  private Integer duration = null;
+  private String duration = String.valueOf(null);
 
   @JsonProperty("url")
   private String url = null;
 
   @JsonProperty("repeatCount")
-  private Integer repeatCount = null;
+  private String repeatCount = String.valueOf(null);
 
   @JsonProperty("offset")
-  private Integer offset = null;
+  private String offset = String.valueOf(null);
 
   public static Builder builder() {
     return new Builder();
@@ -64,7 +64,7 @@ public final class VideoSource{
     * Duration of time to play. If not set, defaults to the entire stream. Expressed in milliseconds.
   * @return duration
   **/
-  public Integer getDuration() {
+  public String getDuration() {
     return duration;
   }
 
@@ -80,7 +80,7 @@ public final class VideoSource{
     * Number of times to loop the video. Defaults to 0.
   * @return repeatCount
   **/
-  public Integer getRepeatCount() {
+  public String getRepeatCount() {
     return repeatCount;
   }
 
@@ -88,7 +88,7 @@ public final class VideoSource{
     * Offset to start playing at in the stream (defaults to 0).
   * @return offset
   **/
-  public Integer getOffset() {
+  public String getOffset() {
     return offset;
   }
 
@@ -140,47 +140,59 @@ public final class VideoSource{
 
   public static class Builder {
     private String description;
-    private Integer duration;
+    private String duration;
     private String url;
-    private Integer repeatCount;
-    private Integer offset;
+    private String repeatCount;
+    private String offset;
 
     private Builder() { }
 
     @JsonProperty("description")
     public Builder withDescription(String description) {
-      this.description = description;
-      return this;
+        this.description = description;
+        return this;
     }
-      
+
 
     @JsonProperty("duration")
     public Builder withDuration(Integer duration) {
-      this.duration = duration;
-      return this;
+        this.duration = String.valueOf(duration);
+        return this;
     }
-      
+
+    public Builder withDuration(String durationExpression) {
+        this.duration = durationExpression;
+        return this;
+    }
 
     @JsonProperty("url")
     public Builder withUrl(String url) {
-      this.url = url;
-      return this;
+        this.url = url;
+        return this;
     }
-      
+
 
     @JsonProperty("repeatCount")
     public Builder withRepeatCount(Integer repeatCount) {
-      this.repeatCount = repeatCount;
-      return this;
+        this.repeatCount = String.valueOf(repeatCount);
+        return this;
     }
-      
+
+    public Builder withRepeatCount(String repeatCountExpression) {
+        this.repeatCount = repeatCountExpression;
+        return this;
+    }
 
     @JsonProperty("offset")
     public Builder withOffset(Integer offset) {
-      this.offset = offset;
-      return this;
+        this.offset = String.valueOf(offset);
+        return this;
     }
-      
+
+    public Builder withOffset(String offsetExpression) {
+        this.offset = offsetExpression;
+        return this;
+    }
 
     public VideoSource build() {
       return new VideoSource(this);

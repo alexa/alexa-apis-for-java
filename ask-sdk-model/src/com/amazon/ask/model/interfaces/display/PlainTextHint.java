@@ -90,14 +90,13 @@ public final class PlainTextHint extends com.amazon.ask.model.interfaces.display
     private String text;
 
     private Builder() { }
-      
 
     @JsonProperty("text")
     public Builder withText(String text) {
-      this.text = text;
-      return this;
+        this.text = text;
+        return this;
     }
-      
+
 
     public PlainTextHint build() {
       return new PlainTextHint(this);

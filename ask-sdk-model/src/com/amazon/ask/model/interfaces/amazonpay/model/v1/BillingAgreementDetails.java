@@ -74,7 +74,7 @@ public final class BillingAgreementDetails{
   }
 
   /**
-    * Get destination
+    * The default shipping address of the buyer. Returned if needAmazonShippingAddress is set to true.
   * @return destination
   **/
   public com.amazon.ask.model.interfaces.amazonpay.model.v1.Destination getDestination() {
@@ -165,45 +165,45 @@ public final class BillingAgreementDetails{
 
     @JsonProperty("billingAgreementId")
     public Builder withBillingAgreementId(String billingAgreementId) {
-      this.billingAgreementId = billingAgreementId;
-      return this;
+        this.billingAgreementId = billingAgreementId;
+        return this;
     }
-      
+
 
     @JsonProperty("creationTimestamp")
     public Builder withCreationTimestamp(OffsetDateTime creationTimestamp) {
-      this.creationTimestamp = creationTimestamp;
-      return this;
+        this.creationTimestamp = creationTimestamp;
+        return this;
     }
-      
+
 
     @JsonProperty("destination")
     public Builder withDestination(com.amazon.ask.model.interfaces.amazonpay.model.v1.Destination destination) {
-      this.destination = destination;
-      return this;
+        this.destination = destination;
+        return this;
     }
-      
+
 
     @JsonProperty("checkoutLanguage")
     public Builder withCheckoutLanguage(String checkoutLanguage) {
-      this.checkoutLanguage = checkoutLanguage;
-      return this;
+        this.checkoutLanguage = checkoutLanguage;
+        return this;
     }
-      
+
 
     @JsonProperty("releaseEnvironment")
     public Builder withReleaseEnvironment(com.amazon.ask.model.interfaces.amazonpay.model.v1.ReleaseEnvironment releaseEnvironment) {
-      this.releaseEnvironment = releaseEnvironment;
-      return this;
+        this.releaseEnvironment = releaseEnvironment;
+        return this;
     }
-      
+
 
     @JsonProperty("billingAgreementStatus")
     public Builder withBillingAgreementStatus(com.amazon.ask.model.interfaces.amazonpay.model.v1.BillingAgreementStatus billingAgreementStatus) {
-      this.billingAgreementStatus = billingAgreementStatus;
-      return this;
+        this.billingAgreementStatus = billingAgreementStatus;
+        return this;
     }
-      
+
 
     public BillingAgreementDetails build() {
       return new BillingAgreementDetails(this);

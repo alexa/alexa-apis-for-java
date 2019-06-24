@@ -89,10 +89,10 @@ public final class Application{
 
     @JsonProperty("applicationId")
     public Builder withApplicationId(String applicationId) {
-      this.applicationId = applicationId;
-      return this;
+        this.applicationId = applicationId;
+        return this;
     }
-      
+
 
     public Application build() {
       return new Application(this);

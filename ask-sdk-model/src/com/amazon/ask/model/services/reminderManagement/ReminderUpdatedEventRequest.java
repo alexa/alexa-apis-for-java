@@ -97,35 +97,34 @@ public final class ReminderUpdatedEventRequest extends com.amazon.ask.model.Requ
     private com.amazon.ask.model.services.reminderManagement.Event body;
 
     private Builder() { }
-      
 
     @JsonProperty("requestId")
     public Builder withRequestId(String requestId) {
-      this.requestId = requestId;
-      return this;
+        this.requestId = requestId;
+        return this;
     }
-      
+
 
     @JsonProperty("timestamp")
     public Builder withTimestamp(OffsetDateTime timestamp) {
-      this.timestamp = timestamp;
-      return this;
+        this.timestamp = timestamp;
+        return this;
     }
-      
+
 
     @JsonProperty("locale")
     public Builder withLocale(String locale) {
-      this.locale = locale;
-      return this;
+        this.locale = locale;
+        return this;
     }
-      
+
 
     @JsonProperty("body")
     public Builder withBody(com.amazon.ask.model.services.reminderManagement.Event body) {
-      this.body = body;
-      return this;
+        this.body = body;
+        return this;
     }
-      
+
 
     public ReminderUpdatedEventRequest build() {
       return new ReminderUpdatedEventRequest(this);

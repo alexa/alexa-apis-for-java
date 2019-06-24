@@ -105,21 +105,20 @@ public final class PlayDirective extends com.amazon.ask.model.Directive {
     private com.amazon.ask.model.interfaces.audioplayer.AudioItem audioItem;
 
     private Builder() { }
-      
 
     @JsonProperty("playBehavior")
     public Builder withPlayBehavior(com.amazon.ask.model.interfaces.audioplayer.PlayBehavior playBehavior) {
-      this.playBehavior = playBehavior;
-      return this;
+        this.playBehavior = playBehavior;
+        return this;
     }
-      
+
 
     @JsonProperty("audioItem")
     public Builder withAudioItem(com.amazon.ask.model.interfaces.audioplayer.AudioItem audioItem) {
-      this.audioItem = audioItem;
-      return this;
+        this.audioItem = audioItem;
+        return this;
     }
-      
+
 
     public PlayDirective build() {
       return new PlayDirective(this);

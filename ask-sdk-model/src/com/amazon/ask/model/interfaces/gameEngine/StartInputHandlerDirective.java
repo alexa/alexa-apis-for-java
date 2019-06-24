@@ -142,21 +142,20 @@ public final class StartInputHandlerDirective extends com.amazon.ask.model.Direc
     private Map<String, com.amazon.ask.model.services.gameEngine.Event> events;
 
     private Builder() { }
-      
 
     @JsonProperty("timeout")
     public Builder withTimeout(Long timeout) {
-      this.timeout = timeout;
-      return this;
+        this.timeout = timeout;
+        return this;
     }
-      
+
 
     @JsonProperty("proxies")
     public Builder withProxies(List<String> proxies) {
-      this.proxies = proxies;
-      return this;
+        this.proxies = proxies;
+        return this;
     }
-      
+
     public Builder addProxiesItem(String proxiesItem) {
       if (this.proxies == null) {
         this.proxies = new ArrayList<String>();
@@ -167,10 +166,10 @@ public final class StartInputHandlerDirective extends com.amazon.ask.model.Direc
 
     @JsonProperty("recognizers")
     public Builder withRecognizers(Map<String, com.amazon.ask.model.services.gameEngine.Recognizer> recognizers) {
-      this.recognizers = recognizers;
-      return this;
+        this.recognizers = recognizers;
+        return this;
     }
-      
+
     public Builder putRecognizersItem(String key, com.amazon.ask.model.services.gameEngine.Recognizer recognizersItem) {
       if (this.recognizers == null) {
         this.recognizers = new HashMap<String, com.amazon.ask.model.services.gameEngine.Recognizer>();
@@ -181,10 +180,10 @@ public final class StartInputHandlerDirective extends com.amazon.ask.model.Direc
 
     @JsonProperty("events")
     public Builder withEvents(Map<String, com.amazon.ask.model.services.gameEngine.Event> events) {
-      this.events = events;
-      return this;
+        this.events = events;
+        return this;
     }
-      
+
     public Builder putEventsItem(String key, com.amazon.ask.model.services.gameEngine.Event eventsItem) {
       if (this.events == null) {
         this.events = new HashMap<String, com.amazon.ask.model.services.gameEngine.Event>();

@@ -122,10 +122,10 @@ public final class InSkillProductsResponse{
 
     @JsonProperty("inSkillProducts")
     public Builder withInSkillProducts(List<com.amazon.ask.model.services.monetization.InSkillProduct> inSkillProducts) {
-      this.inSkillProducts = inSkillProducts;
-      return this;
+        this.inSkillProducts = inSkillProducts;
+        return this;
     }
-      
+
     public Builder addInSkillProductsItem(com.amazon.ask.model.services.monetization.InSkillProduct inSkillProductsItem) {
       if (this.inSkillProducts == null) {
         this.inSkillProducts = new ArrayList<com.amazon.ask.model.services.monetization.InSkillProduct>();
@@ -136,17 +136,17 @@ public final class InSkillProductsResponse{
 
     @JsonProperty("isTruncated")
     public Builder withIsTruncated(Boolean isTruncated) {
-      this.isTruncated = isTruncated;
-      return this;
+        this.isTruncated = isTruncated;
+        return this;
     }
-      
+
 
     @JsonProperty("nextToken")
     public Builder withNextToken(String nextToken) {
-      this.nextToken = nextToken;
-      return this;
+        this.nextToken = nextToken;
+        return this;
     }
-      
+
 
     public InSkillProductsResponse build() {
       return new InSkillProductsResponse(this);

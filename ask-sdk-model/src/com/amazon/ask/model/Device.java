@@ -104,17 +104,17 @@ public final class Device{
 
     @JsonProperty("deviceId")
     public Builder withDeviceId(String deviceId) {
-      this.deviceId = deviceId;
-      return this;
+        this.deviceId = deviceId;
+        return this;
     }
-      
+
 
     @JsonProperty("supportedInterfaces")
     public Builder withSupportedInterfaces(com.amazon.ask.model.SupportedInterfaces supportedInterfaces) {
-      this.supportedInterfaces = supportedInterfaces;
-      return this;
+        this.supportedInterfaces = supportedInterfaces;
+        return this;
     }
-      
+
 
     public Device build() {
       return new Device(this);

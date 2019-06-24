@@ -107,17 +107,17 @@ public final class Image{
 
     @JsonProperty("contentDescription")
     public Builder withContentDescription(String contentDescription) {
-      this.contentDescription = contentDescription;
-      return this;
+        this.contentDescription = contentDescription;
+        return this;
     }
-      
+
 
     @JsonProperty("sources")
     public Builder withSources(List<com.amazon.ask.model.interfaces.display.ImageInstance> sources) {
-      this.sources = sources;
-      return this;
+        this.sources = sources;
+        return this;
     }
-      
+
     public Builder addSourcesItem(com.amazon.ask.model.interfaces.display.ImageInstance sourcesItem) {
       if (this.sources == null) {
         this.sources = new ArrayList<com.amazon.ask.model.interfaces.display.ImageInstance>();

@@ -134,31 +134,31 @@ public final class Slot{
 
     @JsonProperty("name")
     public Builder withName(String name) {
-      this.name = name;
-      return this;
+        this.name = name;
+        return this;
     }
-      
+
 
     @JsonProperty("value")
     public Builder withValue(String value) {
-      this.value = value;
-      return this;
+        this.value = value;
+        return this;
     }
-      
+
 
     @JsonProperty("confirmationStatus")
     public Builder withConfirmationStatus(com.amazon.ask.model.SlotConfirmationStatus confirmationStatus) {
-      this.confirmationStatus = confirmationStatus;
-      return this;
+        this.confirmationStatus = confirmationStatus;
+        return this;
     }
-      
+
 
     @JsonProperty("resolutions")
     public Builder withResolutions(com.amazon.ask.model.slu.entityresolution.Resolutions resolutions) {
-      this.resolutions = resolutions;
-      return this;
+        this.resolutions = resolutions;
+        return this;
     }
-      
+
 
     public Slot build() {
       return new Slot(this);

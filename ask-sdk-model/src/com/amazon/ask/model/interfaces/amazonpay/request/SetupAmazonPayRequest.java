@@ -197,70 +197,69 @@ public final class SetupAmazonPayRequest extends com.amazon.ask.model.interfaces
     private String sandboxCustomerEmailId;
 
     private Builder() { }
-      
 
     @JsonProperty("@version")
     public Builder withVersion(String version) {
-      this.version = version;
-      return this;
+        this.version = version;
+        return this;
     }
-      
+
 
     @JsonProperty("sellerId")
     public Builder withSellerId(String sellerId) {
-      this.sellerId = sellerId;
-      return this;
+        this.sellerId = sellerId;
+        return this;
     }
-      
+
 
     @JsonProperty("countryOfEstablishment")
     public Builder withCountryOfEstablishment(String countryOfEstablishment) {
-      this.countryOfEstablishment = countryOfEstablishment;
-      return this;
+        this.countryOfEstablishment = countryOfEstablishment;
+        return this;
     }
-      
+
 
     @JsonProperty("ledgerCurrency")
     public Builder withLedgerCurrency(String ledgerCurrency) {
-      this.ledgerCurrency = ledgerCurrency;
-      return this;
+        this.ledgerCurrency = ledgerCurrency;
+        return this;
     }
-      
+
 
     @JsonProperty("checkoutLanguage")
     public Builder withCheckoutLanguage(String checkoutLanguage) {
-      this.checkoutLanguage = checkoutLanguage;
-      return this;
+        this.checkoutLanguage = checkoutLanguage;
+        return this;
     }
-      
+
 
     @JsonProperty("billingAgreementAttributes")
     public Builder withBillingAgreementAttributes(com.amazon.ask.model.interfaces.amazonpay.model.request.BillingAgreementAttributes billingAgreementAttributes) {
-      this.billingAgreementAttributes = billingAgreementAttributes;
-      return this;
+        this.billingAgreementAttributes = billingAgreementAttributes;
+        return this;
     }
-      
+
 
     @JsonProperty("needAmazonShippingAddress")
     public Builder withNeedAmazonShippingAddress(Boolean needAmazonShippingAddress) {
-      this.needAmazonShippingAddress = needAmazonShippingAddress;
-      return this;
+        this.needAmazonShippingAddress = needAmazonShippingAddress;
+        return this;
     }
-      
+
 
     @JsonProperty("sandboxMode")
     public Builder withSandboxMode(Boolean sandboxMode) {
-      this.sandboxMode = sandboxMode;
-      return this;
+        this.sandboxMode = sandboxMode;
+        return this;
     }
-      
+
 
     @JsonProperty("sandboxCustomerEmailId")
     public Builder withSandboxCustomerEmailId(String sandboxCustomerEmailId) {
-      this.sandboxCustomerEmailId = sandboxCustomerEmailId;
-      return this;
+        this.sandboxCustomerEmailId = sandboxCustomerEmailId;
+        return this;
     }
-      
+
 
     public SetupAmazonPayRequest build() {
       return new SetupAmazonPayRequest(this);

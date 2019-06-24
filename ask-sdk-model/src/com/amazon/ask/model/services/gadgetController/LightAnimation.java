@@ -124,17 +124,17 @@ public final class LightAnimation{
 
     @JsonProperty("repeat")
     public Builder withRepeat(Integer repeat) {
-      this.repeat = repeat;
-      return this;
+        this.repeat = repeat;
+        return this;
     }
-      
+
 
     @JsonProperty("targetLights")
     public Builder withTargetLights(List<String> targetLights) {
-      this.targetLights = targetLights;
-      return this;
+        this.targetLights = targetLights;
+        return this;
     }
-      
+
     public Builder addTargetLightsItem(String targetLightsItem) {
       if (this.targetLights == null) {
         this.targetLights = new ArrayList<String>();
@@ -145,10 +145,10 @@ public final class LightAnimation{
 
     @JsonProperty("sequence")
     public Builder withSequence(List<com.amazon.ask.model.services.gadgetController.AnimationStep> sequence) {
-      this.sequence = sequence;
-      return this;
+        this.sequence = sequence;
+        return this;
     }
-      
+
     public Builder addSequenceItem(com.amazon.ask.model.services.gadgetController.AnimationStep sequenceItem) {
       if (this.sequence == null) {
         this.sequence = new ArrayList<com.amazon.ask.model.services.gadgetController.AnimationStep>();

@@ -89,10 +89,10 @@ public final class AlexaPresentationAplInterface{
 
     @JsonProperty("runtime")
     public Builder withRuntime(com.amazon.ask.model.interfaces.alexa.presentation.apl.Runtime runtime) {
-      this.runtime = runtime;
-      return this;
+        this.runtime = runtime;
+        return this;
     }
-      
+
 
     public AlexaPresentationAplInterface build() {
       return new AlexaPresentationAplInterface(this);

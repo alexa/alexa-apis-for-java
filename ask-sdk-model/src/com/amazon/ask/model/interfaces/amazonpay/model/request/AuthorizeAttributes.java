@@ -155,46 +155,45 @@ public final class AuthorizeAttributes extends com.amazon.ask.model.interfaces.a
 
     @JsonProperty("authorizationReferenceId")
     public Builder withAuthorizationReferenceId(String authorizationReferenceId) {
-      this.authorizationReferenceId = authorizationReferenceId;
-      return this;
+        this.authorizationReferenceId = authorizationReferenceId;
+        return this;
     }
-      
+
 
     @JsonProperty("authorizationAmount")
     public Builder withAuthorizationAmount(com.amazon.ask.model.interfaces.amazonpay.model.request.Price authorizationAmount) {
-      this.authorizationAmount = authorizationAmount;
-      return this;
+        this.authorizationAmount = authorizationAmount;
+        return this;
     }
-      
+
 
     @JsonProperty("transactionTimeout")
     public Builder withTransactionTimeout(Integer transactionTimeout) {
-      this.transactionTimeout = transactionTimeout;
-      return this;
+        this.transactionTimeout = transactionTimeout;
+        return this;
     }
-      
+
 
     @JsonProperty("sellerAuthorizationNote")
     public Builder withSellerAuthorizationNote(String sellerAuthorizationNote) {
-      this.sellerAuthorizationNote = sellerAuthorizationNote;
-      return this;
+        this.sellerAuthorizationNote = sellerAuthorizationNote;
+        return this;
     }
-      
+
 
     @JsonProperty("softDescriptor")
     public Builder withSoftDescriptor(String softDescriptor) {
-      this.softDescriptor = softDescriptor;
-      return this;
+        this.softDescriptor = softDescriptor;
+        return this;
     }
-      
-      
+
 
     @JsonProperty("@version")
     public Builder withVersion(String version) {
-      this.version = version;
-      return this;
+        this.version = version;
+        return this;
     }
-      
+
 
     public AuthorizeAttributes build() {
       return new AuthorizeAttributes(this);

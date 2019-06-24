@@ -92,10 +92,10 @@ public final class PermissionBody{
 
     @JsonProperty("acceptedPermissions")
     public Builder withAcceptedPermissions(List<com.amazon.ask.model.events.skillevents.Permission> acceptedPermissions) {
-      this.acceptedPermissions = acceptedPermissions;
-      return this;
+        this.acceptedPermissions = acceptedPermissions;
+        return this;
     }
-      
+
     public Builder addAcceptedPermissionsItem(com.amazon.ask.model.events.skillevents.Permission acceptedPermissionsItem) {
       if (this.acceptedPermissions == null) {
         this.acceptedPermissions = new ArrayList<com.amazon.ask.model.events.skillevents.Permission>();

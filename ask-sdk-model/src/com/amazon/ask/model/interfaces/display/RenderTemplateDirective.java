@@ -90,14 +90,13 @@ public final class RenderTemplateDirective extends com.amazon.ask.model.Directiv
     private com.amazon.ask.model.interfaces.display.Template template;
 
     private Builder() { }
-      
 
     @JsonProperty("template")
     public Builder withTemplate(com.amazon.ask.model.interfaces.display.Template template) {
-      this.template = template;
-      return this;
+        this.template = template;
+        return this;
     }
-      
+
 
     public RenderTemplateDirective build() {
       return new RenderTemplateDirective(this);

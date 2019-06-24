@@ -74,7 +74,6 @@ public final class LinkAccountCard extends com.amazon.ask.model.ui.Card {
   public static class Builder {
 
     private Builder() { }
-      
 
     public LinkAccountCard build() {
       return new LinkAccountCard(this);

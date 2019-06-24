@@ -104,17 +104,17 @@ public final class PhoneNumber{
 
     @JsonProperty("countryCode")
     public Builder withCountryCode(String countryCode) {
-      this.countryCode = countryCode;
-      return this;
+        this.countryCode = countryCode;
+        return this;
     }
-      
+
 
     @JsonProperty("phoneNumber")
     public Builder withPhoneNumber(String phoneNumber) {
-      this.phoneNumber = phoneNumber;
-      return this;
+        this.phoneNumber = phoneNumber;
+        return this;
     }
-      
+
 
     public PhoneNumber build() {
       return new PhoneNumber(this);

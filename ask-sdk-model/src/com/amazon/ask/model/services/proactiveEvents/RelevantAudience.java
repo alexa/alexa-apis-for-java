@@ -106,17 +106,17 @@ public final class RelevantAudience{
 
     @JsonProperty("type")
     public Builder withType(com.amazon.ask.model.services.proactiveEvents.RelevantAudienceType type) {
-      this.type = type;
-      return this;
+        this.type = type;
+        return this;
     }
-      
+
 
     @JsonProperty("payload")
     public Builder withPayload(Object payload) {
-      this.payload = payload;
-      return this;
+        this.payload = payload;
+        return this;
     }
-      
+
 
     public RelevantAudience build() {
       return new RelevantAudience(this);

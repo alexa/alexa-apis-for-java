@@ -92,10 +92,10 @@ public final class Resolutions{
 
     @JsonProperty("resolutionsPerAuthority")
     public Builder withResolutionsPerAuthority(List<com.amazon.ask.model.slu.entityresolution.Resolution> resolutionsPerAuthority) {
-      this.resolutionsPerAuthority = resolutionsPerAuthority;
-      return this;
+        this.resolutionsPerAuthority = resolutionsPerAuthority;
+        return this;
     }
-      
+
     public Builder addResolutionsPerAuthorityItem(com.amazon.ask.model.slu.entityresolution.Resolution resolutionsPerAuthorityItem) {
       if (this.resolutionsPerAuthority == null) {
         this.resolutionsPerAuthority = new ArrayList<com.amazon.ask.model.slu.entityresolution.Resolution>();

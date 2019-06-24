@@ -107,17 +107,17 @@ public final class ProviderAttributes{
 
     @JsonProperty("providerId")
     public Builder withProviderId(String providerId) {
-      this.providerId = providerId;
-      return this;
+        this.providerId = providerId;
+        return this;
     }
-      
+
 
     @JsonProperty("providerCreditList")
     public Builder withProviderCreditList(List<com.amazon.ask.model.interfaces.amazonpay.model.v1.ProviderCredit> providerCreditList) {
-      this.providerCreditList = providerCreditList;
-      return this;
+        this.providerCreditList = providerCreditList;
+        return this;
     }
-      
+
     public Builder addProviderCreditListItem(com.amazon.ask.model.interfaces.amazonpay.model.v1.ProviderCredit providerCreditListItem) {
       if (this.providerCreditList == null) {
         this.providerCreditList = new ArrayList<com.amazon.ask.model.interfaces.amazonpay.model.v1.ProviderCredit>();

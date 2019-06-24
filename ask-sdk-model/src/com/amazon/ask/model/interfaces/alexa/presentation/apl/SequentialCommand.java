@@ -28,11 +28,17 @@ import java.util.ArrayList;
 @JsonDeserialize(builder = SequentialCommand.Builder.class)
 public final class SequentialCommand extends com.amazon.ask.model.interfaces.alexa.presentation.apl.Command {
 
+  @JsonProperty("catch")
+  private List<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command> _catch = new ArrayList<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command>();
+
   @JsonProperty("commands")
   private List<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command> commands = new ArrayList<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command>();
 
+  @JsonProperty("finally")
+  private List<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command> _finally = new ArrayList<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command>();
+
   @JsonProperty("repeatCount")
-  private Integer repeatCount = null;
+  private String repeatCount = String.valueOf(null);
 
   public static Builder builder() {
     return new Builder();
@@ -45,8 +51,18 @@ public final class SequentialCommand extends com.amazon.ask.model.interfaces.ale
     this.delay = builder.delay;
     this.description = builder.description;
     this.when = builder.when;
+    this._catch = builder._catch;
     this.commands = builder.commands;
+    this._finally = builder._finally;
     this.repeatCount = builder.repeatCount;
+  }
+
+  /**
+    * An ordered list of commands to execute if this sequence is prematurely terminated.
+  * @return _catch
+  **/
+  public List<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command> getCatch() {
+    return _catch;
   }
 
   /**
@@ -58,10 +74,18 @@ public final class SequentialCommand extends com.amazon.ask.model.interfaces.ale
   }
 
   /**
+    * An ordered list of commands to execute after the normal commands and the catch commands.
+  * @return _finally
+  **/
+  public List<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command> getFinally() {
+    return _finally;
+  }
+
+  /**
     * The number of times to repeat this series of commands. Defaults to 0. Negative values will be ignored. Note that the delay assigned to overall sequential command only applies the first time. For example, in the sample sequential command below the first SendEvent fires at 3000 milliseconds, the second at 5000, the first SendEvent fires again at 7000 milliseconds, and so forth. {\"type\": \"Sequential\",\"delay\": 1000,\"repeatCount\": 2,\"commands\": [{ \"type\": \"SendEvent\",\"delay\": 2000},{\"type\": \"SendEvent\",\"delay\": 2000}]}
   * @return repeatCount
   **/
-  public Integer getRepeatCount() {
+  public String getRepeatCount() {
     return repeatCount;
   }
 
@@ -74,14 +98,16 @@ public final class SequentialCommand extends com.amazon.ask.model.interfaces.ale
       return false;
     }
     SequentialCommand interfacesAlexaPresentationAplSequentialCommand = (SequentialCommand) o;
-    return Objects.equals(this.commands, interfacesAlexaPresentationAplSequentialCommand.commands) &&
+    return Objects.equals(this._catch, interfacesAlexaPresentationAplSequentialCommand._catch) &&
+        Objects.equals(this.commands, interfacesAlexaPresentationAplSequentialCommand.commands) &&
+        Objects.equals(this._finally, interfacesAlexaPresentationAplSequentialCommand._finally) &&
         Objects.equals(this.repeatCount, interfacesAlexaPresentationAplSequentialCommand.repeatCount) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(commands, repeatCount, super.hashCode());
+    return Objects.hash(_catch, commands, _finally, repeatCount, super.hashCode());
   }
 
   @Override
@@ -89,7 +115,9 @@ public final class SequentialCommand extends com.amazon.ask.model.interfaces.ale
     StringBuilder sb = new StringBuilder();
     sb.append("class SequentialCommand {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+    sb.append("    _catch: ").append(toIndentedString(_catch)).append("\n");
     sb.append("    commands: ").append(toIndentedString(commands)).append("\n");
+    sb.append("    _finally: ").append(toIndentedString(_finally)).append("\n");
     sb.append("    repeatCount: ").append(toIndentedString(repeatCount)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -107,42 +135,61 @@ public final class SequentialCommand extends com.amazon.ask.model.interfaces.ale
   }
 
   public static class Builder {
-    private Integer delay;
+    private String delay;
     private String description;
     private Boolean when;
+    private List<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command> _catch;
     private List<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command> commands;
-    private Integer repeatCount;
+    private List<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command> _finally;
+    private String repeatCount;
 
     private Builder() { }
-      
 
     @JsonProperty("delay")
     public Builder withDelay(Integer delay) {
-      this.delay = delay;
-      return this;
+        this.delay = String.valueOf(delay);
+        return this;
     }
-      
+
+    public Builder withDelay(String delayExpression) {
+        this.delay = delayExpression;
+        return this;
+    }
 
     @JsonProperty("description")
     public Builder withDescription(String description) {
-      this.description = description;
-      return this;
+        this.description = description;
+        return this;
     }
-      
+
 
     @JsonProperty("when")
     public Builder withWhen(Boolean when) {
-      this.when = when;
+        this.when = when;
+        return this;
+    }
+
+
+    @JsonProperty("catch")
+    public Builder withCatch(List<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command> _catch) {
+        this._catch = _catch;
+        return this;
+    }
+
+    public Builder addCatchItem(com.amazon.ask.model.interfaces.alexa.presentation.apl.Command _catchItem) {
+      if (this._catch == null) {
+        this._catch = new ArrayList<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command>();
+      }
+      this._catch.add(_catchItem);
       return this;
     }
-      
 
     @JsonProperty("commands")
     public Builder withCommands(List<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command> commands) {
-      this.commands = commands;
-      return this;
+        this.commands = commands;
+        return this;
     }
-      
+
     public Builder addCommandsItem(com.amazon.ask.model.interfaces.alexa.presentation.apl.Command commandsItem) {
       if (this.commands == null) {
         this.commands = new ArrayList<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command>();
@@ -151,12 +198,30 @@ public final class SequentialCommand extends com.amazon.ask.model.interfaces.ale
       return this;
     }
 
-    @JsonProperty("repeatCount")
-    public Builder withRepeatCount(Integer repeatCount) {
-      this.repeatCount = repeatCount;
+    @JsonProperty("finally")
+    public Builder withFinally(List<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command> _finally) {
+        this._finally = _finally;
+        return this;
+    }
+
+    public Builder addFinallyItem(com.amazon.ask.model.interfaces.alexa.presentation.apl.Command _finallyItem) {
+      if (this._finally == null) {
+        this._finally = new ArrayList<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command>();
+      }
+      this._finally.add(_finallyItem);
       return this;
     }
-      
+
+    @JsonProperty("repeatCount")
+    public Builder withRepeatCount(Integer repeatCount) {
+        this.repeatCount = String.valueOf(repeatCount);
+        return this;
+    }
+
+    public Builder withRepeatCount(String repeatCountExpression) {
+        this.repeatCount = repeatCountExpression;
+        return this;
+    }
 
     public SequentialCommand build() {
       return new SequentialCommand(this);

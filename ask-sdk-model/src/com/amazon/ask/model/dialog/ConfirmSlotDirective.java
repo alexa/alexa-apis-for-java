@@ -105,21 +105,20 @@ public final class ConfirmSlotDirective extends com.amazon.ask.model.Directive {
     private String slotToConfirm;
 
     private Builder() { }
-      
 
     @JsonProperty("updatedIntent")
     public Builder withUpdatedIntent(com.amazon.ask.model.Intent updatedIntent) {
-      this.updatedIntent = updatedIntent;
-      return this;
+        this.updatedIntent = updatedIntent;
+        return this;
     }
-      
+
 
     @JsonProperty("slotToConfirm")
     public Builder withSlotToConfirm(String slotToConfirm) {
-      this.slotToConfirm = slotToConfirm;
-      return this;
+        this.slotToConfirm = slotToConfirm;
+        return this;
     }
-      
+
 
     public ConfirmSlotDirective build() {
       return new ConfirmSlotDirective(this);

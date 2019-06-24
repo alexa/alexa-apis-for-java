@@ -107,17 +107,17 @@ public final class Permissions{
 
     @JsonProperty("consentToken")
     public Builder withConsentToken(String consentToken) {
-      this.consentToken = consentToken;
-      return this;
+        this.consentToken = consentToken;
+        return this;
     }
-      
+
 
     @JsonProperty("scopes")
     public Builder withScopes(Map<String, com.amazon.ask.model.Scope> scopes) {
-      this.scopes = scopes;
-      return this;
+        this.scopes = scopes;
+        return this;
     }
-      
+
     public Builder putScopesItem(String key, com.amazon.ask.model.Scope scopesItem) {
       if (this.scopes == null) {
         this.scopes = new HashMap<String, com.amazon.ask.model.Scope>();

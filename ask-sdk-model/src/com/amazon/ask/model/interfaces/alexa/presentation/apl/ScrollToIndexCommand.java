@@ -32,7 +32,7 @@ public final class ScrollToIndexCommand extends com.amazon.ask.model.interfaces.
   private String componentId = null;
 
   @JsonProperty("index")
-  private Integer index = null;
+  private String index = String.valueOf(null);
 
   public static Builder builder() {
     return new Builder();
@@ -70,7 +70,7 @@ public final class ScrollToIndexCommand extends com.amazon.ask.model.interfaces.
     * The 0-based index of the child to display.
   * @return index
   **/
-  public Integer getIndex() {
+  public String getIndex() {
     return index;
   }
 
@@ -118,57 +118,64 @@ public final class ScrollToIndexCommand extends com.amazon.ask.model.interfaces.
   }
 
   public static class Builder {
-    private Integer delay;
+    private String delay;
     private String description;
     private Boolean when;
     private com.amazon.ask.model.interfaces.alexa.presentation.apl.Align align;
     private String componentId;
-    private Integer index;
+    private String index;
 
     private Builder() { }
-      
 
     @JsonProperty("delay")
     public Builder withDelay(Integer delay) {
-      this.delay = delay;
-      return this;
+        this.delay = String.valueOf(delay);
+        return this;
     }
-      
+
+    public Builder withDelay(String delayExpression) {
+        this.delay = delayExpression;
+        return this;
+    }
 
     @JsonProperty("description")
     public Builder withDescription(String description) {
-      this.description = description;
-      return this;
+        this.description = description;
+        return this;
     }
-      
+
 
     @JsonProperty("when")
     public Builder withWhen(Boolean when) {
-      this.when = when;
-      return this;
+        this.when = when;
+        return this;
     }
-      
+
 
     @JsonProperty("align")
     public Builder withAlign(com.amazon.ask.model.interfaces.alexa.presentation.apl.Align align) {
-      this.align = align;
-      return this;
+        this.align = align;
+        return this;
     }
-      
+
 
     @JsonProperty("componentId")
     public Builder withComponentId(String componentId) {
-      this.componentId = componentId;
-      return this;
+        this.componentId = componentId;
+        return this;
     }
-      
+
 
     @JsonProperty("index")
     public Builder withIndex(Integer index) {
-      this.index = index;
-      return this;
+        this.index = String.valueOf(index);
+        return this;
     }
-      
+
+    public Builder withIndex(String indexExpression) {
+        this.index = indexExpression;
+        return this;
+    }
 
     public ScrollToIndexCommand build() {
       return new ScrollToIndexCommand(this);

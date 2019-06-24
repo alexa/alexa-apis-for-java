@@ -164,45 +164,45 @@ public final class GeolocationState{
 
     @JsonProperty("timestamp")
     public Builder withTimestamp(String timestamp) {
-      this.timestamp = timestamp;
-      return this;
+        this.timestamp = timestamp;
+        return this;
     }
-      
+
 
     @JsonProperty("coordinate")
     public Builder withCoordinate(com.amazon.ask.model.interfaces.geolocation.Coordinate coordinate) {
-      this.coordinate = coordinate;
-      return this;
+        this.coordinate = coordinate;
+        return this;
     }
-      
+
 
     @JsonProperty("altitude")
     public Builder withAltitude(com.amazon.ask.model.interfaces.geolocation.Altitude altitude) {
-      this.altitude = altitude;
-      return this;
+        this.altitude = altitude;
+        return this;
     }
-      
+
 
     @JsonProperty("heading")
     public Builder withHeading(com.amazon.ask.model.interfaces.geolocation.Heading heading) {
-      this.heading = heading;
-      return this;
+        this.heading = heading;
+        return this;
     }
-      
+
 
     @JsonProperty("speed")
     public Builder withSpeed(com.amazon.ask.model.interfaces.geolocation.Speed speed) {
-      this.speed = speed;
-      return this;
+        this.speed = speed;
+        return this;
     }
-      
+
 
     @JsonProperty("locationServices")
     public Builder withLocationServices(com.amazon.ask.model.interfaces.geolocation.LocationServices locationServices) {
-      this.locationServices = locationServices;
-      return this;
+        this.locationServices = locationServices;
+        return this;
     }
-      
+
 
     public GeolocationState build() {
       return new GeolocationState(this);

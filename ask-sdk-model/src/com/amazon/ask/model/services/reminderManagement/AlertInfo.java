@@ -89,10 +89,10 @@ public final class AlertInfo{
 
     @JsonProperty("spokenInfo")
     public Builder withSpokenInfo(com.amazon.ask.model.services.reminderManagement.AlertInfoSpokenInfo spokenInfo) {
-      this.spokenInfo = spokenInfo;
-      return this;
+        this.spokenInfo = spokenInfo;
+        return this;
     }
-      
+
 
     public AlertInfo build() {
       return new AlertInfo(this);

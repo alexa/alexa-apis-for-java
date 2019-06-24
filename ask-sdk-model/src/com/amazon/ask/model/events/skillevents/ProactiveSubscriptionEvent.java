@@ -89,10 +89,10 @@ public final class ProactiveSubscriptionEvent{
 
     @JsonProperty("eventName")
     public Builder withEventName(String eventName) {
-      this.eventName = eventName;
-      return this;
+        this.eventName = eventName;
+        return this;
     }
-      
+
 
     public ProactiveSubscriptionEvent build() {
       return new ProactiveSubscriptionEvent(this);

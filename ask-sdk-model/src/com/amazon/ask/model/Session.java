@@ -152,31 +152,31 @@ public final class Session{
 
     @JsonProperty("new")
     public Builder withNew(Boolean _new) {
-      this._new = _new;
-      return this;
+        this._new = _new;
+        return this;
     }
-      
+
 
     @JsonProperty("sessionId")
     public Builder withSessionId(String sessionId) {
-      this.sessionId = sessionId;
-      return this;
+        this.sessionId = sessionId;
+        return this;
     }
-      
+
 
     @JsonProperty("user")
     public Builder withUser(com.amazon.ask.model.User user) {
-      this.user = user;
-      return this;
+        this.user = user;
+        return this;
     }
-      
+
 
     @JsonProperty("attributes")
     public Builder withAttributes(Map<String, Object> attributes) {
-      this.attributes = attributes;
-      return this;
+        this.attributes = attributes;
+        return this;
     }
-      
+
     public Builder putAttributesItem(String key, Object attributesItem) {
       if (this.attributes == null) {
         this.attributes = new HashMap<String, Object>();
@@ -187,10 +187,10 @@ public final class Session{
 
     @JsonProperty("application")
     public Builder withApplication(com.amazon.ask.model.Application application) {
-      this.application = application;
-      return this;
+        this.application = application;
+        return this;
     }
-      
+
 
     public Session build() {
       return new Session(this);

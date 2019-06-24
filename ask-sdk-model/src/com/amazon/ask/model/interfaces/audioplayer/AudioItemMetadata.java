@@ -134,31 +134,31 @@ public final class AudioItemMetadata{
 
     @JsonProperty("title")
     public Builder withTitle(String title) {
-      this.title = title;
-      return this;
+        this.title = title;
+        return this;
     }
-      
+
 
     @JsonProperty("subtitle")
     public Builder withSubtitle(String subtitle) {
-      this.subtitle = subtitle;
-      return this;
+        this.subtitle = subtitle;
+        return this;
     }
-      
+
 
     @JsonProperty("art")
     public Builder withArt(com.amazon.ask.model.interfaces.display.Image art) {
-      this.art = art;
-      return this;
+        this.art = art;
+        return this;
     }
-      
+
 
     @JsonProperty("backgroundImage")
     public Builder withBackgroundImage(com.amazon.ask.model.interfaces.display.Image backgroundImage) {
-      this.backgroundImage = backgroundImage;
-      return this;
+        this.backgroundImage = backgroundImage;
+        return this;
     }
-      
+
 
     public AudioItemMetadata build() {
       return new AudioItemMetadata(this);

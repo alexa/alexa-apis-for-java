@@ -137,42 +137,41 @@ public final class ScheduleTaxiReservationRequest extends com.amazon.ask.model.i
     private com.amazon.ask.model.interfaces.connections.entities.PostalAddress dropOffLocation;
 
     private Builder() { }
-      
 
     @JsonProperty("@version")
     public Builder withVersion(String version) {
-      this.version = version;
-      return this;
+        this.version = version;
+        return this;
     }
-      
+
 
     @JsonProperty("pickupTime")
     public Builder withPickupTime(String pickupTime) {
-      this.pickupTime = pickupTime;
-      return this;
+        this.pickupTime = pickupTime;
+        return this;
     }
-      
+
 
     @JsonProperty("partySize")
     public Builder withPartySize(String partySize) {
-      this.partySize = partySize;
-      return this;
+        this.partySize = partySize;
+        return this;
     }
-      
+
 
     @JsonProperty("pickupLocation")
     public Builder withPickupLocation(com.amazon.ask.model.interfaces.connections.entities.PostalAddress pickupLocation) {
-      this.pickupLocation = pickupLocation;
-      return this;
+        this.pickupLocation = pickupLocation;
+        return this;
     }
-      
+
 
     @JsonProperty("dropOffLocation")
     public Builder withDropOffLocation(com.amazon.ask.model.interfaces.connections.entities.PostalAddress dropOffLocation) {
-      this.dropOffLocation = dropOffLocation;
-      return this;
+        this.dropOffLocation = dropOffLocation;
+        return this;
     }
-      
+
 
     public ScheduleTaxiReservationRequest build() {
       return new ScheduleTaxiReservationRequest(this);

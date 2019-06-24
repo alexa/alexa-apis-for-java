@@ -122,17 +122,17 @@ public final class GetRemindersResponse{
 
     @JsonProperty("totalCount")
     public Builder withTotalCount(String totalCount) {
-      this.totalCount = totalCount;
-      return this;
+        this.totalCount = totalCount;
+        return this;
     }
-      
+
 
     @JsonProperty("alerts")
     public Builder withAlerts(List<com.amazon.ask.model.services.reminderManagement.Reminder> alerts) {
-      this.alerts = alerts;
-      return this;
+        this.alerts = alerts;
+        return this;
     }
-      
+
     public Builder addAlertsItem(com.amazon.ask.model.services.reminderManagement.Reminder alertsItem) {
       if (this.alerts == null) {
         this.alerts = new ArrayList<com.amazon.ask.model.services.reminderManagement.Reminder>();
@@ -143,10 +143,10 @@ public final class GetRemindersResponse{
 
     @JsonProperty("links")
     public Builder withLinks(String links) {
-      this.links = links;
-      return this;
+        this.links = links;
+        return this;
     }
-      
+
 
     public GetRemindersResponse build() {
       return new GetRemindersResponse(this);

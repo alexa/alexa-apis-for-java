@@ -112,42 +112,41 @@ public final class SessionEndedRequest extends com.amazon.ask.model.Request {
     private com.amazon.ask.model.SessionEndedError error;
 
     private Builder() { }
-      
 
     @JsonProperty("requestId")
     public Builder withRequestId(String requestId) {
-      this.requestId = requestId;
-      return this;
+        this.requestId = requestId;
+        return this;
     }
-      
+
 
     @JsonProperty("timestamp")
     public Builder withTimestamp(OffsetDateTime timestamp) {
-      this.timestamp = timestamp;
-      return this;
+        this.timestamp = timestamp;
+        return this;
     }
-      
+
 
     @JsonProperty("locale")
     public Builder withLocale(String locale) {
-      this.locale = locale;
-      return this;
+        this.locale = locale;
+        return this;
     }
-      
+
 
     @JsonProperty("reason")
     public Builder withReason(com.amazon.ask.model.SessionEndedReason reason) {
-      this.reason = reason;
-      return this;
+        this.reason = reason;
+        return this;
     }
-      
+
 
     @JsonProperty("error")
     public Builder withError(com.amazon.ask.model.SessionEndedError error) {
-      this.error = error;
-      return this;
+        this.error = error;
+        return this;
     }
-      
+
 
     public SessionEndedRequest build() {
       return new SessionEndedRequest(this);

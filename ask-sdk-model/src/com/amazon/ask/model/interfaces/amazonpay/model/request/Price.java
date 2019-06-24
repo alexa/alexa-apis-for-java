@@ -110,25 +110,24 @@ public final class Price extends com.amazon.ask.model.interfaces.amazonpay.model
 
     @JsonProperty("amount")
     public Builder withAmount(String amount) {
-      this.amount = amount;
-      return this;
+        this.amount = amount;
+        return this;
     }
-      
+
 
     @JsonProperty("currencyCode")
     public Builder withCurrencyCode(String currencyCode) {
-      this.currencyCode = currencyCode;
-      return this;
+        this.currencyCode = currencyCode;
+        return this;
     }
-      
-      
+
 
     @JsonProperty("@version")
     public Builder withVersion(String version) {
-      this.version = version;
-      return this;
+        this.version = version;
+        return this;
     }
-      
+
 
     public Price build() {
       return new Price(this);

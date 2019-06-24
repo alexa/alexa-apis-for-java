@@ -149,38 +149,38 @@ public final class SupportedInterfaces{
 
     @JsonProperty("Alexa.Presentation.APL")
     public Builder withAlexaPresentationAPL(com.amazon.ask.model.interfaces.alexa.presentation.apl.AlexaPresentationAplInterface alexaPresentationAPL) {
-      this.alexaPresentationAPL = alexaPresentationAPL;
-      return this;
+        this.alexaPresentationAPL = alexaPresentationAPL;
+        return this;
     }
-      
+
 
     @JsonProperty("AudioPlayer")
     public Builder withAudioPlayer(com.amazon.ask.model.interfaces.audioplayer.AudioPlayerInterface audioPlayer) {
-      this.audioPlayer = audioPlayer;
-      return this;
+        this.audioPlayer = audioPlayer;
+        return this;
     }
-      
+
 
     @JsonProperty("Display")
     public Builder withDisplay(com.amazon.ask.model.interfaces.display.DisplayInterface display) {
-      this.display = display;
-      return this;
+        this.display = display;
+        return this;
     }
-      
+
 
     @JsonProperty("VideoApp")
     public Builder withVideoApp(com.amazon.ask.model.interfaces.videoapp.VideoAppInterface videoApp) {
-      this.videoApp = videoApp;
-      return this;
+        this.videoApp = videoApp;
+        return this;
     }
-      
+
 
     @JsonProperty("Geolocation")
     public Builder withGeolocation(com.amazon.ask.model.interfaces.geolocation.GeolocationInterface geolocation) {
-      this.geolocation = geolocation;
-      return this;
+        this.geolocation = geolocation;
+        return this;
     }
-      
+
 
     public SupportedInterfaces build() {
       return new SupportedInterfaces(this);

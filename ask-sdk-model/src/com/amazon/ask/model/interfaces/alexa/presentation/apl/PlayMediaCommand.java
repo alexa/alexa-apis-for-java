@@ -121,7 +121,7 @@ public final class PlayMediaCommand extends com.amazon.ask.model.interfaces.alex
   }
 
   public static class Builder {
-    private Integer delay;
+    private String delay;
     private String description;
     private Boolean when;
     private com.amazon.ask.model.interfaces.alexa.presentation.apl.AudioTrack audioTrack;
@@ -129,49 +129,52 @@ public final class PlayMediaCommand extends com.amazon.ask.model.interfaces.alex
     private List<com.amazon.ask.model.interfaces.alexa.presentation.apl.VideoSource> source;
 
     private Builder() { }
-      
 
     @JsonProperty("delay")
     public Builder withDelay(Integer delay) {
-      this.delay = delay;
-      return this;
+        this.delay = String.valueOf(delay);
+        return this;
     }
-      
+
+    public Builder withDelay(String delayExpression) {
+        this.delay = delayExpression;
+        return this;
+    }
 
     @JsonProperty("description")
     public Builder withDescription(String description) {
-      this.description = description;
-      return this;
+        this.description = description;
+        return this;
     }
-      
+
 
     @JsonProperty("when")
     public Builder withWhen(Boolean when) {
-      this.when = when;
-      return this;
+        this.when = when;
+        return this;
     }
-      
+
 
     @JsonProperty("audioTrack")
     public Builder withAudioTrack(com.amazon.ask.model.interfaces.alexa.presentation.apl.AudioTrack audioTrack) {
-      this.audioTrack = audioTrack;
-      return this;
+        this.audioTrack = audioTrack;
+        return this;
     }
-      
+
 
     @JsonProperty("componentId")
     public Builder withComponentId(String componentId) {
-      this.componentId = componentId;
-      return this;
+        this.componentId = componentId;
+        return this;
     }
-      
+
 
     @JsonProperty("source")
     public Builder withSource(List<com.amazon.ask.model.interfaces.alexa.presentation.apl.VideoSource> source) {
-      this.source = source;
-      return this;
+        this.source = source;
+        return this;
     }
-      
+
     public Builder addSourceItem(com.amazon.ask.model.interfaces.alexa.presentation.apl.VideoSource sourceItem) {
       if (this.source == null) {
         this.source = new ArrayList<com.amazon.ask.model.interfaces.alexa.presentation.apl.VideoSource>();

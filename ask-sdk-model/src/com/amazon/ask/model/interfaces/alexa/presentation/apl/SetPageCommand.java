@@ -32,7 +32,7 @@ public final class SetPageCommand extends com.amazon.ask.model.interfaces.alexa.
   private com.amazon.ask.model.interfaces.alexa.presentation.apl.Position position = null;
 
   @JsonProperty("value")
-  private Integer value = null;
+  private String value = String.valueOf(null);
 
   public static Builder builder() {
     return new Builder();
@@ -70,7 +70,7 @@ public final class SetPageCommand extends com.amazon.ask.model.interfaces.alexa.
     * The distance to move. May be an absolute value or a relative value.
   * @return value
   **/
-  public Integer getValue() {
+  public String getValue() {
     return value;
   }
 
@@ -118,57 +118,64 @@ public final class SetPageCommand extends com.amazon.ask.model.interfaces.alexa.
   }
 
   public static class Builder {
-    private Integer delay;
+    private String delay;
     private String description;
     private Boolean when;
     private String componentId;
     private com.amazon.ask.model.interfaces.alexa.presentation.apl.Position position;
-    private Integer value;
+    private String value;
 
     private Builder() { }
-      
 
     @JsonProperty("delay")
     public Builder withDelay(Integer delay) {
-      this.delay = delay;
-      return this;
+        this.delay = String.valueOf(delay);
+        return this;
     }
-      
+
+    public Builder withDelay(String delayExpression) {
+        this.delay = delayExpression;
+        return this;
+    }
 
     @JsonProperty("description")
     public Builder withDescription(String description) {
-      this.description = description;
-      return this;
+        this.description = description;
+        return this;
     }
-      
+
 
     @JsonProperty("when")
     public Builder withWhen(Boolean when) {
-      this.when = when;
-      return this;
+        this.when = when;
+        return this;
     }
-      
+
 
     @JsonProperty("componentId")
     public Builder withComponentId(String componentId) {
-      this.componentId = componentId;
-      return this;
+        this.componentId = componentId;
+        return this;
     }
-      
+
 
     @JsonProperty("position")
     public Builder withPosition(com.amazon.ask.model.interfaces.alexa.presentation.apl.Position position) {
-      this.position = position;
-      return this;
+        this.position = position;
+        return this;
     }
-      
+
 
     @JsonProperty("value")
     public Builder withValue(Integer value) {
-      this.value = value;
-      return this;
+        this.value = String.valueOf(value);
+        return this;
     }
-      
+
+    public Builder withValue(String valueExpression) {
+        this.value = valueExpression;
+        return this;
+    }
 
     public SetPageCommand build() {
       return new SetPageCommand(this);

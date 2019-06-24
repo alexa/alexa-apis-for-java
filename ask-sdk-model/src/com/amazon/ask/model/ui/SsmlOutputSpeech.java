@@ -92,21 +92,20 @@ public final class SsmlOutputSpeech extends com.amazon.ask.model.ui.OutputSpeech
     private String ssml;
 
     private Builder() { }
-      
 
     @JsonProperty("playBehavior")
     public Builder withPlayBehavior(com.amazon.ask.model.ui.PlayBehavior playBehavior) {
-      this.playBehavior = playBehavior;
-      return this;
+        this.playBehavior = playBehavior;
+        return this;
     }
-      
+
 
     @JsonProperty("ssml")
     public Builder withSsml(String ssml) {
-      this.ssml = ssml;
-      return this;
+        this.ssml = ssml;
+        return this;
     }
-      
+
 
     public SsmlOutputSpeech build() {
       return new SsmlOutputSpeech(this);

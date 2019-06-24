@@ -104,17 +104,17 @@ public final class DisplayInterface{
 
     @JsonProperty("templateVersion")
     public Builder withTemplateVersion(String templateVersion) {
-      this.templateVersion = templateVersion;
-      return this;
+        this.templateVersion = templateVersion;
+        return this;
     }
-      
+
 
     @JsonProperty("markupVersion")
     public Builder withMarkupVersion(String markupVersion) {
-      this.markupVersion = markupVersion;
-      return this;
+        this.markupVersion = markupVersion;
+        return this;
     }
-      
+
 
     public DisplayInterface build() {
       return new DisplayInterface(this);

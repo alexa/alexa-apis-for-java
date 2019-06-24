@@ -32,7 +32,7 @@ public final class SetStateCommand extends com.amazon.ask.model.interfaces.alexa
   private com.amazon.ask.model.interfaces.alexa.presentation.apl.ComponentState state = null;
 
   @JsonProperty("value")
-  private Boolean value = null;
+  private String value = String.valueOf(null);
 
   public static Builder builder() {
     return new Builder();
@@ -70,7 +70,7 @@ public final class SetStateCommand extends com.amazon.ask.model.interfaces.alexa
     * The value to set on the property
   * @return value
   **/
-  public Boolean getValue() {
+  public String getValue() {
     return value;
   }
 
@@ -118,57 +118,64 @@ public final class SetStateCommand extends com.amazon.ask.model.interfaces.alexa
   }
 
   public static class Builder {
-    private Integer delay;
+    private String delay;
     private String description;
     private Boolean when;
     private String componentId;
     private com.amazon.ask.model.interfaces.alexa.presentation.apl.ComponentState state;
-    private Boolean value;
+    private String value;
 
     private Builder() { }
-      
 
     @JsonProperty("delay")
     public Builder withDelay(Integer delay) {
-      this.delay = delay;
-      return this;
+        this.delay = String.valueOf(delay);
+        return this;
     }
-      
+
+    public Builder withDelay(String delayExpression) {
+        this.delay = delayExpression;
+        return this;
+    }
 
     @JsonProperty("description")
     public Builder withDescription(String description) {
-      this.description = description;
-      return this;
+        this.description = description;
+        return this;
     }
-      
+
 
     @JsonProperty("when")
     public Builder withWhen(Boolean when) {
-      this.when = when;
-      return this;
+        this.when = when;
+        return this;
     }
-      
+
 
     @JsonProperty("componentId")
     public Builder withComponentId(String componentId) {
-      this.componentId = componentId;
-      return this;
+        this.componentId = componentId;
+        return this;
     }
-      
+
 
     @JsonProperty("state")
     public Builder withState(com.amazon.ask.model.interfaces.alexa.presentation.apl.ComponentState state) {
-      this.state = state;
-      return this;
+        this.state = state;
+        return this;
     }
-      
+
 
     @JsonProperty("value")
     public Builder withValue(Boolean value) {
-      this.value = value;
-      return this;
+        this.value = String.valueOf(value);
+        return this;
     }
-      
+
+    public Builder withValue(String valueExpression) {
+        this.value = valueExpression;
+        return this;
+    }
 
     public SetStateCommand build() {
       return new SetStateCommand(this);

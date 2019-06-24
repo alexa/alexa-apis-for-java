@@ -113,17 +113,17 @@ public final class ProviderAttributes extends com.amazon.ask.model.interfaces.am
 
     @JsonProperty("providerId")
     public Builder withProviderId(String providerId) {
-      this.providerId = providerId;
-      return this;
+        this.providerId = providerId;
+        return this;
     }
-      
+
 
     @JsonProperty("providerCreditList")
     public Builder withProviderCreditList(List<com.amazon.ask.model.interfaces.amazonpay.model.request.ProviderCredit> providerCreditList) {
-      this.providerCreditList = providerCreditList;
-      return this;
+        this.providerCreditList = providerCreditList;
+        return this;
     }
-      
+
     public Builder addProviderCreditListItem(com.amazon.ask.model.interfaces.amazonpay.model.request.ProviderCredit providerCreditListItem) {
       if (this.providerCreditList == null) {
         this.providerCreditList = new ArrayList<com.amazon.ask.model.interfaces.amazonpay.model.request.ProviderCredit>();
@@ -131,14 +131,13 @@ public final class ProviderAttributes extends com.amazon.ask.model.interfaces.am
       this.providerCreditList.add(providerCreditListItem);
       return this;
     }
-      
 
     @JsonProperty("@version")
     public Builder withVersion(String version) {
-      this.version = version;
-      return this;
+        this.version = version;
+        return this;
     }
-      
+
 
     public ProviderAttributes build() {
       return new ProviderAttributes(this);

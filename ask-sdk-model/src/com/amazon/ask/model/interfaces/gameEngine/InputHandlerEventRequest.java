@@ -115,42 +115,41 @@ public final class InputHandlerEventRequest extends com.amazon.ask.model.Request
     private List<com.amazon.ask.model.services.gameEngine.InputHandlerEvent> events;
 
     private Builder() { }
-      
 
     @JsonProperty("requestId")
     public Builder withRequestId(String requestId) {
-      this.requestId = requestId;
-      return this;
+        this.requestId = requestId;
+        return this;
     }
-      
+
 
     @JsonProperty("timestamp")
     public Builder withTimestamp(OffsetDateTime timestamp) {
-      this.timestamp = timestamp;
-      return this;
+        this.timestamp = timestamp;
+        return this;
     }
-      
+
 
     @JsonProperty("locale")
     public Builder withLocale(String locale) {
-      this.locale = locale;
-      return this;
+        this.locale = locale;
+        return this;
     }
-      
+
 
     @JsonProperty("originatingRequestId")
     public Builder withOriginatingRequestId(String originatingRequestId) {
-      this.originatingRequestId = originatingRequestId;
-      return this;
+        this.originatingRequestId = originatingRequestId;
+        return this;
     }
-      
+
 
     @JsonProperty("events")
     public Builder withEvents(List<com.amazon.ask.model.services.gameEngine.InputHandlerEvent> events) {
-      this.events = events;
-      return this;
+        this.events = events;
+        return this;
     }
-      
+
     public Builder addEventsItem(com.amazon.ask.model.services.gameEngine.InputHandlerEvent eventsItem) {
       if (this.events == null) {
         this.events = new ArrayList<com.amazon.ask.model.services.gameEngine.InputHandlerEvent>();

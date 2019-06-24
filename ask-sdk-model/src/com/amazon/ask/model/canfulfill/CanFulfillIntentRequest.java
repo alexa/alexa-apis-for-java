@@ -112,42 +112,41 @@ public final class CanFulfillIntentRequest extends com.amazon.ask.model.Request 
     private com.amazon.ask.model.Intent intent;
 
     private Builder() { }
-      
 
     @JsonProperty("requestId")
     public Builder withRequestId(String requestId) {
-      this.requestId = requestId;
-      return this;
+        this.requestId = requestId;
+        return this;
     }
-      
+
 
     @JsonProperty("timestamp")
     public Builder withTimestamp(OffsetDateTime timestamp) {
-      this.timestamp = timestamp;
-      return this;
+        this.timestamp = timestamp;
+        return this;
     }
-      
+
 
     @JsonProperty("locale")
     public Builder withLocale(String locale) {
-      this.locale = locale;
-      return this;
+        this.locale = locale;
+        return this;
     }
-      
+
 
     @JsonProperty("dialogState")
     public Builder withDialogState(com.amazon.ask.model.DialogState dialogState) {
-      this.dialogState = dialogState;
-      return this;
+        this.dialogState = dialogState;
+        return this;
     }
-      
+
 
     @JsonProperty("intent")
     public Builder withIntent(com.amazon.ask.model.Intent intent) {
-      this.intent = intent;
-      return this;
+        this.intent = intent;
+        return this;
     }
-      
+
 
     public CanFulfillIntentRequest build() {
       return new CanFulfillIntentRequest(this);

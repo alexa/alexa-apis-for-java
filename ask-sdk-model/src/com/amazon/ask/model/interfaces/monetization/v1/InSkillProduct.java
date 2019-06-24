@@ -89,10 +89,10 @@ public final class InSkillProduct{
 
     @JsonProperty("productId")
     public Builder withProductId(String productId) {
-      this.productId = productId;
-      return this;
+        this.productId = productId;
+        return this;
     }
-      
+
 
     public InSkillProduct build() {
       return new InSkillProduct(this);

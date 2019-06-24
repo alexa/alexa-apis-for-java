@@ -134,31 +134,31 @@ public final class RequestEnvelope{
 
     @JsonProperty("version")
     public Builder withVersion(String version) {
-      this.version = version;
-      return this;
+        this.version = version;
+        return this;
     }
-      
+
 
     @JsonProperty("session")
     public Builder withSession(com.amazon.ask.model.Session session) {
-      this.session = session;
-      return this;
+        this.session = session;
+        return this;
     }
-      
+
 
     @JsonProperty("context")
     public Builder withContext(com.amazon.ask.model.Context context) {
-      this.context = context;
-      return this;
+        this.context = context;
+        return this;
     }
-      
+
 
     @JsonProperty("request")
     public Builder withRequest(com.amazon.ask.model.Request request) {
-      this.request = request;
-      return this;
+        this.request = request;
+        return this;
     }
-      
+
 
     public RequestEnvelope build() {
       return new RequestEnvelope(this);

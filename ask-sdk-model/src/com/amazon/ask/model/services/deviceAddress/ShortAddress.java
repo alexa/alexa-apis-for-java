@@ -104,17 +104,17 @@ public final class ShortAddress{
 
     @JsonProperty("countryCode")
     public Builder withCountryCode(String countryCode) {
-      this.countryCode = countryCode;
-      return this;
+        this.countryCode = countryCode;
+        return this;
     }
-      
+
 
     @JsonProperty("postalCode")
     public Builder withPostalCode(String postalCode) {
-      this.postalCode = postalCode;
-      return this;
+        this.postalCode = postalCode;
+        return this;
     }
-      
+
 
     public ShortAddress build() {
       return new ShortAddress(this);

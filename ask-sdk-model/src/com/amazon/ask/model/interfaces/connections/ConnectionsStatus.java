@@ -104,17 +104,17 @@ public final class ConnectionsStatus{
 
     @JsonProperty("code")
     public Builder withCode(String code) {
-      this.code = code;
-      return this;
+        this.code = code;
+        return this;
     }
-      
+
 
     @JsonProperty("message")
     public Builder withMessage(String message) {
-      this.message = message;
-      return this;
+        this.message = message;
+        return this;
     }
-      
+
 
     public ConnectionsStatus build() {
       return new ConnectionsStatus(this);

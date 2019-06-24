@@ -89,10 +89,10 @@ public final class Reprompt{
 
     @JsonProperty("outputSpeech")
     public Builder withOutputSpeech(com.amazon.ask.model.ui.OutputSpeech outputSpeech) {
-      this.outputSpeech = outputSpeech;
-      return this;
+        this.outputSpeech = outputSpeech;
+        return this;
     }
-      
+
 
     public Reprompt build() {
       return new Reprompt(this);

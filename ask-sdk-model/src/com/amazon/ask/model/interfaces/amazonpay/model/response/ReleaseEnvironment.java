@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Gets or Sets interfaces.amazonpay.model.response.ReleaseEnvironment
+ * Indicates if the contract is for a Live (Production) or Sandbox environment.
  */
 public enum ReleaseEnvironment {
   

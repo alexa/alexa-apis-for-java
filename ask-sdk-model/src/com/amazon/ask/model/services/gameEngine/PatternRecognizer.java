@@ -153,28 +153,27 @@ public final class PatternRecognizer extends com.amazon.ask.model.services.gameE
     private List<com.amazon.ask.model.services.gameEngine.Pattern> pattern;
 
     private Builder() { }
-      
 
     @JsonProperty("anchor")
     public Builder withAnchor(com.amazon.ask.model.services.gameEngine.PatternRecognizerAnchorType anchor) {
-      this.anchor = anchor;
-      return this;
+        this.anchor = anchor;
+        return this;
     }
-      
+
 
     @JsonProperty("fuzzy")
     public Builder withFuzzy(Boolean fuzzy) {
-      this.fuzzy = fuzzy;
-      return this;
+        this.fuzzy = fuzzy;
+        return this;
     }
-      
+
 
     @JsonProperty("gadgetIds")
     public Builder withGadgetIds(List<String> gadgetIds) {
-      this.gadgetIds = gadgetIds;
-      return this;
+        this.gadgetIds = gadgetIds;
+        return this;
     }
-      
+
     public Builder addGadgetIdsItem(String gadgetIdsItem) {
       if (this.gadgetIds == null) {
         this.gadgetIds = new ArrayList<String>();
@@ -185,10 +184,10 @@ public final class PatternRecognizer extends com.amazon.ask.model.services.gameE
 
     @JsonProperty("actions")
     public Builder withActions(List<String> actions) {
-      this.actions = actions;
-      return this;
+        this.actions = actions;
+        return this;
     }
-      
+
     public Builder addActionsItem(String actionsItem) {
       if (this.actions == null) {
         this.actions = new ArrayList<String>();
@@ -199,10 +198,10 @@ public final class PatternRecognizer extends com.amazon.ask.model.services.gameE
 
     @JsonProperty("pattern")
     public Builder withPattern(List<com.amazon.ask.model.services.gameEngine.Pattern> pattern) {
-      this.pattern = pattern;
-      return this;
+        this.pattern = pattern;
+        return this;
     }
-      
+
     public Builder addPatternItem(com.amazon.ask.model.services.gameEngine.Pattern patternItem) {
       if (this.pattern == null) {
         this.pattern = new ArrayList<com.amazon.ask.model.services.gameEngine.Pattern>();

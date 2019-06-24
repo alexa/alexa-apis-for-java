@@ -135,31 +135,31 @@ public final class AuthorizationStatus{
 
     @JsonProperty("state")
     public Builder withState(com.amazon.ask.model.interfaces.amazonpay.model.response.State state) {
-      this.state = state;
-      return this;
+        this.state = state;
+        return this;
     }
-      
+
 
     @JsonProperty("reasonCode")
     public Builder withReasonCode(String reasonCode) {
-      this.reasonCode = reasonCode;
-      return this;
+        this.reasonCode = reasonCode;
+        return this;
     }
-      
+
 
     @JsonProperty("reasonDescription")
     public Builder withReasonDescription(String reasonDescription) {
-      this.reasonDescription = reasonDescription;
-      return this;
+        this.reasonDescription = reasonDescription;
+        return this;
     }
-      
+
 
     @JsonProperty("lastUpdateTimestamp")
     public Builder withLastUpdateTimestamp(OffsetDateTime lastUpdateTimestamp) {
-      this.lastUpdateTimestamp = lastUpdateTimestamp;
-      return this;
+        this.lastUpdateTimestamp = lastUpdateTimestamp;
+        return this;
     }
-      
+
 
     public AuthorizationStatus build() {
       return new AuthorizationStatus(this);

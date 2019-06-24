@@ -97,35 +97,34 @@ public final class ProactiveSubscriptionChangedRequest extends com.amazon.ask.mo
     private com.amazon.ask.model.events.skillevents.ProactiveSubscriptionChangedBody body;
 
     private Builder() { }
-      
 
     @JsonProperty("requestId")
     public Builder withRequestId(String requestId) {
-      this.requestId = requestId;
-      return this;
+        this.requestId = requestId;
+        return this;
     }
-      
+
 
     @JsonProperty("timestamp")
     public Builder withTimestamp(OffsetDateTime timestamp) {
-      this.timestamp = timestamp;
-      return this;
+        this.timestamp = timestamp;
+        return this;
     }
-      
+
 
     @JsonProperty("locale")
     public Builder withLocale(String locale) {
-      this.locale = locale;
-      return this;
+        this.locale = locale;
+        return this;
     }
-      
+
 
     @JsonProperty("body")
     public Builder withBody(com.amazon.ask.model.events.skillevents.ProactiveSubscriptionChangedBody body) {
-      this.body = body;
-      return this;
+        this.body = body;
+        return this;
     }
-      
+
 
     public ProactiveSubscriptionChangedRequest build() {
       return new ProactiveSubscriptionChangedRequest(this);

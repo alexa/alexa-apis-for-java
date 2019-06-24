@@ -123,21 +123,20 @@ public final class SendRequestDirective extends com.amazon.ask.model.Directive {
     private String token;
 
     private Builder() { }
-      
 
     @JsonProperty("name")
     public Builder withName(String name) {
-      this.name = name;
-      return this;
+        this.name = name;
+        return this;
     }
-      
+
 
     @JsonProperty("payload")
     public Builder withPayload(Map<String, Object> payload) {
-      this.payload = payload;
-      return this;
+        this.payload = payload;
+        return this;
     }
-      
+
     public Builder putPayloadItem(String key, Object payloadItem) {
       if (this.payload == null) {
         this.payload = new HashMap<String, Object>();
@@ -148,10 +147,10 @@ public final class SendRequestDirective extends com.amazon.ask.model.Directive {
 
     @JsonProperty("token")
     public Builder withToken(String token) {
-      this.token = token;
-      return this;
+        this.token = token;
+        return this;
     }
-      
+
 
     public SendRequestDirective build() {
       return new SendRequestDirective(this);

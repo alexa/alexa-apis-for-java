@@ -152,38 +152,38 @@ public final class AlexaListMetadata{
 
     @JsonProperty("listId")
     public Builder withListId(String listId) {
-      this.listId = listId;
-      return this;
+        this.listId = listId;
+        return this;
     }
-      
+
 
     @JsonProperty("name")
     public Builder withName(String name) {
-      this.name = name;
-      return this;
+        this.name = name;
+        return this;
     }
-      
+
 
     @JsonProperty("state")
     public Builder withState(com.amazon.ask.model.services.listManagement.ListState state) {
-      this.state = state;
-      return this;
+        this.state = state;
+        return this;
     }
-      
+
 
     @JsonProperty("version")
     public Builder withVersion(Long version) {
-      this.version = version;
-      return this;
+        this.version = version;
+        return this;
     }
-      
+
 
     @JsonProperty("statusMap")
     public Builder withStatusMap(List<com.amazon.ask.model.services.listManagement.Status> statusMap) {
-      this.statusMap = statusMap;
-      return this;
+        this.statusMap = statusMap;
+        return this;
     }
-      
+
     public Builder addStatusMapItem(com.amazon.ask.model.services.listManagement.Status statusMapItem) {
       if (this.statusMap == null) {
         this.statusMap = new ArrayList<com.amazon.ask.model.services.listManagement.Status>();

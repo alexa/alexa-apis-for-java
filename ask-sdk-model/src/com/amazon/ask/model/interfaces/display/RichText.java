@@ -90,14 +90,13 @@ public final class RichText extends com.amazon.ask.model.interfaces.display.Text
     private String text;
 
     private Builder() { }
-      
 
     @JsonProperty("text")
     public Builder withText(String text) {
-      this.text = text;
-      return this;
+        this.text = text;
+        return this;
     }
-      
+
 
     public RichText build() {
       return new RichText(this);

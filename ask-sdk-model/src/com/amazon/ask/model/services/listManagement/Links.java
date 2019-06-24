@@ -89,10 +89,10 @@ public final class Links{
 
     @JsonProperty("next")
     public Builder withNext(String next) {
-      this.next = next;
-      return this;
+        this.next = next;
+        return this;
     }
-      
+
 
     public Links build() {
       return new Links(this);

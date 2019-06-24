@@ -224,73 +224,73 @@ public final class InSkillProduct{
 
     @JsonProperty("productId")
     public Builder withProductId(String productId) {
-      this.productId = productId;
-      return this;
+        this.productId = productId;
+        return this;
     }
-      
+
 
     @JsonProperty("referenceName")
     public Builder withReferenceName(String referenceName) {
-      this.referenceName = referenceName;
-      return this;
+        this.referenceName = referenceName;
+        return this;
     }
-      
+
 
     @JsonProperty("name")
     public Builder withName(String name) {
-      this.name = name;
-      return this;
+        this.name = name;
+        return this;
     }
-      
+
 
     @JsonProperty("type")
     public Builder withType(com.amazon.ask.model.services.monetization.ProductType type) {
-      this.type = type;
-      return this;
+        this.type = type;
+        return this;
     }
-      
+
 
     @JsonProperty("summary")
     public Builder withSummary(String summary) {
-      this.summary = summary;
-      return this;
+        this.summary = summary;
+        return this;
     }
-      
+
 
     @JsonProperty("purchasable")
     public Builder withPurchasable(com.amazon.ask.model.services.monetization.PurchasableState purchasable) {
-      this.purchasable = purchasable;
-      return this;
+        this.purchasable = purchasable;
+        return this;
     }
-      
+
 
     @JsonProperty("entitled")
     public Builder withEntitled(com.amazon.ask.model.services.monetization.EntitledState entitled) {
-      this.entitled = entitled;
-      return this;
+        this.entitled = entitled;
+        return this;
     }
-      
+
 
     @JsonProperty("entitlementReason")
     public Builder withEntitlementReason(com.amazon.ask.model.services.monetization.EntitlementReason entitlementReason) {
-      this.entitlementReason = entitlementReason;
-      return this;
+        this.entitlementReason = entitlementReason;
+        return this;
     }
-      
+
 
     @JsonProperty("activeEntitlementCount")
     public Builder withActiveEntitlementCount(Integer activeEntitlementCount) {
-      this.activeEntitlementCount = activeEntitlementCount;
-      return this;
+        this.activeEntitlementCount = activeEntitlementCount;
+        return this;
     }
-      
+
 
     @JsonProperty("purchaseMode")
     public Builder withPurchaseMode(com.amazon.ask.model.services.monetization.PurchaseMode purchaseMode) {
-      this.purchaseMode = purchaseMode;
-      return this;
+        this.purchaseMode = purchaseMode;
+        return this;
     }
-      
+
 
     public InSkillProduct build() {
       return new InSkillProduct(this);

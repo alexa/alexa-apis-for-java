@@ -89,10 +89,10 @@ public final class ErrorCause{
 
     @JsonProperty("requestId")
     public Builder withRequestId(String requestId) {
-      this.requestId = requestId;
-      return this;
+        this.requestId = requestId;
+        return this;
     }
-      
+
 
     public ErrorCause build() {
       return new ErrorCause(this);

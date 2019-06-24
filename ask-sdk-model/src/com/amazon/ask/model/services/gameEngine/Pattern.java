@@ -139,10 +139,10 @@ public final class Pattern{
 
     @JsonProperty("gadgetIds")
     public Builder withGadgetIds(List<String> gadgetIds) {
-      this.gadgetIds = gadgetIds;
-      return this;
+        this.gadgetIds = gadgetIds;
+        return this;
     }
-      
+
     public Builder addGadgetIdsItem(String gadgetIdsItem) {
       if (this.gadgetIds == null) {
         this.gadgetIds = new ArrayList<String>();
@@ -153,10 +153,10 @@ public final class Pattern{
 
     @JsonProperty("colors")
     public Builder withColors(List<String> colors) {
-      this.colors = colors;
-      return this;
+        this.colors = colors;
+        return this;
     }
-      
+
     public Builder addColorsItem(String colorsItem) {
       if (this.colors == null) {
         this.colors = new ArrayList<String>();
@@ -167,17 +167,17 @@ public final class Pattern{
 
     @JsonProperty("action")
     public Builder withAction(com.amazon.ask.model.services.gameEngine.InputEventActionType action) {
-      this.action = action;
-      return this;
+        this.action = action;
+        return this;
     }
-      
+
 
     @JsonProperty("repeat")
     public Builder withRepeat(Integer repeat) {
-      this.repeat = repeat;
-      return this;
+        this.repeat = repeat;
+        return this;
     }
-      
+
 
     public Pattern build() {
       return new Pattern(this);

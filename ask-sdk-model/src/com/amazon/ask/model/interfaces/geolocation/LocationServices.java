@@ -104,17 +104,17 @@ public final class LocationServices{
 
     @JsonProperty("status")
     public Builder withStatus(com.amazon.ask.model.interfaces.geolocation.Status status) {
-      this.status = status;
-      return this;
+        this.status = status;
+        return this;
     }
-      
+
 
     @JsonProperty("access")
     public Builder withAccess(com.amazon.ask.model.interfaces.geolocation.Access access) {
-      this.access = access;
-      return this;
+        this.access = access;
+        return this;
     }
-      
+
 
     public LocationServices build() {
       return new LocationServices(this);

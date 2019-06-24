@@ -134,31 +134,31 @@ public final class SellerOrderAttributes{
 
     @JsonProperty("sellerOrderId")
     public Builder withSellerOrderId(String sellerOrderId) {
-      this.sellerOrderId = sellerOrderId;
-      return this;
+        this.sellerOrderId = sellerOrderId;
+        return this;
     }
-      
+
 
     @JsonProperty("storeName")
     public Builder withStoreName(String storeName) {
-      this.storeName = storeName;
-      return this;
+        this.storeName = storeName;
+        return this;
     }
-      
+
 
     @JsonProperty("customInformation")
     public Builder withCustomInformation(String customInformation) {
-      this.customInformation = customInformation;
-      return this;
+        this.customInformation = customInformation;
+        return this;
     }
-      
+
 
     @JsonProperty("sellerNote")
     public Builder withSellerNote(String sellerNote) {
-      this.sellerNote = sellerNote;
-      return this;
+        this.sellerNote = sellerNote;
+        return this;
     }
-      
+
 
     public SellerOrderAttributes build() {
       return new SellerOrderAttributes(this);

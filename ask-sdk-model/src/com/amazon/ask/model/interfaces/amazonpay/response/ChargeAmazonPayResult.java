@@ -104,17 +104,17 @@ public final class ChargeAmazonPayResult{
 
     @JsonProperty("amazonOrderReferenceId")
     public Builder withAmazonOrderReferenceId(String amazonOrderReferenceId) {
-      this.amazonOrderReferenceId = amazonOrderReferenceId;
-      return this;
+        this.amazonOrderReferenceId = amazonOrderReferenceId;
+        return this;
     }
-      
+
 
     @JsonProperty("authorizationDetails")
     public Builder withAuthorizationDetails(com.amazon.ask.model.interfaces.amazonpay.model.response.AuthorizationDetails authorizationDetails) {
-      this.authorizationDetails = authorizationDetails;
-      return this;
+        this.authorizationDetails = authorizationDetails;
+        return this;
     }
-      
+
 
     public ChargeAmazonPayResult build() {
       return new ChargeAmazonPayResult(this);

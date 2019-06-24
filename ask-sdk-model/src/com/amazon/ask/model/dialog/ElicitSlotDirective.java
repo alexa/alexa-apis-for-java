@@ -105,21 +105,20 @@ public final class ElicitSlotDirective extends com.amazon.ask.model.Directive {
     private String slotToElicit;
 
     private Builder() { }
-      
 
     @JsonProperty("updatedIntent")
     public Builder withUpdatedIntent(com.amazon.ask.model.Intent updatedIntent) {
-      this.updatedIntent = updatedIntent;
-      return this;
+        this.updatedIntent = updatedIntent;
+        return this;
     }
-      
+
 
     @JsonProperty("slotToElicit")
     public Builder withSlotToElicit(String slotToElicit) {
-      this.slotToElicit = slotToElicit;
-      return this;
+        this.slotToElicit = slotToElicit;
+        return this;
     }
-      
+
 
     public ElicitSlotDirective build() {
       return new ElicitSlotDirective(this);

@@ -89,10 +89,10 @@ public final class Header{
 
     @JsonProperty("requestId")
     public Builder withRequestId(String requestId) {
-      this.requestId = requestId;
-      return this;
+        this.requestId = requestId;
+        return this;
     }
-      
+
 
     public Header build() {
       return new Header(this);

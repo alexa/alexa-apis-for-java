@@ -74,7 +74,6 @@ public final class StopDirective extends com.amazon.ask.model.Directive {
   public static class Builder {
 
     private Builder() { }
-      
 
     public StopDirective build() {
       return new StopDirective(this);

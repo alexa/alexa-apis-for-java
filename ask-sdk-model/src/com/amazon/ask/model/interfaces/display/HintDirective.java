@@ -90,14 +90,13 @@ public final class HintDirective extends com.amazon.ask.model.Directive {
     private com.amazon.ask.model.interfaces.display.Hint hint;
 
     private Builder() { }
-      
 
     @JsonProperty("hint")
     public Builder withHint(com.amazon.ask.model.interfaces.display.Hint hint) {
-      this.hint = hint;
-      return this;
+        this.hint = hint;
+        return this;
     }
-      
+
 
     public HintDirective build() {
       return new HintDirective(this);

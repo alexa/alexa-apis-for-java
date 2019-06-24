@@ -104,17 +104,17 @@ public final class Event{
 
     @JsonProperty("status")
     public Builder withStatus(com.amazon.ask.model.services.reminderManagement.Status status) {
-      this.status = status;
-      return this;
+        this.status = status;
+        return this;
     }
-      
+
 
     @JsonProperty("alertToken")
     public Builder withAlertToken(String alertToken) {
-      this.alertToken = alertToken;
-      return this;
+        this.alertToken = alertToken;
+        return this;
     }
-      
+
 
     public Event build() {
       return new Event(this);

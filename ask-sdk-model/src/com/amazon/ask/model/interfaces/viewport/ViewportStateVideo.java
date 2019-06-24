@@ -92,10 +92,10 @@ public final class ViewportStateVideo{
 
     @JsonProperty("codecs")
     public Builder withCodecs(List<com.amazon.ask.model.interfaces.viewport.video.Codecs> codecs) {
-      this.codecs = codecs;
-      return this;
+        this.codecs = codecs;
+        return this;
     }
-      
+
     public Builder addCodecsItem(com.amazon.ask.model.interfaces.viewport.video.Codecs codecsItem) {
       if (this.codecs == null) {
         this.codecs = new ArrayList<com.amazon.ask.model.interfaces.viewport.video.Codecs>();

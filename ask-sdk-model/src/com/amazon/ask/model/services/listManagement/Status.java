@@ -104,17 +104,17 @@ public final class Status{
 
     @JsonProperty("url")
     public Builder withUrl(String url) {
-      this.url = url;
-      return this;
+        this.url = url;
+        return this;
     }
-      
+
 
     @JsonProperty("status")
     public Builder withStatus(com.amazon.ask.model.services.listManagement.ListItemState status) {
-      this.status = status;
-      return this;
+        this.status = status;
+        return this;
     }
-      
+
 
     public Status build() {
       return new Status(this);

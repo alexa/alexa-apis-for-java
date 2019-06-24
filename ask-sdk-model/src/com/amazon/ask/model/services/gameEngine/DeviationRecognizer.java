@@ -90,14 +90,13 @@ public final class DeviationRecognizer extends com.amazon.ask.model.services.gam
     private String recognizer;
 
     private Builder() { }
-      
 
     @JsonProperty("recognizer")
     public Builder withRecognizer(String recognizer) {
-      this.recognizer = recognizer;
-      return this;
+        this.recognizer = recognizer;
+        return this;
     }
-      
+
 
     public DeviationRecognizer build() {
       return new DeviationRecognizer(this);

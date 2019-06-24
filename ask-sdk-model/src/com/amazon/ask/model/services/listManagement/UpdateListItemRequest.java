@@ -119,24 +119,24 @@ public final class UpdateListItemRequest{
 
     @JsonProperty("value")
     public Builder withValue(String value) {
-      this.value = value;
-      return this;
+        this.value = value;
+        return this;
     }
-      
+
 
     @JsonProperty("status")
     public Builder withStatus(com.amazon.ask.model.services.listManagement.ListItemState status) {
-      this.status = status;
-      return this;
+        this.status = status;
+        return this;
     }
-      
+
 
     @JsonProperty("version")
     public Builder withVersion(Long version) {
-      this.version = version;
-      return this;
+        this.version = version;
+        return this;
     }
-      
+
 
     public UpdateListItemRequest build() {
       return new UpdateListItemRequest(this);

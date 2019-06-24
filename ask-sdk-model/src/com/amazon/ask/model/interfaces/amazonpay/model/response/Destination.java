@@ -19,7 +19,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * The default shipping address of the buyer. Returned if needAmazonShippingAddress is set to true.
+ * Destination
  */
 
 @JsonDeserialize(builder = Destination.Builder.class)
@@ -239,80 +239,80 @@ public final class Destination{
 
     @JsonProperty("name")
     public Builder withName(String name) {
-      this.name = name;
-      return this;
+        this.name = name;
+        return this;
     }
-      
+
 
     @JsonProperty("companyName")
     public Builder withCompanyName(String companyName) {
-      this.companyName = companyName;
-      return this;
+        this.companyName = companyName;
+        return this;
     }
-      
+
 
     @JsonProperty("addressLine1")
     public Builder withAddressLine1(String addressLine1) {
-      this.addressLine1 = addressLine1;
-      return this;
+        this.addressLine1 = addressLine1;
+        return this;
     }
-      
+
 
     @JsonProperty("addressLine2")
     public Builder withAddressLine2(String addressLine2) {
-      this.addressLine2 = addressLine2;
-      return this;
+        this.addressLine2 = addressLine2;
+        return this;
     }
-      
+
 
     @JsonProperty("addressLine3")
     public Builder withAddressLine3(String addressLine3) {
-      this.addressLine3 = addressLine3;
-      return this;
+        this.addressLine3 = addressLine3;
+        return this;
     }
-      
+
 
     @JsonProperty("city")
     public Builder withCity(String city) {
-      this.city = city;
-      return this;
+        this.city = city;
+        return this;
     }
-      
+
 
     @JsonProperty("districtOrCounty")
     public Builder withDistrictOrCounty(String districtOrCounty) {
-      this.districtOrCounty = districtOrCounty;
-      return this;
+        this.districtOrCounty = districtOrCounty;
+        return this;
     }
-      
+
 
     @JsonProperty("stateOrRegion")
     public Builder withStateOrRegion(String stateOrRegion) {
-      this.stateOrRegion = stateOrRegion;
-      return this;
+        this.stateOrRegion = stateOrRegion;
+        return this;
     }
-      
+
 
     @JsonProperty("postalCode")
     public Builder withPostalCode(String postalCode) {
-      this.postalCode = postalCode;
-      return this;
+        this.postalCode = postalCode;
+        return this;
     }
-      
+
 
     @JsonProperty("countryCode")
     public Builder withCountryCode(String countryCode) {
-      this.countryCode = countryCode;
-      return this;
+        this.countryCode = countryCode;
+        return this;
     }
-      
+
 
     @JsonProperty("phone")
     public Builder withPhone(String phone) {
-      this.phone = phone;
-      return this;
+        this.phone = phone;
+        return this;
     }
-      
+
 
     public Destination build() {
       return new Destination(this);

@@ -104,17 +104,17 @@ public final class SendDirectiveRequest{
 
     @JsonProperty("header")
     public Builder withHeader(com.amazon.ask.model.services.directive.Header header) {
-      this.header = header;
-      return this;
+        this.header = header;
+        return this;
     }
-      
+
 
     @JsonProperty("directive")
     public Builder withDirective(com.amazon.ask.model.services.directive.Directive directive) {
-      this.directive = directive;
-      return this;
+        this.directive = directive;
+        return this;
     }
-      
+
 
     public SendDirectiveRequest build() {
       return new SendDirectiveRequest(this);

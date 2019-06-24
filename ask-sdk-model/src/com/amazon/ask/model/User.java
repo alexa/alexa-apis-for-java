@@ -119,24 +119,24 @@ public final class User{
 
     @JsonProperty("userId")
     public Builder withUserId(String userId) {
-      this.userId = userId;
-      return this;
+        this.userId = userId;
+        return this;
     }
-      
+
 
     @JsonProperty("accessToken")
     public Builder withAccessToken(String accessToken) {
-      this.accessToken = accessToken;
-      return this;
+        this.accessToken = accessToken;
+        return this;
     }
-      
+
 
     @JsonProperty("permissions")
     public Builder withPermissions(com.amazon.ask.model.Permissions permissions) {
-      this.permissions = permissions;
-      return this;
+        this.permissions = permissions;
+        return this;
     }
-      
+
 
     public User build() {
       return new User(this);

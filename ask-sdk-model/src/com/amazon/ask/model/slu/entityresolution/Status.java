@@ -89,10 +89,10 @@ public final class Status{
 
     @JsonProperty("code")
     public Builder withCode(com.amazon.ask.model.slu.entityresolution.StatusCode code) {
-      this.code = code;
-      return this;
+        this.code = code;
+        return this;
     }
-      
+
 
     public Status build() {
       return new Status(this);

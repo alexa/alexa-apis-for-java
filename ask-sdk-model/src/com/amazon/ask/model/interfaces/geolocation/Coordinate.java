@@ -119,24 +119,24 @@ public final class Coordinate{
 
     @JsonProperty("latitudeInDegrees")
     public Builder withLatitudeInDegrees(Double latitudeInDegrees) {
-      this.latitudeInDegrees = latitudeInDegrees;
-      return this;
+        this.latitudeInDegrees = latitudeInDegrees;
+        return this;
     }
-      
+
 
     @JsonProperty("longitudeInDegrees")
     public Builder withLongitudeInDegrees(Double longitudeInDegrees) {
-      this.longitudeInDegrees = longitudeInDegrees;
-      return this;
+        this.longitudeInDegrees = longitudeInDegrees;
+        return this;
     }
-      
+
 
     @JsonProperty("accuracyInMeters")
     public Builder withAccuracyInMeters(Double accuracyInMeters) {
-      this.accuracyInMeters = accuracyInMeters;
-      return this;
+        this.accuracyInMeters = accuracyInMeters;
+        return this;
     }
-      
+
 
     public Coordinate build() {
       return new Coordinate(this);

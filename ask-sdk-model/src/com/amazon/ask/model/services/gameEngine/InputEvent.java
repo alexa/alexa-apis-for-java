@@ -149,38 +149,38 @@ public final class InputEvent{
 
     @JsonProperty("gadgetId")
     public Builder withGadgetId(String gadgetId) {
-      this.gadgetId = gadgetId;
-      return this;
+        this.gadgetId = gadgetId;
+        return this;
     }
-      
+
 
     @JsonProperty("timestamp")
     public Builder withTimestamp(String timestamp) {
-      this.timestamp = timestamp;
-      return this;
+        this.timestamp = timestamp;
+        return this;
     }
-      
+
 
     @JsonProperty("action")
     public Builder withAction(com.amazon.ask.model.services.gameEngine.InputEventActionType action) {
-      this.action = action;
-      return this;
+        this.action = action;
+        return this;
     }
-      
+
 
     @JsonProperty("color")
     public Builder withColor(String color) {
-      this.color = color;
-      return this;
+        this.color = color;
+        return this;
     }
-      
+
 
     @JsonProperty("feature")
     public Builder withFeature(String feature) {
-      this.feature = feature;
-      return this;
+        this.feature = feature;
+        return this;
     }
-      
+
 
     public InputEvent build() {
       return new InputEvent(this);

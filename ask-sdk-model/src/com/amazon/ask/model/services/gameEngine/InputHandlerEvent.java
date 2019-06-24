@@ -107,17 +107,17 @@ public final class InputHandlerEvent{
 
     @JsonProperty("name")
     public Builder withName(String name) {
-      this.name = name;
-      return this;
+        this.name = name;
+        return this;
     }
-      
+
 
     @JsonProperty("inputEvents")
     public Builder withInputEvents(List<com.amazon.ask.model.services.gameEngine.InputEvent> inputEvents) {
-      this.inputEvents = inputEvents;
-      return this;
+        this.inputEvents = inputEvents;
+        return this;
     }
-      
+
     public Builder addInputEventsItem(com.amazon.ask.model.services.gameEngine.InputEvent inputEventsItem) {
       if (this.inputEvents == null) {
         this.inputEvents = new ArrayList<com.amazon.ask.model.services.gameEngine.InputEvent>();
