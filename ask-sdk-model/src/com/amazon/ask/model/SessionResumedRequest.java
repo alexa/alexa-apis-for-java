@@ -20,35 +20,35 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Represents that a user made a request to an Alexa skill, but did not provide a specific intent.
+ * The request to resume a skill&#39;s session and tells the skill why it is resumed.
  */
 
-@JsonDeserialize(builder = LaunchRequest.Builder.class)
-public final class LaunchRequest extends com.amazon.ask.model.Request {
+@JsonDeserialize(builder = SessionResumedRequest.Builder.class)
+public final class SessionResumedRequest extends com.amazon.ask.model.Request {
 
-  @JsonProperty("task")
-  private com.amazon.ask.model.Task task = null;
+  @JsonProperty("cause")
+  private com.amazon.ask.model.Cause cause = null;
 
   public static Builder builder() {
     return new Builder();
   }
 
-  private LaunchRequest(Builder builder) {
-    String discriminatorValue = "LaunchRequest";
+  private SessionResumedRequest(Builder builder) {
+    String discriminatorValue = "SessionResumedRequest";
 
     this.type = discriminatorValue;
     this.requestId = builder.requestId;
     this.timestamp = builder.timestamp;
     this.locale = builder.locale;
-    this.task = builder.task;
+    this.cause = builder.cause;
   }
 
   /**
-    * Get task
-  * @return task
+    * Get cause
+  * @return cause
   **/
-  public com.amazon.ask.model.Task getTask() {
-    return task;
+  public com.amazon.ask.model.Cause getCause() {
+    return cause;
   }
 
   @Override
@@ -59,22 +59,22 @@ public final class LaunchRequest extends com.amazon.ask.model.Request {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    LaunchRequest launchRequest = (LaunchRequest) o;
-    return Objects.equals(this.task, launchRequest.task) &&
+    SessionResumedRequest sessionResumedRequest = (SessionResumedRequest) o;
+    return Objects.equals(this.cause, sessionResumedRequest.cause) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(task, super.hashCode());
+    return Objects.hash(cause, super.hashCode());
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class LaunchRequest {\n");
+    sb.append("class SessionResumedRequest {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    task: ").append(toIndentedString(task)).append("\n");
+    sb.append("    cause: ").append(toIndentedString(cause)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -94,7 +94,7 @@ public final class LaunchRequest extends com.amazon.ask.model.Request {
     private String requestId;
     private OffsetDateTime timestamp;
     private String locale;
-    private com.amazon.ask.model.Task task;
+    private com.amazon.ask.model.Cause cause;
 
     private Builder() { }
 
@@ -119,15 +119,15 @@ public final class LaunchRequest extends com.amazon.ask.model.Request {
     }
 
 
-    @JsonProperty("task")
-    public Builder withTask(com.amazon.ask.model.Task task) {
-        this.task = task;
+    @JsonProperty("cause")
+    public Builder withCause(com.amazon.ask.model.Cause cause) {
+        this.cause = cause;
         return this;
     }
 
 
-    public LaunchRequest build() {
-      return new LaunchRequest(this);
+    public SessionResumedRequest build() {
+      return new SessionResumedRequest(this);
     }
   }
 }

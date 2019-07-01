@@ -31,8 +31,16 @@ public class SkillMessagingServiceClient extends BaseServiceClient implements Sk
       super(apiConfiguration);
       this.lwaClient = LwaClient.builder()
           .withAuthenticationConfiguration(authenticationConfiguration)
-          .withApiConfiguration(apiConfiguration)
+          .withApiConfiguration(DefaultApiConfiguration.builder()
+                                    .withApiClient(apiConfiguration.getApiClient())
+                                    .withSerializer(apiConfiguration.getSerializer())
+                                    .build())
           .build();
+  }
+
+  public SkillMessagingServiceClient(ApiConfiguration apiConfiguration, LwaClient lwaClient) {
+      super(apiConfiguration);
+      this.lwaClient = lwaClient;
   }
 
   /**

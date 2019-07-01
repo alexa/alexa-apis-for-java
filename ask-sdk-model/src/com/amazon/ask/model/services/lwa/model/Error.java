@@ -14,7 +14,9 @@
 package com.amazon.ask.model.services.lwa.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
+@JsonDeserialize(builder = Error.Builder.class)
 public class Error {
 
     @JsonProperty("error")

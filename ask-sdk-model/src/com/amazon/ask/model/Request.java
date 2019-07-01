@@ -37,6 +37,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
   @JsonSubTypes.Type(value = com.amazon.ask.model.events.skillevents.PermissionChangedRequest.class, name = "AlexaSkillEvent.SkillPermissionChanged"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.services.listManagement.ListItemsCreatedEventRequest.class, name = "AlexaHouseholdListEvent.ItemsCreated"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.services.reminderManagement.ReminderUpdatedEventRequest.class, name = "Reminders.ReminderUpdated"),
+  @JsonSubTypes.Type(value = com.amazon.ask.model.SessionResumedRequest.class, name = "SessionResumedRequest"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.SessionEndedRequest.class, name = "SessionEndedRequest"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.IntentRequest.class, name = "IntentRequest"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.audioplayer.PlaybackFailedRequest.class, name = "AudioPlayer.PlaybackFailed"),

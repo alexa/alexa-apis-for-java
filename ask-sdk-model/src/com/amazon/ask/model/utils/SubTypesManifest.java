@@ -26,6 +26,10 @@ public class SubTypesManifest {
   static {
     baseTypes = new HashMap<>();
 
+    Map<String, Class> causeSubTypes = new HashMap<>();
+    causeSubTypes.put("ConnectionCompleted", com.amazon.ask.model.ConnectionCompleted.class);
+    baseTypes.put(com.amazon.ask.model.Cause.class, causeSubTypes);
+
     Map<String, Class> directiveSubTypes = new HashMap<>();
     directiveSubTypes.put("AudioPlayer.Stop", com.amazon.ask.model.interfaces.audioplayer.StopDirective.class);
     directiveSubTypes.put("Dialog.ConfirmSlot", com.amazon.ask.model.dialog.ConfirmSlotDirective.class);
@@ -38,9 +42,11 @@ public class SubTypesManifest {
     directiveSubTypes.put("Dialog.Delegate", com.amazon.ask.model.dialog.DelegateDirective.class);
     directiveSubTypes.put("Hint", com.amazon.ask.model.interfaces.display.HintDirective.class);
     directiveSubTypes.put("Dialog.ConfirmIntent", com.amazon.ask.model.dialog.ConfirmIntentDirective.class);
+    directiveSubTypes.put("Connections.StartConnection", com.amazon.ask.model.interfaces.connections.V1.StartConnectionDirective.class);
     directiveSubTypes.put("GameEngine.StartInputHandler", com.amazon.ask.model.interfaces.gameEngine.StartInputHandlerDirective.class);
     directiveSubTypes.put("VideoApp.Launch", com.amazon.ask.model.interfaces.videoapp.LaunchDirective.class);
     directiveSubTypes.put("GameEngine.StopInputHandler", com.amazon.ask.model.interfaces.gameEngine.StopInputHandlerDirective.class);
+    directiveSubTypes.put("Tasks.CompleteTask", com.amazon.ask.model.interfaces.tasks.CompleteTaskDirective.class);
     directiveSubTypes.put("Alexa.Presentation.APL.RenderDocument", com.amazon.ask.model.interfaces.alexa.presentation.apl.RenderDocumentDirective.class);
     directiveSubTypes.put("Connections.SendResponse", com.amazon.ask.model.interfaces.connections.SendResponseDirective.class);
     directiveSubTypes.put("Dialog.ElicitSlot", com.amazon.ask.model.dialog.ElicitSlotDirective.class);
@@ -58,6 +64,7 @@ public class SubTypesManifest {
     requestSubTypes.put("AlexaSkillEvent.SkillPermissionChanged", com.amazon.ask.model.events.skillevents.PermissionChangedRequest.class);
     requestSubTypes.put("AlexaHouseholdListEvent.ItemsCreated", com.amazon.ask.model.services.listManagement.ListItemsCreatedEventRequest.class);
     requestSubTypes.put("Reminders.ReminderUpdated", com.amazon.ask.model.services.reminderManagement.ReminderUpdatedEventRequest.class);
+    requestSubTypes.put("SessionResumedRequest", com.amazon.ask.model.SessionResumedRequest.class);
     requestSubTypes.put("SessionEndedRequest", com.amazon.ask.model.SessionEndedRequest.class);
     requestSubTypes.put("IntentRequest", com.amazon.ask.model.IntentRequest.class);
     requestSubTypes.put("AudioPlayer.PlaybackFailed", com.amazon.ask.model.interfaces.audioplayer.PlaybackFailedRequest.class);

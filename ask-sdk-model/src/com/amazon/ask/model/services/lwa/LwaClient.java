@@ -37,8 +37,10 @@ public class LwaClient extends BaseServiceClient {
 
     private final AuthenticationConfiguration authenticationConfiguration;
     private final Map<String, AccessToken> scopeTokenStore;
+    private final String endpoint;
 
     private static final long EXPIRY_OFFSET_MILLIS = 60000;
+    private static final String DEFAULT_LWA_ENDPOINT = "https://api.amazon.com";
 
     private LwaClient(Builder builder) {
         super(builder.apiConfiguration);
@@ -47,6 +49,7 @@ public class LwaClient extends BaseServiceClient {
         }
         this.authenticationConfiguration = builder.authenticationConfiguration;
         this.scopeTokenStore = new ConcurrentHashMap<>();
+        this.endpoint = builder.apiConfiguration.getApiEndpoint();
     }
 
     public static Builder builder() { return new Builder(); }
@@ -88,7 +91,8 @@ public class LwaClient extends BaseServiceClient {
         serviceResponseDefinitions.add(new ServiceClientResponse(Error.class, 401, "Authentication Failed"));
         serviceResponseDefinitions.add(new ServiceClientResponse(Error.class, 500, "Internal Server Error"));
 
-        return (AccessTokenResponse)invoke("POST", "https://api.amazon.com", "/auth/O2/token",
+        String lwaEndpoint = endpoint != null ? endpoint : DEFAULT_LWA_ENDPOINT;
+        return (AccessTokenResponse)invoke("POST", lwaEndpoint, "/auth/O2/token",
                 queryParams, headerParams, pathParams, serviceResponseDefinitions, payload, AccessTokenResponse.class, true);
     }
 

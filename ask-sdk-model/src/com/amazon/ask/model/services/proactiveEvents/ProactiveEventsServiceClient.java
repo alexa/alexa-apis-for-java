@@ -31,8 +31,16 @@ public class ProactiveEventsServiceClient extends BaseServiceClient implements P
       super(apiConfiguration);
       this.lwaClient = LwaClient.builder()
           .withAuthenticationConfiguration(authenticationConfiguration)
-          .withApiConfiguration(apiConfiguration)
+          .withApiConfiguration(DefaultApiConfiguration.builder()
+                                    .withApiClient(apiConfiguration.getApiClient())
+                                    .withSerializer(apiConfiguration.getSerializer())
+                                    .build())
           .build();
+  }
+
+  public ProactiveEventsServiceClient(ApiConfiguration apiConfiguration, LwaClient lwaClient) {
+      super(apiConfiguration);
+      this.lwaClient = lwaClient;
   }
 
   /**
