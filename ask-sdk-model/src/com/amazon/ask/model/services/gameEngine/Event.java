@@ -63,6 +63,7 @@ public final class Event{
     * Whether the Input Handler should end after this event fires. If true, the Input Handler will stop and no further events will be sent to your skill unless you call StartInputHandler again.
   * @return shouldEndInputHandler
   **/
+  @JsonProperty("shouldEndInputHandler")
   public Boolean getShouldEndInputHandler() {
     return shouldEndInputHandler;
   }
@@ -71,6 +72,7 @@ public final class Event{
     * Get meets
   * @return meets
   **/
+  @JsonProperty("meets")
   public List<String> getMeets() {
     return meets;
   }
@@ -79,6 +81,7 @@ public final class Event{
     * Get fails
   * @return fails
   **/
+  @JsonProperty("fails")
   public List<String> getFails() {
     return fails;
   }
@@ -87,6 +90,7 @@ public final class Event{
     * Get reports
   * @return reports
   **/
+  @JsonProperty("reports")
   public com.amazon.ask.model.services.gameEngine.EventReportingType getReports() {
     return reports;
   }
@@ -97,6 +101,7 @@ public final class Event{
     * maximum: 2048
   * @return maximumInvocations
   **/
+  @JsonProperty("maximumInvocations")
   public Integer getMaximumInvocations() {
     return maximumInvocations;
   }
@@ -107,6 +112,7 @@ public final class Event{
     * maximum: 90000
   * @return triggerTimeMilliseconds
   **/
+  @JsonProperty("triggerTimeMilliseconds")
   public Long getTriggerTimeMilliseconds() {
     return triggerTimeMilliseconds;
   }

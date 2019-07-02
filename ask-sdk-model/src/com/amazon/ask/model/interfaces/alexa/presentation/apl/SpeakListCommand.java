@@ -32,13 +32,13 @@ public final class SpeakListCommand extends com.amazon.ask.model.interfaces.alex
   private String componentId = null;
 
   @JsonProperty("count")
-  private String count = String.valueOf(null);
+  private String count = null;
 
   @JsonProperty("minimumDwellTime")
-  private String minimumDwellTime = String.valueOf(null);
+  private String minimumDwellTime = null;
 
   @JsonProperty("start")
-  private String start = String.valueOf(null);
+  private String start = null;
 
   public static Builder builder() {
     return new Builder();
@@ -62,6 +62,7 @@ public final class SpeakListCommand extends com.amazon.ask.model.interfaces.alex
     * Get align
   * @return align
   **/
+  @JsonProperty("align")
   public com.amazon.ask.model.interfaces.alexa.presentation.apl.Align getAlign() {
     return align;
   }
@@ -70,6 +71,7 @@ public final class SpeakListCommand extends com.amazon.ask.model.interfaces.alex
     * The id of the component to read.
   * @return componentId
   **/
+  @JsonProperty("componentId")
   public String getComponentId() {
     return componentId;
   }
@@ -78,6 +80,7 @@ public final class SpeakListCommand extends com.amazon.ask.model.interfaces.alex
     * The number of items to speak
   * @return count
   **/
+  @JsonProperty("count")
   public String getCount() {
     return count;
   }
@@ -86,6 +89,7 @@ public final class SpeakListCommand extends com.amazon.ask.model.interfaces.alex
     * The minimum number of milliseconds that an item will be highlighted for. Defaults to 0.
   * @return minimumDwellTime
   **/
+  @JsonProperty("minimumDwellTime")
   public String getMinimumDwellTime() {
     return minimumDwellTime;
   }
@@ -94,6 +98,7 @@ public final class SpeakListCommand extends com.amazon.ask.model.interfaces.alex
     * The 0-based index of the first item to speak
   * @return start
   **/
+  @JsonProperty("start")
   public String getStart() {
     return start;
   }

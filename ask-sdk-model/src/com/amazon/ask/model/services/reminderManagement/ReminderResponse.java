@@ -60,6 +60,7 @@ public final class ReminderResponse{
     * Unique id of this reminder alert
   * @return alertToken
   **/
+  @JsonProperty("alertToken")
   public String getAlertToken() {
     return alertToken;
   }
@@ -68,6 +69,7 @@ public final class ReminderResponse{
     * Valid ISO 8601 format - Creation time of this reminder alert
   * @return createdTime
   **/
+  @JsonProperty("createdTime")
   public String getCreatedTime() {
     return createdTime;
   }
@@ -76,6 +78,7 @@ public final class ReminderResponse{
     * Valid ISO 8601 format - Last updated time of this reminder alert
   * @return updatedTime
   **/
+  @JsonProperty("updatedTime")
   public String getUpdatedTime() {
     return updatedTime;
   }
@@ -84,6 +87,7 @@ public final class ReminderResponse{
     * Get status
   * @return status
   **/
+  @JsonProperty("status")
   public com.amazon.ask.model.services.reminderManagement.Status getStatus() {
     return status;
   }
@@ -92,6 +96,7 @@ public final class ReminderResponse{
     * Version of reminder alert
   * @return version
   **/
+  @JsonProperty("version")
   public String getVersion() {
     return version;
   }
@@ -100,6 +105,7 @@ public final class ReminderResponse{
     * URI to retrieve the created alert
   * @return href
   **/
+  @JsonProperty("href")
   public String getHref() {
     return href;
   }

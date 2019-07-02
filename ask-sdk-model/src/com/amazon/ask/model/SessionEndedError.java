@@ -44,6 +44,7 @@ public final class SessionEndedError{
     * A string indicating the type of error that occurred.
   * @return type
   **/
+  @JsonProperty("type")
   public com.amazon.ask.model.SessionEndedErrorType getType() {
     return type;
   }
@@ -52,6 +53,7 @@ public final class SessionEndedError{
     * A string providing more information about the error.
   * @return message
   **/
+  @JsonProperty("message")
   public String getMessage() {
     return message;
   }

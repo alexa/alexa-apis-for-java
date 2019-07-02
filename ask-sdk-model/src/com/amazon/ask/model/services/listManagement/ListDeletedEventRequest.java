@@ -55,6 +55,7 @@ public final class ListDeletedEventRequest extends com.amazon.ask.model.Request 
     * Get body
   * @return body
   **/
+  @JsonProperty("body")
   public com.amazon.ask.model.services.listManagement.ListBody getBody() {
     return body;
   }
@@ -63,6 +64,7 @@ public final class ListDeletedEventRequest extends com.amazon.ask.model.Request 
     * Get eventCreationTime
   * @return eventCreationTime
   **/
+  @JsonProperty("eventCreationTime")
   public OffsetDateTime getEventCreationTime() {
     return eventCreationTime;
   }
@@ -71,6 +73,7 @@ public final class ListDeletedEventRequest extends com.amazon.ask.model.Request 
     * Get eventPublishingTime
   * @return eventPublishingTime
   **/
+  @JsonProperty("eventPublishingTime")
   public OffsetDateTime getEventPublishingTime() {
     return eventPublishingTime;
   }

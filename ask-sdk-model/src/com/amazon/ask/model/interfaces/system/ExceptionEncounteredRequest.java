@@ -51,6 +51,7 @@ public final class ExceptionEncounteredRequest extends com.amazon.ask.model.Requ
     * Get error
   * @return error
   **/
+  @JsonProperty("error")
   public com.amazon.ask.model.interfaces.system.Error getError() {
     return error;
   }
@@ -59,6 +60,7 @@ public final class ExceptionEncounteredRequest extends com.amazon.ask.model.Requ
     * Get cause
   * @return cause
   **/
+  @JsonProperty("cause")
   public com.amazon.ask.model.interfaces.system.ErrorCause getCause() {
     return cause;
   }

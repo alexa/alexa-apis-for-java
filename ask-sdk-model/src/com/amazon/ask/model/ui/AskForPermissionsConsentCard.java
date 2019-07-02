@@ -46,6 +46,7 @@ public final class AskForPermissionsConsentCard extends com.amazon.ask.model.ui.
     * Get permissions
   * @return permissions
   **/
+  @JsonProperty("permissions")
   public List<String> getPermissions() {
     return permissions;
   }

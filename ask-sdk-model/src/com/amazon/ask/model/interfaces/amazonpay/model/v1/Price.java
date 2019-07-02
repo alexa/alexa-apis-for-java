@@ -44,6 +44,7 @@ public final class Price{
     * Amount authorized/captured.
   * @return amount
   **/
+  @JsonProperty("amount")
   public String getAmount() {
     return amount;
   }
@@ -52,6 +53,7 @@ public final class Price{
     * Currency code for the amount.
   * @return currencyCode
   **/
+  @JsonProperty("currencyCode")
   public String getCurrencyCode() {
     return currencyCode;
   }

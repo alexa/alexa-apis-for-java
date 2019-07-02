@@ -47,6 +47,7 @@ public final class ProactiveSubscriptionChangedRequest extends com.amazon.ask.mo
     * Get body
   * @return body
   **/
+  @JsonProperty("body")
   public com.amazon.ask.model.events.skillevents.ProactiveSubscriptionChangedBody getBody() {
     return body;
   }

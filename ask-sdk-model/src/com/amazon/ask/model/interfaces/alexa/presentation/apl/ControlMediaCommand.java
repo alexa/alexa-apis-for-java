@@ -32,7 +32,7 @@ public final class ControlMediaCommand extends com.amazon.ask.model.interfaces.a
   private String componentId = null;
 
   @JsonProperty("value")
-  private String value = String.valueOf(null);
+  private String value = null;
 
   public static Builder builder() {
     return new Builder();
@@ -54,6 +54,7 @@ public final class ControlMediaCommand extends com.amazon.ask.model.interfaces.a
     * The command to issue on the media player
   * @return command
   **/
+  @JsonProperty("command")
   public com.amazon.ask.model.interfaces.alexa.presentation.apl.MediaCommandType getCommand() {
     return command;
   }
@@ -62,6 +63,7 @@ public final class ControlMediaCommand extends com.amazon.ask.model.interfaces.a
     * The name of the media playing component
   * @return componentId
   **/
+  @JsonProperty("componentId")
   public String getComponentId() {
     return componentId;
   }
@@ -70,6 +72,7 @@ public final class ControlMediaCommand extends com.amazon.ask.model.interfaces.a
     * Optional data value
   * @return value
   **/
+  @JsonProperty("value")
   public String getValue() {
     return value;
   }

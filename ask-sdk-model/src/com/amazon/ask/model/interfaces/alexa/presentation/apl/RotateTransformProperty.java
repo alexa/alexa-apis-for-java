@@ -40,6 +40,7 @@ public final class RotateTransformProperty extends com.amazon.ask.model.interfac
     * Rotation angle, in degrees. Positive angles rotate in the clockwise direction.
   * @return rotate
   **/
+  @JsonProperty("rotate")
   public String getRotate() {
     return rotate;
   }

@@ -48,6 +48,7 @@ public final class UpdateListRequest{
     * Get name
   * @return name
   **/
+  @JsonProperty("name")
   public String getName() {
     return name;
   }
@@ -56,6 +57,7 @@ public final class UpdateListRequest{
     * Get state
   * @return state
   **/
+  @JsonProperty("state")
   public com.amazon.ask.model.services.listManagement.ListState getState() {
     return state;
   }
@@ -64,6 +66,7 @@ public final class UpdateListRequest{
     * Get version
   * @return version
   **/
+  @JsonProperty("version")
   public Long getVersion() {
     return version;
   }

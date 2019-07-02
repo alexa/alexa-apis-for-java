@@ -62,6 +62,7 @@ public final class ConnectionsResponse extends com.amazon.ask.model.Request {
     * Get status
   * @return status
   **/
+  @JsonProperty("status")
   public com.amazon.ask.model.interfaces.connections.ConnectionsStatus getStatus() {
     return status;
   }
@@ -70,6 +71,7 @@ public final class ConnectionsResponse extends com.amazon.ask.model.Request {
     * Name of the action for which response is received.
   * @return name
   **/
+  @JsonProperty("name")
   public String getName() {
     return name;
   }
@@ -78,6 +80,7 @@ public final class ConnectionsResponse extends com.amazon.ask.model.Request {
     * This is an object sent from referrer skill as is.
   * @return payload
   **/
+  @JsonProperty("payload")
   public Map<String, Object> getPayload() {
     return payload;
   }
@@ -86,6 +89,7 @@ public final class ConnectionsResponse extends com.amazon.ask.model.Request {
     * This is the token that the skill originally sent with the ConnectionsSendRequest directive.
   * @return token
   **/
+  @JsonProperty("token")
   public String getToken() {
     return token;
   }

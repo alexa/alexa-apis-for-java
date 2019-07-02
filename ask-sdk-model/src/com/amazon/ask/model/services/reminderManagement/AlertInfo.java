@@ -40,6 +40,7 @@ public final class AlertInfo{
     * Get spokenInfo
   * @return spokenInfo
   **/
+  @JsonProperty("spokenInfo")
   public com.amazon.ask.model.services.reminderManagement.AlertInfoSpokenInfo getSpokenInfo() {
     return spokenInfo;
   }

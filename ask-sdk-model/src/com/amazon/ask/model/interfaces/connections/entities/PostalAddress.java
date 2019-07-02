@@ -60,6 +60,7 @@ public final class PostalAddress extends com.amazon.ask.model.interfaces.connect
     * street address
   * @return streetAddress
   **/
+  @JsonProperty("streetAddress")
   public String getStreetAddress() {
     return streetAddress;
   }
@@ -68,6 +69,7 @@ public final class PostalAddress extends com.amazon.ask.model.interfaces.connect
     * locality/city
   * @return locality
   **/
+  @JsonProperty("locality")
   public String getLocality() {
     return locality;
   }
@@ -76,6 +78,7 @@ public final class PostalAddress extends com.amazon.ask.model.interfaces.connect
     * state/region
   * @return region
   **/
+  @JsonProperty("region")
   public String getRegion() {
     return region;
   }
@@ -84,6 +87,7 @@ public final class PostalAddress extends com.amazon.ask.model.interfaces.connect
     * postal/zip code
   * @return postalCode
   **/
+  @JsonProperty("postalCode")
   public String getPostalCode() {
     return postalCode;
   }
@@ -92,6 +96,7 @@ public final class PostalAddress extends com.amazon.ask.model.interfaces.connect
     * country
   * @return country
   **/
+  @JsonProperty("country")
   public String getCountry() {
     return country;
   }

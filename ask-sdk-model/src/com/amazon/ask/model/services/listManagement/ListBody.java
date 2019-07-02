@@ -40,6 +40,7 @@ public final class ListBody{
     * Get listId
   * @return listId
   **/
+  @JsonProperty("listId")
   public String getListId() {
     return listId;
   }

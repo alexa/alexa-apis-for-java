@@ -64,6 +64,7 @@ public final class ChargeAmazonPay{
     * Authorization token that contains the permissions consented to by the user.
   * @return consentToken
   **/
+  @JsonProperty("consentToken")
   public String getConsentToken() {
     return consentToken;
   }
@@ -72,6 +73,7 @@ public final class ChargeAmazonPay{
     * The seller ID (also known as merchant ID). If you are an Ecommerce Provider (Solution Provider), please specify the ID of the merchant, not your provider ID.
   * @return sellerId
   **/
+  @JsonProperty("sellerId")
   public String getSellerId() {
     return sellerId;
   }
@@ -80,6 +82,7 @@ public final class ChargeAmazonPay{
     * The payment contract i.e. billing agreement created for the user.
   * @return billingAgreementId
   **/
+  @JsonProperty("billingAgreementId")
   public String getBillingAgreementId() {
     return billingAgreementId;
   }
@@ -88,6 +91,7 @@ public final class ChargeAmazonPay{
     * Get paymentAction
   * @return paymentAction
   **/
+  @JsonProperty("paymentAction")
   public com.amazon.ask.model.interfaces.amazonpay.model.v1.PaymentAction getPaymentAction() {
     return paymentAction;
   }
@@ -96,6 +100,7 @@ public final class ChargeAmazonPay{
     * Get authorizeAttributes
   * @return authorizeAttributes
   **/
+  @JsonProperty("authorizeAttributes")
   public com.amazon.ask.model.interfaces.amazonpay.model.v1.AuthorizeAttributes getAuthorizeAttributes() {
     return authorizeAttributes;
   }
@@ -104,6 +109,7 @@ public final class ChargeAmazonPay{
     * Get sellerOrderAttributes
   * @return sellerOrderAttributes
   **/
+  @JsonProperty("sellerOrderAttributes")
   public com.amazon.ask.model.interfaces.amazonpay.model.v1.SellerOrderAttributes getSellerOrderAttributes() {
     return sellerOrderAttributes;
   }
@@ -112,6 +118,7 @@ public final class ChargeAmazonPay{
     * Get providerAttributes
   * @return providerAttributes
   **/
+  @JsonProperty("providerAttributes")
   public com.amazon.ask.model.interfaces.amazonpay.model.v1.ProviderAttributes getProviderAttributes() {
     return providerAttributes;
   }

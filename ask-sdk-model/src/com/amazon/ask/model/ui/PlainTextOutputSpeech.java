@@ -44,6 +44,7 @@ public final class PlainTextOutputSpeech extends com.amazon.ask.model.ui.OutputS
     * Get text
   * @return text
   **/
+  @JsonProperty("text")
   public String getText() {
     return text;
   }

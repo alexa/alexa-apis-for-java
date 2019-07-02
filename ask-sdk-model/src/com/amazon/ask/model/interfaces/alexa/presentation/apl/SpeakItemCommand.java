@@ -35,7 +35,7 @@ public final class SpeakItemCommand extends com.amazon.ask.model.interfaces.alex
   private com.amazon.ask.model.interfaces.alexa.presentation.apl.HighlightMode highlightMode = null;
 
   @JsonProperty("minimumDwellTime")
-  private String minimumDwellTime = String.valueOf(null);
+  private String minimumDwellTime = null;
 
   public static Builder builder() {
     return new Builder();
@@ -58,6 +58,7 @@ public final class SpeakItemCommand extends com.amazon.ask.model.interfaces.alex
     * Get align
   * @return align
   **/
+  @JsonProperty("align")
   public com.amazon.ask.model.interfaces.alexa.presentation.apl.Align getAlign() {
     return align;
   }
@@ -66,6 +67,7 @@ public final class SpeakItemCommand extends com.amazon.ask.model.interfaces.alex
     * The id of the component to speak.
   * @return componentId
   **/
+  @JsonProperty("componentId")
   public String getComponentId() {
     return componentId;
   }
@@ -74,6 +76,7 @@ public final class SpeakItemCommand extends com.amazon.ask.model.interfaces.alex
     * Get highlightMode
   * @return highlightMode
   **/
+  @JsonProperty("highlightMode")
   public com.amazon.ask.model.interfaces.alexa.presentation.apl.HighlightMode getHighlightMode() {
     return highlightMode;
   }
@@ -82,6 +85,7 @@ public final class SpeakItemCommand extends com.amazon.ask.model.interfaces.alex
     * The minimum number of milliseconds that an item should be highlighted for. Defaults to 0.
   * @return minimumDwellTime
   **/
+  @JsonProperty("minimumDwellTime")
   public String getMinimumDwellTime() {
     return minimumDwellTime;
   }

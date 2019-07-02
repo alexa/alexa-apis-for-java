@@ -52,6 +52,7 @@ public final class ScheduleFoodEstablishmentReservationRequest extends com.amazo
     * start time of the reservation
   * @return startTime
   **/
+  @JsonProperty("startTime")
   public String getStartTime() {
     return startTime;
   }
@@ -60,6 +61,7 @@ public final class ScheduleFoodEstablishmentReservationRequest extends com.amazo
     * party size
   * @return partySize
   **/
+  @JsonProperty("partySize")
   public String getPartySize() {
     return partySize;
   }
@@ -68,6 +70,7 @@ public final class ScheduleFoodEstablishmentReservationRequest extends com.amazo
     * restaurant
   * @return restaurant
   **/
+  @JsonProperty("restaurant")
   public com.amazon.ask.model.interfaces.connections.entities.Restaurant getRestaurant() {
     return restaurant;
   }

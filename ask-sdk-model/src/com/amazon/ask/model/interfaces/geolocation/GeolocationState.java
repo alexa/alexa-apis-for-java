@@ -60,6 +60,7 @@ public final class GeolocationState{
     * Specifies the time when the geolocation data was last collected on the device.
   * @return timestamp
   **/
+  @JsonProperty("timestamp")
   public String getTimestamp() {
     return timestamp;
   }
@@ -68,6 +69,7 @@ public final class GeolocationState{
     * Get coordinate
   * @return coordinate
   **/
+  @JsonProperty("coordinate")
   public com.amazon.ask.model.interfaces.geolocation.Coordinate getCoordinate() {
     return coordinate;
   }
@@ -76,6 +78,7 @@ public final class GeolocationState{
     * Get altitude
   * @return altitude
   **/
+  @JsonProperty("altitude")
   public com.amazon.ask.model.interfaces.geolocation.Altitude getAltitude() {
     return altitude;
   }
@@ -84,6 +87,7 @@ public final class GeolocationState{
     * Get heading
   * @return heading
   **/
+  @JsonProperty("heading")
   public com.amazon.ask.model.interfaces.geolocation.Heading getHeading() {
     return heading;
   }
@@ -92,6 +96,7 @@ public final class GeolocationState{
     * Get speed
   * @return speed
   **/
+  @JsonProperty("speed")
   public com.amazon.ask.model.interfaces.geolocation.Speed getSpeed() {
     return speed;
   }
@@ -100,6 +105,7 @@ public final class GeolocationState{
     * Get locationServices
   * @return locationServices
   **/
+  @JsonProperty("locationServices")
   public com.amazon.ask.model.interfaces.geolocation.LocationServices getLocationServices() {
     return locationServices;
   }

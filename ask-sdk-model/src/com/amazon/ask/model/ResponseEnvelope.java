@@ -55,6 +55,7 @@ public final class ResponseEnvelope{
     * Get version
   * @return version
   **/
+  @JsonProperty("version")
   public String getVersion() {
     return version;
   }
@@ -63,6 +64,7 @@ public final class ResponseEnvelope{
     * Get sessionAttributes
   * @return sessionAttributes
   **/
+  @JsonProperty("sessionAttributes")
   public Map<String, Object> getSessionAttributes() {
     return sessionAttributes;
   }
@@ -71,6 +73,7 @@ public final class ResponseEnvelope{
     * Get userAgent
   * @return userAgent
   **/
+  @JsonProperty("userAgent")
   public String getUserAgent() {
     return userAgent;
   }
@@ -79,6 +82,7 @@ public final class ResponseEnvelope{
     * Get response
   * @return response
   **/
+  @JsonProperty("response")
   public com.amazon.ask.model.Response getResponse() {
     return response;
   }

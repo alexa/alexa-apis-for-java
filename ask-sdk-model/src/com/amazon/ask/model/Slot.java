@@ -52,6 +52,7 @@ public final class Slot{
     * A string that represents the name of the slot.
   * @return name
   **/
+  @JsonProperty("name")
   public String getName() {
     return name;
   }
@@ -60,6 +61,7 @@ public final class Slot{
     * A string that represents the value the user spoke for the slot. This is the actual value the user spoke, not necessarily the canonical value or one of the synonyms defined for the entity. Note that AMAZON.LITERAL slot values sent to your service are always in all lower case.
   * @return value
   **/
+  @JsonProperty("value")
   public String getValue() {
     return value;
   }
@@ -68,6 +70,7 @@ public final class Slot{
     * Indication of whether an intent or slot has been explicitly confirmed or denied by the user, or neither.
   * @return confirmationStatus
   **/
+  @JsonProperty("confirmationStatus")
   public com.amazon.ask.model.SlotConfirmationStatus getConfirmationStatus() {
     return confirmationStatus;
   }
@@ -76,6 +79,7 @@ public final class Slot{
     * Contains the results of entity resolution. These are organized by authority. An authority represents the source for the data provided for the slot. For a custom slot type, the authority is the slot type you defined.
   * @return resolutions
   **/
+  @JsonProperty("resolutions")
   public com.amazon.ask.model.slu.entityresolution.Resolutions getResolutions() {
     return resolutions;
   }

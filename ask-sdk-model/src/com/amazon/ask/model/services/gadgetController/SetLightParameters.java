@@ -51,6 +51,7 @@ public final class SetLightParameters{
     * Get triggerEvent
   * @return triggerEvent
   **/
+  @JsonProperty("triggerEvent")
   public com.amazon.ask.model.services.gadgetController.TriggerEventType getTriggerEvent() {
     return triggerEvent;
   }
@@ -59,6 +60,7 @@ public final class SetLightParameters{
     * Get triggerEventTimeMs
   * @return triggerEventTimeMs
   **/
+  @JsonProperty("triggerEventTimeMs")
   public Integer getTriggerEventTimeMs() {
     return triggerEventTimeMs;
   }
@@ -67,6 +69,7 @@ public final class SetLightParameters{
     * Get animations
   * @return animations
   **/
+  @JsonProperty("animations")
   public List<com.amazon.ask.model.services.gadgetController.LightAnimation> getAnimations() {
     return animations;
   }

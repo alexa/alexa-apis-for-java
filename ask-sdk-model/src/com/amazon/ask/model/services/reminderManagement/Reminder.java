@@ -69,6 +69,7 @@ public final class Reminder{
     * Unique id of this reminder alert
   * @return alertToken
   **/
+  @JsonProperty("alertToken")
   public String getAlertToken() {
     return alertToken;
   }
@@ -77,6 +78,7 @@ public final class Reminder{
     * Valid ISO 8601 format - Creation time of this reminder alert
   * @return createdTime
   **/
+  @JsonProperty("createdTime")
   public OffsetDateTime getCreatedTime() {
     return createdTime;
   }
@@ -85,6 +87,7 @@ public final class Reminder{
     * Valid ISO 8601 format - Last updated time of this reminder alert
   * @return updatedTime
   **/
+  @JsonProperty("updatedTime")
   public OffsetDateTime getUpdatedTime() {
     return updatedTime;
   }
@@ -93,6 +96,7 @@ public final class Reminder{
     * Get status
   * @return status
   **/
+  @JsonProperty("status")
   public com.amazon.ask.model.services.reminderManagement.Status getStatus() {
     return status;
   }
@@ -101,6 +105,7 @@ public final class Reminder{
     * Get trigger
   * @return trigger
   **/
+  @JsonProperty("trigger")
   public com.amazon.ask.model.services.reminderManagement.Trigger getTrigger() {
     return trigger;
   }
@@ -109,6 +114,7 @@ public final class Reminder{
     * Get alertInfo
   * @return alertInfo
   **/
+  @JsonProperty("alertInfo")
   public com.amazon.ask.model.services.reminderManagement.AlertInfo getAlertInfo() {
     return alertInfo;
   }
@@ -117,6 +123,7 @@ public final class Reminder{
     * Get pushNotification
   * @return pushNotification
   **/
+  @JsonProperty("pushNotification")
   public com.amazon.ask.model.services.reminderManagement.PushNotification getPushNotification() {
     return pushNotification;
   }
@@ -125,6 +132,7 @@ public final class Reminder{
     * Version of reminder alert
   * @return version
   **/
+  @JsonProperty("version")
   public String getVersion() {
     return version;
   }

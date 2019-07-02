@@ -47,6 +47,7 @@ public final class ListItemBody{
     * Get listId
   * @return listId
   **/
+  @JsonProperty("listId")
   public String getListId() {
     return listId;
   }
@@ -55,6 +56,7 @@ public final class ListItemBody{
     * Get listItemIds
   * @return listItemIds
   **/
+  @JsonProperty("listItemIds")
   public List<String> getListItemIds() {
     return listItemIds;
   }

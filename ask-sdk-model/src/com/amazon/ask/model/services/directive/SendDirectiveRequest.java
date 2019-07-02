@@ -44,6 +44,7 @@ public final class SendDirectiveRequest{
     * contains the header attributes of the send directive request.
   * @return header
   **/
+  @JsonProperty("header")
   public com.amazon.ask.model.services.directive.Header getHeader() {
     return header;
   }
@@ -52,6 +53,7 @@ public final class SendDirectiveRequest{
     * Directive Content.
   * @return directive
   **/
+  @JsonProperty("directive")
   public com.amazon.ask.model.services.directive.Directive getDirective() {
     return directive;
   }

@@ -51,6 +51,7 @@ public final class StandardCard extends com.amazon.ask.model.ui.Card {
     * Get title
   * @return title
   **/
+  @JsonProperty("title")
   public String getTitle() {
     return title;
   }
@@ -59,6 +60,7 @@ public final class StandardCard extends com.amazon.ask.model.ui.Card {
     * Get text
   * @return text
   **/
+  @JsonProperty("text")
   public String getText() {
     return text;
   }
@@ -67,6 +69,7 @@ public final class StandardCard extends com.amazon.ask.model.ui.Card {
     * Get image
   * @return image
   **/
+  @JsonProperty("image")
   public com.amazon.ask.model.ui.Image getImage() {
     return image;
   }

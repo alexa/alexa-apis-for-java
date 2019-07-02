@@ -43,6 +43,7 @@ public final class PlainTextHint extends com.amazon.ask.model.interfaces.display
     * Get text
   * @return text
   **/
+  @JsonProperty("text")
   public String getText() {
     return text;
   }

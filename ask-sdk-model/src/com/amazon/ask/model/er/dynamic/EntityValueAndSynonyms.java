@@ -47,6 +47,7 @@ public final class EntityValueAndSynonyms{
     * The entity value
   * @return value
   **/
+  @JsonProperty("value")
   public String getValue() {
     return value;
   }
@@ -55,6 +56,7 @@ public final class EntityValueAndSynonyms{
     * An array of synonyms for the entity
   * @return synonyms
   **/
+  @JsonProperty("synonyms")
   public List<String> getSynonyms() {
     return synonyms;
   }

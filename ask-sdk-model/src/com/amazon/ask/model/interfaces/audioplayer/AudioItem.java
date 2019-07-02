@@ -44,6 +44,7 @@ public final class AudioItem{
     * Get stream
   * @return stream
   **/
+  @JsonProperty("stream")
   public com.amazon.ask.model.interfaces.audioplayer.Stream getStream() {
     return stream;
   }
@@ -52,6 +53,7 @@ public final class AudioItem{
     * Get metadata
   * @return metadata
   **/
+  @JsonProperty("metadata")
   public com.amazon.ask.model.interfaces.audioplayer.AudioItemMetadata getMetadata() {
     return metadata;
   }

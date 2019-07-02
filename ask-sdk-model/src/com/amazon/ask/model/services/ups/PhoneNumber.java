@@ -44,6 +44,7 @@ public final class PhoneNumber{
     * Get countryCode
   * @return countryCode
   **/
+  @JsonProperty("countryCode")
   public String getCountryCode() {
     return countryCode;
   }
@@ -52,6 +53,7 @@ public final class PhoneNumber{
     * Get phoneNumber
   * @return phoneNumber
   **/
+  @JsonProperty("phoneNumber")
   public String getPhoneNumber() {
     return phoneNumber;
   }

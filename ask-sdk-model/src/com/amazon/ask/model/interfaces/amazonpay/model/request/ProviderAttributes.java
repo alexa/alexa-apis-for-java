@@ -51,6 +51,7 @@ public final class ProviderAttributes extends com.amazon.ask.model.interfaces.am
     * Solution provider ID.
   * @return providerId
   **/
+  @JsonProperty("providerId")
   public String getProviderId() {
     return providerId;
   }
@@ -59,6 +60,7 @@ public final class ProviderAttributes extends com.amazon.ask.model.interfaces.am
     * List of provider credit.
   * @return providerCreditList
   **/
+  @JsonProperty("providerCreditList")
   public List<com.amazon.ask.model.interfaces.amazonpay.model.request.ProviderCredit> getProviderCreditList() {
     return providerCreditList;
   }

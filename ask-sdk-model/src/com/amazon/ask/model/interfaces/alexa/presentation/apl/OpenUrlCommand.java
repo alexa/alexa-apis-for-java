@@ -53,6 +53,7 @@ public final class OpenUrlCommand extends com.amazon.ask.model.interfaces.alexa.
     * The URL to open
   * @return source
   **/
+  @JsonProperty("source")
   public String getSource() {
     return source;
   }
@@ -61,6 +62,7 @@ public final class OpenUrlCommand extends com.amazon.ask.model.interfaces.alexa.
     * Commands to execute if the URL fails to open
   * @return onFail
   **/
+  @JsonProperty("onFail")
   public List<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command> getOnFail() {
     return onFail;
   }

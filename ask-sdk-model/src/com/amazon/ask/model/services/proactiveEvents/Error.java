@@ -44,6 +44,7 @@ public final class Error{
     * Get code
   * @return code
   **/
+  @JsonProperty("code")
   public Integer getCode() {
     return code;
   }
@@ -52,6 +53,7 @@ public final class Error{
     * Get message
   * @return message
   **/
+  @JsonProperty("message")
   public String getMessage() {
     return message;
   }

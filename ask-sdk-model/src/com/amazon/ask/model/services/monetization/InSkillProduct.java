@@ -76,6 +76,7 @@ public final class InSkillProduct{
     * Product Id
   * @return productId
   **/
+  @JsonProperty("productId")
   public String getProductId() {
     return productId;
   }
@@ -84,6 +85,7 @@ public final class InSkillProduct{
     * Developer selected in-skill product name. This is for developer reference only.
   * @return referenceName
   **/
+  @JsonProperty("referenceName")
   public String getReferenceName() {
     return referenceName;
   }
@@ -92,6 +94,7 @@ public final class InSkillProduct{
     * Name of the product in the language from the \"Accept-Language\" header
   * @return name
   **/
+  @JsonProperty("name")
   public String getName() {
     return name;
   }
@@ -100,6 +103,7 @@ public final class InSkillProduct{
     * Get type
   * @return type
   **/
+  @JsonProperty("type")
   public com.amazon.ask.model.services.monetization.ProductType getType() {
     return type;
   }
@@ -108,6 +112,7 @@ public final class InSkillProduct{
     * Product summary in the language from the \"Accept-Language\" header
   * @return summary
   **/
+  @JsonProperty("summary")
   public String getSummary() {
     return summary;
   }
@@ -116,6 +121,7 @@ public final class InSkillProduct{
     * Get purchasable
   * @return purchasable
   **/
+  @JsonProperty("purchasable")
   public com.amazon.ask.model.services.monetization.PurchasableState getPurchasable() {
     return purchasable;
   }
@@ -124,6 +130,7 @@ public final class InSkillProduct{
     * Get entitled
   * @return entitled
   **/
+  @JsonProperty("entitled")
   public com.amazon.ask.model.services.monetization.EntitledState getEntitled() {
     return entitled;
   }
@@ -132,6 +139,7 @@ public final class InSkillProduct{
     * Get entitlementReason
   * @return entitlementReason
   **/
+  @JsonProperty("entitlementReason")
   public com.amazon.ask.model.services.monetization.EntitlementReason getEntitlementReason() {
     return entitlementReason;
   }
@@ -140,6 +148,7 @@ public final class InSkillProduct{
     * Total active purchases of the product made by the user. Note - For ENTITLEMENT and SUBSCRIPTION product types, the value is either zero(NOT_ENTITLED) or one(ENTITLED). For CONSUMABLE product type the value is zero or more, as CONSUMABLE can be re-purchased.
   * @return activeEntitlementCount
   **/
+  @JsonProperty("activeEntitlementCount")
   public Integer getActiveEntitlementCount() {
     return activeEntitlementCount;
   }
@@ -148,6 +157,7 @@ public final class InSkillProduct{
     * Get purchaseMode
   * @return purchaseMode
   **/
+  @JsonProperty("purchaseMode")
   public com.amazon.ask.model.services.monetization.PurchaseMode getPurchaseMode() {
     return purchaseMode;
   }

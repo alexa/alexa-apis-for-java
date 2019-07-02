@@ -44,6 +44,7 @@ public final class Speed{
     * A double representing the speed of the device in meters.
   * @return speedInMetersPerSecond
   **/
+  @JsonProperty("speedInMetersPerSecond")
   public Double getSpeedInMetersPerSecond() {
     return speedInMetersPerSecond;
   }
@@ -52,6 +53,7 @@ public final class Speed{
     * A double representing the accuracy of the speed measurement in meters.
   * @return accuracyInMetersPerSecond
   **/
+  @JsonProperty("accuracyInMetersPerSecond")
   public Double getAccuracyInMetersPerSecond() {
     return accuracyInMetersPerSecond;
   }

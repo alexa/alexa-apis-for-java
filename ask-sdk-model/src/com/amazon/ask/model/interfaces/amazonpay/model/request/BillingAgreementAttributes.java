@@ -52,6 +52,7 @@ public final class BillingAgreementAttributes extends com.amazon.ask.model.inter
     * Represents the SellerId of the Solution Provider that developed the eCommerce platform. This value is only used by Solution Providers, for whom it is required. It should not be provided by merchants creating their own custom integration. Do not specify the SellerId of the merchant for this request parameter. If you are a merchant, do not enter a PlatformId.
   * @return platformId
   **/
+  @JsonProperty("platformId")
   public String getPlatformId() {
     return platformId;
   }
@@ -60,6 +61,7 @@ public final class BillingAgreementAttributes extends com.amazon.ask.model.inter
     * Represents a description of the billing agreement that is displayed in emails to the buyer.
   * @return sellerNote
   **/
+  @JsonProperty("sellerNote")
   public String getSellerNote() {
     return sellerNote;
   }
@@ -68,6 +70,7 @@ public final class BillingAgreementAttributes extends com.amazon.ask.model.inter
     * Get sellerBillingAgreementAttributes
   * @return sellerBillingAgreementAttributes
   **/
+  @JsonProperty("sellerBillingAgreementAttributes")
   public com.amazon.ask.model.interfaces.amazonpay.model.request.SellerBillingAgreementAttributes getSellerBillingAgreementAttributes() {
     return sellerBillingAgreementAttributes;
   }

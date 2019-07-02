@@ -40,6 +40,7 @@ public final class ForbiddenError{
     * Get message
   * @return message
   **/
+  @JsonProperty("Message")
   public String getMessage() {
     return message;
   }

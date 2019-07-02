@@ -52,6 +52,7 @@ public final class ImageInstance{
     * Get url
   * @return url
   **/
+  @JsonProperty("url")
   public String getUrl() {
     return url;
   }
@@ -60,6 +61,7 @@ public final class ImageInstance{
     * Get size
   * @return size
   **/
+  @JsonProperty("size")
   public com.amazon.ask.model.interfaces.display.ImageSize getSize() {
     return size;
   }
@@ -68,6 +70,7 @@ public final class ImageInstance{
     * Get widthPixels
   * @return widthPixels
   **/
+  @JsonProperty("widthPixels")
   public Integer getWidthPixels() {
     return widthPixels;
   }
@@ -76,6 +79,7 @@ public final class ImageInstance{
     * Get heightPixels
   * @return heightPixels
   **/
+  @JsonProperty("heightPixels")
   public Integer getHeightPixels() {
     return heightPixels;
   }

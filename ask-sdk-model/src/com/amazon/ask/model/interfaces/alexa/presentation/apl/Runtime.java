@@ -40,6 +40,7 @@ public final class Runtime{
     * Maximum APL version supported by the runtime.
   * @return maxVersion
   **/
+  @JsonProperty("maxVersion")
   public String getMaxVersion() {
     return maxVersion;
   }

@@ -44,6 +44,7 @@ public final class ProviderCredit{
     * This is required only for Ecommerce provider (Solution provider) use cases.
   * @return providerId
   **/
+  @JsonProperty("providerId")
   public String getProviderId() {
     return providerId;
   }
@@ -52,6 +53,7 @@ public final class ProviderCredit{
     * Get credit
   * @return credit
   **/
+  @JsonProperty("credit")
   public com.amazon.ask.model.interfaces.amazonpay.model.v1.Price getCredit() {
     return credit;
   }

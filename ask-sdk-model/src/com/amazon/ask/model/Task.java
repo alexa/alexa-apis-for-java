@@ -48,6 +48,7 @@ public final class Task{
     * Represents the name of the task.
   * @return name
   **/
+  @JsonProperty("name")
   public String getName() {
     return name;
   }
@@ -56,6 +57,7 @@ public final class Task{
     * Represents the version of the task.
   * @return version
   **/
+  @JsonProperty("version")
   public String getVersion() {
     return version;
   }
@@ -64,6 +66,7 @@ public final class Task{
     * Represents the input to handle the task.
   * @return input
   **/
+  @JsonProperty("input")
   public Object getInput() {
     return input;
   }

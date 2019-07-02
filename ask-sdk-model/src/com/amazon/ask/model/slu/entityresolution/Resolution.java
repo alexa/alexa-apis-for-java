@@ -51,6 +51,7 @@ public final class Resolution{
     * Get authority
   * @return authority
   **/
+  @JsonProperty("authority")
   public String getAuthority() {
     return authority;
   }
@@ -59,6 +60,7 @@ public final class Resolution{
     * Get status
   * @return status
   **/
+  @JsonProperty("status")
   public com.amazon.ask.model.slu.entityresolution.Status getStatus() {
     return status;
   }
@@ -67,6 +69,7 @@ public final class Resolution{
     * Get values
   * @return values
   **/
+  @JsonProperty("values")
   public List<com.amazon.ask.model.slu.entityresolution.ValueWrapper> getValues() {
     return values;
   }

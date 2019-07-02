@@ -44,6 +44,7 @@ public final class Event{
     * Get name
   * @return name
   **/
+  @JsonProperty("name")
   public String getName() {
     return name;
   }
@@ -52,6 +53,7 @@ public final class Event{
     * Get payload
   * @return payload
   **/
+  @JsonProperty("payload")
   public Object getPayload() {
     return payload;
   }

@@ -32,7 +32,7 @@ public final class ScrollToIndexCommand extends com.amazon.ask.model.interfaces.
   private String componentId = null;
 
   @JsonProperty("index")
-  private String index = String.valueOf(null);
+  private String index = null;
 
   public static Builder builder() {
     return new Builder();
@@ -54,6 +54,7 @@ public final class ScrollToIndexCommand extends com.amazon.ask.model.interfaces.
     * Get align
   * @return align
   **/
+  @JsonProperty("align")
   public com.amazon.ask.model.interfaces.alexa.presentation.apl.Align getAlign() {
     return align;
   }
@@ -62,6 +63,7 @@ public final class ScrollToIndexCommand extends com.amazon.ask.model.interfaces.
     * The id of the component.
   * @return componentId
   **/
+  @JsonProperty("componentId")
   public String getComponentId() {
     return componentId;
   }
@@ -70,6 +72,7 @@ public final class ScrollToIndexCommand extends com.amazon.ask.model.interfaces.
     * The 0-based index of the child to display.
   * @return index
   **/
+  @JsonProperty("index")
   public String getIndex() {
     return index;
   }

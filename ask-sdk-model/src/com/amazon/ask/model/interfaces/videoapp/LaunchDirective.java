@@ -43,6 +43,7 @@ public final class LaunchDirective extends com.amazon.ask.model.Directive {
     * Get videoItem
   * @return videoItem
   **/
+  @JsonProperty("videoItem")
   public com.amazon.ask.model.interfaces.videoapp.VideoItem getVideoItem() {
     return videoItem;
   }

@@ -54,6 +54,7 @@ public final class SetValueCommand extends com.amazon.ask.model.interfaces.alexa
     * The id of the component whose value to set.
   * @return componentId
   **/
+  @JsonProperty("componentId")
   public String getComponentId() {
     return componentId;
   }
@@ -62,6 +63,7 @@ public final class SetValueCommand extends com.amazon.ask.model.interfaces.alexa
     * The name of the property to set.
   * @return property
   **/
+  @JsonProperty("property")
   public String getProperty() {
     return property;
   }
@@ -70,6 +72,7 @@ public final class SetValueCommand extends com.amazon.ask.model.interfaces.alexa
     * The property value to set.
   * @return value
   **/
+  @JsonProperty("value")
   public String getValue() {
     return value;
   }

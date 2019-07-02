@@ -43,6 +43,7 @@ public final class DeviationRecognizer extends com.amazon.ask.model.services.gam
     * The name of the recognizer that defines a pattern that must not be deviated from.
   * @return recognizer
   **/
+  @JsonProperty("recognizer")
   public String getRecognizer() {
     return recognizer;
   }

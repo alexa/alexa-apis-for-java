@@ -53,6 +53,7 @@ public abstract class BaseEntity{
     * version of the request
   * @return version
   **/
+  @JsonProperty("@version")
   public String getVersion() {
     return version;
   }

@@ -46,6 +46,7 @@ public final class RelevantAudience{
     * Get type
   * @return type
   **/
+  @JsonProperty("type")
   public com.amazon.ask.model.services.proactiveEvents.RelevantAudienceType getType() {
     return type;
   }
@@ -54,6 +55,7 @@ public final class RelevantAudience{
     * If relevantAudience.type is set to Multicast, then the payload object is empty. Otherwise, the userId value for which the event is targeted is required. 
   * @return payload
   **/
+  @JsonProperty("payload")
   public Object getPayload() {
     return payload;
   }

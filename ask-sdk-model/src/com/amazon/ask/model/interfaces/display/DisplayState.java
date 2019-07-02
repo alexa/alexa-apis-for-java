@@ -40,6 +40,7 @@ public final class DisplayState{
     * Get token
   * @return token
   **/
+  @JsonProperty("token")
   public String getToken() {
     return token;
   }

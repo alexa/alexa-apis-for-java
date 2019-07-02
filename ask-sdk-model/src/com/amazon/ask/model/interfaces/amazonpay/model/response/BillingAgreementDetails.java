@@ -65,6 +65,7 @@ public final class BillingAgreementDetails{
     * Billing agreement id which can be used for one time and recurring purchases
   * @return billingAgreementId
   **/
+  @JsonProperty("billingAgreementId")
   public String getBillingAgreementId() {
     return billingAgreementId;
   }
@@ -73,6 +74,7 @@ public final class BillingAgreementDetails{
     * Time at which billing agreement details created.
   * @return creationTimestamp
   **/
+  @JsonProperty("creationTimestamp")
   public OffsetDateTime getCreationTimestamp() {
     return creationTimestamp;
   }
@@ -81,6 +83,7 @@ public final class BillingAgreementDetails{
     * The default shipping address of the buyer. Returned if needAmazonShippingAddress is set to true.
   * @return destination
   **/
+  @JsonProperty("destination")
   public com.amazon.ask.model.interfaces.amazonpay.model.v1.Destination getDestination() {
     return destination;
   }
@@ -89,6 +92,7 @@ public final class BillingAgreementDetails{
     * Merchant's preferred language of checkout.
   * @return checkoutLanguage
   **/
+  @JsonProperty("checkoutLanguage")
   public String getCheckoutLanguage() {
     return checkoutLanguage;
   }
@@ -97,6 +101,7 @@ public final class BillingAgreementDetails{
     * Get releaseEnvironment
   * @return releaseEnvironment
   **/
+  @JsonProperty("releaseEnvironment")
   public com.amazon.ask.model.interfaces.amazonpay.model.response.ReleaseEnvironment getReleaseEnvironment() {
     return releaseEnvironment;
   }
@@ -105,6 +110,7 @@ public final class BillingAgreementDetails{
     * Get billingAgreementStatus
   * @return billingAgreementStatus
   **/
+  @JsonProperty("billingAgreementStatus")
   public com.amazon.ask.model.interfaces.amazonpay.model.v1.BillingAgreementStatus getBillingAgreementStatus() {
     return billingAgreementStatus;
   }
@@ -113,6 +119,7 @@ public final class BillingAgreementDetails{
     * The Billing Address of the payment instrument associated with Billing Agreement.
   * @return billingAddress
   **/
+  @JsonProperty("billingAddress")
   public com.amazon.ask.model.interfaces.amazonpay.model.response.Destination getBillingAddress() {
     return billingAddress;
   }

@@ -68,6 +68,7 @@ public final class Address{
     * Get addressLine1
   * @return addressLine1
   **/
+  @JsonProperty("addressLine1")
   public String getAddressLine1() {
     return addressLine1;
   }
@@ -76,6 +77,7 @@ public final class Address{
     * Get addressLine2
   * @return addressLine2
   **/
+  @JsonProperty("addressLine2")
   public String getAddressLine2() {
     return addressLine2;
   }
@@ -84,6 +86,7 @@ public final class Address{
     * Get addressLine3
   * @return addressLine3
   **/
+  @JsonProperty("addressLine3")
   public String getAddressLine3() {
     return addressLine3;
   }
@@ -92,6 +95,7 @@ public final class Address{
     * Get countryCode
   * @return countryCode
   **/
+  @JsonProperty("countryCode")
   public String getCountryCode() {
     return countryCode;
   }
@@ -100,6 +104,7 @@ public final class Address{
     * Get stateOrRegion
   * @return stateOrRegion
   **/
+  @JsonProperty("stateOrRegion")
   public String getStateOrRegion() {
     return stateOrRegion;
   }
@@ -108,6 +113,7 @@ public final class Address{
     * Get city
   * @return city
   **/
+  @JsonProperty("city")
   public String getCity() {
     return city;
   }
@@ -116,6 +122,7 @@ public final class Address{
     * Get districtOrCounty
   * @return districtOrCounty
   **/
+  @JsonProperty("districtOrCounty")
   public String getDistrictOrCounty() {
     return districtOrCounty;
   }
@@ -124,6 +131,7 @@ public final class Address{
     * Get postalCode
   * @return postalCode
   **/
+  @JsonProperty("postalCode")
   public String getPostalCode() {
     return postalCode;
   }

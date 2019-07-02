@@ -59,6 +59,7 @@ public final class Session{
     * A boolean value indicating whether this is a new session. Returns true for a new session or false for an existing session.
   * @return _new
   **/
+  @JsonProperty("new")
   public Boolean getNew() {
     return _new;
   }
@@ -67,6 +68,7 @@ public final class Session{
     * A string that represents a unique identifier per a user’s active session.
   * @return sessionId
   **/
+  @JsonProperty("sessionId")
   public String getSessionId() {
     return sessionId;
   }
@@ -75,6 +77,7 @@ public final class Session{
     * An object that describes the user making the request.
   * @return user
   **/
+  @JsonProperty("user")
   public com.amazon.ask.model.User getUser() {
     return user;
   }
@@ -83,6 +86,7 @@ public final class Session{
     * A map of key-value pairs. The attributes map is empty for requests where a new session has started with the property new set to true. When returning your response, you can include data you need to persist during the session in the sessionAttributes property. The attributes you provide are then passed back to your skill on the next request.
   * @return attributes
   **/
+  @JsonProperty("attributes")
   public Map<String, Object> getAttributes() {
     return attributes;
   }
@@ -91,6 +95,7 @@ public final class Session{
     * Get application
   * @return application
   **/
+  @JsonProperty("application")
   public com.amazon.ask.model.Application getApplication() {
     return application;
   }

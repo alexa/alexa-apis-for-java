@@ -56,6 +56,7 @@ public final class AuthorizeAttributes{
     * This is 3P seller's identifier for this authorization transaction. This identifier must be unique for all of your authorization transactions.
   * @return authorizationReferenceId
   **/
+  @JsonProperty("authorizationReferenceId")
   public String getAuthorizationReferenceId() {
     return authorizationReferenceId;
   }
@@ -64,6 +65,7 @@ public final class AuthorizeAttributes{
     * Get authorizationAmount
   * @return authorizationAmount
   **/
+  @JsonProperty("authorizationAmount")
   public com.amazon.ask.model.interfaces.amazonpay.model.v1.Price getAuthorizationAmount() {
     return authorizationAmount;
   }
@@ -72,6 +74,7 @@ public final class AuthorizeAttributes{
     * The maximum number of minutes allocated for the Authorize operation call to be processed. After this the authorization is automatically declined and you cannot capture funds against the authorization. The default value for Alexa transactions is 0. In order to speed up checkout time for voice users we recommend to not change this value.
   * @return transactionTimeout
   **/
+  @JsonProperty("transactionTimeout")
   public Integer getTransactionTimeout() {
     return transactionTimeout;
   }
@@ -80,6 +83,7 @@ public final class AuthorizeAttributes{
     * A description for the transaction that is included in emails to the user. Appears only when AuthorizeAndCapture is chosen.
   * @return sellerAuthorizationNote
   **/
+  @JsonProperty("sellerAuthorizationNote")
   public String getSellerAuthorizationNote() {
     return sellerAuthorizationNote;
   }
@@ -88,6 +92,7 @@ public final class AuthorizeAttributes{
     * The description to be shown on the user's payment instrument statement if AuthorizeAndCapture is chosen. Format of soft descriptor sent to the payment processor is \"AMZ* &lt;soft descriptor specified here&gt;\". Default is \"AMZ*&lt;SELLER_NAME&gt; amzn.com/ pmts WA\". Maximum length can be 16 characters.
   * @return softDescriptor
   **/
+  @JsonProperty("softDescriptor")
   public String getSoftDescriptor() {
     return softDescriptor;
   }

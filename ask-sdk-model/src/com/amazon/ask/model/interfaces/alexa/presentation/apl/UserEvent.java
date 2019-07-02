@@ -62,6 +62,7 @@ public final class UserEvent extends com.amazon.ask.model.Request {
     * A unique token for the active presentation.
   * @return token
   **/
+  @JsonProperty("token")
   public String getToken() {
     return token;
   }
@@ -70,6 +71,7 @@ public final class UserEvent extends com.amazon.ask.model.Request {
     * The array of argument data to pass to Alexa.
   * @return arguments
   **/
+  @JsonProperty("arguments")
   public List<Object> getArguments() {
     return arguments;
   }
@@ -78,6 +80,7 @@ public final class UserEvent extends com.amazon.ask.model.Request {
     * Meta-information about what caused the event to be generated.
   * @return source
   **/
+  @JsonProperty("source")
   public Object getSource() {
     return source;
   }
@@ -86,6 +89,7 @@ public final class UserEvent extends com.amazon.ask.model.Request {
     * Components associated with the request.
   * @return components
   **/
+  @JsonProperty("components")
   public Object getComponents() {
     return components;
   }

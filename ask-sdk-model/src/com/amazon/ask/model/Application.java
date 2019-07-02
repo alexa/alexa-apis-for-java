@@ -40,6 +40,7 @@ public final class Application{
     * A string representing the application identifier for your skill.
   * @return applicationId
   **/
+  @JsonProperty("applicationId")
   public String getApplicationId() {
     return applicationId;
   }

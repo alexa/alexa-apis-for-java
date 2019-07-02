@@ -48,6 +48,7 @@ public final class ListItem{
     * Get token
   * @return token
   **/
+  @JsonProperty("token")
   public String getToken() {
     return token;
   }
@@ -56,6 +57,7 @@ public final class ListItem{
     * Get image
   * @return image
   **/
+  @JsonProperty("image")
   public com.amazon.ask.model.interfaces.display.Image getImage() {
     return image;
   }
@@ -64,6 +66,7 @@ public final class ListItem{
     * Get textContent
   * @return textContent
   **/
+  @JsonProperty("textContent")
   public com.amazon.ask.model.interfaces.display.TextContent getTextContent() {
     return textContent;
   }

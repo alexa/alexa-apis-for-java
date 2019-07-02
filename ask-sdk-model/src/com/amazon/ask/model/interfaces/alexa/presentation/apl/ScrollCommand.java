@@ -26,7 +26,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public final class ScrollCommand extends com.amazon.ask.model.interfaces.alexa.presentation.apl.Command {
 
   @JsonProperty("distance")
-  private String distance = String.valueOf(null);
+  private String distance = null;
 
   @JsonProperty("componentId")
   private String componentId = null;
@@ -50,6 +50,7 @@ public final class ScrollCommand extends com.amazon.ask.model.interfaces.alexa.p
     * The number of pages to scroll. Defaults to 1.
   * @return distance
   **/
+  @JsonProperty("distance")
   public String getDistance() {
     return distance;
   }
@@ -58,6 +59,7 @@ public final class ScrollCommand extends com.amazon.ask.model.interfaces.alexa.p
     * The id of the component.
   * @return componentId
   **/
+  @JsonProperty("componentId")
   public String getComponentId() {
     return componentId;
   }

@@ -52,6 +52,7 @@ public final class SellerOrderAttributes{
     * The merchant-specified identifier of this order. This is shown to the buyer in their emails and transaction history on the Amazon Pay website.
   * @return sellerOrderId
   **/
+  @JsonProperty("sellerOrderId")
   public String getSellerOrderId() {
     return sellerOrderId;
   }
@@ -60,6 +61,7 @@ public final class SellerOrderAttributes{
     * The identifier of the store from which the order was placed. This overrides the default value in Seller Central under Settings &gt; Account Settings. It is displayed to the buyer in their emails and transaction history on the Amazon Payments website.
   * @return storeName
   **/
+  @JsonProperty("storeName")
   public String getStoreName() {
     return storeName;
   }
@@ -68,6 +70,7 @@ public final class SellerOrderAttributes{
     * Any additional information that you want to include with this order reference.
   * @return customInformation
   **/
+  @JsonProperty("customInformation")
   public String getCustomInformation() {
     return customInformation;
   }
@@ -76,6 +79,7 @@ public final class SellerOrderAttributes{
     * This represents a description of the order that is displayed in emails to the buyer.
   * @return sellerNote
   **/
+  @JsonProperty("sellerNote")
   public String getSellerNote() {
     return sellerNote;
   }

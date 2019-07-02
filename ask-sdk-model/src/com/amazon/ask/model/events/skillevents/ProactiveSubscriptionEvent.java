@@ -40,6 +40,7 @@ public final class ProactiveSubscriptionEvent{
     * Get eventName
   * @return eventName
   **/
+  @JsonProperty("eventName")
   public String getEventName() {
     return eventName;
   }

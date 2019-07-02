@@ -50,6 +50,7 @@ public final class CompleteTaskDirective extends com.amazon.ask.model.Directive 
     * Get status
   * @return status
   **/
+  @JsonProperty("status")
   public com.amazon.ask.model.Status getStatus() {
     return status;
   }
@@ -58,6 +59,7 @@ public final class CompleteTaskDirective extends com.amazon.ask.model.Directive 
     * This is an object sent to the requester.
   * @return result
   **/
+  @JsonProperty("result")
   public Map<String, Object> getResult() {
     return result;
   }

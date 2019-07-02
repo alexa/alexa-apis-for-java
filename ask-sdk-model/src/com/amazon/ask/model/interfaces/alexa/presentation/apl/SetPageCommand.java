@@ -32,7 +32,7 @@ public final class SetPageCommand extends com.amazon.ask.model.interfaces.alexa.
   private com.amazon.ask.model.interfaces.alexa.presentation.apl.Position position = null;
 
   @JsonProperty("value")
-  private String value = String.valueOf(null);
+  private String value = null;
 
   public static Builder builder() {
     return new Builder();
@@ -54,6 +54,7 @@ public final class SetPageCommand extends com.amazon.ask.model.interfaces.alexa.
     * The id of the Pager component.
   * @return componentId
   **/
+  @JsonProperty("componentId")
   public String getComponentId() {
     return componentId;
   }
@@ -62,6 +63,7 @@ public final class SetPageCommand extends com.amazon.ask.model.interfaces.alexa.
     * Get position
   * @return position
   **/
+  @JsonProperty("position")
   public com.amazon.ask.model.interfaces.alexa.presentation.apl.Position getPosition() {
     return position;
   }
@@ -70,6 +72,7 @@ public final class SetPageCommand extends com.amazon.ask.model.interfaces.alexa.
     * The distance to move. May be an absolute value or a relative value.
   * @return value
   **/
+  @JsonProperty("value")
   public String getValue() {
     return value;
   }

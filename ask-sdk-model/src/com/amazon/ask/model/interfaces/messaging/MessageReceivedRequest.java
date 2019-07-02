@@ -50,6 +50,7 @@ public final class MessageReceivedRequest extends com.amazon.ask.model.Request {
     * Get message
   * @return message
   **/
+  @JsonProperty("message")
   public Map<String, Object> getMessage() {
     return message;
   }

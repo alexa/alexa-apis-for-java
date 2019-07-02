@@ -44,6 +44,7 @@ public final class LocationServices{
     * A string representing the status of whether location services is currently running or not on the host OS of device.
   * @return status
   **/
+  @JsonProperty("status")
   public com.amazon.ask.model.interfaces.geolocation.Status getStatus() {
     return status;
   }
@@ -52,6 +53,7 @@ public final class LocationServices{
     * A string representing if Alexa has access to location services running on the hostOS of device.
   * @return access
   **/
+  @JsonProperty("access")
   public com.amazon.ask.model.interfaces.geolocation.Access getAccess() {
     return access;
   }

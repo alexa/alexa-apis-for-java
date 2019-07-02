@@ -56,6 +56,7 @@ public final class SupportedInterfaces{
     * Get alexaPresentationAPL
   * @return alexaPresentationAPL
   **/
+  @JsonProperty("Alexa.Presentation.APL")
   public com.amazon.ask.model.interfaces.alexa.presentation.apl.AlexaPresentationAplInterface getAlexaPresentationAPL() {
     return alexaPresentationAPL;
   }
@@ -64,6 +65,7 @@ public final class SupportedInterfaces{
     * Get audioPlayer
   * @return audioPlayer
   **/
+  @JsonProperty("AudioPlayer")
   public com.amazon.ask.model.interfaces.audioplayer.AudioPlayerInterface getAudioPlayer() {
     return audioPlayer;
   }
@@ -72,6 +74,7 @@ public final class SupportedInterfaces{
     * Get display
   * @return display
   **/
+  @JsonProperty("Display")
   public com.amazon.ask.model.interfaces.display.DisplayInterface getDisplay() {
     return display;
   }
@@ -80,6 +83,7 @@ public final class SupportedInterfaces{
     * Get videoApp
   * @return videoApp
   **/
+  @JsonProperty("VideoApp")
   public com.amazon.ask.model.interfaces.videoapp.VideoAppInterface getVideoApp() {
     return videoApp;
   }
@@ -88,6 +92,7 @@ public final class SupportedInterfaces{
     * Get geolocation
   * @return geolocation
   **/
+  @JsonProperty("Geolocation")
   public com.amazon.ask.model.interfaces.geolocation.GeolocationInterface getGeolocation() {
     return geolocation;
   }

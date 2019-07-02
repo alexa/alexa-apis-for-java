@@ -62,6 +62,7 @@ public final class StartInputHandlerDirective extends com.amazon.ask.model.Direc
     * maximum: 90000
   * @return timeout
   **/
+  @JsonProperty("timeout")
   public Long getTimeout() {
     return timeout;
   }
@@ -70,6 +71,7 @@ public final class StartInputHandlerDirective extends com.amazon.ask.model.Direc
     * Names for unknown gadget IDs to use in recognizers, allocated on a first-come, first-served basis.
   * @return proxies
   **/
+  @JsonProperty("proxies")
   public List<String> getProxies() {
     return proxies;
   }
@@ -78,6 +80,7 @@ public final class StartInputHandlerDirective extends com.amazon.ask.model.Direc
     * Conditions that, at any moment, are either true or false. You use recognizers when you specify the conditions under which your skill is notified of Echo Button input. 
   * @return recognizers
   **/
+  @JsonProperty("recognizers")
   public Map<String, com.amazon.ask.model.services.gameEngine.Recognizer> getRecognizers() {
     return recognizers;
   }
@@ -86,6 +89,7 @@ public final class StartInputHandlerDirective extends com.amazon.ask.model.Direc
     * The logic that determines when your skill is notified of Echo Button input. Events are listed here as object keys, where the keys specify the name of an event. 
   * @return events
   **/
+  @JsonProperty("events")
   public Map<String, com.amazon.ask.model.services.gameEngine.Event> getEvents() {
     return events;
   }

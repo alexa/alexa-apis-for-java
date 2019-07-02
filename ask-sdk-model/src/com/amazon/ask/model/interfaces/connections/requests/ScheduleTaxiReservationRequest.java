@@ -56,6 +56,7 @@ public final class ScheduleTaxiReservationRequest extends com.amazon.ask.model.i
     * pickup time
   * @return pickupTime
   **/
+  @JsonProperty("pickupTime")
   public String getPickupTime() {
     return pickupTime;
   }
@@ -64,6 +65,7 @@ public final class ScheduleTaxiReservationRequest extends com.amazon.ask.model.i
     * party size
   * @return partySize
   **/
+  @JsonProperty("partySize")
   public String getPartySize() {
     return partySize;
   }
@@ -72,6 +74,7 @@ public final class ScheduleTaxiReservationRequest extends com.amazon.ask.model.i
     * pick up location
   * @return pickupLocation
   **/
+  @JsonProperty("pickupLocation")
   public com.amazon.ask.model.interfaces.connections.entities.PostalAddress getPickupLocation() {
     return pickupLocation;
   }
@@ -80,6 +83,7 @@ public final class ScheduleTaxiReservationRequest extends com.amazon.ask.model.i
     * drop off location
   * @return dropOffLocation
   **/
+  @JsonProperty("dropOffLocation")
   public com.amazon.ask.model.interfaces.connections.entities.PostalAddress getDropOffLocation() {
     return dropOffLocation;
   }

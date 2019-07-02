@@ -48,6 +48,7 @@ public final class UpdateListItemRequest{
     * New item value
   * @return value
   **/
+  @JsonProperty("value")
   public String getValue() {
     return value;
   }
@@ -56,6 +57,7 @@ public final class UpdateListItemRequest{
     * Item Status
   * @return status
   **/
+  @JsonProperty("status")
   public com.amazon.ask.model.services.listManagement.ListItemState getStatus() {
     return status;
   }
@@ -64,6 +66,7 @@ public final class UpdateListItemRequest{
     * Item version when it was read.
   * @return version
   **/
+  @JsonProperty("version")
   public Long getVersion() {
     return version;
   }

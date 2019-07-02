@@ -44,6 +44,7 @@ public final class Status{
     * Get url
   * @return url
   **/
+  @JsonProperty("url")
   public String getUrl() {
     return url;
   }
@@ -52,6 +53,7 @@ public final class Status{
     * Get status
   * @return status
   **/
+  @JsonProperty("status")
   public com.amazon.ask.model.services.listManagement.ListItemState getStatus() {
     return status;
   }

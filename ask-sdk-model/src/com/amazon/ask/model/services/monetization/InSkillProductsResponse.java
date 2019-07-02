@@ -51,6 +51,7 @@ public final class InSkillProductsResponse{
     * List of In-Skill Products
   * @return inSkillProducts
   **/
+  @JsonProperty("inSkillProducts")
   public List<com.amazon.ask.model.services.monetization.InSkillProduct> getInSkillProducts() {
     return inSkillProducts;
   }
@@ -59,6 +60,7 @@ public final class InSkillProductsResponse{
     * Get isTruncated
   * @return isTruncated
   **/
+  @JsonProperty("isTruncated")
   public Boolean getIsTruncated() {
     return isTruncated;
   }
@@ -67,6 +69,7 @@ public final class InSkillProductsResponse{
     * Get nextToken
   * @return nextToken
   **/
+  @JsonProperty("nextToken")
   public String getNextToken() {
     return nextToken;
   }

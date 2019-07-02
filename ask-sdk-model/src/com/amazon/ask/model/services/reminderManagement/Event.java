@@ -44,6 +44,7 @@ public final class Event{
     * Get status
   * @return status
   **/
+  @JsonProperty("status")
   public com.amazon.ask.model.services.reminderManagement.Status getStatus() {
     return status;
   }
@@ -52,6 +53,7 @@ public final class Event{
     * Get alertToken
   * @return alertToken
   **/
+  @JsonProperty("alertToken")
   public String getAlertToken() {
     return alertToken;
   }

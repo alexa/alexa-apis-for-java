@@ -51,6 +51,7 @@ public final class IntentRequest extends com.amazon.ask.model.Request {
     * Enumeration indicating the status of the multi-turn dialog. This property is included if the skill meets the requirements to use the Dialog directives. Note that COMPLETED is only possible when you use the Dialog.Delegate directive. If you use intent confirmation, dialogState is considered COMPLETED if the user denies the entire intent (for instance, by answering “no” when asked the confirmation prompt). Be sure to also check the confirmationStatus property on the Intent object before fulfilling the user’s request.
   * @return dialogState
   **/
+  @JsonProperty("dialogState")
   public com.amazon.ask.model.DialogState getDialogState() {
     return dialogState;
   }
@@ -59,6 +60,7 @@ public final class IntentRequest extends com.amazon.ask.model.Request {
     * An object that represents what the user wants.
   * @return intent
   **/
+  @JsonProperty("intent")
   public com.amazon.ask.model.Intent getIntent() {
     return intent;
   }

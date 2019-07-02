@@ -47,6 +47,7 @@ public final class CanFulfillIntent{
     * Get canFulfill
   * @return canFulfill
   **/
+  @JsonProperty("canFulfill")
   public com.amazon.ask.model.canfulfill.CanFulfillIntentValues getCanFulfill() {
     return canFulfill;
   }
@@ -55,6 +56,7 @@ public final class CanFulfillIntent{
     * A map that represents skill's detailed response to each detected slot within the intent such as if skill can understand and fulfill the detected slot. This supplements the overall canFulfillIntent response and help Alexa make better ranking and arbitration decisions. The key is the name of the slot. The value is an object of type CanFulfillSlot.
   * @return slots
   **/
+  @JsonProperty("slots")
   public Map<String, com.amazon.ask.model.canfulfill.CanFulfillSlot> getSlots() {
     return slots;
   }

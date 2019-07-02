@@ -47,6 +47,7 @@ public final class ElementSelectedRequest extends com.amazon.ask.model.Request {
     * Get token
   * @return token
   **/
+  @JsonProperty("token")
   public String getToken() {
     return token;
   }

@@ -51,7 +51,7 @@ public abstract class Command{
   protected String type = null;
 
   @JsonProperty("delay")
-  protected String delay = String.valueOf(null);
+  protected String delay = null;
 
   @JsonProperty("description")
   protected String description = null;
@@ -75,6 +75,7 @@ public abstract class Command{
     * The delay in milliseconds before this command starts executing; must be non-negative. Defaults to 0.
   * @return delay
   **/
+  @JsonProperty("delay")
   public String getDelay() {
     return delay;
   }
@@ -83,6 +84,7 @@ public abstract class Command{
     * A user-provided description of this command.
   * @return description
   **/
+  @JsonProperty("description")
   public String getDescription() {
     return description;
   }
@@ -91,6 +93,7 @@ public abstract class Command{
     * If false, the execution of the command is skipped. Defaults to true.
   * @return when
   **/
+  @JsonProperty("when")
   public Boolean getWhen() {
     return when;
   }

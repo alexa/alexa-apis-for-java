@@ -60,6 +60,7 @@ public abstract class BaseAmazonPayEntity{
     * Version of the Amazon Pay Entity. Can be 1 or greater.
   * @return version
   **/
+  @JsonProperty("@version")
   public String getVersion() {
     return version;
   }

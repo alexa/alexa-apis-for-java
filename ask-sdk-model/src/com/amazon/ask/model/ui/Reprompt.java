@@ -40,6 +40,7 @@ public final class Reprompt{
     * Get outputSpeech
   * @return outputSpeech
   **/
+  @JsonProperty("outputSpeech")
   public com.amazon.ask.model.ui.OutputSpeech getOutputSpeech() {
     return outputSpeech;
   }

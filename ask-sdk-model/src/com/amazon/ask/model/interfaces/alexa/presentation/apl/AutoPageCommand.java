@@ -29,10 +29,10 @@ public final class AutoPageCommand extends com.amazon.ask.model.interfaces.alexa
   private String componentId = null;
 
   @JsonProperty("count")
-  private String count = String.valueOf(null);
+  private String count = null;
 
   @JsonProperty("duration")
-  private String duration = String.valueOf(null);
+  private String duration = null;
 
   public static Builder builder() {
     return new Builder();
@@ -54,6 +54,7 @@ public final class AutoPageCommand extends com.amazon.ask.model.interfaces.alexa
     * The id of the Pager component.
   * @return componentId
   **/
+  @JsonProperty("componentId")
   public String getComponentId() {
     return componentId;
   }
@@ -62,6 +63,7 @@ public final class AutoPageCommand extends com.amazon.ask.model.interfaces.alexa
     * Number of pages to display. Defaults to all of them.
   * @return count
   **/
+  @JsonProperty("count")
   public String getCount() {
     return count;
   }
@@ -70,6 +72,7 @@ public final class AutoPageCommand extends com.amazon.ask.model.interfaces.alexa
     * Time to wait between pages (in milliseconds). Defaults to 0.
   * @return duration
   **/
+  @JsonProperty("duration")
   public String getDuration() {
     return duration;
   }

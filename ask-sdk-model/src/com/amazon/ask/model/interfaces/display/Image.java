@@ -47,6 +47,7 @@ public final class Image{
     * Get contentDescription
   * @return contentDescription
   **/
+  @JsonProperty("contentDescription")
   public String getContentDescription() {
     return contentDescription;
   }
@@ -55,6 +56,7 @@ public final class Image{
     * Get sources
   * @return sources
   **/
+  @JsonProperty("sources")
   public List<com.amazon.ask.model.interfaces.display.ImageInstance> getSources() {
     return sources;
   }

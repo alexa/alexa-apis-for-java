@@ -38,7 +38,7 @@ public final class SequentialCommand extends com.amazon.ask.model.interfaces.ale
   private List<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command> _finally = new ArrayList<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command>();
 
   @JsonProperty("repeatCount")
-  private String repeatCount = String.valueOf(null);
+  private String repeatCount = null;
 
   public static Builder builder() {
     return new Builder();
@@ -61,6 +61,7 @@ public final class SequentialCommand extends com.amazon.ask.model.interfaces.ale
     * An ordered list of commands to execute if this sequence is prematurely terminated.
   * @return _catch
   **/
+  @JsonProperty("catch")
   public List<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command> getCatch() {
     return _catch;
   }
@@ -69,6 +70,7 @@ public final class SequentialCommand extends com.amazon.ask.model.interfaces.ale
     * An array of commands to execute. The commands execute in order; each command must finish before the next can begin. Please note that the delay of sequential command and the delay of the first command in the sequence are additive.
   * @return commands
   **/
+  @JsonProperty("commands")
   public List<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command> getCommands() {
     return commands;
   }
@@ -77,6 +79,7 @@ public final class SequentialCommand extends com.amazon.ask.model.interfaces.ale
     * An ordered list of commands to execute after the normal commands and the catch commands.
   * @return _finally
   **/
+  @JsonProperty("finally")
   public List<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command> getFinally() {
     return _finally;
   }
@@ -85,6 +88,7 @@ public final class SequentialCommand extends com.amazon.ask.model.interfaces.ale
     * The number of times to repeat this series of commands. Defaults to 0. Negative values will be ignored. Note that the delay assigned to overall sequential command only applies the first time. For example, in the sample sequential command below the first SendEvent fires at 3000 milliseconds, the second at 5000, the first SendEvent fires again at 7000 milliseconds, and so forth. {\"type\": \"Sequential\",\"delay\": 1000,\"repeatCount\": 2,\"commands\": [{ \"type\": \"SendEvent\",\"delay\": 2000},{\"type\": \"SendEvent\",\"delay\": 2000}]}
   * @return repeatCount
   **/
+  @JsonProperty("repeatCount")
   public String getRepeatCount() {
     return repeatCount;
   }

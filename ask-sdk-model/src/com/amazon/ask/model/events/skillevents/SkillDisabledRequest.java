@@ -51,6 +51,7 @@ public final class SkillDisabledRequest extends com.amazon.ask.model.Request {
     * Get eventCreationTime
   * @return eventCreationTime
   **/
+  @JsonProperty("eventCreationTime")
   public OffsetDateTime getEventCreationTime() {
     return eventCreationTime;
   }
@@ -59,6 +60,7 @@ public final class SkillDisabledRequest extends com.amazon.ask.model.Request {
     * Get eventPublishingTime
   * @return eventPublishingTime
   **/
+  @JsonProperty("eventPublishingTime")
   public OffsetDateTime getEventPublishingTime() {
     return eventPublishingTime;
   }

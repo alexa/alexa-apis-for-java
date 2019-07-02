@@ -50,6 +50,7 @@ public final class DynamicEntitiesDirective extends com.amazon.ask.model.Directi
     * Get updateBehavior
   * @return updateBehavior
   **/
+  @JsonProperty("updateBehavior")
   public com.amazon.ask.model.er.dynamic.UpdateBehavior getUpdateBehavior() {
     return updateBehavior;
   }
@@ -58,6 +59,7 @@ public final class DynamicEntitiesDirective extends com.amazon.ask.model.Directi
     * Get types
   * @return types
   **/
+  @JsonProperty("types")
   public List<com.amazon.ask.model.er.dynamic.EntityListItem> getTypes() {
     return types;
   }

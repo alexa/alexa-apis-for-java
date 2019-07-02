@@ -44,6 +44,7 @@ public final class ConnectionsStatus{
     * This is a code signifying the status of the request sent by the skill. Protocol adheres to HTTP status codes.
   * @return code
   **/
+  @JsonProperty("code")
   public String getCode() {
     return code;
   }
@@ -52,6 +53,7 @@ public final class ConnectionsStatus{
     * This is a message that goes along with response code that can provide more information about what occurred
   * @return message
   **/
+  @JsonProperty("message")
   public String getMessage() {
     return message;
   }

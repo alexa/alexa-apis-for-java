@@ -64,6 +64,7 @@ public final class AlexaListItem{
     * Get id
   * @return id
   **/
+  @JsonProperty("id")
   public String getId() {
     return id;
   }
@@ -72,6 +73,7 @@ public final class AlexaListItem{
     * Get version
   * @return version
   **/
+  @JsonProperty("version")
   public Long getVersion() {
     return version;
   }
@@ -80,6 +82,7 @@ public final class AlexaListItem{
     * Get value
   * @return value
   **/
+  @JsonProperty("value")
   public String getValue() {
     return value;
   }
@@ -88,6 +91,7 @@ public final class AlexaListItem{
     * Get status
   * @return status
   **/
+  @JsonProperty("status")
   public com.amazon.ask.model.services.listManagement.ListItemState getStatus() {
     return status;
   }
@@ -96,6 +100,7 @@ public final class AlexaListItem{
     * Get createdTime
   * @return createdTime
   **/
+  @JsonProperty("createdTime")
   public String getCreatedTime() {
     return createdTime;
   }
@@ -104,6 +109,7 @@ public final class AlexaListItem{
     * Get updatedTime
   * @return updatedTime
   **/
+  @JsonProperty("updatedTime")
   public String getUpdatedTime() {
     return updatedTime;
   }
@@ -112,6 +118,7 @@ public final class AlexaListItem{
     * URL to retrieve the item from.
   * @return href
   **/
+  @JsonProperty("href")
   public String getHref() {
     return href;
   }

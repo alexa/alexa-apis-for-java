@@ -53,6 +53,7 @@ public final class LightAnimation{
     * maximum: 255
   * @return repeat
   **/
+  @JsonProperty("repeat")
   public Integer getRepeat() {
     return repeat;
   }
@@ -61,6 +62,7 @@ public final class LightAnimation{
     * An array of strings that represent the light addresses on the target gadgets that this animation will be applied to. Because the Echo Button has one light only, use [\"1\"] to signify that this animation should be sent to light one.
   * @return targetLights
   **/
+  @JsonProperty("targetLights")
   public List<String> getTargetLights() {
     return targetLights;
   }
@@ -69,6 +71,7 @@ public final class LightAnimation{
     * The animation steps to render in order. The maximum number of steps that you can define is 38. The minimum is 0. Each step must have the following fields, all of which are required.
   * @return sequence
   **/
+  @JsonProperty("sequence")
   public List<com.amazon.ask.model.services.gadgetController.AnimationStep> getSequence() {
     return sequence;
   }

@@ -44,6 +44,7 @@ public final class Error{
     * Get code
   * @return code
   **/
+  @JsonProperty("code")
   public com.amazon.ask.model.services.ups.ErrorCode getCode() {
     return code;
   }
@@ -52,6 +53,7 @@ public final class Error{
     * A human readable description of error.
   * @return message
   **/
+  @JsonProperty("message")
   public String getMessage() {
     return message;
   }

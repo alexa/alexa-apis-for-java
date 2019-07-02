@@ -72,6 +72,7 @@ public final class SetupAmazonPayRequest extends com.amazon.ask.model.interfaces
     * The seller ID (also known as merchant ID). If you are an Ecommerce Provider (Solution Provider), please specify the ID of the merchant, not your provider ID.
   * @return sellerId
   **/
+  @JsonProperty("sellerId")
   public String getSellerId() {
     return sellerId;
   }
@@ -80,6 +81,7 @@ public final class SetupAmazonPayRequest extends com.amazon.ask.model.interfaces
     * The country in which the merchant has registered, as an Amazon Payments legal entity.
   * @return countryOfEstablishment
   **/
+  @JsonProperty("countryOfEstablishment")
   public String getCountryOfEstablishment() {
     return countryOfEstablishment;
   }
@@ -88,6 +90,7 @@ public final class SetupAmazonPayRequest extends com.amazon.ask.model.interfaces
     * The currency of the merchant’s ledger account.
   * @return ledgerCurrency
   **/
+  @JsonProperty("ledgerCurrency")
   public String getLedgerCurrency() {
     return ledgerCurrency;
   }
@@ -96,6 +99,7 @@ public final class SetupAmazonPayRequest extends com.amazon.ask.model.interfaces
     * The merchant's preferred language for checkout.
   * @return checkoutLanguage
   **/
+  @JsonProperty("checkoutLanguage")
   public String getCheckoutLanguage() {
     return checkoutLanguage;
   }
@@ -104,6 +108,7 @@ public final class SetupAmazonPayRequest extends com.amazon.ask.model.interfaces
     * Get billingAgreementAttributes
   * @return billingAgreementAttributes
   **/
+  @JsonProperty("billingAgreementAttributes")
   public com.amazon.ask.model.interfaces.amazonpay.model.request.BillingAgreementAttributes getBillingAgreementAttributes() {
     return billingAgreementAttributes;
   }
@@ -112,6 +117,7 @@ public final class SetupAmazonPayRequest extends com.amazon.ask.model.interfaces
     * To receive the default user shipping address in the response, set this parameter to true. Not required if a user shipping address is not required.
   * @return needAmazonShippingAddress
   **/
+  @JsonProperty("needAmazonShippingAddress")
   public Boolean getNeedAmazonShippingAddress() {
     return needAmazonShippingAddress;
   }
@@ -120,6 +126,7 @@ public final class SetupAmazonPayRequest extends com.amazon.ask.model.interfaces
     * To test in Sandbox mode, set this parameter to true.
   * @return sandboxMode
   **/
+  @JsonProperty("sandboxMode")
   public Boolean getSandboxMode() {
     return sandboxMode;
   }
@@ -128,6 +135,7 @@ public final class SetupAmazonPayRequest extends com.amazon.ask.model.interfaces
     * Use this parameter to create a Sandbox payment object. In order to use this parameter, you first create a Sandbox user account in Seller Central. Then, pass the email address associated with that Sandbox user account.
   * @return sandboxCustomerEmailId
   **/
+  @JsonProperty("sandboxCustomerEmailId")
   public String getSandboxCustomerEmailId() {
     return sandboxCustomerEmailId;
   }

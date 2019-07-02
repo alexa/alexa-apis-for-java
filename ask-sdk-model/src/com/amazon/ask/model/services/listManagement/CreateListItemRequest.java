@@ -44,6 +44,7 @@ public final class CreateListItemRequest{
     * Get value
   * @return value
   **/
+  @JsonProperty("value")
   public String getValue() {
     return value;
   }
@@ -52,6 +53,7 @@ public final class CreateListItemRequest{
     * Get status
   * @return status
   **/
+  @JsonProperty("status")
   public com.amazon.ask.model.services.listManagement.ListItemState getStatus() {
     return status;
   }

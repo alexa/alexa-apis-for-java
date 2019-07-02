@@ -55,6 +55,7 @@ public final class PermissionAcceptedRequest extends com.amazon.ask.model.Reques
     * Get body
   * @return body
   **/
+  @JsonProperty("body")
   public com.amazon.ask.model.events.skillevents.PermissionBody getBody() {
     return body;
   }
@@ -63,6 +64,7 @@ public final class PermissionAcceptedRequest extends com.amazon.ask.model.Reques
     * Get eventCreationTime
   * @return eventCreationTime
   **/
+  @JsonProperty("eventCreationTime")
   public OffsetDateTime getEventCreationTime() {
     return eventCreationTime;
   }
@@ -71,6 +73,7 @@ public final class PermissionAcceptedRequest extends com.amazon.ask.model.Reques
     * Get eventPublishingTime
   * @return eventPublishingTime
   **/
+  @JsonProperty("eventPublishingTime")
   public OffsetDateTime getEventPublishingTime() {
     return eventPublishingTime;
   }

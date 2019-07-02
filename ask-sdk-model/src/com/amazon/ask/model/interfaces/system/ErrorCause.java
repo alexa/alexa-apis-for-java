@@ -40,6 +40,7 @@ public final class ErrorCause{
     * Get requestId
   * @return requestId
   **/
+  @JsonProperty("requestId")
   public String getRequestId() {
     return requestId;
   }

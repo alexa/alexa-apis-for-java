@@ -53,6 +53,7 @@ public final class AuthorizationStatus{
     * Get state
   * @return state
   **/
+  @JsonProperty("state")
   public com.amazon.ask.model.interfaces.amazonpay.model.v1.State getState() {
     return state;
   }
@@ -61,6 +62,7 @@ public final class AuthorizationStatus{
     * The reason that the Authorization object, Capture object, or Refund object is in the current state. For more information, see - https://pay.amazon.com/us/developer/documentation/apireference/201752950
   * @return reasonCode
   **/
+  @JsonProperty("reasonCode")
   public String getReasonCode() {
     return reasonCode;
   }
@@ -69,6 +71,7 @@ public final class AuthorizationStatus{
     * Reason desciption corresponding to the reason code
   * @return reasonDescription
   **/
+  @JsonProperty("reasonDescription")
   public String getReasonDescription() {
     return reasonDescription;
   }
@@ -77,6 +80,7 @@ public final class AuthorizationStatus{
     * A timestamp that indicates the time when the authorization, capture, or refund state was last updated. In ISO 8601 format
   * @return lastUpdateTimestamp
   **/
+  @JsonProperty("lastUpdateTimestamp")
   public OffsetDateTime getLastUpdateTimestamp() {
     return lastUpdateTimestamp;
   }

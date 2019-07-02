@@ -43,6 +43,7 @@ public final class ClearQueueDirective extends com.amazon.ask.model.Directive {
     * Get clearBehavior
   * @return clearBehavior
   **/
+  @JsonProperty("clearBehavior")
   public com.amazon.ask.model.interfaces.audioplayer.ClearBehavior getClearBehavior() {
     return clearBehavior;
   }

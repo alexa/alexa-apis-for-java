@@ -44,6 +44,7 @@ public final class Error{
     * Get message
   * @return message
   **/
+  @JsonProperty("message")
   public String getMessage() {
     return message;
   }
@@ -52,6 +53,7 @@ public final class Error{
     * Get type
   * @return type
   **/
+  @JsonProperty("type")
   public com.amazon.ask.model.interfaces.audioplayer.ErrorType getType() {
     return type;
   }

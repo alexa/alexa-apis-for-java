@@ -29,16 +29,16 @@ public final class VideoSource{
   private String description = null;
 
   @JsonProperty("duration")
-  private String duration = String.valueOf(null);
+  private String duration = null;
 
   @JsonProperty("url")
   private String url = null;
 
   @JsonProperty("repeatCount")
-  private String repeatCount = String.valueOf(null);
+  private String repeatCount = null;
 
   @JsonProperty("offset")
-  private String offset = String.valueOf(null);
+  private String offset = null;
 
   public static Builder builder() {
     return new Builder();
@@ -56,6 +56,7 @@ public final class VideoSource{
     * Optional description of this source material
   * @return description
   **/
+  @JsonProperty("description")
   public String getDescription() {
     return description;
   }
@@ -64,6 +65,7 @@ public final class VideoSource{
     * Duration of time to play. If not set, defaults to the entire stream. Expressed in milliseconds.
   * @return duration
   **/
+  @JsonProperty("duration")
   public String getDuration() {
     return duration;
   }
@@ -72,6 +74,7 @@ public final class VideoSource{
     * Media source material
   * @return url
   **/
+  @JsonProperty("url")
   public String getUrl() {
     return url;
   }
@@ -80,6 +83,7 @@ public final class VideoSource{
     * Number of times to loop the video. Defaults to 0.
   * @return repeatCount
   **/
+  @JsonProperty("repeatCount")
   public String getRepeatCount() {
     return repeatCount;
   }
@@ -88,6 +92,7 @@ public final class VideoSource{
     * Offset to start playing at in the stream (defaults to 0).
   * @return offset
   **/
+  @JsonProperty("offset")
   public String getOffset() {
     return offset;
   }

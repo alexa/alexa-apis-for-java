@@ -64,6 +64,7 @@ public final class CreateProactiveEventRequest{
     * The date and time of the event associated with this request, in ISO 8601 format.
   * @return timestamp
   **/
+  @JsonProperty("timestamp")
   public OffsetDateTime getTimestamp() {
     return timestamp;
   }
@@ -72,6 +73,7 @@ public final class CreateProactiveEventRequest{
     * Client-supplied ID for correlating the event with external entities. The allowed characters for the referenceId field are alphanumeric and ~, and the length of the referenceId field must be 1-100 characters. 
   * @return referenceId
   **/
+  @JsonProperty("referenceId")
   public String getReferenceId() {
     return referenceId;
   }
@@ -80,6 +82,7 @@ public final class CreateProactiveEventRequest{
     * The date and time, in ISO 8601 format, when the service will automatically delete the notification if it is still in the pending state. 
   * @return expiryTime
   **/
+  @JsonProperty("expiryTime")
   public OffsetDateTime getExpiryTime() {
     return expiryTime;
   }
@@ -88,6 +91,7 @@ public final class CreateProactiveEventRequest{
     * Get event
   * @return event
   **/
+  @JsonProperty("event")
   public com.amazon.ask.model.services.proactiveEvents.Event getEvent() {
     return event;
   }
@@ -96,6 +100,7 @@ public final class CreateProactiveEventRequest{
     * A list of items, each of which contains the set of event attributes that requires localization support.
   * @return localizedAttributes
   **/
+  @JsonProperty("localizedAttributes")
   public List<Object> getLocalizedAttributes() {
     return localizedAttributes;
   }
@@ -104,6 +109,7 @@ public final class CreateProactiveEventRequest{
     * Get relevantAudience
   * @return relevantAudience
   **/
+  @JsonProperty("relevantAudience")
   public com.amazon.ask.model.services.proactiveEvents.RelevantAudience getRelevantAudience() {
     return relevantAudience;
   }

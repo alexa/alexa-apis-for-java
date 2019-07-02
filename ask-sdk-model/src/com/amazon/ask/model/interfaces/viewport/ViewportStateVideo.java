@@ -43,6 +43,7 @@ public final class ViewportStateVideo{
     * Codecs which are available for playing video on the device.
   * @return codecs
   **/
+  @JsonProperty("codecs")
   public List<com.amazon.ask.model.interfaces.viewport.video.Codecs> getCodecs() {
     return codecs;
   }

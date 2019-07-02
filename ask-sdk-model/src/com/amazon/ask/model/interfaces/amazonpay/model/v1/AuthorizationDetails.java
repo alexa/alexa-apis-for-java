@@ -92,6 +92,7 @@ public final class AuthorizationDetails{
     * This is AmazonPay generated identifier for this authorization transaction.
   * @return amazonAuthorizationId
   **/
+  @JsonProperty("amazonAuthorizationId")
   public String getAmazonAuthorizationId() {
     return amazonAuthorizationId;
   }
@@ -100,6 +101,7 @@ public final class AuthorizationDetails{
     * This is 3P seller's identifier for this authorization transaction. This identifier must be unique for all of your authorization transactions.
   * @return authorizationReferenceId
   **/
+  @JsonProperty("authorizationReferenceId")
   public String getAuthorizationReferenceId() {
     return authorizationReferenceId;
   }
@@ -108,6 +110,7 @@ public final class AuthorizationDetails{
     * A description for the transaction that is included in emails to the user. Appears only when AuthorizeAndCapture is chosen.
   * @return sellerAuthorizationNote
   **/
+  @JsonProperty("sellerAuthorizationNote")
   public String getSellerAuthorizationNote() {
     return sellerAuthorizationNote;
   }
@@ -116,6 +119,7 @@ public final class AuthorizationDetails{
     * Get authorizationAmount
   * @return authorizationAmount
   **/
+  @JsonProperty("authorizationAmount")
   public com.amazon.ask.model.interfaces.amazonpay.model.v1.Price getAuthorizationAmount() {
     return authorizationAmount;
   }
@@ -124,6 +128,7 @@ public final class AuthorizationDetails{
     * Get capturedAmount
   * @return capturedAmount
   **/
+  @JsonProperty("capturedAmount")
   public com.amazon.ask.model.interfaces.amazonpay.model.v1.Price getCapturedAmount() {
     return capturedAmount;
   }
@@ -132,6 +137,7 @@ public final class AuthorizationDetails{
     * Get authorizationFee
   * @return authorizationFee
   **/
+  @JsonProperty("authorizationFee")
   public com.amazon.ask.model.interfaces.amazonpay.model.v1.Price getAuthorizationFee() {
     return authorizationFee;
   }
@@ -140,6 +146,7 @@ public final class AuthorizationDetails{
     * list of AmazonCaptureId identifiers that have been requested on this Authorization object.
   * @return idList
   **/
+  @JsonProperty("idList")
   public List<String> getIdList() {
     return idList;
   }
@@ -148,6 +155,7 @@ public final class AuthorizationDetails{
     * This is the time at which the authorization was created.
   * @return creationTimestamp
   **/
+  @JsonProperty("creationTimestamp")
   public OffsetDateTime getCreationTimestamp() {
     return creationTimestamp;
   }
@@ -156,6 +164,7 @@ public final class AuthorizationDetails{
     * This is the time at which the authorization expires.
   * @return expirationTimestamp
   **/
+  @JsonProperty("expirationTimestamp")
   public OffsetDateTime getExpirationTimestamp() {
     return expirationTimestamp;
   }
@@ -164,6 +173,7 @@ public final class AuthorizationDetails{
     * Get authorizationStatus
   * @return authorizationStatus
   **/
+  @JsonProperty("authorizationStatus")
   public com.amazon.ask.model.interfaces.amazonpay.model.v1.AuthorizationStatus getAuthorizationStatus() {
     return authorizationStatus;
   }
@@ -172,6 +182,7 @@ public final class AuthorizationDetails{
     * This indicates whether an authorization resulted in a soft decline.
   * @return softDecline
   **/
+  @JsonProperty("softDecline")
   public Boolean getSoftDecline() {
     return softDecline;
   }
@@ -180,6 +191,7 @@ public final class AuthorizationDetails{
     * This indicates whether a direct capture against the payment contract was specified.
   * @return captureNow
   **/
+  @JsonProperty("captureNow")
   public Boolean getCaptureNow() {
     return captureNow;
   }
@@ -188,6 +200,7 @@ public final class AuthorizationDetails{
     * This is the description to be shown on the buyer's payment instrument statement if AuthorizeAndCapture was chosen.
   * @return softDescriptor
   **/
+  @JsonProperty("softDescriptor")
   public String getSoftDescriptor() {
     return softDescriptor;
   }

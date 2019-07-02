@@ -47,6 +47,7 @@ public final class PlayDirective extends com.amazon.ask.model.Directive {
     * Get playBehavior
   * @return playBehavior
   **/
+  @JsonProperty("playBehavior")
   public com.amazon.ask.model.interfaces.audioplayer.PlayBehavior getPlayBehavior() {
     return playBehavior;
   }
@@ -55,6 +56,7 @@ public final class PlayDirective extends com.amazon.ask.model.Directive {
     * Get audioItem
   * @return audioItem
   **/
+  @JsonProperty("audioItem")
   public com.amazon.ask.model.interfaces.audioplayer.AudioItem getAudioItem() {
     return audioItem;
   }

@@ -50,6 +50,7 @@ public final class AnimationStep{
     * maximum: 65535
   * @return durationMs
   **/
+  @JsonProperty("durationMs")
   public Integer getDurationMs() {
     return durationMs;
   }
@@ -58,6 +59,7 @@ public final class AnimationStep{
     * The color to render specified in RGB hexadecimal values. There are a number of Node.js libraries available for working with color. 
   * @return color
   **/
+  @JsonProperty("color")
   public String getColor() {
     return color;
   }
@@ -66,6 +68,7 @@ public final class AnimationStep{
     * A boolean that indicates whether to interpolate from the previous color into this one over the course of this directive's durationMs.
   * @return blend
   **/
+  @JsonProperty("blend")
   public Boolean getBlend() {
     return blend;
   }

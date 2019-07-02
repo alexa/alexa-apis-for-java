@@ -44,6 +44,7 @@ public final class AmazonPayErrorResponse{
     * Error code indicating the succinct cause of error
   * @return errorCode
   **/
+  @JsonProperty("errorCode")
   public String getErrorCode() {
     return errorCode;
   }
@@ -52,6 +53,7 @@ public final class AmazonPayErrorResponse{
     * Description of the error.
   * @return errorMessage
   **/
+  @JsonProperty("errorMessage")
   public String getErrorMessage() {
     return errorMessage;
   }

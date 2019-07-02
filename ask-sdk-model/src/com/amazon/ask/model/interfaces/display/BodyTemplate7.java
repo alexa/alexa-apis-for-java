@@ -53,6 +53,7 @@ public final class BodyTemplate7 extends com.amazon.ask.model.interfaces.display
     * Get title
   * @return title
   **/
+  @JsonProperty("title")
   public String getTitle() {
     return title;
   }
@@ -61,6 +62,7 @@ public final class BodyTemplate7 extends com.amazon.ask.model.interfaces.display
     * Get image
   * @return image
   **/
+  @JsonProperty("image")
   public com.amazon.ask.model.interfaces.display.Image getImage() {
     return image;
   }
@@ -69,6 +71,7 @@ public final class BodyTemplate7 extends com.amazon.ask.model.interfaces.display
     * Get backgroundImage
   * @return backgroundImage
   **/
+  @JsonProperty("backgroundImage")
   public com.amazon.ask.model.interfaces.display.Image getBackgroundImage() {
     return backgroundImage;
   }

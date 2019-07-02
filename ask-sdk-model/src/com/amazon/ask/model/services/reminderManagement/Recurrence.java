@@ -51,6 +51,7 @@ public final class Recurrence{
     * Get freq
   * @return freq
   **/
+  @JsonProperty("freq")
   public com.amazon.ask.model.services.reminderManagement.RecurrenceFreq getFreq() {
     return freq;
   }
@@ -59,6 +60,7 @@ public final class Recurrence{
     * Get byDay
   * @return byDay
   **/
+  @JsonProperty("byDay")
   public List<com.amazon.ask.model.services.reminderManagement.RecurrenceDay> getByDay() {
     return byDay;
   }
@@ -67,6 +69,7 @@ public final class Recurrence{
     * contains a positive integer representing at which intervals the recurrence rule repeats
   * @return interval
   **/
+  @JsonProperty("interval")
   public Integer getInterval() {
     return interval;
   }

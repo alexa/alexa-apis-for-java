@@ -56,6 +56,7 @@ public final class PrintImageRequest extends com.amazon.ask.model.interfaces.con
     * title of the image
   * @return title
   **/
+  @JsonProperty("title")
   public String getTitle() {
     return title;
   }
@@ -64,6 +65,7 @@ public final class PrintImageRequest extends com.amazon.ask.model.interfaces.con
     * url of the image
   * @return url
   **/
+  @JsonProperty("url")
   public String getUrl() {
     return url;
   }
@@ -72,6 +74,7 @@ public final class PrintImageRequest extends com.amazon.ask.model.interfaces.con
     * description of the image
   * @return description
   **/
+  @JsonProperty("description")
   public String getDescription() {
     return description;
   }
@@ -80,6 +83,7 @@ public final class PrintImageRequest extends com.amazon.ask.model.interfaces.con
     * type of the image
   * @return imageType
   **/
+  @JsonProperty("imageType")
   public String getImageType() {
     return imageType;
   }

@@ -60,6 +60,7 @@ public final class Context{
     * Provides information about the current state of the Alexa service and the device interacting with your skill.
   * @return system
   **/
+  @JsonProperty("System")
   public com.amazon.ask.model.interfaces.system.SystemState getSystem() {
     return system;
   }
@@ -68,6 +69,7 @@ public final class Context{
     * Provides the current state for the AudioPlayer interface.
   * @return audioPlayer
   **/
+  @JsonProperty("AudioPlayer")
   public com.amazon.ask.model.interfaces.audioplayer.AudioPlayerState getAudioPlayer() {
     return audioPlayer;
   }
@@ -76,6 +78,7 @@ public final class Context{
     * Provides the automotive specific information of the device.
   * @return automotive
   **/
+  @JsonProperty("Automotive")
   public com.amazon.ask.model.interfaces.automotive.AutomotiveState getAutomotive() {
     return automotive;
   }
@@ -84,6 +87,7 @@ public final class Context{
     * Provides the current state for the Display interface.
   * @return display
   **/
+  @JsonProperty("Display")
   public com.amazon.ask.model.interfaces.display.DisplayState getDisplay() {
     return display;
   }
@@ -92,6 +96,7 @@ public final class Context{
     * Provides the last gathered geolocation information of the device.
   * @return geolocation
   **/
+  @JsonProperty("Geolocation")
   public com.amazon.ask.model.interfaces.geolocation.GeolocationState getGeolocation() {
     return geolocation;
   }
@@ -100,6 +105,7 @@ public final class Context{
     * Provides the characteristics of a device's viewport.
   * @return viewport
   **/
+  @JsonProperty("Viewport")
   public com.amazon.ask.model.interfaces.viewport.ViewportState getViewport() {
     return viewport;
   }

@@ -43,6 +43,7 @@ public final class RenderTemplateDirective extends com.amazon.ask.model.Directiv
     * Get template
   * @return template
   **/
+  @JsonProperty("template")
   public com.amazon.ask.model.interfaces.display.Template getTemplate() {
     return template;
   }

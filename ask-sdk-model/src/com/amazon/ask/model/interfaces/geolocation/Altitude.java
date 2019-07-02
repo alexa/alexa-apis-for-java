@@ -44,6 +44,7 @@ public final class Altitude{
     * A double representing the altitude of the device in meters.
   * @return altitudeInMeters
   **/
+  @JsonProperty("altitudeInMeters")
   public Double getAltitudeInMeters() {
     return altitudeInMeters;
   }
@@ -52,6 +53,7 @@ public final class Altitude{
     * A double representing the accuracy of the altitude measurement in meters.
   * @return accuracyInMeters
   **/
+  @JsonProperty("accuracyInMeters")
   public Double getAccuracyInMeters() {
     return accuracyInMeters;
   }

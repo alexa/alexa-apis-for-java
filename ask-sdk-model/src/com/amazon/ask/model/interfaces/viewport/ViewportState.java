@@ -80,6 +80,7 @@ public final class ViewportState{
     * The experiences supported by the device, in descending order of arcMinuteWidth and arcMinuteHeight.
   * @return experiences
   **/
+  @JsonProperty("experiences")
   public List<com.amazon.ask.model.interfaces.viewport.Experience> getExperiences() {
     return experiences;
   }
@@ -88,6 +89,7 @@ public final class ViewportState{
     * Get shape
   * @return shape
   **/
+  @JsonProperty("shape")
   public com.amazon.ask.model.interfaces.viewport.Shape getShape() {
     return shape;
   }
@@ -96,6 +98,7 @@ public final class ViewportState{
     * The number of pixels present in the viewport at its maximum width.
   * @return pixelWidth
   **/
+  @JsonProperty("pixelWidth")
   public BigDecimal getPixelWidth() {
     return pixelWidth;
   }
@@ -104,6 +107,7 @@ public final class ViewportState{
     * The number of pixels present in the viewport at its maximum height.
   * @return pixelHeight
   **/
+  @JsonProperty("pixelHeight")
   public BigDecimal getPixelHeight() {
     return pixelHeight;
   }
@@ -112,6 +116,7 @@ public final class ViewportState{
     * The pixel density of the viewport.
   * @return dpi
   **/
+  @JsonProperty("dpi")
   public BigDecimal getDpi() {
     return dpi;
   }
@@ -120,6 +125,7 @@ public final class ViewportState{
     * The number of horizontal pixels in the viewport that are currently available for Alexa to render an experience.
   * @return currentPixelWidth
   **/
+  @JsonProperty("currentPixelWidth")
   public BigDecimal getCurrentPixelWidth() {
     return currentPixelWidth;
   }
@@ -128,6 +134,7 @@ public final class ViewportState{
     * The number of vertical pixels in the viewport that are currently available for Alexa to render an experience.
   * @return currentPixelHeight
   **/
+  @JsonProperty("currentPixelHeight")
   public BigDecimal getCurrentPixelHeight() {
     return currentPixelHeight;
   }
@@ -136,6 +143,7 @@ public final class ViewportState{
     * The types of touch supported by the device. An empty array indicates no touch support.
   * @return touch
   **/
+  @JsonProperty("touch")
   public List<com.amazon.ask.model.interfaces.viewport.Touch> getTouch() {
     return touch;
   }
@@ -144,6 +152,7 @@ public final class ViewportState{
     * The physical button input mechanisms supported by the device. An empty array indicates physical button input is unsupported.
   * @return keyboard
   **/
+  @JsonProperty("keyboard")
   public List<com.amazon.ask.model.interfaces.viewport.Keyboard> getKeyboard() {
     return keyboard;
   }
@@ -152,6 +161,7 @@ public final class ViewportState{
     * Get video
   * @return video
   **/
+  @JsonProperty("video")
   public com.amazon.ask.model.interfaces.viewport.ViewportStateVideo getVideo() {
     return video;
   }

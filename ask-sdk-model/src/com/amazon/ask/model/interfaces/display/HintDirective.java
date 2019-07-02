@@ -43,6 +43,7 @@ public final class HintDirective extends com.amazon.ask.model.Directive {
     * Get hint
   * @return hint
   **/
+  @JsonProperty("hint")
   public com.amazon.ask.model.interfaces.display.Hint getHint() {
     return hint;
   }

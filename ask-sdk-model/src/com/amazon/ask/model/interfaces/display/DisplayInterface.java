@@ -44,6 +44,7 @@ public final class DisplayInterface{
     * Get templateVersion
   * @return templateVersion
   **/
+  @JsonProperty("templateVersion")
   public String getTemplateVersion() {
     return templateVersion;
   }
@@ -52,6 +53,7 @@ public final class DisplayInterface{
     * Get markupVersion
   * @return markupVersion
   **/
+  @JsonProperty("markupVersion")
   public String getMarkupVersion() {
     return markupVersion;
   }

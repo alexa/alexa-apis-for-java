@@ -55,6 +55,7 @@ public final class PlaybackFailedRequest extends com.amazon.ask.model.Request {
     * Get currentPlaybackState
   * @return currentPlaybackState
   **/
+  @JsonProperty("currentPlaybackState")
   public com.amazon.ask.model.interfaces.audioplayer.CurrentPlaybackState getCurrentPlaybackState() {
     return currentPlaybackState;
   }
@@ -63,6 +64,7 @@ public final class PlaybackFailedRequest extends com.amazon.ask.model.Request {
     * Get error
   * @return error
   **/
+  @JsonProperty("error")
   public com.amazon.ask.model.interfaces.audioplayer.Error getError() {
     return error;
   }
@@ -71,6 +73,7 @@ public final class PlaybackFailedRequest extends com.amazon.ask.model.Request {
     * Get token
   * @return token
   **/
+  @JsonProperty("token")
   public String getToken() {
     return token;
   }

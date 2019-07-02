@@ -47,6 +47,7 @@ public final class LaunchRequest extends com.amazon.ask.model.Request {
     * Get task
   * @return task
   **/
+  @JsonProperty("task")
   public com.amazon.ask.model.Task getTask() {
     return task;
   }

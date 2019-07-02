@@ -40,6 +40,7 @@ public final class SetupAmazonPayResult{
     * Get billingAgreementDetails
   * @return billingAgreementDetails
   **/
+  @JsonProperty("billingAgreementDetails")
   public com.amazon.ask.model.interfaces.amazonpay.model.v1.BillingAgreementDetails getBillingAgreementDetails() {
     return billingAgreementDetails;
   }

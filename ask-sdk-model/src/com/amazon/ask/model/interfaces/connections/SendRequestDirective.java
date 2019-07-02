@@ -54,6 +54,7 @@ public final class SendRequestDirective extends com.amazon.ask.model.Directive {
     * This defines the name of the Connection skill is trying to execute. It must be a valid and supported Connection name.
   * @return name
   **/
+  @JsonProperty("name")
   public String getName() {
     return name;
   }
@@ -62,6 +63,7 @@ public final class SendRequestDirective extends com.amazon.ask.model.Directive {
     * This is an object sent between the two skills for processing a ConnectionsRequest or ConnectionsResponse. The contract for the object is based on the schema of the Action used in the SendRequestDirective. Invalid payloads will result in errors sent back to the referrer.
   * @return payload
   **/
+  @JsonProperty("payload")
   public Map<String, Object> getPayload() {
     return payload;
   }
@@ -70,6 +72,7 @@ public final class SendRequestDirective extends com.amazon.ask.model.Directive {
     * This is an echo back string that skills send when during Connections.SendRequest directive. They will receive it when they get the ConnectionsResponse. It is never sent to the skill handling the request.
   * @return token
   **/
+  @JsonProperty("token")
   public String getToken() {
     return token;
   }

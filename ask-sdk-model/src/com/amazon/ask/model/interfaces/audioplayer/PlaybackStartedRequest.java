@@ -51,6 +51,7 @@ public final class PlaybackStartedRequest extends com.amazon.ask.model.Request {
     * Get offsetInMilliseconds
   * @return offsetInMilliseconds
   **/
+  @JsonProperty("offsetInMilliseconds")
   public Long getOffsetInMilliseconds() {
     return offsetInMilliseconds;
   }
@@ -59,6 +60,7 @@ public final class PlaybackStartedRequest extends com.amazon.ask.model.Request {
     * Get token
   * @return token
   **/
+  @JsonProperty("token")
   public String getToken() {
     return token;
   }

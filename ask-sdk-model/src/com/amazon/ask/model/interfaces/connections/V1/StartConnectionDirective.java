@@ -54,6 +54,7 @@ public final class StartConnectionDirective extends com.amazon.ask.model.Directi
     * This defines the name and version of connection that the requester is trying to send. The format of the uri should follow this pattern: connection://connectionName/connectionVersion. Invalid uri will cause an error which will be sent back to the requester.
   * @return uri
   **/
+  @JsonProperty("uri")
   public String getUri() {
     return uri;
   }
@@ -62,6 +63,7 @@ public final class StartConnectionDirective extends com.amazon.ask.model.Directi
     * This is the input to the connection that the requester is trying to send. It is predefined by the handler of the connection. If the input format is incorrect, an error will be sent to to the requester.
   * @return input
   **/
+  @JsonProperty("input")
   public Map<String, Object> getInput() {
     return input;
   }
@@ -70,6 +72,7 @@ public final class StartConnectionDirective extends com.amazon.ask.model.Directi
     * This is an echo back string that requester will receive it when it gets resumed. It is never sent to the handler of the connection.
   * @return token
   **/
+  @JsonProperty("token")
   public String getToken() {
     return token;
   }

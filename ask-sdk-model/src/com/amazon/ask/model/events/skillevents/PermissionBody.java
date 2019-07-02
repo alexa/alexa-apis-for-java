@@ -43,6 +43,7 @@ public final class PermissionBody{
     * Get acceptedPermissions
   * @return acceptedPermissions
   **/
+  @JsonProperty("acceptedPermissions")
   public List<com.amazon.ask.model.events.skillevents.Permission> getAcceptedPermissions() {
     return acceptedPermissions;
   }

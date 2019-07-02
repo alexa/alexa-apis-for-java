@@ -53,6 +53,7 @@ public final class Experience{
     * The number of horizontal arc minutes the viewport occupies in the user's visual field when viewed within this experience.
   * @return arcMinuteWidth
   **/
+  @JsonProperty("arcMinuteWidth")
   public BigDecimal getArcMinuteWidth() {
     return arcMinuteWidth;
   }
@@ -61,6 +62,7 @@ public final class Experience{
     * The number of vertical arc minutes the viewport occupies in the user's visual field when viewed within this experience.
   * @return arcMinuteHeight
   **/
+  @JsonProperty("arcMinuteHeight")
   public BigDecimal getArcMinuteHeight() {
     return arcMinuteHeight;
   }
@@ -69,6 +71,7 @@ public final class Experience{
     * Indicates if the viewport can be rotated through 90 degrees.
   * @return canRotate
   **/
+  @JsonProperty("canRotate")
   public Boolean getCanRotate() {
     return canRotate;
   }
@@ -77,6 +80,7 @@ public final class Experience{
     * Indicates if the viewport can be resized, limiting the area which can be used to render the APL response.
   * @return canResize
   **/
+  @JsonProperty("canResize")
   public Boolean getCanResize() {
     return canResize;
   }

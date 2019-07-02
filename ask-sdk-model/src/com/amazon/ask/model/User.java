@@ -48,6 +48,7 @@ public final class User{
     * A string that represents a unique identifier for the user who made the request. The length of this identifier can vary, but is never more than 255 characters. The userId is automatically generated when a user enables the skill in the Alexa app. Note: Disabling and re-enabling a skill generates a new identifier.
   * @return userId
   **/
+  @JsonProperty("userId")
   public String getUserId() {
     return userId;
   }
@@ -56,6 +57,7 @@ public final class User{
     * A token identifying the user in another system. This is only provided if the user has successfully linked their account. See Linking an Alexa User with a User in Your System for more details.
   * @return accessToken
   **/
+  @JsonProperty("accessToken")
   public String getAccessToken() {
     return accessToken;
   }
@@ -64,6 +66,7 @@ public final class User{
     * Get permissions
   * @return permissions
   **/
+  @JsonProperty("permissions")
   public com.amazon.ask.model.Permissions getPermissions() {
     return permissions;
   }

@@ -43,6 +43,7 @@ public final class PlainText extends com.amazon.ask.model.interfaces.display.Tex
     * Get text
   * @return text
   **/
+  @JsonProperty("text")
   public String getText() {
     return text;
   }

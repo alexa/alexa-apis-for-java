@@ -48,6 +48,7 @@ public final class CurrentPlaybackState{
     * Get offsetInMilliseconds
   * @return offsetInMilliseconds
   **/
+  @JsonProperty("offsetInMilliseconds")
   public Long getOffsetInMilliseconds() {
     return offsetInMilliseconds;
   }
@@ -56,6 +57,7 @@ public final class CurrentPlaybackState{
     * Get playerActivity
   * @return playerActivity
   **/
+  @JsonProperty("playerActivity")
   public com.amazon.ask.model.interfaces.audioplayer.PlayerActivity getPlayerActivity() {
     return playerActivity;
   }
@@ -64,6 +66,7 @@ public final class CurrentPlaybackState{
     * Get token
   * @return token
   **/
+  @JsonProperty("token")
   public String getToken() {
     return token;
   }

@@ -52,6 +52,7 @@ public final class SellerBillingAgreementAttributes extends com.amazon.ask.model
     * The merchant-specified identifier of this billing agreement. At least one request parameter must be specified. Amazon recommends that you use only the following characters:- lowercase a-z, uppercase A-Z, numbers 0-9, dash (-), underscore (_).
   * @return sellerBillingAgreementId
   **/
+  @JsonProperty("sellerBillingAgreementId")
   public String getSellerBillingAgreementId() {
     return sellerBillingAgreementId;
   }
@@ -60,6 +61,7 @@ public final class SellerBillingAgreementAttributes extends com.amazon.ask.model
     * The identifier of the store from which the order was placed. This overrides the default value in Seller Central under Settings &gt; Account Settings. It is displayed to the buyer in their emails and transaction history on the Amazon Payments website.
   * @return storeName
   **/
+  @JsonProperty("storeName")
   public String getStoreName() {
     return storeName;
   }
@@ -68,6 +70,7 @@ public final class SellerBillingAgreementAttributes extends com.amazon.ask.model
     * Any additional information that you wish to include with this billing agreement. At least one request parameter must be specified.
   * @return customInformation
   **/
+  @JsonProperty("customInformation")
   public String getCustomInformation() {
     return customInformation;
   }

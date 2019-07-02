@@ -40,6 +40,7 @@ public final class Status{
     * Indication of the results of attempting to resolve the user utterance against the defined slot types.
   * @return code
   **/
+  @JsonProperty("code")
   public com.amazon.ask.model.slu.entityresolution.StatusCode getCode() {
     return code;
   }

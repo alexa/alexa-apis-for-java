@@ -44,6 +44,7 @@ public final class Device{
     * The deviceId property uniquely identifies the device.
   * @return deviceId
   **/
+  @JsonProperty("deviceId")
   public String getDeviceId() {
     return deviceId;
   }
@@ -52,6 +53,7 @@ public final class Device{
     * Lists each interface that the device supports. For example, if supportedInterfaces includes AudioPlayer {}, then you know that the device supports streaming audio using the AudioPlayer interface
   * @return supportedInterfaces
   **/
+  @JsonProperty("supportedInterfaces")
   public com.amazon.ask.model.SupportedInterfaces getSupportedInterfaces() {
     return supportedInterfaces;
   }

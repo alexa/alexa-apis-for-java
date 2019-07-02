@@ -44,6 +44,7 @@ public final class Error{
     * Domain specific error code
   * @return code
   **/
+  @JsonProperty("code")
   public String getCode() {
     return code;
   }
@@ -52,6 +53,7 @@ public final class Error{
     * Detailed error message
   * @return message
   **/
+  @JsonProperty("message")
   public String getMessage() {
     return message;
   }

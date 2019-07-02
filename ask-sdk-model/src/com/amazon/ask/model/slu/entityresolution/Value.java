@@ -44,6 +44,7 @@ public final class Value{
     * The name for the resolution value.
   * @return name
   **/
+  @JsonProperty("name")
   public String getName() {
     return name;
   }
@@ -52,6 +53,7 @@ public final class Value{
     * The id for the resolution value.
   * @return id
   **/
+  @JsonProperty("id")
   public String getId() {
     return id;
   }

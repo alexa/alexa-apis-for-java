@@ -40,6 +40,7 @@ public final class PushNotification{
     * Get status
   * @return status
   **/
+  @JsonProperty("status")
   public com.amazon.ask.model.services.reminderManagement.PushNotificationStatus getStatus() {
     return status;
   }

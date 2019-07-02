@@ -53,6 +53,7 @@ public abstract class OutputSpeech{
     * Get playBehavior
   * @return playBehavior
   **/
+  @JsonProperty("playBehavior")
   public com.amazon.ask.model.ui.PlayBehavior getPlayBehavior() {
     return playBehavior;
   }

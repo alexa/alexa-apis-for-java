@@ -52,6 +52,7 @@ public final class Stream{
     * Get expectedPreviousToken
   * @return expectedPreviousToken
   **/
+  @JsonProperty("expectedPreviousToken")
   public String getExpectedPreviousToken() {
     return expectedPreviousToken;
   }
@@ -60,6 +61,7 @@ public final class Stream{
     * Get token
   * @return token
   **/
+  @JsonProperty("token")
   public String getToken() {
     return token;
   }
@@ -68,6 +70,7 @@ public final class Stream{
     * Get url
   * @return url
   **/
+  @JsonProperty("url")
   public String getUrl() {
     return url;
   }
@@ -76,6 +79,7 @@ public final class Stream{
     * Get offsetInMilliseconds
   * @return offsetInMilliseconds
   **/
+  @JsonProperty("offsetInMilliseconds")
   public Long getOffsetInMilliseconds() {
     return offsetInMilliseconds;
   }

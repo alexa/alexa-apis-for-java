@@ -48,6 +48,7 @@ public final class ScaleTransformProperty extends com.amazon.ask.model.interface
     * Uniform scaling in both X and Y.
   * @return scale
   **/
+  @JsonProperty("scale")
   public String getScale() {
     return scale;
   }
@@ -56,6 +57,7 @@ public final class ScaleTransformProperty extends com.amazon.ask.model.interface
     * Scaling in the X direction (overrides “scale” if in same group).
   * @return scaleX
   **/
+  @JsonProperty("scaleX")
   public String getScaleX() {
     return scaleX;
   }
@@ -64,6 +66,7 @@ public final class ScaleTransformProperty extends com.amazon.ask.model.interface
     * Scaling in the Y direction (overrides “scale” if in same group).
   * @return scaleY
   **/
+  @JsonProperty("scaleY")
   public String getScaleY() {
     return scaleY;
   }

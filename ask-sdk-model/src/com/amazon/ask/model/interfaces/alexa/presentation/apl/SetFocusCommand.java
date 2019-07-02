@@ -46,6 +46,7 @@ public final class SetFocusCommand extends com.amazon.ask.model.interfaces.alexa
     * The ID of the component to set focus on.
   * @return componentId
   **/
+  @JsonProperty("componentId")
   public String getComponentId() {
     return componentId;
   }

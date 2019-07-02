@@ -58,6 +58,7 @@ public final class Trigger{
     * Get type
   * @return type
   **/
+  @JsonProperty("type")
   public com.amazon.ask.model.services.reminderManagement.TriggerType getType() {
     return type;
   }
@@ -66,6 +67,7 @@ public final class Trigger{
     * Valid ISO 8601 format - Intended trigger time
   * @return scheduledTime
   **/
+  @JsonProperty("scheduledTime")
   public LocalDateTime getScheduledTime() {
     return scheduledTime;
   }
@@ -74,6 +76,7 @@ public final class Trigger{
     * If reminder is set using relative time, use this field to specify the time after which reminder ll ring (in seconds)
   * @return offsetInSeconds
   **/
+  @JsonProperty("offsetInSeconds")
   public Integer getOffsetInSeconds() {
     return offsetInSeconds;
   }
@@ -82,6 +85,7 @@ public final class Trigger{
     * Intended reminder's timezone
   * @return timeZoneId
   **/
+  @JsonProperty("timeZoneId")
   public String getTimeZoneId() {
     return timeZoneId;
   }
@@ -90,6 +94,7 @@ public final class Trigger{
     * Get recurrence
   * @return recurrence
   **/
+  @JsonProperty("recurrence")
   public com.amazon.ask.model.services.reminderManagement.Recurrence getRecurrence() {
     return recurrence;
   }

@@ -43,6 +43,7 @@ public final class SpeakDirective extends com.amazon.ask.model.services.directiv
     * Get speech
   * @return speech
   **/
+  @JsonProperty("speech")
   public String getSpeech() {
     return speech;
   }

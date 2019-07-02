@@ -40,6 +40,7 @@ public final class Header{
     * This represents the current requestId for what the skill/speechlet was invoked.
   * @return requestId
   **/
+  @JsonProperty("requestId")
   public String getRequestId() {
     return requestId;
   }

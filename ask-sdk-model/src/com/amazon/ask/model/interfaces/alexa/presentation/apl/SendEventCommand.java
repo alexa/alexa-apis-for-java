@@ -53,6 +53,7 @@ public final class SendEventCommand extends com.amazon.ask.model.interfaces.alex
     * An array of argument data to pass to Alexa.
   * @return arguments
   **/
+  @JsonProperty("arguments")
   public List<String> getArguments() {
     return arguments;
   }
@@ -61,6 +62,7 @@ public final class SendEventCommand extends com.amazon.ask.model.interfaces.alex
     * An array of components to extract value data from and provide to Alexa.
   * @return components
   **/
+  @JsonProperty("components")
   public List<String> getComponents() {
     return components;
   }

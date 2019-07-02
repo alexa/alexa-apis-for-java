@@ -54,6 +54,7 @@ public final class SetLightDirective extends com.amazon.ask.model.Directive {
     * The version of the directive. Must be set to 1.
   * @return version
   **/
+  @JsonProperty("version")
   public Integer getVersion() {
     return version;
   }
@@ -62,6 +63,7 @@ public final class SetLightDirective extends com.amazon.ask.model.Directive {
     * The gadget IDs that will receive the command. An empty array, or leaving this parameter out, signifies that all gadgets will receive the command.
   * @return targetGadgets
   **/
+  @JsonProperty("targetGadgets")
   public List<String> getTargetGadgets() {
     return targetGadgets;
   }
@@ -70,6 +72,7 @@ public final class SetLightDirective extends com.amazon.ask.model.Directive {
     * Get parameters
   * @return parameters
   **/
+  @JsonProperty("parameters")
   public com.amazon.ask.model.services.gadgetController.SetLightParameters getParameters() {
     return parameters;
   }

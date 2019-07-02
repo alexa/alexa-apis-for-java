@@ -44,6 +44,7 @@ public final class Image{
     * Get smallImageUrl
   * @return smallImageUrl
   **/
+  @JsonProperty("smallImageUrl")
   public String getSmallImageUrl() {
     return smallImageUrl;
   }
@@ -52,6 +53,7 @@ public final class Image{
     * Get largeImageUrl
   * @return largeImageUrl
   **/
+  @JsonProperty("largeImageUrl")
   public String getLargeImageUrl() {
     return largeImageUrl;
   }

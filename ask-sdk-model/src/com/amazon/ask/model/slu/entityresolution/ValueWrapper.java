@@ -40,6 +40,7 @@ public final class ValueWrapper{
     * Get value
   * @return value
   **/
+  @JsonProperty("value")
   public com.amazon.ask.model.slu.entityresolution.Value getValue() {
     return value;
   }

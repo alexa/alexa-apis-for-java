@@ -61,6 +61,7 @@ public abstract class Template{
     * Get token
   * @return token
   **/
+  @JsonProperty("token")
   public String getToken() {
     return token;
   }
@@ -69,6 +70,7 @@ public abstract class Template{
     * Get backButton
   * @return backButton
   **/
+  @JsonProperty("backButton")
   public com.amazon.ask.model.interfaces.display.BackButtonBehavior getBackButton() {
     return backButton;
   }

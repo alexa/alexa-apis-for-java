@@ -40,6 +40,7 @@ public final class InSkillProduct{
     * The product ID of In Skill Product.
   * @return productId
   **/
+  @JsonProperty("productId")
   public String getProductId() {
     return productId;
   }

@@ -63,6 +63,7 @@ public final class AlexaList{
     * Get listId
   * @return listId
   **/
+  @JsonProperty("listId")
   public String getListId() {
     return listId;
   }
@@ -71,6 +72,7 @@ public final class AlexaList{
     * Get name
   * @return name
   **/
+  @JsonProperty("name")
   public String getName() {
     return name;
   }
@@ -79,6 +81,7 @@ public final class AlexaList{
     * Get state
   * @return state
   **/
+  @JsonProperty("state")
   public com.amazon.ask.model.services.listManagement.ListState getState() {
     return state;
   }
@@ -87,6 +90,7 @@ public final class AlexaList{
     * Get version
   * @return version
   **/
+  @JsonProperty("version")
   public Long getVersion() {
     return version;
   }
@@ -95,6 +99,7 @@ public final class AlexaList{
     * Get items
   * @return items
   **/
+  @JsonProperty("items")
   public List<com.amazon.ask.model.services.listManagement.AlexaListItem> getItems() {
     return items;
   }
@@ -103,6 +108,7 @@ public final class AlexaList{
     * Get links
   * @return links
   **/
+  @JsonProperty("links")
   public com.amazon.ask.model.services.listManagement.Links getLinks() {
     return links;
   }

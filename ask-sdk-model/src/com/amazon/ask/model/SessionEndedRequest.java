@@ -51,6 +51,7 @@ public final class SessionEndedRequest extends com.amazon.ask.model.Request {
     * Describes why the session ended.
   * @return reason
   **/
+  @JsonProperty("reason")
   public com.amazon.ask.model.SessionEndedReason getReason() {
     return reason;
   }
@@ -59,6 +60,7 @@ public final class SessionEndedRequest extends com.amazon.ask.model.Request {
     * An error object providing more information about the error that occurred.
   * @return error
   **/
+  @JsonProperty("error")
   public com.amazon.ask.model.SessionEndedError getError() {
     return error;
   }

@@ -44,6 +44,7 @@ public final class SsmlOutputSpeech extends com.amazon.ask.model.ui.OutputSpeech
     * Get ssml
   * @return ssml
   **/
+  @JsonProperty("ssml")
   public String getSsml() {
     return ssml;
   }

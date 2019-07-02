@@ -44,6 +44,7 @@ public final class ChargeAmazonPayResult{
     * The order reference identifier.
   * @return amazonOrderReferenceId
   **/
+  @JsonProperty("amazonOrderReferenceId")
   public String getAmazonOrderReferenceId() {
     return amazonOrderReferenceId;
   }
@@ -52,6 +53,7 @@ public final class ChargeAmazonPayResult{
     * Get authorizationDetails
   * @return authorizationDetails
   **/
+  @JsonProperty("authorizationDetails")
   public com.amazon.ask.model.interfaces.amazonpay.model.v1.AuthorizationDetails getAuthorizationDetails() {
     return authorizationDetails;
   }

@@ -51,6 +51,7 @@ public final class Intent{
     * A string representing the name of the intent.
   * @return name
   **/
+  @JsonProperty("name")
   public String getName() {
     return name;
   }
@@ -59,6 +60,7 @@ public final class Intent{
     * A map of key-value pairs that further describes what the user meant based on a predefined intent schema. The map can be empty.
   * @return slots
   **/
+  @JsonProperty("slots")
   public Map<String, com.amazon.ask.model.Slot> getSlots() {
     return slots;
   }
@@ -67,6 +69,7 @@ public final class Intent{
     * Get confirmationStatus
   * @return confirmationStatus
   **/
+  @JsonProperty("confirmationStatus")
   public com.amazon.ask.model.IntentConfirmationStatus getConfirmationStatus() {
     return confirmationStatus;
   }

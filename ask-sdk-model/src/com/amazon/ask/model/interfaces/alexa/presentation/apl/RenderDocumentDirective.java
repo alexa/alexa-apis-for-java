@@ -60,6 +60,7 @@ public final class RenderDocumentDirective extends com.amazon.ask.model.Directiv
     * A unique identifier for the presentation.
   * @return token
   **/
+  @JsonProperty("token")
   public String getToken() {
     return token;
   }
@@ -68,6 +69,7 @@ public final class RenderDocumentDirective extends com.amazon.ask.model.Directiv
     * The APL document that the devices need to render a presentation.
   * @return document
   **/
+  @JsonProperty("document")
   public Map<String, Object> getDocument() {
     return document;
   }
@@ -76,6 +78,7 @@ public final class RenderDocumentDirective extends com.amazon.ask.model.Directiv
     * Data sources to bind to the document when rendering.
   * @return datasources
   **/
+  @JsonProperty("datasources")
   public Map<String, Object> getDatasources() {
     return datasources;
   }
@@ -84,6 +87,7 @@ public final class RenderDocumentDirective extends com.amazon.ask.model.Directiv
     * A list of packages including layouts, styles, and images etc.
   * @return packages
   **/
+  @JsonProperty("packages")
   public List<Object> getPackages() {
     return packages;
   }

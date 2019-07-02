@@ -44,6 +44,7 @@ public final class VideoItem{
     * Get source
   * @return source
   **/
+  @JsonProperty("source")
   public String getSource() {
     return source;
   }
@@ -52,6 +53,7 @@ public final class VideoItem{
     * Get metadata
   * @return metadata
   **/
+  @JsonProperty("metadata")
   public com.amazon.ask.model.interfaces.videoapp.Metadata getMetadata() {
     return metadata;
   }

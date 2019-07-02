@@ -52,6 +52,7 @@ public final class AudioItemMetadata{
     * An optional title of the audio item.
   * @return title
   **/
+  @JsonProperty("title")
   public String getTitle() {
     return title;
   }
@@ -60,6 +61,7 @@ public final class AudioItemMetadata{
     * An optional subtitle of the audio item.
   * @return subtitle
   **/
+  @JsonProperty("subtitle")
   public String getSubtitle() {
     return subtitle;
   }
@@ -68,6 +70,7 @@ public final class AudioItemMetadata{
     * An optional cover art image for the audio item.
   * @return art
   **/
+  @JsonProperty("art")
   public com.amazon.ask.model.interfaces.display.Image getArt() {
     return art;
   }
@@ -76,6 +79,7 @@ public final class AudioItemMetadata{
     * An optional background image for the audio item.
   * @return backgroundImage
   **/
+  @JsonProperty("backgroundImage")
   public com.amazon.ask.model.interfaces.display.Image getBackgroundImage() {
     return backgroundImage;
   }

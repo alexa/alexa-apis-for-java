@@ -50,6 +50,7 @@ public final class SendResponseDirective extends com.amazon.ask.model.Directive 
     * Get status
   * @return status
   **/
+  @JsonProperty("status")
   public com.amazon.ask.model.interfaces.connections.ConnectionsStatus getStatus() {
     return status;
   }
@@ -58,6 +59,7 @@ public final class SendResponseDirective extends com.amazon.ask.model.Directive 
     * This is an object sent to referrer skill as is.
   * @return payload
   **/
+  @JsonProperty("payload")
   public Map<String, Object> getPayload() {
     return payload;
   }

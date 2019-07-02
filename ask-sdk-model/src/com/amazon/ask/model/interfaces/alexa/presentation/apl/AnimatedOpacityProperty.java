@@ -26,10 +26,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public final class AnimatedOpacityProperty extends com.amazon.ask.model.interfaces.alexa.presentation.apl.AnimatedProperty {
 
   @JsonProperty("from")
-  private String from = String.valueOf(null);
+  private String from = null;
 
   @JsonProperty("to")
-  private String to = String.valueOf(null);
+  private String to = null;
 
   public static Builder builder() {
     return new Builder();
@@ -47,6 +47,7 @@ public final class AnimatedOpacityProperty extends com.amazon.ask.model.interfac
     * The starting value of the property.
   * @return from
   **/
+  @JsonProperty("from")
   public String getFrom() {
     return from;
   }
@@ -55,6 +56,7 @@ public final class AnimatedOpacityProperty extends com.amazon.ask.model.interfac
     * The ending value of the property.
   * @return to
   **/
+  @JsonProperty("to")
   public String getTo() {
     return to;
   }

@@ -47,6 +47,7 @@ public final class SessionResumedRequest extends com.amazon.ask.model.Request {
     * Get cause
   * @return cause
   **/
+  @JsonProperty("cause")
   public com.amazon.ask.model.Cause getCause() {
     return cause;
   }

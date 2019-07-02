@@ -51,6 +51,7 @@ public final class GetRemindersResponse{
     * Total count of reminders returned
   * @return totalCount
   **/
+  @JsonProperty("totalCount")
   public String getTotalCount() {
     return totalCount;
   }
@@ -59,6 +60,7 @@ public final class GetRemindersResponse{
     * List of reminders
   * @return alerts
   **/
+  @JsonProperty("alerts")
   public List<com.amazon.ask.model.services.reminderManagement.Reminder> getAlerts() {
     return alerts;
   }
@@ -67,6 +69,7 @@ public final class GetRemindersResponse{
     * Link to retrieve next set of alerts if total count is greater than max results
   * @return links
   **/
+  @JsonProperty("links")
   public String getLinks() {
     return links;
   }

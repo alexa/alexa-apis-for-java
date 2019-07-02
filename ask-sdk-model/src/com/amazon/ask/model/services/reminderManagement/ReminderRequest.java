@@ -53,6 +53,7 @@ public final class ReminderRequest{
     * Valid ISO 8601 format - Creation time of this reminder alert
   * @return requestTime
   **/
+  @JsonProperty("requestTime")
   public OffsetDateTime getRequestTime() {
     return requestTime;
   }
@@ -61,6 +62,7 @@ public final class ReminderRequest{
     * Get trigger
   * @return trigger
   **/
+  @JsonProperty("trigger")
   public com.amazon.ask.model.services.reminderManagement.Trigger getTrigger() {
     return trigger;
   }
@@ -69,6 +71,7 @@ public final class ReminderRequest{
     * Get alertInfo
   * @return alertInfo
   **/
+  @JsonProperty("alertInfo")
   public com.amazon.ask.model.services.reminderManagement.AlertInfo getAlertInfo() {
     return alertInfo;
   }
@@ -77,6 +80,7 @@ public final class ReminderRequest{
     * Get pushNotification
   * @return pushNotification
   **/
+  @JsonProperty("pushNotification")
   public com.amazon.ask.model.services.reminderManagement.PushNotification getPushNotification() {
     return pushNotification;
   }

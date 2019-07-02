@@ -43,6 +43,7 @@ public final class DelegateDirective extends com.amazon.ask.model.Directive {
     * Get updatedIntent
   * @return updatedIntent
   **/
+  @JsonProperty("updatedIntent")
   public com.amazon.ask.model.Intent getUpdatedIntent() {
     return updatedIntent;
   }

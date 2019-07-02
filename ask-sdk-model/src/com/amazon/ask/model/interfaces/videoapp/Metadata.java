@@ -44,6 +44,7 @@ public final class Metadata{
     * Get title
   * @return title
   **/
+  @JsonProperty("title")
   public String getTitle() {
     return title;
   }
@@ -52,6 +53,7 @@ public final class Metadata{
     * Get subtitle
   * @return subtitle
   **/
+  @JsonProperty("subtitle")
   public String getSubtitle() {
     return subtitle;
   }

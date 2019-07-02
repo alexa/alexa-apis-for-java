@@ -56,6 +56,7 @@ public final class SystemState{
     * Get application
   * @return application
   **/
+  @JsonProperty("application")
   public com.amazon.ask.model.Application getApplication() {
     return application;
   }
@@ -64,6 +65,7 @@ public final class SystemState{
     * Get user
   * @return user
   **/
+  @JsonProperty("user")
   public com.amazon.ask.model.User getUser() {
     return user;
   }
@@ -72,6 +74,7 @@ public final class SystemState{
     * Get device
   * @return device
   **/
+  @JsonProperty("device")
   public com.amazon.ask.model.Device getDevice() {
     return device;
   }
@@ -80,6 +83,7 @@ public final class SystemState{
     * Get apiEndpoint
   * @return apiEndpoint
   **/
+  @JsonProperty("apiEndpoint")
   public String getApiEndpoint() {
     return apiEndpoint;
   }
@@ -88,6 +92,7 @@ public final class SystemState{
     * Get apiAccessToken
   * @return apiAccessToken
   **/
+  @JsonProperty("apiAccessToken")
   public String getApiAccessToken() {
     return apiAccessToken;
   }

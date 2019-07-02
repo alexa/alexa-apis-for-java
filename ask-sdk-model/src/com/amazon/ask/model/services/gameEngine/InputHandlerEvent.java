@@ -47,6 +47,7 @@ public final class InputHandlerEvent{
     * The name of the event as you defined it in your GameEngine.StartInputHandler directive.
   * @return name
   **/
+  @JsonProperty("name")
   public String getName() {
     return name;
   }
@@ -55,6 +56,7 @@ public final class InputHandlerEvent{
     * A chronologically ordered report of the raw Button Events that contributed to this Input Handler Event.
   * @return inputEvents
   **/
+  @JsonProperty("inputEvents")
   public List<com.amazon.ask.model.services.gameEngine.InputEvent> getInputEvents() {
     return inputEvents;
   }

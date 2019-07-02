@@ -80,6 +80,7 @@ public final class Destination{
     * The name or business name
   * @return name
   **/
+  @JsonProperty("name")
   public String getName() {
     return name;
   }
@@ -88,6 +89,7 @@ public final class Destination{
     * The company name
   * @return companyName
   **/
+  @JsonProperty("companyName")
   public String getCompanyName() {
     return companyName;
   }
@@ -96,6 +98,7 @@ public final class Destination{
     * The first line of the address. At least one AddressLine (AddressLine1, AddressLine2, or AddressLine3) is required.
   * @return addressLine1
   **/
+  @JsonProperty("addressLine1")
   public String getAddressLine1() {
     return addressLine1;
   }
@@ -104,6 +107,7 @@ public final class Destination{
     * The second line of the address. At least one AddressLine (AddressLine1, AddressLine2, or AddressLine3) is required.
   * @return addressLine2
   **/
+  @JsonProperty("addressLine2")
   public String getAddressLine2() {
     return addressLine2;
   }
@@ -112,6 +116,7 @@ public final class Destination{
     * The third line of the address. At least one AddressLine (AddressLine1, AddressLine2, or AddressLine3) is required.
   * @return addressLine3
   **/
+  @JsonProperty("addressLine3")
   public String getAddressLine3() {
     return addressLine3;
   }
@@ -120,6 +125,7 @@ public final class Destination{
     * The city
   * @return city
   **/
+  @JsonProperty("city")
   public String getCity() {
     return city;
   }
@@ -128,6 +134,7 @@ public final class Destination{
     * The district or County
   * @return districtOrCounty
   **/
+  @JsonProperty("districtOrCounty")
   public String getDistrictOrCounty() {
     return districtOrCounty;
   }
@@ -136,6 +143,7 @@ public final class Destination{
     * The state or region. This element is free text and can be either a 2-character code, fully spelled out, or abbreviated. Required. Note :- This response element is returned only in the U.S.
   * @return stateOrRegion
   **/
+  @JsonProperty("stateOrRegion")
   public String getStateOrRegion() {
     return stateOrRegion;
   }
@@ -144,6 +152,7 @@ public final class Destination{
     * The postal code.
   * @return postalCode
   **/
+  @JsonProperty("postalCode")
   public String getPostalCode() {
     return postalCode;
   }
@@ -152,6 +161,7 @@ public final class Destination{
     * The country code, in ISO 3166 format
   * @return countryCode
   **/
+  @JsonProperty("countryCode")
   public String getCountryCode() {
     return countryCode;
   }
@@ -160,6 +170,7 @@ public final class Destination{
     * The phone number
   * @return phone
   **/
+  @JsonProperty("phone")
   public String getPhone() {
     return phone;
   }

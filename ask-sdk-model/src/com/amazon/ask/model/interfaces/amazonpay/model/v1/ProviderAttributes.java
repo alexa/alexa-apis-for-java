@@ -47,6 +47,7 @@ public final class ProviderAttributes{
     * Solution provider ID.
   * @return providerId
   **/
+  @JsonProperty("providerId")
   public String getProviderId() {
     return providerId;
   }
@@ -55,6 +56,7 @@ public final class ProviderAttributes{
     * List of provider credit.
   * @return providerCreditList
   **/
+  @JsonProperty("providerCreditList")
   public List<com.amazon.ask.model.interfaces.amazonpay.model.v1.ProviderCredit> getProviderCreditList() {
     return providerCreditList;
   }

@@ -44,6 +44,7 @@ public final class SendSkillMessagingRequest{
     * The payload data to send with the message. The data must be in the form of JSON-formatted key-value pairs. Both keys and values must be of type String. The total size of the data cannot be greater than 6KB. For calculation purposes, this includes keys and values, the quotes that surround them, the \":\" character that separates them, the commas that separate the pairs, and the opening and closing braces around the field. However, any whitespace between key/value pairs is not included in the calculation of the payload size. If the message does not include payload data, as in the case of a sync message, you can pass in an empty JSON object \"{}\". 
   * @return data
   **/
+  @JsonProperty("data")
   public Object getData() {
     return data;
   }
@@ -54,6 +55,7 @@ public final class SendSkillMessagingRequest{
     * maximum: 86400
   * @return expiresAfterSeconds
   **/
+  @JsonProperty("expiresAfterSeconds")
   public Long getExpiresAfterSeconds() {
     return expiresAfterSeconds;
   }

@@ -44,6 +44,7 @@ public final class MoveTransformProperty extends com.amazon.ask.model.interfaces
     * Distance to translate the object to the right.
   * @return translateX
   **/
+  @JsonProperty("translateX")
   public String getTranslateX() {
     return translateX;
   }
@@ -52,6 +53,7 @@ public final class MoveTransformProperty extends com.amazon.ask.model.interfaces
     * Distance to translate the object down.
   * @return translateY
   **/
+  @JsonProperty("translateY")
   public String getTranslateY() {
     return translateY;
   }

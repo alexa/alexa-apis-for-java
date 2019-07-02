@@ -44,6 +44,7 @@ public final class Heading{
     * A double representing the direction of the device in degrees.
   * @return directionInDegrees
   **/
+  @JsonProperty("directionInDegrees")
   public Double getDirectionInDegrees() {
     return directionInDegrees;
   }
@@ -52,6 +53,7 @@ public final class Heading{
     * A double representing the accuracy of the heading measurement in degrees.
   * @return accuracyInDegrees
   **/
+  @JsonProperty("accuracyInDegrees")
   public Double getAccuracyInDegrees() {
     return accuracyInDegrees;
   }

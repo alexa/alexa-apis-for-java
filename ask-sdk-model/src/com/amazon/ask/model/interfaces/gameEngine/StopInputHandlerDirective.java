@@ -43,6 +43,7 @@ public final class StopInputHandlerDirective extends com.amazon.ask.model.Direct
     * The `requestId` of the request that started the input handler.
   * @return originatingRequestId
   **/
+  @JsonProperty("originatingRequestId")
   public String getOriginatingRequestId() {
     return originatingRequestId;
   }

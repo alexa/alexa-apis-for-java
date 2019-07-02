@@ -44,6 +44,7 @@ public final class Entity{
     * An unique id associated with the entity
   * @return id
   **/
+  @JsonProperty("id")
   public String getId() {
     return id;
   }
@@ -52,6 +53,7 @@ public final class Entity{
     * Get name
   * @return name
   **/
+  @JsonProperty("name")
   public com.amazon.ask.model.er.dynamic.EntityValueAndSynonyms getName() {
     return name;
   }

@@ -96,6 +96,7 @@ public abstract class Request{
     * Represents the unique identifier for the specific request.
   * @return requestId
   **/
+  @JsonProperty("requestId")
   public String getRequestId() {
     return requestId;
   }
@@ -104,6 +105,7 @@ public abstract class Request{
     * Provides the date and time when Alexa sent the request as an ISO 8601 formatted string. Used to verify the request when hosting your skill as a web service.
   * @return timestamp
   **/
+  @JsonProperty("timestamp")
   public OffsetDateTime getTimestamp() {
     return timestamp;
   }
@@ -112,6 +114,7 @@ public abstract class Request{
     * A string indicating the user’s locale. For example: en-US. This value is only provided with certain request types.
   * @return locale
   **/
+  @JsonProperty("locale")
   public String getLocale() {
     return locale;
   }

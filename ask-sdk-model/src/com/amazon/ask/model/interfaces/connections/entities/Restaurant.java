@@ -48,6 +48,7 @@ public final class Restaurant extends com.amazon.ask.model.interfaces.connection
     * name of the restaurant
   * @return name
   **/
+  @JsonProperty("name")
   public String getName() {
     return name;
   }
@@ -56,6 +57,7 @@ public final class Restaurant extends com.amazon.ask.model.interfaces.connection
     * location
   * @return location
   **/
+  @JsonProperty("location")
   public com.amazon.ask.model.interfaces.connections.entities.PostalAddress getLocation() {
     return location;
   }

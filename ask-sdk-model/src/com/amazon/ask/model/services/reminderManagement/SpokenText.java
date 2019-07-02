@@ -48,6 +48,7 @@ public final class SpokenText{
     * The locale in which the spoken text is rendered. e.g. en-US
   * @return locale
   **/
+  @JsonProperty("locale")
   public String getLocale() {
     return locale;
   }
@@ -56,6 +57,7 @@ public final class SpokenText{
     * Spoken text in SSML format.
   * @return ssml
   **/
+  @JsonProperty("ssml")
   public String getSsml() {
     return ssml;
   }
@@ -64,6 +66,7 @@ public final class SpokenText{
     * Spoken text in plain text format.
   * @return text
   **/
+  @JsonProperty("text")
   public String getText() {
     return text;
   }

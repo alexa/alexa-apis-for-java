@@ -52,6 +52,7 @@ public final class PrintPDFRequest extends com.amazon.ask.model.interfaces.conne
     * title of the image
   * @return title
   **/
+  @JsonProperty("title")
   public String getTitle() {
     return title;
   }
@@ -60,6 +61,7 @@ public final class PrintPDFRequest extends com.amazon.ask.model.interfaces.conne
     * url of the image
   * @return url
   **/
+  @JsonProperty("url")
   public String getUrl() {
     return url;
   }
@@ -68,6 +70,7 @@ public final class PrintPDFRequest extends com.amazon.ask.model.interfaces.conne
     * description of the image
   * @return description
   **/
+  @JsonProperty("description")
   public String getDescription() {
     return description;
   }

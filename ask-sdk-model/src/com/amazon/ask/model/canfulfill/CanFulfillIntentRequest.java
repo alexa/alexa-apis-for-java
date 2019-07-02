@@ -51,6 +51,7 @@ public final class CanFulfillIntentRequest extends com.amazon.ask.model.Request 
     * Get dialogState
   * @return dialogState
   **/
+  @JsonProperty("dialogState")
   public com.amazon.ask.model.DialogState getDialogState() {
     return dialogState;
   }
@@ -59,6 +60,7 @@ public final class CanFulfillIntentRequest extends com.amazon.ask.model.Request 
     * Get intent
   * @return intent
   **/
+  @JsonProperty("intent")
   public com.amazon.ask.model.Intent getIntent() {
     return intent;
   }

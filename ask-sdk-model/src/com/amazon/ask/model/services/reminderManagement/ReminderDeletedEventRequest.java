@@ -47,6 +47,7 @@ public final class ReminderDeletedEventRequest extends com.amazon.ask.model.Requ
     * Get body
   * @return body
   **/
+  @JsonProperty("body")
   public com.amazon.ask.model.services.reminderManagement.ReminderDeletedEvent getBody() {
     return body;
   }

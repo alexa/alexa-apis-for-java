@@ -47,6 +47,7 @@ public final class ProgressRecognizer extends com.amazon.ask.model.services.game
     * The name of a recognizer for which to track the progress.
   * @return recognizer
   **/
+  @JsonProperty("recognizer")
   public String getRecognizer() {
     return recognizer;
   }
@@ -55,6 +56,7 @@ public final class ProgressRecognizer extends com.amazon.ask.model.services.game
     * The completion threshold, as a decimal percentage, of the specified recognizer before which this recognizer becomes true.
   * @return completion
   **/
+  @JsonProperty("completion")
   public Double getCompletion() {
     return completion;
   }

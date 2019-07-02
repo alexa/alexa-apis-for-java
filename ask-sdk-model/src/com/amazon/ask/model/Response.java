@@ -63,6 +63,7 @@ public final class Response{
     * Get outputSpeech
   * @return outputSpeech
   **/
+  @JsonProperty("outputSpeech")
   public com.amazon.ask.model.ui.OutputSpeech getOutputSpeech() {
     return outputSpeech;
   }
@@ -71,6 +72,7 @@ public final class Response{
     * Get card
   * @return card
   **/
+  @JsonProperty("card")
   public com.amazon.ask.model.ui.Card getCard() {
     return card;
   }
@@ -79,6 +81,7 @@ public final class Response{
     * Get reprompt
   * @return reprompt
   **/
+  @JsonProperty("reprompt")
   public com.amazon.ask.model.ui.Reprompt getReprompt() {
     return reprompt;
   }
@@ -87,6 +90,7 @@ public final class Response{
     * Get directives
   * @return directives
   **/
+  @JsonProperty("directives")
   public List<com.amazon.ask.model.Directive> getDirectives() {
     return directives;
   }
@@ -95,6 +99,7 @@ public final class Response{
     * Get shouldEndSession
   * @return shouldEndSession
   **/
+  @JsonProperty("shouldEndSession")
   public Boolean getShouldEndSession() {
     return shouldEndSession;
   }
@@ -103,6 +108,7 @@ public final class Response{
     * Get canFulfillIntent
   * @return canFulfillIntent
   **/
+  @JsonProperty("canFulfillIntent")
   public com.amazon.ask.model.canfulfill.CanFulfillIntent getCanFulfillIntent() {
     return canFulfillIntent;
   }

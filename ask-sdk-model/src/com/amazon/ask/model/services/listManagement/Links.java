@@ -40,6 +40,7 @@ public final class Links{
     * Get next
   * @return next
   **/
+  @JsonProperty("next")
   public String getNext() {
     return next;
   }

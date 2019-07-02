@@ -54,6 +54,7 @@ public final class InputHandlerEventRequest extends com.amazon.ask.model.Request
     * The corresponding identifier of the request that started the input handler.
   * @return originatingRequestId
   **/
+  @JsonProperty("originatingRequestId")
   public String getOriginatingRequestId() {
     return originatingRequestId;
   }
@@ -62,6 +63,7 @@ public final class InputHandlerEventRequest extends com.amazon.ask.model.Request
     * Get events
   * @return events
   **/
+  @JsonProperty("events")
   public List<com.amazon.ask.model.services.gameEngine.InputHandlerEvent> getEvents() {
     return events;
   }

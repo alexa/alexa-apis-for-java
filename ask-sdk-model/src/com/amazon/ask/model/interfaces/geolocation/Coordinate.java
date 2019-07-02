@@ -48,6 +48,7 @@ public final class Coordinate{
     * A double representing the latitude in degrees of the device.
   * @return latitudeInDegrees
   **/
+  @JsonProperty("latitudeInDegrees")
   public Double getLatitudeInDegrees() {
     return latitudeInDegrees;
   }
@@ -56,6 +57,7 @@ public final class Coordinate{
     * A double representing the longitude in degrees of the device.
   * @return longitudeInDegrees
   **/
+  @JsonProperty("longitudeInDegrees")
   public Double getLongitudeInDegrees() {
     return longitudeInDegrees;
   }
@@ -64,6 +66,7 @@ public final class Coordinate{
     * A double representing the accuracy of geolocation data in meters.
   * @return accuracyInMeters
   **/
+  @JsonProperty("accuracyInMeters")
   public Double getAccuracyInMeters() {
     return accuracyInMeters;
   }

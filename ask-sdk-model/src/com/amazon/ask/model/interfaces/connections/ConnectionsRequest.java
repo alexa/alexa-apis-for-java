@@ -54,6 +54,7 @@ public final class ConnectionsRequest extends com.amazon.ask.model.Request {
     * Name of the action sent by the referrer skill.
   * @return name
   **/
+  @JsonProperty("name")
   public String getName() {
     return name;
   }
@@ -62,6 +63,7 @@ public final class ConnectionsRequest extends com.amazon.ask.model.Request {
     * This is an object sent between the two skills for processing a ConnectionsRequest or ConnectionsResponse. This will always be a valid payload based on Action schema for the requester action.
   * @return payload
   **/
+  @JsonProperty("payload")
   public Map<String, Object> getPayload() {
     return payload;
   }

@@ -43,6 +43,7 @@ public final class Resolutions{
     * Get resolutionsPerAuthority
   * @return resolutionsPerAuthority
   **/
+  @JsonProperty("resolutionsPerAuthority")
   public List<com.amazon.ask.model.slu.entityresolution.Resolution> getResolutionsPerAuthority() {
     return resolutionsPerAuthority;
   }

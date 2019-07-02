@@ -55,6 +55,7 @@ public final class Pattern{
     * A whitelist of gadgetIds that are eligible for this match.
   * @return gadgetIds
   **/
+  @JsonProperty("gadgetIds")
   public List<String> getGadgetIds() {
     return gadgetIds;
   }
@@ -63,6 +64,7 @@ public final class Pattern{
     * A whitelist of colors that are eligible for this match.
   * @return colors
   **/
+  @JsonProperty("colors")
   public List<String> getColors() {
     return colors;
   }
@@ -71,6 +73,7 @@ public final class Pattern{
     * Get action
   * @return action
   **/
+  @JsonProperty("action")
   public com.amazon.ask.model.services.gameEngine.InputEventActionType getAction() {
     return action;
   }
@@ -81,6 +84,7 @@ public final class Pattern{
     * maximum: 99999
   * @return repeat
   **/
+  @JsonProperty("repeat")
   public Integer getRepeat() {
     return repeat;
   }

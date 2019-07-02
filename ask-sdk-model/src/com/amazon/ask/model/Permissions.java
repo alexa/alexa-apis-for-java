@@ -47,6 +47,7 @@ public final class Permissions{
     * A token listing all the permissions granted for this user.
   * @return consentToken
   **/
+  @JsonProperty("consentToken")
   public String getConsentToken() {
     return consentToken;
   }
@@ -55,6 +56,7 @@ public final class Permissions{
     * A map where the key is a LoginWithAmazon(LWA) scope and value is a list of key:value pairs which describe the state of user actions on the LWA scope. For e.g. \"scopes\" :{ \"alexa::devices:all:geolocation:read\":{\"status\":\"GRANTED\"}} This value of \"alexa::devices:all:geolocation:read\" will determine if the Geolocation data access is granted by the user, or else it will show a card of type AskForPermissionsConsent to the user to get this permission.
   * @return scopes
   **/
+  @JsonProperty("scopes")
   public Map<String, com.amazon.ask.model.Scope> getScopes() {
     return scopes;
   }

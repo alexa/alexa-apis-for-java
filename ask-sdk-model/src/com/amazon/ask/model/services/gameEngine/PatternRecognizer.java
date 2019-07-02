@@ -62,6 +62,7 @@ public final class PatternRecognizer extends com.amazon.ask.model.services.gameE
     * Get anchor
   * @return anchor
   **/
+  @JsonProperty("anchor")
   public com.amazon.ask.model.services.gameEngine.PatternRecognizerAnchorType getAnchor() {
     return anchor;
   }
@@ -70,6 +71,7 @@ public final class PatternRecognizer extends com.amazon.ask.model.services.gameE
     * When true, the recognizer will ignore additional events that occur between the events specified in the pattern.
   * @return fuzzy
   **/
+  @JsonProperty("fuzzy")
   public Boolean getFuzzy() {
     return fuzzy;
   }
@@ -78,6 +80,7 @@ public final class PatternRecognizer extends com.amazon.ask.model.services.gameE
     * The gadget IDs of the Echo Buttons to consider in this pattern recognizer.
   * @return gadgetIds
   **/
+  @JsonProperty("gadgetIds")
   public List<String> getGadgetIds() {
     return gadgetIds;
   }
@@ -86,6 +89,7 @@ public final class PatternRecognizer extends com.amazon.ask.model.services.gameE
     * The actions to consider in this pattern recognizer. All other actions will be ignored.
   * @return actions
   **/
+  @JsonProperty("actions")
   public List<String> getActions() {
     return actions;
   }
@@ -94,6 +98,7 @@ public final class PatternRecognizer extends com.amazon.ask.model.services.gameE
     * An object that provides all of the events that need to occur, in a specific order, for this recognizer to be true. Omitting any parameters in this object means \"match anything\".
   * @return pattern
   **/
+  @JsonProperty("pattern")
   public List<com.amazon.ask.model.services.gameEngine.Pattern> getPattern() {
     return pattern;
   }

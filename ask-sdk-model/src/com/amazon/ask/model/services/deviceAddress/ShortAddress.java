@@ -44,6 +44,7 @@ public final class ShortAddress{
     * Get countryCode
   * @return countryCode
   **/
+  @JsonProperty("countryCode")
   public String getCountryCode() {
     return countryCode;
   }
@@ -52,6 +53,7 @@ public final class ShortAddress{
     * Get postalCode
   * @return postalCode
   **/
+  @JsonProperty("postalCode")
   public String getPostalCode() {
     return postalCode;
   }

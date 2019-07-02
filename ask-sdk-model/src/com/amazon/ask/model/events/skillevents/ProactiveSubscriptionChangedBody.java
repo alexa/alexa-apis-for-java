@@ -43,6 +43,7 @@ public final class ProactiveSubscriptionChangedBody{
     * The list of events that this customer is currently subscribed to. If a customer unsubscribes from an event, this list will contain remaining event types to which the customer is still subscribed to receive from your skill. If the list of subscriptions is empty, this customer has unsubscribed from all event types from your skill. 
   * @return subscriptions
   **/
+  @JsonProperty("subscriptions")
   public List<com.amazon.ask.model.events.skillevents.ProactiveSubscriptionEvent> getSubscriptions() {
     return subscriptions;
   }

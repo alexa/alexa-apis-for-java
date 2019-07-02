@@ -40,6 +40,7 @@ public final class Permission{
     * Get scope
   * @return scope
   **/
+  @JsonProperty("scope")
   public String getScope() {
     return scope;
   }

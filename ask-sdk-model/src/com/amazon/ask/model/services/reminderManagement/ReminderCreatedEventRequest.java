@@ -47,6 +47,7 @@ public final class ReminderCreatedEventRequest extends com.amazon.ask.model.Requ
     * Get body
   * @return body
   **/
+  @JsonProperty("body")
   public com.amazon.ask.model.services.reminderManagement.Event getBody() {
     return body;
   }

@@ -32,13 +32,13 @@ public final class AnimateItemCommand extends com.amazon.ask.model.interfaces.al
   private String componentId = null;
 
   @JsonProperty("duration")
-  private String duration = String.valueOf(null);
+  private String duration = null;
 
   @JsonProperty("easing")
   private String easing = "linear";
 
   @JsonProperty("repeatCount")
-  private String repeatCount = String.valueOf(null);
+  private String repeatCount = null;
 
   @JsonProperty("repeatMode")
   private com.amazon.ask.model.interfaces.alexa.presentation.apl.AnimateItemRepeatMode repeatMode = null;
@@ -69,6 +69,7 @@ public final class AnimateItemCommand extends com.amazon.ask.model.interfaces.al
     * The ID of the animated component.
   * @return componentId
   **/
+  @JsonProperty("componentId")
   public String getComponentId() {
     return componentId;
   }
@@ -77,6 +78,7 @@ public final class AnimateItemCommand extends com.amazon.ask.model.interfaces.al
     * The duration of the animation (in milliseconds).
   * @return duration
   **/
+  @JsonProperty("duration")
   public String getDuration() {
     return duration;
   }
@@ -85,6 +87,7 @@ public final class AnimateItemCommand extends com.amazon.ask.model.interfaces.al
     * The easing curve.
   * @return easing
   **/
+  @JsonProperty("easing")
   public String getEasing() {
     return easing;
   }
@@ -93,6 +96,7 @@ public final class AnimateItemCommand extends com.amazon.ask.model.interfaces.al
     * Number of times to repeat.
   * @return repeatCount
   **/
+  @JsonProperty("repeatCount")
   public String getRepeatCount() {
     return repeatCount;
   }
@@ -101,6 +105,7 @@ public final class AnimateItemCommand extends com.amazon.ask.model.interfaces.al
     * Get repeatMode
   * @return repeatMode
   **/
+  @JsonProperty("repeatMode")
   public com.amazon.ask.model.interfaces.alexa.presentation.apl.AnimateItemRepeatMode getRepeatMode() {
     return repeatMode;
   }
@@ -109,6 +114,7 @@ public final class AnimateItemCommand extends com.amazon.ask.model.interfaces.al
     * An array of animated properties.
   * @return value
   **/
+  @JsonProperty("value")
   public List<com.amazon.ask.model.interfaces.alexa.presentation.apl.AnimatedProperty> getValue() {
     return value;
   }

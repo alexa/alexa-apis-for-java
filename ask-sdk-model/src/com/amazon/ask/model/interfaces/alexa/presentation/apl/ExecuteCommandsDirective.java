@@ -50,6 +50,7 @@ public final class ExecuteCommandsDirective extends com.amazon.ask.model.Directi
     * List of Command instances
   * @return commands
   **/
+  @JsonProperty("commands")
   public List<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command> getCommands() {
     return commands;
   }
@@ -58,6 +59,7 @@ public final class ExecuteCommandsDirective extends com.amazon.ask.model.Directi
     * A skill defined token, unique for each presentation. Must match the token provided by the skill in the RenderDocument directive used to render the original APL document.
   * @return token
   **/
+  @JsonProperty("token")
   public String getToken() {
     return token;
   }

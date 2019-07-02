@@ -56,6 +56,7 @@ public final class InputEvent{
     * The identifier of the Echo Button in question. It matches the gadgetId that you will have discovered in roll call.
   * @return gadgetId
   **/
+  @JsonProperty("gadgetId")
   public String getGadgetId() {
     return gadgetId;
   }
@@ -64,6 +65,7 @@ public final class InputEvent{
     * The event's original moment of occurrence, in ISO format.
   * @return timestamp
   **/
+  @JsonProperty("timestamp")
   public String getTimestamp() {
     return timestamp;
   }
@@ -72,6 +74,7 @@ public final class InputEvent{
     * Get action
   * @return action
   **/
+  @JsonProperty("action")
   public com.amazon.ask.model.services.gameEngine.InputEventActionType getAction() {
     return action;
   }
@@ -80,6 +83,7 @@ public final class InputEvent{
     * The hexadecimal RGB values of the button LED at the time of the event.
   * @return color
   **/
+  @JsonProperty("color")
   public String getColor() {
     return color;
   }
@@ -88,6 +92,7 @@ public final class InputEvent{
     * For gadgets with multiple features, this is the feature that the event represents. Echo Buttons have one feature only, so this is always `press`.
   * @return feature
   **/
+  @JsonProperty("feature")
   public String getFeature() {
     return feature;
   }

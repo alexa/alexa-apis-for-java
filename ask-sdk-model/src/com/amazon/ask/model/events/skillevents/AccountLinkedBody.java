@@ -40,6 +40,7 @@ public final class AccountLinkedBody{
     * Get accessToken
   * @return accessToken
   **/
+  @JsonProperty("accessToken")
   public String getAccessToken() {
     return accessToken;
   }

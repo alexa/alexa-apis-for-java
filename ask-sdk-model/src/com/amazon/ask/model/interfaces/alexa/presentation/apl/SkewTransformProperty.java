@@ -44,6 +44,7 @@ public final class SkewTransformProperty extends com.amazon.ask.model.interfaces
     * Skew angle for the X-axis, in degrees. X-axis lines remain horizontal.
   * @return skewX
   **/
+  @JsonProperty("skewX")
   public String getSkewX() {
     return skewX;
   }
@@ -52,6 +53,7 @@ public final class SkewTransformProperty extends com.amazon.ask.model.interfaces
     * Skew angle for the Y-axis, in degrees. Y-axis lines remain vertical.
   * @return skewY
   **/
+  @JsonProperty("skewY")
   public String getSkewY() {
     return skewY;
   }

@@ -43,6 +43,7 @@ public final class ReminderDeletedEvent{
     * Get alertTokens
   * @return alertTokens
   **/
+  @JsonProperty("alertTokens")
   public List<String> getAlertTokens() {
     return alertTokens;
   }

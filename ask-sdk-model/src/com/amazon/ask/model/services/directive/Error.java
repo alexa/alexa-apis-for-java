@@ -44,6 +44,7 @@ public final class Error{
     * error code to find more information in developer.amazon.com.
   * @return code
   **/
+  @JsonProperty("code")
   public Integer getCode() {
     return code;
   }
@@ -52,6 +53,7 @@ public final class Error{
     * Readable description of error.
   * @return message
   **/
+  @JsonProperty("message")
   public String getMessage() {
     return message;
   }

@@ -56,6 +56,7 @@ public final class ListTemplate1 extends com.amazon.ask.model.interfaces.display
     * Get backgroundImage
   * @return backgroundImage
   **/
+  @JsonProperty("backgroundImage")
   public com.amazon.ask.model.interfaces.display.Image getBackgroundImage() {
     return backgroundImage;
   }
@@ -64,6 +65,7 @@ public final class ListTemplate1 extends com.amazon.ask.model.interfaces.display
     * Get title
   * @return title
   **/
+  @JsonProperty("title")
   public String getTitle() {
     return title;
   }
@@ -72,6 +74,7 @@ public final class ListTemplate1 extends com.amazon.ask.model.interfaces.display
     * Get listItems
   * @return listItems
   **/
+  @JsonProperty("listItems")
   public List<com.amazon.ask.model.interfaces.display.ListItem> getListItems() {
     return listItems;
   }

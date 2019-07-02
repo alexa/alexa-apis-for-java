@@ -32,7 +32,7 @@ public final class SetStateCommand extends com.amazon.ask.model.interfaces.alexa
   private com.amazon.ask.model.interfaces.alexa.presentation.apl.ComponentState state = null;
 
   @JsonProperty("value")
-  private String value = String.valueOf(null);
+  private String value = null;
 
   public static Builder builder() {
     return new Builder();
@@ -54,6 +54,7 @@ public final class SetStateCommand extends com.amazon.ask.model.interfaces.alexa
     * The id of the component whose value should be set.
   * @return componentId
   **/
+  @JsonProperty("componentId")
   public String getComponentId() {
     return componentId;
   }
@@ -62,6 +63,7 @@ public final class SetStateCommand extends com.amazon.ask.model.interfaces.alexa
     * The name of the state to set. Must be one of “checked”, “disabled”, and “focused”.
   * @return state
   **/
+  @JsonProperty("state")
   public com.amazon.ask.model.interfaces.alexa.presentation.apl.ComponentState getState() {
     return state;
   }
@@ -70,6 +72,7 @@ public final class SetStateCommand extends com.amazon.ask.model.interfaces.alexa
     * The value to set on the property
   * @return value
   **/
+  @JsonProperty("value")
   public String getValue() {
     return value;
   }

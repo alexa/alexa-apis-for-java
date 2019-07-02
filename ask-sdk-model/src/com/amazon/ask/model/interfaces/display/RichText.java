@@ -43,6 +43,7 @@ public final class RichText extends com.amazon.ask.model.interfaces.display.Text
     * Get text
   * @return text
   **/
+  @JsonProperty("text")
   public String getText() {
     return text;
   }

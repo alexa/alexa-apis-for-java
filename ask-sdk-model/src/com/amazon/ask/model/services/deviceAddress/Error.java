@@ -44,6 +44,7 @@ public final class Error{
     * The corresponding type of the http status code being returned.
   * @return type
   **/
+  @JsonProperty("type")
   public String getType() {
     return type;
   }
@@ -52,6 +53,7 @@ public final class Error{
     * A human readable description of error.
   * @return message
   **/
+  @JsonProperty("message")
   public String getMessage() {
     return message;
   }

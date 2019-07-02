@@ -48,6 +48,7 @@ public final class TextContent{
     * Get primaryText
   * @return primaryText
   **/
+  @JsonProperty("primaryText")
   public com.amazon.ask.model.interfaces.display.TextField getPrimaryText() {
     return primaryText;
   }
@@ -56,6 +57,7 @@ public final class TextContent{
     * Get secondaryText
   * @return secondaryText
   **/
+  @JsonProperty("secondaryText")
   public com.amazon.ask.model.interfaces.display.TextField getSecondaryText() {
     return secondaryText;
   }
@@ -64,6 +66,7 @@ public final class TextContent{
     * Get tertiaryText
   * @return tertiaryText
   **/
+  @JsonProperty("tertiaryText")
   public com.amazon.ask.model.interfaces.display.TextField getTertiaryText() {
     return tertiaryText;
   }

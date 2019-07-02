@@ -44,6 +44,7 @@ public final class CreateListRequest{
     * Get name
   * @return name
   **/
+  @JsonProperty("name")
   public String getName() {
     return name;
   }
@@ -52,6 +53,7 @@ public final class CreateListRequest{
     * Get state
   * @return state
   **/
+  @JsonProperty("state")
   public com.amazon.ask.model.services.listManagement.ListState getState() {
     return state;
   }

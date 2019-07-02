@@ -51,6 +51,7 @@ public final class ConnectionCompleted extends com.amazon.ask.model.Cause {
     * This is an echo back string that skills send when during Connections.StartConnection directive. They will receive it when they get the SessionResumedRequest. It is never sent to the skill handling the request.
   * @return token
   **/
+  @JsonProperty("token")
   public String getToken() {
     return token;
   }
@@ -59,6 +60,7 @@ public final class ConnectionCompleted extends com.amazon.ask.model.Cause {
     * Get status
   * @return status
   **/
+  @JsonProperty("status")
   public com.amazon.ask.model.Status getStatus() {
     return status;
   }
@@ -67,6 +69,7 @@ public final class ConnectionCompleted extends com.amazon.ask.model.Cause {
     * This is the result object to resume the skill's suspended session.
   * @return result
   **/
+  @JsonProperty("result")
   public Object getResult() {
     return result;
   }

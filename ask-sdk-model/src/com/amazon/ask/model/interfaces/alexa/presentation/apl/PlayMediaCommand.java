@@ -57,6 +57,7 @@ public final class PlayMediaCommand extends com.amazon.ask.model.interfaces.alex
     * The command to issue on the media player
   * @return audioTrack
   **/
+  @JsonProperty("audioTrack")
   public com.amazon.ask.model.interfaces.alexa.presentation.apl.AudioTrack getAudioTrack() {
     return audioTrack;
   }
@@ -65,6 +66,7 @@ public final class PlayMediaCommand extends com.amazon.ask.model.interfaces.alex
     * The name of the media playing component
   * @return componentId
   **/
+  @JsonProperty("componentId")
   public String getComponentId() {
     return componentId;
   }
@@ -73,6 +75,7 @@ public final class PlayMediaCommand extends com.amazon.ask.model.interfaces.alex
     * The media source
   * @return source
   **/
+  @JsonProperty("source")
   public List<com.amazon.ask.model.interfaces.alexa.presentation.apl.VideoSource> getSource() {
     return source;
   }

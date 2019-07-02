@@ -43,6 +43,7 @@ public final class AlexaListsMetadata{
     * Get lists
   * @return lists
   **/
+  @JsonProperty("lists")
   public List<com.amazon.ask.model.services.listManagement.AlexaListMetadata> getLists() {
     return lists;
   }

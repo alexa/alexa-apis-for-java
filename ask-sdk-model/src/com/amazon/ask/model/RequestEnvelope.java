@@ -52,6 +52,7 @@ public final class RequestEnvelope{
     * The version specifier for the request.
   * @return version
   **/
+  @JsonProperty("version")
   public String getVersion() {
     return version;
   }
@@ -60,6 +61,7 @@ public final class RequestEnvelope{
     * The session object provides additional context associated with the request.
   * @return session
   **/
+  @JsonProperty("session")
   public com.amazon.ask.model.Session getSession() {
     return session;
   }
@@ -68,6 +70,7 @@ public final class RequestEnvelope{
     * The context object provides your skill with information about the current state of the Alexa service and device at the time the request is sent to your service. This is included on all requests. For requests sent in the context of a session (LaunchRequest and IntentRequest), the context object duplicates the user and application information that is also available in the session.
   * @return context
   **/
+  @JsonProperty("context")
   public com.amazon.ask.model.Context getContext() {
     return context;
   }
@@ -76,6 +79,7 @@ public final class RequestEnvelope{
     * A request object that provides the details of the user’s request.
   * @return request
   **/
+  @JsonProperty("request")
   public com.amazon.ask.model.Request getRequest() {
     return request;
   }

@@ -40,6 +40,7 @@ public final class Scope{
     * Get status
   * @return status
   **/
+  @JsonProperty("status")
   public com.amazon.ask.model.PermissionStatus getStatus() {
     return status;
   }

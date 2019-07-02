@@ -40,6 +40,7 @@ public final class Error{
     * Readable description of error
   * @return message
   **/
+  @JsonProperty("message")
   public String getMessage() {
     return message;
   }

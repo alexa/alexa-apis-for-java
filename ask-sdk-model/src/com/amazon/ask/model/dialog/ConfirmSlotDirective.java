@@ -47,6 +47,7 @@ public final class ConfirmSlotDirective extends com.amazon.ask.model.Directive {
     * Get updatedIntent
   * @return updatedIntent
   **/
+  @JsonProperty("updatedIntent")
   public com.amazon.ask.model.Intent getUpdatedIntent() {
     return updatedIntent;
   }
@@ -55,6 +56,7 @@ public final class ConfirmSlotDirective extends com.amazon.ask.model.Directive {
     * Get slotToConfirm
   * @return slotToConfirm
   **/
+  @JsonProperty("slotToConfirm")
   public String getSlotToConfirm() {
     return slotToConfirm;
   }

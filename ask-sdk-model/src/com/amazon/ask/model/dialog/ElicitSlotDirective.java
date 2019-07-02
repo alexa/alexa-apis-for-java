@@ -47,6 +47,7 @@ public final class ElicitSlotDirective extends com.amazon.ask.model.Directive {
     * Get updatedIntent
   * @return updatedIntent
   **/
+  @JsonProperty("updatedIntent")
   public com.amazon.ask.model.Intent getUpdatedIntent() {
     return updatedIntent;
   }
@@ -55,6 +56,7 @@ public final class ElicitSlotDirective extends com.amazon.ask.model.Directive {
     * Get slotToElicit
   * @return slotToElicit
   **/
+  @JsonProperty("slotToElicit")
   public String getSlotToElicit() {
     return slotToElicit;
   }

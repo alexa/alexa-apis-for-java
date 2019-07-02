@@ -44,6 +44,7 @@ public final class CanFulfillSlot{
     * Get canUnderstand
   * @return canUnderstand
   **/
+  @JsonProperty("canUnderstand")
   public com.amazon.ask.model.canfulfill.CanUnderstandSlotValues getCanUnderstand() {
     return canUnderstand;
   }
@@ -52,6 +53,7 @@ public final class CanFulfillSlot{
     * Get canFulfill
   * @return canFulfill
   **/
+  @JsonProperty("canFulfill")
   public com.amazon.ask.model.canfulfill.CanFulfillSlotValues getCanFulfill() {
     return canFulfill;
   }

@@ -40,6 +40,7 @@ public final class AlexaPresentationAplInterface{
     * Get runtime
   * @return runtime
   **/
+  @JsonProperty("runtime")
   public com.amazon.ask.model.interfaces.alexa.presentation.apl.Runtime getRuntime() {
     return runtime;
   }

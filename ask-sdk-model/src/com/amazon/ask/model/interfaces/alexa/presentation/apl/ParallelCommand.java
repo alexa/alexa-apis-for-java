@@ -49,6 +49,7 @@ public final class ParallelCommand extends com.amazon.ask.model.interfaces.alexa
     * An un-ordered array of commands to execute in parallel. Once all commands have finished executing the parallel command finishes. Please note that the delay of parallel command and the delay of each command are additive.
   * @return commands
   **/
+  @JsonProperty("commands")
   public List<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command> getCommands() {
     return commands;
   }

@@ -47,6 +47,7 @@ public final class SimpleCard extends com.amazon.ask.model.ui.Card {
     * Get title
   * @return title
   **/
+  @JsonProperty("title")
   public String getTitle() {
     return title;
   }
@@ -55,6 +56,7 @@ public final class SimpleCard extends com.amazon.ask.model.ui.Card {
     * Get content
   * @return content
   **/
+  @JsonProperty("content")
   public String getContent() {
     return content;
   }

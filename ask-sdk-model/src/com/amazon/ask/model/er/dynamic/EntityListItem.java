@@ -47,6 +47,7 @@ public final class EntityListItem{
     * The entity type. Must match the slot type as defined in the interaction model.
   * @return name
   **/
+  @JsonProperty("name")
   public String getName() {
     return name;
   }
@@ -55,6 +56,7 @@ public final class EntityListItem{
     * A list of dynamic entities which are of the same type
   * @return values
   **/
+  @JsonProperty("values")
   public List<com.amazon.ask.model.er.dynamic.Entity> getValues() {
     return values;
   }

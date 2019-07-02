@@ -47,6 +47,7 @@ public final class ReminderStatusChangedEventRequest extends com.amazon.ask.mode
     * Get body
   * @return body
   **/
+  @JsonProperty("body")
   public com.amazon.ask.model.services.reminderManagement.Event getBody() {
     return body;
   }
