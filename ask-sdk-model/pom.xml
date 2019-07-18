@@ -5,7 +5,7 @@
   <artifactId>ask-sdk-model</artifactId>
   <packaging>jar</packaging>
   <name>ask-sdk-model</name>
-  <version>1.18.1</version>
+  <version>1.18.2</version>
   <url>http://developer.amazon.com/ask</url>
   <description>Contains models and api clients for Alexa</description>
 
@@ -40,7 +40,7 @@
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
       <artifactId>jackson-databind</artifactId>
-      <version>2.9.9</version>
+      <version>2.9.9.1</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
