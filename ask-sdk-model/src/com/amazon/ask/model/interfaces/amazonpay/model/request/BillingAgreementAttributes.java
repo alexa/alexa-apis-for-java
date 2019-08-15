@@ -34,6 +34,12 @@ public final class BillingAgreementAttributes extends com.amazon.ask.model.inter
   @JsonProperty("sellerBillingAgreementAttributes")
   private com.amazon.ask.model.interfaces.amazonpay.model.request.SellerBillingAgreementAttributes sellerBillingAgreementAttributes = null;
 
+  @JsonProperty("billingAgreementType")
+  private com.amazon.ask.model.interfaces.amazonpay.model.request.BillingAgreementType billingAgreementType = null;
+
+  @JsonProperty("subscriptionAmount")
+  private com.amazon.ask.model.interfaces.amazonpay.model.request.Price subscriptionAmount = null;
+
   public static Builder builder() {
     return new Builder();
   }
@@ -44,6 +50,8 @@ public final class BillingAgreementAttributes extends com.amazon.ask.model.inter
     this.platformId = builder.platformId;
     this.sellerNote = builder.sellerNote;
     this.sellerBillingAgreementAttributes = builder.sellerBillingAgreementAttributes;
+    this.billingAgreementType = builder.billingAgreementType;
+    this.subscriptionAmount = builder.subscriptionAmount;
     this.type = discriminatorValue;
     this.version = builder.version;
   }
@@ -75,6 +83,24 @@ public final class BillingAgreementAttributes extends com.amazon.ask.model.inter
     return sellerBillingAgreementAttributes;
   }
 
+  /**
+    * Get billingAgreementType
+  * @return billingAgreementType
+  **/
+  @JsonProperty("billingAgreementType")
+  public com.amazon.ask.model.interfaces.amazonpay.model.request.BillingAgreementType getBillingAgreementType() {
+    return billingAgreementType;
+  }
+
+  /**
+    * Get subscriptionAmount
+  * @return subscriptionAmount
+  **/
+  @JsonProperty("subscriptionAmount")
+  public com.amazon.ask.model.interfaces.amazonpay.model.request.Price getSubscriptionAmount() {
+    return subscriptionAmount;
+  }
+
   @Override
   public boolean equals(java.lang.Object o) {
     if (this == o) {
@@ -87,12 +113,14 @@ public final class BillingAgreementAttributes extends com.amazon.ask.model.inter
     return Objects.equals(this.platformId, interfacesAmazonpayModelRequestBillingAgreementAttributes.platformId) &&
         Objects.equals(this.sellerNote, interfacesAmazonpayModelRequestBillingAgreementAttributes.sellerNote) &&
         Objects.equals(this.sellerBillingAgreementAttributes, interfacesAmazonpayModelRequestBillingAgreementAttributes.sellerBillingAgreementAttributes) &&
+        Objects.equals(this.billingAgreementType, interfacesAmazonpayModelRequestBillingAgreementAttributes.billingAgreementType) &&
+        Objects.equals(this.subscriptionAmount, interfacesAmazonpayModelRequestBillingAgreementAttributes.subscriptionAmount) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(platformId, sellerNote, sellerBillingAgreementAttributes, super.hashCode());
+    return Objects.hash(platformId, sellerNote, sellerBillingAgreementAttributes, billingAgreementType, subscriptionAmount, super.hashCode());
   }
 
   @Override
@@ -103,6 +131,8 @@ public final class BillingAgreementAttributes extends com.amazon.ask.model.inter
     sb.append("    platformId: ").append(toIndentedString(platformId)).append("\n");
     sb.append("    sellerNote: ").append(toIndentedString(sellerNote)).append("\n");
     sb.append("    sellerBillingAgreementAttributes: ").append(toIndentedString(sellerBillingAgreementAttributes)).append("\n");
+    sb.append("    billingAgreementType: ").append(toIndentedString(billingAgreementType)).append("\n");
+    sb.append("    subscriptionAmount: ").append(toIndentedString(subscriptionAmount)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -122,6 +152,8 @@ public final class BillingAgreementAttributes extends com.amazon.ask.model.inter
     private String platformId;
     private String sellerNote;
     private com.amazon.ask.model.interfaces.amazonpay.model.request.SellerBillingAgreementAttributes sellerBillingAgreementAttributes;
+    private com.amazon.ask.model.interfaces.amazonpay.model.request.BillingAgreementType billingAgreementType;
+    private com.amazon.ask.model.interfaces.amazonpay.model.request.Price subscriptionAmount;
     private String version;
 
     private Builder() { }
@@ -143,6 +175,20 @@ public final class BillingAgreementAttributes extends com.amazon.ask.model.inter
     @JsonProperty("sellerBillingAgreementAttributes")
     public Builder withSellerBillingAgreementAttributes(com.amazon.ask.model.interfaces.amazonpay.model.request.SellerBillingAgreementAttributes sellerBillingAgreementAttributes) {
         this.sellerBillingAgreementAttributes = sellerBillingAgreementAttributes;
+        return this;
+    }
+
+
+    @JsonProperty("billingAgreementType")
+    public Builder withBillingAgreementType(com.amazon.ask.model.interfaces.amazonpay.model.request.BillingAgreementType billingAgreementType) {
+        this.billingAgreementType = billingAgreementType;
+        return this;
+    }
+
+
+    @JsonProperty("subscriptionAmount")
+    public Builder withSubscriptionAmount(com.amazon.ask.model.interfaces.amazonpay.model.request.Price subscriptionAmount) {
+        this.subscriptionAmount = subscriptionAmount;
         return this;
     }
 

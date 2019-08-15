@@ -32,11 +32,13 @@ public class SubTypesManifest {
 
     Map<String, Class> directiveSubTypes = new HashMap<>();
     directiveSubTypes.put("AudioPlayer.Stop", com.amazon.ask.model.interfaces.audioplayer.StopDirective.class);
+    directiveSubTypes.put("CustomInterfaceController.StopEventHandler", com.amazon.ask.model.interfaces.customInterfaceController.StopEventHandlerDirective.class);
     directiveSubTypes.put("Dialog.ConfirmSlot", com.amazon.ask.model.dialog.ConfirmSlotDirective.class);
     directiveSubTypes.put("AudioPlayer.Play", com.amazon.ask.model.interfaces.audioplayer.PlayDirective.class);
     directiveSubTypes.put("Alexa.Presentation.APL.ExecuteCommands", com.amazon.ask.model.interfaces.alexa.presentation.apl.ExecuteCommandsDirective.class);
     directiveSubTypes.put("Connections.SendRequest", com.amazon.ask.model.interfaces.connections.SendRequestDirective.class);
     directiveSubTypes.put("Dialog.UpdateDynamicEntities", com.amazon.ask.model.dialog.DynamicEntitiesDirective.class);
+    directiveSubTypes.put("CustomInterfaceController.StartEventHandler", com.amazon.ask.model.interfaces.customInterfaceController.StartEventHandlerDirective.class);
     directiveSubTypes.put("Display.RenderTemplate", com.amazon.ask.model.interfaces.display.RenderTemplateDirective.class);
     directiveSubTypes.put("GadgetController.SetLight", com.amazon.ask.model.interfaces.gadgetController.SetLightDirective.class);
     directiveSubTypes.put("Dialog.Delegate", com.amazon.ask.model.dialog.DelegateDirective.class);
@@ -44,6 +46,7 @@ public class SubTypesManifest {
     directiveSubTypes.put("Dialog.ConfirmIntent", com.amazon.ask.model.dialog.ConfirmIntentDirective.class);
     directiveSubTypes.put("Connections.StartConnection", com.amazon.ask.model.interfaces.connections.V1.StartConnectionDirective.class);
     directiveSubTypes.put("GameEngine.StartInputHandler", com.amazon.ask.model.interfaces.gameEngine.StartInputHandlerDirective.class);
+    directiveSubTypes.put("CustomInterfaceController.SendDirective", com.amazon.ask.model.interfaces.customInterfaceController.SendDirectiveDirective.class);
     directiveSubTypes.put("VideoApp.Launch", com.amazon.ask.model.interfaces.videoapp.LaunchDirective.class);
     directiveSubTypes.put("GameEngine.StopInputHandler", com.amazon.ask.model.interfaces.gameEngine.StopInputHandlerDirective.class);
     directiveSubTypes.put("Tasks.CompleteTask", com.amazon.ask.model.interfaces.tasks.CompleteTaskDirective.class);
@@ -70,6 +73,7 @@ public class SubTypesManifest {
     requestSubTypes.put("AudioPlayer.PlaybackFailed", com.amazon.ask.model.interfaces.audioplayer.PlaybackFailedRequest.class);
     requestSubTypes.put("CanFulfillIntentRequest", com.amazon.ask.model.canfulfill.CanFulfillIntentRequest.class);
     requestSubTypes.put("Reminders.ReminderStarted", com.amazon.ask.model.services.reminderManagement.ReminderStartedEventRequest.class);
+    requestSubTypes.put("CustomInterfaceController.Expired", com.amazon.ask.model.interfaces.customInterfaceController.ExpiredRequest.class);
     requestSubTypes.put("LaunchRequest", com.amazon.ask.model.LaunchRequest.class);
     requestSubTypes.put("Reminders.ReminderCreated", com.amazon.ask.model.services.reminderManagement.ReminderCreatedEventRequest.class);
     requestSubTypes.put("AudioPlayer.PlaybackStopped", com.amazon.ask.model.interfaces.audioplayer.PlaybackStoppedRequest.class);
@@ -79,6 +83,7 @@ public class SubTypesManifest {
     requestSubTypes.put("AlexaHouseholdListEvent.ListCreated", com.amazon.ask.model.services.listManagement.ListCreatedEventRequest.class);
     requestSubTypes.put("AudioPlayer.PlaybackStarted", com.amazon.ask.model.interfaces.audioplayer.PlaybackStartedRequest.class);
     requestSubTypes.put("AudioPlayer.PlaybackNearlyFinished", com.amazon.ask.model.interfaces.audioplayer.PlaybackNearlyFinishedRequest.class);
+    requestSubTypes.put("CustomInterfaceController.EventsReceived", com.amazon.ask.model.interfaces.customInterfaceController.EventsReceivedRequest.class);
     requestSubTypes.put("Reminders.ReminderStatusChanged", com.amazon.ask.model.services.reminderManagement.ReminderStatusChangedEventRequest.class);
     requestSubTypes.put("AlexaHouseholdListEvent.ItemsDeleted", com.amazon.ask.model.services.listManagement.ListItemsDeletedEventRequest.class);
     requestSubTypes.put("Reminders.ReminderDeleted", com.amazon.ask.model.services.reminderManagement.ReminderDeletedEventRequest.class);
