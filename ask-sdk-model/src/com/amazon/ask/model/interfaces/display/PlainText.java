@@ -23,85 +23,87 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = PlainText.Builder.class)
-public final class PlainText extends com.amazon.ask.model.interfaces.display.TextField {
-
-  @JsonProperty("text")
-  private String text = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private PlainText(Builder builder) {
-    String discriminatorValue = "PlainText";
-
-    this.type = discriminatorValue;
-    this.text = builder.text;
-  }
-
-  /**
-    * Get text
-  * @return text
-  **/
-  @JsonProperty("text")
-  public String getText() {
-    return text;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    PlainText interfacesDisplayPlainText = (PlainText) o;
-    return Objects.equals(this.text, interfacesDisplayPlainText.text) &&
-        super.equals(o);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(text, super.hashCode());
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class PlainText {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    text: ").append(toIndentedString(text)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private String text;
-
-    private Builder() { }
+public final class PlainText extends com.amazon.ask.model.interfaces.display.TextField  {
 
     @JsonProperty("text")
-    public Builder withText(String text) {
-        this.text = text;
-        return this;
+    private String text = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
+    private PlainText(Builder builder) {
+        String discriminatorValue = "PlainText";
 
-    public PlainText build() {
-      return new PlainText(this);
+        this.type = discriminatorValue;
+        if (builder.text != null) {
+            this.text = builder.text;
+        }
     }
-  }
+
+    /**
+     * Get text
+     * @return text
+    **/
+    @JsonProperty("text")
+    public String getText() {
+        return text;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        PlainText interfacesDisplayPlainText = (PlainText) o;
+        return Objects.equals(this.text, interfacesDisplayPlainText.text) &&
+            super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(text, super.hashCode());
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class PlainText {\n");
+        sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+        sb.append("    text: ").append(toIndentedString(text)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String text;
+
+        private Builder() {}
+
+        @JsonProperty("text")
+        public Builder withText(String text) {
+            this.text = text;
+            return this;
+        }
+
+
+        public PlainText build() {
+            return new PlainText(this);
+        }
+    }
 }
 

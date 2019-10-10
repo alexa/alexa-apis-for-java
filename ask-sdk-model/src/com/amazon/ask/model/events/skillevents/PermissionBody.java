@@ -26,88 +26,90 @@ import java.util.ArrayList;
  */
 
 @JsonDeserialize(builder = PermissionBody.Builder.class)
-public final class PermissionBody{
-
-  @JsonProperty("acceptedPermissions")
-  private List<com.amazon.ask.model.events.skillevents.Permission> acceptedPermissions = new ArrayList<com.amazon.ask.model.events.skillevents.Permission>();
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private PermissionBody(Builder builder) {
-    this.acceptedPermissions = builder.acceptedPermissions;
-  }
-
-  /**
-    * Get acceptedPermissions
-  * @return acceptedPermissions
-  **/
-  @JsonProperty("acceptedPermissions")
-  public List<com.amazon.ask.model.events.skillevents.Permission> getAcceptedPermissions() {
-    return acceptedPermissions;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    PermissionBody eventsSkilleventsPermissionBody = (PermissionBody) o;
-    return Objects.equals(this.acceptedPermissions, eventsSkilleventsPermissionBody.acceptedPermissions);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(acceptedPermissions);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class PermissionBody {\n");
-    
-    sb.append("    acceptedPermissions: ").append(toIndentedString(acceptedPermissions)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private List<com.amazon.ask.model.events.skillevents.Permission> acceptedPermissions;
-
-    private Builder() { }
+public final class PermissionBody {
 
     @JsonProperty("acceptedPermissions")
-    public Builder withAcceptedPermissions(List<com.amazon.ask.model.events.skillevents.Permission> acceptedPermissions) {
-        this.acceptedPermissions = acceptedPermissions;
-        return this;
+    private List<com.amazon.ask.model.events.skillevents.Permission> acceptedPermissions = new ArrayList<com.amazon.ask.model.events.skillevents.Permission>();
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-    public Builder addAcceptedPermissionsItem(com.amazon.ask.model.events.skillevents.Permission acceptedPermissionsItem) {
-      if (this.acceptedPermissions == null) {
-        this.acceptedPermissions = new ArrayList<com.amazon.ask.model.events.skillevents.Permission>();
-      }
-      this.acceptedPermissions.add(acceptedPermissionsItem);
-      return this;
+    private PermissionBody(Builder builder) {
+        if (builder.acceptedPermissions != null) {
+            this.acceptedPermissions = builder.acceptedPermissions;
+        }
     }
 
-    public PermissionBody build() {
-      return new PermissionBody(this);
+    /**
+     * Get acceptedPermissions
+     * @return acceptedPermissions
+    **/
+    @JsonProperty("acceptedPermissions")
+    public List<com.amazon.ask.model.events.skillevents.Permission> getAcceptedPermissions() {
+        return acceptedPermissions;
     }
-  }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        PermissionBody eventsSkilleventsPermissionBody = (PermissionBody) o;
+        return Objects.equals(this.acceptedPermissions, eventsSkilleventsPermissionBody.acceptedPermissions);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(acceptedPermissions);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class PermissionBody {\n");
+        
+        sb.append("    acceptedPermissions: ").append(toIndentedString(acceptedPermissions)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private List<com.amazon.ask.model.events.skillevents.Permission> acceptedPermissions;
+
+        private Builder() {}
+
+        @JsonProperty("acceptedPermissions")
+        public Builder withAcceptedPermissions(List<com.amazon.ask.model.events.skillevents.Permission> acceptedPermissions) {
+            this.acceptedPermissions = acceptedPermissions;
+            return this;
+        }
+
+        public Builder addAcceptedPermissionsItem(com.amazon.ask.model.events.skillevents.Permission acceptedPermissionsItem) {
+            if (this.acceptedPermissions == null) {
+                this.acceptedPermissions = new ArrayList<com.amazon.ask.model.events.skillevents.Permission>();
+            }
+            this.acceptedPermissions.add(acceptedPermissionsItem);
+            return this;
+        }
+
+        public PermissionBody build() {
+            return new PermissionBody(this);
+        }
+    }
 }
 

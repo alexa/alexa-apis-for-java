@@ -26,111 +26,115 @@ import java.util.ArrayList;
  */
 
 @JsonDeserialize(builder = Image.Builder.class)
-public final class Image{
-
-  @JsonProperty("contentDescription")
-  private String contentDescription = null;
-
-  @JsonProperty("sources")
-  private List<com.amazon.ask.model.interfaces.display.ImageInstance> sources = new ArrayList<com.amazon.ask.model.interfaces.display.ImageInstance>();
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private Image(Builder builder) {
-    this.contentDescription = builder.contentDescription;
-    this.sources = builder.sources;
-  }
-
-  /**
-    * Get contentDescription
-  * @return contentDescription
-  **/
-  @JsonProperty("contentDescription")
-  public String getContentDescription() {
-    return contentDescription;
-  }
-
-  /**
-    * Get sources
-  * @return sources
-  **/
-  @JsonProperty("sources")
-  public List<com.amazon.ask.model.interfaces.display.ImageInstance> getSources() {
-    return sources;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    Image interfacesDisplayImage = (Image) o;
-    return Objects.equals(this.contentDescription, interfacesDisplayImage.contentDescription) &&
-        Objects.equals(this.sources, interfacesDisplayImage.sources);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(contentDescription, sources);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class Image {\n");
-    
-    sb.append("    contentDescription: ").append(toIndentedString(contentDescription)).append("\n");
-    sb.append("    sources: ").append(toIndentedString(sources)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private String contentDescription;
-    private List<com.amazon.ask.model.interfaces.display.ImageInstance> sources;
-
-    private Builder() { }
+public final class Image {
 
     @JsonProperty("contentDescription")
-    public Builder withContentDescription(String contentDescription) {
-        this.contentDescription = contentDescription;
-        return this;
-    }
-
+    private String contentDescription = null;
 
     @JsonProperty("sources")
-    public Builder withSources(List<com.amazon.ask.model.interfaces.display.ImageInstance> sources) {
-        this.sources = sources;
-        return this;
+    private List<com.amazon.ask.model.interfaces.display.ImageInstance> sources = new ArrayList<com.amazon.ask.model.interfaces.display.ImageInstance>();
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-    public Builder addSourcesItem(com.amazon.ask.model.interfaces.display.ImageInstance sourcesItem) {
-      if (this.sources == null) {
-        this.sources = new ArrayList<com.amazon.ask.model.interfaces.display.ImageInstance>();
-      }
-      this.sources.add(sourcesItem);
-      return this;
+    private Image(Builder builder) {
+        if (builder.contentDescription != null) {
+            this.contentDescription = builder.contentDescription;
+        }
+        if (builder.sources != null) {
+            this.sources = builder.sources;
+        }
     }
 
-    public Image build() {
-      return new Image(this);
+    /**
+     * Get contentDescription
+     * @return contentDescription
+    **/
+    @JsonProperty("contentDescription")
+    public String getContentDescription() {
+        return contentDescription;
     }
-  }
+
+    /**
+     * Get sources
+     * @return sources
+    **/
+    @JsonProperty("sources")
+    public List<com.amazon.ask.model.interfaces.display.ImageInstance> getSources() {
+        return sources;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Image interfacesDisplayImage = (Image) o;
+        return Objects.equals(this.contentDescription, interfacesDisplayImage.contentDescription) &&
+            Objects.equals(this.sources, interfacesDisplayImage.sources);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(contentDescription, sources);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class Image {\n");
+        
+        sb.append("    contentDescription: ").append(toIndentedString(contentDescription)).append("\n");
+        sb.append("    sources: ").append(toIndentedString(sources)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String contentDescription;
+        private List<com.amazon.ask.model.interfaces.display.ImageInstance> sources;
+
+        private Builder() {}
+
+        @JsonProperty("contentDescription")
+        public Builder withContentDescription(String contentDescription) {
+            this.contentDescription = contentDescription;
+            return this;
+        }
+
+
+        @JsonProperty("sources")
+        public Builder withSources(List<com.amazon.ask.model.interfaces.display.ImageInstance> sources) {
+            this.sources = sources;
+            return this;
+        }
+
+        public Builder addSourcesItem(com.amazon.ask.model.interfaces.display.ImageInstance sourcesItem) {
+            if (this.sources == null) {
+                this.sources = new ArrayList<com.amazon.ask.model.interfaces.display.ImageInstance>();
+            }
+            this.sources.add(sourcesItem);
+            return this;
+        }
+
+        public Image build() {
+            return new Image(this);
+        }
+    }
 }
 

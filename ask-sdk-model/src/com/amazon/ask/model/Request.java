@@ -69,101 +69,101 @@ import com.fasterxml.jackson.annotation.JsonProperty;
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.playbackcontroller.PlayCommandIssuedRequest.class, name = "PlaybackController.PlayCommandIssued"),
 })
 
-public abstract class Request{
+public abstract class Request {
 
-  protected String type = null;
+    protected String type = null;
 
-  @JsonProperty("requestId")
-  protected String requestId = null;
+    @JsonProperty("requestId")
+    protected String requestId = null;
 
-  @JsonProperty("timestamp")
-  protected OffsetDateTime timestamp = null;
+    @JsonProperty("timestamp")
+    protected OffsetDateTime timestamp = null;
 
-  @JsonProperty("locale")
-  protected String locale = null;
+    @JsonProperty("locale")
+    protected String locale = null;
 
-  protected Request() {
-  }
-
-  /**
-    * Describes the type of the request.
-  * @return type
-  **/
-  @JsonIgnore
-  public String getType() {
-    return type;
-  }
-
-  /**
-    * Represents the unique identifier for the specific request.
-  * @return requestId
-  **/
-  @JsonProperty("requestId")
-  public String getRequestId() {
-    return requestId;
-  }
-
-  /**
-    * Provides the date and time when Alexa sent the request as an ISO 8601 formatted string. Used to verify the request when hosting your skill as a web service.
-  * @return timestamp
-  **/
-  @JsonProperty("timestamp")
-  public OffsetDateTime getTimestamp() {
-    return timestamp;
-  }
-
-  /**
-    * A string indicating the user’s locale. For example: en-US. This value is only provided with certain request types.
-  * @return locale
-  **/
-  @JsonProperty("locale")
-  public String getLocale() {
-    return locale;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
+    protected Request() {
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    /**
+     * Describes the type of the request.
+     * @return type
+    **/
+    @JsonIgnore
+    public String getType() {
+        return type;
     }
-    Request request = (Request) o;
-    return Objects.equals(this.type, request.type) &&
-        Objects.equals(this.requestId, request.requestId) &&
-        Objects.equals(this.timestamp, request.timestamp) &&
-        Objects.equals(this.locale, request.locale);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(type, requestId, timestamp, locale);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class Request {\n");
-    
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
-    sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
-    sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
+    /**
+     * Represents the unique identifier for the specific request.
+     * @return requestId
+    **/
+    @JsonProperty("requestId")
+    public String getRequestId() {
+        return requestId;
     }
-    return o.toString().replace("\n", "\n    ");
-  }
 
+    /**
+     * Provides the date and time when Alexa sent the request as an ISO 8601 formatted string. Used to verify the request when hosting your skill as a web service.
+     * @return timestamp
+    **/
+    @JsonProperty("timestamp")
+    public OffsetDateTime getTimestamp() {
+        return timestamp;
+    }
+
+    /**
+     * A string indicating the user’s locale. For example: en-US. This value is only provided with certain request types.
+     * @return locale
+    **/
+    @JsonProperty("locale")
+    public String getLocale() {
+        return locale;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Request request = (Request) o;
+        return Objects.equals(this.type, request.type) &&
+            Objects.equals(this.requestId, request.requestId) &&
+            Objects.equals(this.timestamp, request.timestamp) &&
+            Objects.equals(this.locale, request.locale);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(type, requestId, timestamp, locale);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class Request {\n");
+        
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+        sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
+        sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
 }
 

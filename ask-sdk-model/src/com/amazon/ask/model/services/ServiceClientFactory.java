@@ -17,6 +17,7 @@ import com.amazon.ask.model.services.ApiConfiguration;
 
 import com.amazon.ask.model.services.deviceAddress.DeviceAddressServiceClient;
 import com.amazon.ask.model.services.directive.DirectiveServiceClient;
+import com.amazon.ask.model.services.endpointEnumeration.EndpointEnumerationServiceClient;
 import com.amazon.ask.model.services.listManagement.ListManagementServiceClient;
 import com.amazon.ask.model.services.monetization.MonetizationServiceClient;
 import com.amazon.ask.model.services.proactiveEvents.ProactiveEventsServiceClient;
@@ -51,6 +52,13 @@ public class ServiceClientFactory {
             return new DirectiveServiceClient(this.defaultApiConfiguration);
         } catch(Exception ex) {
             throw new IllegalStateException("Error while initializing DirectiveServiceClient: " + ex.getMessage(), ex);
+        }
+    }
+    public EndpointEnumerationServiceClient getEndpointEnumerationService() {
+        try {
+            return new EndpointEnumerationServiceClient(this.defaultApiConfiguration);
+        } catch(Exception ex) {
+            throw new IllegalStateException("Error while initializing EndpointEnumerationServiceClient: " + ex.getMessage(), ex);
         }
     }
     public ListManagementServiceClient getListManagementService() {

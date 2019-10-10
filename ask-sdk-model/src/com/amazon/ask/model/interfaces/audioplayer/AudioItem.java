@@ -23,104 +23,108 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = AudioItem.Builder.class)
-public final class AudioItem{
-
-  @JsonProperty("stream")
-  private com.amazon.ask.model.interfaces.audioplayer.Stream stream = null;
-
-  @JsonProperty("metadata")
-  private com.amazon.ask.model.interfaces.audioplayer.AudioItemMetadata metadata = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private AudioItem(Builder builder) {
-    this.stream = builder.stream;
-    this.metadata = builder.metadata;
-  }
-
-  /**
-    * Get stream
-  * @return stream
-  **/
-  @JsonProperty("stream")
-  public com.amazon.ask.model.interfaces.audioplayer.Stream getStream() {
-    return stream;
-  }
-
-  /**
-    * Get metadata
-  * @return metadata
-  **/
-  @JsonProperty("metadata")
-  public com.amazon.ask.model.interfaces.audioplayer.AudioItemMetadata getMetadata() {
-    return metadata;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    AudioItem interfacesAudioplayerAudioItem = (AudioItem) o;
-    return Objects.equals(this.stream, interfacesAudioplayerAudioItem.stream) &&
-        Objects.equals(this.metadata, interfacesAudioplayerAudioItem.metadata);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(stream, metadata);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class AudioItem {\n");
-    
-    sb.append("    stream: ").append(toIndentedString(stream)).append("\n");
-    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private com.amazon.ask.model.interfaces.audioplayer.Stream stream;
-    private com.amazon.ask.model.interfaces.audioplayer.AudioItemMetadata metadata;
-
-    private Builder() { }
+public final class AudioItem {
 
     @JsonProperty("stream")
-    public Builder withStream(com.amazon.ask.model.interfaces.audioplayer.Stream stream) {
-        this.stream = stream;
-        return this;
-    }
-
+    private com.amazon.ask.model.interfaces.audioplayer.Stream stream = null;
 
     @JsonProperty("metadata")
-    public Builder withMetadata(com.amazon.ask.model.interfaces.audioplayer.AudioItemMetadata metadata) {
-        this.metadata = metadata;
-        return this;
+    private com.amazon.ask.model.interfaces.audioplayer.AudioItemMetadata metadata = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-
-    public AudioItem build() {
-      return new AudioItem(this);
+    private AudioItem(Builder builder) {
+        if (builder.stream != null) {
+            this.stream = builder.stream;
+        }
+        if (builder.metadata != null) {
+            this.metadata = builder.metadata;
+        }
     }
-  }
+
+    /**
+     * Get stream
+     * @return stream
+    **/
+    @JsonProperty("stream")
+    public com.amazon.ask.model.interfaces.audioplayer.Stream getStream() {
+        return stream;
+    }
+
+    /**
+     * Get metadata
+     * @return metadata
+    **/
+    @JsonProperty("metadata")
+    public com.amazon.ask.model.interfaces.audioplayer.AudioItemMetadata getMetadata() {
+        return metadata;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        AudioItem interfacesAudioplayerAudioItem = (AudioItem) o;
+        return Objects.equals(this.stream, interfacesAudioplayerAudioItem.stream) &&
+            Objects.equals(this.metadata, interfacesAudioplayerAudioItem.metadata);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(stream, metadata);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class AudioItem {\n");
+        
+        sb.append("    stream: ").append(toIndentedString(stream)).append("\n");
+        sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private com.amazon.ask.model.interfaces.audioplayer.Stream stream;
+        private com.amazon.ask.model.interfaces.audioplayer.AudioItemMetadata metadata;
+
+        private Builder() {}
+
+        @JsonProperty("stream")
+        public Builder withStream(com.amazon.ask.model.interfaces.audioplayer.Stream stream) {
+            this.stream = stream;
+            return this;
+        }
+
+
+        @JsonProperty("metadata")
+        public Builder withMetadata(com.amazon.ask.model.interfaces.audioplayer.AudioItemMetadata metadata) {
+            this.metadata = metadata;
+            return this;
+        }
+
+
+        public AudioItem build() {
+            return new AudioItem(this);
+        }
+    }
 }
 

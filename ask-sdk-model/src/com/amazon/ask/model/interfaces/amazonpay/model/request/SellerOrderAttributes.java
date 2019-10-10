@@ -23,163 +23,173 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = SellerOrderAttributes.Builder.class)
-public final class SellerOrderAttributes extends com.amazon.ask.model.interfaces.amazonpay.model.request.BaseAmazonPayEntity {
-
-  @JsonProperty("sellerOrderId")
-  private String sellerOrderId = null;
-
-  @JsonProperty("storeName")
-  private String storeName = null;
-
-  @JsonProperty("customInformation")
-  private String customInformation = null;
-
-  @JsonProperty("sellerNote")
-  private String sellerNote = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private SellerOrderAttributes(Builder builder) {
-    String discriminatorValue = "SellerOrderAttributes";
-
-    this.sellerOrderId = builder.sellerOrderId;
-    this.storeName = builder.storeName;
-    this.customInformation = builder.customInformation;
-    this.sellerNote = builder.sellerNote;
-    this.type = discriminatorValue;
-    this.version = builder.version;
-  }
-
-  /**
-    * The merchant-specified identifier of this order. This is shown to the buyer in their emails and transaction history on the Amazon Pay website.
-  * @return sellerOrderId
-  **/
-  @JsonProperty("sellerOrderId")
-  public String getSellerOrderId() {
-    return sellerOrderId;
-  }
-
-  /**
-    * The identifier of the store from which the order was placed. This overrides the default value in Seller Central under Settings &gt; Account Settings. It is displayed to the buyer in their emails and transaction history on the Amazon Payments website.
-  * @return storeName
-  **/
-  @JsonProperty("storeName")
-  public String getStoreName() {
-    return storeName;
-  }
-
-  /**
-    * Any additional information that you want to include with this order reference.
-  * @return customInformation
-  **/
-  @JsonProperty("customInformation")
-  public String getCustomInformation() {
-    return customInformation;
-  }
-
-  /**
-    * This represents a description of the order that is displayed in emails to the buyer.
-  * @return sellerNote
-  **/
-  @JsonProperty("sellerNote")
-  public String getSellerNote() {
-    return sellerNote;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    SellerOrderAttributes interfacesAmazonpayModelRequestSellerOrderAttributes = (SellerOrderAttributes) o;
-    return Objects.equals(this.sellerOrderId, interfacesAmazonpayModelRequestSellerOrderAttributes.sellerOrderId) &&
-        Objects.equals(this.storeName, interfacesAmazonpayModelRequestSellerOrderAttributes.storeName) &&
-        Objects.equals(this.customInformation, interfacesAmazonpayModelRequestSellerOrderAttributes.customInformation) &&
-        Objects.equals(this.sellerNote, interfacesAmazonpayModelRequestSellerOrderAttributes.sellerNote) &&
-        super.equals(o);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(sellerOrderId, storeName, customInformation, sellerNote, super.hashCode());
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class SellerOrderAttributes {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    sellerOrderId: ").append(toIndentedString(sellerOrderId)).append("\n");
-    sb.append("    storeName: ").append(toIndentedString(storeName)).append("\n");
-    sb.append("    customInformation: ").append(toIndentedString(customInformation)).append("\n");
-    sb.append("    sellerNote: ").append(toIndentedString(sellerNote)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private String sellerOrderId;
-    private String storeName;
-    private String customInformation;
-    private String sellerNote;
-    private String version;
-
-    private Builder() { }
+public final class SellerOrderAttributes extends com.amazon.ask.model.interfaces.amazonpay.model.request.BaseAmazonPayEntity  {
 
     @JsonProperty("sellerOrderId")
-    public Builder withSellerOrderId(String sellerOrderId) {
-        this.sellerOrderId = sellerOrderId;
-        return this;
-    }
-
+    private String sellerOrderId = null;
 
     @JsonProperty("storeName")
-    public Builder withStoreName(String storeName) {
-        this.storeName = storeName;
-        return this;
-    }
-
+    private String storeName = null;
 
     @JsonProperty("customInformation")
-    public Builder withCustomInformation(String customInformation) {
-        this.customInformation = customInformation;
-        return this;
-    }
-
+    private String customInformation = null;
 
     @JsonProperty("sellerNote")
-    public Builder withSellerNote(String sellerNote) {
-        this.sellerNote = sellerNote;
-        return this;
+    private String sellerNote = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
+    private SellerOrderAttributes(Builder builder) {
+        String discriminatorValue = "SellerOrderAttributes";
 
-    @JsonProperty("@version")
-    public Builder withVersion(String version) {
-        this.version = version;
-        return this;
+        if (builder.sellerOrderId != null) {
+            this.sellerOrderId = builder.sellerOrderId;
+        }
+        if (builder.storeName != null) {
+            this.storeName = builder.storeName;
+        }
+        if (builder.customInformation != null) {
+            this.customInformation = builder.customInformation;
+        }
+        if (builder.sellerNote != null) {
+            this.sellerNote = builder.sellerNote;
+        }
+        this.type = discriminatorValue;
+        if (builder.version != null) {
+            this.version = builder.version;
+        }
     }
 
-
-    public SellerOrderAttributes build() {
-      return new SellerOrderAttributes(this);
+    /**
+     * The merchant-specified identifier of this order. This is shown to the buyer in their emails and transaction history on the Amazon Pay website.
+     * @return sellerOrderId
+    **/
+    @JsonProperty("sellerOrderId")
+    public String getSellerOrderId() {
+        return sellerOrderId;
     }
-  }
+
+    /**
+     * The identifier of the store from which the order was placed. This overrides the default value in Seller Central under Settings &gt; Account Settings. It is displayed to the buyer in their emails and transaction history on the Amazon Payments website.
+     * @return storeName
+    **/
+    @JsonProperty("storeName")
+    public String getStoreName() {
+        return storeName;
+    }
+
+    /**
+     * Any additional information that you want to include with this order reference.
+     * @return customInformation
+    **/
+    @JsonProperty("customInformation")
+    public String getCustomInformation() {
+        return customInformation;
+    }
+
+    /**
+     * This represents a description of the order that is displayed in emails to the buyer.
+     * @return sellerNote
+    **/
+    @JsonProperty("sellerNote")
+    public String getSellerNote() {
+        return sellerNote;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        SellerOrderAttributes interfacesAmazonpayModelRequestSellerOrderAttributes = (SellerOrderAttributes) o;
+        return Objects.equals(this.sellerOrderId, interfacesAmazonpayModelRequestSellerOrderAttributes.sellerOrderId) &&
+            Objects.equals(this.storeName, interfacesAmazonpayModelRequestSellerOrderAttributes.storeName) &&
+            Objects.equals(this.customInformation, interfacesAmazonpayModelRequestSellerOrderAttributes.customInformation) &&
+            Objects.equals(this.sellerNote, interfacesAmazonpayModelRequestSellerOrderAttributes.sellerNote) &&
+            super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(sellerOrderId, storeName, customInformation, sellerNote, super.hashCode());
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class SellerOrderAttributes {\n");
+        sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+        sb.append("    sellerOrderId: ").append(toIndentedString(sellerOrderId)).append("\n");
+        sb.append("    storeName: ").append(toIndentedString(storeName)).append("\n");
+        sb.append("    customInformation: ").append(toIndentedString(customInformation)).append("\n");
+        sb.append("    sellerNote: ").append(toIndentedString(sellerNote)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String sellerOrderId;
+        private String storeName;
+        private String customInformation;
+        private String sellerNote;
+        private String version;
+
+        private Builder() {}
+
+        @JsonProperty("sellerOrderId")
+        public Builder withSellerOrderId(String sellerOrderId) {
+            this.sellerOrderId = sellerOrderId;
+            return this;
+        }
+
+
+        @JsonProperty("storeName")
+        public Builder withStoreName(String storeName) {
+            this.storeName = storeName;
+            return this;
+        }
+
+
+        @JsonProperty("customInformation")
+        public Builder withCustomInformation(String customInformation) {
+            this.customInformation = customInformation;
+            return this;
+        }
+
+
+        @JsonProperty("sellerNote")
+        public Builder withSellerNote(String sellerNote) {
+            this.sellerNote = sellerNote;
+            return this;
+        }
+
+
+        @JsonProperty("@version")
+        public Builder withVersion(String version) {
+            this.version = version;
+            return this;
+        }
+
+
+        public SellerOrderAttributes build() {
+            return new SellerOrderAttributes(this);
+        }
+    }
 }
 

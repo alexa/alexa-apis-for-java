@@ -23,94 +23,98 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = PlainTextOutputSpeech.Builder.class)
-public final class PlainTextOutputSpeech extends com.amazon.ask.model.ui.OutputSpeech {
-
-  @JsonProperty("text")
-  private String text = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private PlainTextOutputSpeech(Builder builder) {
-    String discriminatorValue = "PlainText";
-
-    this.type = discriminatorValue;
-    this.playBehavior = builder.playBehavior;
-    this.text = builder.text;
-  }
-
-  /**
-    * Get text
-  * @return text
-  **/
-  @JsonProperty("text")
-  public String getText() {
-    return text;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    PlainTextOutputSpeech uiPlainTextOutputSpeech = (PlainTextOutputSpeech) o;
-    return Objects.equals(this.text, uiPlainTextOutputSpeech.text) &&
-        super.equals(o);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(text, super.hashCode());
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class PlainTextOutputSpeech {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    text: ").append(toIndentedString(text)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private com.amazon.ask.model.ui.PlayBehavior playBehavior;
-    private String text;
-
-    private Builder() { }
-
-    @JsonProperty("playBehavior")
-    public Builder withPlayBehavior(com.amazon.ask.model.ui.PlayBehavior playBehavior) {
-        this.playBehavior = playBehavior;
-        return this;
-    }
-
+public final class PlainTextOutputSpeech extends com.amazon.ask.model.ui.OutputSpeech  {
 
     @JsonProperty("text")
-    public Builder withText(String text) {
-        this.text = text;
-        return this;
+    private String text = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
+    private PlainTextOutputSpeech(Builder builder) {
+        String discriminatorValue = "PlainText";
 
-    public PlainTextOutputSpeech build() {
-      return new PlainTextOutputSpeech(this);
+        this.type = discriminatorValue;
+        if (builder.playBehavior != null) {
+            this.playBehavior = builder.playBehavior;
+        }
+        if (builder.text != null) {
+            this.text = builder.text;
+        }
     }
-  }
+
+    /**
+     * Get text
+     * @return text
+    **/
+    @JsonProperty("text")
+    public String getText() {
+        return text;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        PlainTextOutputSpeech uiPlainTextOutputSpeech = (PlainTextOutputSpeech) o;
+        return Objects.equals(this.text, uiPlainTextOutputSpeech.text) &&
+            super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(text, super.hashCode());
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class PlainTextOutputSpeech {\n");
+        sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+        sb.append("    text: ").append(toIndentedString(text)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private com.amazon.ask.model.ui.PlayBehavior playBehavior;
+        private String text;
+
+        private Builder() {}
+
+        @JsonProperty("playBehavior")
+        public Builder withPlayBehavior(com.amazon.ask.model.ui.PlayBehavior playBehavior) {
+            this.playBehavior = playBehavior;
+            return this;
+        }
+
+
+        @JsonProperty("text")
+        public Builder withText(String text) {
+            this.text = text;
+            return this;
+        }
+
+
+        public PlainTextOutputSpeech build() {
+            return new PlainTextOutputSpeech(this);
+        }
+    }
 }
 

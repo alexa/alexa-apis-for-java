@@ -26,166 +26,174 @@ import java.util.ArrayList;
  */
 
 @JsonDeserialize(builder = Pattern.Builder.class)
-public final class Pattern{
-
-  @JsonProperty("gadgetIds")
-  private List<String> gadgetIds = new ArrayList<String>();
-
-  @JsonProperty("colors")
-  private List<String> colors = new ArrayList<String>();
-
-  @JsonProperty("action")
-  private com.amazon.ask.model.services.gameEngine.InputEventActionType action = null;
-
-  @JsonProperty("repeat")
-  private Integer repeat = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private Pattern(Builder builder) {
-    this.gadgetIds = builder.gadgetIds;
-    this.colors = builder.colors;
-    this.action = builder.action;
-    this.repeat = builder.repeat;
-  }
-
-  /**
-    * A whitelist of gadgetIds that are eligible for this match.
-  * @return gadgetIds
-  **/
-  @JsonProperty("gadgetIds")
-  public List<String> getGadgetIds() {
-    return gadgetIds;
-  }
-
-  /**
-    * A whitelist of colors that are eligible for this match.
-  * @return colors
-  **/
-  @JsonProperty("colors")
-  public List<String> getColors() {
-    return colors;
-  }
-
-  /**
-    * Get action
-  * @return action
-  **/
-  @JsonProperty("action")
-  public com.amazon.ask.model.services.gameEngine.InputEventActionType getAction() {
-    return action;
-  }
-
-  /**
-    * The number of times that the specified action must occur to be considered complete.
-    * minimum: 1
-    * maximum: 99999
-  * @return repeat
-  **/
-  @JsonProperty("repeat")
-  public Integer getRepeat() {
-    return repeat;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    Pattern servicesGameEnginePattern = (Pattern) o;
-    return Objects.equals(this.gadgetIds, servicesGameEnginePattern.gadgetIds) &&
-        Objects.equals(this.colors, servicesGameEnginePattern.colors) &&
-        Objects.equals(this.action, servicesGameEnginePattern.action) &&
-        Objects.equals(this.repeat, servicesGameEnginePattern.repeat);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(gadgetIds, colors, action, repeat);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class Pattern {\n");
-    
-    sb.append("    gadgetIds: ").append(toIndentedString(gadgetIds)).append("\n");
-    sb.append("    colors: ").append(toIndentedString(colors)).append("\n");
-    sb.append("    action: ").append(toIndentedString(action)).append("\n");
-    sb.append("    repeat: ").append(toIndentedString(repeat)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private List<String> gadgetIds;
-    private List<String> colors;
-    private com.amazon.ask.model.services.gameEngine.InputEventActionType action;
-    private Integer repeat;
-
-    private Builder() { }
+public final class Pattern {
 
     @JsonProperty("gadgetIds")
-    public Builder withGadgetIds(List<String> gadgetIds) {
-        this.gadgetIds = gadgetIds;
-        return this;
-    }
-
-    public Builder addGadgetIdsItem(String gadgetIdsItem) {
-      if (this.gadgetIds == null) {
-        this.gadgetIds = new ArrayList<String>();
-      }
-      this.gadgetIds.add(gadgetIdsItem);
-      return this;
-    }
+    private List<String> gadgetIds = new ArrayList<String>();
 
     @JsonProperty("colors")
-    public Builder withColors(List<String> colors) {
-        this.colors = colors;
-        return this;
-    }
-
-    public Builder addColorsItem(String colorsItem) {
-      if (this.colors == null) {
-        this.colors = new ArrayList<String>();
-      }
-      this.colors.add(colorsItem);
-      return this;
-    }
+    private List<String> colors = new ArrayList<String>();
 
     @JsonProperty("action")
-    public Builder withAction(com.amazon.ask.model.services.gameEngine.InputEventActionType action) {
-        this.action = action;
-        return this;
-    }
-
+    private com.amazon.ask.model.services.gameEngine.InputEventActionType action = null;
 
     @JsonProperty("repeat")
-    public Builder withRepeat(Integer repeat) {
-        this.repeat = repeat;
-        return this;
+    private Integer repeat = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-
-    public Pattern build() {
-      return new Pattern(this);
+    private Pattern(Builder builder) {
+        if (builder.gadgetIds != null) {
+            this.gadgetIds = builder.gadgetIds;
+        }
+        if (builder.colors != null) {
+            this.colors = builder.colors;
+        }
+        if (builder.action != null) {
+            this.action = builder.action;
+        }
+        if (builder.repeat != null) {
+            this.repeat = builder.repeat;
+        }
     }
-  }
+
+    /**
+     * A whitelist of gadgetIds that are eligible for this match.
+     * @return gadgetIds
+    **/
+    @JsonProperty("gadgetIds")
+    public List<String> getGadgetIds() {
+        return gadgetIds;
+    }
+
+    /**
+     * A whitelist of colors that are eligible for this match.
+     * @return colors
+    **/
+    @JsonProperty("colors")
+    public List<String> getColors() {
+        return colors;
+    }
+
+    /**
+     * Get action
+     * @return action
+    **/
+    @JsonProperty("action")
+    public com.amazon.ask.model.services.gameEngine.InputEventActionType getAction() {
+        return action;
+    }
+
+    /**
+     * The number of times that the specified action must occur to be considered complete.
+     * minimum: 1
+     * maximum: 99999
+     * @return repeat
+    **/
+    @JsonProperty("repeat")
+    public Integer getRepeat() {
+        return repeat;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Pattern servicesGameEnginePattern = (Pattern) o;
+        return Objects.equals(this.gadgetIds, servicesGameEnginePattern.gadgetIds) &&
+            Objects.equals(this.colors, servicesGameEnginePattern.colors) &&
+            Objects.equals(this.action, servicesGameEnginePattern.action) &&
+            Objects.equals(this.repeat, servicesGameEnginePattern.repeat);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(gadgetIds, colors, action, repeat);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class Pattern {\n");
+        
+        sb.append("    gadgetIds: ").append(toIndentedString(gadgetIds)).append("\n");
+        sb.append("    colors: ").append(toIndentedString(colors)).append("\n");
+        sb.append("    action: ").append(toIndentedString(action)).append("\n");
+        sb.append("    repeat: ").append(toIndentedString(repeat)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private List<String> gadgetIds;
+        private List<String> colors;
+        private com.amazon.ask.model.services.gameEngine.InputEventActionType action;
+        private Integer repeat;
+
+        private Builder() {}
+
+        @JsonProperty("gadgetIds")
+        public Builder withGadgetIds(List<String> gadgetIds) {
+            this.gadgetIds = gadgetIds;
+            return this;
+        }
+
+        public Builder addGadgetIdsItem(String gadgetIdsItem) {
+            if (this.gadgetIds == null) {
+                this.gadgetIds = new ArrayList<String>();
+            }
+            this.gadgetIds.add(gadgetIdsItem);
+            return this;
+        }
+
+        @JsonProperty("colors")
+        public Builder withColors(List<String> colors) {
+            this.colors = colors;
+            return this;
+        }
+
+        public Builder addColorsItem(String colorsItem) {
+            if (this.colors == null) {
+                this.colors = new ArrayList<String>();
+            }
+            this.colors.add(colorsItem);
+            return this;
+        }
+
+        @JsonProperty("action")
+        public Builder withAction(com.amazon.ask.model.services.gameEngine.InputEventActionType action) {
+            this.action = action;
+            return this;
+        }
+
+
+        @JsonProperty("repeat")
+        public Builder withRepeat(Integer repeat) {
+            this.repeat = repeat;
+            return this;
+        }
+
+
+        public Pattern build() {
+            return new Pattern(this);
+        }
+    }
 }
 

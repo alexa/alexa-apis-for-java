@@ -23,81 +23,83 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = Status.Builder.class)
-public final class Status{
-
-  @JsonProperty("code")
-  private com.amazon.ask.model.slu.entityresolution.StatusCode code = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private Status(Builder builder) {
-    this.code = builder.code;
-  }
-
-  /**
-    * Indication of the results of attempting to resolve the user utterance against the defined slot types.
-  * @return code
-  **/
-  @JsonProperty("code")
-  public com.amazon.ask.model.slu.entityresolution.StatusCode getCode() {
-    return code;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    Status sluEntityresolutionStatus = (Status) o;
-    return Objects.equals(this.code, sluEntityresolutionStatus.code);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(code);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class Status {\n");
-    
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private com.amazon.ask.model.slu.entityresolution.StatusCode code;
-
-    private Builder() { }
+public final class Status {
 
     @JsonProperty("code")
-    public Builder withCode(com.amazon.ask.model.slu.entityresolution.StatusCode code) {
-        this.code = code;
-        return this;
+    private com.amazon.ask.model.slu.entityresolution.StatusCode code = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-
-    public Status build() {
-      return new Status(this);
+    private Status(Builder builder) {
+        if (builder.code != null) {
+            this.code = builder.code;
+        }
     }
-  }
+
+    /**
+     * Indication of the results of attempting to resolve the user utterance against the defined slot types.
+     * @return code
+    **/
+    @JsonProperty("code")
+    public com.amazon.ask.model.slu.entityresolution.StatusCode getCode() {
+        return code;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Status sluEntityresolutionStatus = (Status) o;
+        return Objects.equals(this.code, sluEntityresolutionStatus.code);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(code);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class Status {\n");
+        
+        sb.append("    code: ").append(toIndentedString(code)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private com.amazon.ask.model.slu.entityresolution.StatusCode code;
+
+        private Builder() {}
+
+        @JsonProperty("code")
+        public Builder withCode(com.amazon.ask.model.slu.entityresolution.StatusCode code) {
+            this.code = code;
+            return this;
+        }
+
+
+        public Status build() {
+            return new Status(this);
+        }
+    }
 }
 

@@ -23,58 +23,58 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = GeolocationInterface.Builder.class)
-public final class GeolocationInterface{
+public final class GeolocationInterface {
 
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private GeolocationInterface(Builder builder) {
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
+    public static Builder builder() {
+        return new Builder();
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    private GeolocationInterface(Builder builder) {
     }
-    return true;
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash();
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class GeolocationInterface {\n");
-    
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        return true;
     }
-    return o.toString().replace("\n", "\n    ");
-  }
 
-  public static class Builder {
-
-    private Builder() { }
-
-    public GeolocationInterface build() {
-      return new GeolocationInterface(this);
+    @Override
+    public int hashCode() {
+        return Objects.hash();
     }
-  }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class GeolocationInterface {\n");
+        
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+
+        private Builder() {}
+
+        public GeolocationInterface build() {
+            return new GeolocationInterface(this);
+        }
+    }
 }
 

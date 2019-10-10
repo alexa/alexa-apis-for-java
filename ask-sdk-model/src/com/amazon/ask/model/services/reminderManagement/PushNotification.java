@@ -23,81 +23,83 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = PushNotification.Builder.class)
-public final class PushNotification{
-
-  @JsonProperty("status")
-  private com.amazon.ask.model.services.reminderManagement.PushNotificationStatus status = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private PushNotification(Builder builder) {
-    this.status = builder.status;
-  }
-
-  /**
-    * Get status
-  * @return status
-  **/
-  @JsonProperty("status")
-  public com.amazon.ask.model.services.reminderManagement.PushNotificationStatus getStatus() {
-    return status;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    PushNotification servicesReminderManagementPushNotification = (PushNotification) o;
-    return Objects.equals(this.status, servicesReminderManagementPushNotification.status);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(status);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class PushNotification {\n");
-    
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private com.amazon.ask.model.services.reminderManagement.PushNotificationStatus status;
-
-    private Builder() { }
+public final class PushNotification {
 
     @JsonProperty("status")
-    public Builder withStatus(com.amazon.ask.model.services.reminderManagement.PushNotificationStatus status) {
-        this.status = status;
-        return this;
+    private com.amazon.ask.model.services.reminderManagement.PushNotificationStatus status = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-
-    public PushNotification build() {
-      return new PushNotification(this);
+    private PushNotification(Builder builder) {
+        if (builder.status != null) {
+            this.status = builder.status;
+        }
     }
-  }
+
+    /**
+     * Get status
+     * @return status
+    **/
+    @JsonProperty("status")
+    public com.amazon.ask.model.services.reminderManagement.PushNotificationStatus getStatus() {
+        return status;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        PushNotification servicesReminderManagementPushNotification = (PushNotification) o;
+        return Objects.equals(this.status, servicesReminderManagementPushNotification.status);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(status);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class PushNotification {\n");
+        
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private com.amazon.ask.model.services.reminderManagement.PushNotificationStatus status;
+
+        private Builder() {}
+
+        @JsonProperty("status")
+        public Builder withStatus(com.amazon.ask.model.services.reminderManagement.PushNotificationStatus status) {
+            this.status = status;
+            return this;
+        }
+
+
+        public PushNotification build() {
+            return new PushNotification(this);
+        }
+    }
 }
 

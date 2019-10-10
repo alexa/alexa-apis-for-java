@@ -23,85 +23,87 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = DelegateDirective.Builder.class)
-public final class DelegateDirective extends com.amazon.ask.model.Directive {
-
-  @JsonProperty("updatedIntent")
-  private com.amazon.ask.model.Intent updatedIntent = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private DelegateDirective(Builder builder) {
-    String discriminatorValue = "Dialog.Delegate";
-
-    this.type = discriminatorValue;
-    this.updatedIntent = builder.updatedIntent;
-  }
-
-  /**
-    * Get updatedIntent
-  * @return updatedIntent
-  **/
-  @JsonProperty("updatedIntent")
-  public com.amazon.ask.model.Intent getUpdatedIntent() {
-    return updatedIntent;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    DelegateDirective dialogDelegateDirective = (DelegateDirective) o;
-    return Objects.equals(this.updatedIntent, dialogDelegateDirective.updatedIntent) &&
-        super.equals(o);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(updatedIntent, super.hashCode());
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class DelegateDirective {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    updatedIntent: ").append(toIndentedString(updatedIntent)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private com.amazon.ask.model.Intent updatedIntent;
-
-    private Builder() { }
+public final class DelegateDirective extends com.amazon.ask.model.Directive  {
 
     @JsonProperty("updatedIntent")
-    public Builder withUpdatedIntent(com.amazon.ask.model.Intent updatedIntent) {
-        this.updatedIntent = updatedIntent;
-        return this;
+    private com.amazon.ask.model.Intent updatedIntent = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
+    private DelegateDirective(Builder builder) {
+        String discriminatorValue = "Dialog.Delegate";
 
-    public DelegateDirective build() {
-      return new DelegateDirective(this);
+        this.type = discriminatorValue;
+        if (builder.updatedIntent != null) {
+            this.updatedIntent = builder.updatedIntent;
+        }
     }
-  }
+
+    /**
+     * Get updatedIntent
+     * @return updatedIntent
+    **/
+    @JsonProperty("updatedIntent")
+    public com.amazon.ask.model.Intent getUpdatedIntent() {
+        return updatedIntent;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        DelegateDirective dialogDelegateDirective = (DelegateDirective) o;
+        return Objects.equals(this.updatedIntent, dialogDelegateDirective.updatedIntent) &&
+            super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(updatedIntent, super.hashCode());
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class DelegateDirective {\n");
+        sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+        sb.append("    updatedIntent: ").append(toIndentedString(updatedIntent)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private com.amazon.ask.model.Intent updatedIntent;
+
+        private Builder() {}
+
+        @JsonProperty("updatedIntent")
+        public Builder withUpdatedIntent(com.amazon.ask.model.Intent updatedIntent) {
+            this.updatedIntent = updatedIntent;
+            return this;
+        }
+
+
+        public DelegateDirective build() {
+            return new DelegateDirective(this);
+        }
+    }
 }
 

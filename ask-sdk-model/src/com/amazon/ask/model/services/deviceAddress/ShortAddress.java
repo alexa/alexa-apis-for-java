@@ -23,104 +23,108 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = ShortAddress.Builder.class)
-public final class ShortAddress{
-
-  @JsonProperty("countryCode")
-  private String countryCode = null;
-
-  @JsonProperty("postalCode")
-  private String postalCode = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private ShortAddress(Builder builder) {
-    this.countryCode = builder.countryCode;
-    this.postalCode = builder.postalCode;
-  }
-
-  /**
-    * Get countryCode
-  * @return countryCode
-  **/
-  @JsonProperty("countryCode")
-  public String getCountryCode() {
-    return countryCode;
-  }
-
-  /**
-    * Get postalCode
-  * @return postalCode
-  **/
-  @JsonProperty("postalCode")
-  public String getPostalCode() {
-    return postalCode;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    ShortAddress servicesDeviceAddressShortAddress = (ShortAddress) o;
-    return Objects.equals(this.countryCode, servicesDeviceAddressShortAddress.countryCode) &&
-        Objects.equals(this.postalCode, servicesDeviceAddressShortAddress.postalCode);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(countryCode, postalCode);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ShortAddress {\n");
-    
-    sb.append("    countryCode: ").append(toIndentedString(countryCode)).append("\n");
-    sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private String countryCode;
-    private String postalCode;
-
-    private Builder() { }
+public final class ShortAddress {
 
     @JsonProperty("countryCode")
-    public Builder withCountryCode(String countryCode) {
-        this.countryCode = countryCode;
-        return this;
-    }
-
+    private String countryCode = null;
 
     @JsonProperty("postalCode")
-    public Builder withPostalCode(String postalCode) {
-        this.postalCode = postalCode;
-        return this;
+    private String postalCode = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-
-    public ShortAddress build() {
-      return new ShortAddress(this);
+    private ShortAddress(Builder builder) {
+        if (builder.countryCode != null) {
+            this.countryCode = builder.countryCode;
+        }
+        if (builder.postalCode != null) {
+            this.postalCode = builder.postalCode;
+        }
     }
-  }
+
+    /**
+     * Get countryCode
+     * @return countryCode
+    **/
+    @JsonProperty("countryCode")
+    public String getCountryCode() {
+        return countryCode;
+    }
+
+    /**
+     * Get postalCode
+     * @return postalCode
+    **/
+    @JsonProperty("postalCode")
+    public String getPostalCode() {
+        return postalCode;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        ShortAddress servicesDeviceAddressShortAddress = (ShortAddress) o;
+        return Objects.equals(this.countryCode, servicesDeviceAddressShortAddress.countryCode) &&
+            Objects.equals(this.postalCode, servicesDeviceAddressShortAddress.postalCode);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(countryCode, postalCode);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ShortAddress {\n");
+        
+        sb.append("    countryCode: ").append(toIndentedString(countryCode)).append("\n");
+        sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String countryCode;
+        private String postalCode;
+
+        private Builder() {}
+
+        @JsonProperty("countryCode")
+        public Builder withCountryCode(String countryCode) {
+            this.countryCode = countryCode;
+            return this;
+        }
+
+
+        @JsonProperty("postalCode")
+        public Builder withPostalCode(String postalCode) {
+            this.postalCode = postalCode;
+            return this;
+        }
+
+
+        public ShortAddress build() {
+            return new ShortAddress(this);
+        }
+    }
 }
 

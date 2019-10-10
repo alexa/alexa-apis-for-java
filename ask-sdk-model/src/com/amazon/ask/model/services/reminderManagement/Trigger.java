@@ -25,173 +25,183 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = Trigger.Builder.class)
-public final class Trigger{
-
-  @JsonProperty("type")
-  private com.amazon.ask.model.services.reminderManagement.TriggerType type = null;
-
-  @JsonProperty("scheduledTime")
-  private LocalDateTime scheduledTime = null;
-
-  @JsonProperty("offsetInSeconds")
-  private Integer offsetInSeconds = null;
-
-  @JsonProperty("timeZoneId")
-  private String timeZoneId = null;
-
-  @JsonProperty("recurrence")
-  private com.amazon.ask.model.services.reminderManagement.Recurrence recurrence = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private Trigger(Builder builder) {
-    this.type = builder.type;
-    this.scheduledTime = builder.scheduledTime;
-    this.offsetInSeconds = builder.offsetInSeconds;
-    this.timeZoneId = builder.timeZoneId;
-    this.recurrence = builder.recurrence;
-  }
-
-  /**
-    * Get type
-  * @return type
-  **/
-  @JsonProperty("type")
-  public com.amazon.ask.model.services.reminderManagement.TriggerType getType() {
-    return type;
-  }
-
-  /**
-    * Valid ISO 8601 format - Intended trigger time
-  * @return scheduledTime
-  **/
-  @JsonProperty("scheduledTime")
-  public LocalDateTime getScheduledTime() {
-    return scheduledTime;
-  }
-
-  /**
-    * If reminder is set using relative time, use this field to specify the time after which reminder ll ring (in seconds)
-  * @return offsetInSeconds
-  **/
-  @JsonProperty("offsetInSeconds")
-  public Integer getOffsetInSeconds() {
-    return offsetInSeconds;
-  }
-
-  /**
-    * Intended reminder's timezone
-  * @return timeZoneId
-  **/
-  @JsonProperty("timeZoneId")
-  public String getTimeZoneId() {
-    return timeZoneId;
-  }
-
-  /**
-    * Get recurrence
-  * @return recurrence
-  **/
-  @JsonProperty("recurrence")
-  public com.amazon.ask.model.services.reminderManagement.Recurrence getRecurrence() {
-    return recurrence;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    Trigger servicesReminderManagementTrigger = (Trigger) o;
-    return Objects.equals(this.type, servicesReminderManagementTrigger.type) &&
-        Objects.equals(this.scheduledTime, servicesReminderManagementTrigger.scheduledTime) &&
-        Objects.equals(this.offsetInSeconds, servicesReminderManagementTrigger.offsetInSeconds) &&
-        Objects.equals(this.timeZoneId, servicesReminderManagementTrigger.timeZoneId) &&
-        Objects.equals(this.recurrence, servicesReminderManagementTrigger.recurrence);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(type, scheduledTime, offsetInSeconds, timeZoneId, recurrence);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class Trigger {\n");
-    
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    scheduledTime: ").append(toIndentedString(scheduledTime)).append("\n");
-    sb.append("    offsetInSeconds: ").append(toIndentedString(offsetInSeconds)).append("\n");
-    sb.append("    timeZoneId: ").append(toIndentedString(timeZoneId)).append("\n");
-    sb.append("    recurrence: ").append(toIndentedString(recurrence)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private com.amazon.ask.model.services.reminderManagement.TriggerType type;
-    private LocalDateTime scheduledTime;
-    private Integer offsetInSeconds;
-    private String timeZoneId;
-    private com.amazon.ask.model.services.reminderManagement.Recurrence recurrence;
-
-    private Builder() { }
+public final class Trigger {
 
     @JsonProperty("type")
-    public Builder withType(com.amazon.ask.model.services.reminderManagement.TriggerType type) {
-        this.type = type;
-        return this;
-    }
-
+    private com.amazon.ask.model.services.reminderManagement.TriggerType type = null;
 
     @JsonProperty("scheduledTime")
-    public Builder withScheduledTime(LocalDateTime scheduledTime) {
-        this.scheduledTime = scheduledTime;
-        return this;
-    }
-
+    private LocalDateTime scheduledTime = null;
 
     @JsonProperty("offsetInSeconds")
-    public Builder withOffsetInSeconds(Integer offsetInSeconds) {
-        this.offsetInSeconds = offsetInSeconds;
-        return this;
-    }
-
+    private Integer offsetInSeconds = null;
 
     @JsonProperty("timeZoneId")
-    public Builder withTimeZoneId(String timeZoneId) {
-        this.timeZoneId = timeZoneId;
-        return this;
-    }
-
+    private String timeZoneId = null;
 
     @JsonProperty("recurrence")
-    public Builder withRecurrence(com.amazon.ask.model.services.reminderManagement.Recurrence recurrence) {
-        this.recurrence = recurrence;
-        return this;
+    private com.amazon.ask.model.services.reminderManagement.Recurrence recurrence = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-
-    public Trigger build() {
-      return new Trigger(this);
+    private Trigger(Builder builder) {
+        if (builder.type != null) {
+            this.type = builder.type;
+        }
+        if (builder.scheduledTime != null) {
+            this.scheduledTime = builder.scheduledTime;
+        }
+        if (builder.offsetInSeconds != null) {
+            this.offsetInSeconds = builder.offsetInSeconds;
+        }
+        if (builder.timeZoneId != null) {
+            this.timeZoneId = builder.timeZoneId;
+        }
+        if (builder.recurrence != null) {
+            this.recurrence = builder.recurrence;
+        }
     }
-  }
+
+    /**
+     * Get type
+     * @return type
+    **/
+    @JsonProperty("type")
+    public com.amazon.ask.model.services.reminderManagement.TriggerType getType() {
+        return type;
+    }
+
+    /**
+     * Valid ISO 8601 format - Intended trigger time
+     * @return scheduledTime
+    **/
+    @JsonProperty("scheduledTime")
+    public LocalDateTime getScheduledTime() {
+        return scheduledTime;
+    }
+
+    /**
+     * If reminder is set using relative time, use this field to specify the time after which reminder ll ring (in seconds)
+     * @return offsetInSeconds
+    **/
+    @JsonProperty("offsetInSeconds")
+    public Integer getOffsetInSeconds() {
+        return offsetInSeconds;
+    }
+
+    /**
+     * Intended reminder's timezone
+     * @return timeZoneId
+    **/
+    @JsonProperty("timeZoneId")
+    public String getTimeZoneId() {
+        return timeZoneId;
+    }
+
+    /**
+     * Get recurrence
+     * @return recurrence
+    **/
+    @JsonProperty("recurrence")
+    public com.amazon.ask.model.services.reminderManagement.Recurrence getRecurrence() {
+        return recurrence;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Trigger servicesReminderManagementTrigger = (Trigger) o;
+        return Objects.equals(this.type, servicesReminderManagementTrigger.type) &&
+            Objects.equals(this.scheduledTime, servicesReminderManagementTrigger.scheduledTime) &&
+            Objects.equals(this.offsetInSeconds, servicesReminderManagementTrigger.offsetInSeconds) &&
+            Objects.equals(this.timeZoneId, servicesReminderManagementTrigger.timeZoneId) &&
+            Objects.equals(this.recurrence, servicesReminderManagementTrigger.recurrence);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(type, scheduledTime, offsetInSeconds, timeZoneId, recurrence);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class Trigger {\n");
+        
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    scheduledTime: ").append(toIndentedString(scheduledTime)).append("\n");
+        sb.append("    offsetInSeconds: ").append(toIndentedString(offsetInSeconds)).append("\n");
+        sb.append("    timeZoneId: ").append(toIndentedString(timeZoneId)).append("\n");
+        sb.append("    recurrence: ").append(toIndentedString(recurrence)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private com.amazon.ask.model.services.reminderManagement.TriggerType type;
+        private LocalDateTime scheduledTime;
+        private Integer offsetInSeconds;
+        private String timeZoneId;
+        private com.amazon.ask.model.services.reminderManagement.Recurrence recurrence;
+
+        private Builder() {}
+
+        @JsonProperty("type")
+        public Builder withType(com.amazon.ask.model.services.reminderManagement.TriggerType type) {
+            this.type = type;
+            return this;
+        }
+
+
+        @JsonProperty("scheduledTime")
+        public Builder withScheduledTime(LocalDateTime scheduledTime) {
+            this.scheduledTime = scheduledTime;
+            return this;
+        }
+
+
+        @JsonProperty("offsetInSeconds")
+        public Builder withOffsetInSeconds(Integer offsetInSeconds) {
+            this.offsetInSeconds = offsetInSeconds;
+            return this;
+        }
+
+
+        @JsonProperty("timeZoneId")
+        public Builder withTimeZoneId(String timeZoneId) {
+            this.timeZoneId = timeZoneId;
+            return this;
+        }
+
+
+        @JsonProperty("recurrence")
+        public Builder withRecurrence(com.amazon.ask.model.services.reminderManagement.Recurrence recurrence) {
+            this.recurrence = recurrence;
+            return this;
+        }
+
+
+        public Trigger build() {
+            return new Trigger(this);
+        }
+    }
 }
 

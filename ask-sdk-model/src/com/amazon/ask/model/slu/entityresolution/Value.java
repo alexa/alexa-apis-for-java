@@ -23,104 +23,108 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = Value.Builder.class)
-public final class Value{
-
-  @JsonProperty("name")
-  private String name = null;
-
-  @JsonProperty("id")
-  private String id = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private Value(Builder builder) {
-    this.name = builder.name;
-    this.id = builder.id;
-  }
-
-  /**
-    * The name for the resolution value.
-  * @return name
-  **/
-  @JsonProperty("name")
-  public String getName() {
-    return name;
-  }
-
-  /**
-    * The id for the resolution value.
-  * @return id
-  **/
-  @JsonProperty("id")
-  public String getId() {
-    return id;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    Value sluEntityresolutionValue = (Value) o;
-    return Objects.equals(this.name, sluEntityresolutionValue.name) &&
-        Objects.equals(this.id, sluEntityresolutionValue.id);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(name, id);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class Value {\n");
-    
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private String name;
-    private String id;
-
-    private Builder() { }
+public final class Value {
 
     @JsonProperty("name")
-    public Builder withName(String name) {
-        this.name = name;
-        return this;
-    }
-
+    private String name = null;
 
     @JsonProperty("id")
-    public Builder withId(String id) {
-        this.id = id;
-        return this;
+    private String id = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-
-    public Value build() {
-      return new Value(this);
+    private Value(Builder builder) {
+        if (builder.name != null) {
+            this.name = builder.name;
+        }
+        if (builder.id != null) {
+            this.id = builder.id;
+        }
     }
-  }
+
+    /**
+     * The name for the resolution value.
+     * @return name
+    **/
+    @JsonProperty("name")
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * The id for the resolution value.
+     * @return id
+    **/
+    @JsonProperty("id")
+    public String getId() {
+        return id;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Value sluEntityresolutionValue = (Value) o;
+        return Objects.equals(this.name, sluEntityresolutionValue.name) &&
+            Objects.equals(this.id, sluEntityresolutionValue.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, id);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class Value {\n");
+        
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String name;
+        private String id;
+
+        private Builder() {}
+
+        @JsonProperty("name")
+        public Builder withName(String name) {
+            this.name = name;
+            return this;
+        }
+
+
+        @JsonProperty("id")
+        public Builder withId(String id) {
+            this.id = id;
+            return this;
+        }
+
+
+        public Value build() {
+            return new Value(this);
+        }
+    }
 }
 

@@ -23,81 +23,83 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = Scope.Builder.class)
-public final class Scope{
-
-  @JsonProperty("status")
-  private com.amazon.ask.model.PermissionStatus status = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private Scope(Builder builder) {
-    this.status = builder.status;
-  }
-
-  /**
-    * Get status
-  * @return status
-  **/
-  @JsonProperty("status")
-  public com.amazon.ask.model.PermissionStatus getStatus() {
-    return status;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    Scope scope = (Scope) o;
-    return Objects.equals(this.status, scope.status);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(status);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class Scope {\n");
-    
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private com.amazon.ask.model.PermissionStatus status;
-
-    private Builder() { }
+public final class Scope {
 
     @JsonProperty("status")
-    public Builder withStatus(com.amazon.ask.model.PermissionStatus status) {
-        this.status = status;
-        return this;
+    private com.amazon.ask.model.PermissionStatus status = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-
-    public Scope build() {
-      return new Scope(this);
+    private Scope(Builder builder) {
+        if (builder.status != null) {
+            this.status = builder.status;
+        }
     }
-  }
+
+    /**
+     * Get status
+     * @return status
+    **/
+    @JsonProperty("status")
+    public com.amazon.ask.model.PermissionStatus getStatus() {
+        return status;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Scope scope = (Scope) o;
+        return Objects.equals(this.status, scope.status);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(status);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class Scope {\n");
+        
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private com.amazon.ask.model.PermissionStatus status;
+
+        private Builder() {}
+
+        @JsonProperty("status")
+        public Builder withStatus(com.amazon.ask.model.PermissionStatus status) {
+            this.status = status;
+            return this;
+        }
+
+
+        public Scope build() {
+            return new Scope(this);
+        }
+    }
 }
 

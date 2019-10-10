@@ -23,116 +23,120 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = AnimatedOpacityProperty.Builder.class)
-public final class AnimatedOpacityProperty extends com.amazon.ask.model.interfaces.alexa.presentation.apl.AnimatedProperty {
-
-  @JsonProperty("from")
-  private String from = null;
-
-  @JsonProperty("to")
-  private String to = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private AnimatedOpacityProperty(Builder builder) {
-    String discriminatorValue = "opacity";
-
-    this.property = discriminatorValue;
-    this.from = builder.from;
-    this.to = builder.to;
-  }
-
-  /**
-    * The starting value of the property.
-  * @return from
-  **/
-  @JsonProperty("from")
-  public String getFrom() {
-    return from;
-  }
-
-  /**
-    * The ending value of the property.
-  * @return to
-  **/
-  @JsonProperty("to")
-  public String getTo() {
-    return to;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    AnimatedOpacityProperty interfacesAlexaPresentationAplAnimatedOpacityProperty = (AnimatedOpacityProperty) o;
-    return Objects.equals(this.from, interfacesAlexaPresentationAplAnimatedOpacityProperty.from) &&
-        Objects.equals(this.to, interfacesAlexaPresentationAplAnimatedOpacityProperty.to) &&
-        super.equals(o);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(from, to, super.hashCode());
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class AnimatedOpacityProperty {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    from: ").append(toIndentedString(from)).append("\n");
-    sb.append("    to: ").append(toIndentedString(to)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private String from;
-    private String to;
-
-    private Builder() { }
+public final class AnimatedOpacityProperty extends com.amazon.ask.model.interfaces.alexa.presentation.apl.AnimatedProperty  {
 
     @JsonProperty("from")
-    public Builder withFrom(Double from) {
-        this.from = String.valueOf(from);
-        return this;
-    }
-
-    public Builder withFrom(String fromExpression) {
-        this.from = fromExpression;
-        return this;
-    }
+    private String from = null;
 
     @JsonProperty("to")
-    public Builder withTo(Double to) {
-        this.to = String.valueOf(to);
-        return this;
+    private String to = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-    public Builder withTo(String toExpression) {
-        this.to = toExpression;
-        return this;
+    private AnimatedOpacityProperty(Builder builder) {
+        String discriminatorValue = "opacity";
+
+        this.property = discriminatorValue;
+        if (builder.from != null) {
+            this.from = builder.from;
+        }
+        if (builder.to != null) {
+            this.to = builder.to;
+        }
     }
 
-    public AnimatedOpacityProperty build() {
-      return new AnimatedOpacityProperty(this);
+    /**
+     * The starting value of the property.
+     * @return from
+    **/
+    @JsonProperty("from")
+    public String getFrom() {
+        return from;
     }
-  }
+
+    /**
+     * The ending value of the property.
+     * @return to
+    **/
+    @JsonProperty("to")
+    public String getTo() {
+        return to;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        AnimatedOpacityProperty interfacesAlexaPresentationAplAnimatedOpacityProperty = (AnimatedOpacityProperty) o;
+        return Objects.equals(this.from, interfacesAlexaPresentationAplAnimatedOpacityProperty.from) &&
+            Objects.equals(this.to, interfacesAlexaPresentationAplAnimatedOpacityProperty.to) &&
+            super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(from, to, super.hashCode());
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class AnimatedOpacityProperty {\n");
+        sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+        sb.append("    from: ").append(toIndentedString(from)).append("\n");
+        sb.append("    to: ").append(toIndentedString(to)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String from;
+        private String to;
+
+        private Builder() {}
+
+        @JsonProperty("from")
+        public Builder withFrom(Double from) {
+            this.from = String.valueOf(from);
+            return this;
+        }
+
+        public Builder withFrom(String fromExpression) {
+            this.from = fromExpression;
+            return this;
+        }
+
+        @JsonProperty("to")
+        public Builder withTo(Double to) {
+            this.to = String.valueOf(to);
+            return this;
+        }
+
+        public Builder withTo(String toExpression) {
+            this.to = toExpression;
+            return this;
+        }
+
+        public AnimatedOpacityProperty build() {
+            return new AnimatedOpacityProperty(this);
+        }
+    }
 }
 

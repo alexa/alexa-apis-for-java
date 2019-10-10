@@ -37,73 +37,73 @@ import com.fasterxml.jackson.annotation.JsonProperty;
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.amazonpay.model.request.ProviderAttributes.class, name = "ProviderAttributes"),
 })
 
-public abstract class BaseAmazonPayEntity{
+public abstract class BaseAmazonPayEntity {
 
-  protected String type = null;
+    protected String type = null;
 
-  @JsonProperty("@version")
-  protected String version = null;
+    @JsonProperty("@version")
+    protected String version = null;
 
-  protected BaseAmazonPayEntity() {
-  }
-
-  /**
-    * Get type
-  * @return type
-  **/
-  @JsonIgnore
-  public String getType() {
-    return type;
-  }
-
-  /**
-    * Version of the Amazon Pay Entity. Can be 1 or greater.
-  * @return version
-  **/
-  @JsonProperty("@version")
-  public String getVersion() {
-    return version;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
+    protected BaseAmazonPayEntity() {
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    /**
+     * Get type
+     * @return type
+    **/
+    @JsonIgnore
+    public String getType() {
+        return type;
     }
-    BaseAmazonPayEntity interfacesAmazonpayModelRequestBaseAmazonPayEntity = (BaseAmazonPayEntity) o;
-    return Objects.equals(this.type, interfacesAmazonpayModelRequestBaseAmazonPayEntity.type) &&
-        Objects.equals(this.version, interfacesAmazonpayModelRequestBaseAmazonPayEntity.version);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(type, version);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class BaseAmazonPayEntity {\n");
-    
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    version: ").append(toIndentedString(version)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
+    /**
+     * Version of the Amazon Pay Entity. Can be 1 or greater.
+     * @return version
+    **/
+    @JsonProperty("@version")
+    public String getVersion() {
+        return version;
     }
-    return o.toString().replace("\n", "\n    ");
-  }
 
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        BaseAmazonPayEntity interfacesAmazonpayModelRequestBaseAmazonPayEntity = (BaseAmazonPayEntity) o;
+        return Objects.equals(this.type, interfacesAmazonpayModelRequestBaseAmazonPayEntity.type) &&
+            Objects.equals(this.version, interfacesAmazonpayModelRequestBaseAmazonPayEntity.version);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(type, version);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class BaseAmazonPayEntity {\n");
+        
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
 }
 

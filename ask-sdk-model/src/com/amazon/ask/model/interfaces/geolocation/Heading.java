@@ -23,104 +23,108 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = Heading.Builder.class)
-public final class Heading{
-
-  @JsonProperty("directionInDegrees")
-  private Double directionInDegrees = null;
-
-  @JsonProperty("accuracyInDegrees")
-  private Double accuracyInDegrees = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private Heading(Builder builder) {
-    this.directionInDegrees = builder.directionInDegrees;
-    this.accuracyInDegrees = builder.accuracyInDegrees;
-  }
-
-  /**
-    * A double representing the direction of the device in degrees.
-  * @return directionInDegrees
-  **/
-  @JsonProperty("directionInDegrees")
-  public Double getDirectionInDegrees() {
-    return directionInDegrees;
-  }
-
-  /**
-    * A double representing the accuracy of the heading measurement in degrees.
-  * @return accuracyInDegrees
-  **/
-  @JsonProperty("accuracyInDegrees")
-  public Double getAccuracyInDegrees() {
-    return accuracyInDegrees;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    Heading interfacesGeolocationHeading = (Heading) o;
-    return Objects.equals(this.directionInDegrees, interfacesGeolocationHeading.directionInDegrees) &&
-        Objects.equals(this.accuracyInDegrees, interfacesGeolocationHeading.accuracyInDegrees);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(directionInDegrees, accuracyInDegrees);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class Heading {\n");
-    
-    sb.append("    directionInDegrees: ").append(toIndentedString(directionInDegrees)).append("\n");
-    sb.append("    accuracyInDegrees: ").append(toIndentedString(accuracyInDegrees)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private Double directionInDegrees;
-    private Double accuracyInDegrees;
-
-    private Builder() { }
+public final class Heading {
 
     @JsonProperty("directionInDegrees")
-    public Builder withDirectionInDegrees(Double directionInDegrees) {
-        this.directionInDegrees = directionInDegrees;
-        return this;
-    }
-
+    private Double directionInDegrees = null;
 
     @JsonProperty("accuracyInDegrees")
-    public Builder withAccuracyInDegrees(Double accuracyInDegrees) {
-        this.accuracyInDegrees = accuracyInDegrees;
-        return this;
+    private Double accuracyInDegrees = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-
-    public Heading build() {
-      return new Heading(this);
+    private Heading(Builder builder) {
+        if (builder.directionInDegrees != null) {
+            this.directionInDegrees = builder.directionInDegrees;
+        }
+        if (builder.accuracyInDegrees != null) {
+            this.accuracyInDegrees = builder.accuracyInDegrees;
+        }
     }
-  }
+
+    /**
+     * A double representing the direction of the device in degrees.
+     * @return directionInDegrees
+    **/
+    @JsonProperty("directionInDegrees")
+    public Double getDirectionInDegrees() {
+        return directionInDegrees;
+    }
+
+    /**
+     * A double representing the accuracy of the heading measurement in degrees.
+     * @return accuracyInDegrees
+    **/
+    @JsonProperty("accuracyInDegrees")
+    public Double getAccuracyInDegrees() {
+        return accuracyInDegrees;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Heading interfacesGeolocationHeading = (Heading) o;
+        return Objects.equals(this.directionInDegrees, interfacesGeolocationHeading.directionInDegrees) &&
+            Objects.equals(this.accuracyInDegrees, interfacesGeolocationHeading.accuracyInDegrees);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(directionInDegrees, accuracyInDegrees);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class Heading {\n");
+        
+        sb.append("    directionInDegrees: ").append(toIndentedString(directionInDegrees)).append("\n");
+        sb.append("    accuracyInDegrees: ").append(toIndentedString(accuracyInDegrees)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private Double directionInDegrees;
+        private Double accuracyInDegrees;
+
+        private Builder() {}
+
+        @JsonProperty("directionInDegrees")
+        public Builder withDirectionInDegrees(Double directionInDegrees) {
+            this.directionInDegrees = directionInDegrees;
+            return this;
+        }
+
+
+        @JsonProperty("accuracyInDegrees")
+        public Builder withAccuracyInDegrees(Double accuracyInDegrees) {
+            this.accuracyInDegrees = accuracyInDegrees;
+            return this;
+        }
+
+
+        public Heading build() {
+            return new Heading(this);
+        }
+    }
 }
 

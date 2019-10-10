@@ -24,150 +24,158 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = Experience.Builder.class)
-public final class Experience{
-
-  @JsonProperty("arcMinuteWidth")
-  private BigDecimal arcMinuteWidth = null;
-
-  @JsonProperty("arcMinuteHeight")
-  private BigDecimal arcMinuteHeight = null;
-
-  @JsonProperty("canRotate")
-  private Boolean canRotate = null;
-
-  @JsonProperty("canResize")
-  private Boolean canResize = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private Experience(Builder builder) {
-    this.arcMinuteWidth = builder.arcMinuteWidth;
-    this.arcMinuteHeight = builder.arcMinuteHeight;
-    this.canRotate = builder.canRotate;
-    this.canResize = builder.canResize;
-  }
-
-  /**
-    * The number of horizontal arc minutes the viewport occupies in the user's visual field when viewed within this experience.
-  * @return arcMinuteWidth
-  **/
-  @JsonProperty("arcMinuteWidth")
-  public BigDecimal getArcMinuteWidth() {
-    return arcMinuteWidth;
-  }
-
-  /**
-    * The number of vertical arc minutes the viewport occupies in the user's visual field when viewed within this experience.
-  * @return arcMinuteHeight
-  **/
-  @JsonProperty("arcMinuteHeight")
-  public BigDecimal getArcMinuteHeight() {
-    return arcMinuteHeight;
-  }
-
-  /**
-    * Indicates if the viewport can be rotated through 90 degrees.
-  * @return canRotate
-  **/
-  @JsonProperty("canRotate")
-  public Boolean getCanRotate() {
-    return canRotate;
-  }
-
-  /**
-    * Indicates if the viewport can be resized, limiting the area which can be used to render the APL response.
-  * @return canResize
-  **/
-  @JsonProperty("canResize")
-  public Boolean getCanResize() {
-    return canResize;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    Experience interfacesViewportExperience = (Experience) o;
-    return Objects.equals(this.arcMinuteWidth, interfacesViewportExperience.arcMinuteWidth) &&
-        Objects.equals(this.arcMinuteHeight, interfacesViewportExperience.arcMinuteHeight) &&
-        Objects.equals(this.canRotate, interfacesViewportExperience.canRotate) &&
-        Objects.equals(this.canResize, interfacesViewportExperience.canResize);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(arcMinuteWidth, arcMinuteHeight, canRotate, canResize);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class Experience {\n");
-    
-    sb.append("    arcMinuteWidth: ").append(toIndentedString(arcMinuteWidth)).append("\n");
-    sb.append("    arcMinuteHeight: ").append(toIndentedString(arcMinuteHeight)).append("\n");
-    sb.append("    canRotate: ").append(toIndentedString(canRotate)).append("\n");
-    sb.append("    canResize: ").append(toIndentedString(canResize)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private BigDecimal arcMinuteWidth;
-    private BigDecimal arcMinuteHeight;
-    private Boolean canRotate;
-    private Boolean canResize;
-
-    private Builder() { }
+public final class Experience {
 
     @JsonProperty("arcMinuteWidth")
-    public Builder withArcMinuteWidth(BigDecimal arcMinuteWidth) {
-        this.arcMinuteWidth = arcMinuteWidth;
-        return this;
-    }
-
+    private BigDecimal arcMinuteWidth = null;
 
     @JsonProperty("arcMinuteHeight")
-    public Builder withArcMinuteHeight(BigDecimal arcMinuteHeight) {
-        this.arcMinuteHeight = arcMinuteHeight;
-        return this;
-    }
-
+    private BigDecimal arcMinuteHeight = null;
 
     @JsonProperty("canRotate")
-    public Builder withCanRotate(Boolean canRotate) {
-        this.canRotate = canRotate;
-        return this;
-    }
-
+    private Boolean canRotate = null;
 
     @JsonProperty("canResize")
-    public Builder withCanResize(Boolean canResize) {
-        this.canResize = canResize;
-        return this;
+    private Boolean canResize = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-
-    public Experience build() {
-      return new Experience(this);
+    private Experience(Builder builder) {
+        if (builder.arcMinuteWidth != null) {
+            this.arcMinuteWidth = builder.arcMinuteWidth;
+        }
+        if (builder.arcMinuteHeight != null) {
+            this.arcMinuteHeight = builder.arcMinuteHeight;
+        }
+        if (builder.canRotate != null) {
+            this.canRotate = builder.canRotate;
+        }
+        if (builder.canResize != null) {
+            this.canResize = builder.canResize;
+        }
     }
-  }
+
+    /**
+     * The number of horizontal arc minutes the viewport occupies in the user's visual field when viewed within this experience.
+     * @return arcMinuteWidth
+    **/
+    @JsonProperty("arcMinuteWidth")
+    public BigDecimal getArcMinuteWidth() {
+        return arcMinuteWidth;
+    }
+
+    /**
+     * The number of vertical arc minutes the viewport occupies in the user's visual field when viewed within this experience.
+     * @return arcMinuteHeight
+    **/
+    @JsonProperty("arcMinuteHeight")
+    public BigDecimal getArcMinuteHeight() {
+        return arcMinuteHeight;
+    }
+
+    /**
+     * Indicates if the viewport can be rotated through 90 degrees.
+     * @return canRotate
+    **/
+    @JsonProperty("canRotate")
+    public Boolean getCanRotate() {
+        return canRotate;
+    }
+
+    /**
+     * Indicates if the viewport can be resized, limiting the area which can be used to render the APL response.
+     * @return canResize
+    **/
+    @JsonProperty("canResize")
+    public Boolean getCanResize() {
+        return canResize;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Experience interfacesViewportExperience = (Experience) o;
+        return Objects.equals(this.arcMinuteWidth, interfacesViewportExperience.arcMinuteWidth) &&
+            Objects.equals(this.arcMinuteHeight, interfacesViewportExperience.arcMinuteHeight) &&
+            Objects.equals(this.canRotate, interfacesViewportExperience.canRotate) &&
+            Objects.equals(this.canResize, interfacesViewportExperience.canResize);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(arcMinuteWidth, arcMinuteHeight, canRotate, canResize);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class Experience {\n");
+        
+        sb.append("    arcMinuteWidth: ").append(toIndentedString(arcMinuteWidth)).append("\n");
+        sb.append("    arcMinuteHeight: ").append(toIndentedString(arcMinuteHeight)).append("\n");
+        sb.append("    canRotate: ").append(toIndentedString(canRotate)).append("\n");
+        sb.append("    canResize: ").append(toIndentedString(canResize)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private BigDecimal arcMinuteWidth;
+        private BigDecimal arcMinuteHeight;
+        private Boolean canRotate;
+        private Boolean canResize;
+
+        private Builder() {}
+
+        @JsonProperty("arcMinuteWidth")
+        public Builder withArcMinuteWidth(BigDecimal arcMinuteWidth) {
+            this.arcMinuteWidth = arcMinuteWidth;
+            return this;
+        }
+
+
+        @JsonProperty("arcMinuteHeight")
+        public Builder withArcMinuteHeight(BigDecimal arcMinuteHeight) {
+            this.arcMinuteHeight = arcMinuteHeight;
+            return this;
+        }
+
+
+        @JsonProperty("canRotate")
+        public Builder withCanRotate(Boolean canRotate) {
+            this.canRotate = canRotate;
+            return this;
+        }
+
+
+        @JsonProperty("canResize")
+        public Builder withCanResize(Boolean canResize) {
+            this.canResize = canResize;
+            return this;
+        }
+
+
+        public Experience build() {
+            return new Experience(this);
+        }
+    }
 }
 

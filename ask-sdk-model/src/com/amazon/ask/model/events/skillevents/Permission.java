@@ -23,81 +23,83 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = Permission.Builder.class)
-public final class Permission{
-
-  @JsonProperty("scope")
-  private String scope = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private Permission(Builder builder) {
-    this.scope = builder.scope;
-  }
-
-  /**
-    * Get scope
-  * @return scope
-  **/
-  @JsonProperty("scope")
-  public String getScope() {
-    return scope;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    Permission eventsSkilleventsPermission = (Permission) o;
-    return Objects.equals(this.scope, eventsSkilleventsPermission.scope);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(scope);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class Permission {\n");
-    
-    sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private String scope;
-
-    private Builder() { }
+public final class Permission {
 
     @JsonProperty("scope")
-    public Builder withScope(String scope) {
-        this.scope = scope;
-        return this;
+    private String scope = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-
-    public Permission build() {
-      return new Permission(this);
+    private Permission(Builder builder) {
+        if (builder.scope != null) {
+            this.scope = builder.scope;
+        }
     }
-  }
+
+    /**
+     * Get scope
+     * @return scope
+    **/
+    @JsonProperty("scope")
+    public String getScope() {
+        return scope;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Permission eventsSkilleventsPermission = (Permission) o;
+        return Objects.equals(this.scope, eventsSkilleventsPermission.scope);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(scope);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class Permission {\n");
+        
+        sb.append("    scope: ").append(toIndentedString(scope)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String scope;
+
+        private Builder() {}
+
+        @JsonProperty("scope")
+        public Builder withScope(String scope) {
+            this.scope = scope;
+            return this;
+        }
+
+
+        public Permission build() {
+            return new Permission(this);
+        }
+    }
 }
 

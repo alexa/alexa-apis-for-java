@@ -23,104 +23,108 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = PhoneNumber.Builder.class)
-public final class PhoneNumber{
-
-  @JsonProperty("countryCode")
-  private String countryCode = null;
-
-  @JsonProperty("phoneNumber")
-  private String phoneNumber = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private PhoneNumber(Builder builder) {
-    this.countryCode = builder.countryCode;
-    this.phoneNumber = builder.phoneNumber;
-  }
-
-  /**
-    * Get countryCode
-  * @return countryCode
-  **/
-  @JsonProperty("countryCode")
-  public String getCountryCode() {
-    return countryCode;
-  }
-
-  /**
-    * Get phoneNumber
-  * @return phoneNumber
-  **/
-  @JsonProperty("phoneNumber")
-  public String getPhoneNumber() {
-    return phoneNumber;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    PhoneNumber servicesUpsPhoneNumber = (PhoneNumber) o;
-    return Objects.equals(this.countryCode, servicesUpsPhoneNumber.countryCode) &&
-        Objects.equals(this.phoneNumber, servicesUpsPhoneNumber.phoneNumber);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(countryCode, phoneNumber);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class PhoneNumber {\n");
-    
-    sb.append("    countryCode: ").append(toIndentedString(countryCode)).append("\n");
-    sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private String countryCode;
-    private String phoneNumber;
-
-    private Builder() { }
+public final class PhoneNumber {
 
     @JsonProperty("countryCode")
-    public Builder withCountryCode(String countryCode) {
-        this.countryCode = countryCode;
-        return this;
-    }
-
+    private String countryCode = null;
 
     @JsonProperty("phoneNumber")
-    public Builder withPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-        return this;
+    private String phoneNumber = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-
-    public PhoneNumber build() {
-      return new PhoneNumber(this);
+    private PhoneNumber(Builder builder) {
+        if (builder.countryCode != null) {
+            this.countryCode = builder.countryCode;
+        }
+        if (builder.phoneNumber != null) {
+            this.phoneNumber = builder.phoneNumber;
+        }
     }
-  }
+
+    /**
+     * Get countryCode
+     * @return countryCode
+    **/
+    @JsonProperty("countryCode")
+    public String getCountryCode() {
+        return countryCode;
+    }
+
+    /**
+     * Get phoneNumber
+     * @return phoneNumber
+    **/
+    @JsonProperty("phoneNumber")
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        PhoneNumber servicesUpsPhoneNumber = (PhoneNumber) o;
+        return Objects.equals(this.countryCode, servicesUpsPhoneNumber.countryCode) &&
+            Objects.equals(this.phoneNumber, servicesUpsPhoneNumber.phoneNumber);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(countryCode, phoneNumber);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class PhoneNumber {\n");
+        
+        sb.append("    countryCode: ").append(toIndentedString(countryCode)).append("\n");
+        sb.append("    phoneNumber: ").append(toIndentedString(phoneNumber)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String countryCode;
+        private String phoneNumber;
+
+        private Builder() {}
+
+        @JsonProperty("countryCode")
+        public Builder withCountryCode(String countryCode) {
+            this.countryCode = countryCode;
+            return this;
+        }
+
+
+        @JsonProperty("phoneNumber")
+        public Builder withPhoneNumber(String phoneNumber) {
+            this.phoneNumber = phoneNumber;
+            return this;
+        }
+
+
+        public PhoneNumber build() {
+            return new PhoneNumber(this);
+        }
+    }
 }
 

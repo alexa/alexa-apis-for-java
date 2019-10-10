@@ -26,88 +26,90 @@ import java.util.ArrayList;
  */
 
 @JsonDeserialize(builder = ReminderDeletedEvent.Builder.class)
-public final class ReminderDeletedEvent{
-
-  @JsonProperty("alertTokens")
-  private List<String> alertTokens = new ArrayList<String>();
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private ReminderDeletedEvent(Builder builder) {
-    this.alertTokens = builder.alertTokens;
-  }
-
-  /**
-    * Get alertTokens
-  * @return alertTokens
-  **/
-  @JsonProperty("alertTokens")
-  public List<String> getAlertTokens() {
-    return alertTokens;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    ReminderDeletedEvent servicesReminderManagementReminderDeletedEvent = (ReminderDeletedEvent) o;
-    return Objects.equals(this.alertTokens, servicesReminderManagementReminderDeletedEvent.alertTokens);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(alertTokens);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ReminderDeletedEvent {\n");
-    
-    sb.append("    alertTokens: ").append(toIndentedString(alertTokens)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private List<String> alertTokens;
-
-    private Builder() { }
+public final class ReminderDeletedEvent {
 
     @JsonProperty("alertTokens")
-    public Builder withAlertTokens(List<String> alertTokens) {
-        this.alertTokens = alertTokens;
-        return this;
+    private List<String> alertTokens = new ArrayList<String>();
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-    public Builder addAlertTokensItem(String alertTokensItem) {
-      if (this.alertTokens == null) {
-        this.alertTokens = new ArrayList<String>();
-      }
-      this.alertTokens.add(alertTokensItem);
-      return this;
+    private ReminderDeletedEvent(Builder builder) {
+        if (builder.alertTokens != null) {
+            this.alertTokens = builder.alertTokens;
+        }
     }
 
-    public ReminderDeletedEvent build() {
-      return new ReminderDeletedEvent(this);
+    /**
+     * Get alertTokens
+     * @return alertTokens
+    **/
+    @JsonProperty("alertTokens")
+    public List<String> getAlertTokens() {
+        return alertTokens;
     }
-  }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        ReminderDeletedEvent servicesReminderManagementReminderDeletedEvent = (ReminderDeletedEvent) o;
+        return Objects.equals(this.alertTokens, servicesReminderManagementReminderDeletedEvent.alertTokens);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(alertTokens);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ReminderDeletedEvent {\n");
+        
+        sb.append("    alertTokens: ").append(toIndentedString(alertTokens)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private List<String> alertTokens;
+
+        private Builder() {}
+
+        @JsonProperty("alertTokens")
+        public Builder withAlertTokens(List<String> alertTokens) {
+            this.alertTokens = alertTokens;
+            return this;
+        }
+
+        public Builder addAlertTokensItem(String alertTokensItem) {
+            if (this.alertTokens == null) {
+                this.alertTokens = new ArrayList<String>();
+            }
+            this.alertTokens.add(alertTokensItem);
+            return this;
+        }
+
+        public ReminderDeletedEvent build() {
+            return new ReminderDeletedEvent(this);
+        }
+    }
 }
 

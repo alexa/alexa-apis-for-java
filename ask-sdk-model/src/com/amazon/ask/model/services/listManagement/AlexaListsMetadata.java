@@ -26,88 +26,90 @@ import java.util.ArrayList;
  */
 
 @JsonDeserialize(builder = AlexaListsMetadata.Builder.class)
-public final class AlexaListsMetadata{
-
-  @JsonProperty("lists")
-  private List<com.amazon.ask.model.services.listManagement.AlexaListMetadata> lists = new ArrayList<com.amazon.ask.model.services.listManagement.AlexaListMetadata>();
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private AlexaListsMetadata(Builder builder) {
-    this.lists = builder.lists;
-  }
-
-  /**
-    * Get lists
-  * @return lists
-  **/
-  @JsonProperty("lists")
-  public List<com.amazon.ask.model.services.listManagement.AlexaListMetadata> getLists() {
-    return lists;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    AlexaListsMetadata servicesListManagementAlexaListsMetadata = (AlexaListsMetadata) o;
-    return Objects.equals(this.lists, servicesListManagementAlexaListsMetadata.lists);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(lists);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class AlexaListsMetadata {\n");
-    
-    sb.append("    lists: ").append(toIndentedString(lists)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private List<com.amazon.ask.model.services.listManagement.AlexaListMetadata> lists;
-
-    private Builder() { }
+public final class AlexaListsMetadata {
 
     @JsonProperty("lists")
-    public Builder withLists(List<com.amazon.ask.model.services.listManagement.AlexaListMetadata> lists) {
-        this.lists = lists;
-        return this;
+    private List<com.amazon.ask.model.services.listManagement.AlexaListMetadata> lists = new ArrayList<com.amazon.ask.model.services.listManagement.AlexaListMetadata>();
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-    public Builder addListsItem(com.amazon.ask.model.services.listManagement.AlexaListMetadata listsItem) {
-      if (this.lists == null) {
-        this.lists = new ArrayList<com.amazon.ask.model.services.listManagement.AlexaListMetadata>();
-      }
-      this.lists.add(listsItem);
-      return this;
+    private AlexaListsMetadata(Builder builder) {
+        if (builder.lists != null) {
+            this.lists = builder.lists;
+        }
     }
 
-    public AlexaListsMetadata build() {
-      return new AlexaListsMetadata(this);
+    /**
+     * Get lists
+     * @return lists
+    **/
+    @JsonProperty("lists")
+    public List<com.amazon.ask.model.services.listManagement.AlexaListMetadata> getLists() {
+        return lists;
     }
-  }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        AlexaListsMetadata servicesListManagementAlexaListsMetadata = (AlexaListsMetadata) o;
+        return Objects.equals(this.lists, servicesListManagementAlexaListsMetadata.lists);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(lists);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class AlexaListsMetadata {\n");
+        
+        sb.append("    lists: ").append(toIndentedString(lists)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private List<com.amazon.ask.model.services.listManagement.AlexaListMetadata> lists;
+
+        private Builder() {}
+
+        @JsonProperty("lists")
+        public Builder withLists(List<com.amazon.ask.model.services.listManagement.AlexaListMetadata> lists) {
+            this.lists = lists;
+            return this;
+        }
+
+        public Builder addListsItem(com.amazon.ask.model.services.listManagement.AlexaListMetadata listsItem) {
+            if (this.lists == null) {
+                this.lists = new ArrayList<com.amazon.ask.model.services.listManagement.AlexaListMetadata>();
+            }
+            this.lists.add(listsItem);
+            return this;
+        }
+
+        public AlexaListsMetadata build() {
+            return new AlexaListsMetadata(this);
+        }
+    }
 }
 

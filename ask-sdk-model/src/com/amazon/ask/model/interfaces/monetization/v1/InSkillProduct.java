@@ -23,81 +23,83 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = InSkillProduct.Builder.class)
-public final class InSkillProduct{
-
-  @JsonProperty("productId")
-  private String productId = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private InSkillProduct(Builder builder) {
-    this.productId = builder.productId;
-  }
-
-  /**
-    * The product ID of In Skill Product.
-  * @return productId
-  **/
-  @JsonProperty("productId")
-  public String getProductId() {
-    return productId;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    InSkillProduct interfacesMonetizationV1InSkillProduct = (InSkillProduct) o;
-    return Objects.equals(this.productId, interfacesMonetizationV1InSkillProduct.productId);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(productId);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class InSkillProduct {\n");
-    
-    sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private String productId;
-
-    private Builder() { }
+public final class InSkillProduct {
 
     @JsonProperty("productId")
-    public Builder withProductId(String productId) {
-        this.productId = productId;
-        return this;
+    private String productId = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-
-    public InSkillProduct build() {
-      return new InSkillProduct(this);
+    private InSkillProduct(Builder builder) {
+        if (builder.productId != null) {
+            this.productId = builder.productId;
+        }
     }
-  }
+
+    /**
+     * The product ID of In Skill Product.
+     * @return productId
+    **/
+    @JsonProperty("productId")
+    public String getProductId() {
+        return productId;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        InSkillProduct interfacesMonetizationV1InSkillProduct = (InSkillProduct) o;
+        return Objects.equals(this.productId, interfacesMonetizationV1InSkillProduct.productId);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(productId);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class InSkillProduct {\n");
+        
+        sb.append("    productId: ").append(toIndentedString(productId)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String productId;
+
+        private Builder() {}
+
+        @JsonProperty("productId")
+        public Builder withProductId(String productId) {
+            this.productId = productId;
+            return this;
+        }
+
+
+        public InSkillProduct build() {
+            return new InSkillProduct(this);
+        }
+    }
 }
 

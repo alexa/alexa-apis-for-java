@@ -23,166 +23,178 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = SetStateCommand.Builder.class)
-public final class SetStateCommand extends com.amazon.ask.model.interfaces.alexa.presentation.apl.Command {
-
-  @JsonProperty("componentId")
-  private String componentId = null;
-
-  @JsonProperty("state")
-  private com.amazon.ask.model.interfaces.alexa.presentation.apl.ComponentState state = null;
-
-  @JsonProperty("value")
-  private String value = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private SetStateCommand(Builder builder) {
-    String discriminatorValue = "SetState";
-
-    this.type = discriminatorValue;
-    this.delay = builder.delay;
-    this.description = builder.description;
-    this.when = builder.when;
-    this.componentId = builder.componentId;
-    this.state = builder.state;
-    this.value = builder.value;
-  }
-
-  /**
-    * The id of the component whose value should be set.
-  * @return componentId
-  **/
-  @JsonProperty("componentId")
-  public String getComponentId() {
-    return componentId;
-  }
-
-  /**
-    * The name of the state to set. Must be one of “checked”, “disabled”, and “focused”.
-  * @return state
-  **/
-  @JsonProperty("state")
-  public com.amazon.ask.model.interfaces.alexa.presentation.apl.ComponentState getState() {
-    return state;
-  }
-
-  /**
-    * The value to set on the property
-  * @return value
-  **/
-  @JsonProperty("value")
-  public String getValue() {
-    return value;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    SetStateCommand interfacesAlexaPresentationAplSetStateCommand = (SetStateCommand) o;
-    return Objects.equals(this.componentId, interfacesAlexaPresentationAplSetStateCommand.componentId) &&
-        Objects.equals(this.state, interfacesAlexaPresentationAplSetStateCommand.state) &&
-        Objects.equals(this.value, interfacesAlexaPresentationAplSetStateCommand.value) &&
-        super.equals(o);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(componentId, state, value, super.hashCode());
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class SetStateCommand {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    componentId: ").append(toIndentedString(componentId)).append("\n");
-    sb.append("    state: ").append(toIndentedString(state)).append("\n");
-    sb.append("    value: ").append(toIndentedString(value)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private String delay;
-    private String description;
-    private Boolean when;
-    private String componentId;
-    private com.amazon.ask.model.interfaces.alexa.presentation.apl.ComponentState state;
-    private String value;
-
-    private Builder() { }
-
-    @JsonProperty("delay")
-    public Builder withDelay(Integer delay) {
-        this.delay = String.valueOf(delay);
-        return this;
-    }
-
-    public Builder withDelay(String delayExpression) {
-        this.delay = delayExpression;
-        return this;
-    }
-
-    @JsonProperty("description")
-    public Builder withDescription(String description) {
-        this.description = description;
-        return this;
-    }
-
-
-    @JsonProperty("when")
-    public Builder withWhen(Boolean when) {
-        this.when = when;
-        return this;
-    }
-
+public final class SetStateCommand extends com.amazon.ask.model.interfaces.alexa.presentation.apl.Command  {
 
     @JsonProperty("componentId")
-    public Builder withComponentId(String componentId) {
-        this.componentId = componentId;
-        return this;
-    }
-
+    private String componentId = null;
 
     @JsonProperty("state")
-    public Builder withState(com.amazon.ask.model.interfaces.alexa.presentation.apl.ComponentState state) {
-        this.state = state;
-        return this;
-    }
-
+    private com.amazon.ask.model.interfaces.alexa.presentation.apl.ComponentState state = null;
 
     @JsonProperty("value")
-    public Builder withValue(Boolean value) {
-        this.value = String.valueOf(value);
-        return this;
+    private String value = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-    public Builder withValue(String valueExpression) {
-        this.value = valueExpression;
-        return this;
+    private SetStateCommand(Builder builder) {
+        String discriminatorValue = "SetState";
+
+        this.type = discriminatorValue;
+        if (builder.delay != null) {
+            this.delay = builder.delay;
+        }
+        if (builder.description != null) {
+            this.description = builder.description;
+        }
+        if (builder.when != null) {
+            this.when = builder.when;
+        }
+        if (builder.componentId != null) {
+            this.componentId = builder.componentId;
+        }
+        if (builder.state != null) {
+            this.state = builder.state;
+        }
+        if (builder.value != null) {
+            this.value = builder.value;
+        }
     }
 
-    public SetStateCommand build() {
-      return new SetStateCommand(this);
+    /**
+     * The id of the component whose value should be set.
+     * @return componentId
+    **/
+    @JsonProperty("componentId")
+    public String getComponentId() {
+        return componentId;
     }
-  }
+
+    /**
+     * The name of the state to set. Must be one of “checked”, “disabled”, and “focused”.
+     * @return state
+    **/
+    @JsonProperty("state")
+    public com.amazon.ask.model.interfaces.alexa.presentation.apl.ComponentState getState() {
+        return state;
+    }
+
+    /**
+     * The value to set on the property
+     * @return value
+    **/
+    @JsonProperty("value")
+    public String getValue() {
+        return value;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        SetStateCommand interfacesAlexaPresentationAplSetStateCommand = (SetStateCommand) o;
+        return Objects.equals(this.componentId, interfacesAlexaPresentationAplSetStateCommand.componentId) &&
+            Objects.equals(this.state, interfacesAlexaPresentationAplSetStateCommand.state) &&
+            Objects.equals(this.value, interfacesAlexaPresentationAplSetStateCommand.value) &&
+            super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(componentId, state, value, super.hashCode());
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class SetStateCommand {\n");
+        sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+        sb.append("    componentId: ").append(toIndentedString(componentId)).append("\n");
+        sb.append("    state: ").append(toIndentedString(state)).append("\n");
+        sb.append("    value: ").append(toIndentedString(value)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String delay;
+        private String description;
+        private Boolean when;
+        private String componentId;
+        private com.amazon.ask.model.interfaces.alexa.presentation.apl.ComponentState state;
+        private String value;
+
+        private Builder() {}
+
+        @JsonProperty("delay")
+        public Builder withDelay(Integer delay) {
+            this.delay = String.valueOf(delay);
+            return this;
+        }
+
+        public Builder withDelay(String delayExpression) {
+            this.delay = delayExpression;
+            return this;
+        }
+
+        @JsonProperty("description")
+        public Builder withDescription(String description) {
+            this.description = description;
+            return this;
+        }
+
+
+        @JsonProperty("when")
+        public Builder withWhen(Boolean when) {
+            this.when = when;
+            return this;
+        }
+
+
+        @JsonProperty("componentId")
+        public Builder withComponentId(String componentId) {
+            this.componentId = componentId;
+            return this;
+        }
+
+
+        @JsonProperty("state")
+        public Builder withState(com.amazon.ask.model.interfaces.alexa.presentation.apl.ComponentState state) {
+            this.state = state;
+            return this;
+        }
+
+
+        @JsonProperty("value")
+        public Builder withValue(Boolean value) {
+            this.value = String.valueOf(value);
+            return this;
+        }
+
+        public Builder withValue(String valueExpression) {
+            this.value = valueExpression;
+            return this;
+        }
+
+        public SetStateCommand build() {
+            return new SetStateCommand(this);
+        }
+    }
 }
 

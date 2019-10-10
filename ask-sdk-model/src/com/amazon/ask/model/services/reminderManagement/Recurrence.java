@@ -26,134 +26,140 @@ import java.util.ArrayList;
  */
 
 @JsonDeserialize(builder = Recurrence.Builder.class)
-public final class Recurrence{
-
-  @JsonProperty("freq")
-  private com.amazon.ask.model.services.reminderManagement.RecurrenceFreq freq = null;
-
-  @JsonProperty("byDay")
-  private List<com.amazon.ask.model.services.reminderManagement.RecurrenceDay> byDay = new ArrayList<com.amazon.ask.model.services.reminderManagement.RecurrenceDay>();
-
-  @JsonProperty("interval")
-  private Integer interval = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private Recurrence(Builder builder) {
-    this.freq = builder.freq;
-    this.byDay = builder.byDay;
-    this.interval = builder.interval;
-  }
-
-  /**
-    * Get freq
-  * @return freq
-  **/
-  @JsonProperty("freq")
-  public com.amazon.ask.model.services.reminderManagement.RecurrenceFreq getFreq() {
-    return freq;
-  }
-
-  /**
-    * Get byDay
-  * @return byDay
-  **/
-  @JsonProperty("byDay")
-  public List<com.amazon.ask.model.services.reminderManagement.RecurrenceDay> getByDay() {
-    return byDay;
-  }
-
-  /**
-    * contains a positive integer representing at which intervals the recurrence rule repeats
-  * @return interval
-  **/
-  @JsonProperty("interval")
-  public Integer getInterval() {
-    return interval;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    Recurrence servicesReminderManagementRecurrence = (Recurrence) o;
-    return Objects.equals(this.freq, servicesReminderManagementRecurrence.freq) &&
-        Objects.equals(this.byDay, servicesReminderManagementRecurrence.byDay) &&
-        Objects.equals(this.interval, servicesReminderManagementRecurrence.interval);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(freq, byDay, interval);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class Recurrence {\n");
-    
-    sb.append("    freq: ").append(toIndentedString(freq)).append("\n");
-    sb.append("    byDay: ").append(toIndentedString(byDay)).append("\n");
-    sb.append("    interval: ").append(toIndentedString(interval)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private com.amazon.ask.model.services.reminderManagement.RecurrenceFreq freq;
-    private List<com.amazon.ask.model.services.reminderManagement.RecurrenceDay> byDay;
-    private Integer interval;
-
-    private Builder() { }
+public final class Recurrence {
 
     @JsonProperty("freq")
-    public Builder withFreq(com.amazon.ask.model.services.reminderManagement.RecurrenceFreq freq) {
-        this.freq = freq;
-        return this;
-    }
-
+    private com.amazon.ask.model.services.reminderManagement.RecurrenceFreq freq = null;
 
     @JsonProperty("byDay")
-    public Builder withByDay(List<com.amazon.ask.model.services.reminderManagement.RecurrenceDay> byDay) {
-        this.byDay = byDay;
-        return this;
-    }
-
-    public Builder addByDayItem(com.amazon.ask.model.services.reminderManagement.RecurrenceDay byDayItem) {
-      if (this.byDay == null) {
-        this.byDay = new ArrayList<com.amazon.ask.model.services.reminderManagement.RecurrenceDay>();
-      }
-      this.byDay.add(byDayItem);
-      return this;
-    }
+    private List<com.amazon.ask.model.services.reminderManagement.RecurrenceDay> byDay = new ArrayList<com.amazon.ask.model.services.reminderManagement.RecurrenceDay>();
 
     @JsonProperty("interval")
-    public Builder withInterval(Integer interval) {
-        this.interval = interval;
-        return this;
+    private Integer interval = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-
-    public Recurrence build() {
-      return new Recurrence(this);
+    private Recurrence(Builder builder) {
+        if (builder.freq != null) {
+            this.freq = builder.freq;
+        }
+        if (builder.byDay != null) {
+            this.byDay = builder.byDay;
+        }
+        if (builder.interval != null) {
+            this.interval = builder.interval;
+        }
     }
-  }
+
+    /**
+     * Get freq
+     * @return freq
+    **/
+    @JsonProperty("freq")
+    public com.amazon.ask.model.services.reminderManagement.RecurrenceFreq getFreq() {
+        return freq;
+    }
+
+    /**
+     * Get byDay
+     * @return byDay
+    **/
+    @JsonProperty("byDay")
+    public List<com.amazon.ask.model.services.reminderManagement.RecurrenceDay> getByDay() {
+        return byDay;
+    }
+
+    /**
+     * contains a positive integer representing at which intervals the recurrence rule repeats
+     * @return interval
+    **/
+    @JsonProperty("interval")
+    public Integer getInterval() {
+        return interval;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Recurrence servicesReminderManagementRecurrence = (Recurrence) o;
+        return Objects.equals(this.freq, servicesReminderManagementRecurrence.freq) &&
+            Objects.equals(this.byDay, servicesReminderManagementRecurrence.byDay) &&
+            Objects.equals(this.interval, servicesReminderManagementRecurrence.interval);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(freq, byDay, interval);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class Recurrence {\n");
+        
+        sb.append("    freq: ").append(toIndentedString(freq)).append("\n");
+        sb.append("    byDay: ").append(toIndentedString(byDay)).append("\n");
+        sb.append("    interval: ").append(toIndentedString(interval)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private com.amazon.ask.model.services.reminderManagement.RecurrenceFreq freq;
+        private List<com.amazon.ask.model.services.reminderManagement.RecurrenceDay> byDay;
+        private Integer interval;
+
+        private Builder() {}
+
+        @JsonProperty("freq")
+        public Builder withFreq(com.amazon.ask.model.services.reminderManagement.RecurrenceFreq freq) {
+            this.freq = freq;
+            return this;
+        }
+
+
+        @JsonProperty("byDay")
+        public Builder withByDay(List<com.amazon.ask.model.services.reminderManagement.RecurrenceDay> byDay) {
+            this.byDay = byDay;
+            return this;
+        }
+
+        public Builder addByDayItem(com.amazon.ask.model.services.reminderManagement.RecurrenceDay byDayItem) {
+            if (this.byDay == null) {
+                this.byDay = new ArrayList<com.amazon.ask.model.services.reminderManagement.RecurrenceDay>();
+            }
+            this.byDay.add(byDayItem);
+            return this;
+        }
+
+        @JsonProperty("interval")
+        public Builder withInterval(Integer interval) {
+            this.interval = interval;
+            return this;
+        }
+
+
+        public Recurrence build() {
+            return new Recurrence(this);
+        }
+    }
 }
 

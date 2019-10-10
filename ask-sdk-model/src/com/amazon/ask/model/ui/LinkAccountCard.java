@@ -23,61 +23,61 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = LinkAccountCard.Builder.class)
-public final class LinkAccountCard extends com.amazon.ask.model.ui.Card {
+public final class LinkAccountCard extends com.amazon.ask.model.ui.Card  {
 
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private LinkAccountCard(Builder builder) {
-    String discriminatorValue = "LinkAccount";
-
-    this.type = discriminatorValue;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
+    public static Builder builder() {
+        return new Builder();
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    private LinkAccountCard(Builder builder) {
+        String discriminatorValue = "LinkAccount";
+
+        this.type = discriminatorValue;
     }
-    return super.equals(o);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(super.hashCode());
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class LinkAccountCard {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        return super.equals(o);
     }
-    return o.toString().replace("\n", "\n    ");
-  }
 
-  public static class Builder {
-
-    private Builder() { }
-
-    public LinkAccountCard build() {
-      return new LinkAccountCard(this);
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode());
     }
-  }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class LinkAccountCard {\n");
+        sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+
+        private Builder() {}
+
+        public LinkAccountCard build() {
+            return new LinkAccountCard(this);
+        }
+    }
 }
 

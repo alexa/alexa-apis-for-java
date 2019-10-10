@@ -23,104 +23,108 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = Altitude.Builder.class)
-public final class Altitude{
-
-  @JsonProperty("altitudeInMeters")
-  private Double altitudeInMeters = null;
-
-  @JsonProperty("accuracyInMeters")
-  private Double accuracyInMeters = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private Altitude(Builder builder) {
-    this.altitudeInMeters = builder.altitudeInMeters;
-    this.accuracyInMeters = builder.accuracyInMeters;
-  }
-
-  /**
-    * A double representing the altitude of the device in meters.
-  * @return altitudeInMeters
-  **/
-  @JsonProperty("altitudeInMeters")
-  public Double getAltitudeInMeters() {
-    return altitudeInMeters;
-  }
-
-  /**
-    * A double representing the accuracy of the altitude measurement in meters.
-  * @return accuracyInMeters
-  **/
-  @JsonProperty("accuracyInMeters")
-  public Double getAccuracyInMeters() {
-    return accuracyInMeters;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    Altitude interfacesGeolocationAltitude = (Altitude) o;
-    return Objects.equals(this.altitudeInMeters, interfacesGeolocationAltitude.altitudeInMeters) &&
-        Objects.equals(this.accuracyInMeters, interfacesGeolocationAltitude.accuracyInMeters);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(altitudeInMeters, accuracyInMeters);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class Altitude {\n");
-    
-    sb.append("    altitudeInMeters: ").append(toIndentedString(altitudeInMeters)).append("\n");
-    sb.append("    accuracyInMeters: ").append(toIndentedString(accuracyInMeters)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private Double altitudeInMeters;
-    private Double accuracyInMeters;
-
-    private Builder() { }
+public final class Altitude {
 
     @JsonProperty("altitudeInMeters")
-    public Builder withAltitudeInMeters(Double altitudeInMeters) {
-        this.altitudeInMeters = altitudeInMeters;
-        return this;
-    }
-
+    private Double altitudeInMeters = null;
 
     @JsonProperty("accuracyInMeters")
-    public Builder withAccuracyInMeters(Double accuracyInMeters) {
-        this.accuracyInMeters = accuracyInMeters;
-        return this;
+    private Double accuracyInMeters = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-
-    public Altitude build() {
-      return new Altitude(this);
+    private Altitude(Builder builder) {
+        if (builder.altitudeInMeters != null) {
+            this.altitudeInMeters = builder.altitudeInMeters;
+        }
+        if (builder.accuracyInMeters != null) {
+            this.accuracyInMeters = builder.accuracyInMeters;
+        }
     }
-  }
+
+    /**
+     * A double representing the altitude of the device in meters.
+     * @return altitudeInMeters
+    **/
+    @JsonProperty("altitudeInMeters")
+    public Double getAltitudeInMeters() {
+        return altitudeInMeters;
+    }
+
+    /**
+     * A double representing the accuracy of the altitude measurement in meters.
+     * @return accuracyInMeters
+    **/
+    @JsonProperty("accuracyInMeters")
+    public Double getAccuracyInMeters() {
+        return accuracyInMeters;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Altitude interfacesGeolocationAltitude = (Altitude) o;
+        return Objects.equals(this.altitudeInMeters, interfacesGeolocationAltitude.altitudeInMeters) &&
+            Objects.equals(this.accuracyInMeters, interfacesGeolocationAltitude.accuracyInMeters);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(altitudeInMeters, accuracyInMeters);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class Altitude {\n");
+        
+        sb.append("    altitudeInMeters: ").append(toIndentedString(altitudeInMeters)).append("\n");
+        sb.append("    accuracyInMeters: ").append(toIndentedString(accuracyInMeters)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private Double altitudeInMeters;
+        private Double accuracyInMeters;
+
+        private Builder() {}
+
+        @JsonProperty("altitudeInMeters")
+        public Builder withAltitudeInMeters(Double altitudeInMeters) {
+            this.altitudeInMeters = altitudeInMeters;
+            return this;
+        }
+
+
+        @JsonProperty("accuracyInMeters")
+        public Builder withAccuracyInMeters(Double accuracyInMeters) {
+            this.accuracyInMeters = accuracyInMeters;
+            return this;
+        }
+
+
+        public Altitude build() {
+            return new Altitude(this);
+        }
+    }
 }
 

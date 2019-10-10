@@ -23,163 +23,173 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = PrintImageRequest.Builder.class)
-public final class PrintImageRequest extends com.amazon.ask.model.interfaces.connections.requests.BaseRequest {
-
-  @JsonProperty("title")
-  private String title = null;
-
-  @JsonProperty("url")
-  private String url = null;
-
-  @JsonProperty("description")
-  private String description = null;
-
-  @JsonProperty("imageType")
-  private String imageType = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private PrintImageRequest(Builder builder) {
-    String discriminatorValue = "PrintImageRequest";
-
-    this.type = discriminatorValue;
-    this.version = builder.version;
-    this.title = builder.title;
-    this.url = builder.url;
-    this.description = builder.description;
-    this.imageType = builder.imageType;
-  }
-
-  /**
-    * title of the image
-  * @return title
-  **/
-  @JsonProperty("title")
-  public String getTitle() {
-    return title;
-  }
-
-  /**
-    * url of the image
-  * @return url
-  **/
-  @JsonProperty("url")
-  public String getUrl() {
-    return url;
-  }
-
-  /**
-    * description of the image
-  * @return description
-  **/
-  @JsonProperty("description")
-  public String getDescription() {
-    return description;
-  }
-
-  /**
-    * type of the image
-  * @return imageType
-  **/
-  @JsonProperty("imageType")
-  public String getImageType() {
-    return imageType;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    PrintImageRequest interfacesConnectionsRequestsPrintImageRequest = (PrintImageRequest) o;
-    return Objects.equals(this.title, interfacesConnectionsRequestsPrintImageRequest.title) &&
-        Objects.equals(this.url, interfacesConnectionsRequestsPrintImageRequest.url) &&
-        Objects.equals(this.description, interfacesConnectionsRequestsPrintImageRequest.description) &&
-        Objects.equals(this.imageType, interfacesConnectionsRequestsPrintImageRequest.imageType) &&
-        super.equals(o);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(title, url, description, imageType, super.hashCode());
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class PrintImageRequest {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    title: ").append(toIndentedString(title)).append("\n");
-    sb.append("    url: ").append(toIndentedString(url)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    imageType: ").append(toIndentedString(imageType)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private String version;
-    private String title;
-    private String url;
-    private String description;
-    private String imageType;
-
-    private Builder() { }
-
-    @JsonProperty("@version")
-    public Builder withVersion(String version) {
-        this.version = version;
-        return this;
-    }
-
+public final class PrintImageRequest extends com.amazon.ask.model.interfaces.connections.requests.BaseRequest  {
 
     @JsonProperty("title")
-    public Builder withTitle(String title) {
-        this.title = title;
-        return this;
-    }
-
+    private String title = null;
 
     @JsonProperty("url")
-    public Builder withUrl(String url) {
-        this.url = url;
-        return this;
-    }
-
+    private String url = null;
 
     @JsonProperty("description")
-    public Builder withDescription(String description) {
-        this.description = description;
-        return this;
-    }
-
+    private String description = null;
 
     @JsonProperty("imageType")
-    public Builder withImageType(String imageType) {
-        this.imageType = imageType;
-        return this;
+    private String imageType = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
+    private PrintImageRequest(Builder builder) {
+        String discriminatorValue = "PrintImageRequest";
 
-    public PrintImageRequest build() {
-      return new PrintImageRequest(this);
+        this.type = discriminatorValue;
+        if (builder.version != null) {
+            this.version = builder.version;
+        }
+        if (builder.title != null) {
+            this.title = builder.title;
+        }
+        if (builder.url != null) {
+            this.url = builder.url;
+        }
+        if (builder.description != null) {
+            this.description = builder.description;
+        }
+        if (builder.imageType != null) {
+            this.imageType = builder.imageType;
+        }
     }
-  }
+
+    /**
+     * title of the image
+     * @return title
+    **/
+    @JsonProperty("title")
+    public String getTitle() {
+        return title;
+    }
+
+    /**
+     * url of the image
+     * @return url
+    **/
+    @JsonProperty("url")
+    public String getUrl() {
+        return url;
+    }
+
+    /**
+     * description of the image
+     * @return description
+    **/
+    @JsonProperty("description")
+    public String getDescription() {
+        return description;
+    }
+
+    /**
+     * type of the image
+     * @return imageType
+    **/
+    @JsonProperty("imageType")
+    public String getImageType() {
+        return imageType;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        PrintImageRequest interfacesConnectionsRequestsPrintImageRequest = (PrintImageRequest) o;
+        return Objects.equals(this.title, interfacesConnectionsRequestsPrintImageRequest.title) &&
+            Objects.equals(this.url, interfacesConnectionsRequestsPrintImageRequest.url) &&
+            Objects.equals(this.description, interfacesConnectionsRequestsPrintImageRequest.description) &&
+            Objects.equals(this.imageType, interfacesConnectionsRequestsPrintImageRequest.imageType) &&
+            super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(title, url, description, imageType, super.hashCode());
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class PrintImageRequest {\n");
+        sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+        sb.append("    title: ").append(toIndentedString(title)).append("\n");
+        sb.append("    url: ").append(toIndentedString(url)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    imageType: ").append(toIndentedString(imageType)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String version;
+        private String title;
+        private String url;
+        private String description;
+        private String imageType;
+
+        private Builder() {}
+
+        @JsonProperty("@version")
+        public Builder withVersion(String version) {
+            this.version = version;
+            return this;
+        }
+
+
+        @JsonProperty("title")
+        public Builder withTitle(String title) {
+            this.title = title;
+            return this;
+        }
+
+
+        @JsonProperty("url")
+        public Builder withUrl(String url) {
+            this.url = url;
+            return this;
+        }
+
+
+        @JsonProperty("description")
+        public Builder withDescription(String description) {
+            this.description = description;
+            return this;
+        }
+
+
+        @JsonProperty("imageType")
+        public Builder withImageType(String imageType) {
+            this.imageType = imageType;
+            return this;
+        }
+
+
+        public PrintImageRequest build() {
+            return new PrintImageRequest(this);
+        }
+    }
 }
 

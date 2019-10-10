@@ -23,85 +23,87 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = StopEventHandlerDirective.Builder.class)
-public final class StopEventHandlerDirective extends com.amazon.ask.model.Directive {
-
-  @JsonProperty("token")
-  private String token = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private StopEventHandlerDirective(Builder builder) {
-    String discriminatorValue = "CustomInterfaceController.StopEventHandler";
-
-    this.type = discriminatorValue;
-    this.token = builder.token;
-  }
-
-  /**
-    * Unique identifier required to close the Event Handler. This token must match the token used in the StartEventHandlerDirective.
-  * @return token
-  **/
-  @JsonProperty("token")
-  public String getToken() {
-    return token;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    StopEventHandlerDirective interfacesCustomInterfaceControllerStopEventHandlerDirective = (StopEventHandlerDirective) o;
-    return Objects.equals(this.token, interfacesCustomInterfaceControllerStopEventHandlerDirective.token) &&
-        super.equals(o);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(token, super.hashCode());
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class StopEventHandlerDirective {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    token: ").append(toIndentedString(token)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private String token;
-
-    private Builder() { }
+public final class StopEventHandlerDirective extends com.amazon.ask.model.Directive  {
 
     @JsonProperty("token")
-    public Builder withToken(String token) {
-        this.token = token;
-        return this;
+    private String token = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
+    private StopEventHandlerDirective(Builder builder) {
+        String discriminatorValue = "CustomInterfaceController.StopEventHandler";
 
-    public StopEventHandlerDirective build() {
-      return new StopEventHandlerDirective(this);
+        this.type = discriminatorValue;
+        if (builder.token != null) {
+            this.token = builder.token;
+        }
     }
-  }
+
+    /**
+     * Unique identifier required to close the Event Handler. This token must match the token used in the StartEventHandlerDirective.
+     * @return token
+    **/
+    @JsonProperty("token")
+    public String getToken() {
+        return token;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        StopEventHandlerDirective interfacesCustomInterfaceControllerStopEventHandlerDirective = (StopEventHandlerDirective) o;
+        return Objects.equals(this.token, interfacesCustomInterfaceControllerStopEventHandlerDirective.token) &&
+            super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(token, super.hashCode());
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class StopEventHandlerDirective {\n");
+        sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+        sb.append("    token: ").append(toIndentedString(token)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String token;
+
+        private Builder() {}
+
+        @JsonProperty("token")
+        public Builder withToken(String token) {
+            this.token = token;
+            return this;
+        }
+
+
+        public StopEventHandlerDirective build() {
+            return new StopEventHandlerDirective(this);
+        }
+    }
 }
 

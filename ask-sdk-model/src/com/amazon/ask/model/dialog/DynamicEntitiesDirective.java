@@ -26,115 +26,119 @@ import java.util.ArrayList;
  */
 
 @JsonDeserialize(builder = DynamicEntitiesDirective.Builder.class)
-public final class DynamicEntitiesDirective extends com.amazon.ask.model.Directive {
-
-  @JsonProperty("updateBehavior")
-  private com.amazon.ask.model.er.dynamic.UpdateBehavior updateBehavior = null;
-
-  @JsonProperty("types")
-  private List<com.amazon.ask.model.er.dynamic.EntityListItem> types = new ArrayList<com.amazon.ask.model.er.dynamic.EntityListItem>();
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private DynamicEntitiesDirective(Builder builder) {
-    String discriminatorValue = "Dialog.UpdateDynamicEntities";
-
-    this.type = discriminatorValue;
-    this.updateBehavior = builder.updateBehavior;
-    this.types = builder.types;
-  }
-
-  /**
-    * Get updateBehavior
-  * @return updateBehavior
-  **/
-  @JsonProperty("updateBehavior")
-  public com.amazon.ask.model.er.dynamic.UpdateBehavior getUpdateBehavior() {
-    return updateBehavior;
-  }
-
-  /**
-    * Get types
-  * @return types
-  **/
-  @JsonProperty("types")
-  public List<com.amazon.ask.model.er.dynamic.EntityListItem> getTypes() {
-    return types;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    DynamicEntitiesDirective dialogDynamicEntitiesDirective = (DynamicEntitiesDirective) o;
-    return Objects.equals(this.updateBehavior, dialogDynamicEntitiesDirective.updateBehavior) &&
-        Objects.equals(this.types, dialogDynamicEntitiesDirective.types) &&
-        super.equals(o);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(updateBehavior, types, super.hashCode());
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class DynamicEntitiesDirective {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    updateBehavior: ").append(toIndentedString(updateBehavior)).append("\n");
-    sb.append("    types: ").append(toIndentedString(types)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private com.amazon.ask.model.er.dynamic.UpdateBehavior updateBehavior;
-    private List<com.amazon.ask.model.er.dynamic.EntityListItem> types;
-
-    private Builder() { }
+public final class DynamicEntitiesDirective extends com.amazon.ask.model.Directive  {
 
     @JsonProperty("updateBehavior")
-    public Builder withUpdateBehavior(com.amazon.ask.model.er.dynamic.UpdateBehavior updateBehavior) {
-        this.updateBehavior = updateBehavior;
-        return this;
-    }
-
+    private com.amazon.ask.model.er.dynamic.UpdateBehavior updateBehavior = null;
 
     @JsonProperty("types")
-    public Builder withTypes(List<com.amazon.ask.model.er.dynamic.EntityListItem> types) {
-        this.types = types;
-        return this;
+    private List<com.amazon.ask.model.er.dynamic.EntityListItem> types = new ArrayList<com.amazon.ask.model.er.dynamic.EntityListItem>();
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-    public Builder addTypesItem(com.amazon.ask.model.er.dynamic.EntityListItem typesItem) {
-      if (this.types == null) {
-        this.types = new ArrayList<com.amazon.ask.model.er.dynamic.EntityListItem>();
-      }
-      this.types.add(typesItem);
-      return this;
+    private DynamicEntitiesDirective(Builder builder) {
+        String discriminatorValue = "Dialog.UpdateDynamicEntities";
+
+        this.type = discriminatorValue;
+        if (builder.updateBehavior != null) {
+            this.updateBehavior = builder.updateBehavior;
+        }
+        if (builder.types != null) {
+            this.types = builder.types;
+        }
     }
 
-    public DynamicEntitiesDirective build() {
-      return new DynamicEntitiesDirective(this);
+    /**
+     * Get updateBehavior
+     * @return updateBehavior
+    **/
+    @JsonProperty("updateBehavior")
+    public com.amazon.ask.model.er.dynamic.UpdateBehavior getUpdateBehavior() {
+        return updateBehavior;
     }
-  }
+
+    /**
+     * Get types
+     * @return types
+    **/
+    @JsonProperty("types")
+    public List<com.amazon.ask.model.er.dynamic.EntityListItem> getTypes() {
+        return types;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        DynamicEntitiesDirective dialogDynamicEntitiesDirective = (DynamicEntitiesDirective) o;
+        return Objects.equals(this.updateBehavior, dialogDynamicEntitiesDirective.updateBehavior) &&
+            Objects.equals(this.types, dialogDynamicEntitiesDirective.types) &&
+            super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(updateBehavior, types, super.hashCode());
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class DynamicEntitiesDirective {\n");
+        sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+        sb.append("    updateBehavior: ").append(toIndentedString(updateBehavior)).append("\n");
+        sb.append("    types: ").append(toIndentedString(types)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private com.amazon.ask.model.er.dynamic.UpdateBehavior updateBehavior;
+        private List<com.amazon.ask.model.er.dynamic.EntityListItem> types;
+
+        private Builder() {}
+
+        @JsonProperty("updateBehavior")
+        public Builder withUpdateBehavior(com.amazon.ask.model.er.dynamic.UpdateBehavior updateBehavior) {
+            this.updateBehavior = updateBehavior;
+            return this;
+        }
+
+
+        @JsonProperty("types")
+        public Builder withTypes(List<com.amazon.ask.model.er.dynamic.EntityListItem> types) {
+            this.types = types;
+            return this;
+        }
+
+        public Builder addTypesItem(com.amazon.ask.model.er.dynamic.EntityListItem typesItem) {
+            if (this.types == null) {
+                this.types = new ArrayList<com.amazon.ask.model.er.dynamic.EntityListItem>();
+            }
+            this.types.add(typesItem);
+            return this;
+        }
+
+        public DynamicEntitiesDirective build() {
+            return new DynamicEntitiesDirective(this);
+        }
+    }
 }
 

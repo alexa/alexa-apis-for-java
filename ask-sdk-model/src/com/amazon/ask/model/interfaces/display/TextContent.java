@@ -23,127 +23,133 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = TextContent.Builder.class)
-public final class TextContent{
-
-  @JsonProperty("primaryText")
-  private com.amazon.ask.model.interfaces.display.TextField primaryText = null;
-
-  @JsonProperty("secondaryText")
-  private com.amazon.ask.model.interfaces.display.TextField secondaryText = null;
-
-  @JsonProperty("tertiaryText")
-  private com.amazon.ask.model.interfaces.display.TextField tertiaryText = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private TextContent(Builder builder) {
-    this.primaryText = builder.primaryText;
-    this.secondaryText = builder.secondaryText;
-    this.tertiaryText = builder.tertiaryText;
-  }
-
-  /**
-    * Get primaryText
-  * @return primaryText
-  **/
-  @JsonProperty("primaryText")
-  public com.amazon.ask.model.interfaces.display.TextField getPrimaryText() {
-    return primaryText;
-  }
-
-  /**
-    * Get secondaryText
-  * @return secondaryText
-  **/
-  @JsonProperty("secondaryText")
-  public com.amazon.ask.model.interfaces.display.TextField getSecondaryText() {
-    return secondaryText;
-  }
-
-  /**
-    * Get tertiaryText
-  * @return tertiaryText
-  **/
-  @JsonProperty("tertiaryText")
-  public com.amazon.ask.model.interfaces.display.TextField getTertiaryText() {
-    return tertiaryText;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    TextContent interfacesDisplayTextContent = (TextContent) o;
-    return Objects.equals(this.primaryText, interfacesDisplayTextContent.primaryText) &&
-        Objects.equals(this.secondaryText, interfacesDisplayTextContent.secondaryText) &&
-        Objects.equals(this.tertiaryText, interfacesDisplayTextContent.tertiaryText);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(primaryText, secondaryText, tertiaryText);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class TextContent {\n");
-    
-    sb.append("    primaryText: ").append(toIndentedString(primaryText)).append("\n");
-    sb.append("    secondaryText: ").append(toIndentedString(secondaryText)).append("\n");
-    sb.append("    tertiaryText: ").append(toIndentedString(tertiaryText)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private com.amazon.ask.model.interfaces.display.TextField primaryText;
-    private com.amazon.ask.model.interfaces.display.TextField secondaryText;
-    private com.amazon.ask.model.interfaces.display.TextField tertiaryText;
-
-    private Builder() { }
+public final class TextContent {
 
     @JsonProperty("primaryText")
-    public Builder withPrimaryText(com.amazon.ask.model.interfaces.display.TextField primaryText) {
-        this.primaryText = primaryText;
-        return this;
-    }
-
+    private com.amazon.ask.model.interfaces.display.TextField primaryText = null;
 
     @JsonProperty("secondaryText")
-    public Builder withSecondaryText(com.amazon.ask.model.interfaces.display.TextField secondaryText) {
-        this.secondaryText = secondaryText;
-        return this;
-    }
-
+    private com.amazon.ask.model.interfaces.display.TextField secondaryText = null;
 
     @JsonProperty("tertiaryText")
-    public Builder withTertiaryText(com.amazon.ask.model.interfaces.display.TextField tertiaryText) {
-        this.tertiaryText = tertiaryText;
-        return this;
+    private com.amazon.ask.model.interfaces.display.TextField tertiaryText = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-
-    public TextContent build() {
-      return new TextContent(this);
+    private TextContent(Builder builder) {
+        if (builder.primaryText != null) {
+            this.primaryText = builder.primaryText;
+        }
+        if (builder.secondaryText != null) {
+            this.secondaryText = builder.secondaryText;
+        }
+        if (builder.tertiaryText != null) {
+            this.tertiaryText = builder.tertiaryText;
+        }
     }
-  }
+
+    /**
+     * Get primaryText
+     * @return primaryText
+    **/
+    @JsonProperty("primaryText")
+    public com.amazon.ask.model.interfaces.display.TextField getPrimaryText() {
+        return primaryText;
+    }
+
+    /**
+     * Get secondaryText
+     * @return secondaryText
+    **/
+    @JsonProperty("secondaryText")
+    public com.amazon.ask.model.interfaces.display.TextField getSecondaryText() {
+        return secondaryText;
+    }
+
+    /**
+     * Get tertiaryText
+     * @return tertiaryText
+    **/
+    @JsonProperty("tertiaryText")
+    public com.amazon.ask.model.interfaces.display.TextField getTertiaryText() {
+        return tertiaryText;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        TextContent interfacesDisplayTextContent = (TextContent) o;
+        return Objects.equals(this.primaryText, interfacesDisplayTextContent.primaryText) &&
+            Objects.equals(this.secondaryText, interfacesDisplayTextContent.secondaryText) &&
+            Objects.equals(this.tertiaryText, interfacesDisplayTextContent.tertiaryText);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(primaryText, secondaryText, tertiaryText);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class TextContent {\n");
+        
+        sb.append("    primaryText: ").append(toIndentedString(primaryText)).append("\n");
+        sb.append("    secondaryText: ").append(toIndentedString(secondaryText)).append("\n");
+        sb.append("    tertiaryText: ").append(toIndentedString(tertiaryText)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private com.amazon.ask.model.interfaces.display.TextField primaryText;
+        private com.amazon.ask.model.interfaces.display.TextField secondaryText;
+        private com.amazon.ask.model.interfaces.display.TextField tertiaryText;
+
+        private Builder() {}
+
+        @JsonProperty("primaryText")
+        public Builder withPrimaryText(com.amazon.ask.model.interfaces.display.TextField primaryText) {
+            this.primaryText = primaryText;
+            return this;
+        }
+
+
+        @JsonProperty("secondaryText")
+        public Builder withSecondaryText(com.amazon.ask.model.interfaces.display.TextField secondaryText) {
+            this.secondaryText = secondaryText;
+            return this;
+        }
+
+
+        @JsonProperty("tertiaryText")
+        public Builder withTertiaryText(com.amazon.ask.model.interfaces.display.TextField tertiaryText) {
+            this.tertiaryText = tertiaryText;
+            return this;
+        }
+
+
+        public TextContent build() {
+            return new TextContent(this);
+        }
+    }
 }
 

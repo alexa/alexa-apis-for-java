@@ -23,104 +23,108 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = DisplayInterface.Builder.class)
-public final class DisplayInterface{
-
-  @JsonProperty("templateVersion")
-  private String templateVersion = null;
-
-  @JsonProperty("markupVersion")
-  private String markupVersion = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private DisplayInterface(Builder builder) {
-    this.templateVersion = builder.templateVersion;
-    this.markupVersion = builder.markupVersion;
-  }
-
-  /**
-    * Get templateVersion
-  * @return templateVersion
-  **/
-  @JsonProperty("templateVersion")
-  public String getTemplateVersion() {
-    return templateVersion;
-  }
-
-  /**
-    * Get markupVersion
-  * @return markupVersion
-  **/
-  @JsonProperty("markupVersion")
-  public String getMarkupVersion() {
-    return markupVersion;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    DisplayInterface interfacesDisplayDisplayInterface = (DisplayInterface) o;
-    return Objects.equals(this.templateVersion, interfacesDisplayDisplayInterface.templateVersion) &&
-        Objects.equals(this.markupVersion, interfacesDisplayDisplayInterface.markupVersion);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(templateVersion, markupVersion);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class DisplayInterface {\n");
-    
-    sb.append("    templateVersion: ").append(toIndentedString(templateVersion)).append("\n");
-    sb.append("    markupVersion: ").append(toIndentedString(markupVersion)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private String templateVersion;
-    private String markupVersion;
-
-    private Builder() { }
+public final class DisplayInterface {
 
     @JsonProperty("templateVersion")
-    public Builder withTemplateVersion(String templateVersion) {
-        this.templateVersion = templateVersion;
-        return this;
-    }
-
+    private String templateVersion = null;
 
     @JsonProperty("markupVersion")
-    public Builder withMarkupVersion(String markupVersion) {
-        this.markupVersion = markupVersion;
-        return this;
+    private String markupVersion = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-
-    public DisplayInterface build() {
-      return new DisplayInterface(this);
+    private DisplayInterface(Builder builder) {
+        if (builder.templateVersion != null) {
+            this.templateVersion = builder.templateVersion;
+        }
+        if (builder.markupVersion != null) {
+            this.markupVersion = builder.markupVersion;
+        }
     }
-  }
+
+    /**
+     * Get templateVersion
+     * @return templateVersion
+    **/
+    @JsonProperty("templateVersion")
+    public String getTemplateVersion() {
+        return templateVersion;
+    }
+
+    /**
+     * Get markupVersion
+     * @return markupVersion
+    **/
+    @JsonProperty("markupVersion")
+    public String getMarkupVersion() {
+        return markupVersion;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        DisplayInterface interfacesDisplayDisplayInterface = (DisplayInterface) o;
+        return Objects.equals(this.templateVersion, interfacesDisplayDisplayInterface.templateVersion) &&
+            Objects.equals(this.markupVersion, interfacesDisplayDisplayInterface.markupVersion);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(templateVersion, markupVersion);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class DisplayInterface {\n");
+        
+        sb.append("    templateVersion: ").append(toIndentedString(templateVersion)).append("\n");
+        sb.append("    markupVersion: ").append(toIndentedString(markupVersion)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String templateVersion;
+        private String markupVersion;
+
+        private Builder() {}
+
+        @JsonProperty("templateVersion")
+        public Builder withTemplateVersion(String templateVersion) {
+            this.templateVersion = templateVersion;
+            return this;
+        }
+
+
+        @JsonProperty("markupVersion")
+        public Builder withMarkupVersion(String markupVersion) {
+            this.markupVersion = markupVersion;
+            return this;
+        }
+
+
+        public DisplayInterface build() {
+            return new DisplayInterface(this);
+        }
+    }
 }
 

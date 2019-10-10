@@ -23,140 +23,148 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = ScheduleFoodEstablishmentReservationRequest.Builder.class)
-public final class ScheduleFoodEstablishmentReservationRequest extends com.amazon.ask.model.interfaces.connections.requests.BaseRequest {
-
-  @JsonProperty("startTime")
-  private String startTime = null;
-
-  @JsonProperty("partySize")
-  private String partySize = null;
-
-  @JsonProperty("restaurant")
-  private com.amazon.ask.model.interfaces.connections.entities.Restaurant restaurant = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private ScheduleFoodEstablishmentReservationRequest(Builder builder) {
-    String discriminatorValue = "ScheduleFoodEstablishmentReservationRequest";
-
-    this.type = discriminatorValue;
-    this.version = builder.version;
-    this.startTime = builder.startTime;
-    this.partySize = builder.partySize;
-    this.restaurant = builder.restaurant;
-  }
-
-  /**
-    * start time of the reservation
-  * @return startTime
-  **/
-  @JsonProperty("startTime")
-  public String getStartTime() {
-    return startTime;
-  }
-
-  /**
-    * party size
-  * @return partySize
-  **/
-  @JsonProperty("partySize")
-  public String getPartySize() {
-    return partySize;
-  }
-
-  /**
-    * restaurant
-  * @return restaurant
-  **/
-  @JsonProperty("restaurant")
-  public com.amazon.ask.model.interfaces.connections.entities.Restaurant getRestaurant() {
-    return restaurant;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    ScheduleFoodEstablishmentReservationRequest interfacesConnectionsRequestsScheduleFoodEstablishmentReservationRequest = (ScheduleFoodEstablishmentReservationRequest) o;
-    return Objects.equals(this.startTime, interfacesConnectionsRequestsScheduleFoodEstablishmentReservationRequest.startTime) &&
-        Objects.equals(this.partySize, interfacesConnectionsRequestsScheduleFoodEstablishmentReservationRequest.partySize) &&
-        Objects.equals(this.restaurant, interfacesConnectionsRequestsScheduleFoodEstablishmentReservationRequest.restaurant) &&
-        super.equals(o);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(startTime, partySize, restaurant, super.hashCode());
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ScheduleFoodEstablishmentReservationRequest {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
-    sb.append("    partySize: ").append(toIndentedString(partySize)).append("\n");
-    sb.append("    restaurant: ").append(toIndentedString(restaurant)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private String version;
-    private String startTime;
-    private String partySize;
-    private com.amazon.ask.model.interfaces.connections.entities.Restaurant restaurant;
-
-    private Builder() { }
-
-    @JsonProperty("@version")
-    public Builder withVersion(String version) {
-        this.version = version;
-        return this;
-    }
-
+public final class ScheduleFoodEstablishmentReservationRequest extends com.amazon.ask.model.interfaces.connections.requests.BaseRequest  {
 
     @JsonProperty("startTime")
-    public Builder withStartTime(String startTime) {
-        this.startTime = startTime;
-        return this;
-    }
-
+    private String startTime = null;
 
     @JsonProperty("partySize")
-    public Builder withPartySize(String partySize) {
-        this.partySize = partySize;
-        return this;
-    }
-
+    private String partySize = null;
 
     @JsonProperty("restaurant")
-    public Builder withRestaurant(com.amazon.ask.model.interfaces.connections.entities.Restaurant restaurant) {
-        this.restaurant = restaurant;
-        return this;
+    private com.amazon.ask.model.interfaces.connections.entities.Restaurant restaurant = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
+    private ScheduleFoodEstablishmentReservationRequest(Builder builder) {
+        String discriminatorValue = "ScheduleFoodEstablishmentReservationRequest";
 
-    public ScheduleFoodEstablishmentReservationRequest build() {
-      return new ScheduleFoodEstablishmentReservationRequest(this);
+        this.type = discriminatorValue;
+        if (builder.version != null) {
+            this.version = builder.version;
+        }
+        if (builder.startTime != null) {
+            this.startTime = builder.startTime;
+        }
+        if (builder.partySize != null) {
+            this.partySize = builder.partySize;
+        }
+        if (builder.restaurant != null) {
+            this.restaurant = builder.restaurant;
+        }
     }
-  }
+
+    /**
+     * start time of the reservation
+     * @return startTime
+    **/
+    @JsonProperty("startTime")
+    public String getStartTime() {
+        return startTime;
+    }
+
+    /**
+     * party size
+     * @return partySize
+    **/
+    @JsonProperty("partySize")
+    public String getPartySize() {
+        return partySize;
+    }
+
+    /**
+     * restaurant
+     * @return restaurant
+    **/
+    @JsonProperty("restaurant")
+    public com.amazon.ask.model.interfaces.connections.entities.Restaurant getRestaurant() {
+        return restaurant;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        ScheduleFoodEstablishmentReservationRequest interfacesConnectionsRequestsScheduleFoodEstablishmentReservationRequest = (ScheduleFoodEstablishmentReservationRequest) o;
+        return Objects.equals(this.startTime, interfacesConnectionsRequestsScheduleFoodEstablishmentReservationRequest.startTime) &&
+            Objects.equals(this.partySize, interfacesConnectionsRequestsScheduleFoodEstablishmentReservationRequest.partySize) &&
+            Objects.equals(this.restaurant, interfacesConnectionsRequestsScheduleFoodEstablishmentReservationRequest.restaurant) &&
+            super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(startTime, partySize, restaurant, super.hashCode());
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ScheduleFoodEstablishmentReservationRequest {\n");
+        sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+        sb.append("    startTime: ").append(toIndentedString(startTime)).append("\n");
+        sb.append("    partySize: ").append(toIndentedString(partySize)).append("\n");
+        sb.append("    restaurant: ").append(toIndentedString(restaurant)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String version;
+        private String startTime;
+        private String partySize;
+        private com.amazon.ask.model.interfaces.connections.entities.Restaurant restaurant;
+
+        private Builder() {}
+
+        @JsonProperty("@version")
+        public Builder withVersion(String version) {
+            this.version = version;
+            return this;
+        }
+
+
+        @JsonProperty("startTime")
+        public Builder withStartTime(String startTime) {
+            this.startTime = startTime;
+            return this;
+        }
+
+
+        @JsonProperty("partySize")
+        public Builder withPartySize(String partySize) {
+            this.partySize = partySize;
+            return this;
+        }
+
+
+        @JsonProperty("restaurant")
+        public Builder withRestaurant(com.amazon.ask.model.interfaces.connections.entities.Restaurant restaurant) {
+            this.restaurant = restaurant;
+            return this;
+        }
+
+
+        public ScheduleFoodEstablishmentReservationRequest build() {
+            return new ScheduleFoodEstablishmentReservationRequest(this);
+        }
+    }
 }
 

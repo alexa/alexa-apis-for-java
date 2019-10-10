@@ -26,111 +26,115 @@ import java.util.ArrayList;
  */
 
 @JsonDeserialize(builder = InputHandlerEvent.Builder.class)
-public final class InputHandlerEvent{
-
-  @JsonProperty("name")
-  private String name = null;
-
-  @JsonProperty("inputEvents")
-  private List<com.amazon.ask.model.services.gameEngine.InputEvent> inputEvents = new ArrayList<com.amazon.ask.model.services.gameEngine.InputEvent>();
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private InputHandlerEvent(Builder builder) {
-    this.name = builder.name;
-    this.inputEvents = builder.inputEvents;
-  }
-
-  /**
-    * The name of the event as you defined it in your GameEngine.StartInputHandler directive.
-  * @return name
-  **/
-  @JsonProperty("name")
-  public String getName() {
-    return name;
-  }
-
-  /**
-    * A chronologically ordered report of the raw Button Events that contributed to this Input Handler Event.
-  * @return inputEvents
-  **/
-  @JsonProperty("inputEvents")
-  public List<com.amazon.ask.model.services.gameEngine.InputEvent> getInputEvents() {
-    return inputEvents;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    InputHandlerEvent servicesGameEngineInputHandlerEvent = (InputHandlerEvent) o;
-    return Objects.equals(this.name, servicesGameEngineInputHandlerEvent.name) &&
-        Objects.equals(this.inputEvents, servicesGameEngineInputHandlerEvent.inputEvents);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(name, inputEvents);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class InputHandlerEvent {\n");
-    
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    inputEvents: ").append(toIndentedString(inputEvents)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private String name;
-    private List<com.amazon.ask.model.services.gameEngine.InputEvent> inputEvents;
-
-    private Builder() { }
+public final class InputHandlerEvent {
 
     @JsonProperty("name")
-    public Builder withName(String name) {
-        this.name = name;
-        return this;
-    }
-
+    private String name = null;
 
     @JsonProperty("inputEvents")
-    public Builder withInputEvents(List<com.amazon.ask.model.services.gameEngine.InputEvent> inputEvents) {
-        this.inputEvents = inputEvents;
-        return this;
+    private List<com.amazon.ask.model.services.gameEngine.InputEvent> inputEvents = new ArrayList<com.amazon.ask.model.services.gameEngine.InputEvent>();
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-    public Builder addInputEventsItem(com.amazon.ask.model.services.gameEngine.InputEvent inputEventsItem) {
-      if (this.inputEvents == null) {
-        this.inputEvents = new ArrayList<com.amazon.ask.model.services.gameEngine.InputEvent>();
-      }
-      this.inputEvents.add(inputEventsItem);
-      return this;
+    private InputHandlerEvent(Builder builder) {
+        if (builder.name != null) {
+            this.name = builder.name;
+        }
+        if (builder.inputEvents != null) {
+            this.inputEvents = builder.inputEvents;
+        }
     }
 
-    public InputHandlerEvent build() {
-      return new InputHandlerEvent(this);
+    /**
+     * The name of the event as you defined it in your GameEngine.StartInputHandler directive.
+     * @return name
+    **/
+    @JsonProperty("name")
+    public String getName() {
+        return name;
     }
-  }
+
+    /**
+     * A chronologically ordered report of the raw Button Events that contributed to this Input Handler Event.
+     * @return inputEvents
+    **/
+    @JsonProperty("inputEvents")
+    public List<com.amazon.ask.model.services.gameEngine.InputEvent> getInputEvents() {
+        return inputEvents;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        InputHandlerEvent servicesGameEngineInputHandlerEvent = (InputHandlerEvent) o;
+        return Objects.equals(this.name, servicesGameEngineInputHandlerEvent.name) &&
+            Objects.equals(this.inputEvents, servicesGameEngineInputHandlerEvent.inputEvents);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, inputEvents);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class InputHandlerEvent {\n");
+        
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    inputEvents: ").append(toIndentedString(inputEvents)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String name;
+        private List<com.amazon.ask.model.services.gameEngine.InputEvent> inputEvents;
+
+        private Builder() {}
+
+        @JsonProperty("name")
+        public Builder withName(String name) {
+            this.name = name;
+            return this;
+        }
+
+
+        @JsonProperty("inputEvents")
+        public Builder withInputEvents(List<com.amazon.ask.model.services.gameEngine.InputEvent> inputEvents) {
+            this.inputEvents = inputEvents;
+            return this;
+        }
+
+        public Builder addInputEventsItem(com.amazon.ask.model.services.gameEngine.InputEvent inputEventsItem) {
+            if (this.inputEvents == null) {
+                this.inputEvents = new ArrayList<com.amazon.ask.model.services.gameEngine.InputEvent>();
+            }
+            this.inputEvents.add(inputEventsItem);
+            return this;
+        }
+
+        public InputHandlerEvent build() {
+            return new InputHandlerEvent(this);
+        }
+    }
 }
 

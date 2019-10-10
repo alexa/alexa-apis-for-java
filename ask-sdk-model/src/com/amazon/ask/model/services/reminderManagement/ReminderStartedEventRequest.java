@@ -24,112 +24,120 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = ReminderStartedEventRequest.Builder.class)
-public final class ReminderStartedEventRequest extends com.amazon.ask.model.Request {
-
-  @JsonProperty("body")
-  private com.amazon.ask.model.services.reminderManagement.Event body = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private ReminderStartedEventRequest(Builder builder) {
-    String discriminatorValue = "Reminders.ReminderStarted";
-
-    this.type = discriminatorValue;
-    this.requestId = builder.requestId;
-    this.timestamp = builder.timestamp;
-    this.locale = builder.locale;
-    this.body = builder.body;
-  }
-
-  /**
-    * Get body
-  * @return body
-  **/
-  @JsonProperty("body")
-  public com.amazon.ask.model.services.reminderManagement.Event getBody() {
-    return body;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    ReminderStartedEventRequest servicesReminderManagementReminderStartedEventRequest = (ReminderStartedEventRequest) o;
-    return Objects.equals(this.body, servicesReminderManagementReminderStartedEventRequest.body) &&
-        super.equals(o);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(body, super.hashCode());
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ReminderStartedEventRequest {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    body: ").append(toIndentedString(body)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private String requestId;
-    private OffsetDateTime timestamp;
-    private String locale;
-    private com.amazon.ask.model.services.reminderManagement.Event body;
-
-    private Builder() { }
-
-    @JsonProperty("requestId")
-    public Builder withRequestId(String requestId) {
-        this.requestId = requestId;
-        return this;
-    }
-
-
-    @JsonProperty("timestamp")
-    public Builder withTimestamp(OffsetDateTime timestamp) {
-        this.timestamp = timestamp;
-        return this;
-    }
-
-
-    @JsonProperty("locale")
-    public Builder withLocale(String locale) {
-        this.locale = locale;
-        return this;
-    }
-
+public final class ReminderStartedEventRequest extends com.amazon.ask.model.Request  {
 
     @JsonProperty("body")
-    public Builder withBody(com.amazon.ask.model.services.reminderManagement.Event body) {
-        this.body = body;
-        return this;
+    private com.amazon.ask.model.services.reminderManagement.Event body = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
+    private ReminderStartedEventRequest(Builder builder) {
+        String discriminatorValue = "Reminders.ReminderStarted";
 
-    public ReminderStartedEventRequest build() {
-      return new ReminderStartedEventRequest(this);
+        this.type = discriminatorValue;
+        if (builder.requestId != null) {
+            this.requestId = builder.requestId;
+        }
+        if (builder.timestamp != null) {
+            this.timestamp = builder.timestamp;
+        }
+        if (builder.locale != null) {
+            this.locale = builder.locale;
+        }
+        if (builder.body != null) {
+            this.body = builder.body;
+        }
     }
-  }
+
+    /**
+     * Get body
+     * @return body
+    **/
+    @JsonProperty("body")
+    public com.amazon.ask.model.services.reminderManagement.Event getBody() {
+        return body;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        ReminderStartedEventRequest servicesReminderManagementReminderStartedEventRequest = (ReminderStartedEventRequest) o;
+        return Objects.equals(this.body, servicesReminderManagementReminderStartedEventRequest.body) &&
+            super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(body, super.hashCode());
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ReminderStartedEventRequest {\n");
+        sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String requestId;
+        private OffsetDateTime timestamp;
+        private String locale;
+        private com.amazon.ask.model.services.reminderManagement.Event body;
+
+        private Builder() {}
+
+        @JsonProperty("requestId")
+        public Builder withRequestId(String requestId) {
+            this.requestId = requestId;
+            return this;
+        }
+
+
+        @JsonProperty("timestamp")
+        public Builder withTimestamp(OffsetDateTime timestamp) {
+            this.timestamp = timestamp;
+            return this;
+        }
+
+
+        @JsonProperty("locale")
+        public Builder withLocale(String locale) {
+            this.locale = locale;
+            return this;
+        }
+
+
+        @JsonProperty("body")
+        public Builder withBody(com.amazon.ask.model.services.reminderManagement.Event body) {
+            this.body = body;
+            return this;
+        }
+
+
+        public ReminderStartedEventRequest build() {
+            return new ReminderStartedEventRequest(this);
+        }
+    }
 }
 

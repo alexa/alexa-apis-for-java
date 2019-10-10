@@ -23,104 +23,108 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = EventFilter.Builder.class)
-public final class EventFilter{
-
-  @JsonProperty("filterExpression")
-  private Object filterExpression = null;
-
-  @JsonProperty("filterMatchAction")
-  private com.amazon.ask.model.interfaces.customInterfaceController.FilterMatchAction filterMatchAction = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private EventFilter(Builder builder) {
-    this.filterExpression = builder.filterExpression;
-    this.filterMatchAction = builder.filterMatchAction;
-  }
-
-  /**
-    * The JSON object that represents the Jsonlogic expression against which the events are evaluated. If this expression is satisfied, the corresponding match action is performed.
-  * @return filterExpression
-  **/
-  @JsonProperty("filterExpression")
-  public Object getFilterExpression() {
-    return filterExpression;
-  }
-
-  /**
-    * Get filterMatchAction
-  * @return filterMatchAction
-  **/
-  @JsonProperty("filterMatchAction")
-  public com.amazon.ask.model.interfaces.customInterfaceController.FilterMatchAction getFilterMatchAction() {
-    return filterMatchAction;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    EventFilter interfacesCustomInterfaceControllerEventFilter = (EventFilter) o;
-    return Objects.equals(this.filterExpression, interfacesCustomInterfaceControllerEventFilter.filterExpression) &&
-        Objects.equals(this.filterMatchAction, interfacesCustomInterfaceControllerEventFilter.filterMatchAction);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(filterExpression, filterMatchAction);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class EventFilter {\n");
-    
-    sb.append("    filterExpression: ").append(toIndentedString(filterExpression)).append("\n");
-    sb.append("    filterMatchAction: ").append(toIndentedString(filterMatchAction)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private Object filterExpression;
-    private com.amazon.ask.model.interfaces.customInterfaceController.FilterMatchAction filterMatchAction;
-
-    private Builder() { }
+public final class EventFilter {
 
     @JsonProperty("filterExpression")
-    public Builder withFilterExpression(Object filterExpression) {
-        this.filterExpression = filterExpression;
-        return this;
-    }
-
+    private Object filterExpression = null;
 
     @JsonProperty("filterMatchAction")
-    public Builder withFilterMatchAction(com.amazon.ask.model.interfaces.customInterfaceController.FilterMatchAction filterMatchAction) {
-        this.filterMatchAction = filterMatchAction;
-        return this;
+    private com.amazon.ask.model.interfaces.customInterfaceController.FilterMatchAction filterMatchAction = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-
-    public EventFilter build() {
-      return new EventFilter(this);
+    private EventFilter(Builder builder) {
+        if (builder.filterExpression != null) {
+            this.filterExpression = builder.filterExpression;
+        }
+        if (builder.filterMatchAction != null) {
+            this.filterMatchAction = builder.filterMatchAction;
+        }
     }
-  }
+
+    /**
+     * The JSON object that represents the Jsonlogic expression against which the events are evaluated. If this expression is satisfied, the corresponding match action is performed.
+     * @return filterExpression
+    **/
+    @JsonProperty("filterExpression")
+    public Object getFilterExpression() {
+        return filterExpression;
+    }
+
+    /**
+     * Get filterMatchAction
+     * @return filterMatchAction
+    **/
+    @JsonProperty("filterMatchAction")
+    public com.amazon.ask.model.interfaces.customInterfaceController.FilterMatchAction getFilterMatchAction() {
+        return filterMatchAction;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        EventFilter interfacesCustomInterfaceControllerEventFilter = (EventFilter) o;
+        return Objects.equals(this.filterExpression, interfacesCustomInterfaceControllerEventFilter.filterExpression) &&
+            Objects.equals(this.filterMatchAction, interfacesCustomInterfaceControllerEventFilter.filterMatchAction);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(filterExpression, filterMatchAction);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class EventFilter {\n");
+        
+        sb.append("    filterExpression: ").append(toIndentedString(filterExpression)).append("\n");
+        sb.append("    filterMatchAction: ").append(toIndentedString(filterMatchAction)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private Object filterExpression;
+        private com.amazon.ask.model.interfaces.customInterfaceController.FilterMatchAction filterMatchAction;
+
+        private Builder() {}
+
+        @JsonProperty("filterExpression")
+        public Builder withFilterExpression(Object filterExpression) {
+            this.filterExpression = filterExpression;
+            return this;
+        }
+
+
+        @JsonProperty("filterMatchAction")
+        public Builder withFilterMatchAction(com.amazon.ask.model.interfaces.customInterfaceController.FilterMatchAction filterMatchAction) {
+            this.filterMatchAction = filterMatchAction;
+            return this;
+        }
+
+
+        public EventFilter build() {
+            return new EventFilter(this);
+        }
+    }
 }
 

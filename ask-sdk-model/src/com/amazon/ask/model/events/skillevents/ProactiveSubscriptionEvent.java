@@ -23,81 +23,83 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = ProactiveSubscriptionEvent.Builder.class)
-public final class ProactiveSubscriptionEvent{
-
-  @JsonProperty("eventName")
-  private String eventName = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private ProactiveSubscriptionEvent(Builder builder) {
-    this.eventName = builder.eventName;
-  }
-
-  /**
-    * Get eventName
-  * @return eventName
-  **/
-  @JsonProperty("eventName")
-  public String getEventName() {
-    return eventName;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    ProactiveSubscriptionEvent eventsSkilleventsProactiveSubscriptionEvent = (ProactiveSubscriptionEvent) o;
-    return Objects.equals(this.eventName, eventsSkilleventsProactiveSubscriptionEvent.eventName);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(eventName);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ProactiveSubscriptionEvent {\n");
-    
-    sb.append("    eventName: ").append(toIndentedString(eventName)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private String eventName;
-
-    private Builder() { }
+public final class ProactiveSubscriptionEvent {
 
     @JsonProperty("eventName")
-    public Builder withEventName(String eventName) {
-        this.eventName = eventName;
-        return this;
+    private String eventName = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-
-    public ProactiveSubscriptionEvent build() {
-      return new ProactiveSubscriptionEvent(this);
+    private ProactiveSubscriptionEvent(Builder builder) {
+        if (builder.eventName != null) {
+            this.eventName = builder.eventName;
+        }
     }
-  }
+
+    /**
+     * Get eventName
+     * @return eventName
+    **/
+    @JsonProperty("eventName")
+    public String getEventName() {
+        return eventName;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        ProactiveSubscriptionEvent eventsSkilleventsProactiveSubscriptionEvent = (ProactiveSubscriptionEvent) o;
+        return Objects.equals(this.eventName, eventsSkilleventsProactiveSubscriptionEvent.eventName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(eventName);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ProactiveSubscriptionEvent {\n");
+        
+        sb.append("    eventName: ").append(toIndentedString(eventName)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String eventName;
+
+        private Builder() {}
+
+        @JsonProperty("eventName")
+        public Builder withEventName(String eventName) {
+            this.eventName = eventName;
+            return this;
+        }
+
+
+        public ProactiveSubscriptionEvent build() {
+            return new ProactiveSubscriptionEvent(this);
+        }
+    }
 }
 

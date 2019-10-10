@@ -23,170 +23,182 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = AutoPageCommand.Builder.class)
-public final class AutoPageCommand extends com.amazon.ask.model.interfaces.alexa.presentation.apl.Command {
-
-  @JsonProperty("componentId")
-  private String componentId = null;
-
-  @JsonProperty("count")
-  private String count = null;
-
-  @JsonProperty("duration")
-  private String duration = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private AutoPageCommand(Builder builder) {
-    String discriminatorValue = "AutoPage";
-
-    this.type = discriminatorValue;
-    this.delay = builder.delay;
-    this.description = builder.description;
-    this.when = builder.when;
-    this.componentId = builder.componentId;
-    this.count = builder.count;
-    this.duration = builder.duration;
-  }
-
-  /**
-    * The id of the Pager component.
-  * @return componentId
-  **/
-  @JsonProperty("componentId")
-  public String getComponentId() {
-    return componentId;
-  }
-
-  /**
-    * Number of pages to display. Defaults to all of them.
-  * @return count
-  **/
-  @JsonProperty("count")
-  public String getCount() {
-    return count;
-  }
-
-  /**
-    * Time to wait between pages (in milliseconds). Defaults to 0.
-  * @return duration
-  **/
-  @JsonProperty("duration")
-  public String getDuration() {
-    return duration;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    AutoPageCommand interfacesAlexaPresentationAplAutoPageCommand = (AutoPageCommand) o;
-    return Objects.equals(this.componentId, interfacesAlexaPresentationAplAutoPageCommand.componentId) &&
-        Objects.equals(this.count, interfacesAlexaPresentationAplAutoPageCommand.count) &&
-        Objects.equals(this.duration, interfacesAlexaPresentationAplAutoPageCommand.duration) &&
-        super.equals(o);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(componentId, count, duration, super.hashCode());
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class AutoPageCommand {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    componentId: ").append(toIndentedString(componentId)).append("\n");
-    sb.append("    count: ").append(toIndentedString(count)).append("\n");
-    sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private String delay;
-    private String description;
-    private Boolean when;
-    private String componentId;
-    private String count;
-    private String duration;
-
-    private Builder() { }
-
-    @JsonProperty("delay")
-    public Builder withDelay(Integer delay) {
-        this.delay = String.valueOf(delay);
-        return this;
-    }
-
-    public Builder withDelay(String delayExpression) {
-        this.delay = delayExpression;
-        return this;
-    }
-
-    @JsonProperty("description")
-    public Builder withDescription(String description) {
-        this.description = description;
-        return this;
-    }
-
-
-    @JsonProperty("when")
-    public Builder withWhen(Boolean when) {
-        this.when = when;
-        return this;
-    }
-
+public final class AutoPageCommand extends com.amazon.ask.model.interfaces.alexa.presentation.apl.Command  {
 
     @JsonProperty("componentId")
-    public Builder withComponentId(String componentId) {
-        this.componentId = componentId;
-        return this;
-    }
-
+    private String componentId = null;
 
     @JsonProperty("count")
-    public Builder withCount(Integer count) {
-        this.count = String.valueOf(count);
-        return this;
-    }
-
-    public Builder withCount(String countExpression) {
-        this.count = countExpression;
-        return this;
-    }
+    private String count = null;
 
     @JsonProperty("duration")
-    public Builder withDuration(Integer duration) {
-        this.duration = String.valueOf(duration);
-        return this;
+    private String duration = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-    public Builder withDuration(String durationExpression) {
-        this.duration = durationExpression;
-        return this;
+    private AutoPageCommand(Builder builder) {
+        String discriminatorValue = "AutoPage";
+
+        this.type = discriminatorValue;
+        if (builder.delay != null) {
+            this.delay = builder.delay;
+        }
+        if (builder.description != null) {
+            this.description = builder.description;
+        }
+        if (builder.when != null) {
+            this.when = builder.when;
+        }
+        if (builder.componentId != null) {
+            this.componentId = builder.componentId;
+        }
+        if (builder.count != null) {
+            this.count = builder.count;
+        }
+        if (builder.duration != null) {
+            this.duration = builder.duration;
+        }
     }
 
-    public AutoPageCommand build() {
-      return new AutoPageCommand(this);
+    /**
+     * The id of the Pager component.
+     * @return componentId
+    **/
+    @JsonProperty("componentId")
+    public String getComponentId() {
+        return componentId;
     }
-  }
+
+    /**
+     * Number of pages to display. Defaults to all of them.
+     * @return count
+    **/
+    @JsonProperty("count")
+    public String getCount() {
+        return count;
+    }
+
+    /**
+     * Time to wait between pages (in milliseconds). Defaults to 0.
+     * @return duration
+    **/
+    @JsonProperty("duration")
+    public String getDuration() {
+        return duration;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        AutoPageCommand interfacesAlexaPresentationAplAutoPageCommand = (AutoPageCommand) o;
+        return Objects.equals(this.componentId, interfacesAlexaPresentationAplAutoPageCommand.componentId) &&
+            Objects.equals(this.count, interfacesAlexaPresentationAplAutoPageCommand.count) &&
+            Objects.equals(this.duration, interfacesAlexaPresentationAplAutoPageCommand.duration) &&
+            super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(componentId, count, duration, super.hashCode());
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class AutoPageCommand {\n");
+        sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+        sb.append("    componentId: ").append(toIndentedString(componentId)).append("\n");
+        sb.append("    count: ").append(toIndentedString(count)).append("\n");
+        sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String delay;
+        private String description;
+        private Boolean when;
+        private String componentId;
+        private String count;
+        private String duration;
+
+        private Builder() {}
+
+        @JsonProperty("delay")
+        public Builder withDelay(Integer delay) {
+            this.delay = String.valueOf(delay);
+            return this;
+        }
+
+        public Builder withDelay(String delayExpression) {
+            this.delay = delayExpression;
+            return this;
+        }
+
+        @JsonProperty("description")
+        public Builder withDescription(String description) {
+            this.description = description;
+            return this;
+        }
+
+
+        @JsonProperty("when")
+        public Builder withWhen(Boolean when) {
+            this.when = when;
+            return this;
+        }
+
+
+        @JsonProperty("componentId")
+        public Builder withComponentId(String componentId) {
+            this.componentId = componentId;
+            return this;
+        }
+
+
+        @JsonProperty("count")
+        public Builder withCount(Integer count) {
+            this.count = String.valueOf(count);
+            return this;
+        }
+
+        public Builder withCount(String countExpression) {
+            this.count = countExpression;
+            return this;
+        }
+
+        @JsonProperty("duration")
+        public Builder withDuration(Integer duration) {
+            this.duration = String.valueOf(duration);
+            return this;
+        }
+
+        public Builder withDuration(String durationExpression) {
+            this.duration = durationExpression;
+            return this;
+        }
+
+        public AutoPageCommand build() {
+            return new AutoPageCommand(this);
+        }
+    }
 }
 

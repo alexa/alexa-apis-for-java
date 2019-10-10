@@ -23,81 +23,83 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = ForbiddenError.Builder.class)
-public final class ForbiddenError{
-
-  @JsonProperty("Message")
-  private String message = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private ForbiddenError(Builder builder) {
-    this.message = builder.message;
-  }
-
-  /**
-    * Get message
-  * @return message
-  **/
-  @JsonProperty("Message")
-  public String getMessage() {
-    return message;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    ForbiddenError servicesListManagementForbiddenError = (ForbiddenError) o;
-    return Objects.equals(this.message, servicesListManagementForbiddenError.message);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(message);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ForbiddenError {\n");
-    
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private String message;
-
-    private Builder() { }
+public final class ForbiddenError {
 
     @JsonProperty("Message")
-    public Builder withMessage(String message) {
-        this.message = message;
-        return this;
+    private String message = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-
-    public ForbiddenError build() {
-      return new ForbiddenError(this);
+    private ForbiddenError(Builder builder) {
+        if (builder.message != null) {
+            this.message = builder.message;
+        }
     }
-  }
+
+    /**
+     * Get message
+     * @return message
+    **/
+    @JsonProperty("Message")
+    public String getMessage() {
+        return message;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        ForbiddenError servicesListManagementForbiddenError = (ForbiddenError) o;
+        return Objects.equals(this.message, servicesListManagementForbiddenError.message);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(message);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ForbiddenError {\n");
+        
+        sb.append("    message: ").append(toIndentedString(message)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String message;
+
+        private Builder() {}
+
+        @JsonProperty("Message")
+        public Builder withMessage(String message) {
+            this.message = message;
+            return this;
+        }
+
+
+        public ForbiddenError build() {
+            return new ForbiddenError(this);
+        }
+    }
 }
 

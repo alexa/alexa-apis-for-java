@@ -23,85 +23,87 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = ClearQueueDirective.Builder.class)
-public final class ClearQueueDirective extends com.amazon.ask.model.Directive {
-
-  @JsonProperty("clearBehavior")
-  private com.amazon.ask.model.interfaces.audioplayer.ClearBehavior clearBehavior = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private ClearQueueDirective(Builder builder) {
-    String discriminatorValue = "AudioPlayer.ClearQueue";
-
-    this.type = discriminatorValue;
-    this.clearBehavior = builder.clearBehavior;
-  }
-
-  /**
-    * Get clearBehavior
-  * @return clearBehavior
-  **/
-  @JsonProperty("clearBehavior")
-  public com.amazon.ask.model.interfaces.audioplayer.ClearBehavior getClearBehavior() {
-    return clearBehavior;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    ClearQueueDirective interfacesAudioplayerClearQueueDirective = (ClearQueueDirective) o;
-    return Objects.equals(this.clearBehavior, interfacesAudioplayerClearQueueDirective.clearBehavior) &&
-        super.equals(o);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(clearBehavior, super.hashCode());
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ClearQueueDirective {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    clearBehavior: ").append(toIndentedString(clearBehavior)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private com.amazon.ask.model.interfaces.audioplayer.ClearBehavior clearBehavior;
-
-    private Builder() { }
+public final class ClearQueueDirective extends com.amazon.ask.model.Directive  {
 
     @JsonProperty("clearBehavior")
-    public Builder withClearBehavior(com.amazon.ask.model.interfaces.audioplayer.ClearBehavior clearBehavior) {
-        this.clearBehavior = clearBehavior;
-        return this;
+    private com.amazon.ask.model.interfaces.audioplayer.ClearBehavior clearBehavior = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
+    private ClearQueueDirective(Builder builder) {
+        String discriminatorValue = "AudioPlayer.ClearQueue";
 
-    public ClearQueueDirective build() {
-      return new ClearQueueDirective(this);
+        this.type = discriminatorValue;
+        if (builder.clearBehavior != null) {
+            this.clearBehavior = builder.clearBehavior;
+        }
     }
-  }
+
+    /**
+     * Get clearBehavior
+     * @return clearBehavior
+    **/
+    @JsonProperty("clearBehavior")
+    public com.amazon.ask.model.interfaces.audioplayer.ClearBehavior getClearBehavior() {
+        return clearBehavior;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        ClearQueueDirective interfacesAudioplayerClearQueueDirective = (ClearQueueDirective) o;
+        return Objects.equals(this.clearBehavior, interfacesAudioplayerClearQueueDirective.clearBehavior) &&
+            super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(clearBehavior, super.hashCode());
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ClearQueueDirective {\n");
+        sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+        sb.append("    clearBehavior: ").append(toIndentedString(clearBehavior)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private com.amazon.ask.model.interfaces.audioplayer.ClearBehavior clearBehavior;
+
+        private Builder() {}
+
+        @JsonProperty("clearBehavior")
+        public Builder withClearBehavior(com.amazon.ask.model.interfaces.audioplayer.ClearBehavior clearBehavior) {
+            this.clearBehavior = clearBehavior;
+            return this;
+        }
+
+
+        public ClearQueueDirective build() {
+            return new ClearQueueDirective(this);
+        }
+    }
 }
 

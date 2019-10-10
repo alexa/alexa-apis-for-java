@@ -27,142 +27,152 @@ import java.util.ArrayList;
  */
 
 @JsonDeserialize(builder = EventsReceivedRequest.Builder.class)
-public final class EventsReceivedRequest extends com.amazon.ask.model.Request {
-
-  @JsonProperty("token")
-  private String token = null;
-
-  @JsonProperty("events")
-  private List<com.amazon.ask.model.interfaces.customInterfaceController.Event> events = new ArrayList<com.amazon.ask.model.interfaces.customInterfaceController.Event>();
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private EventsReceivedRequest(Builder builder) {
-    String discriminatorValue = "CustomInterfaceController.EventsReceived";
-
-    this.type = discriminatorValue;
-    this.requestId = builder.requestId;
-    this.timestamp = builder.timestamp;
-    this.locale = builder.locale;
-    this.token = builder.token;
-    this.events = builder.events;
-  }
-
-  /**
-    * Unique identifier associated with the Event Handler that dispatched this event.
-  * @return token
-  **/
-  @JsonProperty("token")
-  public String getToken() {
-    return token;
-  }
-
-  /**
-    * A list of events that meet the filter criteria.
-  * @return events
-  **/
-  @JsonProperty("events")
-  public List<com.amazon.ask.model.interfaces.customInterfaceController.Event> getEvents() {
-    return events;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    EventsReceivedRequest interfacesCustomInterfaceControllerEventsReceivedRequest = (EventsReceivedRequest) o;
-    return Objects.equals(this.token, interfacesCustomInterfaceControllerEventsReceivedRequest.token) &&
-        Objects.equals(this.events, interfacesCustomInterfaceControllerEventsReceivedRequest.events) &&
-        super.equals(o);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(token, events, super.hashCode());
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class EventsReceivedRequest {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    token: ").append(toIndentedString(token)).append("\n");
-    sb.append("    events: ").append(toIndentedString(events)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private String requestId;
-    private OffsetDateTime timestamp;
-    private String locale;
-    private String token;
-    private List<com.amazon.ask.model.interfaces.customInterfaceController.Event> events;
-
-    private Builder() { }
-
-    @JsonProperty("requestId")
-    public Builder withRequestId(String requestId) {
-        this.requestId = requestId;
-        return this;
-    }
-
-
-    @JsonProperty("timestamp")
-    public Builder withTimestamp(OffsetDateTime timestamp) {
-        this.timestamp = timestamp;
-        return this;
-    }
-
-
-    @JsonProperty("locale")
-    public Builder withLocale(String locale) {
-        this.locale = locale;
-        return this;
-    }
-
+public final class EventsReceivedRequest extends com.amazon.ask.model.Request  {
 
     @JsonProperty("token")
-    public Builder withToken(String token) {
-        this.token = token;
-        return this;
-    }
-
+    private String token = null;
 
     @JsonProperty("events")
-    public Builder withEvents(List<com.amazon.ask.model.interfaces.customInterfaceController.Event> events) {
-        this.events = events;
-        return this;
+    private List<com.amazon.ask.model.interfaces.customInterfaceController.Event> events = new ArrayList<com.amazon.ask.model.interfaces.customInterfaceController.Event>();
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-    public Builder addEventsItem(com.amazon.ask.model.interfaces.customInterfaceController.Event eventsItem) {
-      if (this.events == null) {
-        this.events = new ArrayList<com.amazon.ask.model.interfaces.customInterfaceController.Event>();
-      }
-      this.events.add(eventsItem);
-      return this;
+    private EventsReceivedRequest(Builder builder) {
+        String discriminatorValue = "CustomInterfaceController.EventsReceived";
+
+        this.type = discriminatorValue;
+        if (builder.requestId != null) {
+            this.requestId = builder.requestId;
+        }
+        if (builder.timestamp != null) {
+            this.timestamp = builder.timestamp;
+        }
+        if (builder.locale != null) {
+            this.locale = builder.locale;
+        }
+        if (builder.token != null) {
+            this.token = builder.token;
+        }
+        if (builder.events != null) {
+            this.events = builder.events;
+        }
     }
 
-    public EventsReceivedRequest build() {
-      return new EventsReceivedRequest(this);
+    /**
+     * Unique identifier associated with the Event Handler that dispatched this event.
+     * @return token
+    **/
+    @JsonProperty("token")
+    public String getToken() {
+        return token;
     }
-  }
+
+    /**
+     * A list of events that meet the filter criteria.
+     * @return events
+    **/
+    @JsonProperty("events")
+    public List<com.amazon.ask.model.interfaces.customInterfaceController.Event> getEvents() {
+        return events;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        EventsReceivedRequest interfacesCustomInterfaceControllerEventsReceivedRequest = (EventsReceivedRequest) o;
+        return Objects.equals(this.token, interfacesCustomInterfaceControllerEventsReceivedRequest.token) &&
+            Objects.equals(this.events, interfacesCustomInterfaceControllerEventsReceivedRequest.events) &&
+            super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(token, events, super.hashCode());
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class EventsReceivedRequest {\n");
+        sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+        sb.append("    token: ").append(toIndentedString(token)).append("\n");
+        sb.append("    events: ").append(toIndentedString(events)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String requestId;
+        private OffsetDateTime timestamp;
+        private String locale;
+        private String token;
+        private List<com.amazon.ask.model.interfaces.customInterfaceController.Event> events;
+
+        private Builder() {}
+
+        @JsonProperty("requestId")
+        public Builder withRequestId(String requestId) {
+            this.requestId = requestId;
+            return this;
+        }
+
+
+        @JsonProperty("timestamp")
+        public Builder withTimestamp(OffsetDateTime timestamp) {
+            this.timestamp = timestamp;
+            return this;
+        }
+
+
+        @JsonProperty("locale")
+        public Builder withLocale(String locale) {
+            this.locale = locale;
+            return this;
+        }
+
+
+        @JsonProperty("token")
+        public Builder withToken(String token) {
+            this.token = token;
+            return this;
+        }
+
+
+        @JsonProperty("events")
+        public Builder withEvents(List<com.amazon.ask.model.interfaces.customInterfaceController.Event> events) {
+            this.events = events;
+            return this;
+        }
+
+        public Builder addEventsItem(com.amazon.ask.model.interfaces.customInterfaceController.Event eventsItem) {
+            if (this.events == null) {
+                this.events = new ArrayList<com.amazon.ask.model.interfaces.customInterfaceController.Event>();
+            }
+            this.events.add(eventsItem);
+            return this;
+        }
+
+        public EventsReceivedRequest build() {
+            return new EventsReceivedRequest(this);
+        }
+    }
 }
 

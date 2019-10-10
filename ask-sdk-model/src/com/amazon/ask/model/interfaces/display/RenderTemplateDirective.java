@@ -23,85 +23,87 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = RenderTemplateDirective.Builder.class)
-public final class RenderTemplateDirective extends com.amazon.ask.model.Directive {
-
-  @JsonProperty("template")
-  private com.amazon.ask.model.interfaces.display.Template template = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private RenderTemplateDirective(Builder builder) {
-    String discriminatorValue = "Display.RenderTemplate";
-
-    this.type = discriminatorValue;
-    this.template = builder.template;
-  }
-
-  /**
-    * Get template
-  * @return template
-  **/
-  @JsonProperty("template")
-  public com.amazon.ask.model.interfaces.display.Template getTemplate() {
-    return template;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    RenderTemplateDirective interfacesDisplayRenderTemplateDirective = (RenderTemplateDirective) o;
-    return Objects.equals(this.template, interfacesDisplayRenderTemplateDirective.template) &&
-        super.equals(o);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(template, super.hashCode());
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class RenderTemplateDirective {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    template: ").append(toIndentedString(template)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private com.amazon.ask.model.interfaces.display.Template template;
-
-    private Builder() { }
+public final class RenderTemplateDirective extends com.amazon.ask.model.Directive  {
 
     @JsonProperty("template")
-    public Builder withTemplate(com.amazon.ask.model.interfaces.display.Template template) {
-        this.template = template;
-        return this;
+    private com.amazon.ask.model.interfaces.display.Template template = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
+    private RenderTemplateDirective(Builder builder) {
+        String discriminatorValue = "Display.RenderTemplate";
 
-    public RenderTemplateDirective build() {
-      return new RenderTemplateDirective(this);
+        this.type = discriminatorValue;
+        if (builder.template != null) {
+            this.template = builder.template;
+        }
     }
-  }
+
+    /**
+     * Get template
+     * @return template
+    **/
+    @JsonProperty("template")
+    public com.amazon.ask.model.interfaces.display.Template getTemplate() {
+        return template;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        RenderTemplateDirective interfacesDisplayRenderTemplateDirective = (RenderTemplateDirective) o;
+        return Objects.equals(this.template, interfacesDisplayRenderTemplateDirective.template) &&
+            super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(template, super.hashCode());
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class RenderTemplateDirective {\n");
+        sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+        sb.append("    template: ").append(toIndentedString(template)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private com.amazon.ask.model.interfaces.display.Template template;
+
+        private Builder() {}
+
+        @JsonProperty("template")
+        public Builder withTemplate(com.amazon.ask.model.interfaces.display.Template template) {
+            this.template = template;
+            return this;
+        }
+
+
+        public RenderTemplateDirective build() {
+            return new RenderTemplateDirective(this);
+        }
+    }
 }
 

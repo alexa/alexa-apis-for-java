@@ -26,111 +26,115 @@ import java.util.ArrayList;
  */
 
 @JsonDeserialize(builder = ProviderAttributes.Builder.class)
-public final class ProviderAttributes{
-
-  @JsonProperty("providerId")
-  private String providerId = null;
-
-  @JsonProperty("providerCreditList")
-  private List<com.amazon.ask.model.interfaces.amazonpay.model.v1.ProviderCredit> providerCreditList = new ArrayList<com.amazon.ask.model.interfaces.amazonpay.model.v1.ProviderCredit>();
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private ProviderAttributes(Builder builder) {
-    this.providerId = builder.providerId;
-    this.providerCreditList = builder.providerCreditList;
-  }
-
-  /**
-    * Solution provider ID.
-  * @return providerId
-  **/
-  @JsonProperty("providerId")
-  public String getProviderId() {
-    return providerId;
-  }
-
-  /**
-    * List of provider credit.
-  * @return providerCreditList
-  **/
-  @JsonProperty("providerCreditList")
-  public List<com.amazon.ask.model.interfaces.amazonpay.model.v1.ProviderCredit> getProviderCreditList() {
-    return providerCreditList;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    ProviderAttributes interfacesAmazonpayModelV1ProviderAttributes = (ProviderAttributes) o;
-    return Objects.equals(this.providerId, interfacesAmazonpayModelV1ProviderAttributes.providerId) &&
-        Objects.equals(this.providerCreditList, interfacesAmazonpayModelV1ProviderAttributes.providerCreditList);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(providerId, providerCreditList);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ProviderAttributes {\n");
-    
-    sb.append("    providerId: ").append(toIndentedString(providerId)).append("\n");
-    sb.append("    providerCreditList: ").append(toIndentedString(providerCreditList)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private String providerId;
-    private List<com.amazon.ask.model.interfaces.amazonpay.model.v1.ProviderCredit> providerCreditList;
-
-    private Builder() { }
+public final class ProviderAttributes {
 
     @JsonProperty("providerId")
-    public Builder withProviderId(String providerId) {
-        this.providerId = providerId;
-        return this;
-    }
-
+    private String providerId = null;
 
     @JsonProperty("providerCreditList")
-    public Builder withProviderCreditList(List<com.amazon.ask.model.interfaces.amazonpay.model.v1.ProviderCredit> providerCreditList) {
-        this.providerCreditList = providerCreditList;
-        return this;
+    private List<com.amazon.ask.model.interfaces.amazonpay.model.v1.ProviderCredit> providerCreditList = new ArrayList<com.amazon.ask.model.interfaces.amazonpay.model.v1.ProviderCredit>();
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-    public Builder addProviderCreditListItem(com.amazon.ask.model.interfaces.amazonpay.model.v1.ProviderCredit providerCreditListItem) {
-      if (this.providerCreditList == null) {
-        this.providerCreditList = new ArrayList<com.amazon.ask.model.interfaces.amazonpay.model.v1.ProviderCredit>();
-      }
-      this.providerCreditList.add(providerCreditListItem);
-      return this;
+    private ProviderAttributes(Builder builder) {
+        if (builder.providerId != null) {
+            this.providerId = builder.providerId;
+        }
+        if (builder.providerCreditList != null) {
+            this.providerCreditList = builder.providerCreditList;
+        }
     }
 
-    public ProviderAttributes build() {
-      return new ProviderAttributes(this);
+    /**
+     * Solution provider ID.
+     * @return providerId
+    **/
+    @JsonProperty("providerId")
+    public String getProviderId() {
+        return providerId;
     }
-  }
+
+    /**
+     * List of provider credit.
+     * @return providerCreditList
+    **/
+    @JsonProperty("providerCreditList")
+    public List<com.amazon.ask.model.interfaces.amazonpay.model.v1.ProviderCredit> getProviderCreditList() {
+        return providerCreditList;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        ProviderAttributes interfacesAmazonpayModelV1ProviderAttributes = (ProviderAttributes) o;
+        return Objects.equals(this.providerId, interfacesAmazonpayModelV1ProviderAttributes.providerId) &&
+            Objects.equals(this.providerCreditList, interfacesAmazonpayModelV1ProviderAttributes.providerCreditList);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(providerId, providerCreditList);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ProviderAttributes {\n");
+        
+        sb.append("    providerId: ").append(toIndentedString(providerId)).append("\n");
+        sb.append("    providerCreditList: ").append(toIndentedString(providerCreditList)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String providerId;
+        private List<com.amazon.ask.model.interfaces.amazonpay.model.v1.ProviderCredit> providerCreditList;
+
+        private Builder() {}
+
+        @JsonProperty("providerId")
+        public Builder withProviderId(String providerId) {
+            this.providerId = providerId;
+            return this;
+        }
+
+
+        @JsonProperty("providerCreditList")
+        public Builder withProviderCreditList(List<com.amazon.ask.model.interfaces.amazonpay.model.v1.ProviderCredit> providerCreditList) {
+            this.providerCreditList = providerCreditList;
+            return this;
+        }
+
+        public Builder addProviderCreditListItem(com.amazon.ask.model.interfaces.amazonpay.model.v1.ProviderCredit providerCreditListItem) {
+            if (this.providerCreditList == null) {
+                this.providerCreditList = new ArrayList<com.amazon.ask.model.interfaces.amazonpay.model.v1.ProviderCredit>();
+            }
+            this.providerCreditList.add(providerCreditListItem);
+            return this;
+        }
+
+        public ProviderAttributes build() {
+            return new ProviderAttributes(this);
+        }
+    }
 }
 

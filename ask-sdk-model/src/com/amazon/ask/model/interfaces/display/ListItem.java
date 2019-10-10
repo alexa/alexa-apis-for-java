@@ -23,127 +23,133 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = ListItem.Builder.class)
-public final class ListItem{
-
-  @JsonProperty("token")
-  private String token = null;
-
-  @JsonProperty("image")
-  private com.amazon.ask.model.interfaces.display.Image image = null;
-
-  @JsonProperty("textContent")
-  private com.amazon.ask.model.interfaces.display.TextContent textContent = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private ListItem(Builder builder) {
-    this.token = builder.token;
-    this.image = builder.image;
-    this.textContent = builder.textContent;
-  }
-
-  /**
-    * Get token
-  * @return token
-  **/
-  @JsonProperty("token")
-  public String getToken() {
-    return token;
-  }
-
-  /**
-    * Get image
-  * @return image
-  **/
-  @JsonProperty("image")
-  public com.amazon.ask.model.interfaces.display.Image getImage() {
-    return image;
-  }
-
-  /**
-    * Get textContent
-  * @return textContent
-  **/
-  @JsonProperty("textContent")
-  public com.amazon.ask.model.interfaces.display.TextContent getTextContent() {
-    return textContent;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    ListItem interfacesDisplayListItem = (ListItem) o;
-    return Objects.equals(this.token, interfacesDisplayListItem.token) &&
-        Objects.equals(this.image, interfacesDisplayListItem.image) &&
-        Objects.equals(this.textContent, interfacesDisplayListItem.textContent);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(token, image, textContent);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ListItem {\n");
-    
-    sb.append("    token: ").append(toIndentedString(token)).append("\n");
-    sb.append("    image: ").append(toIndentedString(image)).append("\n");
-    sb.append("    textContent: ").append(toIndentedString(textContent)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private String token;
-    private com.amazon.ask.model.interfaces.display.Image image;
-    private com.amazon.ask.model.interfaces.display.TextContent textContent;
-
-    private Builder() { }
+public final class ListItem {
 
     @JsonProperty("token")
-    public Builder withToken(String token) {
-        this.token = token;
-        return this;
-    }
-
+    private String token = null;
 
     @JsonProperty("image")
-    public Builder withImage(com.amazon.ask.model.interfaces.display.Image image) {
-        this.image = image;
-        return this;
-    }
-
+    private com.amazon.ask.model.interfaces.display.Image image = null;
 
     @JsonProperty("textContent")
-    public Builder withTextContent(com.amazon.ask.model.interfaces.display.TextContent textContent) {
-        this.textContent = textContent;
-        return this;
+    private com.amazon.ask.model.interfaces.display.TextContent textContent = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-
-    public ListItem build() {
-      return new ListItem(this);
+    private ListItem(Builder builder) {
+        if (builder.token != null) {
+            this.token = builder.token;
+        }
+        if (builder.image != null) {
+            this.image = builder.image;
+        }
+        if (builder.textContent != null) {
+            this.textContent = builder.textContent;
+        }
     }
-  }
+
+    /**
+     * Get token
+     * @return token
+    **/
+    @JsonProperty("token")
+    public String getToken() {
+        return token;
+    }
+
+    /**
+     * Get image
+     * @return image
+    **/
+    @JsonProperty("image")
+    public com.amazon.ask.model.interfaces.display.Image getImage() {
+        return image;
+    }
+
+    /**
+     * Get textContent
+     * @return textContent
+    **/
+    @JsonProperty("textContent")
+    public com.amazon.ask.model.interfaces.display.TextContent getTextContent() {
+        return textContent;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        ListItem interfacesDisplayListItem = (ListItem) o;
+        return Objects.equals(this.token, interfacesDisplayListItem.token) &&
+            Objects.equals(this.image, interfacesDisplayListItem.image) &&
+            Objects.equals(this.textContent, interfacesDisplayListItem.textContent);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(token, image, textContent);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ListItem {\n");
+        
+        sb.append("    token: ").append(toIndentedString(token)).append("\n");
+        sb.append("    image: ").append(toIndentedString(image)).append("\n");
+        sb.append("    textContent: ").append(toIndentedString(textContent)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String token;
+        private com.amazon.ask.model.interfaces.display.Image image;
+        private com.amazon.ask.model.interfaces.display.TextContent textContent;
+
+        private Builder() {}
+
+        @JsonProperty("token")
+        public Builder withToken(String token) {
+            this.token = token;
+            return this;
+        }
+
+
+        @JsonProperty("image")
+        public Builder withImage(com.amazon.ask.model.interfaces.display.Image image) {
+            this.image = image;
+            return this;
+        }
+
+
+        @JsonProperty("textContent")
+        public Builder withTextContent(com.amazon.ask.model.interfaces.display.TextContent textContent) {
+            this.textContent = textContent;
+            return this;
+        }
+
+
+        public ListItem build() {
+            return new ListItem(this);
+        }
+    }
 }
 

@@ -24,135 +24,145 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = PlaybackStoppedRequest.Builder.class)
-public final class PlaybackStoppedRequest extends com.amazon.ask.model.Request {
-
-  @JsonProperty("offsetInMilliseconds")
-  private Long offsetInMilliseconds = null;
-
-  @JsonProperty("token")
-  private String token = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private PlaybackStoppedRequest(Builder builder) {
-    String discriminatorValue = "AudioPlayer.PlaybackStopped";
-
-    this.type = discriminatorValue;
-    this.requestId = builder.requestId;
-    this.timestamp = builder.timestamp;
-    this.locale = builder.locale;
-    this.offsetInMilliseconds = builder.offsetInMilliseconds;
-    this.token = builder.token;
-  }
-
-  /**
-    * Get offsetInMilliseconds
-  * @return offsetInMilliseconds
-  **/
-  @JsonProperty("offsetInMilliseconds")
-  public Long getOffsetInMilliseconds() {
-    return offsetInMilliseconds;
-  }
-
-  /**
-    * Get token
-  * @return token
-  **/
-  @JsonProperty("token")
-  public String getToken() {
-    return token;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    PlaybackStoppedRequest interfacesAudioplayerPlaybackStoppedRequest = (PlaybackStoppedRequest) o;
-    return Objects.equals(this.offsetInMilliseconds, interfacesAudioplayerPlaybackStoppedRequest.offsetInMilliseconds) &&
-        Objects.equals(this.token, interfacesAudioplayerPlaybackStoppedRequest.token) &&
-        super.equals(o);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(offsetInMilliseconds, token, super.hashCode());
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class PlaybackStoppedRequest {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    offsetInMilliseconds: ").append(toIndentedString(offsetInMilliseconds)).append("\n");
-    sb.append("    token: ").append(toIndentedString(token)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private String requestId;
-    private OffsetDateTime timestamp;
-    private String locale;
-    private Long offsetInMilliseconds;
-    private String token;
-
-    private Builder() { }
-
-    @JsonProperty("requestId")
-    public Builder withRequestId(String requestId) {
-        this.requestId = requestId;
-        return this;
-    }
-
-
-    @JsonProperty("timestamp")
-    public Builder withTimestamp(OffsetDateTime timestamp) {
-        this.timestamp = timestamp;
-        return this;
-    }
-
-
-    @JsonProperty("locale")
-    public Builder withLocale(String locale) {
-        this.locale = locale;
-        return this;
-    }
-
+public final class PlaybackStoppedRequest extends com.amazon.ask.model.Request  {
 
     @JsonProperty("offsetInMilliseconds")
-    public Builder withOffsetInMilliseconds(Long offsetInMilliseconds) {
-        this.offsetInMilliseconds = offsetInMilliseconds;
-        return this;
-    }
-
+    private Long offsetInMilliseconds = null;
 
     @JsonProperty("token")
-    public Builder withToken(String token) {
-        this.token = token;
-        return this;
+    private String token = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
+    private PlaybackStoppedRequest(Builder builder) {
+        String discriminatorValue = "AudioPlayer.PlaybackStopped";
 
-    public PlaybackStoppedRequest build() {
-      return new PlaybackStoppedRequest(this);
+        this.type = discriminatorValue;
+        if (builder.requestId != null) {
+            this.requestId = builder.requestId;
+        }
+        if (builder.timestamp != null) {
+            this.timestamp = builder.timestamp;
+        }
+        if (builder.locale != null) {
+            this.locale = builder.locale;
+        }
+        if (builder.offsetInMilliseconds != null) {
+            this.offsetInMilliseconds = builder.offsetInMilliseconds;
+        }
+        if (builder.token != null) {
+            this.token = builder.token;
+        }
     }
-  }
+
+    /**
+     * Get offsetInMilliseconds
+     * @return offsetInMilliseconds
+    **/
+    @JsonProperty("offsetInMilliseconds")
+    public Long getOffsetInMilliseconds() {
+        return offsetInMilliseconds;
+    }
+
+    /**
+     * Get token
+     * @return token
+    **/
+    @JsonProperty("token")
+    public String getToken() {
+        return token;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        PlaybackStoppedRequest interfacesAudioplayerPlaybackStoppedRequest = (PlaybackStoppedRequest) o;
+        return Objects.equals(this.offsetInMilliseconds, interfacesAudioplayerPlaybackStoppedRequest.offsetInMilliseconds) &&
+            Objects.equals(this.token, interfacesAudioplayerPlaybackStoppedRequest.token) &&
+            super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(offsetInMilliseconds, token, super.hashCode());
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class PlaybackStoppedRequest {\n");
+        sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+        sb.append("    offsetInMilliseconds: ").append(toIndentedString(offsetInMilliseconds)).append("\n");
+        sb.append("    token: ").append(toIndentedString(token)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String requestId;
+        private OffsetDateTime timestamp;
+        private String locale;
+        private Long offsetInMilliseconds;
+        private String token;
+
+        private Builder() {}
+
+        @JsonProperty("requestId")
+        public Builder withRequestId(String requestId) {
+            this.requestId = requestId;
+            return this;
+        }
+
+
+        @JsonProperty("timestamp")
+        public Builder withTimestamp(OffsetDateTime timestamp) {
+            this.timestamp = timestamp;
+            return this;
+        }
+
+
+        @JsonProperty("locale")
+        public Builder withLocale(String locale) {
+            this.locale = locale;
+            return this;
+        }
+
+
+        @JsonProperty("offsetInMilliseconds")
+        public Builder withOffsetInMilliseconds(Long offsetInMilliseconds) {
+            this.offsetInMilliseconds = offsetInMilliseconds;
+            return this;
+        }
+
+
+        @JsonProperty("token")
+        public Builder withToken(String token) {
+            this.token = token;
+            return this;
+        }
+
+
+        public PlaybackStoppedRequest build() {
+            return new PlaybackStoppedRequest(this);
+        }
+    }
 }
 

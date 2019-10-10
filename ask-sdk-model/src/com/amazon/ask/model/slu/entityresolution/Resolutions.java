@@ -26,88 +26,90 @@ import java.util.ArrayList;
  */
 
 @JsonDeserialize(builder = Resolutions.Builder.class)
-public final class Resolutions{
-
-  @JsonProperty("resolutionsPerAuthority")
-  private List<com.amazon.ask.model.slu.entityresolution.Resolution> resolutionsPerAuthority = new ArrayList<com.amazon.ask.model.slu.entityresolution.Resolution>();
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private Resolutions(Builder builder) {
-    this.resolutionsPerAuthority = builder.resolutionsPerAuthority;
-  }
-
-  /**
-    * Get resolutionsPerAuthority
-  * @return resolutionsPerAuthority
-  **/
-  @JsonProperty("resolutionsPerAuthority")
-  public List<com.amazon.ask.model.slu.entityresolution.Resolution> getResolutionsPerAuthority() {
-    return resolutionsPerAuthority;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    Resolutions sluEntityresolutionResolutions = (Resolutions) o;
-    return Objects.equals(this.resolutionsPerAuthority, sluEntityresolutionResolutions.resolutionsPerAuthority);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(resolutionsPerAuthority);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class Resolutions {\n");
-    
-    sb.append("    resolutionsPerAuthority: ").append(toIndentedString(resolutionsPerAuthority)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private List<com.amazon.ask.model.slu.entityresolution.Resolution> resolutionsPerAuthority;
-
-    private Builder() { }
+public final class Resolutions {
 
     @JsonProperty("resolutionsPerAuthority")
-    public Builder withResolutionsPerAuthority(List<com.amazon.ask.model.slu.entityresolution.Resolution> resolutionsPerAuthority) {
-        this.resolutionsPerAuthority = resolutionsPerAuthority;
-        return this;
+    private List<com.amazon.ask.model.slu.entityresolution.Resolution> resolutionsPerAuthority = new ArrayList<com.amazon.ask.model.slu.entityresolution.Resolution>();
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-    public Builder addResolutionsPerAuthorityItem(com.amazon.ask.model.slu.entityresolution.Resolution resolutionsPerAuthorityItem) {
-      if (this.resolutionsPerAuthority == null) {
-        this.resolutionsPerAuthority = new ArrayList<com.amazon.ask.model.slu.entityresolution.Resolution>();
-      }
-      this.resolutionsPerAuthority.add(resolutionsPerAuthorityItem);
-      return this;
+    private Resolutions(Builder builder) {
+        if (builder.resolutionsPerAuthority != null) {
+            this.resolutionsPerAuthority = builder.resolutionsPerAuthority;
+        }
     }
 
-    public Resolutions build() {
-      return new Resolutions(this);
+    /**
+     * Get resolutionsPerAuthority
+     * @return resolutionsPerAuthority
+    **/
+    @JsonProperty("resolutionsPerAuthority")
+    public List<com.amazon.ask.model.slu.entityresolution.Resolution> getResolutionsPerAuthority() {
+        return resolutionsPerAuthority;
     }
-  }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Resolutions sluEntityresolutionResolutions = (Resolutions) o;
+        return Objects.equals(this.resolutionsPerAuthority, sluEntityresolutionResolutions.resolutionsPerAuthority);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(resolutionsPerAuthority);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class Resolutions {\n");
+        
+        sb.append("    resolutionsPerAuthority: ").append(toIndentedString(resolutionsPerAuthority)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private List<com.amazon.ask.model.slu.entityresolution.Resolution> resolutionsPerAuthority;
+
+        private Builder() {}
+
+        @JsonProperty("resolutionsPerAuthority")
+        public Builder withResolutionsPerAuthority(List<com.amazon.ask.model.slu.entityresolution.Resolution> resolutionsPerAuthority) {
+            this.resolutionsPerAuthority = resolutionsPerAuthority;
+            return this;
+        }
+
+        public Builder addResolutionsPerAuthorityItem(com.amazon.ask.model.slu.entityresolution.Resolution resolutionsPerAuthorityItem) {
+            if (this.resolutionsPerAuthority == null) {
+                this.resolutionsPerAuthority = new ArrayList<com.amazon.ask.model.slu.entityresolution.Resolution>();
+            }
+            this.resolutionsPerAuthority.add(resolutionsPerAuthorityItem);
+            return this;
+        }
+
+        public Resolutions build() {
+            return new Resolutions(this);
+        }
+    }
 }
 

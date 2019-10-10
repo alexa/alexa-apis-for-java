@@ -23,104 +23,108 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = Price.Builder.class)
-public final class Price{
-
-  @JsonProperty("amount")
-  private String amount = null;
-
-  @JsonProperty("currencyCode")
-  private String currencyCode = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private Price(Builder builder) {
-    this.amount = builder.amount;
-    this.currencyCode = builder.currencyCode;
-  }
-
-  /**
-    * Amount authorized/captured.
-  * @return amount
-  **/
-  @JsonProperty("amount")
-  public String getAmount() {
-    return amount;
-  }
-
-  /**
-    * Currency code for the amount.
-  * @return currencyCode
-  **/
-  @JsonProperty("currencyCode")
-  public String getCurrencyCode() {
-    return currencyCode;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    Price interfacesAmazonpayModelResponsePrice = (Price) o;
-    return Objects.equals(this.amount, interfacesAmazonpayModelResponsePrice.amount) &&
-        Objects.equals(this.currencyCode, interfacesAmazonpayModelResponsePrice.currencyCode);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(amount, currencyCode);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class Price {\n");
-    
-    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
-    sb.append("    currencyCode: ").append(toIndentedString(currencyCode)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private String amount;
-    private String currencyCode;
-
-    private Builder() { }
+public final class Price {
 
     @JsonProperty("amount")
-    public Builder withAmount(String amount) {
-        this.amount = amount;
-        return this;
-    }
-
+    private String amount = null;
 
     @JsonProperty("currencyCode")
-    public Builder withCurrencyCode(String currencyCode) {
-        this.currencyCode = currencyCode;
-        return this;
+    private String currencyCode = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-
-    public Price build() {
-      return new Price(this);
+    private Price(Builder builder) {
+        if (builder.amount != null) {
+            this.amount = builder.amount;
+        }
+        if (builder.currencyCode != null) {
+            this.currencyCode = builder.currencyCode;
+        }
     }
-  }
+
+    /**
+     * Amount authorized/captured.
+     * @return amount
+    **/
+    @JsonProperty("amount")
+    public String getAmount() {
+        return amount;
+    }
+
+    /**
+     * Currency code for the amount.
+     * @return currencyCode
+    **/
+    @JsonProperty("currencyCode")
+    public String getCurrencyCode() {
+        return currencyCode;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Price interfacesAmazonpayModelResponsePrice = (Price) o;
+        return Objects.equals(this.amount, interfacesAmazonpayModelResponsePrice.amount) &&
+            Objects.equals(this.currencyCode, interfacesAmazonpayModelResponsePrice.currencyCode);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(amount, currencyCode);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class Price {\n");
+        
+        sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
+        sb.append("    currencyCode: ").append(toIndentedString(currencyCode)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String amount;
+        private String currencyCode;
+
+        private Builder() {}
+
+        @JsonProperty("amount")
+        public Builder withAmount(String amount) {
+            this.amount = amount;
+            return this;
+        }
+
+
+        @JsonProperty("currencyCode")
+        public Builder withCurrencyCode(String currencyCode) {
+            this.currencyCode = currencyCode;
+            return this;
+        }
+
+
+        public Price build() {
+            return new Price(this);
+        }
+    }
 }
 

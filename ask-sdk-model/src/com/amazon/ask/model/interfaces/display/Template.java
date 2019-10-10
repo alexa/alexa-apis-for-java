@@ -35,87 +35,87 @@ import com.fasterxml.jackson.annotation.JsonProperty;
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.display.BodyTemplate1.class, name = "BodyTemplate1"),
 })
 
-public abstract class Template{
+public abstract class Template {
 
-  protected String type = null;
+    protected String type = null;
 
-  @JsonProperty("token")
-  protected String token = null;
+    @JsonProperty("token")
+    protected String token = null;
 
-  @JsonProperty("backButton")
-  protected com.amazon.ask.model.interfaces.display.BackButtonBehavior backButton = null;
+    @JsonProperty("backButton")
+    protected com.amazon.ask.model.interfaces.display.BackButtonBehavior backButton = null;
 
-  protected Template() {
-  }
-
-  /**
-    * Get type
-  * @return type
-  **/
-  @JsonIgnore
-  public String getType() {
-    return type;
-  }
-
-  /**
-    * Get token
-  * @return token
-  **/
-  @JsonProperty("token")
-  public String getToken() {
-    return token;
-  }
-
-  /**
-    * Get backButton
-  * @return backButton
-  **/
-  @JsonProperty("backButton")
-  public com.amazon.ask.model.interfaces.display.BackButtonBehavior getBackButton() {
-    return backButton;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
+    protected Template() {
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    /**
+     * Get type
+     * @return type
+    **/
+    @JsonIgnore
+    public String getType() {
+        return type;
     }
-    Template interfacesDisplayTemplate = (Template) o;
-    return Objects.equals(this.type, interfacesDisplayTemplate.type) &&
-        Objects.equals(this.token, interfacesDisplayTemplate.token) &&
-        Objects.equals(this.backButton, interfacesDisplayTemplate.backButton);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(type, token, backButton);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class Template {\n");
-    
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    token: ").append(toIndentedString(token)).append("\n");
-    sb.append("    backButton: ").append(toIndentedString(backButton)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
+    /**
+     * Get token
+     * @return token
+    **/
+    @JsonProperty("token")
+    public String getToken() {
+        return token;
     }
-    return o.toString().replace("\n", "\n    ");
-  }
 
+    /**
+     * Get backButton
+     * @return backButton
+    **/
+    @JsonProperty("backButton")
+    public com.amazon.ask.model.interfaces.display.BackButtonBehavior getBackButton() {
+        return backButton;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Template interfacesDisplayTemplate = (Template) o;
+        return Objects.equals(this.type, interfacesDisplayTemplate.type) &&
+            Objects.equals(this.token, interfacesDisplayTemplate.token) &&
+            Objects.equals(this.backButton, interfacesDisplayTemplate.backButton);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(type, token, backButton);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class Template {\n");
+        
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    token: ").append(toIndentedString(token)).append("\n");
+        sb.append("    backButton: ").append(toIndentedString(backButton)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
 }
 

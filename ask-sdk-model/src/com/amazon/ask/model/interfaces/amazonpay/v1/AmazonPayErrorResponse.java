@@ -23,104 +23,108 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = AmazonPayErrorResponse.Builder.class)
-public final class AmazonPayErrorResponse{
-
-  @JsonProperty("errorCode")
-  private String errorCode = null;
-
-  @JsonProperty("errorMessage")
-  private String errorMessage = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private AmazonPayErrorResponse(Builder builder) {
-    this.errorCode = builder.errorCode;
-    this.errorMessage = builder.errorMessage;
-  }
-
-  /**
-    * Error code indicating the succinct cause of error
-  * @return errorCode
-  **/
-  @JsonProperty("errorCode")
-  public String getErrorCode() {
-    return errorCode;
-  }
-
-  /**
-    * Description of the error.
-  * @return errorMessage
-  **/
-  @JsonProperty("errorMessage")
-  public String getErrorMessage() {
-    return errorMessage;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    AmazonPayErrorResponse interfacesAmazonpayV1AmazonPayErrorResponse = (AmazonPayErrorResponse) o;
-    return Objects.equals(this.errorCode, interfacesAmazonpayV1AmazonPayErrorResponse.errorCode) &&
-        Objects.equals(this.errorMessage, interfacesAmazonpayV1AmazonPayErrorResponse.errorMessage);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(errorCode, errorMessage);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class AmazonPayErrorResponse {\n");
-    
-    sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
-    sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private String errorCode;
-    private String errorMessage;
-
-    private Builder() { }
+public final class AmazonPayErrorResponse {
 
     @JsonProperty("errorCode")
-    public Builder withErrorCode(String errorCode) {
-        this.errorCode = errorCode;
-        return this;
-    }
-
+    private String errorCode = null;
 
     @JsonProperty("errorMessage")
-    public Builder withErrorMessage(String errorMessage) {
-        this.errorMessage = errorMessage;
-        return this;
+    private String errorMessage = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-
-    public AmazonPayErrorResponse build() {
-      return new AmazonPayErrorResponse(this);
+    private AmazonPayErrorResponse(Builder builder) {
+        if (builder.errorCode != null) {
+            this.errorCode = builder.errorCode;
+        }
+        if (builder.errorMessage != null) {
+            this.errorMessage = builder.errorMessage;
+        }
     }
-  }
+
+    /**
+     * Error code indicating the succinct cause of error
+     * @return errorCode
+    **/
+    @JsonProperty("errorCode")
+    public String getErrorCode() {
+        return errorCode;
+    }
+
+    /**
+     * Description of the error.
+     * @return errorMessage
+    **/
+    @JsonProperty("errorMessage")
+    public String getErrorMessage() {
+        return errorMessage;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        AmazonPayErrorResponse interfacesAmazonpayV1AmazonPayErrorResponse = (AmazonPayErrorResponse) o;
+        return Objects.equals(this.errorCode, interfacesAmazonpayV1AmazonPayErrorResponse.errorCode) &&
+            Objects.equals(this.errorMessage, interfacesAmazonpayV1AmazonPayErrorResponse.errorMessage);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(errorCode, errorMessage);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class AmazonPayErrorResponse {\n");
+        
+        sb.append("    errorCode: ").append(toIndentedString(errorCode)).append("\n");
+        sb.append("    errorMessage: ").append(toIndentedString(errorMessage)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String errorCode;
+        private String errorMessage;
+
+        private Builder() {}
+
+        @JsonProperty("errorCode")
+        public Builder withErrorCode(String errorCode) {
+            this.errorCode = errorCode;
+            return this;
+        }
+
+
+        @JsonProperty("errorMessage")
+        public Builder withErrorMessage(String errorMessage) {
+            this.errorMessage = errorMessage;
+            return this;
+        }
+
+
+        public AmazonPayErrorResponse build() {
+            return new AmazonPayErrorResponse(this);
+        }
+    }
 }
 

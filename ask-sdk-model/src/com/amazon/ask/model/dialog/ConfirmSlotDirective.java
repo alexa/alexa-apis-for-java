@@ -23,108 +23,112 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = ConfirmSlotDirective.Builder.class)
-public final class ConfirmSlotDirective extends com.amazon.ask.model.Directive {
-
-  @JsonProperty("updatedIntent")
-  private com.amazon.ask.model.Intent updatedIntent = null;
-
-  @JsonProperty("slotToConfirm")
-  private String slotToConfirm = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private ConfirmSlotDirective(Builder builder) {
-    String discriminatorValue = "Dialog.ConfirmSlot";
-
-    this.type = discriminatorValue;
-    this.updatedIntent = builder.updatedIntent;
-    this.slotToConfirm = builder.slotToConfirm;
-  }
-
-  /**
-    * Get updatedIntent
-  * @return updatedIntent
-  **/
-  @JsonProperty("updatedIntent")
-  public com.amazon.ask.model.Intent getUpdatedIntent() {
-    return updatedIntent;
-  }
-
-  /**
-    * Get slotToConfirm
-  * @return slotToConfirm
-  **/
-  @JsonProperty("slotToConfirm")
-  public String getSlotToConfirm() {
-    return slotToConfirm;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    ConfirmSlotDirective dialogConfirmSlotDirective = (ConfirmSlotDirective) o;
-    return Objects.equals(this.updatedIntent, dialogConfirmSlotDirective.updatedIntent) &&
-        Objects.equals(this.slotToConfirm, dialogConfirmSlotDirective.slotToConfirm) &&
-        super.equals(o);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(updatedIntent, slotToConfirm, super.hashCode());
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ConfirmSlotDirective {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    updatedIntent: ").append(toIndentedString(updatedIntent)).append("\n");
-    sb.append("    slotToConfirm: ").append(toIndentedString(slotToConfirm)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private com.amazon.ask.model.Intent updatedIntent;
-    private String slotToConfirm;
-
-    private Builder() { }
+public final class ConfirmSlotDirective extends com.amazon.ask.model.Directive  {
 
     @JsonProperty("updatedIntent")
-    public Builder withUpdatedIntent(com.amazon.ask.model.Intent updatedIntent) {
-        this.updatedIntent = updatedIntent;
-        return this;
-    }
-
+    private com.amazon.ask.model.Intent updatedIntent = null;
 
     @JsonProperty("slotToConfirm")
-    public Builder withSlotToConfirm(String slotToConfirm) {
-        this.slotToConfirm = slotToConfirm;
-        return this;
+    private String slotToConfirm = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
+    private ConfirmSlotDirective(Builder builder) {
+        String discriminatorValue = "Dialog.ConfirmSlot";
 
-    public ConfirmSlotDirective build() {
-      return new ConfirmSlotDirective(this);
+        this.type = discriminatorValue;
+        if (builder.updatedIntent != null) {
+            this.updatedIntent = builder.updatedIntent;
+        }
+        if (builder.slotToConfirm != null) {
+            this.slotToConfirm = builder.slotToConfirm;
+        }
     }
-  }
+
+    /**
+     * Get updatedIntent
+     * @return updatedIntent
+    **/
+    @JsonProperty("updatedIntent")
+    public com.amazon.ask.model.Intent getUpdatedIntent() {
+        return updatedIntent;
+    }
+
+    /**
+     * Get slotToConfirm
+     * @return slotToConfirm
+    **/
+    @JsonProperty("slotToConfirm")
+    public String getSlotToConfirm() {
+        return slotToConfirm;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        ConfirmSlotDirective dialogConfirmSlotDirective = (ConfirmSlotDirective) o;
+        return Objects.equals(this.updatedIntent, dialogConfirmSlotDirective.updatedIntent) &&
+            Objects.equals(this.slotToConfirm, dialogConfirmSlotDirective.slotToConfirm) &&
+            super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(updatedIntent, slotToConfirm, super.hashCode());
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ConfirmSlotDirective {\n");
+        sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+        sb.append("    updatedIntent: ").append(toIndentedString(updatedIntent)).append("\n");
+        sb.append("    slotToConfirm: ").append(toIndentedString(slotToConfirm)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private com.amazon.ask.model.Intent updatedIntent;
+        private String slotToConfirm;
+
+        private Builder() {}
+
+        @JsonProperty("updatedIntent")
+        public Builder withUpdatedIntent(com.amazon.ask.model.Intent updatedIntent) {
+            this.updatedIntent = updatedIntent;
+            return this;
+        }
+
+
+        @JsonProperty("slotToConfirm")
+        public Builder withSlotToConfirm(String slotToConfirm) {
+            this.slotToConfirm = slotToConfirm;
+            return this;
+        }
+
+
+        public ConfirmSlotDirective build() {
+            return new ConfirmSlotDirective(this);
+        }
+    }
 }
 

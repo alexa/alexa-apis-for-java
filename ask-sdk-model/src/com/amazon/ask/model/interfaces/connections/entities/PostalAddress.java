@@ -23,186 +23,198 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = PostalAddress.Builder.class)
-public final class PostalAddress extends com.amazon.ask.model.interfaces.connections.entities.BaseEntity {
-
-  @JsonProperty("streetAddress")
-  private String streetAddress = null;
-
-  @JsonProperty("locality")
-  private String locality = null;
-
-  @JsonProperty("region")
-  private String region = null;
-
-  @JsonProperty("postalCode")
-  private String postalCode = null;
-
-  @JsonProperty("country")
-  private String country = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private PostalAddress(Builder builder) {
-    String discriminatorValue = "PostalAddress";
-
-    this.type = discriminatorValue;
-    this.version = builder.version;
-    this.streetAddress = builder.streetAddress;
-    this.locality = builder.locality;
-    this.region = builder.region;
-    this.postalCode = builder.postalCode;
-    this.country = builder.country;
-  }
-
-  /**
-    * street address
-  * @return streetAddress
-  **/
-  @JsonProperty("streetAddress")
-  public String getStreetAddress() {
-    return streetAddress;
-  }
-
-  /**
-    * locality/city
-  * @return locality
-  **/
-  @JsonProperty("locality")
-  public String getLocality() {
-    return locality;
-  }
-
-  /**
-    * state/region
-  * @return region
-  **/
-  @JsonProperty("region")
-  public String getRegion() {
-    return region;
-  }
-
-  /**
-    * postal/zip code
-  * @return postalCode
-  **/
-  @JsonProperty("postalCode")
-  public String getPostalCode() {
-    return postalCode;
-  }
-
-  /**
-    * country
-  * @return country
-  **/
-  @JsonProperty("country")
-  public String getCountry() {
-    return country;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    PostalAddress interfacesConnectionsEntitiesPostalAddress = (PostalAddress) o;
-    return Objects.equals(this.streetAddress, interfacesConnectionsEntitiesPostalAddress.streetAddress) &&
-        Objects.equals(this.locality, interfacesConnectionsEntitiesPostalAddress.locality) &&
-        Objects.equals(this.region, interfacesConnectionsEntitiesPostalAddress.region) &&
-        Objects.equals(this.postalCode, interfacesConnectionsEntitiesPostalAddress.postalCode) &&
-        Objects.equals(this.country, interfacesConnectionsEntitiesPostalAddress.country) &&
-        super.equals(o);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(streetAddress, locality, region, postalCode, country, super.hashCode());
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class PostalAddress {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    streetAddress: ").append(toIndentedString(streetAddress)).append("\n");
-    sb.append("    locality: ").append(toIndentedString(locality)).append("\n");
-    sb.append("    region: ").append(toIndentedString(region)).append("\n");
-    sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
-    sb.append("    country: ").append(toIndentedString(country)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private String version;
-    private String streetAddress;
-    private String locality;
-    private String region;
-    private String postalCode;
-    private String country;
-
-    private Builder() { }
-
-    @JsonProperty("@version")
-    public Builder withVersion(String version) {
-        this.version = version;
-        return this;
-    }
-
+public final class PostalAddress extends com.amazon.ask.model.interfaces.connections.entities.BaseEntity  {
 
     @JsonProperty("streetAddress")
-    public Builder withStreetAddress(String streetAddress) {
-        this.streetAddress = streetAddress;
-        return this;
-    }
-
+    private String streetAddress = null;
 
     @JsonProperty("locality")
-    public Builder withLocality(String locality) {
-        this.locality = locality;
-        return this;
-    }
-
+    private String locality = null;
 
     @JsonProperty("region")
-    public Builder withRegion(String region) {
-        this.region = region;
-        return this;
-    }
-
+    private String region = null;
 
     @JsonProperty("postalCode")
-    public Builder withPostalCode(String postalCode) {
-        this.postalCode = postalCode;
-        return this;
-    }
-
+    private String postalCode = null;
 
     @JsonProperty("country")
-    public Builder withCountry(String country) {
-        this.country = country;
-        return this;
+    private String country = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
+    private PostalAddress(Builder builder) {
+        String discriminatorValue = "PostalAddress";
 
-    public PostalAddress build() {
-      return new PostalAddress(this);
+        this.type = discriminatorValue;
+        if (builder.version != null) {
+            this.version = builder.version;
+        }
+        if (builder.streetAddress != null) {
+            this.streetAddress = builder.streetAddress;
+        }
+        if (builder.locality != null) {
+            this.locality = builder.locality;
+        }
+        if (builder.region != null) {
+            this.region = builder.region;
+        }
+        if (builder.postalCode != null) {
+            this.postalCode = builder.postalCode;
+        }
+        if (builder.country != null) {
+            this.country = builder.country;
+        }
     }
-  }
+
+    /**
+     * street address
+     * @return streetAddress
+    **/
+    @JsonProperty("streetAddress")
+    public String getStreetAddress() {
+        return streetAddress;
+    }
+
+    /**
+     * locality/city
+     * @return locality
+    **/
+    @JsonProperty("locality")
+    public String getLocality() {
+        return locality;
+    }
+
+    /**
+     * state/region
+     * @return region
+    **/
+    @JsonProperty("region")
+    public String getRegion() {
+        return region;
+    }
+
+    /**
+     * postal/zip code
+     * @return postalCode
+    **/
+    @JsonProperty("postalCode")
+    public String getPostalCode() {
+        return postalCode;
+    }
+
+    /**
+     * country
+     * @return country
+    **/
+    @JsonProperty("country")
+    public String getCountry() {
+        return country;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        PostalAddress interfacesConnectionsEntitiesPostalAddress = (PostalAddress) o;
+        return Objects.equals(this.streetAddress, interfacesConnectionsEntitiesPostalAddress.streetAddress) &&
+            Objects.equals(this.locality, interfacesConnectionsEntitiesPostalAddress.locality) &&
+            Objects.equals(this.region, interfacesConnectionsEntitiesPostalAddress.region) &&
+            Objects.equals(this.postalCode, interfacesConnectionsEntitiesPostalAddress.postalCode) &&
+            Objects.equals(this.country, interfacesConnectionsEntitiesPostalAddress.country) &&
+            super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(streetAddress, locality, region, postalCode, country, super.hashCode());
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class PostalAddress {\n");
+        sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+        sb.append("    streetAddress: ").append(toIndentedString(streetAddress)).append("\n");
+        sb.append("    locality: ").append(toIndentedString(locality)).append("\n");
+        sb.append("    region: ").append(toIndentedString(region)).append("\n");
+        sb.append("    postalCode: ").append(toIndentedString(postalCode)).append("\n");
+        sb.append("    country: ").append(toIndentedString(country)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String version;
+        private String streetAddress;
+        private String locality;
+        private String region;
+        private String postalCode;
+        private String country;
+
+        private Builder() {}
+
+        @JsonProperty("@version")
+        public Builder withVersion(String version) {
+            this.version = version;
+            return this;
+        }
+
+
+        @JsonProperty("streetAddress")
+        public Builder withStreetAddress(String streetAddress) {
+            this.streetAddress = streetAddress;
+            return this;
+        }
+
+
+        @JsonProperty("locality")
+        public Builder withLocality(String locality) {
+            this.locality = locality;
+            return this;
+        }
+
+
+        @JsonProperty("region")
+        public Builder withRegion(String region) {
+            this.region = region;
+            return this;
+        }
+
+
+        @JsonProperty("postalCode")
+        public Builder withPostalCode(String postalCode) {
+            this.postalCode = postalCode;
+            return this;
+        }
+
+
+        @JsonProperty("country")
+        public Builder withCountry(String country) {
+            this.country = country;
+            return this;
+        }
+
+
+        public PostalAddress build() {
+            return new PostalAddress(this);
+        }
+    }
 }
 

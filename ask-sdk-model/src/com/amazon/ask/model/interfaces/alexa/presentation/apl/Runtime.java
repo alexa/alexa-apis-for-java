@@ -23,81 +23,83 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = Runtime.Builder.class)
-public final class Runtime{
-
-  @JsonProperty("maxVersion")
-  private String maxVersion = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private Runtime(Builder builder) {
-    this.maxVersion = builder.maxVersion;
-  }
-
-  /**
-    * Maximum APL version supported by the runtime.
-  * @return maxVersion
-  **/
-  @JsonProperty("maxVersion")
-  public String getMaxVersion() {
-    return maxVersion;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    Runtime interfacesAlexaPresentationAplRuntime = (Runtime) o;
-    return Objects.equals(this.maxVersion, interfacesAlexaPresentationAplRuntime.maxVersion);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(maxVersion);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class Runtime {\n");
-    
-    sb.append("    maxVersion: ").append(toIndentedString(maxVersion)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private String maxVersion;
-
-    private Builder() { }
+public final class Runtime {
 
     @JsonProperty("maxVersion")
-    public Builder withMaxVersion(String maxVersion) {
-        this.maxVersion = maxVersion;
-        return this;
+    private String maxVersion = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-
-    public Runtime build() {
-      return new Runtime(this);
+    private Runtime(Builder builder) {
+        if (builder.maxVersion != null) {
+            this.maxVersion = builder.maxVersion;
+        }
     }
-  }
+
+    /**
+     * Maximum APL version supported by the runtime.
+     * @return maxVersion
+    **/
+    @JsonProperty("maxVersion")
+    public String getMaxVersion() {
+        return maxVersion;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Runtime interfacesAlexaPresentationAplRuntime = (Runtime) o;
+        return Objects.equals(this.maxVersion, interfacesAlexaPresentationAplRuntime.maxVersion);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(maxVersion);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class Runtime {\n");
+        
+        sb.append("    maxVersion: ").append(toIndentedString(maxVersion)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String maxVersion;
+
+        private Builder() {}
+
+        @JsonProperty("maxVersion")
+        public Builder withMaxVersion(String maxVersion) {
+            this.maxVersion = maxVersion;
+            return this;
+        }
+
+
+        public Runtime build() {
+            return new Runtime(this);
+        }
+    }
 }
 

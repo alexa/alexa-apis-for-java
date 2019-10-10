@@ -23,104 +23,108 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = Entity.Builder.class)
-public final class Entity{
-
-  @JsonProperty("id")
-  private String id = null;
-
-  @JsonProperty("name")
-  private com.amazon.ask.model.er.dynamic.EntityValueAndSynonyms name = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private Entity(Builder builder) {
-    this.id = builder.id;
-    this.name = builder.name;
-  }
-
-  /**
-    * An unique id associated with the entity
-  * @return id
-  **/
-  @JsonProperty("id")
-  public String getId() {
-    return id;
-  }
-
-  /**
-    * Get name
-  * @return name
-  **/
-  @JsonProperty("name")
-  public com.amazon.ask.model.er.dynamic.EntityValueAndSynonyms getName() {
-    return name;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    Entity erDynamicEntity = (Entity) o;
-    return Objects.equals(this.id, erDynamicEntity.id) &&
-        Objects.equals(this.name, erDynamicEntity.name);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(id, name);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class Entity {\n");
-    
-    sb.append("    id: ").append(toIndentedString(id)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private String id;
-    private com.amazon.ask.model.er.dynamic.EntityValueAndSynonyms name;
-
-    private Builder() { }
+public final class Entity {
 
     @JsonProperty("id")
-    public Builder withId(String id) {
-        this.id = id;
-        return this;
-    }
-
+    private String id = null;
 
     @JsonProperty("name")
-    public Builder withName(com.amazon.ask.model.er.dynamic.EntityValueAndSynonyms name) {
-        this.name = name;
-        return this;
+    private com.amazon.ask.model.er.dynamic.EntityValueAndSynonyms name = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-
-    public Entity build() {
-      return new Entity(this);
+    private Entity(Builder builder) {
+        if (builder.id != null) {
+            this.id = builder.id;
+        }
+        if (builder.name != null) {
+            this.name = builder.name;
+        }
     }
-  }
+
+    /**
+     * An unique id associated with the entity
+     * @return id
+    **/
+    @JsonProperty("id")
+    public String getId() {
+        return id;
+    }
+
+    /**
+     * Get name
+     * @return name
+    **/
+    @JsonProperty("name")
+    public com.amazon.ask.model.er.dynamic.EntityValueAndSynonyms getName() {
+        return name;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Entity erDynamicEntity = (Entity) o;
+        return Objects.equals(this.id, erDynamicEntity.id) &&
+            Objects.equals(this.name, erDynamicEntity.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class Entity {\n");
+        
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String id;
+        private com.amazon.ask.model.er.dynamic.EntityValueAndSynonyms name;
+
+        private Builder() {}
+
+        @JsonProperty("id")
+        public Builder withId(String id) {
+            this.id = id;
+            return this;
+        }
+
+
+        @JsonProperty("name")
+        public Builder withName(com.amazon.ask.model.er.dynamic.EntityValueAndSynonyms name) {
+            this.name = name;
+            return this;
+        }
+
+
+        public Entity build() {
+            return new Entity(this);
+        }
+    }
 }
 

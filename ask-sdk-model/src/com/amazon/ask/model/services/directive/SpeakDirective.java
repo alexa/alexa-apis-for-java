@@ -23,85 +23,87 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = SpeakDirective.Builder.class)
-public final class SpeakDirective extends com.amazon.ask.model.services.directive.Directive {
-
-  @JsonProperty("speech")
-  private String speech = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private SpeakDirective(Builder builder) {
-    String discriminatorValue = "VoicePlayer.Speak";
-
-    this.type = discriminatorValue;
-    this.speech = builder.speech;
-  }
-
-  /**
-    * Get speech
-  * @return speech
-  **/
-  @JsonProperty("speech")
-  public String getSpeech() {
-    return speech;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    SpeakDirective servicesDirectiveSpeakDirective = (SpeakDirective) o;
-    return Objects.equals(this.speech, servicesDirectiveSpeakDirective.speech) &&
-        super.equals(o);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(speech, super.hashCode());
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class SpeakDirective {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    speech: ").append(toIndentedString(speech)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private String speech;
-
-    private Builder() { }
+public final class SpeakDirective extends com.amazon.ask.model.services.directive.Directive  {
 
     @JsonProperty("speech")
-    public Builder withSpeech(String speech) {
-        this.speech = speech;
-        return this;
+    private String speech = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
+    private SpeakDirective(Builder builder) {
+        String discriminatorValue = "VoicePlayer.Speak";
 
-    public SpeakDirective build() {
-      return new SpeakDirective(this);
+        this.type = discriminatorValue;
+        if (builder.speech != null) {
+            this.speech = builder.speech;
+        }
     }
-  }
+
+    /**
+     * Get speech
+     * @return speech
+    **/
+    @JsonProperty("speech")
+    public String getSpeech() {
+        return speech;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        SpeakDirective servicesDirectiveSpeakDirective = (SpeakDirective) o;
+        return Objects.equals(this.speech, servicesDirectiveSpeakDirective.speech) &&
+            super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(speech, super.hashCode());
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class SpeakDirective {\n");
+        sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+        sb.append("    speech: ").append(toIndentedString(speech)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String speech;
+
+        private Builder() {}
+
+        @JsonProperty("speech")
+        public Builder withSpeech(String speech) {
+            this.speech = speech;
+            return this;
+        }
+
+
+        public SpeakDirective build() {
+            return new SpeakDirective(this);
+        }
+    }
 }
 

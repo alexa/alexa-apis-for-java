@@ -46,101 +46,101 @@ import com.fasterxml.jackson.annotation.JsonProperty;
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.SpeakListCommand.class, name = "SpeakList"),
 })
 
-public abstract class Command{
+public abstract class Command {
 
-  protected String type = null;
+    protected String type = null;
 
-  @JsonProperty("delay")
-  protected String delay = null;
+    @JsonProperty("delay")
+    protected String delay = null;
 
-  @JsonProperty("description")
-  protected String description = null;
+    @JsonProperty("description")
+    protected String description = null;
 
-  @JsonProperty("when")
-  protected Boolean when = null;
+    @JsonProperty("when")
+    protected Boolean when = null;
 
-  protected Command() {
-  }
-
-  /**
-    * Defines the command type and dictates which properties must/can be included.
-  * @return type
-  **/
-  @JsonIgnore
-  public String getType() {
-    return type;
-  }
-
-  /**
-    * The delay in milliseconds before this command starts executing; must be non-negative. Defaults to 0.
-  * @return delay
-  **/
-  @JsonProperty("delay")
-  public String getDelay() {
-    return delay;
-  }
-
-  /**
-    * A user-provided description of this command.
-  * @return description
-  **/
-  @JsonProperty("description")
-  public String getDescription() {
-    return description;
-  }
-
-  /**
-    * If false, the execution of the command is skipped. Defaults to true.
-  * @return when
-  **/
-  @JsonProperty("when")
-  public Boolean getWhen() {
-    return when;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
+    protected Command() {
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    /**
+     * Defines the command type and dictates which properties must/can be included.
+     * @return type
+    **/
+    @JsonIgnore
+    public String getType() {
+        return type;
     }
-    Command interfacesAlexaPresentationAplCommand = (Command) o;
-    return Objects.equals(this.type, interfacesAlexaPresentationAplCommand.type) &&
-        Objects.equals(this.delay, interfacesAlexaPresentationAplCommand.delay) &&
-        Objects.equals(this.description, interfacesAlexaPresentationAplCommand.description) &&
-        Objects.equals(this.when, interfacesAlexaPresentationAplCommand.when);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(type, delay, description, when);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class Command {\n");
-    
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    delay: ").append(toIndentedString(delay)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    when: ").append(toIndentedString(when)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
+    /**
+     * The delay in milliseconds before this command starts executing; must be non-negative. Defaults to 0.
+     * @return delay
+    **/
+    @JsonProperty("delay")
+    public String getDelay() {
+        return delay;
     }
-    return o.toString().replace("\n", "\n    ");
-  }
 
+    /**
+     * A user-provided description of this command.
+     * @return description
+    **/
+    @JsonProperty("description")
+    public String getDescription() {
+        return description;
+    }
+
+    /**
+     * If false, the execution of the command is skipped. Defaults to true.
+     * @return when
+    **/
+    @JsonProperty("when")
+    public Boolean getWhen() {
+        return when;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Command interfacesAlexaPresentationAplCommand = (Command) o;
+        return Objects.equals(this.type, interfacesAlexaPresentationAplCommand.type) &&
+            Objects.equals(this.delay, interfacesAlexaPresentationAplCommand.delay) &&
+            Objects.equals(this.description, interfacesAlexaPresentationAplCommand.description) &&
+            Objects.equals(this.when, interfacesAlexaPresentationAplCommand.when);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(type, delay, description, when);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class Command {\n");
+        
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    delay: ").append(toIndentedString(delay)).append("\n");
+        sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    when: ").append(toIndentedString(when)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
 }
 

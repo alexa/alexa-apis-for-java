@@ -23,104 +23,108 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = Status.Builder.class)
-public final class Status{
-
-  @JsonProperty("url")
-  private String url = null;
-
-  @JsonProperty("status")
-  private com.amazon.ask.model.services.listManagement.ListItemState status = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private Status(Builder builder) {
-    this.url = builder.url;
-    this.status = builder.status;
-  }
-
-  /**
-    * Get url
-  * @return url
-  **/
-  @JsonProperty("url")
-  public String getUrl() {
-    return url;
-  }
-
-  /**
-    * Get status
-  * @return status
-  **/
-  @JsonProperty("status")
-  public com.amazon.ask.model.services.listManagement.ListItemState getStatus() {
-    return status;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    Status servicesListManagementStatus = (Status) o;
-    return Objects.equals(this.url, servicesListManagementStatus.url) &&
-        Objects.equals(this.status, servicesListManagementStatus.status);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(url, status);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class Status {\n");
-    
-    sb.append("    url: ").append(toIndentedString(url)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private String url;
-    private com.amazon.ask.model.services.listManagement.ListItemState status;
-
-    private Builder() { }
+public final class Status {
 
     @JsonProperty("url")
-    public Builder withUrl(String url) {
-        this.url = url;
-        return this;
-    }
-
+    private String url = null;
 
     @JsonProperty("status")
-    public Builder withStatus(com.amazon.ask.model.services.listManagement.ListItemState status) {
-        this.status = status;
-        return this;
+    private com.amazon.ask.model.services.listManagement.ListItemState status = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-
-    public Status build() {
-      return new Status(this);
+    private Status(Builder builder) {
+        if (builder.url != null) {
+            this.url = builder.url;
+        }
+        if (builder.status != null) {
+            this.status = builder.status;
+        }
     }
-  }
+
+    /**
+     * Get url
+     * @return url
+    **/
+    @JsonProperty("url")
+    public String getUrl() {
+        return url;
+    }
+
+    /**
+     * Get status
+     * @return status
+    **/
+    @JsonProperty("status")
+    public com.amazon.ask.model.services.listManagement.ListItemState getStatus() {
+        return status;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Status servicesListManagementStatus = (Status) o;
+        return Objects.equals(this.url, servicesListManagementStatus.url) &&
+            Objects.equals(this.status, servicesListManagementStatus.status);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(url, status);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class Status {\n");
+        
+        sb.append("    url: ").append(toIndentedString(url)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String url;
+        private com.amazon.ask.model.services.listManagement.ListItemState status;
+
+        private Builder() {}
+
+        @JsonProperty("url")
+        public Builder withUrl(String url) {
+            this.url = url;
+            return this;
+        }
+
+
+        @JsonProperty("status")
+        public Builder withStatus(com.amazon.ask.model.services.listManagement.ListItemState status) {
+            this.status = status;
+            return this;
+        }
+
+
+        public Status build() {
+            return new Status(this);
+        }
+    }
 }
 

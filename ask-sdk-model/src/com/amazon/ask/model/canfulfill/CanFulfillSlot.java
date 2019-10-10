@@ -23,104 +23,108 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = CanFulfillSlot.Builder.class)
-public final class CanFulfillSlot{
-
-  @JsonProperty("canUnderstand")
-  private com.amazon.ask.model.canfulfill.CanUnderstandSlotValues canUnderstand = null;
-
-  @JsonProperty("canFulfill")
-  private com.amazon.ask.model.canfulfill.CanFulfillSlotValues canFulfill = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private CanFulfillSlot(Builder builder) {
-    this.canUnderstand = builder.canUnderstand;
-    this.canFulfill = builder.canFulfill;
-  }
-
-  /**
-    * Get canUnderstand
-  * @return canUnderstand
-  **/
-  @JsonProperty("canUnderstand")
-  public com.amazon.ask.model.canfulfill.CanUnderstandSlotValues getCanUnderstand() {
-    return canUnderstand;
-  }
-
-  /**
-    * Get canFulfill
-  * @return canFulfill
-  **/
-  @JsonProperty("canFulfill")
-  public com.amazon.ask.model.canfulfill.CanFulfillSlotValues getCanFulfill() {
-    return canFulfill;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    CanFulfillSlot canfulfillCanFulfillSlot = (CanFulfillSlot) o;
-    return Objects.equals(this.canUnderstand, canfulfillCanFulfillSlot.canUnderstand) &&
-        Objects.equals(this.canFulfill, canfulfillCanFulfillSlot.canFulfill);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(canUnderstand, canFulfill);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class CanFulfillSlot {\n");
-    
-    sb.append("    canUnderstand: ").append(toIndentedString(canUnderstand)).append("\n");
-    sb.append("    canFulfill: ").append(toIndentedString(canFulfill)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private com.amazon.ask.model.canfulfill.CanUnderstandSlotValues canUnderstand;
-    private com.amazon.ask.model.canfulfill.CanFulfillSlotValues canFulfill;
-
-    private Builder() { }
+public final class CanFulfillSlot {
 
     @JsonProperty("canUnderstand")
-    public Builder withCanUnderstand(com.amazon.ask.model.canfulfill.CanUnderstandSlotValues canUnderstand) {
-        this.canUnderstand = canUnderstand;
-        return this;
-    }
-
+    private com.amazon.ask.model.canfulfill.CanUnderstandSlotValues canUnderstand = null;
 
     @JsonProperty("canFulfill")
-    public Builder withCanFulfill(com.amazon.ask.model.canfulfill.CanFulfillSlotValues canFulfill) {
-        this.canFulfill = canFulfill;
-        return this;
+    private com.amazon.ask.model.canfulfill.CanFulfillSlotValues canFulfill = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-
-    public CanFulfillSlot build() {
-      return new CanFulfillSlot(this);
+    private CanFulfillSlot(Builder builder) {
+        if (builder.canUnderstand != null) {
+            this.canUnderstand = builder.canUnderstand;
+        }
+        if (builder.canFulfill != null) {
+            this.canFulfill = builder.canFulfill;
+        }
     }
-  }
+
+    /**
+     * Get canUnderstand
+     * @return canUnderstand
+    **/
+    @JsonProperty("canUnderstand")
+    public com.amazon.ask.model.canfulfill.CanUnderstandSlotValues getCanUnderstand() {
+        return canUnderstand;
+    }
+
+    /**
+     * Get canFulfill
+     * @return canFulfill
+    **/
+    @JsonProperty("canFulfill")
+    public com.amazon.ask.model.canfulfill.CanFulfillSlotValues getCanFulfill() {
+        return canFulfill;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        CanFulfillSlot canfulfillCanFulfillSlot = (CanFulfillSlot) o;
+        return Objects.equals(this.canUnderstand, canfulfillCanFulfillSlot.canUnderstand) &&
+            Objects.equals(this.canFulfill, canfulfillCanFulfillSlot.canFulfill);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(canUnderstand, canFulfill);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class CanFulfillSlot {\n");
+        
+        sb.append("    canUnderstand: ").append(toIndentedString(canUnderstand)).append("\n");
+        sb.append("    canFulfill: ").append(toIndentedString(canFulfill)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private com.amazon.ask.model.canfulfill.CanUnderstandSlotValues canUnderstand;
+        private com.amazon.ask.model.canfulfill.CanFulfillSlotValues canFulfill;
+
+        private Builder() {}
+
+        @JsonProperty("canUnderstand")
+        public Builder withCanUnderstand(com.amazon.ask.model.canfulfill.CanUnderstandSlotValues canUnderstand) {
+            this.canUnderstand = canUnderstand;
+            return this;
+        }
+
+
+        @JsonProperty("canFulfill")
+        public Builder withCanFulfill(com.amazon.ask.model.canfulfill.CanFulfillSlotValues canFulfill) {
+            this.canFulfill = canFulfill;
+            return this;
+        }
+
+
+        public CanFulfillSlot build() {
+            return new CanFulfillSlot(this);
+        }
+    }
 }
 

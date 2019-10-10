@@ -23,81 +23,83 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = AlexaPresentationAplInterface.Builder.class)
-public final class AlexaPresentationAplInterface{
-
-  @JsonProperty("runtime")
-  private com.amazon.ask.model.interfaces.alexa.presentation.apl.Runtime runtime = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private AlexaPresentationAplInterface(Builder builder) {
-    this.runtime = builder.runtime;
-  }
-
-  /**
-    * Get runtime
-  * @return runtime
-  **/
-  @JsonProperty("runtime")
-  public com.amazon.ask.model.interfaces.alexa.presentation.apl.Runtime getRuntime() {
-    return runtime;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    AlexaPresentationAplInterface interfacesAlexaPresentationAplAlexaPresentationAplInterface = (AlexaPresentationAplInterface) o;
-    return Objects.equals(this.runtime, interfacesAlexaPresentationAplAlexaPresentationAplInterface.runtime);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(runtime);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class AlexaPresentationAplInterface {\n");
-    
-    sb.append("    runtime: ").append(toIndentedString(runtime)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private com.amazon.ask.model.interfaces.alexa.presentation.apl.Runtime runtime;
-
-    private Builder() { }
+public final class AlexaPresentationAplInterface {
 
     @JsonProperty("runtime")
-    public Builder withRuntime(com.amazon.ask.model.interfaces.alexa.presentation.apl.Runtime runtime) {
-        this.runtime = runtime;
-        return this;
+    private com.amazon.ask.model.interfaces.alexa.presentation.apl.Runtime runtime = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-
-    public AlexaPresentationAplInterface build() {
-      return new AlexaPresentationAplInterface(this);
+    private AlexaPresentationAplInterface(Builder builder) {
+        if (builder.runtime != null) {
+            this.runtime = builder.runtime;
+        }
     }
-  }
+
+    /**
+     * Get runtime
+     * @return runtime
+    **/
+    @JsonProperty("runtime")
+    public com.amazon.ask.model.interfaces.alexa.presentation.apl.Runtime getRuntime() {
+        return runtime;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        AlexaPresentationAplInterface interfacesAlexaPresentationAplAlexaPresentationAplInterface = (AlexaPresentationAplInterface) o;
+        return Objects.equals(this.runtime, interfacesAlexaPresentationAplAlexaPresentationAplInterface.runtime);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(runtime);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class AlexaPresentationAplInterface {\n");
+        
+        sb.append("    runtime: ").append(toIndentedString(runtime)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private com.amazon.ask.model.interfaces.alexa.presentation.apl.Runtime runtime;
+
+        private Builder() {}
+
+        @JsonProperty("runtime")
+        public Builder withRuntime(com.amazon.ask.model.interfaces.alexa.presentation.apl.Runtime runtime) {
+            this.runtime = runtime;
+            return this;
+        }
+
+
+        public AlexaPresentationAplInterface build() {
+            return new AlexaPresentationAplInterface(this);
+        }
+    }
 }
 

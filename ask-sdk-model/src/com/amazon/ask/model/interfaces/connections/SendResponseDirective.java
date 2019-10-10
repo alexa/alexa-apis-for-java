@@ -26,115 +26,119 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = SendResponseDirective.Builder.class)
-public final class SendResponseDirective extends com.amazon.ask.model.Directive {
-
-  @JsonProperty("status")
-  private com.amazon.ask.model.interfaces.connections.ConnectionsStatus status = null;
-
-  @JsonProperty("payload")
-  private Map<String, Object> payload = new HashMap<String, Object>();
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private SendResponseDirective(Builder builder) {
-    String discriminatorValue = "Connections.SendResponse";
-
-    this.type = discriminatorValue;
-    this.status = builder.status;
-    this.payload = builder.payload;
-  }
-
-  /**
-    * Get status
-  * @return status
-  **/
-  @JsonProperty("status")
-  public com.amazon.ask.model.interfaces.connections.ConnectionsStatus getStatus() {
-    return status;
-  }
-
-  /**
-    * This is an object sent to referrer skill as is.
-  * @return payload
-  **/
-  @JsonProperty("payload")
-  public Map<String, Object> getPayload() {
-    return payload;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    SendResponseDirective interfacesConnectionsSendResponseDirective = (SendResponseDirective) o;
-    return Objects.equals(this.status, interfacesConnectionsSendResponseDirective.status) &&
-        Objects.equals(this.payload, interfacesConnectionsSendResponseDirective.payload) &&
-        super.equals(o);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(status, payload, super.hashCode());
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class SendResponseDirective {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    payload: ").append(toIndentedString(payload)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private com.amazon.ask.model.interfaces.connections.ConnectionsStatus status;
-    private Map<String, Object> payload;
-
-    private Builder() { }
+public final class SendResponseDirective extends com.amazon.ask.model.Directive  {
 
     @JsonProperty("status")
-    public Builder withStatus(com.amazon.ask.model.interfaces.connections.ConnectionsStatus status) {
-        this.status = status;
-        return this;
-    }
-
+    private com.amazon.ask.model.interfaces.connections.ConnectionsStatus status = null;
 
     @JsonProperty("payload")
-    public Builder withPayload(Map<String, Object> payload) {
-        this.payload = payload;
-        return this;
+    private Map<String, Object> payload = new HashMap<String, Object>();
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-    public Builder putPayloadItem(String key, Object payloadItem) {
-      if (this.payload == null) {
-        this.payload = new HashMap<String, Object>();
-      }
-      this.payload.put(key, payloadItem);
-      return this;
+    private SendResponseDirective(Builder builder) {
+        String discriminatorValue = "Connections.SendResponse";
+
+        this.type = discriminatorValue;
+        if (builder.status != null) {
+            this.status = builder.status;
+        }
+        if (builder.payload != null) {
+            this.payload = builder.payload;
+        }
     }
 
-    public SendResponseDirective build() {
-      return new SendResponseDirective(this);
+    /**
+     * Get status
+     * @return status
+    **/
+    @JsonProperty("status")
+    public com.amazon.ask.model.interfaces.connections.ConnectionsStatus getStatus() {
+        return status;
     }
-  }
+
+    /**
+     * This is an object sent to referrer skill as is.
+     * @return payload
+    **/
+    @JsonProperty("payload")
+    public Map<String, Object> getPayload() {
+        return payload;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        SendResponseDirective interfacesConnectionsSendResponseDirective = (SendResponseDirective) o;
+        return Objects.equals(this.status, interfacesConnectionsSendResponseDirective.status) &&
+            Objects.equals(this.payload, interfacesConnectionsSendResponseDirective.payload) &&
+            super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(status, payload, super.hashCode());
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class SendResponseDirective {\n");
+        sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    payload: ").append(toIndentedString(payload)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private com.amazon.ask.model.interfaces.connections.ConnectionsStatus status;
+        private Map<String, Object> payload;
+
+        private Builder() {}
+
+        @JsonProperty("status")
+        public Builder withStatus(com.amazon.ask.model.interfaces.connections.ConnectionsStatus status) {
+            this.status = status;
+            return this;
+        }
+
+
+        @JsonProperty("payload")
+        public Builder withPayload(Map<String, Object> payload) {
+            this.payload = payload;
+            return this;
+        }
+
+        public Builder putPayloadItem(String key, Object payloadItem) {
+            if (this.payload == null) {
+                this.payload = new HashMap<String, Object>();
+            }
+            this.payload.put(key, payloadItem);
+            return this;
+        }
+
+        public SendResponseDirective build() {
+            return new SendResponseDirective(this);
+        }
+    }
 }
 

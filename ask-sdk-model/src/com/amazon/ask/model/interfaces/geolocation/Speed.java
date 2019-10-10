@@ -23,104 +23,108 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = Speed.Builder.class)
-public final class Speed{
-
-  @JsonProperty("speedInMetersPerSecond")
-  private Double speedInMetersPerSecond = null;
-
-  @JsonProperty("accuracyInMetersPerSecond")
-  private Double accuracyInMetersPerSecond = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private Speed(Builder builder) {
-    this.speedInMetersPerSecond = builder.speedInMetersPerSecond;
-    this.accuracyInMetersPerSecond = builder.accuracyInMetersPerSecond;
-  }
-
-  /**
-    * A double representing the speed of the device in meters.
-  * @return speedInMetersPerSecond
-  **/
-  @JsonProperty("speedInMetersPerSecond")
-  public Double getSpeedInMetersPerSecond() {
-    return speedInMetersPerSecond;
-  }
-
-  /**
-    * A double representing the accuracy of the speed measurement in meters.
-  * @return accuracyInMetersPerSecond
-  **/
-  @JsonProperty("accuracyInMetersPerSecond")
-  public Double getAccuracyInMetersPerSecond() {
-    return accuracyInMetersPerSecond;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    Speed interfacesGeolocationSpeed = (Speed) o;
-    return Objects.equals(this.speedInMetersPerSecond, interfacesGeolocationSpeed.speedInMetersPerSecond) &&
-        Objects.equals(this.accuracyInMetersPerSecond, interfacesGeolocationSpeed.accuracyInMetersPerSecond);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(speedInMetersPerSecond, accuracyInMetersPerSecond);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class Speed {\n");
-    
-    sb.append("    speedInMetersPerSecond: ").append(toIndentedString(speedInMetersPerSecond)).append("\n");
-    sb.append("    accuracyInMetersPerSecond: ").append(toIndentedString(accuracyInMetersPerSecond)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private Double speedInMetersPerSecond;
-    private Double accuracyInMetersPerSecond;
-
-    private Builder() { }
+public final class Speed {
 
     @JsonProperty("speedInMetersPerSecond")
-    public Builder withSpeedInMetersPerSecond(Double speedInMetersPerSecond) {
-        this.speedInMetersPerSecond = speedInMetersPerSecond;
-        return this;
-    }
-
+    private Double speedInMetersPerSecond = null;
 
     @JsonProperty("accuracyInMetersPerSecond")
-    public Builder withAccuracyInMetersPerSecond(Double accuracyInMetersPerSecond) {
-        this.accuracyInMetersPerSecond = accuracyInMetersPerSecond;
-        return this;
+    private Double accuracyInMetersPerSecond = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-
-    public Speed build() {
-      return new Speed(this);
+    private Speed(Builder builder) {
+        if (builder.speedInMetersPerSecond != null) {
+            this.speedInMetersPerSecond = builder.speedInMetersPerSecond;
+        }
+        if (builder.accuracyInMetersPerSecond != null) {
+            this.accuracyInMetersPerSecond = builder.accuracyInMetersPerSecond;
+        }
     }
-  }
+
+    /**
+     * A double representing the speed of the device in meters.
+     * @return speedInMetersPerSecond
+    **/
+    @JsonProperty("speedInMetersPerSecond")
+    public Double getSpeedInMetersPerSecond() {
+        return speedInMetersPerSecond;
+    }
+
+    /**
+     * A double representing the accuracy of the speed measurement in meters.
+     * @return accuracyInMetersPerSecond
+    **/
+    @JsonProperty("accuracyInMetersPerSecond")
+    public Double getAccuracyInMetersPerSecond() {
+        return accuracyInMetersPerSecond;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Speed interfacesGeolocationSpeed = (Speed) o;
+        return Objects.equals(this.speedInMetersPerSecond, interfacesGeolocationSpeed.speedInMetersPerSecond) &&
+            Objects.equals(this.accuracyInMetersPerSecond, interfacesGeolocationSpeed.accuracyInMetersPerSecond);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(speedInMetersPerSecond, accuracyInMetersPerSecond);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class Speed {\n");
+        
+        sb.append("    speedInMetersPerSecond: ").append(toIndentedString(speedInMetersPerSecond)).append("\n");
+        sb.append("    accuracyInMetersPerSecond: ").append(toIndentedString(accuracyInMetersPerSecond)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private Double speedInMetersPerSecond;
+        private Double accuracyInMetersPerSecond;
+
+        private Builder() {}
+
+        @JsonProperty("speedInMetersPerSecond")
+        public Builder withSpeedInMetersPerSecond(Double speedInMetersPerSecond) {
+            this.speedInMetersPerSecond = speedInMetersPerSecond;
+            return this;
+        }
+
+
+        @JsonProperty("accuracyInMetersPerSecond")
+        public Builder withAccuracyInMetersPerSecond(Double accuracyInMetersPerSecond) {
+            this.accuracyInMetersPerSecond = accuracyInMetersPerSecond;
+            return this;
+        }
+
+
+        public Speed build() {
+            return new Speed(this);
+        }
+    }
 }
 

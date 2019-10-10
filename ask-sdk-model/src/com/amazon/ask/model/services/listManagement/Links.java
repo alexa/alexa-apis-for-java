@@ -23,81 +23,83 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = Links.Builder.class)
-public final class Links{
-
-  @JsonProperty("next")
-  private String next = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private Links(Builder builder) {
-    this.next = builder.next;
-  }
-
-  /**
-    * Get next
-  * @return next
-  **/
-  @JsonProperty("next")
-  public String getNext() {
-    return next;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    Links servicesListManagementLinks = (Links) o;
-    return Objects.equals(this.next, servicesListManagementLinks.next);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(next);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class Links {\n");
-    
-    sb.append("    next: ").append(toIndentedString(next)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private String next;
-
-    private Builder() { }
+public final class Links {
 
     @JsonProperty("next")
-    public Builder withNext(String next) {
-        this.next = next;
-        return this;
+    private String next = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-
-    public Links build() {
-      return new Links(this);
+    private Links(Builder builder) {
+        if (builder.next != null) {
+            this.next = builder.next;
+        }
     }
-  }
+
+    /**
+     * Get next
+     * @return next
+    **/
+    @JsonProperty("next")
+    public String getNext() {
+        return next;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Links servicesListManagementLinks = (Links) o;
+        return Objects.equals(this.next, servicesListManagementLinks.next);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(next);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class Links {\n");
+        
+        sb.append("    next: ").append(toIndentedString(next)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String next;
+
+        private Builder() {}
+
+        @JsonProperty("next")
+        public Builder withNext(String next) {
+            this.next = next;
+            return this;
+        }
+
+
+        public Links build() {
+            return new Links(this);
+        }
+    }
 }
 

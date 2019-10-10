@@ -26,138 +26,144 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = StartConnectionDirective.Builder.class)
-public final class StartConnectionDirective extends com.amazon.ask.model.Directive {
-
-  @JsonProperty("uri")
-  private String uri = null;
-
-  @JsonProperty("input")
-  private Map<String, Object> input = new HashMap<String, Object>();
-
-  @JsonProperty("token")
-  private String token = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private StartConnectionDirective(Builder builder) {
-    String discriminatorValue = "Connections.StartConnection";
-
-    this.type = discriminatorValue;
-    this.uri = builder.uri;
-    this.input = builder.input;
-    this.token = builder.token;
-  }
-
-  /**
-    * This defines the name and version of connection that the requester is trying to send. The format of the uri should follow this pattern: connection://connectionName/connectionVersion. Invalid uri will cause an error which will be sent back to the requester.
-  * @return uri
-  **/
-  @JsonProperty("uri")
-  public String getUri() {
-    return uri;
-  }
-
-  /**
-    * This is the input to the connection that the requester is trying to send. It is predefined by the handler of the connection. If the input format is incorrect, an error will be sent to to the requester.
-  * @return input
-  **/
-  @JsonProperty("input")
-  public Map<String, Object> getInput() {
-    return input;
-  }
-
-  /**
-    * This is an echo back string that requester will receive it when it gets resumed. It is never sent to the handler of the connection.
-  * @return token
-  **/
-  @JsonProperty("token")
-  public String getToken() {
-    return token;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    StartConnectionDirective interfacesConnectionsV1StartConnectionDirective = (StartConnectionDirective) o;
-    return Objects.equals(this.uri, interfacesConnectionsV1StartConnectionDirective.uri) &&
-        Objects.equals(this.input, interfacesConnectionsV1StartConnectionDirective.input) &&
-        Objects.equals(this.token, interfacesConnectionsV1StartConnectionDirective.token) &&
-        super.equals(o);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(uri, input, token, super.hashCode());
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class StartConnectionDirective {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    uri: ").append(toIndentedString(uri)).append("\n");
-    sb.append("    input: ").append(toIndentedString(input)).append("\n");
-    sb.append("    token: ").append(toIndentedString(token)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private String uri;
-    private Map<String, Object> input;
-    private String token;
-
-    private Builder() { }
+public final class StartConnectionDirective extends com.amazon.ask.model.Directive  {
 
     @JsonProperty("uri")
-    public Builder withUri(String uri) {
-        this.uri = uri;
-        return this;
-    }
-
+    private String uri = null;
 
     @JsonProperty("input")
-    public Builder withInput(Map<String, Object> input) {
-        this.input = input;
-        return this;
-    }
-
-    public Builder putInputItem(String key, Object inputItem) {
-      if (this.input == null) {
-        this.input = new HashMap<String, Object>();
-      }
-      this.input.put(key, inputItem);
-      return this;
-    }
+    private Map<String, Object> input = new HashMap<String, Object>();
 
     @JsonProperty("token")
-    public Builder withToken(String token) {
-        this.token = token;
-        return this;
+    private String token = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
+    private StartConnectionDirective(Builder builder) {
+        String discriminatorValue = "Connections.StartConnection";
 
-    public StartConnectionDirective build() {
-      return new StartConnectionDirective(this);
+        this.type = discriminatorValue;
+        if (builder.uri != null) {
+            this.uri = builder.uri;
+        }
+        if (builder.input != null) {
+            this.input = builder.input;
+        }
+        if (builder.token != null) {
+            this.token = builder.token;
+        }
     }
-  }
+
+    /**
+     * This defines the name and version of connection that the requester is trying to send. The format of the uri should follow this pattern: connection://connectionName/connectionVersion. Invalid uri will cause an error which will be sent back to the requester.
+     * @return uri
+    **/
+    @JsonProperty("uri")
+    public String getUri() {
+        return uri;
+    }
+
+    /**
+     * This is the input to the connection that the requester is trying to send. It is predefined by the handler of the connection. If the input format is incorrect, an error will be sent to to the requester.
+     * @return input
+    **/
+    @JsonProperty("input")
+    public Map<String, Object> getInput() {
+        return input;
+    }
+
+    /**
+     * This is an echo back string that requester will receive it when it gets resumed. It is never sent to the handler of the connection.
+     * @return token
+    **/
+    @JsonProperty("token")
+    public String getToken() {
+        return token;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        StartConnectionDirective interfacesConnectionsV1StartConnectionDirective = (StartConnectionDirective) o;
+        return Objects.equals(this.uri, interfacesConnectionsV1StartConnectionDirective.uri) &&
+            Objects.equals(this.input, interfacesConnectionsV1StartConnectionDirective.input) &&
+            Objects.equals(this.token, interfacesConnectionsV1StartConnectionDirective.token) &&
+            super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(uri, input, token, super.hashCode());
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class StartConnectionDirective {\n");
+        sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+        sb.append("    uri: ").append(toIndentedString(uri)).append("\n");
+        sb.append("    input: ").append(toIndentedString(input)).append("\n");
+        sb.append("    token: ").append(toIndentedString(token)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String uri;
+        private Map<String, Object> input;
+        private String token;
+
+        private Builder() {}
+
+        @JsonProperty("uri")
+        public Builder withUri(String uri) {
+            this.uri = uri;
+            return this;
+        }
+
+
+        @JsonProperty("input")
+        public Builder withInput(Map<String, Object> input) {
+            this.input = input;
+            return this;
+        }
+
+        public Builder putInputItem(String key, Object inputItem) {
+            if (this.input == null) {
+                this.input = new HashMap<String, Object>();
+            }
+            this.input.put(key, inputItem);
+            return this;
+        }
+
+        @JsonProperty("token")
+        public Builder withToken(String token) {
+            this.token = token;
+            return this;
+        }
+
+
+        public StartConnectionDirective build() {
+            return new StartConnectionDirective(this);
+        }
+    }
 }
 

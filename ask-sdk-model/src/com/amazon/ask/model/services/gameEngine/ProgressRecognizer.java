@@ -23,108 +23,112 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = ProgressRecognizer.Builder.class)
-public final class ProgressRecognizer extends com.amazon.ask.model.services.gameEngine.Recognizer {
-
-  @JsonProperty("recognizer")
-  private String recognizer = null;
-
-  @JsonProperty("completion")
-  private Double completion = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private ProgressRecognizer(Builder builder) {
-    String discriminatorValue = "progress";
-
-    this.type = discriminatorValue;
-    this.recognizer = builder.recognizer;
-    this.completion = builder.completion;
-  }
-
-  /**
-    * The name of a recognizer for which to track the progress.
-  * @return recognizer
-  **/
-  @JsonProperty("recognizer")
-  public String getRecognizer() {
-    return recognizer;
-  }
-
-  /**
-    * The completion threshold, as a decimal percentage, of the specified recognizer before which this recognizer becomes true.
-  * @return completion
-  **/
-  @JsonProperty("completion")
-  public Double getCompletion() {
-    return completion;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    ProgressRecognizer servicesGameEngineProgressRecognizer = (ProgressRecognizer) o;
-    return Objects.equals(this.recognizer, servicesGameEngineProgressRecognizer.recognizer) &&
-        Objects.equals(this.completion, servicesGameEngineProgressRecognizer.completion) &&
-        super.equals(o);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(recognizer, completion, super.hashCode());
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ProgressRecognizer {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    recognizer: ").append(toIndentedString(recognizer)).append("\n");
-    sb.append("    completion: ").append(toIndentedString(completion)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private String recognizer;
-    private Double completion;
-
-    private Builder() { }
+public final class ProgressRecognizer extends com.amazon.ask.model.services.gameEngine.Recognizer  {
 
     @JsonProperty("recognizer")
-    public Builder withRecognizer(String recognizer) {
-        this.recognizer = recognizer;
-        return this;
-    }
-
+    private String recognizer = null;
 
     @JsonProperty("completion")
-    public Builder withCompletion(Double completion) {
-        this.completion = completion;
-        return this;
+    private Double completion = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
+    private ProgressRecognizer(Builder builder) {
+        String discriminatorValue = "progress";
 
-    public ProgressRecognizer build() {
-      return new ProgressRecognizer(this);
+        this.type = discriminatorValue;
+        if (builder.recognizer != null) {
+            this.recognizer = builder.recognizer;
+        }
+        if (builder.completion != null) {
+            this.completion = builder.completion;
+        }
     }
-  }
+
+    /**
+     * The name of a recognizer for which to track the progress.
+     * @return recognizer
+    **/
+    @JsonProperty("recognizer")
+    public String getRecognizer() {
+        return recognizer;
+    }
+
+    /**
+     * The completion threshold, as a decimal percentage, of the specified recognizer before which this recognizer becomes true.
+     * @return completion
+    **/
+    @JsonProperty("completion")
+    public Double getCompletion() {
+        return completion;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        ProgressRecognizer servicesGameEngineProgressRecognizer = (ProgressRecognizer) o;
+        return Objects.equals(this.recognizer, servicesGameEngineProgressRecognizer.recognizer) &&
+            Objects.equals(this.completion, servicesGameEngineProgressRecognizer.completion) &&
+            super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(recognizer, completion, super.hashCode());
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ProgressRecognizer {\n");
+        sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+        sb.append("    recognizer: ").append(toIndentedString(recognizer)).append("\n");
+        sb.append("    completion: ").append(toIndentedString(completion)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String recognizer;
+        private Double completion;
+
+        private Builder() {}
+
+        @JsonProperty("recognizer")
+        public Builder withRecognizer(String recognizer) {
+            this.recognizer = recognizer;
+            return this;
+        }
+
+
+        @JsonProperty("completion")
+        public Builder withCompletion(Double completion) {
+            this.completion = completion;
+            return this;
+        }
+
+
+        public ProgressRecognizer build() {
+            return new ProgressRecognizer(this);
+        }
+    }
 }
 

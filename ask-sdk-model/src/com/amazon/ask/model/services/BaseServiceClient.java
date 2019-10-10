@@ -106,6 +106,12 @@ public abstract class BaseServiceClient {
         return null;
       }
 
+      //  Body of 204 (No Content) response should be empty (see https://tools.ietf.org/html/rfc7231#section-6.3.5).
+      //  Return null immediately, empty body is not a valid json value and therefore can't be successfully parsed.
+      if(response.getStatusCode() == 204 && (response.getBody() == null || "".equals(response.getBody()))) {
+        return null;
+      }
+
       return this.serializer.deserialize(response.getBody(), responseType);
     }
 

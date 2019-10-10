@@ -24,196 +24,208 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = BillingAgreementDetails.Builder.class)
-public final class BillingAgreementDetails{
-
-  @JsonProperty("billingAgreementId")
-  private String billingAgreementId = null;
-
-  @JsonProperty("creationTimestamp")
-  private OffsetDateTime creationTimestamp = null;
-
-  @JsonProperty("destination")
-  private com.amazon.ask.model.interfaces.amazonpay.model.v1.Destination destination = null;
-
-  @JsonProperty("checkoutLanguage")
-  private String checkoutLanguage = null;
-
-  @JsonProperty("releaseEnvironment")
-  private com.amazon.ask.model.interfaces.amazonpay.model.v1.ReleaseEnvironment releaseEnvironment = null;
-
-  @JsonProperty("billingAgreementStatus")
-  private com.amazon.ask.model.interfaces.amazonpay.model.v1.BillingAgreementStatus billingAgreementStatus = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private BillingAgreementDetails(Builder builder) {
-    this.billingAgreementId = builder.billingAgreementId;
-    this.creationTimestamp = builder.creationTimestamp;
-    this.destination = builder.destination;
-    this.checkoutLanguage = builder.checkoutLanguage;
-    this.releaseEnvironment = builder.releaseEnvironment;
-    this.billingAgreementStatus = builder.billingAgreementStatus;
-  }
-
-  /**
-    * Billing agreement id which can be used for one time and recurring purchases
-  * @return billingAgreementId
-  **/
-  @JsonProperty("billingAgreementId")
-  public String getBillingAgreementId() {
-    return billingAgreementId;
-  }
-
-  /**
-    * Time at which billing agreement details created.
-  * @return creationTimestamp
-  **/
-  @JsonProperty("creationTimestamp")
-  public OffsetDateTime getCreationTimestamp() {
-    return creationTimestamp;
-  }
-
-  /**
-    * The default shipping address of the buyer. Returned if needAmazonShippingAddress is set to true.
-  * @return destination
-  **/
-  @JsonProperty("destination")
-  public com.amazon.ask.model.interfaces.amazonpay.model.v1.Destination getDestination() {
-    return destination;
-  }
-
-  /**
-    * Merchant's preferred language of checkout.
-  * @return checkoutLanguage
-  **/
-  @JsonProperty("checkoutLanguage")
-  public String getCheckoutLanguage() {
-    return checkoutLanguage;
-  }
-
-  /**
-    * Get releaseEnvironment
-  * @return releaseEnvironment
-  **/
-  @JsonProperty("releaseEnvironment")
-  public com.amazon.ask.model.interfaces.amazonpay.model.v1.ReleaseEnvironment getReleaseEnvironment() {
-    return releaseEnvironment;
-  }
-
-  /**
-    * Get billingAgreementStatus
-  * @return billingAgreementStatus
-  **/
-  @JsonProperty("billingAgreementStatus")
-  public com.amazon.ask.model.interfaces.amazonpay.model.v1.BillingAgreementStatus getBillingAgreementStatus() {
-    return billingAgreementStatus;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    BillingAgreementDetails interfacesAmazonpayModelV1BillingAgreementDetails = (BillingAgreementDetails) o;
-    return Objects.equals(this.billingAgreementId, interfacesAmazonpayModelV1BillingAgreementDetails.billingAgreementId) &&
-        Objects.equals(this.creationTimestamp, interfacesAmazonpayModelV1BillingAgreementDetails.creationTimestamp) &&
-        Objects.equals(this.destination, interfacesAmazonpayModelV1BillingAgreementDetails.destination) &&
-        Objects.equals(this.checkoutLanguage, interfacesAmazonpayModelV1BillingAgreementDetails.checkoutLanguage) &&
-        Objects.equals(this.releaseEnvironment, interfacesAmazonpayModelV1BillingAgreementDetails.releaseEnvironment) &&
-        Objects.equals(this.billingAgreementStatus, interfacesAmazonpayModelV1BillingAgreementDetails.billingAgreementStatus);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(billingAgreementId, creationTimestamp, destination, checkoutLanguage, releaseEnvironment, billingAgreementStatus);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class BillingAgreementDetails {\n");
-    
-    sb.append("    billingAgreementId: ").append(toIndentedString(billingAgreementId)).append("\n");
-    sb.append("    creationTimestamp: ").append(toIndentedString(creationTimestamp)).append("\n");
-    sb.append("    destination: ").append(toIndentedString(destination)).append("\n");
-    sb.append("    checkoutLanguage: ").append(toIndentedString(checkoutLanguage)).append("\n");
-    sb.append("    releaseEnvironment: ").append(toIndentedString(releaseEnvironment)).append("\n");
-    sb.append("    billingAgreementStatus: ").append(toIndentedString(billingAgreementStatus)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private String billingAgreementId;
-    private OffsetDateTime creationTimestamp;
-    private com.amazon.ask.model.interfaces.amazonpay.model.v1.Destination destination;
-    private String checkoutLanguage;
-    private com.amazon.ask.model.interfaces.amazonpay.model.v1.ReleaseEnvironment releaseEnvironment;
-    private com.amazon.ask.model.interfaces.amazonpay.model.v1.BillingAgreementStatus billingAgreementStatus;
-
-    private Builder() { }
+public final class BillingAgreementDetails {
 
     @JsonProperty("billingAgreementId")
-    public Builder withBillingAgreementId(String billingAgreementId) {
-        this.billingAgreementId = billingAgreementId;
-        return this;
-    }
-
+    private String billingAgreementId = null;
 
     @JsonProperty("creationTimestamp")
-    public Builder withCreationTimestamp(OffsetDateTime creationTimestamp) {
-        this.creationTimestamp = creationTimestamp;
-        return this;
-    }
-
+    private OffsetDateTime creationTimestamp = null;
 
     @JsonProperty("destination")
-    public Builder withDestination(com.amazon.ask.model.interfaces.amazonpay.model.v1.Destination destination) {
-        this.destination = destination;
-        return this;
-    }
-
+    private com.amazon.ask.model.interfaces.amazonpay.model.v1.Destination destination = null;
 
     @JsonProperty("checkoutLanguage")
-    public Builder withCheckoutLanguage(String checkoutLanguage) {
-        this.checkoutLanguage = checkoutLanguage;
-        return this;
-    }
-
+    private String checkoutLanguage = null;
 
     @JsonProperty("releaseEnvironment")
-    public Builder withReleaseEnvironment(com.amazon.ask.model.interfaces.amazonpay.model.v1.ReleaseEnvironment releaseEnvironment) {
-        this.releaseEnvironment = releaseEnvironment;
-        return this;
-    }
-
+    private com.amazon.ask.model.interfaces.amazonpay.model.v1.ReleaseEnvironment releaseEnvironment = null;
 
     @JsonProperty("billingAgreementStatus")
-    public Builder withBillingAgreementStatus(com.amazon.ask.model.interfaces.amazonpay.model.v1.BillingAgreementStatus billingAgreementStatus) {
-        this.billingAgreementStatus = billingAgreementStatus;
-        return this;
+    private com.amazon.ask.model.interfaces.amazonpay.model.v1.BillingAgreementStatus billingAgreementStatus = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-
-    public BillingAgreementDetails build() {
-      return new BillingAgreementDetails(this);
+    private BillingAgreementDetails(Builder builder) {
+        if (builder.billingAgreementId != null) {
+            this.billingAgreementId = builder.billingAgreementId;
+        }
+        if (builder.creationTimestamp != null) {
+            this.creationTimestamp = builder.creationTimestamp;
+        }
+        if (builder.destination != null) {
+            this.destination = builder.destination;
+        }
+        if (builder.checkoutLanguage != null) {
+            this.checkoutLanguage = builder.checkoutLanguage;
+        }
+        if (builder.releaseEnvironment != null) {
+            this.releaseEnvironment = builder.releaseEnvironment;
+        }
+        if (builder.billingAgreementStatus != null) {
+            this.billingAgreementStatus = builder.billingAgreementStatus;
+        }
     }
-  }
+
+    /**
+     * Billing agreement id which can be used for one time and recurring purchases
+     * @return billingAgreementId
+    **/
+    @JsonProperty("billingAgreementId")
+    public String getBillingAgreementId() {
+        return billingAgreementId;
+    }
+
+    /**
+     * Time at which billing agreement details created.
+     * @return creationTimestamp
+    **/
+    @JsonProperty("creationTimestamp")
+    public OffsetDateTime getCreationTimestamp() {
+        return creationTimestamp;
+    }
+
+    /**
+     * The default shipping address of the buyer. Returned if needAmazonShippingAddress is set to true.
+     * @return destination
+    **/
+    @JsonProperty("destination")
+    public com.amazon.ask.model.interfaces.amazonpay.model.v1.Destination getDestination() {
+        return destination;
+    }
+
+    /**
+     * Merchant's preferred language of checkout.
+     * @return checkoutLanguage
+    **/
+    @JsonProperty("checkoutLanguage")
+    public String getCheckoutLanguage() {
+        return checkoutLanguage;
+    }
+
+    /**
+     * Get releaseEnvironment
+     * @return releaseEnvironment
+    **/
+    @JsonProperty("releaseEnvironment")
+    public com.amazon.ask.model.interfaces.amazonpay.model.v1.ReleaseEnvironment getReleaseEnvironment() {
+        return releaseEnvironment;
+    }
+
+    /**
+     * Get billingAgreementStatus
+     * @return billingAgreementStatus
+    **/
+    @JsonProperty("billingAgreementStatus")
+    public com.amazon.ask.model.interfaces.amazonpay.model.v1.BillingAgreementStatus getBillingAgreementStatus() {
+        return billingAgreementStatus;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        BillingAgreementDetails interfacesAmazonpayModelV1BillingAgreementDetails = (BillingAgreementDetails) o;
+        return Objects.equals(this.billingAgreementId, interfacesAmazonpayModelV1BillingAgreementDetails.billingAgreementId) &&
+            Objects.equals(this.creationTimestamp, interfacesAmazonpayModelV1BillingAgreementDetails.creationTimestamp) &&
+            Objects.equals(this.destination, interfacesAmazonpayModelV1BillingAgreementDetails.destination) &&
+            Objects.equals(this.checkoutLanguage, interfacesAmazonpayModelV1BillingAgreementDetails.checkoutLanguage) &&
+            Objects.equals(this.releaseEnvironment, interfacesAmazonpayModelV1BillingAgreementDetails.releaseEnvironment) &&
+            Objects.equals(this.billingAgreementStatus, interfacesAmazonpayModelV1BillingAgreementDetails.billingAgreementStatus);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(billingAgreementId, creationTimestamp, destination, checkoutLanguage, releaseEnvironment, billingAgreementStatus);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class BillingAgreementDetails {\n");
+        
+        sb.append("    billingAgreementId: ").append(toIndentedString(billingAgreementId)).append("\n");
+        sb.append("    creationTimestamp: ").append(toIndentedString(creationTimestamp)).append("\n");
+        sb.append("    destination: ").append(toIndentedString(destination)).append("\n");
+        sb.append("    checkoutLanguage: ").append(toIndentedString(checkoutLanguage)).append("\n");
+        sb.append("    releaseEnvironment: ").append(toIndentedString(releaseEnvironment)).append("\n");
+        sb.append("    billingAgreementStatus: ").append(toIndentedString(billingAgreementStatus)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String billingAgreementId;
+        private OffsetDateTime creationTimestamp;
+        private com.amazon.ask.model.interfaces.amazonpay.model.v1.Destination destination;
+        private String checkoutLanguage;
+        private com.amazon.ask.model.interfaces.amazonpay.model.v1.ReleaseEnvironment releaseEnvironment;
+        private com.amazon.ask.model.interfaces.amazonpay.model.v1.BillingAgreementStatus billingAgreementStatus;
+
+        private Builder() {}
+
+        @JsonProperty("billingAgreementId")
+        public Builder withBillingAgreementId(String billingAgreementId) {
+            this.billingAgreementId = billingAgreementId;
+            return this;
+        }
+
+
+        @JsonProperty("creationTimestamp")
+        public Builder withCreationTimestamp(OffsetDateTime creationTimestamp) {
+            this.creationTimestamp = creationTimestamp;
+            return this;
+        }
+
+
+        @JsonProperty("destination")
+        public Builder withDestination(com.amazon.ask.model.interfaces.amazonpay.model.v1.Destination destination) {
+            this.destination = destination;
+            return this;
+        }
+
+
+        @JsonProperty("checkoutLanguage")
+        public Builder withCheckoutLanguage(String checkoutLanguage) {
+            this.checkoutLanguage = checkoutLanguage;
+            return this;
+        }
+
+
+        @JsonProperty("releaseEnvironment")
+        public Builder withReleaseEnvironment(com.amazon.ask.model.interfaces.amazonpay.model.v1.ReleaseEnvironment releaseEnvironment) {
+            this.releaseEnvironment = releaseEnvironment;
+            return this;
+        }
+
+
+        @JsonProperty("billingAgreementStatus")
+        public Builder withBillingAgreementStatus(com.amazon.ask.model.interfaces.amazonpay.model.v1.BillingAgreementStatus billingAgreementStatus) {
+            this.billingAgreementStatus = billingAgreementStatus;
+            return this;
+        }
+
+
+        public BillingAgreementDetails build() {
+            return new BillingAgreementDetails(this);
+        }
+    }
 }
 

@@ -23,61 +23,61 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = StopDirective.Builder.class)
-public final class StopDirective extends com.amazon.ask.model.Directive {
+public final class StopDirective extends com.amazon.ask.model.Directive  {
 
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private StopDirective(Builder builder) {
-    String discriminatorValue = "AudioPlayer.Stop";
-
-    this.type = discriminatorValue;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
+    public static Builder builder() {
+        return new Builder();
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    private StopDirective(Builder builder) {
+        String discriminatorValue = "AudioPlayer.Stop";
+
+        this.type = discriminatorValue;
     }
-    return super.equals(o);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(super.hashCode());
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class StopDirective {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        return super.equals(o);
     }
-    return o.toString().replace("\n", "\n    ");
-  }
 
-  public static class Builder {
-
-    private Builder() { }
-
-    public StopDirective build() {
-      return new StopDirective(this);
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode());
     }
-  }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class StopDirective {\n");
+        sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+
+        private Builder() {}
+
+        public StopDirective build() {
+            return new StopDirective(this);
+        }
+    }
 }
 

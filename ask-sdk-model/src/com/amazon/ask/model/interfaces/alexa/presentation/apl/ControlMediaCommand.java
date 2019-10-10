@@ -23,166 +23,178 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = ControlMediaCommand.Builder.class)
-public final class ControlMediaCommand extends com.amazon.ask.model.interfaces.alexa.presentation.apl.Command {
-
-  @JsonProperty("command")
-  private com.amazon.ask.model.interfaces.alexa.presentation.apl.MediaCommandType command = null;
-
-  @JsonProperty("componentId")
-  private String componentId = null;
-
-  @JsonProperty("value")
-  private String value = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private ControlMediaCommand(Builder builder) {
-    String discriminatorValue = "ControlMedia";
-
-    this.type = discriminatorValue;
-    this.delay = builder.delay;
-    this.description = builder.description;
-    this.when = builder.when;
-    this.command = builder.command;
-    this.componentId = builder.componentId;
-    this.value = builder.value;
-  }
-
-  /**
-    * The command to issue on the media player
-  * @return command
-  **/
-  @JsonProperty("command")
-  public com.amazon.ask.model.interfaces.alexa.presentation.apl.MediaCommandType getCommand() {
-    return command;
-  }
-
-  /**
-    * The name of the media playing component
-  * @return componentId
-  **/
-  @JsonProperty("componentId")
-  public String getComponentId() {
-    return componentId;
-  }
-
-  /**
-    * Optional data value
-  * @return value
-  **/
-  @JsonProperty("value")
-  public String getValue() {
-    return value;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    ControlMediaCommand interfacesAlexaPresentationAplControlMediaCommand = (ControlMediaCommand) o;
-    return Objects.equals(this.command, interfacesAlexaPresentationAplControlMediaCommand.command) &&
-        Objects.equals(this.componentId, interfacesAlexaPresentationAplControlMediaCommand.componentId) &&
-        Objects.equals(this.value, interfacesAlexaPresentationAplControlMediaCommand.value) &&
-        super.equals(o);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(command, componentId, value, super.hashCode());
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ControlMediaCommand {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    command: ").append(toIndentedString(command)).append("\n");
-    sb.append("    componentId: ").append(toIndentedString(componentId)).append("\n");
-    sb.append("    value: ").append(toIndentedString(value)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private String delay;
-    private String description;
-    private Boolean when;
-    private com.amazon.ask.model.interfaces.alexa.presentation.apl.MediaCommandType command;
-    private String componentId;
-    private String value;
-
-    private Builder() { }
-
-    @JsonProperty("delay")
-    public Builder withDelay(Integer delay) {
-        this.delay = String.valueOf(delay);
-        return this;
-    }
-
-    public Builder withDelay(String delayExpression) {
-        this.delay = delayExpression;
-        return this;
-    }
-
-    @JsonProperty("description")
-    public Builder withDescription(String description) {
-        this.description = description;
-        return this;
-    }
-
-
-    @JsonProperty("when")
-    public Builder withWhen(Boolean when) {
-        this.when = when;
-        return this;
-    }
-
+public final class ControlMediaCommand extends com.amazon.ask.model.interfaces.alexa.presentation.apl.Command  {
 
     @JsonProperty("command")
-    public Builder withCommand(com.amazon.ask.model.interfaces.alexa.presentation.apl.MediaCommandType command) {
-        this.command = command;
-        return this;
-    }
-
+    private com.amazon.ask.model.interfaces.alexa.presentation.apl.MediaCommandType command = null;
 
     @JsonProperty("componentId")
-    public Builder withComponentId(String componentId) {
-        this.componentId = componentId;
-        return this;
-    }
-
+    private String componentId = null;
 
     @JsonProperty("value")
-    public Builder withValue(Integer value) {
-        this.value = String.valueOf(value);
-        return this;
+    private String value = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-    public Builder withValue(String valueExpression) {
-        this.value = valueExpression;
-        return this;
+    private ControlMediaCommand(Builder builder) {
+        String discriminatorValue = "ControlMedia";
+
+        this.type = discriminatorValue;
+        if (builder.delay != null) {
+            this.delay = builder.delay;
+        }
+        if (builder.description != null) {
+            this.description = builder.description;
+        }
+        if (builder.when != null) {
+            this.when = builder.when;
+        }
+        if (builder.command != null) {
+            this.command = builder.command;
+        }
+        if (builder.componentId != null) {
+            this.componentId = builder.componentId;
+        }
+        if (builder.value != null) {
+            this.value = builder.value;
+        }
     }
 
-    public ControlMediaCommand build() {
-      return new ControlMediaCommand(this);
+    /**
+     * The command to issue on the media player
+     * @return command
+    **/
+    @JsonProperty("command")
+    public com.amazon.ask.model.interfaces.alexa.presentation.apl.MediaCommandType getCommand() {
+        return command;
     }
-  }
+
+    /**
+     * The name of the media playing component
+     * @return componentId
+    **/
+    @JsonProperty("componentId")
+    public String getComponentId() {
+        return componentId;
+    }
+
+    /**
+     * Optional data value
+     * @return value
+    **/
+    @JsonProperty("value")
+    public String getValue() {
+        return value;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        ControlMediaCommand interfacesAlexaPresentationAplControlMediaCommand = (ControlMediaCommand) o;
+        return Objects.equals(this.command, interfacesAlexaPresentationAplControlMediaCommand.command) &&
+            Objects.equals(this.componentId, interfacesAlexaPresentationAplControlMediaCommand.componentId) &&
+            Objects.equals(this.value, interfacesAlexaPresentationAplControlMediaCommand.value) &&
+            super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(command, componentId, value, super.hashCode());
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ControlMediaCommand {\n");
+        sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+        sb.append("    command: ").append(toIndentedString(command)).append("\n");
+        sb.append("    componentId: ").append(toIndentedString(componentId)).append("\n");
+        sb.append("    value: ").append(toIndentedString(value)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String delay;
+        private String description;
+        private Boolean when;
+        private com.amazon.ask.model.interfaces.alexa.presentation.apl.MediaCommandType command;
+        private String componentId;
+        private String value;
+
+        private Builder() {}
+
+        @JsonProperty("delay")
+        public Builder withDelay(Integer delay) {
+            this.delay = String.valueOf(delay);
+            return this;
+        }
+
+        public Builder withDelay(String delayExpression) {
+            this.delay = delayExpression;
+            return this;
+        }
+
+        @JsonProperty("description")
+        public Builder withDescription(String description) {
+            this.description = description;
+            return this;
+        }
+
+
+        @JsonProperty("when")
+        public Builder withWhen(Boolean when) {
+            this.when = when;
+            return this;
+        }
+
+
+        @JsonProperty("command")
+        public Builder withCommand(com.amazon.ask.model.interfaces.alexa.presentation.apl.MediaCommandType command) {
+            this.command = command;
+            return this;
+        }
+
+
+        @JsonProperty("componentId")
+        public Builder withComponentId(String componentId) {
+            this.componentId = componentId;
+            return this;
+        }
+
+
+        @JsonProperty("value")
+        public Builder withValue(Integer value) {
+            this.value = String.valueOf(value);
+            return this;
+        }
+
+        public Builder withValue(String valueExpression) {
+            this.value = valueExpression;
+            return this;
+        }
+
+        public ControlMediaCommand build() {
+            return new ControlMediaCommand(this);
+        }
+    }
 }
 

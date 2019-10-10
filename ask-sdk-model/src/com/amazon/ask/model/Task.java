@@ -23,127 +23,133 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = Task.Builder.class)
-public final class Task{
-
-  @JsonProperty("name")
-  private String name = null;
-
-  @JsonProperty("version")
-  private String version = null;
-
-  @JsonProperty("input")
-  private Object input = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private Task(Builder builder) {
-    this.name = builder.name;
-    this.version = builder.version;
-    this.input = builder.input;
-  }
-
-  /**
-    * Represents the name of the task.
-  * @return name
-  **/
-  @JsonProperty("name")
-  public String getName() {
-    return name;
-  }
-
-  /**
-    * Represents the version of the task.
-  * @return version
-  **/
-  @JsonProperty("version")
-  public String getVersion() {
-    return version;
-  }
-
-  /**
-    * Represents the input to handle the task.
-  * @return input
-  **/
-  @JsonProperty("input")
-  public Object getInput() {
-    return input;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    Task task = (Task) o;
-    return Objects.equals(this.name, task.name) &&
-        Objects.equals(this.version, task.version) &&
-        Objects.equals(this.input, task.input);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(name, version, input);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class Task {\n");
-    
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    version: ").append(toIndentedString(version)).append("\n");
-    sb.append("    input: ").append(toIndentedString(input)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private String name;
-    private String version;
-    private Object input;
-
-    private Builder() { }
+public final class Task {
 
     @JsonProperty("name")
-    public Builder withName(String name) {
-        this.name = name;
-        return this;
-    }
-
+    private String name = null;
 
     @JsonProperty("version")
-    public Builder withVersion(String version) {
-        this.version = version;
-        return this;
-    }
-
+    private String version = null;
 
     @JsonProperty("input")
-    public Builder withInput(Object input) {
-        this.input = input;
-        return this;
+    private Object input = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-
-    public Task build() {
-      return new Task(this);
+    private Task(Builder builder) {
+        if (builder.name != null) {
+            this.name = builder.name;
+        }
+        if (builder.version != null) {
+            this.version = builder.version;
+        }
+        if (builder.input != null) {
+            this.input = builder.input;
+        }
     }
-  }
+
+    /**
+     * Represents the name of the task.
+     * @return name
+    **/
+    @JsonProperty("name")
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * Represents the version of the task.
+     * @return version
+    **/
+    @JsonProperty("version")
+    public String getVersion() {
+        return version;
+    }
+
+    /**
+     * Represents the input to handle the task.
+     * @return input
+    **/
+    @JsonProperty("input")
+    public Object getInput() {
+        return input;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Task task = (Task) o;
+        return Objects.equals(this.name, task.name) &&
+            Objects.equals(this.version, task.version) &&
+            Objects.equals(this.input, task.input);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, version, input);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class Task {\n");
+        
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("    input: ").append(toIndentedString(input)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String name;
+        private String version;
+        private Object input;
+
+        private Builder() {}
+
+        @JsonProperty("name")
+        public Builder withName(String name) {
+            this.name = name;
+            return this;
+        }
+
+
+        @JsonProperty("version")
+        public Builder withVersion(String version) {
+            this.version = version;
+            return this;
+        }
+
+
+        @JsonProperty("input")
+        public Builder withInput(Object input) {
+            this.input = input;
+            return this;
+        }
+
+
+        public Task build() {
+            return new Task(this);
+        }
+    }
 }
 

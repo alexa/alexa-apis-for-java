@@ -26,115 +26,119 @@ import java.util.ArrayList;
  */
 
 @JsonDeserialize(builder = ExecuteCommandsDirective.Builder.class)
-public final class ExecuteCommandsDirective extends com.amazon.ask.model.Directive {
-
-  @JsonProperty("commands")
-  private List<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command> commands = new ArrayList<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command>();
-
-  @JsonProperty("token")
-  private String token = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private ExecuteCommandsDirective(Builder builder) {
-    String discriminatorValue = "Alexa.Presentation.APL.ExecuteCommands";
-
-    this.type = discriminatorValue;
-    this.commands = builder.commands;
-    this.token = builder.token;
-  }
-
-  /**
-    * List of Command instances
-  * @return commands
-  **/
-  @JsonProperty("commands")
-  public List<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command> getCommands() {
-    return commands;
-  }
-
-  /**
-    * A skill defined token, unique for each presentation. Must match the token provided by the skill in the RenderDocument directive used to render the original APL document.
-  * @return token
-  **/
-  @JsonProperty("token")
-  public String getToken() {
-    return token;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    ExecuteCommandsDirective interfacesAlexaPresentationAplExecuteCommandsDirective = (ExecuteCommandsDirective) o;
-    return Objects.equals(this.commands, interfacesAlexaPresentationAplExecuteCommandsDirective.commands) &&
-        Objects.equals(this.token, interfacesAlexaPresentationAplExecuteCommandsDirective.token) &&
-        super.equals(o);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(commands, token, super.hashCode());
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ExecuteCommandsDirective {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    commands: ").append(toIndentedString(commands)).append("\n");
-    sb.append("    token: ").append(toIndentedString(token)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private List<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command> commands;
-    private String token;
-
-    private Builder() { }
+public final class ExecuteCommandsDirective extends com.amazon.ask.model.Directive  {
 
     @JsonProperty("commands")
-    public Builder withCommands(List<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command> commands) {
-        this.commands = commands;
-        return this;
-    }
-
-    public Builder addCommandsItem(com.amazon.ask.model.interfaces.alexa.presentation.apl.Command commandsItem) {
-      if (this.commands == null) {
-        this.commands = new ArrayList<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command>();
-      }
-      this.commands.add(commandsItem);
-      return this;
-    }
+    private List<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command> commands = new ArrayList<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command>();
 
     @JsonProperty("token")
-    public Builder withToken(String token) {
-        this.token = token;
-        return this;
+    private String token = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
+    private ExecuteCommandsDirective(Builder builder) {
+        String discriminatorValue = "Alexa.Presentation.APL.ExecuteCommands";
 
-    public ExecuteCommandsDirective build() {
-      return new ExecuteCommandsDirective(this);
+        this.type = discriminatorValue;
+        if (builder.commands != null) {
+            this.commands = builder.commands;
+        }
+        if (builder.token != null) {
+            this.token = builder.token;
+        }
     }
-  }
+
+    /**
+     * List of Command instances
+     * @return commands
+    **/
+    @JsonProperty("commands")
+    public List<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command> getCommands() {
+        return commands;
+    }
+
+    /**
+     * A skill defined token, unique for each presentation. Must match the token provided by the skill in the RenderDocument directive used to render the original APL document.
+     * @return token
+    **/
+    @JsonProperty("token")
+    public String getToken() {
+        return token;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        ExecuteCommandsDirective interfacesAlexaPresentationAplExecuteCommandsDirective = (ExecuteCommandsDirective) o;
+        return Objects.equals(this.commands, interfacesAlexaPresentationAplExecuteCommandsDirective.commands) &&
+            Objects.equals(this.token, interfacesAlexaPresentationAplExecuteCommandsDirective.token) &&
+            super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(commands, token, super.hashCode());
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ExecuteCommandsDirective {\n");
+        sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+        sb.append("    commands: ").append(toIndentedString(commands)).append("\n");
+        sb.append("    token: ").append(toIndentedString(token)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private List<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command> commands;
+        private String token;
+
+        private Builder() {}
+
+        @JsonProperty("commands")
+        public Builder withCommands(List<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command> commands) {
+            this.commands = commands;
+            return this;
+        }
+
+        public Builder addCommandsItem(com.amazon.ask.model.interfaces.alexa.presentation.apl.Command commandsItem) {
+            if (this.commands == null) {
+                this.commands = new ArrayList<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command>();
+            }
+            this.commands.add(commandsItem);
+            return this;
+        }
+
+        @JsonProperty("token")
+        public Builder withToken(String token) {
+            this.token = token;
+            return this;
+        }
+
+
+        public ExecuteCommandsDirective build() {
+            return new ExecuteCommandsDirective(this);
+        }
+    }
 }
 

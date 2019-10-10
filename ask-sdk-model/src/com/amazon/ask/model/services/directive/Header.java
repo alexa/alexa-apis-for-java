@@ -23,81 +23,83 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = Header.Builder.class)
-public final class Header{
-
-  @JsonProperty("requestId")
-  private String requestId = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private Header(Builder builder) {
-    this.requestId = builder.requestId;
-  }
-
-  /**
-    * This represents the current requestId for what the skill/speechlet was invoked.
-  * @return requestId
-  **/
-  @JsonProperty("requestId")
-  public String getRequestId() {
-    return requestId;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    Header servicesDirectiveHeader = (Header) o;
-    return Objects.equals(this.requestId, servicesDirectiveHeader.requestId);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(requestId);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class Header {\n");
-    
-    sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private String requestId;
-
-    private Builder() { }
+public final class Header {
 
     @JsonProperty("requestId")
-    public Builder withRequestId(String requestId) {
-        this.requestId = requestId;
-        return this;
+    private String requestId = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-
-    public Header build() {
-      return new Header(this);
+    private Header(Builder builder) {
+        if (builder.requestId != null) {
+            this.requestId = builder.requestId;
+        }
     }
-  }
+
+    /**
+     * This represents the current requestId for what the skill/speechlet was invoked.
+     * @return requestId
+    **/
+    @JsonProperty("requestId")
+    public String getRequestId() {
+        return requestId;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Header servicesDirectiveHeader = (Header) o;
+        return Objects.equals(this.requestId, servicesDirectiveHeader.requestId);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(requestId);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class Header {\n");
+        
+        sb.append("    requestId: ").append(toIndentedString(requestId)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String requestId;
+
+        private Builder() {}
+
+        @JsonProperty("requestId")
+        public Builder withRequestId(String requestId) {
+            this.requestId = requestId;
+            return this;
+        }
+
+
+        public Header build() {
+            return new Header(this);
+        }
+    }
 }
 

@@ -26,111 +26,115 @@ import java.util.ArrayList;
  */
 
 @JsonDeserialize(builder = ListItemBody.Builder.class)
-public final class ListItemBody{
-
-  @JsonProperty("listId")
-  private String listId = null;
-
-  @JsonProperty("listItemIds")
-  private List<String> listItemIds = new ArrayList<String>();
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private ListItemBody(Builder builder) {
-    this.listId = builder.listId;
-    this.listItemIds = builder.listItemIds;
-  }
-
-  /**
-    * Get listId
-  * @return listId
-  **/
-  @JsonProperty("listId")
-  public String getListId() {
-    return listId;
-  }
-
-  /**
-    * Get listItemIds
-  * @return listItemIds
-  **/
-  @JsonProperty("listItemIds")
-  public List<String> getListItemIds() {
-    return listItemIds;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    ListItemBody servicesListManagementListItemBody = (ListItemBody) o;
-    return Objects.equals(this.listId, servicesListManagementListItemBody.listId) &&
-        Objects.equals(this.listItemIds, servicesListManagementListItemBody.listItemIds);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(listId, listItemIds);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ListItemBody {\n");
-    
-    sb.append("    listId: ").append(toIndentedString(listId)).append("\n");
-    sb.append("    listItemIds: ").append(toIndentedString(listItemIds)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private String listId;
-    private List<String> listItemIds;
-
-    private Builder() { }
+public final class ListItemBody {
 
     @JsonProperty("listId")
-    public Builder withListId(String listId) {
-        this.listId = listId;
-        return this;
-    }
-
+    private String listId = null;
 
     @JsonProperty("listItemIds")
-    public Builder withListItemIds(List<String> listItemIds) {
-        this.listItemIds = listItemIds;
-        return this;
+    private List<String> listItemIds = new ArrayList<String>();
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-    public Builder addListItemIdsItem(String listItemIdsItem) {
-      if (this.listItemIds == null) {
-        this.listItemIds = new ArrayList<String>();
-      }
-      this.listItemIds.add(listItemIdsItem);
-      return this;
+    private ListItemBody(Builder builder) {
+        if (builder.listId != null) {
+            this.listId = builder.listId;
+        }
+        if (builder.listItemIds != null) {
+            this.listItemIds = builder.listItemIds;
+        }
     }
 
-    public ListItemBody build() {
-      return new ListItemBody(this);
+    /**
+     * Get listId
+     * @return listId
+    **/
+    @JsonProperty("listId")
+    public String getListId() {
+        return listId;
     }
-  }
+
+    /**
+     * Get listItemIds
+     * @return listItemIds
+    **/
+    @JsonProperty("listItemIds")
+    public List<String> getListItemIds() {
+        return listItemIds;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        ListItemBody servicesListManagementListItemBody = (ListItemBody) o;
+        return Objects.equals(this.listId, servicesListManagementListItemBody.listId) &&
+            Objects.equals(this.listItemIds, servicesListManagementListItemBody.listItemIds);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(listId, listItemIds);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ListItemBody {\n");
+        
+        sb.append("    listId: ").append(toIndentedString(listId)).append("\n");
+        sb.append("    listItemIds: ").append(toIndentedString(listItemIds)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String listId;
+        private List<String> listItemIds;
+
+        private Builder() {}
+
+        @JsonProperty("listId")
+        public Builder withListId(String listId) {
+            this.listId = listId;
+            return this;
+        }
+
+
+        @JsonProperty("listItemIds")
+        public Builder withListItemIds(List<String> listItemIds) {
+            this.listItemIds = listItemIds;
+            return this;
+        }
+
+        public Builder addListItemIdsItem(String listItemIdsItem) {
+            if (this.listItemIds == null) {
+                this.listItemIds = new ArrayList<String>();
+            }
+            this.listItemIds.add(listItemIdsItem);
+            return this;
+        }
+
+        public ListItemBody build() {
+            return new ListItemBody(this);
+        }
+    }
 }
 

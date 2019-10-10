@@ -1,0 +1,155 @@
+/*
+* Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file
+* except in compliance with the License. A copy of the License is located at
+*
+* http://aws.amazon.com/apache2.0/
+*
+* or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for
+* the specific language governing permissions and limitations under the License.
+*/
+
+
+package com.amazon.ask.model.services.endpointEnumeration;
+
+import java.util.Objects;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+/**
+ * EndpointCapability
+ */
+
+@JsonDeserialize(builder = EndpointCapability.Builder.class)
+public final class EndpointCapability {
+
+    @JsonProperty("interface")
+    private String _interface = null;
+
+    @JsonProperty("type")
+    private String type = null;
+
+    @JsonProperty("version")
+    private String version = null;
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    private EndpointCapability(Builder builder) {
+        if (builder._interface != null) {
+            this._interface = builder._interface;
+        }
+        if (builder.type != null) {
+            this.type = builder.type;
+        }
+        if (builder.version != null) {
+            this.version = builder.version;
+        }
+    }
+
+    /**
+     * The name of the capability interface.
+     * @return _interface
+    **/
+    @JsonProperty("interface")
+    public String getInterface() {
+        return _interface;
+    }
+
+    /**
+     * The type of capability interface. This is usually AlexaInterface.
+     * @return type
+    **/
+    @JsonProperty("type")
+    public String getType() {
+        return type;
+    }
+
+    /**
+     * The version of the capability interface that the endpoint supports.
+     * @return version
+    **/
+    @JsonProperty("version")
+    public String getVersion() {
+        return version;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        EndpointCapability servicesEndpointEnumerationEndpointCapability = (EndpointCapability) o;
+        return Objects.equals(this._interface, servicesEndpointEnumerationEndpointCapability._interface) &&
+            Objects.equals(this.type, servicesEndpointEnumerationEndpointCapability.type) &&
+            Objects.equals(this.version, servicesEndpointEnumerationEndpointCapability.version);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(_interface, type, version);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class EndpointCapability {\n");
+        
+        sb.append("    _interface: ").append(toIndentedString(_interface)).append("\n");
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String _interface;
+        private String type;
+        private String version;
+
+        private Builder() {}
+
+        @JsonProperty("interface")
+        public Builder withInterface(String _interface) {
+            this._interface = _interface;
+            return this;
+        }
+
+
+        @JsonProperty("type")
+        public Builder withType(String type) {
+            this.type = type;
+            return this;
+        }
+
+
+        @JsonProperty("version")
+        public Builder withVersion(String version) {
+            this.version = version;
+            return this;
+        }
+
+
+        public EndpointCapability build() {
+            return new EndpointCapability(this);
+        }
+    }
+}
+

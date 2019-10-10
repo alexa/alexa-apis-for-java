@@ -26,153 +26,163 @@ import java.util.ArrayList;
  */
 
 @JsonDeserialize(builder = SendEventCommand.Builder.class)
-public final class SendEventCommand extends com.amazon.ask.model.interfaces.alexa.presentation.apl.Command {
-
-  @JsonProperty("arguments")
-  private List<String> arguments = new ArrayList<String>();
-
-  @JsonProperty("components")
-  private List<String> components = new ArrayList<String>();
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private SendEventCommand(Builder builder) {
-    String discriminatorValue = "SendEvent";
-
-    this.type = discriminatorValue;
-    this.delay = builder.delay;
-    this.description = builder.description;
-    this.when = builder.when;
-    this.arguments = builder.arguments;
-    this.components = builder.components;
-  }
-
-  /**
-    * An array of argument data to pass to Alexa.
-  * @return arguments
-  **/
-  @JsonProperty("arguments")
-  public List<String> getArguments() {
-    return arguments;
-  }
-
-  /**
-    * An array of components to extract value data from and provide to Alexa.
-  * @return components
-  **/
-  @JsonProperty("components")
-  public List<String> getComponents() {
-    return components;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    SendEventCommand interfacesAlexaPresentationAplSendEventCommand = (SendEventCommand) o;
-    return Objects.equals(this.arguments, interfacesAlexaPresentationAplSendEventCommand.arguments) &&
-        Objects.equals(this.components, interfacesAlexaPresentationAplSendEventCommand.components) &&
-        super.equals(o);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(arguments, components, super.hashCode());
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class SendEventCommand {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    arguments: ").append(toIndentedString(arguments)).append("\n");
-    sb.append("    components: ").append(toIndentedString(components)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private String delay;
-    private String description;
-    private Boolean when;
-    private List<String> arguments;
-    private List<String> components;
-
-    private Builder() { }
-
-    @JsonProperty("delay")
-    public Builder withDelay(Integer delay) {
-        this.delay = String.valueOf(delay);
-        return this;
-    }
-
-    public Builder withDelay(String delayExpression) {
-        this.delay = delayExpression;
-        return this;
-    }
-
-    @JsonProperty("description")
-    public Builder withDescription(String description) {
-        this.description = description;
-        return this;
-    }
-
-
-    @JsonProperty("when")
-    public Builder withWhen(Boolean when) {
-        this.when = when;
-        return this;
-    }
-
+public final class SendEventCommand extends com.amazon.ask.model.interfaces.alexa.presentation.apl.Command  {
 
     @JsonProperty("arguments")
-    public Builder withArguments(List<String> arguments) {
-        this.arguments = arguments;
-        return this;
-    }
-
-    public Builder addArgumentsItem(String argumentsItem) {
-      if (this.arguments == null) {
-        this.arguments = new ArrayList<String>();
-      }
-      this.arguments.add(argumentsItem);
-      return this;
-    }
+    private List<String> arguments = new ArrayList<String>();
 
     @JsonProperty("components")
-    public Builder withComponents(List<String> components) {
-        this.components = components;
-        return this;
+    private List<String> components = new ArrayList<String>();
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-    public Builder addComponentsItem(String componentsItem) {
-      if (this.components == null) {
-        this.components = new ArrayList<String>();
-      }
-      this.components.add(componentsItem);
-      return this;
+    private SendEventCommand(Builder builder) {
+        String discriminatorValue = "SendEvent";
+
+        this.type = discriminatorValue;
+        if (builder.delay != null) {
+            this.delay = builder.delay;
+        }
+        if (builder.description != null) {
+            this.description = builder.description;
+        }
+        if (builder.when != null) {
+            this.when = builder.when;
+        }
+        if (builder.arguments != null) {
+            this.arguments = builder.arguments;
+        }
+        if (builder.components != null) {
+            this.components = builder.components;
+        }
     }
 
-    public SendEventCommand build() {
-      return new SendEventCommand(this);
+    /**
+     * An array of argument data to pass to Alexa.
+     * @return arguments
+    **/
+    @JsonProperty("arguments")
+    public List<String> getArguments() {
+        return arguments;
     }
-  }
+
+    /**
+     * An array of components to extract value data from and provide to Alexa.
+     * @return components
+    **/
+    @JsonProperty("components")
+    public List<String> getComponents() {
+        return components;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        SendEventCommand interfacesAlexaPresentationAplSendEventCommand = (SendEventCommand) o;
+        return Objects.equals(this.arguments, interfacesAlexaPresentationAplSendEventCommand.arguments) &&
+            Objects.equals(this.components, interfacesAlexaPresentationAplSendEventCommand.components) &&
+            super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(arguments, components, super.hashCode());
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class SendEventCommand {\n");
+        sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+        sb.append("    arguments: ").append(toIndentedString(arguments)).append("\n");
+        sb.append("    components: ").append(toIndentedString(components)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String delay;
+        private String description;
+        private Boolean when;
+        private List<String> arguments;
+        private List<String> components;
+
+        private Builder() {}
+
+        @JsonProperty("delay")
+        public Builder withDelay(Integer delay) {
+            this.delay = String.valueOf(delay);
+            return this;
+        }
+
+        public Builder withDelay(String delayExpression) {
+            this.delay = delayExpression;
+            return this;
+        }
+
+        @JsonProperty("description")
+        public Builder withDescription(String description) {
+            this.description = description;
+            return this;
+        }
+
+
+        @JsonProperty("when")
+        public Builder withWhen(Boolean when) {
+            this.when = when;
+            return this;
+        }
+
+
+        @JsonProperty("arguments")
+        public Builder withArguments(List<String> arguments) {
+            this.arguments = arguments;
+            return this;
+        }
+
+        public Builder addArgumentsItem(String argumentsItem) {
+            if (this.arguments == null) {
+                this.arguments = new ArrayList<String>();
+            }
+            this.arguments.add(argumentsItem);
+            return this;
+        }
+
+        @JsonProperty("components")
+        public Builder withComponents(List<String> components) {
+            this.components = components;
+            return this;
+        }
+
+        public Builder addComponentsItem(String componentsItem) {
+            if (this.components == null) {
+                this.components = new ArrayList<String>();
+            }
+            this.components.add(componentsItem);
+            return this;
+        }
+
+        public SendEventCommand build() {
+            return new SendEventCommand(this);
+        }
+    }
 }
 

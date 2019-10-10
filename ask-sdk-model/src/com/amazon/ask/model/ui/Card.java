@@ -32,59 +32,59 @@ import com.fasterxml.jackson.annotation.JsonProperty;
   @JsonSubTypes.Type(value = com.amazon.ask.model.ui.SimpleCard.class, name = "Simple"),
 })
 
-public abstract class Card{
+public abstract class Card {
 
-  protected String type = null;
+    protected String type = null;
 
-  protected Card() {
-  }
-
-  /**
-    * Get type
-  * @return type
-  **/
-  @JsonIgnore
-  public String getType() {
-    return type;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
+    protected Card() {
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    /**
+     * Get type
+     * @return type
+    **/
+    @JsonIgnore
+    public String getType() {
+        return type;
     }
-    Card uiCard = (Card) o;
-    return Objects.equals(this.type, uiCard.type);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(type);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class Card {\n");
-    
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Card uiCard = (Card) o;
+        return Objects.equals(this.type, uiCard.type);
     }
-    return o.toString().replace("\n", "\n    ");
-  }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(type);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class Card {\n");
+        
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
 }
 

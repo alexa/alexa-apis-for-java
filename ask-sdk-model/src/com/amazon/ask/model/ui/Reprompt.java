@@ -23,81 +23,83 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = Reprompt.Builder.class)
-public final class Reprompt{
-
-  @JsonProperty("outputSpeech")
-  private com.amazon.ask.model.ui.OutputSpeech outputSpeech = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private Reprompt(Builder builder) {
-    this.outputSpeech = builder.outputSpeech;
-  }
-
-  /**
-    * Get outputSpeech
-  * @return outputSpeech
-  **/
-  @JsonProperty("outputSpeech")
-  public com.amazon.ask.model.ui.OutputSpeech getOutputSpeech() {
-    return outputSpeech;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    Reprompt uiReprompt = (Reprompt) o;
-    return Objects.equals(this.outputSpeech, uiReprompt.outputSpeech);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(outputSpeech);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class Reprompt {\n");
-    
-    sb.append("    outputSpeech: ").append(toIndentedString(outputSpeech)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private com.amazon.ask.model.ui.OutputSpeech outputSpeech;
-
-    private Builder() { }
+public final class Reprompt {
 
     @JsonProperty("outputSpeech")
-    public Builder withOutputSpeech(com.amazon.ask.model.ui.OutputSpeech outputSpeech) {
-        this.outputSpeech = outputSpeech;
-        return this;
+    private com.amazon.ask.model.ui.OutputSpeech outputSpeech = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-
-    public Reprompt build() {
-      return new Reprompt(this);
+    private Reprompt(Builder builder) {
+        if (builder.outputSpeech != null) {
+            this.outputSpeech = builder.outputSpeech;
+        }
     }
-  }
+
+    /**
+     * Get outputSpeech
+     * @return outputSpeech
+    **/
+    @JsonProperty("outputSpeech")
+    public com.amazon.ask.model.ui.OutputSpeech getOutputSpeech() {
+        return outputSpeech;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Reprompt uiReprompt = (Reprompt) o;
+        return Objects.equals(this.outputSpeech, uiReprompt.outputSpeech);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(outputSpeech);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class Reprompt {\n");
+        
+        sb.append("    outputSpeech: ").append(toIndentedString(outputSpeech)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private com.amazon.ask.model.ui.OutputSpeech outputSpeech;
+
+        private Builder() {}
+
+        @JsonProperty("outputSpeech")
+        public Builder withOutputSpeech(com.amazon.ask.model.ui.OutputSpeech outputSpeech) {
+            this.outputSpeech = outputSpeech;
+            return this;
+        }
+
+
+        public Reprompt build() {
+            return new Reprompt(this);
+        }
+    }
 }
 

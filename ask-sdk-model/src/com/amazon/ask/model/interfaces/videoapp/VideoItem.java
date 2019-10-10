@@ -23,104 +23,108 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = VideoItem.Builder.class)
-public final class VideoItem{
-
-  @JsonProperty("source")
-  private String source = null;
-
-  @JsonProperty("metadata")
-  private com.amazon.ask.model.interfaces.videoapp.Metadata metadata = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private VideoItem(Builder builder) {
-    this.source = builder.source;
-    this.metadata = builder.metadata;
-  }
-
-  /**
-    * Get source
-  * @return source
-  **/
-  @JsonProperty("source")
-  public String getSource() {
-    return source;
-  }
-
-  /**
-    * Get metadata
-  * @return metadata
-  **/
-  @JsonProperty("metadata")
-  public com.amazon.ask.model.interfaces.videoapp.Metadata getMetadata() {
-    return metadata;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    VideoItem interfacesVideoappVideoItem = (VideoItem) o;
-    return Objects.equals(this.source, interfacesVideoappVideoItem.source) &&
-        Objects.equals(this.metadata, interfacesVideoappVideoItem.metadata);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(source, metadata);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class VideoItem {\n");
-    
-    sb.append("    source: ").append(toIndentedString(source)).append("\n");
-    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private String source;
-    private com.amazon.ask.model.interfaces.videoapp.Metadata metadata;
-
-    private Builder() { }
+public final class VideoItem {
 
     @JsonProperty("source")
-    public Builder withSource(String source) {
-        this.source = source;
-        return this;
-    }
-
+    private String source = null;
 
     @JsonProperty("metadata")
-    public Builder withMetadata(com.amazon.ask.model.interfaces.videoapp.Metadata metadata) {
-        this.metadata = metadata;
-        return this;
+    private com.amazon.ask.model.interfaces.videoapp.Metadata metadata = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-
-    public VideoItem build() {
-      return new VideoItem(this);
+    private VideoItem(Builder builder) {
+        if (builder.source != null) {
+            this.source = builder.source;
+        }
+        if (builder.metadata != null) {
+            this.metadata = builder.metadata;
+        }
     }
-  }
+
+    /**
+     * Get source
+     * @return source
+    **/
+    @JsonProperty("source")
+    public String getSource() {
+        return source;
+    }
+
+    /**
+     * Get metadata
+     * @return metadata
+    **/
+    @JsonProperty("metadata")
+    public com.amazon.ask.model.interfaces.videoapp.Metadata getMetadata() {
+        return metadata;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        VideoItem interfacesVideoappVideoItem = (VideoItem) o;
+        return Objects.equals(this.source, interfacesVideoappVideoItem.source) &&
+            Objects.equals(this.metadata, interfacesVideoappVideoItem.metadata);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(source, metadata);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class VideoItem {\n");
+        
+        sb.append("    source: ").append(toIndentedString(source)).append("\n");
+        sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String source;
+        private com.amazon.ask.model.interfaces.videoapp.Metadata metadata;
+
+        private Builder() {}
+
+        @JsonProperty("source")
+        public Builder withSource(String source) {
+            this.source = source;
+            return this;
+        }
+
+
+        @JsonProperty("metadata")
+        public Builder withMetadata(com.amazon.ask.model.interfaces.videoapp.Metadata metadata) {
+            this.metadata = metadata;
+            return this;
+        }
+
+
+        public VideoItem build() {
+            return new VideoItem(this);
+        }
+    }
 }
 

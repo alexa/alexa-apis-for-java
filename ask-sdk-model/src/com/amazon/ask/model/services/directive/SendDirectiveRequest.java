@@ -23,104 +23,108 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = SendDirectiveRequest.Builder.class)
-public final class SendDirectiveRequest{
-
-  @JsonProperty("header")
-  private com.amazon.ask.model.services.directive.Header header = null;
-
-  @JsonProperty("directive")
-  private com.amazon.ask.model.services.directive.Directive directive = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private SendDirectiveRequest(Builder builder) {
-    this.header = builder.header;
-    this.directive = builder.directive;
-  }
-
-  /**
-    * contains the header attributes of the send directive request.
-  * @return header
-  **/
-  @JsonProperty("header")
-  public com.amazon.ask.model.services.directive.Header getHeader() {
-    return header;
-  }
-
-  /**
-    * Directive Content.
-  * @return directive
-  **/
-  @JsonProperty("directive")
-  public com.amazon.ask.model.services.directive.Directive getDirective() {
-    return directive;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    SendDirectiveRequest servicesDirectiveSendDirectiveRequest = (SendDirectiveRequest) o;
-    return Objects.equals(this.header, servicesDirectiveSendDirectiveRequest.header) &&
-        Objects.equals(this.directive, servicesDirectiveSendDirectiveRequest.directive);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(header, directive);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class SendDirectiveRequest {\n");
-    
-    sb.append("    header: ").append(toIndentedString(header)).append("\n");
-    sb.append("    directive: ").append(toIndentedString(directive)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private com.amazon.ask.model.services.directive.Header header;
-    private com.amazon.ask.model.services.directive.Directive directive;
-
-    private Builder() { }
+public final class SendDirectiveRequest {
 
     @JsonProperty("header")
-    public Builder withHeader(com.amazon.ask.model.services.directive.Header header) {
-        this.header = header;
-        return this;
-    }
-
+    private com.amazon.ask.model.services.directive.Header header = null;
 
     @JsonProperty("directive")
-    public Builder withDirective(com.amazon.ask.model.services.directive.Directive directive) {
-        this.directive = directive;
-        return this;
+    private com.amazon.ask.model.services.directive.Directive directive = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-
-    public SendDirectiveRequest build() {
-      return new SendDirectiveRequest(this);
+    private SendDirectiveRequest(Builder builder) {
+        if (builder.header != null) {
+            this.header = builder.header;
+        }
+        if (builder.directive != null) {
+            this.directive = builder.directive;
+        }
     }
-  }
+
+    /**
+     * contains the header attributes of the send directive request.
+     * @return header
+    **/
+    @JsonProperty("header")
+    public com.amazon.ask.model.services.directive.Header getHeader() {
+        return header;
+    }
+
+    /**
+     * Directive Content.
+     * @return directive
+    **/
+    @JsonProperty("directive")
+    public com.amazon.ask.model.services.directive.Directive getDirective() {
+        return directive;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        SendDirectiveRequest servicesDirectiveSendDirectiveRequest = (SendDirectiveRequest) o;
+        return Objects.equals(this.header, servicesDirectiveSendDirectiveRequest.header) &&
+            Objects.equals(this.directive, servicesDirectiveSendDirectiveRequest.directive);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(header, directive);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class SendDirectiveRequest {\n");
+        
+        sb.append("    header: ").append(toIndentedString(header)).append("\n");
+        sb.append("    directive: ").append(toIndentedString(directive)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private com.amazon.ask.model.services.directive.Header header;
+        private com.amazon.ask.model.services.directive.Directive directive;
+
+        private Builder() {}
+
+        @JsonProperty("header")
+        public Builder withHeader(com.amazon.ask.model.services.directive.Header header) {
+            this.header = header;
+            return this;
+        }
+
+
+        @JsonProperty("directive")
+        public Builder withDirective(com.amazon.ask.model.services.directive.Directive directive) {
+            this.directive = directive;
+            return this;
+        }
+
+
+        public SendDirectiveRequest build() {
+            return new SendDirectiveRequest(this);
+        }
+    }
 }
 

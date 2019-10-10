@@ -23,81 +23,83 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = Application.Builder.class)
-public final class Application{
-
-  @JsonProperty("applicationId")
-  private String applicationId = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private Application(Builder builder) {
-    this.applicationId = builder.applicationId;
-  }
-
-  /**
-    * A string representing the application identifier for your skill.
-  * @return applicationId
-  **/
-  @JsonProperty("applicationId")
-  public String getApplicationId() {
-    return applicationId;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    Application application = (Application) o;
-    return Objects.equals(this.applicationId, application.applicationId);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(applicationId);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class Application {\n");
-    
-    sb.append("    applicationId: ").append(toIndentedString(applicationId)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private String applicationId;
-
-    private Builder() { }
+public final class Application {
 
     @JsonProperty("applicationId")
-    public Builder withApplicationId(String applicationId) {
-        this.applicationId = applicationId;
-        return this;
+    private String applicationId = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-
-    public Application build() {
-      return new Application(this);
+    private Application(Builder builder) {
+        if (builder.applicationId != null) {
+            this.applicationId = builder.applicationId;
+        }
     }
-  }
+
+    /**
+     * A string representing the application identifier for your skill.
+     * @return applicationId
+    **/
+    @JsonProperty("applicationId")
+    public String getApplicationId() {
+        return applicationId;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Application application = (Application) o;
+        return Objects.equals(this.applicationId, application.applicationId);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(applicationId);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class Application {\n");
+        
+        sb.append("    applicationId: ").append(toIndentedString(applicationId)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String applicationId;
+
+        private Builder() {}
+
+        @JsonProperty("applicationId")
+        public Builder withApplicationId(String applicationId) {
+            this.applicationId = applicationId;
+            return this;
+        }
+
+
+        public Application build() {
+            return new Application(this);
+        }
+    }
 }
 

@@ -23,104 +23,108 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = ChargeAmazonPayResult.Builder.class)
-public final class ChargeAmazonPayResult{
-
-  @JsonProperty("amazonOrderReferenceId")
-  private String amazonOrderReferenceId = null;
-
-  @JsonProperty("authorizationDetails")
-  private com.amazon.ask.model.interfaces.amazonpay.model.v1.AuthorizationDetails authorizationDetails = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private ChargeAmazonPayResult(Builder builder) {
-    this.amazonOrderReferenceId = builder.amazonOrderReferenceId;
-    this.authorizationDetails = builder.authorizationDetails;
-  }
-
-  /**
-    * The order reference identifier.
-  * @return amazonOrderReferenceId
-  **/
-  @JsonProperty("amazonOrderReferenceId")
-  public String getAmazonOrderReferenceId() {
-    return amazonOrderReferenceId;
-  }
-
-  /**
-    * Get authorizationDetails
-  * @return authorizationDetails
-  **/
-  @JsonProperty("authorizationDetails")
-  public com.amazon.ask.model.interfaces.amazonpay.model.v1.AuthorizationDetails getAuthorizationDetails() {
-    return authorizationDetails;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    ChargeAmazonPayResult interfacesAmazonpayV1ChargeAmazonPayResult = (ChargeAmazonPayResult) o;
-    return Objects.equals(this.amazonOrderReferenceId, interfacesAmazonpayV1ChargeAmazonPayResult.amazonOrderReferenceId) &&
-        Objects.equals(this.authorizationDetails, interfacesAmazonpayV1ChargeAmazonPayResult.authorizationDetails);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(amazonOrderReferenceId, authorizationDetails);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ChargeAmazonPayResult {\n");
-    
-    sb.append("    amazonOrderReferenceId: ").append(toIndentedString(amazonOrderReferenceId)).append("\n");
-    sb.append("    authorizationDetails: ").append(toIndentedString(authorizationDetails)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private String amazonOrderReferenceId;
-    private com.amazon.ask.model.interfaces.amazonpay.model.v1.AuthorizationDetails authorizationDetails;
-
-    private Builder() { }
+public final class ChargeAmazonPayResult {
 
     @JsonProperty("amazonOrderReferenceId")
-    public Builder withAmazonOrderReferenceId(String amazonOrderReferenceId) {
-        this.amazonOrderReferenceId = amazonOrderReferenceId;
-        return this;
-    }
-
+    private String amazonOrderReferenceId = null;
 
     @JsonProperty("authorizationDetails")
-    public Builder withAuthorizationDetails(com.amazon.ask.model.interfaces.amazonpay.model.v1.AuthorizationDetails authorizationDetails) {
-        this.authorizationDetails = authorizationDetails;
-        return this;
+    private com.amazon.ask.model.interfaces.amazonpay.model.v1.AuthorizationDetails authorizationDetails = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-
-    public ChargeAmazonPayResult build() {
-      return new ChargeAmazonPayResult(this);
+    private ChargeAmazonPayResult(Builder builder) {
+        if (builder.amazonOrderReferenceId != null) {
+            this.amazonOrderReferenceId = builder.amazonOrderReferenceId;
+        }
+        if (builder.authorizationDetails != null) {
+            this.authorizationDetails = builder.authorizationDetails;
+        }
     }
-  }
+
+    /**
+     * The order reference identifier.
+     * @return amazonOrderReferenceId
+    **/
+    @JsonProperty("amazonOrderReferenceId")
+    public String getAmazonOrderReferenceId() {
+        return amazonOrderReferenceId;
+    }
+
+    /**
+     * Get authorizationDetails
+     * @return authorizationDetails
+    **/
+    @JsonProperty("authorizationDetails")
+    public com.amazon.ask.model.interfaces.amazonpay.model.v1.AuthorizationDetails getAuthorizationDetails() {
+        return authorizationDetails;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        ChargeAmazonPayResult interfacesAmazonpayV1ChargeAmazonPayResult = (ChargeAmazonPayResult) o;
+        return Objects.equals(this.amazonOrderReferenceId, interfacesAmazonpayV1ChargeAmazonPayResult.amazonOrderReferenceId) &&
+            Objects.equals(this.authorizationDetails, interfacesAmazonpayV1ChargeAmazonPayResult.authorizationDetails);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(amazonOrderReferenceId, authorizationDetails);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ChargeAmazonPayResult {\n");
+        
+        sb.append("    amazonOrderReferenceId: ").append(toIndentedString(amazonOrderReferenceId)).append("\n");
+        sb.append("    authorizationDetails: ").append(toIndentedString(authorizationDetails)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String amazonOrderReferenceId;
+        private com.amazon.ask.model.interfaces.amazonpay.model.v1.AuthorizationDetails authorizationDetails;
+
+        private Builder() {}
+
+        @JsonProperty("amazonOrderReferenceId")
+        public Builder withAmazonOrderReferenceId(String amazonOrderReferenceId) {
+            this.amazonOrderReferenceId = amazonOrderReferenceId;
+            return this;
+        }
+
+
+        @JsonProperty("authorizationDetails")
+        public Builder withAuthorizationDetails(com.amazon.ask.model.interfaces.amazonpay.model.v1.AuthorizationDetails authorizationDetails) {
+            this.authorizationDetails = authorizationDetails;
+            return this;
+        }
+
+
+        public ChargeAmazonPayResult build() {
+            return new ChargeAmazonPayResult(this);
+        }
+    }
 }
 

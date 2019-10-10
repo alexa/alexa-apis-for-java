@@ -23,81 +23,83 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = SetupAmazonPayResult.Builder.class)
-public final class SetupAmazonPayResult{
-
-  @JsonProperty("billingAgreementDetails")
-  private com.amazon.ask.model.interfaces.amazonpay.model.response.BillingAgreementDetails billingAgreementDetails = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private SetupAmazonPayResult(Builder builder) {
-    this.billingAgreementDetails = builder.billingAgreementDetails;
-  }
-
-  /**
-    * Get billingAgreementDetails
-  * @return billingAgreementDetails
-  **/
-  @JsonProperty("billingAgreementDetails")
-  public com.amazon.ask.model.interfaces.amazonpay.model.response.BillingAgreementDetails getBillingAgreementDetails() {
-    return billingAgreementDetails;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    SetupAmazonPayResult interfacesAmazonpayResponseSetupAmazonPayResult = (SetupAmazonPayResult) o;
-    return Objects.equals(this.billingAgreementDetails, interfacesAmazonpayResponseSetupAmazonPayResult.billingAgreementDetails);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(billingAgreementDetails);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class SetupAmazonPayResult {\n");
-    
-    sb.append("    billingAgreementDetails: ").append(toIndentedString(billingAgreementDetails)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private com.amazon.ask.model.interfaces.amazonpay.model.response.BillingAgreementDetails billingAgreementDetails;
-
-    private Builder() { }
+public final class SetupAmazonPayResult {
 
     @JsonProperty("billingAgreementDetails")
-    public Builder withBillingAgreementDetails(com.amazon.ask.model.interfaces.amazonpay.model.response.BillingAgreementDetails billingAgreementDetails) {
-        this.billingAgreementDetails = billingAgreementDetails;
-        return this;
+    private com.amazon.ask.model.interfaces.amazonpay.model.response.BillingAgreementDetails billingAgreementDetails = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-
-    public SetupAmazonPayResult build() {
-      return new SetupAmazonPayResult(this);
+    private SetupAmazonPayResult(Builder builder) {
+        if (builder.billingAgreementDetails != null) {
+            this.billingAgreementDetails = builder.billingAgreementDetails;
+        }
     }
-  }
+
+    /**
+     * Get billingAgreementDetails
+     * @return billingAgreementDetails
+    **/
+    @JsonProperty("billingAgreementDetails")
+    public com.amazon.ask.model.interfaces.amazonpay.model.response.BillingAgreementDetails getBillingAgreementDetails() {
+        return billingAgreementDetails;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        SetupAmazonPayResult interfacesAmazonpayResponseSetupAmazonPayResult = (SetupAmazonPayResult) o;
+        return Objects.equals(this.billingAgreementDetails, interfacesAmazonpayResponseSetupAmazonPayResult.billingAgreementDetails);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(billingAgreementDetails);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class SetupAmazonPayResult {\n");
+        
+        sb.append("    billingAgreementDetails: ").append(toIndentedString(billingAgreementDetails)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private com.amazon.ask.model.interfaces.amazonpay.model.response.BillingAgreementDetails billingAgreementDetails;
+
+        private Builder() {}
+
+        @JsonProperty("billingAgreementDetails")
+        public Builder withBillingAgreementDetails(com.amazon.ask.model.interfaces.amazonpay.model.response.BillingAgreementDetails billingAgreementDetails) {
+            this.billingAgreementDetails = billingAgreementDetails;
+            return this;
+        }
+
+
+        public SetupAmazonPayResult build() {
+            return new SetupAmazonPayResult(this);
+        }
+    }
 }
 

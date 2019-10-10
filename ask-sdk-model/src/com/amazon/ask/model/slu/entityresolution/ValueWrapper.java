@@ -23,81 +23,83 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = ValueWrapper.Builder.class)
-public final class ValueWrapper{
-
-  @JsonProperty("value")
-  private com.amazon.ask.model.slu.entityresolution.Value value = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private ValueWrapper(Builder builder) {
-    this.value = builder.value;
-  }
-
-  /**
-    * Get value
-  * @return value
-  **/
-  @JsonProperty("value")
-  public com.amazon.ask.model.slu.entityresolution.Value getValue() {
-    return value;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    ValueWrapper sluEntityresolutionValueWrapper = (ValueWrapper) o;
-    return Objects.equals(this.value, sluEntityresolutionValueWrapper.value);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(value);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ValueWrapper {\n");
-    
-    sb.append("    value: ").append(toIndentedString(value)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private com.amazon.ask.model.slu.entityresolution.Value value;
-
-    private Builder() { }
+public final class ValueWrapper {
 
     @JsonProperty("value")
-    public Builder withValue(com.amazon.ask.model.slu.entityresolution.Value value) {
-        this.value = value;
-        return this;
+    private com.amazon.ask.model.slu.entityresolution.Value value = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-
-    public ValueWrapper build() {
-      return new ValueWrapper(this);
+    private ValueWrapper(Builder builder) {
+        if (builder.value != null) {
+            this.value = builder.value;
+        }
     }
-  }
+
+    /**
+     * Get value
+     * @return value
+    **/
+    @JsonProperty("value")
+    public com.amazon.ask.model.slu.entityresolution.Value getValue() {
+        return value;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        ValueWrapper sluEntityresolutionValueWrapper = (ValueWrapper) o;
+        return Objects.equals(this.value, sluEntityresolutionValueWrapper.value);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(value);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ValueWrapper {\n");
+        
+        sb.append("    value: ").append(toIndentedString(value)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private com.amazon.ask.model.slu.entityresolution.Value value;
+
+        private Builder() {}
+
+        @JsonProperty("value")
+        public Builder withValue(com.amazon.ask.model.slu.entityresolution.Value value) {
+            this.value = value;
+            return this;
+        }
+
+
+        public ValueWrapper build() {
+            return new ValueWrapper(this);
+        }
+    }
 }
 

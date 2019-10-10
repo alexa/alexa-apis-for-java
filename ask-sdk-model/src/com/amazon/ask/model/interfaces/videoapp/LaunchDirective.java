@@ -23,85 +23,87 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = LaunchDirective.Builder.class)
-public final class LaunchDirective extends com.amazon.ask.model.Directive {
-
-  @JsonProperty("videoItem")
-  private com.amazon.ask.model.interfaces.videoapp.VideoItem videoItem = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private LaunchDirective(Builder builder) {
-    String discriminatorValue = "VideoApp.Launch";
-
-    this.type = discriminatorValue;
-    this.videoItem = builder.videoItem;
-  }
-
-  /**
-    * Get videoItem
-  * @return videoItem
-  **/
-  @JsonProperty("videoItem")
-  public com.amazon.ask.model.interfaces.videoapp.VideoItem getVideoItem() {
-    return videoItem;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    LaunchDirective interfacesVideoappLaunchDirective = (LaunchDirective) o;
-    return Objects.equals(this.videoItem, interfacesVideoappLaunchDirective.videoItem) &&
-        super.equals(o);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(videoItem, super.hashCode());
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class LaunchDirective {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    videoItem: ").append(toIndentedString(videoItem)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private com.amazon.ask.model.interfaces.videoapp.VideoItem videoItem;
-
-    private Builder() { }
+public final class LaunchDirective extends com.amazon.ask.model.Directive  {
 
     @JsonProperty("videoItem")
-    public Builder withVideoItem(com.amazon.ask.model.interfaces.videoapp.VideoItem videoItem) {
-        this.videoItem = videoItem;
-        return this;
+    private com.amazon.ask.model.interfaces.videoapp.VideoItem videoItem = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
+    private LaunchDirective(Builder builder) {
+        String discriminatorValue = "VideoApp.Launch";
 
-    public LaunchDirective build() {
-      return new LaunchDirective(this);
+        this.type = discriminatorValue;
+        if (builder.videoItem != null) {
+            this.videoItem = builder.videoItem;
+        }
     }
-  }
+
+    /**
+     * Get videoItem
+     * @return videoItem
+    **/
+    @JsonProperty("videoItem")
+    public com.amazon.ask.model.interfaces.videoapp.VideoItem getVideoItem() {
+        return videoItem;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        LaunchDirective interfacesVideoappLaunchDirective = (LaunchDirective) o;
+        return Objects.equals(this.videoItem, interfacesVideoappLaunchDirective.videoItem) &&
+            super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(videoItem, super.hashCode());
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class LaunchDirective {\n");
+        sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+        sb.append("    videoItem: ").append(toIndentedString(videoItem)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private com.amazon.ask.model.interfaces.videoapp.VideoItem videoItem;
+
+        private Builder() {}
+
+        @JsonProperty("videoItem")
+        public Builder withVideoItem(com.amazon.ask.model.interfaces.videoapp.VideoItem videoItem) {
+            this.videoItem = videoItem;
+            return this;
+        }
+
+
+        public LaunchDirective build() {
+            return new LaunchDirective(this);
+        }
+    }
 }
 

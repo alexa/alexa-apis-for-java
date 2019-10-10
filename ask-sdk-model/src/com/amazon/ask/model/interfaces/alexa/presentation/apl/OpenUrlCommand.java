@@ -26,146 +26,156 @@ import java.util.ArrayList;
  */
 
 @JsonDeserialize(builder = OpenUrlCommand.Builder.class)
-public final class OpenUrlCommand extends com.amazon.ask.model.interfaces.alexa.presentation.apl.Command {
-
-  @JsonProperty("source")
-  private String source = null;
-
-  @JsonProperty("onFail")
-  private List<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command> onFail = new ArrayList<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command>();
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private OpenUrlCommand(Builder builder) {
-    String discriminatorValue = "OpenURL";
-
-    this.type = discriminatorValue;
-    this.delay = builder.delay;
-    this.description = builder.description;
-    this.when = builder.when;
-    this.source = builder.source;
-    this.onFail = builder.onFail;
-  }
-
-  /**
-    * The URL to open
-  * @return source
-  **/
-  @JsonProperty("source")
-  public String getSource() {
-    return source;
-  }
-
-  /**
-    * Commands to execute if the URL fails to open
-  * @return onFail
-  **/
-  @JsonProperty("onFail")
-  public List<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command> getOnFail() {
-    return onFail;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    OpenUrlCommand interfacesAlexaPresentationAplOpenUrlCommand = (OpenUrlCommand) o;
-    return Objects.equals(this.source, interfacesAlexaPresentationAplOpenUrlCommand.source) &&
-        Objects.equals(this.onFail, interfacesAlexaPresentationAplOpenUrlCommand.onFail) &&
-        super.equals(o);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(source, onFail, super.hashCode());
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class OpenUrlCommand {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    source: ").append(toIndentedString(source)).append("\n");
-    sb.append("    onFail: ").append(toIndentedString(onFail)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private String delay;
-    private String description;
-    private Boolean when;
-    private String source;
-    private List<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command> onFail;
-
-    private Builder() { }
-
-    @JsonProperty("delay")
-    public Builder withDelay(Integer delay) {
-        this.delay = String.valueOf(delay);
-        return this;
-    }
-
-    public Builder withDelay(String delayExpression) {
-        this.delay = delayExpression;
-        return this;
-    }
-
-    @JsonProperty("description")
-    public Builder withDescription(String description) {
-        this.description = description;
-        return this;
-    }
-
-
-    @JsonProperty("when")
-    public Builder withWhen(Boolean when) {
-        this.when = when;
-        return this;
-    }
-
+public final class OpenUrlCommand extends com.amazon.ask.model.interfaces.alexa.presentation.apl.Command  {
 
     @JsonProperty("source")
-    public Builder withSource(String source) {
-        this.source = source;
-        return this;
-    }
-
+    private String source = null;
 
     @JsonProperty("onFail")
-    public Builder withOnFail(List<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command> onFail) {
-        this.onFail = onFail;
-        return this;
+    private List<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command> onFail = new ArrayList<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command>();
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-    public Builder addOnFailItem(com.amazon.ask.model.interfaces.alexa.presentation.apl.Command onFailItem) {
-      if (this.onFail == null) {
-        this.onFail = new ArrayList<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command>();
-      }
-      this.onFail.add(onFailItem);
-      return this;
+    private OpenUrlCommand(Builder builder) {
+        String discriminatorValue = "OpenURL";
+
+        this.type = discriminatorValue;
+        if (builder.delay != null) {
+            this.delay = builder.delay;
+        }
+        if (builder.description != null) {
+            this.description = builder.description;
+        }
+        if (builder.when != null) {
+            this.when = builder.when;
+        }
+        if (builder.source != null) {
+            this.source = builder.source;
+        }
+        if (builder.onFail != null) {
+            this.onFail = builder.onFail;
+        }
     }
 
-    public OpenUrlCommand build() {
-      return new OpenUrlCommand(this);
+    /**
+     * The URL to open
+     * @return source
+    **/
+    @JsonProperty("source")
+    public String getSource() {
+        return source;
     }
-  }
+
+    /**
+     * Commands to execute if the URL fails to open
+     * @return onFail
+    **/
+    @JsonProperty("onFail")
+    public List<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command> getOnFail() {
+        return onFail;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        OpenUrlCommand interfacesAlexaPresentationAplOpenUrlCommand = (OpenUrlCommand) o;
+        return Objects.equals(this.source, interfacesAlexaPresentationAplOpenUrlCommand.source) &&
+            Objects.equals(this.onFail, interfacesAlexaPresentationAplOpenUrlCommand.onFail) &&
+            super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(source, onFail, super.hashCode());
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class OpenUrlCommand {\n");
+        sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+        sb.append("    source: ").append(toIndentedString(source)).append("\n");
+        sb.append("    onFail: ").append(toIndentedString(onFail)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String delay;
+        private String description;
+        private Boolean when;
+        private String source;
+        private List<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command> onFail;
+
+        private Builder() {}
+
+        @JsonProperty("delay")
+        public Builder withDelay(Integer delay) {
+            this.delay = String.valueOf(delay);
+            return this;
+        }
+
+        public Builder withDelay(String delayExpression) {
+            this.delay = delayExpression;
+            return this;
+        }
+
+        @JsonProperty("description")
+        public Builder withDescription(String description) {
+            this.description = description;
+            return this;
+        }
+
+
+        @JsonProperty("when")
+        public Builder withWhen(Boolean when) {
+            this.when = when;
+            return this;
+        }
+
+
+        @JsonProperty("source")
+        public Builder withSource(String source) {
+            this.source = source;
+            return this;
+        }
+
+
+        @JsonProperty("onFail")
+        public Builder withOnFail(List<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command> onFail) {
+            this.onFail = onFail;
+            return this;
+        }
+
+        public Builder addOnFailItem(com.amazon.ask.model.interfaces.alexa.presentation.apl.Command onFailItem) {
+            if (this.onFail == null) {
+                this.onFail = new ArrayList<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command>();
+            }
+            this.onFail.add(onFailItem);
+            return this;
+        }
+
+        public OpenUrlCommand build() {
+            return new OpenUrlCommand(this);
+        }
+    }
 }
 

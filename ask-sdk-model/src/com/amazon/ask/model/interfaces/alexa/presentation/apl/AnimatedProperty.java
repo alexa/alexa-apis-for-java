@@ -30,59 +30,59 @@ import com.fasterxml.jackson.annotation.JsonProperty;
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.AnimatedTransformProperty.class, name = "transform"),
 })
 
-public abstract class AnimatedProperty{
+public abstract class AnimatedProperty {
 
-  protected String property = null;
+    protected String property = null;
 
-  protected AnimatedProperty() {
-  }
-
-  /**
-    * The name of the property to animate
-  * @return property
-  **/
-  @JsonIgnore
-  public String getProperty() {
-    return property;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
+    protected AnimatedProperty() {
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    /**
+     * The name of the property to animate
+     * @return property
+    **/
+    @JsonIgnore
+    public String getProperty() {
+        return property;
     }
-    AnimatedProperty interfacesAlexaPresentationAplAnimatedProperty = (AnimatedProperty) o;
-    return Objects.equals(this.property, interfacesAlexaPresentationAplAnimatedProperty.property);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(property);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class AnimatedProperty {\n");
-    
-    sb.append("    property: ").append(toIndentedString(property)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        AnimatedProperty interfacesAlexaPresentationAplAnimatedProperty = (AnimatedProperty) o;
+        return Objects.equals(this.property, interfacesAlexaPresentationAplAnimatedProperty.property);
     }
-    return o.toString().replace("\n", "\n    ");
-  }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(property);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class AnimatedProperty {\n");
+        
+        sb.append("    property: ").append(toIndentedString(property)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
 }
 

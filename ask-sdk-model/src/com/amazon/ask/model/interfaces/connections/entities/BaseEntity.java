@@ -30,73 +30,73 @@ import com.fasterxml.jackson.annotation.JsonProperty;
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.connections.entities.PostalAddress.class, name = "PostalAddress"),
 })
 
-public abstract class BaseEntity{
+public abstract class BaseEntity {
 
-  protected String type = null;
+    protected String type = null;
 
-  @JsonProperty("@version")
-  protected String version = null;
+    @JsonProperty("@version")
+    protected String version = null;
 
-  protected BaseEntity() {
-  }
-
-  /**
-    * Get type
-  * @return type
-  **/
-  @JsonIgnore
-  public String getType() {
-    return type;
-  }
-
-  /**
-    * version of the request
-  * @return version
-  **/
-  @JsonProperty("@version")
-  public String getVersion() {
-    return version;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
+    protected BaseEntity() {
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    /**
+     * Get type
+     * @return type
+    **/
+    @JsonIgnore
+    public String getType() {
+        return type;
     }
-    BaseEntity interfacesConnectionsEntitiesBaseEntity = (BaseEntity) o;
-    return Objects.equals(this.type, interfacesConnectionsEntitiesBaseEntity.type) &&
-        Objects.equals(this.version, interfacesConnectionsEntitiesBaseEntity.version);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(type, version);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class BaseEntity {\n");
-    
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    version: ").append(toIndentedString(version)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
+    /**
+     * version of the request
+     * @return version
+    **/
+    @JsonProperty("@version")
+    public String getVersion() {
+        return version;
     }
-    return o.toString().replace("\n", "\n    ");
-  }
 
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        BaseEntity interfacesConnectionsEntitiesBaseEntity = (BaseEntity) o;
+        return Objects.equals(this.type, interfacesConnectionsEntitiesBaseEntity.type) &&
+            Objects.equals(this.version, interfacesConnectionsEntitiesBaseEntity.version);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(type, version);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class BaseEntity {\n");
+        
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
 }
 

@@ -23,85 +23,87 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = ConfirmIntentDirective.Builder.class)
-public final class ConfirmIntentDirective extends com.amazon.ask.model.Directive {
-
-  @JsonProperty("updatedIntent")
-  private com.amazon.ask.model.Intent updatedIntent = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private ConfirmIntentDirective(Builder builder) {
-    String discriminatorValue = "Dialog.ConfirmIntent";
-
-    this.type = discriminatorValue;
-    this.updatedIntent = builder.updatedIntent;
-  }
-
-  /**
-    * Get updatedIntent
-  * @return updatedIntent
-  **/
-  @JsonProperty("updatedIntent")
-  public com.amazon.ask.model.Intent getUpdatedIntent() {
-    return updatedIntent;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    ConfirmIntentDirective dialogConfirmIntentDirective = (ConfirmIntentDirective) o;
-    return Objects.equals(this.updatedIntent, dialogConfirmIntentDirective.updatedIntent) &&
-        super.equals(o);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(updatedIntent, super.hashCode());
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ConfirmIntentDirective {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    updatedIntent: ").append(toIndentedString(updatedIntent)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private com.amazon.ask.model.Intent updatedIntent;
-
-    private Builder() { }
+public final class ConfirmIntentDirective extends com.amazon.ask.model.Directive  {
 
     @JsonProperty("updatedIntent")
-    public Builder withUpdatedIntent(com.amazon.ask.model.Intent updatedIntent) {
-        this.updatedIntent = updatedIntent;
-        return this;
+    private com.amazon.ask.model.Intent updatedIntent = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
+    private ConfirmIntentDirective(Builder builder) {
+        String discriminatorValue = "Dialog.ConfirmIntent";
 
-    public ConfirmIntentDirective build() {
-      return new ConfirmIntentDirective(this);
+        this.type = discriminatorValue;
+        if (builder.updatedIntent != null) {
+            this.updatedIntent = builder.updatedIntent;
+        }
     }
-  }
+
+    /**
+     * Get updatedIntent
+     * @return updatedIntent
+    **/
+    @JsonProperty("updatedIntent")
+    public com.amazon.ask.model.Intent getUpdatedIntent() {
+        return updatedIntent;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        ConfirmIntentDirective dialogConfirmIntentDirective = (ConfirmIntentDirective) o;
+        return Objects.equals(this.updatedIntent, dialogConfirmIntentDirective.updatedIntent) &&
+            super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(updatedIntent, super.hashCode());
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class ConfirmIntentDirective {\n");
+        sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+        sb.append("    updatedIntent: ").append(toIndentedString(updatedIntent)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private com.amazon.ask.model.Intent updatedIntent;
+
+        private Builder() {}
+
+        @JsonProperty("updatedIntent")
+        public Builder withUpdatedIntent(com.amazon.ask.model.Intent updatedIntent) {
+            this.updatedIntent = updatedIntent;
+            return this;
+        }
+
+
+        public ConfirmIntentDirective build() {
+            return new ConfirmIntentDirective(this);
+        }
+    }
 }
 

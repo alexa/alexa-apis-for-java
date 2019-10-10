@@ -23,104 +23,108 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = Image.Builder.class)
-public final class Image{
-
-  @JsonProperty("smallImageUrl")
-  private String smallImageUrl = null;
-
-  @JsonProperty("largeImageUrl")
-  private String largeImageUrl = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private Image(Builder builder) {
-    this.smallImageUrl = builder.smallImageUrl;
-    this.largeImageUrl = builder.largeImageUrl;
-  }
-
-  /**
-    * Get smallImageUrl
-  * @return smallImageUrl
-  **/
-  @JsonProperty("smallImageUrl")
-  public String getSmallImageUrl() {
-    return smallImageUrl;
-  }
-
-  /**
-    * Get largeImageUrl
-  * @return largeImageUrl
-  **/
-  @JsonProperty("largeImageUrl")
-  public String getLargeImageUrl() {
-    return largeImageUrl;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    Image uiImage = (Image) o;
-    return Objects.equals(this.smallImageUrl, uiImage.smallImageUrl) &&
-        Objects.equals(this.largeImageUrl, uiImage.largeImageUrl);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(smallImageUrl, largeImageUrl);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class Image {\n");
-    
-    sb.append("    smallImageUrl: ").append(toIndentedString(smallImageUrl)).append("\n");
-    sb.append("    largeImageUrl: ").append(toIndentedString(largeImageUrl)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private String smallImageUrl;
-    private String largeImageUrl;
-
-    private Builder() { }
+public final class Image {
 
     @JsonProperty("smallImageUrl")
-    public Builder withSmallImageUrl(String smallImageUrl) {
-        this.smallImageUrl = smallImageUrl;
-        return this;
-    }
-
+    private String smallImageUrl = null;
 
     @JsonProperty("largeImageUrl")
-    public Builder withLargeImageUrl(String largeImageUrl) {
-        this.largeImageUrl = largeImageUrl;
-        return this;
+    private String largeImageUrl = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-
-    public Image build() {
-      return new Image(this);
+    private Image(Builder builder) {
+        if (builder.smallImageUrl != null) {
+            this.smallImageUrl = builder.smallImageUrl;
+        }
+        if (builder.largeImageUrl != null) {
+            this.largeImageUrl = builder.largeImageUrl;
+        }
     }
-  }
+
+    /**
+     * Get smallImageUrl
+     * @return smallImageUrl
+    **/
+    @JsonProperty("smallImageUrl")
+    public String getSmallImageUrl() {
+        return smallImageUrl;
+    }
+
+    /**
+     * Get largeImageUrl
+     * @return largeImageUrl
+    **/
+    @JsonProperty("largeImageUrl")
+    public String getLargeImageUrl() {
+        return largeImageUrl;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Image uiImage = (Image) o;
+        return Objects.equals(this.smallImageUrl, uiImage.smallImageUrl) &&
+            Objects.equals(this.largeImageUrl, uiImage.largeImageUrl);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(smallImageUrl, largeImageUrl);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class Image {\n");
+        
+        sb.append("    smallImageUrl: ").append(toIndentedString(smallImageUrl)).append("\n");
+        sb.append("    largeImageUrl: ").append(toIndentedString(largeImageUrl)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String smallImageUrl;
+        private String largeImageUrl;
+
+        private Builder() {}
+
+        @JsonProperty("smallImageUrl")
+        public Builder withSmallImageUrl(String smallImageUrl) {
+            this.smallImageUrl = smallImageUrl;
+            return this;
+        }
+
+
+        @JsonProperty("largeImageUrl")
+        public Builder withLargeImageUrl(String largeImageUrl) {
+            this.largeImageUrl = largeImageUrl;
+            return this;
+        }
+
+
+        public Image build() {
+            return new Image(this);
+        }
+    }
 }
 

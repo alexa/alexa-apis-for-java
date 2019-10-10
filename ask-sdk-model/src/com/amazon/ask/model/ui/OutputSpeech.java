@@ -30,73 +30,73 @@ import com.fasterxml.jackson.annotation.JsonProperty;
   @JsonSubTypes.Type(value = com.amazon.ask.model.ui.PlainTextOutputSpeech.class, name = "PlainText"),
 })
 
-public abstract class OutputSpeech{
+public abstract class OutputSpeech {
 
-  protected String type = null;
+    protected String type = null;
 
-  @JsonProperty("playBehavior")
-  protected com.amazon.ask.model.ui.PlayBehavior playBehavior = null;
+    @JsonProperty("playBehavior")
+    protected com.amazon.ask.model.ui.PlayBehavior playBehavior = null;
 
-  protected OutputSpeech() {
-  }
-
-  /**
-    * Get type
-  * @return type
-  **/
-  @JsonIgnore
-  public String getType() {
-    return type;
-  }
-
-  /**
-    * Get playBehavior
-  * @return playBehavior
-  **/
-  @JsonProperty("playBehavior")
-  public com.amazon.ask.model.ui.PlayBehavior getPlayBehavior() {
-    return playBehavior;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
+    protected OutputSpeech() {
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    /**
+     * Get type
+     * @return type
+    **/
+    @JsonIgnore
+    public String getType() {
+        return type;
     }
-    OutputSpeech uiOutputSpeech = (OutputSpeech) o;
-    return Objects.equals(this.type, uiOutputSpeech.type) &&
-        Objects.equals(this.playBehavior, uiOutputSpeech.playBehavior);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(type, playBehavior);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class OutputSpeech {\n");
-    
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    playBehavior: ").append(toIndentedString(playBehavior)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
+    /**
+     * Get playBehavior
+     * @return playBehavior
+    **/
+    @JsonProperty("playBehavior")
+    public com.amazon.ask.model.ui.PlayBehavior getPlayBehavior() {
+        return playBehavior;
     }
-    return o.toString().replace("\n", "\n    ");
-  }
 
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        OutputSpeech uiOutputSpeech = (OutputSpeech) o;
+        return Objects.equals(this.type, uiOutputSpeech.type) &&
+            Objects.equals(this.playBehavior, uiOutputSpeech.playBehavior);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(type, playBehavior);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class OutputSpeech {\n");
+        
+        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    playBehavior: ").append(toIndentedString(playBehavior)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
 }
 

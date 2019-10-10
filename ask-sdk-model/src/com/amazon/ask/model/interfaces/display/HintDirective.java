@@ -23,85 +23,87 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = HintDirective.Builder.class)
-public final class HintDirective extends com.amazon.ask.model.Directive {
-
-  @JsonProperty("hint")
-  private com.amazon.ask.model.interfaces.display.Hint hint = null;
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private HintDirective(Builder builder) {
-    String discriminatorValue = "Hint";
-
-    this.type = discriminatorValue;
-    this.hint = builder.hint;
-  }
-
-  /**
-    * Get hint
-  * @return hint
-  **/
-  @JsonProperty("hint")
-  public com.amazon.ask.model.interfaces.display.Hint getHint() {
-    return hint;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    HintDirective interfacesDisplayHintDirective = (HintDirective) o;
-    return Objects.equals(this.hint, interfacesDisplayHintDirective.hint) &&
-        super.equals(o);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(hint, super.hashCode());
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class HintDirective {\n");
-    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    hint: ").append(toIndentedString(hint)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private com.amazon.ask.model.interfaces.display.Hint hint;
-
-    private Builder() { }
+public final class HintDirective extends com.amazon.ask.model.Directive  {
 
     @JsonProperty("hint")
-    public Builder withHint(com.amazon.ask.model.interfaces.display.Hint hint) {
-        this.hint = hint;
-        return this;
+    private com.amazon.ask.model.interfaces.display.Hint hint = null;
+
+    public static Builder builder() {
+        return new Builder();
     }
 
+    private HintDirective(Builder builder) {
+        String discriminatorValue = "Hint";
 
-    public HintDirective build() {
-      return new HintDirective(this);
+        this.type = discriminatorValue;
+        if (builder.hint != null) {
+            this.hint = builder.hint;
+        }
     }
-  }
+
+    /**
+     * Get hint
+     * @return hint
+    **/
+    @JsonProperty("hint")
+    public com.amazon.ask.model.interfaces.display.Hint getHint() {
+        return hint;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        HintDirective interfacesDisplayHintDirective = (HintDirective) o;
+        return Objects.equals(this.hint, interfacesDisplayHintDirective.hint) &&
+            super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(hint, super.hashCode());
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class HintDirective {\n");
+        sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+        sb.append("    hint: ").append(toIndentedString(hint)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private com.amazon.ask.model.interfaces.display.Hint hint;
+
+        private Builder() {}
+
+        @JsonProperty("hint")
+        public Builder withHint(com.amazon.ask.model.interfaces.display.Hint hint) {
+            this.hint = hint;
+            return this;
+        }
+
+
+        public HintDirective build() {
+            return new HintDirective(this);
+        }
+    }
 }
 

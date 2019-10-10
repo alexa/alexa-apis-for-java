@@ -23,85 +23,87 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = RotateTransformProperty.Builder.class)
-public final class RotateTransformProperty extends com.amazon.ask.model.interfaces.alexa.presentation.apl.TransformProperty{
-
-  @JsonProperty("rotate")
-  private String rotate = String.valueOf(0.0d);
-
-  public static Builder builder() {
-    return new Builder();
-  }
-
-  private RotateTransformProperty(Builder builder) {
-    this.rotate = builder.rotate;
-  }
-
-  /**
-    * Rotation angle, in degrees. Positive angles rotate in the clockwise direction.
-  * @return rotate
-  **/
-  @JsonProperty("rotate")
-  public String getRotate() {
-    return rotate;
-  }
-
-  @Override
-  public boolean equals(java.lang.Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    RotateTransformProperty interfacesAlexaPresentationAplRotateTransformProperty = (RotateTransformProperty) o;
-    return Objects.equals(this.rotate, interfacesAlexaPresentationAplRotateTransformProperty.rotate);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(rotate);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class RotateTransformProperty {\n");
-    
-    sb.append("    rotate: ").append(toIndentedString(rotate)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(java.lang.Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
-  public static class Builder {
-    private String rotate;
-
-    private Builder() { }
+public final class RotateTransformProperty extends com.amazon.ask.model.interfaces.alexa.presentation.apl.TransformProperty {
 
     @JsonProperty("rotate")
-    public Builder withRotate(Double rotate) {
-        this.rotate = String.valueOf(rotate);
-        return this;
+    private String rotate = String.valueOf(0.0d);
+
+    public static Builder builder() {
+        return new Builder();
     }
 
-    public Builder withRotate(String rotateExpression) {
-        this.rotate = rotateExpression;
-        return this;
+    private RotateTransformProperty(Builder builder) {
+        if (builder.rotate != null) {
+            this.rotate = builder.rotate;
+        }
     }
 
-    public RotateTransformProperty build() {
-      return new RotateTransformProperty(this);
+    /**
+     * Rotation angle, in degrees. Positive angles rotate in the clockwise direction.
+     * @return rotate
+    **/
+    @JsonProperty("rotate")
+    public String getRotate() {
+        return rotate;
     }
-  }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        RotateTransformProperty interfacesAlexaPresentationAplRotateTransformProperty = (RotateTransformProperty) o;
+        return Objects.equals(this.rotate, interfacesAlexaPresentationAplRotateTransformProperty.rotate);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(rotate);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class RotateTransformProperty {\n");
+        
+        sb.append("    rotate: ").append(toIndentedString(rotate)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder extends com.amazon.ask.model.interfaces.alexa.presentation.apl.TransformProperty.Builder<Builder> {
+        private String rotate;
+
+        private Builder() {}
+
+        @JsonProperty("rotate")
+        public Builder withRotate(Double rotate) {
+            this.rotate = String.valueOf(rotate);
+            return this;
+        }
+
+        public Builder withRotate(String rotateExpression) {
+            this.rotate = rotateExpression;
+            return this;
+        }
+
+        public RotateTransformProperty build() {
+            return new RotateTransformProperty(this);
+        }
+    }
 }
 
