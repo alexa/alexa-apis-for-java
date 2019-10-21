@@ -15,8 +15,11 @@
 package com.amazon.ask.model;
 
 import java.util.Objects;
+import java.util.ArrayList;
+import java.util.List;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.ArrayList;
 
 /**
  * Context
@@ -43,6 +46,9 @@ public final class Context {
     @JsonProperty("Viewport")
     private com.amazon.ask.model.interfaces.viewport.ViewportState viewport = null;
 
+    @JsonProperty("Viewports")
+    private List<com.amazon.ask.model.interfaces.viewport.TypedViewportState> viewports = new ArrayList<com.amazon.ask.model.interfaces.viewport.TypedViewportState>();
+
     public static Builder builder() {
         return new Builder();
     }
@@ -65,6 +71,9 @@ public final class Context {
         }
         if (builder.viewport != null) {
             this.viewport = builder.viewport;
+        }
+        if (builder.viewports != null) {
+            this.viewports = builder.viewports;
         }
     }
 
@@ -122,6 +131,15 @@ public final class Context {
         return viewport;
     }
 
+    /**
+     * This object contains a list of viewports characteristics related to the device's viewports.
+     * @return viewports
+    **/
+    @JsonProperty("Viewports")
+    public List<com.amazon.ask.model.interfaces.viewport.TypedViewportState> getViewports() {
+        return viewports;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -136,12 +154,13 @@ public final class Context {
             Objects.equals(this.automotive, context.automotive) &&
             Objects.equals(this.display, context.display) &&
             Objects.equals(this.geolocation, context.geolocation) &&
-            Objects.equals(this.viewport, context.viewport);
+            Objects.equals(this.viewport, context.viewport) &&
+            Objects.equals(this.viewports, context.viewports);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(system, audioPlayer, automotive, display, geolocation, viewport);
+        return Objects.hash(system, audioPlayer, automotive, display, geolocation, viewport, viewports);
     }
 
     @Override
@@ -155,6 +174,7 @@ public final class Context {
         sb.append("    display: ").append(toIndentedString(display)).append("\n");
         sb.append("    geolocation: ").append(toIndentedString(geolocation)).append("\n");
         sb.append("    viewport: ").append(toIndentedString(viewport)).append("\n");
+        sb.append("    viewports: ").append(toIndentedString(viewports)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -177,6 +197,7 @@ public final class Context {
         private com.amazon.ask.model.interfaces.display.DisplayState display;
         private com.amazon.ask.model.interfaces.geolocation.GeolocationState geolocation;
         private com.amazon.ask.model.interfaces.viewport.ViewportState viewport;
+        private List<com.amazon.ask.model.interfaces.viewport.TypedViewportState> viewports;
 
         private Builder() {}
 
@@ -221,6 +242,20 @@ public final class Context {
             return this;
         }
 
+
+        @JsonProperty("Viewports")
+        public Builder withViewports(List<com.amazon.ask.model.interfaces.viewport.TypedViewportState> viewports) {
+            this.viewports = viewports;
+            return this;
+        }
+
+        public Builder addViewportsItem(com.amazon.ask.model.interfaces.viewport.TypedViewportState viewportsItem) {
+            if (this.viewports == null) {
+                this.viewports = new ArrayList<com.amazon.ask.model.interfaces.viewport.TypedViewportState>();
+            }
+            this.viewports.add(viewportsItem);
+            return this;
+        }
 
         public Context build() {
             return new Context(this);

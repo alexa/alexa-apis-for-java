@@ -26,9 +26,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = true )
 @JsonSubTypes({
+  @JsonSubTypes.Type(value = com.amazon.ask.model.ui.AskForPermissionsConsentCard.class, name = "AskForPermissionsConsent"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.ui.LinkAccountCard.class, name = "LinkAccount"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.ui.StandardCard.class, name = "Standard"),
-  @JsonSubTypes.Type(value = com.amazon.ask.model.ui.AskForPermissionsConsentCard.class, name = "AskForPermissionsConsent"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.ui.SimpleCard.class, name = "Simple"),
 })
 

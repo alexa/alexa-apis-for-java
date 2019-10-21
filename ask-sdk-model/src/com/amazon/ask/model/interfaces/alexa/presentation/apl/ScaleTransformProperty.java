@@ -39,6 +39,7 @@ public final class ScaleTransformProperty extends com.amazon.ask.model.interface
     }
 
     private ScaleTransformProperty(Builder builder) {
+        super(builder);
         if (builder.scale != null) {
             this.scale = builder.scale;
         }

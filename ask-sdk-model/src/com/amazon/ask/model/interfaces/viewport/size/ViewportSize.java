@@ -12,7 +12,7 @@
 */
 
 
-package com.amazon.ask.model.services.gameEngine;
+package com.amazon.ask.model.interfaces.viewport.size;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -21,25 +21,24 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Recognizers are conditions that, at any moment, are either true or false, based on all the raw button events that the Input Handler has received in the time elapsed since the Input Handler session started.
+ * Information regarding the range of sizes for a configuration.
  */
 
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = true )
 @JsonSubTypes({
-  @JsonSubTypes.Type(value = com.amazon.ask.model.services.gameEngine.PatternRecognizer.class, name = "match"),
-  @JsonSubTypes.Type(value = com.amazon.ask.model.services.gameEngine.DeviationRecognizer.class, name = "deviation"),
-  @JsonSubTypes.Type(value = com.amazon.ask.model.services.gameEngine.ProgressRecognizer.class, name = "progress"),
+  @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.viewport.size.ContinuousViewportSize.class, name = "CONTINUOUS"),
+  @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.viewport.size.DiscreteViewportSize.class, name = "DISCRETE"),
 })
 
-public abstract class Recognizer {
+public abstract class ViewportSize {
 
     protected String type = null;
 
-    protected Recognizer() {
+    protected ViewportSize() {
     }
 
     /**
-     * Get type
+     * name of the type of a viewport object
      * @return type
     **/
     @JsonIgnore
@@ -55,8 +54,8 @@ public abstract class Recognizer {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        Recognizer servicesGameEngineRecognizer = (Recognizer) o;
-        return Objects.equals(this.type, servicesGameEngineRecognizer.type);
+        ViewportSize interfacesViewportSizeViewportSize = (ViewportSize) o;
+        return Objects.equals(this.type, interfacesViewportSizeViewportSize.type);
     }
 
     @Override
@@ -67,7 +66,7 @@ public abstract class Recognizer {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class Recognizer {\n");
+        sb.append("class ViewportSize {\n");
         
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");

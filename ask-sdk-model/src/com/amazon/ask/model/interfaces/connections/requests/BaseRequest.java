@@ -27,10 +27,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@type", visible = true )
 @JsonSubTypes({
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.connections.requests.ScheduleFoodEstablishmentReservationRequest.class, name = "ScheduleFoodEstablishmentReservationRequest"),
-  @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.connections.requests.PrintPDFRequest.class, name = "PrintPDFRequest"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.connections.requests.PrintImageRequest.class, name = "PrintImageRequest"),
-  @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.connections.requests.ScheduleTaxiReservationRequest.class, name = "ScheduleTaxiReservationRequest"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.connections.requests.PrintWebPageRequest.class, name = "PrintWebPageRequest"),
+  @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.connections.requests.PrintPDFRequest.class, name = "PrintPDFRequest"),
+  @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.connections.requests.ScheduleTaxiReservationRequest.class, name = "ScheduleTaxiReservationRequest"),
 })
 
 public abstract class BaseRequest {

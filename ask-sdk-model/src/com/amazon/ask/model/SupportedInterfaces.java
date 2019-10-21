@@ -28,6 +28,9 @@ public final class SupportedInterfaces {
     @JsonProperty("Alexa.Presentation.APL")
     private com.amazon.ask.model.interfaces.alexa.presentation.apl.AlexaPresentationAplInterface alexaPresentationAPL = null;
 
+    @JsonProperty("Alexa.Presentation.APLT")
+    private com.amazon.ask.model.interfaces.alexa.presentation.aplt.AlexaPresentationApltInterface alexaPresentationAPLT = null;
+
     @JsonProperty("AudioPlayer")
     private com.amazon.ask.model.interfaces.audioplayer.AudioPlayerInterface audioPlayer = null;
 
@@ -47,6 +50,9 @@ public final class SupportedInterfaces {
     private SupportedInterfaces(Builder builder) {
         if (builder.alexaPresentationAPL != null) {
             this.alexaPresentationAPL = builder.alexaPresentationAPL;
+        }
+        if (builder.alexaPresentationAPLT != null) {
+            this.alexaPresentationAPLT = builder.alexaPresentationAPLT;
         }
         if (builder.audioPlayer != null) {
             this.audioPlayer = builder.audioPlayer;
@@ -69,6 +75,15 @@ public final class SupportedInterfaces {
     @JsonProperty("Alexa.Presentation.APL")
     public com.amazon.ask.model.interfaces.alexa.presentation.apl.AlexaPresentationAplInterface getAlexaPresentationAPL() {
         return alexaPresentationAPL;
+    }
+
+    /**
+     * Get alexaPresentationAPLT
+     * @return alexaPresentationAPLT
+    **/
+    @JsonProperty("Alexa.Presentation.APLT")
+    public com.amazon.ask.model.interfaces.alexa.presentation.aplt.AlexaPresentationApltInterface getAlexaPresentationAPLT() {
+        return alexaPresentationAPLT;
     }
 
     /**
@@ -117,6 +132,7 @@ public final class SupportedInterfaces {
         }
         SupportedInterfaces supportedInterfaces = (SupportedInterfaces) o;
         return Objects.equals(this.alexaPresentationAPL, supportedInterfaces.alexaPresentationAPL) &&
+            Objects.equals(this.alexaPresentationAPLT, supportedInterfaces.alexaPresentationAPLT) &&
             Objects.equals(this.audioPlayer, supportedInterfaces.audioPlayer) &&
             Objects.equals(this.display, supportedInterfaces.display) &&
             Objects.equals(this.videoApp, supportedInterfaces.videoApp) &&
@@ -125,7 +141,7 @@ public final class SupportedInterfaces {
 
     @Override
     public int hashCode() {
-        return Objects.hash(alexaPresentationAPL, audioPlayer, display, videoApp, geolocation);
+        return Objects.hash(alexaPresentationAPL, alexaPresentationAPLT, audioPlayer, display, videoApp, geolocation);
     }
 
     @Override
@@ -134,6 +150,7 @@ public final class SupportedInterfaces {
         sb.append("class SupportedInterfaces {\n");
         
         sb.append("    alexaPresentationAPL: ").append(toIndentedString(alexaPresentationAPL)).append("\n");
+        sb.append("    alexaPresentationAPLT: ").append(toIndentedString(alexaPresentationAPLT)).append("\n");
         sb.append("    audioPlayer: ").append(toIndentedString(audioPlayer)).append("\n");
         sb.append("    display: ").append(toIndentedString(display)).append("\n");
         sb.append("    videoApp: ").append(toIndentedString(videoApp)).append("\n");
@@ -155,6 +172,7 @@ public final class SupportedInterfaces {
   
     public static class Builder {
         private com.amazon.ask.model.interfaces.alexa.presentation.apl.AlexaPresentationAplInterface alexaPresentationAPL;
+        private com.amazon.ask.model.interfaces.alexa.presentation.aplt.AlexaPresentationApltInterface alexaPresentationAPLT;
         private com.amazon.ask.model.interfaces.audioplayer.AudioPlayerInterface audioPlayer;
         private com.amazon.ask.model.interfaces.display.DisplayInterface display;
         private com.amazon.ask.model.interfaces.videoapp.VideoAppInterface videoApp;
@@ -165,6 +183,13 @@ public final class SupportedInterfaces {
         @JsonProperty("Alexa.Presentation.APL")
         public Builder withAlexaPresentationAPL(com.amazon.ask.model.interfaces.alexa.presentation.apl.AlexaPresentationAplInterface alexaPresentationAPL) {
             this.alexaPresentationAPL = alexaPresentationAPL;
+            return this;
+        }
+
+
+        @JsonProperty("Alexa.Presentation.APLT")
+        public Builder withAlexaPresentationAPLT(com.amazon.ask.model.interfaces.alexa.presentation.aplt.AlexaPresentationApltInterface alexaPresentationAPLT) {
+            this.alexaPresentationAPLT = alexaPresentationAPLT;
             return this;
         }
 

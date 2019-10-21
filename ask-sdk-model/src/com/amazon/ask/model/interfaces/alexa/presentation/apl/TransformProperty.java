@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public abstract class TransformProperty {
 
-    protected TransformProperty() {
+    protected TransformProperty(Builder builder) {
     }
 
     @Override

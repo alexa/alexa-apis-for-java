@@ -12,7 +12,7 @@
 */
 
 
-package com.amazon.ask.model.services.gameEngine;
+package com.amazon.ask.model.interfaces.viewport;
 
 import java.util.Objects;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -21,25 +21,36 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Recognizers are conditions that, at any moment, are either true or false, based on all the raw button events that the Input Handler has received in the time elapsed since the Input Handler session started.
+ * TypedViewportState
  */
 
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = true )
 @JsonSubTypes({
-  @JsonSubTypes.Type(value = com.amazon.ask.model.services.gameEngine.PatternRecognizer.class, name = "match"),
-  @JsonSubTypes.Type(value = com.amazon.ask.model.services.gameEngine.DeviationRecognizer.class, name = "deviation"),
-  @JsonSubTypes.Type(value = com.amazon.ask.model.services.gameEngine.ProgressRecognizer.class, name = "progress"),
+  @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.viewport.APLViewportState.class, name = "APL"),
+  @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.viewport.APLTViewportState.class, name = "APLT"),
 })
 
-public abstract class Recognizer {
+public abstract class TypedViewportState {
+
+    @JsonProperty("id")
+    protected String id = null;
 
     protected String type = null;
 
-    protected Recognizer() {
+    protected TypedViewportState() {
     }
 
     /**
-     * Get type
+     * unique identifier of a viewport object
+     * @return id
+    **/
+    @JsonProperty("id")
+    public String getId() {
+        return id;
+    }
+
+    /**
+     * name of the type of a viewport object
      * @return type
     **/
     @JsonIgnore
@@ -55,20 +66,22 @@ public abstract class Recognizer {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        Recognizer servicesGameEngineRecognizer = (Recognizer) o;
-        return Objects.equals(this.type, servicesGameEngineRecognizer.type);
+        TypedViewportState interfacesViewportTypedViewportState = (TypedViewportState) o;
+        return Objects.equals(this.id, interfacesViewportTypedViewportState.id) &&
+            Objects.equals(this.type, interfacesViewportTypedViewportState.type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type);
+        return Objects.hash(id, type);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class Recognizer {\n");
+        sb.append("class TypedViewportState {\n");
         
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("}");
         return sb.toString();

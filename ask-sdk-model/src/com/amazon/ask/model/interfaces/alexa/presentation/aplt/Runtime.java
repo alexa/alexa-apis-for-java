@@ -12,39 +12,39 @@
 */
 
 
-package com.amazon.ask.model.services.gameEngine;
+package com.amazon.ask.model.interfaces.alexa.presentation.aplt;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Recognizers are conditions that, at any moment, are either true or false, based on all the raw button events that the Input Handler has received in the time elapsed since the Input Handler session started.
+ * Contains the runtime information for the interface.
  */
 
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = true )
-@JsonSubTypes({
-  @JsonSubTypes.Type(value = com.amazon.ask.model.services.gameEngine.PatternRecognizer.class, name = "match"),
-  @JsonSubTypes.Type(value = com.amazon.ask.model.services.gameEngine.DeviationRecognizer.class, name = "deviation"),
-  @JsonSubTypes.Type(value = com.amazon.ask.model.services.gameEngine.ProgressRecognizer.class, name = "progress"),
-})
+@JsonDeserialize(builder = Runtime.Builder.class)
+public final class Runtime {
 
-public abstract class Recognizer {
+    @JsonProperty("maxVersion")
+    private String maxVersion = null;
 
-    protected String type = null;
+    public static Builder builder() {
+        return new Builder();
+    }
 
-    protected Recognizer() {
+    private Runtime(Builder builder) {
+        if (builder.maxVersion != null) {
+            this.maxVersion = builder.maxVersion;
+        }
     }
 
     /**
-     * Get type
-     * @return type
+     * Maximum APL-T version supported by the runtime.
+     * @return maxVersion
     **/
-    @JsonIgnore
-    public String getType() {
-        return type;
+    @JsonProperty("maxVersion")
+    public String getMaxVersion() {
+        return maxVersion;
     }
 
     @Override
@@ -55,21 +55,21 @@ public abstract class Recognizer {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        Recognizer servicesGameEngineRecognizer = (Recognizer) o;
-        return Objects.equals(this.type, servicesGameEngineRecognizer.type);
+        Runtime interfacesAlexaPresentationApltRuntime = (Runtime) o;
+        return Objects.equals(this.maxVersion, interfacesAlexaPresentationApltRuntime.maxVersion);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type);
+        return Objects.hash(maxVersion);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class Recognizer {\n");
+        sb.append("class Runtime {\n");
         
-        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    maxVersion: ").append(toIndentedString(maxVersion)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -85,5 +85,21 @@ public abstract class Recognizer {
         return o.toString().replace("\n", "\n    ");
     }
   
+    public static class Builder {
+        private String maxVersion;
+
+        private Builder() {}
+
+        @JsonProperty("maxVersion")
+        public Builder withMaxVersion(String maxVersion) {
+            this.maxVersion = maxVersion;
+            return this;
+        }
+
+
+        public Runtime build() {
+            return new Runtime(this);
+        }
+    }
 }
 

@@ -26,15 +26,15 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@type", visible = true )
 @JsonSubTypes({
-  @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.amazonpay.model.request.AuthorizeAttributes.class, name = "AuthorizeAttributes"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.amazonpay.model.request.SellerBillingAgreementAttributes.class, name = "SellerBillingAgreementAttributes"),
-  @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.amazonpay.request.SetupAmazonPayRequest.class, name = "SetupAmazonPayRequest"),
-  @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.amazonpay.model.request.ProviderCredit.class, name = "ProviderCredit"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.amazonpay.model.request.Price.class, name = "Price"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.amazonpay.request.ChargeAmazonPayRequest.class, name = "ChargeAmazonPayRequest"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.amazonpay.model.request.BillingAgreementAttributes.class, name = "BillingAgreementAttributes"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.amazonpay.model.request.SellerOrderAttributes.class, name = "SellerOrderAttributes"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.amazonpay.model.request.ProviderAttributes.class, name = "ProviderAttributes"),
+  @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.amazonpay.model.request.AuthorizeAttributes.class, name = "AuthorizeAttributes"),
+  @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.amazonpay.request.SetupAmazonPayRequest.class, name = "SetupAmazonPayRequest"),
+  @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.amazonpay.model.request.ProviderCredit.class, name = "ProviderCredit"),
 })
 
 public abstract class BaseAmazonPayEntity {

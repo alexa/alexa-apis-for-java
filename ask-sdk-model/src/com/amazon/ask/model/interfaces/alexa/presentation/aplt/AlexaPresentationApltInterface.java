@@ -12,40 +12,39 @@
 */
 
 
-package com.amazon.ask.model.interfaces.alexa.presentation.apl;
+package com.amazon.ask.model.interfaces.alexa.presentation.aplt;
 
 import java.util.Objects;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * RotateTransformProperty
+ * AlexaPresentationApltInterface
  */
 
-@JsonDeserialize(builder = RotateTransformProperty.Builder.class)
-public final class RotateTransformProperty extends com.amazon.ask.model.interfaces.alexa.presentation.apl.TransformProperty {
+@JsonDeserialize(builder = AlexaPresentationApltInterface.Builder.class)
+public final class AlexaPresentationApltInterface {
 
-    @JsonProperty("rotate")
-    private String rotate = String.valueOf(0.0d);
+    @JsonProperty("runtime")
+    private com.amazon.ask.model.interfaces.alexa.presentation.aplt.Runtime runtime = null;
 
     public static Builder builder() {
         return new Builder();
     }
 
-    private RotateTransformProperty(Builder builder) {
-        super(builder);
-        if (builder.rotate != null) {
-            this.rotate = builder.rotate;
+    private AlexaPresentationApltInterface(Builder builder) {
+        if (builder.runtime != null) {
+            this.runtime = builder.runtime;
         }
     }
 
     /**
-     * Rotation angle, in degrees. Positive angles rotate in the clockwise direction.
-     * @return rotate
+     * Get runtime
+     * @return runtime
     **/
-    @JsonProperty("rotate")
-    public String getRotate() {
-        return rotate;
+    @JsonProperty("runtime")
+    public com.amazon.ask.model.interfaces.alexa.presentation.aplt.Runtime getRuntime() {
+        return runtime;
     }
 
     @Override
@@ -56,21 +55,21 @@ public final class RotateTransformProperty extends com.amazon.ask.model.interfac
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        RotateTransformProperty interfacesAlexaPresentationAplRotateTransformProperty = (RotateTransformProperty) o;
-        return Objects.equals(this.rotate, interfacesAlexaPresentationAplRotateTransformProperty.rotate);
+        AlexaPresentationApltInterface interfacesAlexaPresentationApltAlexaPresentationApltInterface = (AlexaPresentationApltInterface) o;
+        return Objects.equals(this.runtime, interfacesAlexaPresentationApltAlexaPresentationApltInterface.runtime);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(rotate);
+        return Objects.hash(runtime);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class RotateTransformProperty {\n");
+        sb.append("class AlexaPresentationApltInterface {\n");
         
-        sb.append("    rotate: ").append(toIndentedString(rotate)).append("\n");
+        sb.append("    runtime: ").append(toIndentedString(runtime)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -86,24 +85,20 @@ public final class RotateTransformProperty extends com.amazon.ask.model.interfac
         return o.toString().replace("\n", "\n    ");
     }
   
-    public static class Builder extends com.amazon.ask.model.interfaces.alexa.presentation.apl.TransformProperty.Builder<Builder> {
-        private String rotate;
+    public static class Builder {
+        private com.amazon.ask.model.interfaces.alexa.presentation.aplt.Runtime runtime;
 
         private Builder() {}
 
-        @JsonProperty("rotate")
-        public Builder withRotate(Double rotate) {
-            this.rotate = String.valueOf(rotate);
+        @JsonProperty("runtime")
+        public Builder withRuntime(com.amazon.ask.model.interfaces.alexa.presentation.aplt.Runtime runtime) {
+            this.runtime = runtime;
             return this;
         }
 
-        public Builder withRotate(String rotateExpression) {
-            this.rotate = rotateExpression;
-            return this;
-        }
 
-        public RotateTransformProperty build() {
-            return new RotateTransformProperty(this);
+        public AlexaPresentationApltInterface build() {
+            return new AlexaPresentationApltInterface(this);
         }
     }
 }

@@ -12,40 +12,39 @@
 */
 
 
-package com.amazon.ask.model.interfaces.alexa.presentation.apl;
+package com.amazon.ask.model.interfaces.viewport.apl;
 
 import java.util.Objects;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * RotateTransformProperty
+ * ViewportConfiguration
  */
 
-@JsonDeserialize(builder = RotateTransformProperty.Builder.class)
-public final class RotateTransformProperty extends com.amazon.ask.model.interfaces.alexa.presentation.apl.TransformProperty {
+@JsonDeserialize(builder = ViewportConfiguration.Builder.class)
+public final class ViewportConfiguration {
 
-    @JsonProperty("rotate")
-    private String rotate = String.valueOf(0.0d);
+    @JsonProperty("current")
+    private com.amazon.ask.model.interfaces.viewport.apl.CurrentConfiguration current = null;
 
     public static Builder builder() {
         return new Builder();
     }
 
-    private RotateTransformProperty(Builder builder) {
-        super(builder);
-        if (builder.rotate != null) {
-            this.rotate = builder.rotate;
+    private ViewportConfiguration(Builder builder) {
+        if (builder.current != null) {
+            this.current = builder.current;
         }
     }
 
     /**
-     * Rotation angle, in degrees. Positive angles rotate in the clockwise direction.
-     * @return rotate
+     * Get current
+     * @return current
     **/
-    @JsonProperty("rotate")
-    public String getRotate() {
-        return rotate;
+    @JsonProperty("current")
+    public com.amazon.ask.model.interfaces.viewport.apl.CurrentConfiguration getCurrent() {
+        return current;
     }
 
     @Override
@@ -56,21 +55,21 @@ public final class RotateTransformProperty extends com.amazon.ask.model.interfac
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        RotateTransformProperty interfacesAlexaPresentationAplRotateTransformProperty = (RotateTransformProperty) o;
-        return Objects.equals(this.rotate, interfacesAlexaPresentationAplRotateTransformProperty.rotate);
+        ViewportConfiguration interfacesViewportAplViewportConfiguration = (ViewportConfiguration) o;
+        return Objects.equals(this.current, interfacesViewportAplViewportConfiguration.current);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(rotate);
+        return Objects.hash(current);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class RotateTransformProperty {\n");
+        sb.append("class ViewportConfiguration {\n");
         
-        sb.append("    rotate: ").append(toIndentedString(rotate)).append("\n");
+        sb.append("    current: ").append(toIndentedString(current)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -86,24 +85,20 @@ public final class RotateTransformProperty extends com.amazon.ask.model.interfac
         return o.toString().replace("\n", "\n    ");
     }
   
-    public static class Builder extends com.amazon.ask.model.interfaces.alexa.presentation.apl.TransformProperty.Builder<Builder> {
-        private String rotate;
+    public static class Builder {
+        private com.amazon.ask.model.interfaces.viewport.apl.CurrentConfiguration current;
 
         private Builder() {}
 
-        @JsonProperty("rotate")
-        public Builder withRotate(Double rotate) {
-            this.rotate = String.valueOf(rotate);
+        @JsonProperty("current")
+        public Builder withCurrent(com.amazon.ask.model.interfaces.viewport.apl.CurrentConfiguration current) {
+            this.current = current;
             return this;
         }
 
-        public Builder withRotate(String rotateExpression) {
-            this.rotate = rotateExpression;
-            return this;
-        }
 
-        public RotateTransformProperty build() {
-            return new RotateTransformProperty(this);
+        public ViewportConfiguration build() {
+            return new ViewportConfiguration(this);
         }
     }
 }

@@ -26,8 +26,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "@type", visible = true )
 @JsonSubTypes({
-  @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.connections.entities.Restaurant.class, name = "Restaurant"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.connections.entities.PostalAddress.class, name = "PostalAddress"),
+  @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.connections.entities.Restaurant.class, name = "Restaurant"),
 })
 
 public abstract class BaseEntity {

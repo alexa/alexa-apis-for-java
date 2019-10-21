@@ -36,6 +36,7 @@ public final class SkewTransformProperty extends com.amazon.ask.model.interfaces
     }
 
     private SkewTransformProperty(Builder builder) {
+        super(builder);
         if (builder.skewX != null) {
             this.skewX = builder.skewX;
         }

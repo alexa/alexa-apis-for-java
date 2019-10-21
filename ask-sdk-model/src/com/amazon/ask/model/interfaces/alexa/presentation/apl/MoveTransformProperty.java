@@ -36,6 +36,7 @@ public final class MoveTransformProperty extends com.amazon.ask.model.interfaces
     }
 
     private MoveTransformProperty(Builder builder) {
+        super(builder);
         if (builder.translateX != null) {
             this.translateX = builder.translateX;
         }
