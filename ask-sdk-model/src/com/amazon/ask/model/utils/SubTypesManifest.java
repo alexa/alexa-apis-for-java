@@ -218,6 +218,14 @@ public class SubTypesManifest {
 
   /**
   * @param baseTypeClass Base type to search the subType from
+  * @return Map of types associated with the base type
+  */
+  public static Map<String, Class> getSubType(Class baseTypeClass) {
+    return baseTypes.get(baseTypeClass);
+  }
+
+  /**
+  * @param baseTypeClass Base type to search the subType from
   * @param discriminatorValue String discriminator value to find the subtype from the base class
   * @return Class associated to the provided discriminator value or null if SubType for Parent and discriminator value pair is not found
   */
