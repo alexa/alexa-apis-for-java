@@ -36,7 +36,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.amazonpay.request.SetupAmazonPayRequest.class, name = "SetupAmazonPayRequest"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.amazonpay.model.request.ProviderCredit.class, name = "ProviderCredit"),
 })
-
 public abstract class BaseAmazonPayEntity {
 
     protected String type = null;

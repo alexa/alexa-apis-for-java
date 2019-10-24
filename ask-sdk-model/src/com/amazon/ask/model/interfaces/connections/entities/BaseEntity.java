@@ -29,7 +29,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.connections.entities.PostalAddress.class, name = "PostalAddress"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.connections.entities.Restaurant.class, name = "Restaurant"),
 })
-
 public abstract class BaseEntity {
 
     protected String type = null;

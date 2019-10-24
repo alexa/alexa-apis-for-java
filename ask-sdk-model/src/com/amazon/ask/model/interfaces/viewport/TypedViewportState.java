@@ -29,7 +29,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.viewport.APLViewportState.class, name = "APL"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.viewport.APLTViewportState.class, name = "APLT"),
 })
-
 public abstract class TypedViewportState {
 
     @JsonProperty("id")

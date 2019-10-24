@@ -14,7 +14,7 @@
 package com.amazon.ask.model.services.monetization;
 
 import com.amazon.ask.model.services.*;
-import java.math.BigDecimal;
+import java.math.BigDecimal;import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,4 +23,6 @@ import java.util.List;
 public interface MonetizationService {
     com.amazon.ask.model.services.monetization.InSkillProductsResponse getInSkillProducts(String acceptLanguage, String purchasable, String entitled, String productType, String nextToken, BigDecimal maxResults) throws com.amazon.ask.model.services.ServiceException;
     com.amazon.ask.model.services.monetization.InSkillProduct getInSkillProduct(String acceptLanguage, String productId) throws com.amazon.ask.model.services.ServiceException;
+    com.amazon.ask.model.services.monetization.InSkillProductTransactionsResponse getInSkillProductsTransactions(String acceptLanguage, String productId, String status, OffsetDateTime fromLastModifiedTime, OffsetDateTime toLastModifiedTime, String nextToken, BigDecimal maxResults) throws com.amazon.ask.model.services.ServiceException;
+    Boolean getVoicePurchaseSetting() throws com.amazon.ask.model.services.ServiceException;
 }

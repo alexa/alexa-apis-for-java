@@ -69,7 +69,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
   @JsonSubTypes.Type(value = com.amazon.ask.model.events.skillevents.PermissionAcceptedRequest.class, name = "AlexaSkillEvent.SkillPermissionAccepted"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.playbackcontroller.NextCommandIssuedRequest.class, name = "PlaybackController.NextCommandIssued"),
 })
-
 public abstract class Request {
 
     protected String type = null;

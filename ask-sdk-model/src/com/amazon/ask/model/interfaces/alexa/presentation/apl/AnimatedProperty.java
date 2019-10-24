@@ -29,7 +29,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.AnimatedOpacityProperty.class, name = "opacity"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.AnimatedTransformProperty.class, name = "transform"),
 })
-
 public abstract class AnimatedProperty {
 
     protected String property = null;

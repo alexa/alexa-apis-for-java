@@ -52,7 +52,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.connections.SendResponseDirective.class, name = "Connections.SendResponse"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.audioplayer.ClearQueueDirective.class, name = "AudioPlayer.ClearQueue"),
 })
-
 public abstract class Directive {
 
     protected String type = null;

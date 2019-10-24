@@ -32,7 +32,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.connections.requests.PrintPDFRequest.class, name = "PrintPDFRequest"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.connections.requests.ScheduleTaxiReservationRequest.class, name = "ScheduleTaxiReservationRequest"),
 })
-
 public abstract class BaseRequest {
 
     protected String type = null;

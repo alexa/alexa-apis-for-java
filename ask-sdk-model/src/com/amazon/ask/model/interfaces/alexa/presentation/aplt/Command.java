@@ -35,7 +35,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.aplt.SetPageCommand.class, name = "SetPage"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.aplt.SequentialCommand.class, name = "Sequential"),
 })
-
 public abstract class Command {
 
     protected String type = null;

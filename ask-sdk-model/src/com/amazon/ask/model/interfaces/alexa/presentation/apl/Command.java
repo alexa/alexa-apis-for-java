@@ -45,7 +45,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.SetValueCommand.class, name = "SetValue"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.SetFocusCommand.class, name = "SetFocus"),
 })
-
 public abstract class Command {
 
     protected String type = null;

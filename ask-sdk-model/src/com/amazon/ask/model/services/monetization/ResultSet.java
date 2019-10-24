@@ -12,38 +12,39 @@
 */
 
 
-package com.amazon.ask.model.services.gameEngine;
+package com.amazon.ask.model.services.monetization;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Recognizers are conditions that, at any moment, are either true or false, based on all the raw button events that the Input Handler has received in the time elapsed since the Input Handler session started.
+ * ResultSet
  */
 
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = true )
-@JsonSubTypes({
-  @JsonSubTypes.Type(value = com.amazon.ask.model.services.gameEngine.PatternRecognizer.class, name = "match"),
-  @JsonSubTypes.Type(value = com.amazon.ask.model.services.gameEngine.DeviationRecognizer.class, name = "deviation"),
-  @JsonSubTypes.Type(value = com.amazon.ask.model.services.gameEngine.ProgressRecognizer.class, name = "progress"),
-})
-public abstract class Recognizer {
+@JsonDeserialize(builder = ResultSet.Builder.class)
+public final class ResultSet {
 
-    protected String type = null;
+    @JsonProperty("nextToken")
+    private String nextToken = null;
 
-    protected Recognizer() {
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    private ResultSet(Builder builder) {
+        if (builder.nextToken != null) {
+            this.nextToken = builder.nextToken;
+        }
     }
 
     /**
-     * Get type
-     * @return type
+     * Get nextToken
+     * @return nextToken
     **/
-    @JsonIgnore
-    public String getType() {
-        return type;
+    @JsonProperty("nextToken")
+    public String getNextToken() {
+        return nextToken;
     }
 
     @Override
@@ -54,21 +55,21 @@ public abstract class Recognizer {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        Recognizer servicesGameEngineRecognizer = (Recognizer) o;
-        return Objects.equals(this.type, servicesGameEngineRecognizer.type);
+        ResultSet servicesMonetizationResultSet = (ResultSet) o;
+        return Objects.equals(this.nextToken, servicesMonetizationResultSet.nextToken);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type);
+        return Objects.hash(nextToken);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class Recognizer {\n");
+        sb.append("class ResultSet {\n");
         
-        sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    nextToken: ").append(toIndentedString(nextToken)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -84,5 +85,21 @@ public abstract class Recognizer {
         return o.toString().replace("\n", "\n    ");
     }
   
+    public static class Builder {
+        private String nextToken;
+
+        private Builder() {}
+
+        @JsonProperty("nextToken")
+        public Builder withNextToken(String nextToken) {
+            this.nextToken = nextToken;
+            return this;
+        }
+
+
+        public ResultSet build() {
+            return new ResultSet(this);
+        }
+    }
 }
 

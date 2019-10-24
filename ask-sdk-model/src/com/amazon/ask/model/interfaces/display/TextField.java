@@ -29,7 +29,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.display.RichText.class, name = "RichText"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.display.PlainText.class, name = "PlainText"),
 })
-
 public abstract class TextField {
 
     protected String type = null;

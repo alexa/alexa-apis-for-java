@@ -29,7 +29,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
   @JsonSubTypes.Type(value = com.amazon.ask.model.ui.SsmlOutputSpeech.class, name = "SSML"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.ui.PlainTextOutputSpeech.class, name = "PlainText"),
 })
-
 public abstract class OutputSpeech {
 
     protected String type = null;

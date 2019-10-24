@@ -31,7 +31,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
   @JsonSubTypes.Type(value = com.amazon.ask.model.ui.StandardCard.class, name = "Standard"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.ui.SimpleCard.class, name = "Simple"),
 })
-
 public abstract class Card {
 
     protected String type = null;

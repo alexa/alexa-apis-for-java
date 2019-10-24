@@ -28,7 +28,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonSubTypes({
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.display.PlainTextHint.class, name = "PlainText"),
 })
-
 public abstract class Hint {
 
     protected String type = null;

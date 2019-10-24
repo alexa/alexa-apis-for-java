@@ -29,7 +29,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.viewport.size.ContinuousViewportSize.class, name = "CONTINUOUS"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.viewport.size.DiscreteViewportSize.class, name = "DISCRETE"),
 })
-
 public abstract class ViewportSize {
 
     protected String type = null;

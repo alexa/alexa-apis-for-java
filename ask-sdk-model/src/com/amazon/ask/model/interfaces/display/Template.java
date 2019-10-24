@@ -34,7 +34,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.display.BodyTemplate2.class, name = "BodyTemplate2"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.display.BodyTemplate1.class, name = "BodyTemplate1"),
 })
-
 public abstract class Template {
 
     protected String type = null;

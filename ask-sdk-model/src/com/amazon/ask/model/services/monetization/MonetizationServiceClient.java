@@ -16,6 +16,7 @@ package com.amazon.ask.model.services.monetization;
 import com.amazon.ask.model.services.*;
 import com.amazon.ask.model.services.lwa.*;
 import java.math.BigDecimal;
+import java.time.OffsetDateTime;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,23 +47,23 @@ public class MonetizationServiceClient extends BaseServiceClient implements Mone
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
 
     if(purchasable != null) {
-      queryParams.add(new Pair<String, String>("purchasable", purchasable));
+        queryParams.add(new Pair<String, String>("purchasable", purchasable));
     }
 
     if(entitled != null) {
-      queryParams.add(new Pair<String, String>("entitled", entitled));
+        queryParams.add(new Pair<String, String>("entitled", entitled));
     }
 
     if(productType != null) {
-      queryParams.add(new Pair<String, String>("productType", productType));
+        queryParams.add(new Pair<String, String>("productType", productType));
     }
 
     if(nextToken != null) {
-      queryParams.add(new Pair<String, String>("nextToken", nextToken));
+        queryParams.add(new Pair<String, String>("nextToken", nextToken));
     }
 
     if(maxResults != null) {
-      queryParams.add(new Pair<String, String>("maxResults", maxResults.toString()));
+        queryParams.add(new Pair<String, String>("maxResults", maxResults.toString()));
     }
     Map<String, String> pathParams = new HashMap<String, String>();
     List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
@@ -118,5 +119,94 @@ public class MonetizationServiceClient extends BaseServiceClient implements Mone
 
     return (com.amazon.ask.model.services.monetization.InSkillProduct)this.invoke("GET", this.apiEndpoint, path, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null ,com.amazon.ask.model.services.monetization.InSkillProduct.class);
+  }  /**
+   * 
+   * Returns transactions of all in skill products purchases of the customer
+   * @param acceptLanguage User&#39;s locale/language in context (required)
+   * @param productId Product Id. (optional)
+   * @param status Transaction status for in skill product purchases. * &#39;PENDING_APPROVAL_BY_PARENT&#39; - The transaction is pending approval from parent. * &#39;APPROVED_BY_PARENT&#39; - The transaction was approved by parent and fulfilled successfully.. * &#39;DENIED_BY_PARENT&#39; - The transaction was declined by parent and hence not fulfilled. * &#39;EXPIRED_NO_ACTION_BY_PARENT&#39; - The transaction was expired due to no response from parent and hence not fulfilled. * &#39;ERROR&#39; - The transaction was not fullfiled as there was an error while processing the transaction. (optional)
+   * @param fromLastModifiedTime Filter transactions based on last modified time stamp, FROM duration in format (UTC ISO 8601) i.e. yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSS&#39;Z&#39; (optional)
+   * @param toLastModifiedTime Filter transactions based on last modified time stamp, TO duration in format (UTC ISO 8601) i.e. yyyy-MM-dd&#39;T&#39;HH:mm:ss.SSS&#39;Z&#39; (optional)
+   * @param nextToken When response to this API call is truncated, the response also includes the nextToken in metadata, the value of which can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that In-Skill Products API understands. Token has expiry of 24 hours. (optional)
+   * @param maxResults sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 100 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned because maxResults was exceeded, the response contains nextToken which can be used to fetch next set of result. (optional)
+   * @return com.amazon.ask.model.services.monetization.InSkillProductTransactionsResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.model.services.monetization.InSkillProductTransactionsResponse getInSkillProductsTransactions(String acceptLanguage, String productId, String status, OffsetDateTime fromLastModifiedTime, OffsetDateTime toLastModifiedTime, String nextToken, BigDecimal maxResults) throws com.amazon.ask.model.services.ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+
+    if(productId != null) {
+        queryParams.add(new Pair<String, String>("productId", productId));
+    }
+
+    if(status != null) {
+        queryParams.add(new Pair<String, String>("status", status));
+    }
+
+    if(fromLastModifiedTime != null) {
+        queryParams.add(new Pair<String, String>("fromLastModifiedTime", fromLastModifiedTime.toString()));
+    }
+
+    if(toLastModifiedTime != null) {
+        queryParams.add(new Pair<String, String>("toLastModifiedTime", toLastModifiedTime.toString()));
+    }
+
+    if(nextToken != null) {
+        queryParams.add(new Pair<String, String>("nextToken", nextToken));
+    }
+
+    if(maxResults != null) {
+        queryParams.add(new Pair<String, String>("maxResults", maxResults.toString()));
+    }
+    Map<String, String> pathParams = new HashMap<String, String>();
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    if (acceptLanguage != null) {
+      headerParams.add(new Pair<String, String>("Accept-Language", acceptLanguage));
+    }
+
+    String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
+    headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
+
+    String path = "/v1/users/~current/skills/~current/inSkillProductsTransactions";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.monetization.InSkillProductTransactionsResponse.class, 200, "Returns a list of transactions of all in skill products purchases in last 30 days on success."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.monetization.Error.class, 400, "Invalid request"));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.monetization.Error.class, 401, "The authentication token is invalid or doesn't have access to make this request"));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.monetization.Error.class, 403, "Forbidden request"));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.monetization.Error.class, 404, "Product id doesn't exist / invalid / not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.monetization.Error.class, 412, "Non-Child Directed Skill is not supported."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.monetization.Error.class, 429, "The request is throttled."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.monetization.Error.class, 500, "Internal Server Error"));
+
+    return (com.amazon.ask.model.services.monetization.InSkillProductTransactionsResponse)this.invoke("GET", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null ,com.amazon.ask.model.services.monetization.InSkillProductTransactionsResponse.class);
+  }  /**
+   * 
+   * Returns whether or not voice purchasing is enabled for the skill
+   * @return Boolean
+   * @throws ServiceException if fails to make API call
+   */
+  public Boolean getVoicePurchaseSetting() throws com.amazon.ask.model.services.ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+    Map<String, String> pathParams = new HashMap<String, String>();
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
+    headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
+
+    String path = "/v1/users/~current/skills/~current/settings/voicePurchasing.enabled";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(Boolean.class, 200, "Returns a boolean value for voice purchase setting on success."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.monetization.Error.class, 400, "Invalid request."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.monetization.Error.class, 401, "The authentication token is invalid or doesn't have access to make this request"));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.monetization.Error.class, 500, "Internal Server Error."));
+
+    return (Boolean)this.invoke("GET", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null ,Boolean.class);
   }
 }

@@ -28,7 +28,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonSubTypes({
   @JsonSubTypes.Type(value = com.amazon.ask.model.services.directive.SpeakDirective.class, name = "VoicePlayer.Speak"),
 })
-
 public abstract class Directive {
 
     protected String type = null;

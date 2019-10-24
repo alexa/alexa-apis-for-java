@@ -28,7 +28,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonSubTypes({
   @JsonSubTypes.Type(value = com.amazon.ask.model.ConnectionCompleted.class, name = "ConnectionCompleted"),
 })
-
 public abstract class Cause {
 
     protected String type = null;
