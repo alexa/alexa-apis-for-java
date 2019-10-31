@@ -34,6 +34,9 @@ public final class SystemState {
     @JsonProperty("device")
     private com.amazon.ask.model.Device device = null;
 
+    @JsonProperty("person")
+    private com.amazon.ask.model.Person person = null;
+
     @JsonProperty("apiEndpoint")
     private String apiEndpoint = null;
 
@@ -53,6 +56,9 @@ public final class SystemState {
         }
         if (builder.device != null) {
             this.device = builder.device;
+        }
+        if (builder.person != null) {
+            this.person = builder.person;
         }
         if (builder.apiEndpoint != null) {
             this.apiEndpoint = builder.apiEndpoint;
@@ -90,6 +96,15 @@ public final class SystemState {
     }
 
     /**
+     * Get person
+     * @return person
+    **/
+    @JsonProperty("person")
+    public com.amazon.ask.model.Person getPerson() {
+        return person;
+    }
+
+    /**
      * A string that references the correct base URI to refer to by region, for use with APIs such as the Device Location API and Progressive Response API.
      * @return apiEndpoint
     **/
@@ -119,13 +134,14 @@ public final class SystemState {
         return Objects.equals(this.application, interfacesSystemSystemState.application) &&
             Objects.equals(this.user, interfacesSystemSystemState.user) &&
             Objects.equals(this.device, interfacesSystemSystemState.device) &&
+            Objects.equals(this.person, interfacesSystemSystemState.person) &&
             Objects.equals(this.apiEndpoint, interfacesSystemSystemState.apiEndpoint) &&
             Objects.equals(this.apiAccessToken, interfacesSystemSystemState.apiAccessToken);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(application, user, device, apiEndpoint, apiAccessToken);
+        return Objects.hash(application, user, device, person, apiEndpoint, apiAccessToken);
     }
 
     @Override
@@ -136,6 +152,7 @@ public final class SystemState {
         sb.append("    application: ").append(toIndentedString(application)).append("\n");
         sb.append("    user: ").append(toIndentedString(user)).append("\n");
         sb.append("    device: ").append(toIndentedString(device)).append("\n");
+        sb.append("    person: ").append(toIndentedString(person)).append("\n");
         sb.append("    apiEndpoint: ").append(toIndentedString(apiEndpoint)).append("\n");
         sb.append("    apiAccessToken: ").append(toIndentedString(apiAccessToken)).append("\n");
         sb.append("}");
@@ -157,6 +174,7 @@ public final class SystemState {
         private com.amazon.ask.model.Application application;
         private com.amazon.ask.model.User user;
         private com.amazon.ask.model.Device device;
+        private com.amazon.ask.model.Person person;
         private String apiEndpoint;
         private String apiAccessToken;
 
@@ -179,6 +197,13 @@ public final class SystemState {
         @JsonProperty("device")
         public Builder withDevice(com.amazon.ask.model.Device device) {
             this.device = device;
+            return this;
+        }
+
+
+        @JsonProperty("person")
+        public Builder withPerson(com.amazon.ask.model.Person person) {
+            this.person = person;
             return this;
         }
 
