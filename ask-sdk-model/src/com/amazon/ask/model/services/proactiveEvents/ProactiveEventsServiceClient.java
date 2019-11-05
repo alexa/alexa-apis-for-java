@@ -49,7 +49,7 @@ public class ProactiveEventsServiceClient extends BaseServiceClient implements P
    * @param createProactiveEventRequest Request to create a new proactive event. (required)
    * @throws ServiceException if fails to make API call
    */
-  public void createProactiveEvent(com.amazon.ask.model.services.proactiveEvents.CreateProactiveEventRequest createProactiveEventRequest, com.amazon.ask.model.services.proactiveEvents.SkillStage stage) throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<Void> callCreateProactiveEvent(com.amazon.ask.model.services.proactiveEvents.CreateProactiveEventRequest createProactiveEventRequest, com.amazon.ask.model.services.proactiveEvents.SkillStage stage) throws com.amazon.ask.model.services.ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
     List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
@@ -60,7 +60,7 @@ public class ProactiveEventsServiceClient extends BaseServiceClient implements P
 
     String path = "/v1/proactiveEvents";
     if (stage == com.amazon.ask.model.services.proactiveEvents.SkillStage.DEVELOPMENT) {
-        path += "/stages/development";
+      path += "/stages/development";
     }
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
@@ -72,7 +72,18 @@ public class ProactiveEventsServiceClient extends BaseServiceClient implements P
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.proactiveEvents.Error.class, 500, "The ProactiveEvents service encounters an internal error for a valid request."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.proactiveEvents.Error.class, 0, "Unexpected error"));
 
-    this.invoke("POST", this.apiEndpoint, path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, createProactiveEventRequest ,null);
+    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, createProactiveEventRequest ,null, false);
   }
+
+  /**
+   * 
+   * Create a new proactive event in live stage.
+   * @param createProactiveEventRequest Request to create a new proactive event. (required)
+   * @throws ServiceException if fails to make API call
+   */
+  public void createProactiveEvent(com.amazon.ask.model.services.proactiveEvents.CreateProactiveEventRequest createProactiveEventRequest, com.amazon.ask.model.services.proactiveEvents.SkillStage stage) throws com.amazon.ask.model.services.ServiceException {
+    this.callCreateProactiveEvent(createProactiveEventRequest, stage).getResponse();
+  }
+
 }

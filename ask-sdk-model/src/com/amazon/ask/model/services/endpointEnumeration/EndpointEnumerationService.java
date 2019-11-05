@@ -21,5 +21,9 @@ import java.util.List;
 
 
 public interface EndpointEnumerationService {
+
     com.amazon.ask.model.services.endpointEnumeration.EndpointEnumerationResponse getEndpoints() throws com.amazon.ask.model.services.ServiceException;
+
+    ApiResponse<com.amazon.ask.model.services.endpointEnumeration.EndpointEnumerationResponse> callGetEndpoints() throws com.amazon.ask.model.services.ServiceException;
+
 }

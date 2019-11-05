@@ -35,7 +35,7 @@ public class DirectiveServiceClient extends BaseServiceClient implements Directi
    * @param sendDirectiveRequest Represents the request object to send in the payload. (required)
    * @throws ServiceException if fails to make API call
    */
-  public void enqueue(com.amazon.ask.model.services.directive.SendDirectiveRequest sendDirectiveRequest) throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<Void> callEnqueue(com.amazon.ask.model.services.directive.SendDirectiveRequest sendDirectiveRequest) throws com.amazon.ask.model.services.ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
     List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
@@ -53,7 +53,18 @@ public class DirectiveServiceClient extends BaseServiceClient implements Directi
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.directive.Error.class, 403, "The skill is not allowed to send directives at the moment."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.directive.Error.class, 0, "Unexpected error."));
 
-    this.invoke("POST", this.apiEndpoint, path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, sendDirectiveRequest ,null);
+    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, sendDirectiveRequest ,null, false);
   }
+
+  /**
+   * 
+   * Send directives to Alexa.
+   * @param sendDirectiveRequest Represents the request object to send in the payload. (required)
+   * @throws ServiceException if fails to make API call
+   */
+  public void enqueue(com.amazon.ask.model.services.directive.SendDirectiveRequest sendDirectiveRequest) throws com.amazon.ask.model.services.ServiceException {
+    this.callEnqueue(sendDirectiveRequest).getResponse();
+  }
+
 }

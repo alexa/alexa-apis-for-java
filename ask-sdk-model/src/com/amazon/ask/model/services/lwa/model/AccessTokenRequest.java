@@ -28,12 +28,16 @@ public class AccessTokenRequest {
     @JsonProperty("client_secret")
     private String clientSecret;
 
+    @JsonProperty("refresh_token")
+    private String refreshToken;
+
     @JsonProperty("scope")
     private String scope;
 
     private AccessTokenRequest(Builder builder) {
         this.clientId = builder.clientId;
         this.clientSecret = builder.clientSecret;
+        this.refreshToken = builder.refreshToken;
         this.scope = builder.scope;
     }
 
@@ -49,6 +53,8 @@ public class AccessTokenRequest {
         return clientSecret;
     }
 
+    public String getRefreshToken() { return refreshToken; }
+
     public String getScope() {
         return scope;
     }
@@ -56,6 +62,7 @@ public class AccessTokenRequest {
     public static class Builder {
         private String clientId;
         private String clientSecret;
+        private String refreshToken;
         private String scope;
 
         private Builder() {}
@@ -69,6 +76,12 @@ public class AccessTokenRequest {
         @JsonProperty("client_secret")
         public Builder withClientSecret(String clientSecret) {
             this.clientSecret = clientSecret;
+            return this;
+        }
+
+        @JsonProperty("refresh_token")
+        public Builder withRefreshToken(String refreshToken) {
+            this.refreshToken = refreshToken;
             return this;
         }
 

@@ -21,6 +21,14 @@ import java.util.List;
 
 
 public interface DeviceAddressService {
+
     com.amazon.ask.model.services.deviceAddress.ShortAddress getCountryAndPostalCode(String deviceId) throws com.amazon.ask.model.services.ServiceException;
+
+    ApiResponse<com.amazon.ask.model.services.deviceAddress.ShortAddress> callGetCountryAndPostalCode(String deviceId) throws com.amazon.ask.model.services.ServiceException;
+
+
     com.amazon.ask.model.services.deviceAddress.Address getFullAddress(String deviceId) throws com.amazon.ask.model.services.ServiceException;
+
+    ApiResponse<com.amazon.ask.model.services.deviceAddress.Address> callGetFullAddress(String deviceId) throws com.amazon.ask.model.services.ServiceException;
+
 }

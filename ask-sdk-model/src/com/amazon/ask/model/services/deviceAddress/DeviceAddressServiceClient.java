@@ -36,10 +36,10 @@ public class DeviceAddressServiceClient extends BaseServiceClient implements Dev
    * @return com.amazon.ask.model.services.deviceAddress.ShortAddress
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.model.services.deviceAddress.ShortAddress getCountryAndPostalCode(String deviceId) throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<com.amazon.ask.model.services.deviceAddress.ShortAddress> callGetCountryAndPostalCode(String deviceId) throws com.amazon.ask.model.services.ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
-      pathParams.put("deviceId", deviceId);
+    pathParams.put("deviceId", deviceId);
     List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
     headerParams.add(new Pair<String, String>("Content-type", "application/json"));
 
@@ -56,19 +56,32 @@ public class DeviceAddressServiceClient extends BaseServiceClient implements Dev
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.deviceAddress.Error.class, 429, "The request is throttled"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.deviceAddress.Error.class, 0, "Unexpected error"));
 
-    return (com.amazon.ask.model.services.deviceAddress.ShortAddress)this.invoke("GET", this.apiEndpoint, path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, null ,com.amazon.ask.model.services.deviceAddress.ShortAddress.class);
-  }  /**
+    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null ,com.amazon.ask.model.services.deviceAddress.ShortAddress.class, false);
+  }
+
+  /**
+   * 
+   * Gets the country and postal code of a device 
+   * @param deviceId The device Id for which to get the country and postal code (required)
+   * @return com.amazon.ask.model.services.deviceAddress.ShortAddress
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.model.services.deviceAddress.ShortAddress getCountryAndPostalCode(String deviceId) throws com.amazon.ask.model.services.ServiceException {
+    return this.callGetCountryAndPostalCode(deviceId).getResponse();
+  }
+
+  /**
    * 
    * Gets the address of a device 
    * @param deviceId The device Id for which to get the address (required)
    * @return com.amazon.ask.model.services.deviceAddress.Address
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.model.services.deviceAddress.Address getFullAddress(String deviceId) throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<com.amazon.ask.model.services.deviceAddress.Address> callGetFullAddress(String deviceId) throws com.amazon.ask.model.services.ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
-      pathParams.put("deviceId", deviceId);
+    pathParams.put("deviceId", deviceId);
     List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
     headerParams.add(new Pair<String, String>("Content-type", "application/json"));
 
@@ -85,7 +98,19 @@ public class DeviceAddressServiceClient extends BaseServiceClient implements Dev
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.deviceAddress.Error.class, 429, "The request is throttled"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.deviceAddress.Error.class, 0, "Unexpected error"));
 
-    return (com.amazon.ask.model.services.deviceAddress.Address)this.invoke("GET", this.apiEndpoint, path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, null ,com.amazon.ask.model.services.deviceAddress.Address.class);
+    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null ,com.amazon.ask.model.services.deviceAddress.Address.class, false);
   }
+
+  /**
+   * 
+   * Gets the address of a device 
+   * @param deviceId The device Id for which to get the address (required)
+   * @return com.amazon.ask.model.services.deviceAddress.Address
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.model.services.deviceAddress.Address getFullAddress(String deviceId) throws com.amazon.ask.model.services.ServiceException {
+    return this.callGetFullAddress(deviceId).getResponse();
+  }
+
 }

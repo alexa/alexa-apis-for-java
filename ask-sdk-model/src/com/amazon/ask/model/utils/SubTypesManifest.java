@@ -32,6 +32,7 @@ public class SubTypesManifest {
 
     Map<String, Class> directiveSubTypes = new HashMap<>();
     directiveSubTypes.put("CustomInterfaceController.StopEventHandler", com.amazon.ask.model.interfaces.customInterfaceController.StopEventHandlerDirective.class);
+    directiveSubTypes.put("Navigation.Assistance.AnnounceRoadRegulation", com.amazon.ask.model.interfaces.navigation.assistance.AnnounceRoadRegulation.class);
     directiveSubTypes.put("Connections.SendRequest", com.amazon.ask.model.interfaces.connections.SendRequestDirective.class);
     directiveSubTypes.put("Dialog.UpdateDynamicEntities", com.amazon.ask.model.dialog.DynamicEntitiesDirective.class);
     directiveSubTypes.put("CustomInterfaceController.StartEventHandler", com.amazon.ask.model.interfaces.customInterfaceController.StartEventHandlerDirective.class);

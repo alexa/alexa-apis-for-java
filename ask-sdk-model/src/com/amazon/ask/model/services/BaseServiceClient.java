@@ -15,6 +15,8 @@ package com.amazon.ask.model.services;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -54,6 +56,7 @@ public abstract class BaseServiceClient {
    * @throws ServiceException Thrown when a failure happens or when getting an Error Response from
    * the Api.
    */
+  @Deprecated
   protected Object invoke(String method, String endpoint, String path, List<Pair<String, String>> queryParams,
       List<Pair<String, String>> headerParams, Map<String, String> pathParams,
       List<ServiceClientResponse> responseDefinitions, Object body, Class responseType) throws ServiceException {
@@ -77,12 +80,34 @@ public abstract class BaseServiceClient {
      * @throws ServiceException Thrown when a failure happens or when getting an Error Response from
      * the Api.
      */
+    @Deprecated
     protected Object invoke(String method, String endpoint, String path, List<Pair<String, String>> queryParams,
             List<Pair<String, String>> headerParams, Map<String, String> pathParams,
             List<ServiceClientResponse> responseDefinitions, Object body, Class responseType, boolean rawRequest) throws ServiceException {
+      ApiResponse<?> response = executeRequest(method, endpoint, path, queryParams, headerParams, pathParams, responseDefinitions, body, responseType, rawRequest);
+      return response != null ? response.getResponse() : null;
+  }
 
-
-      ApiClientRequest request = new ApiClientRequest();
+  /**
+   * Calls the ApiClient based on the ServiceClient specific data provided as well as handles the
+   * well-known responses from the Api
+   * @param method Http Method
+   * @param endpoint Base Endpoint to make the request to
+   * @param path Specific path to hit. It might contain variables to be interpolated with pathParams.
+   * @param queryParams Parameter values to be sent as part of the query string
+   * @param headerParams Parameter values to be sent as headers
+   * @param pathParams Parameter values to be interpolated in the path
+   * @param responseDefinitions Well-known expected responses by the ServiceClient
+   * @param body Request body
+   * @param responseType Type of the expected Response if applicable
+   * @return ApiResponse containing a Response object instance of the responseType provided
+   * @throws ServiceException Thrown when a failure happens or when getting an Error Response from
+   * the Api.
+   */
+  protected <T> ApiResponse<T> executeRequest(String method, String endpoint, String path, List<Pair<String, String>> queryParams,
+                                          List<Pair<String, String>> headerParams, Map<String, String> pathParams,
+                                          List<ServiceClientResponse> responseDefinitions, Object body, Class<T> responseType, boolean rawRequest) throws ServiceException {
+    ApiClientRequest request = new ApiClientRequest();
     request.setUrl(buildUrl(endpoint, path, queryParams, pathParams));
     request.setMethod(method);
     request.setHeaders(headerParams);
@@ -102,28 +127,25 @@ public abstract class BaseServiceClient {
     }
 
     if (isCodeSuccessful(response.getStatusCode())) {
-      if (responseType == null) {
-        return null;
-      }
-
       //  Body of 204 (No Content) response should be empty (see https://tools.ietf.org/html/rfc7231#section-6.3.5).
       //  Return null immediately, empty body is not a valid json value and therefore can't be successfully parsed.
-      if(response.getStatusCode() == 204 && (response.getBody() == null || "".equals(response.getBody()))) {
-        return null;
+      if (responseType == null || (response.getStatusCode() == 204 && (response.getBody() == null || "".equals(response.getBody())))) {
+        return new ApiResponse<T>(null, response.getStatusCode(), response.getHeaders());
       }
 
-      return this.serializer.deserialize(response.getBody(), responseType);
+      T unmarshalledResponse = this.serializer.deserialize(response.getBody(), responseType);
+      return new ApiResponse<T>(unmarshalledResponse, response.getStatusCode(), response.getHeaders());
     }
 
     ServiceClientResponse errorMetadata = responseDefinitions.stream()
-        .filter(x -> x.getStatusCode() == response.getStatusCode())
-        .findFirst()
-        .orElseThrow(() -> new ServiceException("Unknown error", response.getStatusCode(),
-            response.getHeaders(), response.getBody()));
+            .filter(x -> x.getStatusCode() == response.getStatusCode())
+            .findFirst()
+            .orElseThrow(() -> new ServiceException("Unknown error", response.getStatusCode(),
+                    response.getHeaders(), response.getBody()));
 
     Object errorBody = this.serializer.deserialize(response.getBody(), errorMetadata.getType());
     throw new ServiceException(errorMetadata.getMessage(), errorMetadata.getStatusCode(),
-        response.getHeaders(), errorBody);
+            response.getHeaders(), errorBody);
   }
 
   /**

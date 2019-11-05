@@ -10,29 +10,22 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for
  * the specific language governing permissions and limitations under the License.
  */
-package com.amazon.ask.model.services;
 
-/**
- * Abstraction for authentication configuration for a client ID and client secret.
- */
-public interface AuthenticationConfiguration {
+package com.amazon.ask.model.services.lwa.model;
 
-    /**
-     * Retrieves the configured client ID.
-     * @return client ID
-     */
-    String getClientId();
+public enum GrantType {
 
-    /**
-     * Retrieves the configured client secret.
-     * @return client secret
-     */
-    String getClientSecret();
+    CLIENT_CREDENTIALS("client_credentials"),
+    REFRESH_TOKEN("refresh_token");
 
-    /**
-     * Retrieves the configured refresh token.
-     * @return refresh token
-     */
-    String getRefreshToken();
+    private String grantTypeValue;
+
+    public String getValue() {
+        return this.grantTypeValue;
+    }
+
+    GrantType(String value) {
+        this.grantTypeValue = value;
+    }
 
 }

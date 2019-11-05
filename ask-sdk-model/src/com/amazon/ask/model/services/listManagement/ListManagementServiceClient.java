@@ -35,7 +35,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
    * @return com.amazon.ask.model.services.listManagement.AlexaListsMetadata
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.model.services.listManagement.AlexaListsMetadata getListsMetadata() throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<com.amazon.ask.model.services.listManagement.AlexaListsMetadata> callGetListsMetadata() throws com.amazon.ask.model.services.ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
     List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
@@ -51,18 +51,30 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.ForbiddenError.class, 403, "Forbidden"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 500, "Internal Server Error"));
 
-    return (com.amazon.ask.model.services.listManagement.AlexaListsMetadata)this.invoke("GET", "https://api.amazonalexa.com/", path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, null ,com.amazon.ask.model.services.listManagement.AlexaListsMetadata.class);
-  }  /**
+    return this.executeRequest("GET", "https://api.amazonalexa.com/", path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null ,com.amazon.ask.model.services.listManagement.AlexaListsMetadata.class, false);
+  }
+
+  /**
+   * 
+   * Retrieves the metadata for all customer lists, including the customer’s default lists. 
+   * @return com.amazon.ask.model.services.listManagement.AlexaListsMetadata
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.model.services.listManagement.AlexaListsMetadata getListsMetadata() throws com.amazon.ask.model.services.ServiceException {
+    return this.callGetListsMetadata().getResponse();
+  }
+
+  /**
    * 
    * This API deletes a customer custom list.
    * @param listId Value of the customer’s listId retrieved from a getListsMetadata call (required)
    * @throws ServiceException if fails to make API call
    */
-  public void deleteList(String listId) throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<Void> callDeleteList(String listId) throws com.amazon.ask.model.services.ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
-      pathParams.put("listId", listId);
+    pathParams.put("listId", listId);
     List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
     headerParams.add(new Pair<String, String>("Content-type", "application/json"));
 
@@ -78,20 +90,32 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 500, "Internal Server Error"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 0, "Internal Server Error"));
 
-    this.invoke("DELETE", "https://api.amazonalexa.com/", path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, null ,null);
-  }  /**
+    return this.executeRequest("DELETE", "https://api.amazonalexa.com/", path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null ,null, false);
+  }
+
+  /**
+   * 
+   * This API deletes a customer custom list.
+   * @param listId Value of the customer’s listId retrieved from a getListsMetadata call (required)
+   * @throws ServiceException if fails to make API call
+   */
+  public void deleteList(String listId) throws com.amazon.ask.model.services.ServiceException {
+    this.callDeleteList(listId).getResponse();
+  }
+
+  /**
    * 
    * This API deletes an item in the specified list.
    * @param listId The customer’s listId is retrieved from a getListsMetadata call. (required)
    * @param itemId The customer’s itemId is retrieved from a GetList call. (required)
    * @throws ServiceException if fails to make API call
    */
-  public void deleteListItem(String listId, String itemId) throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<Void> callDeleteListItem(String listId, String itemId) throws com.amazon.ask.model.services.ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
-      pathParams.put("listId", listId);
-      pathParams.put("itemId", itemId);
+    pathParams.put("listId", listId);
+    pathParams.put("itemId", itemId);
     List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
     headerParams.add(new Pair<String, String>("Content-type", "application/json"));
 
@@ -107,9 +131,22 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 500, "Internal Server Error"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 0, "Internal Server Error"));
 
-    this.invoke("DELETE", "https://api.amazonalexa.com/", path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, null ,null);
-  }  /**
+    return this.executeRequest("DELETE", "https://api.amazonalexa.com/", path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null ,null, false);
+  }
+
+  /**
+   * 
+   * This API deletes an item in the specified list.
+   * @param listId The customer’s listId is retrieved from a getListsMetadata call. (required)
+   * @param itemId The customer’s itemId is retrieved from a GetList call. (required)
+   * @throws ServiceException if fails to make API call
+   */
+  public void deleteListItem(String listId, String itemId) throws com.amazon.ask.model.services.ServiceException {
+    this.callDeleteListItem(listId, itemId).getResponse();
+  }
+
+  /**
    * 
    * This API can be used to retrieve single item with in any list by listId and itemId. This API can read list items from an archived list. Attempting to read list items from a deleted list return an ObjectNotFound 404 error. 
    * @param listId Retrieved from a call to getListsMetadata (required)
@@ -117,11 +154,11 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
    * @return com.amazon.ask.model.services.listManagement.AlexaListItem
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.model.services.listManagement.AlexaListItem getListItem(String listId, String itemId) throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<com.amazon.ask.model.services.listManagement.AlexaListItem> callGetListItem(String listId, String itemId) throws com.amazon.ask.model.services.ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
-      pathParams.put("listId", listId);
-      pathParams.put("itemId", itemId);
+    pathParams.put("listId", listId);
+    pathParams.put("itemId", itemId);
     List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
     headerParams.add(new Pair<String, String>("Content-type", "application/json"));
 
@@ -137,9 +174,23 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 500, "Internal Server Error"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 0, "Internal Server Error"));
 
-    return (com.amazon.ask.model.services.listManagement.AlexaListItem)this.invoke("GET", "https://api.amazonalexa.com/", path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, null ,com.amazon.ask.model.services.listManagement.AlexaListItem.class);
-  }  /**
+    return this.executeRequest("GET", "https://api.amazonalexa.com/", path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null ,com.amazon.ask.model.services.listManagement.AlexaListItem.class, false);
+  }
+
+  /**
+   * 
+   * This API can be used to retrieve single item with in any list by listId and itemId. This API can read list items from an archived list. Attempting to read list items from a deleted list return an ObjectNotFound 404 error. 
+   * @param listId Retrieved from a call to getListsMetadata (required)
+   * @param itemId itemId within a list is retrieved from a getList call (required)
+   * @return com.amazon.ask.model.services.listManagement.AlexaListItem
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.model.services.listManagement.AlexaListItem getListItem(String listId, String itemId) throws com.amazon.ask.model.services.ServiceException {
+    return this.callGetListItem(listId, itemId).getResponse();
+  }
+
+  /**
    * 
    * API used to update an item value or item status.
    * @param listId Customer’s listId (required)
@@ -148,11 +199,11 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
    * @return com.amazon.ask.model.services.listManagement.AlexaListItem
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.model.services.listManagement.AlexaListItem updateListItem(String listId, String itemId, com.amazon.ask.model.services.listManagement.UpdateListItemRequest updateListItemRequest) throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<com.amazon.ask.model.services.listManagement.AlexaListItem> callUpdateListItem(String listId, String itemId, com.amazon.ask.model.services.listManagement.UpdateListItemRequest updateListItemRequest) throws com.amazon.ask.model.services.ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
-      pathParams.put("listId", listId);
-      pathParams.put("itemId", itemId);
+    pathParams.put("listId", listId);
+    pathParams.put("itemId", itemId);
     List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
     headerParams.add(new Pair<String, String>("Content-type", "application/json"));
 
@@ -169,9 +220,24 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 500, "Internal Server Error"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 0, "Internal Server Error"));
 
-    return (com.amazon.ask.model.services.listManagement.AlexaListItem)this.invoke("PUT", "https://api.amazonalexa.com/", path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, updateListItemRequest ,com.amazon.ask.model.services.listManagement.AlexaListItem.class);
-  }  /**
+    return this.executeRequest("PUT", "https://api.amazonalexa.com/", path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, updateListItemRequest ,com.amazon.ask.model.services.listManagement.AlexaListItem.class, false);
+  }
+
+  /**
+   * 
+   * API used to update an item value or item status.
+   * @param listId Customer’s listId (required)
+   * @param itemId itemId to be updated in the list (required)
+   * @param updateListItemRequest  (required)
+   * @return com.amazon.ask.model.services.listManagement.AlexaListItem
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.model.services.listManagement.AlexaListItem updateListItem(String listId, String itemId, com.amazon.ask.model.services.listManagement.UpdateListItemRequest updateListItemRequest) throws com.amazon.ask.model.services.ServiceException {
+    return this.callUpdateListItem(listId, itemId, updateListItemRequest).getResponse();
+  }
+
+  /**
    * 
    * This API creates an item in an active list or in a default list.
    * @param listId The customer’s listId retrieved from a getListsMetadata call. (required)
@@ -179,10 +245,10 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
    * @return com.amazon.ask.model.services.listManagement.AlexaListItem
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.model.services.listManagement.AlexaListItem createListItem(String listId, com.amazon.ask.model.services.listManagement.CreateListItemRequest createListItemRequest) throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<com.amazon.ask.model.services.listManagement.AlexaListItem> callCreateListItem(String listId, com.amazon.ask.model.services.listManagement.CreateListItemRequest createListItemRequest) throws com.amazon.ask.model.services.ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
-      pathParams.put("listId", listId);
+    pathParams.put("listId", listId);
     List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
     headerParams.add(new Pair<String, String>("Content-type", "application/json"));
 
@@ -199,9 +265,23 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 500, "Internal Server Error"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 0, "Internal Server Error"));
 
-    return (com.amazon.ask.model.services.listManagement.AlexaListItem)this.invoke("POST", "https://api.amazonalexa.com/", path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, createListItemRequest ,com.amazon.ask.model.services.listManagement.AlexaListItem.class);
-  }  /**
+    return this.executeRequest("POST", "https://api.amazonalexa.com/", path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, createListItemRequest ,com.amazon.ask.model.services.listManagement.AlexaListItem.class, false);
+  }
+
+  /**
+   * 
+   * This API creates an item in an active list or in a default list.
+   * @param listId The customer’s listId retrieved from a getListsMetadata call. (required)
+   * @param createListItemRequest  (required)
+   * @return com.amazon.ask.model.services.listManagement.AlexaListItem
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.model.services.listManagement.AlexaListItem createListItem(String listId, com.amazon.ask.model.services.listManagement.CreateListItemRequest createListItemRequest) throws com.amazon.ask.model.services.ServiceException {
+    return this.callCreateListItem(listId, createListItemRequest).getResponse();
+  }
+
+  /**
    * 
    * This API updates a custom list. Only the list name or state can be updated. An Alexa customer can turn an archived list into an active one. 
    * @param listId Value of the customer’s listId retrieved from a getListsMetadata call.  (required)
@@ -209,10 +289,10 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
    * @return com.amazon.ask.model.services.listManagement.AlexaListMetadata
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.model.services.listManagement.AlexaListMetadata updateList(String listId, com.amazon.ask.model.services.listManagement.UpdateListRequest updateListRequest) throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<com.amazon.ask.model.services.listManagement.AlexaListMetadata> callUpdateList(String listId, com.amazon.ask.model.services.listManagement.UpdateListRequest updateListRequest) throws com.amazon.ask.model.services.ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
-      pathParams.put("listId", listId);
+    pathParams.put("listId", listId);
     List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
     headerParams.add(new Pair<String, String>("Content-type", "application/json"));
 
@@ -230,9 +310,23 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 500, "Internal Server Error"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 0, "Internal Server Error"));
 
-    return (com.amazon.ask.model.services.listManagement.AlexaListMetadata)this.invoke("PUT", "https://api.amazonalexa.com/", path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, updateListRequest ,com.amazon.ask.model.services.listManagement.AlexaListMetadata.class);
-  }  /**
+    return this.executeRequest("PUT", "https://api.amazonalexa.com/", path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, updateListRequest ,com.amazon.ask.model.services.listManagement.AlexaListMetadata.class, false);
+  }
+
+  /**
+   * 
+   * This API updates a custom list. Only the list name or state can be updated. An Alexa customer can turn an archived list into an active one. 
+   * @param listId Value of the customer’s listId retrieved from a getListsMetadata call.  (required)
+   * @param updateListRequest  (required)
+   * @return com.amazon.ask.model.services.listManagement.AlexaListMetadata
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.model.services.listManagement.AlexaListMetadata updateList(String listId, com.amazon.ask.model.services.listManagement.UpdateListRequest updateListRequest) throws com.amazon.ask.model.services.ServiceException {
+    return this.callUpdateList(listId, updateListRequest).getResponse();
+  }
+
+  /**
    * 
    * Retrieves the list metadata including the items in the list with requested status. 
    * @param listId Retrieved from a call to GetListsMetadata to specify the listId in the request path.  (required)
@@ -240,11 +334,11 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
    * @return com.amazon.ask.model.services.listManagement.AlexaList
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.model.services.listManagement.AlexaList getList(String listId, String status) throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<com.amazon.ask.model.services.listManagement.AlexaList> callGetList(String listId, String status) throws com.amazon.ask.model.services.ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
-      pathParams.put("listId", listId);
-      pathParams.put("status", status);
+    pathParams.put("listId", listId);
+    pathParams.put("status", status);
     List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
     headerParams.add(new Pair<String, String>("Content-type", "application/json"));
 
@@ -261,16 +355,30 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 500, "Internal Server Error"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 0, "Internal Server Error"));
 
-    return (com.amazon.ask.model.services.listManagement.AlexaList)this.invoke("GET", "https://api.amazonalexa.com/", path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, null ,com.amazon.ask.model.services.listManagement.AlexaList.class);
-  }  /**
+    return this.executeRequest("GET", "https://api.amazonalexa.com/", path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null ,com.amazon.ask.model.services.listManagement.AlexaList.class, false);
+  }
+
+  /**
+   * 
+   * Retrieves the list metadata including the items in the list with requested status. 
+   * @param listId Retrieved from a call to GetListsMetadata to specify the listId in the request path.  (required)
+   * @param status Specify the status of the list.  (required)
+   * @return com.amazon.ask.model.services.listManagement.AlexaList
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.model.services.listManagement.AlexaList getList(String listId, String status) throws com.amazon.ask.model.services.ServiceException {
+    return this.callGetList(listId, status).getResponse();
+  }
+
+  /**
    * 
    * This API creates a custom list. The new list name must be different than any existing list name. 
    * @param createListRequest  (required)
    * @return com.amazon.ask.model.services.listManagement.AlexaListMetadata
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.model.services.listManagement.AlexaListMetadata createList(com.amazon.ask.model.services.listManagement.CreateListRequest createListRequest) throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<com.amazon.ask.model.services.listManagement.AlexaListMetadata> callCreateList(com.amazon.ask.model.services.listManagement.CreateListRequest createListRequest) throws com.amazon.ask.model.services.ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
     List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
@@ -289,7 +397,19 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 500, "Internal Server Error"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 0, "Internal Server Error"));
 
-    return (com.amazon.ask.model.services.listManagement.AlexaListMetadata)this.invoke("POST", "https://api.amazonalexa.com/", path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, createListRequest ,com.amazon.ask.model.services.listManagement.AlexaListMetadata.class);
+    return this.executeRequest("POST", "https://api.amazonalexa.com/", path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, createListRequest ,com.amazon.ask.model.services.listManagement.AlexaListMetadata.class, false);
   }
+
+  /**
+   * 
+   * This API creates a custom list. The new list name must be different than any existing list name. 
+   * @param createListRequest  (required)
+   * @return com.amazon.ask.model.services.listManagement.AlexaListMetadata
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.model.services.listManagement.AlexaListMetadata createList(com.amazon.ask.model.services.listManagement.CreateListRequest createListRequest) throws com.amazon.ask.model.services.ServiceException {
+    return this.callCreateList(createListRequest).getResponse();
+  }
+
 }

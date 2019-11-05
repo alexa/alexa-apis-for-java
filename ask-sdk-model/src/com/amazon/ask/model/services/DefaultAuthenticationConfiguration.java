@@ -19,10 +19,12 @@ public class DefaultAuthenticationConfiguration implements AuthenticationConfigu
 
     private final String clientId;
     private final String clientSecret;
+    private final String refreshToken;
 
-    protected DefaultAuthenticationConfiguration(String clientId, String clientSecret) {
+    protected DefaultAuthenticationConfiguration(String clientId, String clientSecret, String refreshToken) {
         this.clientId = clientId;
         this.clientSecret = clientSecret;
+        this.refreshToken = refreshToken;
     }
 
     public static Builder builder() {
@@ -45,9 +47,16 @@ public class DefaultAuthenticationConfiguration implements AuthenticationConfigu
         return clientSecret;
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String getRefreshToken() { return refreshToken; }
+
     public static class Builder {
         private String clientId;
         private String clientSecret;
+        private String refreshToken;
 
         public Builder withClientId(String clientId) {
             this.clientId = clientId;
@@ -59,8 +68,13 @@ public class DefaultAuthenticationConfiguration implements AuthenticationConfigu
             return this;
         }
 
+        public Builder withRefreshToken(String refreshToken) {
+            this.refreshToken = refreshToken;
+            return this;
+        }
+
         public DefaultAuthenticationConfiguration build() {
-            return new DefaultAuthenticationConfiguration(clientId, clientSecret);
+            return new DefaultAuthenticationConfiguration(clientId, clientSecret, refreshToken);
         }
 
     }

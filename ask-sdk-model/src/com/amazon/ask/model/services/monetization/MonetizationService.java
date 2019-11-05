@@ -21,8 +21,24 @@ import java.util.List;
 
 
 public interface MonetizationService {
+
     com.amazon.ask.model.services.monetization.InSkillProductsResponse getInSkillProducts(String acceptLanguage, String purchasable, String entitled, String productType, String nextToken, BigDecimal maxResults) throws com.amazon.ask.model.services.ServiceException;
+
+    ApiResponse<com.amazon.ask.model.services.monetization.InSkillProductsResponse> callGetInSkillProducts(String acceptLanguage, String purchasable, String entitled, String productType, String nextToken, BigDecimal maxResults) throws com.amazon.ask.model.services.ServiceException;
+
+
     com.amazon.ask.model.services.monetization.InSkillProduct getInSkillProduct(String acceptLanguage, String productId) throws com.amazon.ask.model.services.ServiceException;
+
+    ApiResponse<com.amazon.ask.model.services.monetization.InSkillProduct> callGetInSkillProduct(String acceptLanguage, String productId) throws com.amazon.ask.model.services.ServiceException;
+
+
     com.amazon.ask.model.services.monetization.InSkillProductTransactionsResponse getInSkillProductsTransactions(String acceptLanguage, String productId, String status, OffsetDateTime fromLastModifiedTime, OffsetDateTime toLastModifiedTime, String nextToken, BigDecimal maxResults) throws com.amazon.ask.model.services.ServiceException;
+
+    ApiResponse<com.amazon.ask.model.services.monetization.InSkillProductTransactionsResponse> callGetInSkillProductsTransactions(String acceptLanguage, String productId, String status, OffsetDateTime fromLastModifiedTime, OffsetDateTime toLastModifiedTime, String nextToken, BigDecimal maxResults) throws com.amazon.ask.model.services.ServiceException;
+
+
     Boolean getVoicePurchaseSetting() throws com.amazon.ask.model.services.ServiceException;
+
+    ApiResponse<Boolean> callGetVoicePurchaseSetting() throws com.amazon.ask.model.services.ServiceException;
+
 }

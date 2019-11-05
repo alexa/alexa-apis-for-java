@@ -43,6 +43,9 @@ public final class SupportedInterfaces {
     @JsonProperty("Geolocation")
     private com.amazon.ask.model.interfaces.geolocation.GeolocationInterface geolocation = null;
 
+    @JsonProperty("Navigation")
+    private com.amazon.ask.model.interfaces.navigation.NavigationInterface navigation = null;
+
     public static Builder builder() {
         return new Builder();
     }
@@ -65,6 +68,9 @@ public final class SupportedInterfaces {
         }
         if (builder.geolocation != null) {
             this.geolocation = builder.geolocation;
+        }
+        if (builder.navigation != null) {
+            this.navigation = builder.navigation;
         }
     }
 
@@ -122,6 +128,15 @@ public final class SupportedInterfaces {
         return geolocation;
     }
 
+    /**
+     * Get navigation
+     * @return navigation
+    **/
+    @JsonProperty("Navigation")
+    public com.amazon.ask.model.interfaces.navigation.NavigationInterface getNavigation() {
+        return navigation;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -136,12 +151,13 @@ public final class SupportedInterfaces {
             Objects.equals(this.audioPlayer, supportedInterfaces.audioPlayer) &&
             Objects.equals(this.display, supportedInterfaces.display) &&
             Objects.equals(this.videoApp, supportedInterfaces.videoApp) &&
-            Objects.equals(this.geolocation, supportedInterfaces.geolocation);
+            Objects.equals(this.geolocation, supportedInterfaces.geolocation) &&
+            Objects.equals(this.navigation, supportedInterfaces.navigation);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(alexaPresentationAPL, alexaPresentationAPLT, audioPlayer, display, videoApp, geolocation);
+        return Objects.hash(alexaPresentationAPL, alexaPresentationAPLT, audioPlayer, display, videoApp, geolocation, navigation);
     }
 
     @Override
@@ -155,6 +171,7 @@ public final class SupportedInterfaces {
         sb.append("    display: ").append(toIndentedString(display)).append("\n");
         sb.append("    videoApp: ").append(toIndentedString(videoApp)).append("\n");
         sb.append("    geolocation: ").append(toIndentedString(geolocation)).append("\n");
+        sb.append("    navigation: ").append(toIndentedString(navigation)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -177,6 +194,7 @@ public final class SupportedInterfaces {
         private com.amazon.ask.model.interfaces.display.DisplayInterface display;
         private com.amazon.ask.model.interfaces.videoapp.VideoAppInterface videoApp;
         private com.amazon.ask.model.interfaces.geolocation.GeolocationInterface geolocation;
+        private com.amazon.ask.model.interfaces.navigation.NavigationInterface navigation;
 
         private Builder() {}
 
@@ -218,6 +236,13 @@ public final class SupportedInterfaces {
         @JsonProperty("Geolocation")
         public Builder withGeolocation(com.amazon.ask.model.interfaces.geolocation.GeolocationInterface geolocation) {
             this.geolocation = geolocation;
+            return this;
+        }
+
+
+        @JsonProperty("Navigation")
+        public Builder withNavigation(com.amazon.ask.model.interfaces.navigation.NavigationInterface navigation) {
+            this.navigation = navigation;
             return this;
         }
 

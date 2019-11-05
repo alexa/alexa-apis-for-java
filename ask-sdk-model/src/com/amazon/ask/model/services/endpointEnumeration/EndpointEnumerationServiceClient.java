@@ -35,7 +35,7 @@ public class EndpointEnumerationServiceClient extends BaseServiceClient implemen
    * @return com.amazon.ask.model.services.endpointEnumeration.EndpointEnumerationResponse
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.model.services.endpointEnumeration.EndpointEnumerationResponse getEndpoints() throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<com.amazon.ask.model.services.endpointEnumeration.EndpointEnumerationResponse> callGetEndpoints() throws com.amazon.ask.model.services.ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
     List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
@@ -55,7 +55,18 @@ public class EndpointEnumerationServiceClient extends BaseServiceClient implemen
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.endpointEnumeration.Error.class, 503, "Service Unavailable. Returned when the server is not ready to handle the request."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.endpointEnumeration.Error.class, 0, "Unexpected error"));
 
-    return (com.amazon.ask.model.services.endpointEnumeration.EndpointEnumerationResponse)this.invoke("GET", this.apiEndpoint, path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, null ,com.amazon.ask.model.services.endpointEnumeration.EndpointEnumerationResponse.class);
+    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null ,com.amazon.ask.model.services.endpointEnumeration.EndpointEnumerationResponse.class, false);
   }
+
+  /**
+   * 
+   * This API is invoked by the skill to retrieve endpoints connected to the Echo device. 
+   * @return com.amazon.ask.model.services.endpointEnumeration.EndpointEnumerationResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.model.services.endpointEnumeration.EndpointEnumerationResponse getEndpoints() throws com.amazon.ask.model.services.ServiceException {
+    return this.callGetEndpoints().getResponse();
+  }
+
 }

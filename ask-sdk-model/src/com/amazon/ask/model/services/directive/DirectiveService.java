@@ -21,5 +21,9 @@ import java.util.List;
 
 
 public interface DirectiveService {
+
     void enqueue(com.amazon.ask.model.services.directive.SendDirectiveRequest sendDirectiveRequest) throws com.amazon.ask.model.services.ServiceException;
+
+    ApiResponse<Void> callEnqueue(com.amazon.ask.model.services.directive.SendDirectiveRequest sendDirectiveRequest) throws com.amazon.ask.model.services.ServiceException;
+
 }

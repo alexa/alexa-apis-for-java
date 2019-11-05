@@ -22,6 +22,7 @@ import com.amazon.ask.model.services.lwa.model.AccessToken;
 import com.amazon.ask.model.services.lwa.model.AccessTokenRequest;
 import com.amazon.ask.model.services.lwa.model.AccessTokenResponse;
 import com.amazon.ask.model.services.lwa.model.Error;
+import com.amazon.ask.model.services.lwa.model.GrantType;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -38,6 +39,7 @@ public class LwaClient extends BaseServiceClient {
     private final AuthenticationConfiguration authenticationConfiguration;
     private final Map<String, AccessToken> scopeTokenStore;
     private final String endpoint;
+    private final GrantType grantType;
 
     private static final long EXPIRY_OFFSET_MILLIS = 60000;
     private static final String DEFAULT_LWA_ENDPOINT = "https://api.amazon.com";
@@ -50,9 +52,18 @@ public class LwaClient extends BaseServiceClient {
         this.authenticationConfiguration = builder.authenticationConfiguration;
         this.scopeTokenStore = new ConcurrentHashMap<>();
         this.endpoint = builder.apiConfiguration.getApiEndpoint();
+        this.grantType = builder.grantType != null ? builder.grantType : GrantType.CLIENT_CREDENTIALS;
     }
 
     public static Builder builder() { return new Builder(); }
+
+    /**
+     * Retrieves an access token using the configured client id, client secret, and refresh token
+     * @return retrieved access token
+     */
+    public String getAccessTokenForRefreshToken() {
+        return getAccessTokenForScope(GrantType.REFRESH_TOKEN.toString());
+    }
 
     /**
      * Retrieves an access token for the given scope, using the configured client id and client secret
@@ -72,6 +83,7 @@ public class LwaClient extends BaseServiceClient {
                 .withScope(scope)
                 .withClientId(authenticationConfiguration.getClientId())
                 .withClientSecret(authenticationConfiguration.getClientSecret())
+                .withRefreshToken(authenticationConfiguration.getRefreshToken())
                 .build());
         scopeTokenStore.put(scope, new AccessToken(lwaResponse.getAccessToken(),
                 currentEpochMillis + TimeUnit.SECONDS.toMillis(lwaResponse.getExpiresIn())));
@@ -83,8 +95,13 @@ public class LwaClient extends BaseServiceClient {
         Map<String, String> pathParams = new HashMap<>();
         List<Pair<String, String>> headerParams = new ArrayList<>();
         headerParams.add(new Pair<>("Content-Type", "application/x-www-form-urlencoded"));
-        String payload = "grant_type=client_credentials&client_id=" + request.getClientId() +
-                "&client_secret=" + request.getClientSecret() + "&scope=" + request.getScope();
+        String payload = "grant_type=" + grantType.getValue() + "&client_id=" + request.getClientId() +
+                "&client_secret=" + request.getClientSecret();
+        if (request.getScope().equals(GrantType.REFRESH_TOKEN.name())) {
+            payload += "&refresh_token=" + request.getRefreshToken();
+        } else {
+            payload += "&scope=" + request.getScope();
+        }
         List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
         serviceResponseDefinitions.add(new ServiceClientResponse(AccessTokenResponse.class, 200, "Token request sent."));
         serviceResponseDefinitions.add(new ServiceClientResponse(Error.class, 400, "Bad Request"));
@@ -100,6 +117,7 @@ public class LwaClient extends BaseServiceClient {
 
         private AuthenticationConfiguration authenticationConfiguration;
         private ApiConfiguration apiConfiguration;
+        private GrantType grantType;
 
         public Builder withAuthenticationConfiguration(AuthenticationConfiguration authenticationConfiguration) {
             this.authenticationConfiguration = authenticationConfiguration;
@@ -108,6 +126,11 @@ public class LwaClient extends BaseServiceClient {
 
         public Builder withApiConfiguration(ApiConfiguration apiConfiguration) {
             this.apiConfiguration = apiConfiguration;
+            return this;
+        }
+
+        public Builder withGrantType(GrantType grantType) {
+            this.grantType = grantType;
             return this;
         }
 

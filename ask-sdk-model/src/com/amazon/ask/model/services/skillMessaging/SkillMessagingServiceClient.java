@@ -50,10 +50,10 @@ public class SkillMessagingServiceClient extends BaseServiceClient implements Sk
    * @param sendSkillMessagingRequest Message Request to be sent to the skill. (required)
    * @throws ServiceException if fails to make API call
    */
-  public void sendSkillMessage(String userId, com.amazon.ask.model.services.skillMessaging.SendSkillMessagingRequest sendSkillMessagingRequest) throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<Void> callSendSkillMessage(String userId, com.amazon.ask.model.services.skillMessaging.SendSkillMessagingRequest sendSkillMessagingRequest) throws com.amazon.ask.model.services.ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
-      pathParams.put("userId", userId);
+    pathParams.put("userId", userId);
     List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
     headerParams.add(new Pair<String, String>("Content-type", "application/json"));
 
@@ -71,7 +71,19 @@ public class SkillMessagingServiceClient extends BaseServiceClient implements Sk
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.skillMessaging.Error.class, 500, "The SkillMessaging service encountered an internal error for a valid request. "));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.skillMessaging.Error.class, 0, "Unexpected error"));
 
-    this.invoke("POST", this.apiEndpoint, path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, sendSkillMessagingRequest ,null);
+    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, sendSkillMessagingRequest ,null, false);
   }
+
+  /**
+   * 
+   * Send a message request to a skill for a specified user.
+   * @param userId The user Id for the specific user to send the message (required)
+   * @param sendSkillMessagingRequest Message Request to be sent to the skill. (required)
+   * @throws ServiceException if fails to make API call
+   */
+  public void sendSkillMessage(String userId, com.amazon.ask.model.services.skillMessaging.SendSkillMessagingRequest sendSkillMessagingRequest) throws com.amazon.ask.model.services.ServiceException {
+    this.callSendSkillMessage(userId, sendSkillMessagingRequest).getResponse();
+  }
+
 }

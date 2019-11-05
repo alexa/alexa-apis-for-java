@@ -27,6 +27,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = true )
 @JsonSubTypes({
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.customInterfaceController.StopEventHandlerDirective.class, name = "CustomInterfaceController.StopEventHandler"),
+  @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.navigation.assistance.AnnounceRoadRegulation.class, name = "Navigation.Assistance.AnnounceRoadRegulation"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.connections.SendRequestDirective.class, name = "Connections.SendRequest"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.dialog.DynamicEntitiesDirective.class, name = "Dialog.UpdateDynamicEntities"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.customInterfaceController.StartEventHandlerDirective.class, name = "CustomInterfaceController.StartEventHandler"),

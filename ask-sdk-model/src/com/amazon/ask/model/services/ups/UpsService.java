@@ -21,11 +21,39 @@ import java.util.List;
 
 
 public interface UpsService {
+
     String getProfileEmail() throws com.amazon.ask.model.services.ServiceException;
+
+    ApiResponse<String> callGetProfileEmail() throws com.amazon.ask.model.services.ServiceException;
+
+
     String getProfileGivenName() throws com.amazon.ask.model.services.ServiceException;
+
+    ApiResponse<String> callGetProfileGivenName() throws com.amazon.ask.model.services.ServiceException;
+
+
     com.amazon.ask.model.services.ups.PhoneNumber getProfileMobileNumber() throws com.amazon.ask.model.services.ServiceException;
+
+    ApiResponse<com.amazon.ask.model.services.ups.PhoneNumber> callGetProfileMobileNumber() throws com.amazon.ask.model.services.ServiceException;
+
+
     String getProfileName() throws com.amazon.ask.model.services.ServiceException;
+
+    ApiResponse<String> callGetProfileName() throws com.amazon.ask.model.services.ServiceException;
+
+
     com.amazon.ask.model.services.ups.DistanceUnits getSystemDistanceUnits(String deviceId) throws com.amazon.ask.model.services.ServiceException;
+
+    ApiResponse<com.amazon.ask.model.services.ups.DistanceUnits> callGetSystemDistanceUnits(String deviceId) throws com.amazon.ask.model.services.ServiceException;
+
+
     com.amazon.ask.model.services.ups.TemperatureUnit getSystemTemperatureUnit(String deviceId) throws com.amazon.ask.model.services.ServiceException;
+
+    ApiResponse<com.amazon.ask.model.services.ups.TemperatureUnit> callGetSystemTemperatureUnit(String deviceId) throws com.amazon.ask.model.services.ServiceException;
+
+
     String getSystemTimeZone(String deviceId) throws com.amazon.ask.model.services.ServiceException;
+
+    ApiResponse<String> callGetSystemTimeZone(String deviceId) throws com.amazon.ask.model.services.ServiceException;
+
 }

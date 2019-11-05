@@ -21,5 +21,9 @@ import java.util.List;
 
 
 public interface ProactiveEventsService {
+
     void createProactiveEvent(com.amazon.ask.model.services.proactiveEvents.CreateProactiveEventRequest createProactiveEventRequest, com.amazon.ask.model.services.proactiveEvents.SkillStage stage) throws com.amazon.ask.model.services.ServiceException;
+
+    ApiResponse<Void> callCreateProactiveEvent(com.amazon.ask.model.services.proactiveEvents.CreateProactiveEventRequest createProactiveEventRequest, com.amazon.ask.model.services.proactiveEvents.SkillStage stage) throws com.amazon.ask.model.services.ServiceException;
+
 }

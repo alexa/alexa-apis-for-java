@@ -10,29 +10,34 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for
  * the specific language governing permissions and limitations under the License.
  */
+
 package com.amazon.ask.model.services;
 
-/**
- * Abstraction for authentication configuration for a client ID and client secret.
- */
-public interface AuthenticationConfiguration {
+import java.util.List;
+import java.util.Map;
 
-    /**
-     * Retrieves the configured client ID.
-     * @return client ID
-     */
-    String getClientId();
+public class ApiResponse<T> {
 
-    /**
-     * Retrieves the configured client secret.
-     * @return client secret
-     */
-    String getClientSecret();
+    private final T response;
+    private final int statusCode;
+    private final List<Pair<String, String>> headers;
 
-    /**
-     * Retrieves the configured refresh token.
-     * @return refresh token
-     */
-    String getRefreshToken();
+    public ApiResponse(T response, int statusCode, List<Pair<String, String>> headers) {
+        this.response = response;
+        this.statusCode = statusCode;
+        this.headers = headers;
+    }
+
+    public T getResponse() {
+        return response;
+    }
+
+    public int getStatusCode() {
+        return statusCode;
+    }
+
+    public List<Pair<String, String>> getHeaders() {
+        return headers;
+    }
 
 }
