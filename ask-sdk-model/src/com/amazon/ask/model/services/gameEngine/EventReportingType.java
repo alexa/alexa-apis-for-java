@@ -26,7 +26,9 @@ public enum EventReportingType {
   
   HISTORY("history"),
   
-  MATCHES("matches");
+  MATCHES("matches"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
@@ -51,7 +53,7 @@ public enum EventReportingType {
         return b;
       }
     }
-    return null;
+    return EventReportingType.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

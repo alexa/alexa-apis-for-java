@@ -30,7 +30,9 @@ public enum State {
   
   DECLINED("Declined"),
   
-  CLOSED("Closed");
+  CLOSED("Closed"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
@@ -55,7 +57,7 @@ public enum State {
         return b;
       }
     }
-    return null;
+    return State.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

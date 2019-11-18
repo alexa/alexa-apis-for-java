@@ -26,7 +26,9 @@ public enum UpdateBehavior {
   
   REPLACE("REPLACE"),
   
-  CLEAR("CLEAR");
+  CLEAR("CLEAR"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private Object value;
 
@@ -51,7 +53,7 @@ public enum UpdateBehavior {
         return b;
       }
     }
-    return null;
+    return UpdateBehavior.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

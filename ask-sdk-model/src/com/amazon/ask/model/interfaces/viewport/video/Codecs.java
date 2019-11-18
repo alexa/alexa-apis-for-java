@@ -26,7 +26,9 @@ public enum Codecs {
   
   H_264_41("H_264_41"),
   
-  H_264_42("H_264_42");
+  H_264_42("H_264_42"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
@@ -51,7 +53,7 @@ public enum Codecs {
         return b;
       }
     }
-    return null;
+    return Codecs.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

@@ -26,7 +26,9 @@ public enum PaymentAction {
   
   AUTHORIZE("Authorize"),
   
-  AUTHORIZEANDCAPTURE("AuthorizeAndCapture");
+  AUTHORIZEANDCAPTURE("AuthorizeAndCapture"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
@@ -51,7 +53,7 @@ public enum PaymentAction {
         return b;
       }
     }
-    return null;
+    return PaymentAction.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

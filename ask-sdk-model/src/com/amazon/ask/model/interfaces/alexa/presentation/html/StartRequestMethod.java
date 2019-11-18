@@ -12,7 +12,7 @@
 */
 
 
-package com.amazon.ask.model.interfaces.alexa.presentation.apl;
+package com.amazon.ask.model.interfaces.alexa.presentation.html;
 
 import java.util.Objects;
 
@@ -20,21 +20,17 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Component state.
+ * Gets or Sets interfaces.alexa.presentation.html.StartRequestMethod
  */
-public enum ComponentState {
+public enum StartRequestMethod {
   
-  CHECKED("checked"),
-  
-  DISABLED("disabled"),
-  
-  FOCUSED("focused"),
+  GET("GET"),
   
   UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
-  ComponentState(String value) {
+  StartRequestMethod(String value) {
     this.value = value;
   }
 
@@ -49,13 +45,13 @@ public enum ComponentState {
   }
 
   @JsonCreator
-  public static ComponentState fromValue(String text) {
-    for (ComponentState b : ComponentState.values()) {
+  public static StartRequestMethod fromValue(String text) {
+    for (StartRequestMethod b : StartRequestMethod.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }
     }
-    return ComponentState.UNKNOWN_TO_SDK_VERSION;
+    return StartRequestMethod.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

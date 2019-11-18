@@ -28,7 +28,9 @@ public enum PlayBehavior {
   
   REPLACE_ALL("REPLACE_ALL"),
   
-  REPLACE_ENQUEUED("REPLACE_ENQUEUED");
+  REPLACE_ENQUEUED("REPLACE_ENQUEUED"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private Object value;
 
@@ -53,7 +55,7 @@ public enum PlayBehavior {
         return b;
       }
     }
-    return null;
+    return PlayBehavior.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

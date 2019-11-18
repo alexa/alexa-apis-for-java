@@ -32,7 +32,9 @@ public enum State {
   
   CLOSED("Closed"),
   
-  COMPLETED("Completed");
+  COMPLETED("Completed"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
@@ -57,7 +59,7 @@ public enum State {
         return b;
       }
     }
-    return null;
+    return State.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

@@ -28,7 +28,9 @@ public enum ProductType {
   
   ENTITLEMENT("ENTITLEMENT"),
   
-  CONSUMABLE("CONSUMABLE");
+  CONSUMABLE("CONSUMABLE"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private Object value;
 
@@ -53,7 +55,7 @@ public enum ProductType {
         return b;
       }
     }
-    return null;
+    return ProductType.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

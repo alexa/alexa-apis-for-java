@@ -12,7 +12,7 @@
 */
 
 
-package com.amazon.ask.model.interfaces.alexa.presentation.apl;
+package com.amazon.ask.model.interfaces.alexa.presentation.html;
 
 import java.util.Objects;
 
@@ -20,21 +20,23 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Component state.
+ * Gets or Sets interfaces.alexa.presentation.html.TransformerType
  */
-public enum ComponentState {
+public enum TransformerType {
   
-  CHECKED("checked"),
+  SSMLTOSPEECH("ssmlToSpeech"),
   
-  DISABLED("disabled"),
+  TEXTTOSPEECH("textToSpeech"),
   
-  FOCUSED("focused"),
+  TEXTTOHINT("textToHint"),
+  
+  SSMLTOTEXT("ssmlToText"),
   
   UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
-  ComponentState(String value) {
+  TransformerType(String value) {
     this.value = value;
   }
 
@@ -49,13 +51,13 @@ public enum ComponentState {
   }
 
   @JsonCreator
-  public static ComponentState fromValue(String text) {
-    for (ComponentState b : ComponentState.values()) {
+  public static TransformerType fromValue(String text) {
+    for (TransformerType b : TransformerType.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }
     }
-    return ComponentState.UNKNOWN_TO_SDK_VERSION;
+    return TransformerType.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

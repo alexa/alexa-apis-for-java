@@ -26,7 +26,9 @@ public enum EntitledState {
   
   ENTITLED("ENTITLED"),
   
-  NOT_ENTITLED("NOT_ENTITLED");
+  NOT_ENTITLED("NOT_ENTITLED"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private Object value;
 
@@ -51,7 +53,7 @@ public enum EntitledState {
         return b;
       }
     }
-    return null;
+    return EntitledState.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

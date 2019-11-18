@@ -26,7 +26,9 @@ public enum PresentationType {
   
   STANDARD("STANDARD"),
   
-  OVERLAY("OVERLAY");
+  OVERLAY("OVERLAY"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
@@ -51,7 +53,7 @@ public enum PresentationType {
         return b;
       }
     }
-    return null;
+    return PresentationType.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

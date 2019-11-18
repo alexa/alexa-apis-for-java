@@ -36,7 +36,9 @@ public enum MediaCommandType {
   
   SEEK("seek"),
   
-  SETTRACK("setTrack");
+  SETTRACK("setTrack"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
@@ -61,7 +63,7 @@ public enum MediaCommandType {
         return b;
       }
     }
-    return null;
+    return MediaCommandType.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

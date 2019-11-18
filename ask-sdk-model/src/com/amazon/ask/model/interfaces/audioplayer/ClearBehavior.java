@@ -26,7 +26,9 @@ public enum ClearBehavior {
   
   CLEAR_ALL("CLEAR_ALL"),
   
-  CLEAR_ENQUEUED("CLEAR_ENQUEUED");
+  CLEAR_ENQUEUED("CLEAR_ENQUEUED"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private Object value;
 
@@ -51,7 +53,7 @@ public enum ClearBehavior {
         return b;
       }
     }
-    return null;
+    return ClearBehavior.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

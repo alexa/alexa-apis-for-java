@@ -28,7 +28,9 @@ public enum Access {
   
   DISABLED("DISABLED"),
   
-  UNKNOWN("UNKNOWN");
+  UNKNOWN("UNKNOWN"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private Object value;
 
@@ -53,7 +55,7 @@ public enum Access {
         return b;
       }
     }
-    return null;
+    return Access.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

@@ -26,7 +26,9 @@ public enum BackButtonBehavior {
   
   HIDDEN("HIDDEN"),
   
-  VISIBLE("VISIBLE");
+  VISIBLE("VISIBLE"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private Object value;
 
@@ -51,7 +53,7 @@ public enum BackButtonBehavior {
         return b;
       }
     }
-    return null;
+    return BackButtonBehavior.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

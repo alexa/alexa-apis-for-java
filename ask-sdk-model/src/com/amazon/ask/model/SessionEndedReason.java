@@ -28,7 +28,9 @@ public enum SessionEndedReason {
   
   ERROR("ERROR"),
   
-  EXCEEDED_MAX_REPROMPTS("EXCEEDED_MAX_REPROMPTS");
+  EXCEEDED_MAX_REPROMPTS("EXCEEDED_MAX_REPROMPTS"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private Object value;
 
@@ -53,7 +55,7 @@ public enum SessionEndedReason {
         return b;
       }
     }
-    return null;
+    return SessionEndedReason.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

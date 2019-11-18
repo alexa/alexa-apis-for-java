@@ -40,7 +40,9 @@ public class SubTypesManifest {
     directiveSubTypes.put("Dialog.Delegate", com.amazon.ask.model.dialog.DelegateDirective.class);
     directiveSubTypes.put("Dialog.ConfirmIntent", com.amazon.ask.model.dialog.ConfirmIntentDirective.class);
     directiveSubTypes.put("CustomInterfaceController.SendDirective", com.amazon.ask.model.interfaces.customInterfaceController.SendDirectiveDirective.class);
+    directiveSubTypes.put("Alexa.Presentation.HTML.HandleMessage", com.amazon.ask.model.interfaces.alexa.presentation.html.HandleMessageDirective.class);
     directiveSubTypes.put("Dialog.ElicitSlot", com.amazon.ask.model.dialog.ElicitSlotDirective.class);
+    directiveSubTypes.put("Alexa.Presentation.HTML.Start", com.amazon.ask.model.interfaces.alexa.presentation.html.StartDirective.class);
     directiveSubTypes.put("AudioPlayer.Stop", com.amazon.ask.model.interfaces.audioplayer.StopDirective.class);
     directiveSubTypes.put("Dialog.ConfirmSlot", com.amazon.ask.model.dialog.ConfirmSlotDirective.class);
     directiveSubTypes.put("AudioPlayer.Play", com.amazon.ask.model.interfaces.audioplayer.PlayDirective.class);
@@ -70,6 +72,7 @@ public class SubTypesManifest {
     requestSubTypes.put("AudioPlayer.PlaybackFailed", com.amazon.ask.model.interfaces.audioplayer.PlaybackFailedRequest.class);
     requestSubTypes.put("CanFulfillIntentRequest", com.amazon.ask.model.canfulfill.CanFulfillIntentRequest.class);
     requestSubTypes.put("CustomInterfaceController.Expired", com.amazon.ask.model.interfaces.customInterfaceController.ExpiredRequest.class);
+    requestSubTypes.put("Alexa.Presentation.html.Message", com.amazon.ask.model.interfaces.alexa.presentation.html.MessageRequest.class);
     requestSubTypes.put("LaunchRequest", com.amazon.ask.model.LaunchRequest.class);
     requestSubTypes.put("Reminders.ReminderCreated", com.amazon.ask.model.services.reminderManagement.ReminderCreatedEventRequest.class);
     requestSubTypes.put("Alexa.Presentation.APLT.UserEvent", com.amazon.ask.model.interfaces.alexa.presentation.aplt.UserEvent.class);

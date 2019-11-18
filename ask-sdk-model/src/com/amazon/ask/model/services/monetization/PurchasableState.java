@@ -26,7 +26,9 @@ public enum PurchasableState {
   
   PURCHASABLE("PURCHASABLE"),
   
-  NOT_PURCHASABLE("NOT_PURCHASABLE");
+  NOT_PURCHASABLE("NOT_PURCHASABLE"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private Object value;
 
@@ -51,7 +53,7 @@ public enum PurchasableState {
         return b;
       }
     }
-    return null;
+    return PurchasableState.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

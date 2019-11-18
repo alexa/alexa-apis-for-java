@@ -15,6 +15,7 @@ package com.amazon.ask.model.services.skillMessaging;
 
 import com.amazon.ask.model.services.*;
 import com.amazon.ask.model.services.lwa.*;
+import com.amazon.ask.model.services.lwa.model.GrantType;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +32,7 @@ public class SkillMessagingServiceClient extends BaseServiceClient implements Sk
       super(apiConfiguration);
       this.lwaClient = LwaClient.builder()
           .withAuthenticationConfiguration(authenticationConfiguration)
+          .withGrantType(GrantType.CLIENT_CREDENTIALS)
           .withApiConfiguration(DefaultApiConfiguration.builder()
                                     .withApiClient(apiConfiguration.getApiClient())
                                     .withSerializer(apiConfiguration.getSerializer())

@@ -24,7 +24,9 @@ import com.fasterxml.jackson.annotation.JsonValue;
  */
 public enum CharacterFormat {
   
-  SEVEN_SEGMENT("SEVEN_SEGMENT");
+  SEVEN_SEGMENT("SEVEN_SEGMENT"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
@@ -49,7 +51,7 @@ public enum CharacterFormat {
         return b;
       }
     }
-    return null;
+    return CharacterFormat.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

@@ -30,7 +30,9 @@ public enum SessionEndedErrorType {
   
   INTERNAL_SERVICE_ERROR("INTERNAL_SERVICE_ERROR"),
   
-  ENDPOINT_TIMEOUT("ENDPOINT_TIMEOUT");
+  ENDPOINT_TIMEOUT("ENDPOINT_TIMEOUT"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private Object value;
 
@@ -55,7 +57,7 @@ public enum SessionEndedErrorType {
         return b;
       }
     }
-    return null;
+    return SessionEndedErrorType.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

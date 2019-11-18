@@ -32,7 +32,9 @@ public enum ImageSize {
   
   LARGE("LARGE"),
   
-  X_LARGE("X_LARGE");
+  X_LARGE("X_LARGE"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private Object value;
 
@@ -57,7 +59,7 @@ public enum ImageSize {
         return b;
       }
     }
-    return null;
+    return ImageSize.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

@@ -34,7 +34,9 @@ public enum PlayerActivity {
   
   IDLE("IDLE"),
   
-  STOPPED("STOPPED");
+  STOPPED("STOPPED"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private Object value;
 
@@ -59,7 +61,7 @@ public enum PlayerActivity {
         return b;
       }
     }
-    return null;
+    return PlayerActivity.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

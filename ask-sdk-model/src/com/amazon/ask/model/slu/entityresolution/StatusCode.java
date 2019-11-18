@@ -30,7 +30,9 @@ public enum StatusCode {
   
   ER_ERROR_TIMEOUT("ER_ERROR_TIMEOUT"),
   
-  ER_ERROR_EXCEPTION("ER_ERROR_EXCEPTION");
+  ER_ERROR_EXCEPTION("ER_ERROR_EXCEPTION"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private Object value;
 
@@ -55,7 +57,7 @@ public enum StatusCode {
         return b;
       }
     }
-    return null;
+    return StatusCode.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

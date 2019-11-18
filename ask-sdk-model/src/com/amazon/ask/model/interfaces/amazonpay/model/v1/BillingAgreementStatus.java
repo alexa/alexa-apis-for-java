@@ -32,7 +32,9 @@ public enum BillingAgreementStatus {
   
   OPEN("OPEN"),
   
-  SUSPENDED("SUSPENDED");
+  SUSPENDED("SUSPENDED"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
@@ -57,7 +59,7 @@ public enum BillingAgreementStatus {
         return b;
       }
     }
-    return null;
+    return BillingAgreementStatus.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

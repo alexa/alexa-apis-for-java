@@ -26,7 +26,9 @@ public enum TemperatureUnit {
   
   CELSIUS("CELSIUS"),
   
-  FAHRENHEIT("FAHRENHEIT");
+  FAHRENHEIT("FAHRENHEIT"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
@@ -51,7 +53,7 @@ public enum TemperatureUnit {
         return b;
       }
     }
-    return null;
+    return TemperatureUnit.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

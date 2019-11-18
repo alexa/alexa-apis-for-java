@@ -26,7 +26,9 @@ public enum DistanceUnits {
   
   METRIC("METRIC"),
   
-  IMPERIAL("IMPERIAL");
+  IMPERIAL("IMPERIAL"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
@@ -51,7 +53,7 @@ public enum DistanceUnits {
         return b;
       }
     }
-    return null;
+    return DistanceUnits.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

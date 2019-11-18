@@ -26,7 +26,9 @@ public enum TriggerType {
   
   SCHEDULED_ABSOLUTE("SCHEDULED_ABSOLUTE"),
   
-  SCHEDULED_RELATIVE("SCHEDULED_RELATIVE");
+  SCHEDULED_RELATIVE("SCHEDULED_RELATIVE"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
@@ -51,7 +53,7 @@ public enum TriggerType {
         return b;
       }
     }
-    return null;
+    return TriggerType.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

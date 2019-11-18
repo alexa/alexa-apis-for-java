@@ -32,7 +32,9 @@ public enum Mode {
   
   PC("PC"),
   
-  TV("TV");
+  TV("TV"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
@@ -57,7 +59,7 @@ public enum Mode {
         return b;
       }
     }
-    return null;
+    return Mode.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

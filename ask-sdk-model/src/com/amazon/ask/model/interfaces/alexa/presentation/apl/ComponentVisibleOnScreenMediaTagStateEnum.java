@@ -28,7 +28,9 @@ public enum ComponentVisibleOnScreenMediaTagStateEnum {
   
   PLAYING("playing"),
   
-  PAUSED("paused");
+  PAUSED("paused"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
@@ -53,7 +55,7 @@ public enum ComponentVisibleOnScreenMediaTagStateEnum {
         return b;
       }
     }
-    return null;
+    return ComponentVisibleOnScreenMediaTagStateEnum.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

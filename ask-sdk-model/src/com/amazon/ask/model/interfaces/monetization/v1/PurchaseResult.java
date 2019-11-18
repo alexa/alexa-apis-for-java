@@ -32,7 +32,9 @@ public enum PurchaseResult {
   
   ERROR("ERROR"),
   
-  ALREADY_PURCHASED("ALREADY_PURCHASED");
+  ALREADY_PURCHASED("ALREADY_PURCHASED"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
@@ -57,7 +59,7 @@ public enum PurchaseResult {
         return b;
       }
     }
-    return null;
+    return PurchaseResult.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

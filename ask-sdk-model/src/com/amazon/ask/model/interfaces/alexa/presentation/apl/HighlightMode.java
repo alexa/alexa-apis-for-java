@@ -26,7 +26,9 @@ public enum HighlightMode {
   
   BLOCK("block"),
   
-  LINE("line");
+  LINE("line"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
@@ -51,7 +53,7 @@ public enum HighlightMode {
         return b;
       }
     }
-    return null;
+    return HighlightMode.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

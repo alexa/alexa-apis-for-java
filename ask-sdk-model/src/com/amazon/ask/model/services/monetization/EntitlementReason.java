@@ -28,7 +28,9 @@ public enum EntitlementReason {
   
   NOT_PURCHASED("NOT_PURCHASED"),
   
-  AUTO_ENTITLED("AUTO_ENTITLED");
+  AUTO_ENTITLED("AUTO_ENTITLED"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private Object value;
 
@@ -53,7 +55,7 @@ public enum EntitlementReason {
         return b;
       }
     }
-    return null;
+    return EntitlementReason.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

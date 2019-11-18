@@ -26,7 +26,9 @@ public enum Shape {
   
   RECTANGLE("RECTANGLE"),
   
-  ROUND("ROUND");
+  ROUND("ROUND"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
@@ -51,7 +53,7 @@ public enum Shape {
         return b;
       }
     }
-    return null;
+    return Shape.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

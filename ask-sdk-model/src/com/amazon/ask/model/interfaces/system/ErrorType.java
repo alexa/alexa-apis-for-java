@@ -28,7 +28,9 @@ public enum ErrorType {
   
   DEVICE_COMMUNICATION_ERROR("DEVICE_COMMUNICATION_ERROR"),
   
-  INTERNAL_SERVICE_ERROR("INTERNAL_SERVICE_ERROR");
+  INTERNAL_SERVICE_ERROR("INTERNAL_SERVICE_ERROR"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private Object value;
 
@@ -53,7 +55,7 @@ public enum ErrorType {
         return b;
       }
     }
-    return null;
+    return ErrorType.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

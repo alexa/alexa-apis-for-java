@@ -26,7 +26,9 @@ public enum Position {
   
   ABSOLUTE("absolute"),
   
-  RELATIVE("relative");
+  RELATIVE("relative"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
@@ -51,7 +53,7 @@ public enum Position {
         return b;
       }
     }
-    return null;
+    return Position.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

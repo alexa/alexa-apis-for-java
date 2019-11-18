@@ -26,7 +26,9 @@ public enum Status {
   
   RUNNING("RUNNING"),
   
-  STOPPED("STOPPED");
+  STOPPED("STOPPED"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private Object value;
 
@@ -51,7 +53,7 @@ public enum Status {
         return b;
       }
     }
-    return null;
+    return Status.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

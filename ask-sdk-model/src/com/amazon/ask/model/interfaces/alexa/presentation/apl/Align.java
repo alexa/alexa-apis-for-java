@@ -30,7 +30,9 @@ public enum Align {
   
   LAST("last"),
   
-  VISIBLE("visible");
+  VISIBLE("visible"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
@@ -55,7 +57,7 @@ public enum Align {
         return b;
       }
     }
-    return null;
+    return Align.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

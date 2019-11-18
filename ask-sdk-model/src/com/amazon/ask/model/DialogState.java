@@ -28,7 +28,9 @@ public enum DialogState {
   
   IN_PROGRESS("IN_PROGRESS"),
   
-  COMPLETED("COMPLETED");
+  COMPLETED("COMPLETED"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private Object value;
 
@@ -53,7 +55,7 @@ public enum DialogState {
         return b;
       }
     }
-    return null;
+    return DialogState.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

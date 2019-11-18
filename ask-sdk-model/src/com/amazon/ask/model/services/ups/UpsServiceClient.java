@@ -15,6 +15,7 @@ package com.amazon.ask.model.services.ups;
 
 import com.amazon.ask.model.services.*;
 import com.amazon.ask.model.services.lwa.*;
+import com.amazon.ask.model.services.lwa.model.GrantType;
 
 import java.util.ArrayList;
 import java.util.List;

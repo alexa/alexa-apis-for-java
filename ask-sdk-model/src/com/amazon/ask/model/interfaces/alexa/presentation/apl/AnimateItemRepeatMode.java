@@ -26,7 +26,9 @@ public enum AnimateItemRepeatMode {
   
   RESTART("restart"),
   
-  REVERSE("reverse");
+  REVERSE("reverse"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
@@ -51,7 +53,7 @@ public enum AnimateItemRepeatMode {
         return b;
       }
     }
-    return null;
+    return AnimateItemRepeatMode.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

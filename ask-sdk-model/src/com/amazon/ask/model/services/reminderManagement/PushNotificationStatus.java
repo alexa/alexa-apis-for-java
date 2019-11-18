@@ -26,7 +26,9 @@ public enum PushNotificationStatus {
   
   ENABLED("ENABLED"),
   
-  DISABLED("DISABLED");
+  DISABLED("DISABLED"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
@@ -51,7 +53,7 @@ public enum PushNotificationStatus {
         return b;
       }
     }
-    return null;
+    return PushNotificationStatus.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

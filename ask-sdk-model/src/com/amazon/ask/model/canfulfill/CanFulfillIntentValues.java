@@ -28,7 +28,9 @@ public enum CanFulfillIntentValues {
   
   NO("NO"),
   
-  MAYBE("MAYBE");
+  MAYBE("MAYBE"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private Object value;
 
@@ -53,7 +55,7 @@ public enum CanFulfillIntentValues {
         return b;
       }
     }
-    return null;
+    return CanFulfillIntentValues.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

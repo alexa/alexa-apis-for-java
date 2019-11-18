@@ -26,7 +26,9 @@ public enum FilterMatchAction {
   
   SEND_AND_TERMINATE("SEND_AND_TERMINATE"),
   
-  SEND("SEND");
+  SEND("SEND"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
@@ -51,7 +53,7 @@ public enum FilterMatchAction {
         return b;
       }
     }
-    return null;
+    return FilterMatchAction.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

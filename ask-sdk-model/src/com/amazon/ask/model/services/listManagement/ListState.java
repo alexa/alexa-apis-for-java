@@ -26,7 +26,9 @@ public enum ListState {
   
   ACTIVE("active"),
   
-  ARCHIVED("archived");
+  ARCHIVED("archived"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private Object value;
 
@@ -51,7 +53,7 @@ public enum ListState {
         return b;
       }
     }
-    return null;
+    return ListState.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

@@ -26,7 +26,9 @@ public enum PurchaseMode {
   
   TEST("TEST"),
   
-  LIVE("LIVE");
+  LIVE("LIVE"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private Object value;
 
@@ -51,7 +53,7 @@ public enum PurchaseMode {
         return b;
       }
     }
-    return null;
+    return PurchaseMode.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

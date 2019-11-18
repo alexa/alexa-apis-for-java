@@ -26,7 +26,9 @@ public enum ListItemState {
   
   ACTIVE("active"),
   
-  COMPLETED("completed");
+  COMPLETED("completed"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private Object value;
 
@@ -51,7 +53,7 @@ public enum ListItemState {
         return b;
       }
     }
-    return null;
+    return ListItemState.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

@@ -26,7 +26,9 @@ public enum PermissionStatus {
   
   GRANTED("GRANTED"),
   
-  DENIED("DENIED");
+  DENIED("DENIED"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private Object value;
 
@@ -51,7 +53,7 @@ public enum PermissionStatus {
         return b;
       }
     }
-    return null;
+    return PermissionStatus.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

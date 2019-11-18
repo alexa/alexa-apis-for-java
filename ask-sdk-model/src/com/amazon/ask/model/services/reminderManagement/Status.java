@@ -26,7 +26,9 @@ public enum Status {
   
   ON("ON"),
   
-  COMPLETED("COMPLETED");
+  COMPLETED("COMPLETED"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
@@ -51,7 +53,7 @@ public enum Status {
         return b;
       }
     }
-    return null;
+    return Status.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

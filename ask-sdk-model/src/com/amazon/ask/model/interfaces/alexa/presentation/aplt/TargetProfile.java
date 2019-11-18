@@ -26,7 +26,9 @@ public enum TargetProfile {
   
   FOUR_CHARACTER_CLOCK("FOUR_CHARACTER_CLOCK"),
   
-  NONE("NONE");
+  NONE("NONE"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
@@ -51,7 +53,7 @@ public enum TargetProfile {
         return b;
       }
     }
-    return null;
+    return TargetProfile.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

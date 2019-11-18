@@ -26,7 +26,9 @@ public enum RecurrenceFreq {
   
   WEEKLY("WEEKLY"),
   
-  DAILY("DAILY");
+  DAILY("DAILY"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
@@ -51,7 +53,7 @@ public enum RecurrenceFreq {
         return b;
       }
     }
-    return null;
+    return RecurrenceFreq.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

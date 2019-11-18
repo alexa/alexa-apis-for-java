@@ -24,7 +24,9 @@ import com.fasterxml.jackson.annotation.JsonValue;
  */
 public enum Touch {
   
-  SINGLE("SINGLE");
+  SINGLE("SINGLE"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
@@ -49,7 +51,7 @@ public enum Touch {
         return b;
       }
     }
-    return null;
+    return Touch.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

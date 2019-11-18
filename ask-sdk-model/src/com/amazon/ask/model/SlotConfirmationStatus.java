@@ -28,7 +28,9 @@ public enum SlotConfirmationStatus {
   
   DENIED("DENIED"),
   
-  CONFIRMED("CONFIRMED");
+  CONFIRMED("CONFIRMED"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private Object value;
 
@@ -53,7 +55,7 @@ public enum SlotConfirmationStatus {
         return b;
       }
     }
-    return null;
+    return SlotConfirmationStatus.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

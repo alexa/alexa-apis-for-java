@@ -26,7 +26,9 @@ public enum CanFulfillSlotValues {
   
   YES("YES"),
   
-  NO("NO");
+  NO("NO"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private Object value;
 
@@ -51,7 +53,7 @@ public enum CanFulfillSlotValues {
         return b;
       }
     }
-    return null;
+    return CanFulfillSlotValues.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

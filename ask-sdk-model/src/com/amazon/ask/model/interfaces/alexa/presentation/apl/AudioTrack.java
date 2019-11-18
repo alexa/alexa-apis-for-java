@@ -24,7 +24,9 @@ import com.fasterxml.jackson.annotation.JsonValue;
  */
 public enum AudioTrack {
   
-  FOREGROUND("foreground");
+  FOREGROUND("foreground"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
@@ -49,7 +51,7 @@ public enum AudioTrack {
         return b;
       }
     }
-    return null;
+    return AudioTrack.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

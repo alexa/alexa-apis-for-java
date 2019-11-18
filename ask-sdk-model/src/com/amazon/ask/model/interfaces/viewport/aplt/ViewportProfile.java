@@ -24,7 +24,9 @@ import com.fasterxml.jackson.annotation.JsonValue;
  */
 public enum ViewportProfile {
   
-  FOUR_CHARACTER_CLOCK("FOUR_CHARACTER_CLOCK");
+  FOUR_CHARACTER_CLOCK("FOUR_CHARACTER_CLOCK"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
@@ -49,7 +51,7 @@ public enum ViewportProfile {
         return b;
       }
     }
-    return null;
+    return ViewportProfile.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

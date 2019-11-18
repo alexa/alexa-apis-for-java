@@ -26,7 +26,9 @@ public enum ReleaseEnvironment {
   
   LIVE("LIVE"),
   
-  SANDBOX("SANDBOX");
+  SANDBOX("SANDBOX"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
@@ -51,7 +53,7 @@ public enum ReleaseEnvironment {
         return b;
       }
     }
-    return null;
+    return ReleaseEnvironment.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

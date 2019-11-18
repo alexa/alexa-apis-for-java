@@ -34,7 +34,9 @@ public enum ErrorCode {
   
   DEVICE_UNREACHABLE("DEVICE_UNREACHABLE"),
   
-  UNKNOWN_ERROR("UNKNOWN_ERROR");
+  UNKNOWN_ERROR("UNKNOWN_ERROR"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
@@ -59,7 +61,7 @@ public enum ErrorCode {
         return b;
       }
     }
-    return null;
+    return ErrorCode.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

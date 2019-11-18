@@ -24,7 +24,9 @@ import com.fasterxml.jackson.annotation.JsonValue;
  */
 public enum Keyboard {
   
-  DIRECTION("DIRECTION");
+  DIRECTION("DIRECTION"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
@@ -49,7 +51,7 @@ public enum Keyboard {
         return b;
       }
     }
-    return null;
+    return Keyboard.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

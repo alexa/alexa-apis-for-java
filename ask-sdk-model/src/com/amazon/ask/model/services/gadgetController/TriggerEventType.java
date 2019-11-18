@@ -28,7 +28,9 @@ public enum TriggerEventType {
   
   BUTTONUP("buttonUp"),
   
-  NONE("none");
+  NONE("none"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
@@ -53,7 +55,7 @@ public enum TriggerEventType {
         return b;
       }
     }
-    return null;
+    return TriggerEventType.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

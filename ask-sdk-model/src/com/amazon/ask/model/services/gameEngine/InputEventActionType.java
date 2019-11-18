@@ -26,7 +26,9 @@ public enum InputEventActionType {
   
   DOWN("down"),
   
-  UP("up");
+  UP("up"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
@@ -51,7 +53,7 @@ public enum InputEventActionType {
         return b;
       }
     }
-    return null;
+    return InputEventActionType.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

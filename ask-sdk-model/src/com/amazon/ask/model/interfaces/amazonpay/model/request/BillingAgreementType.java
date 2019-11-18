@@ -26,7 +26,9 @@ public enum BillingAgreementType {
   
   CUSTOMERINITIATEDTRANSACTION("CustomerInitiatedTransaction"),
   
-  MERCHANTINITIATEDTRANSACTION("MerchantInitiatedTransaction");
+  MERCHANTINITIATEDTRANSACTION("MerchantInitiatedTransaction"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
@@ -51,7 +53,7 @@ public enum BillingAgreementType {
         return b;
       }
     }
-    return null;
+    return BillingAgreementType.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

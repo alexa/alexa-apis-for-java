@@ -26,7 +26,9 @@ public enum RelevantAudienceType {
   
   UNICAST("Unicast"),
   
-  MULTICAST("Multicast");
+  MULTICAST("Multicast"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
@@ -51,7 +53,7 @@ public enum RelevantAudienceType {
         return b;
       }
     }
-    return null;
+    return RelevantAudienceType.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

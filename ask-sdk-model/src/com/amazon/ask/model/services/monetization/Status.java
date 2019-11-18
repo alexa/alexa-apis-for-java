@@ -32,7 +32,9 @@ public enum Status {
   
   EXPIRED_NO_ACTION_BY_PARENT("EXPIRED_NO_ACTION_BY_PARENT"),
   
-  ERROR("ERROR");
+  ERROR("ERROR"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
@@ -57,7 +59,7 @@ public enum Status {
         return b;
       }
     }
-    return null;
+    return Status.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

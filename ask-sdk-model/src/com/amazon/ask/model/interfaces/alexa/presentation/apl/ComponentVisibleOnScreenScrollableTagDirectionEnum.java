@@ -26,7 +26,9 @@ public enum ComponentVisibleOnScreenScrollableTagDirectionEnum {
   
   HORIZONTAL("horizontal"),
   
-  VERTICAL("vertical");
+  VERTICAL("vertical"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
@@ -51,7 +53,7 @@ public enum ComponentVisibleOnScreenScrollableTagDirectionEnum {
         return b;
       }
     }
-    return null;
+    return ComponentVisibleOnScreenScrollableTagDirectionEnum.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

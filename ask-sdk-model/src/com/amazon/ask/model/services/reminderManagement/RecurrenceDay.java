@@ -36,7 +36,9 @@ public enum RecurrenceDay {
   
   FR("FR"),
   
-  SA("SA");
+  SA("SA"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
@@ -61,7 +63,7 @@ public enum RecurrenceDay {
         return b;
       }
     }
-    return null;
+    return RecurrenceDay.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

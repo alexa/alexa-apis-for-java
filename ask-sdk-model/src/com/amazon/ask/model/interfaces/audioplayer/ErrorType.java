@@ -32,7 +32,9 @@ public enum ErrorType {
   
   MEDIA_ERROR_SERVICE_UNAVAILABLE("MEDIA_ERROR_SERVICE_UNAVAILABLE"),
   
-  MEDIA_ERROR_UNKNOWN("MEDIA_ERROR_UNKNOWN");
+  MEDIA_ERROR_UNKNOWN("MEDIA_ERROR_UNKNOWN"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private Object value;
 
@@ -57,7 +59,7 @@ public enum ErrorType {
         return b;
       }
     }
-    return null;
+    return ErrorType.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

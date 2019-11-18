@@ -28,7 +28,9 @@ public enum PatternRecognizerAnchorType {
   
   END("end"),
   
-  ANYWHERE("anywhere");
+  ANYWHERE("anywhere"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
@@ -53,7 +55,7 @@ public enum PatternRecognizerAnchorType {
         return b;
       }
     }
-    return null;
+    return PatternRecognizerAnchorType.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

@@ -28,7 +28,9 @@ public enum CanUnderstandSlotValues {
   
   NO("NO"),
   
-  MAYBE("MAYBE");
+  MAYBE("MAYBE"),
+  
+  UNKNOWN_TO_SDK_VERSION(null);
 
   private Object value;
 
@@ -53,7 +55,7 @@ public enum CanUnderstandSlotValues {
         return b;
       }
     }
-    return null;
+    return CanUnderstandSlotValues.UNKNOWN_TO_SDK_VERSION;
   }
 }
 
