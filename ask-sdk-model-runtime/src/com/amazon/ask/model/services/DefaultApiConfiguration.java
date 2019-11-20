@@ -12,11 +12,15 @@
  */
 package com.amazon.ask.model.services;
 
+import com.amazon.ask.model.services.util.JacksonSerializer;
+
 /**
  * Default implementation of API Configuration options which is pre-configured for
  * most common use scenarios.
  */
 public class DefaultApiConfiguration implements ApiConfiguration {
+
+  private static final String DEFAULT_API_ENDPOINT = "https://api.amazonalexa.com";
 
   private Serializer serializer;
   private ApiClient apiClient;
@@ -24,10 +28,10 @@ public class DefaultApiConfiguration implements ApiConfiguration {
   private String apiEndpoint;
 
   private DefaultApiConfiguration(Builder builder) {
-    this.serializer = builder.serializer;
     this.apiClient = builder.apiClient;
     this.authorizationValue = builder.authorizationValue;
-    this.apiEndpoint = builder.apiEndpoint;
+    this.serializer = builder.serializer != null ? builder.serializer : new JacksonSerializer();
+    this.apiEndpoint = builder.apiEndpoint != null ? builder.apiEndpoint : DEFAULT_API_ENDPOINT;
   }
 
   public static Builder builder() {
