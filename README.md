@@ -10,6 +10,7 @@ in the developer documentation.
 | Module       | Maven           |
 | ------------- | ------------- |
 |[ask-sdk-model](./ask-sdk-model)| [![Maven Central](https://img.shields.io/maven-central/v/com.amazon.alexa/ask-sdk-model.svg)](http://mvnrepository.com/artifact/com.amazon.alexa/ask-sdk-model)| 
+|[ask-sdk-model-runtime](./ask-sdk-model-runtime)| [![Maven Central](https://img.shields.io/maven-central/v/com.amazon.alexa/ask-sdk-model-runtime.svg)](http://mvnrepository.com/artifact/com.amazon.alexa/ask-sdk-model-runtime)| 
 
 Got Feedback?
 -------------
