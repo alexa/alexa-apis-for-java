@@ -37,6 +37,9 @@ public final class Stream {
     @JsonProperty("offsetInMilliseconds")
     private Long offsetInMilliseconds = null;
 
+    @JsonProperty("captionData")
+    private com.amazon.ask.model.interfaces.audioplayer.CaptionData captionData = null;
+
     public static Builder builder() {
         return new Builder();
     }
@@ -53,6 +56,9 @@ public final class Stream {
         }
         if (builder.offsetInMilliseconds != null) {
             this.offsetInMilliseconds = builder.offsetInMilliseconds;
+        }
+        if (builder.captionData != null) {
+            this.captionData = builder.captionData;
         }
     }
 
@@ -92,6 +98,15 @@ public final class Stream {
         return offsetInMilliseconds;
     }
 
+    /**
+     * Get captionData
+     * @return captionData
+    **/
+    @JsonProperty("captionData")
+    public com.amazon.ask.model.interfaces.audioplayer.CaptionData getCaptionData() {
+        return captionData;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -104,12 +119,13 @@ public final class Stream {
         return Objects.equals(this.expectedPreviousToken, interfacesAudioplayerStream.expectedPreviousToken) &&
             Objects.equals(this.token, interfacesAudioplayerStream.token) &&
             Objects.equals(this.url, interfacesAudioplayerStream.url) &&
-            Objects.equals(this.offsetInMilliseconds, interfacesAudioplayerStream.offsetInMilliseconds);
+            Objects.equals(this.offsetInMilliseconds, interfacesAudioplayerStream.offsetInMilliseconds) &&
+            Objects.equals(this.captionData, interfacesAudioplayerStream.captionData);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(expectedPreviousToken, token, url, offsetInMilliseconds);
+        return Objects.hash(expectedPreviousToken, token, url, offsetInMilliseconds, captionData);
     }
 
     @Override
@@ -121,6 +137,7 @@ public final class Stream {
         sb.append("    token: ").append(toIndentedString(token)).append("\n");
         sb.append("    url: ").append(toIndentedString(url)).append("\n");
         sb.append("    offsetInMilliseconds: ").append(toIndentedString(offsetInMilliseconds)).append("\n");
+        sb.append("    captionData: ").append(toIndentedString(captionData)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -141,6 +158,7 @@ public final class Stream {
         private String token;
         private String url;
         private Long offsetInMilliseconds;
+        private com.amazon.ask.model.interfaces.audioplayer.CaptionData captionData;
 
         private Builder() {}
 
@@ -168,6 +186,13 @@ public final class Stream {
         @JsonProperty("offsetInMilliseconds")
         public Builder withOffsetInMilliseconds(Long offsetInMilliseconds) {
             this.offsetInMilliseconds = offsetInMilliseconds;
+            return this;
+        }
+
+
+        @JsonProperty("captionData")
+        public Builder withCaptionData(com.amazon.ask.model.interfaces.audioplayer.CaptionData captionData) {
+            this.captionData = captionData;
             return this;
         }
 
