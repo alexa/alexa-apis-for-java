@@ -14,6 +14,7 @@
 package com.amazon.ask.model.services.proactiveEvents;
 
 import com.amazon.ask.model.services.*;
+import com.amazon.ask.model.services.*;
 import com.amazon.ask.model.services.lwa.*;
 import com.amazon.ask.model.services.lwa.model.GrantType;
 
@@ -51,7 +52,7 @@ public class ProactiveEventsServiceClient extends BaseServiceClient implements P
    * @param createProactiveEventRequest Request to create a new proactive event. (required)
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<Void> callCreateProactiveEvent(com.amazon.ask.model.services.proactiveEvents.CreateProactiveEventRequest createProactiveEventRequest, com.amazon.ask.model.services.proactiveEvents.SkillStage stage) throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<Void> callCreateProactiveEvent(com.amazon.ask.model.services.proactiveEvents.CreateProactiveEventRequest createProactiveEventRequest, com.amazon.ask.model.services.proactiveEvents.SkillStage stage) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
     List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
@@ -75,7 +76,7 @@ public class ProactiveEventsServiceClient extends BaseServiceClient implements P
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.proactiveEvents.Error.class, 0, "Unexpected error"));
 
     return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, createProactiveEventRequest ,null, false);
+      pathParams, serviceResponseDefinitions, createProactiveEventRequest, null, false);
   }
 
   /**
@@ -84,7 +85,7 @@ public class ProactiveEventsServiceClient extends BaseServiceClient implements P
    * @param createProactiveEventRequest Request to create a new proactive event. (required)
    * @throws ServiceException if fails to make API call
    */
-  public void createProactiveEvent(com.amazon.ask.model.services.proactiveEvents.CreateProactiveEventRequest createProactiveEventRequest, com.amazon.ask.model.services.proactiveEvents.SkillStage stage) throws com.amazon.ask.model.services.ServiceException {
+  public void createProactiveEvent(com.amazon.ask.model.services.proactiveEvents.CreateProactiveEventRequest createProactiveEventRequest, com.amazon.ask.model.services.proactiveEvents.SkillStage stage) throws ServiceException {
     this.callCreateProactiveEvent(createProactiveEventRequest, stage).getResponse();
   }
 

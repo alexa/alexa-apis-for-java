@@ -14,6 +14,7 @@
 package com.amazon.ask.model.services.skillMessaging;
 
 import com.amazon.ask.model.services.*;
+import com.amazon.ask.model.services.*;
 import com.amazon.ask.model.services.lwa.*;
 import com.amazon.ask.model.services.lwa.model.GrantType;
 
@@ -52,7 +53,7 @@ public class SkillMessagingServiceClient extends BaseServiceClient implements Sk
    * @param sendSkillMessagingRequest Message Request to be sent to the skill. (required)
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<Void> callSendSkillMessage(String userId, com.amazon.ask.model.services.skillMessaging.SendSkillMessagingRequest sendSkillMessagingRequest) throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<Void> callSendSkillMessage(String userId, com.amazon.ask.model.services.skillMessaging.SendSkillMessagingRequest sendSkillMessagingRequest) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
     pathParams.put("userId", userId);
@@ -74,7 +75,7 @@ public class SkillMessagingServiceClient extends BaseServiceClient implements Sk
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.skillMessaging.Error.class, 0, "Unexpected error"));
 
     return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, sendSkillMessagingRequest ,null, false);
+      pathParams, serviceResponseDefinitions, sendSkillMessagingRequest, null, false);
   }
 
   /**
@@ -84,7 +85,7 @@ public class SkillMessagingServiceClient extends BaseServiceClient implements Sk
    * @param sendSkillMessagingRequest Message Request to be sent to the skill. (required)
    * @throws ServiceException if fails to make API call
    */
-  public void sendSkillMessage(String userId, com.amazon.ask.model.services.skillMessaging.SendSkillMessagingRequest sendSkillMessagingRequest) throws com.amazon.ask.model.services.ServiceException {
+  public void sendSkillMessage(String userId, com.amazon.ask.model.services.skillMessaging.SendSkillMessagingRequest sendSkillMessagingRequest) throws ServiceException {
     this.callSendSkillMessage(userId, sendSkillMessagingRequest).getResponse();
   }
 

@@ -14,6 +14,7 @@
 package com.amazon.ask.model.services.skillMessaging;
 
 import com.amazon.ask.model.services.*;
+import com.amazon.ask.model.services.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,8 +23,8 @@ import java.util.List;
 
 public interface SkillMessagingService {
 
-    void sendSkillMessage(String userId, com.amazon.ask.model.services.skillMessaging.SendSkillMessagingRequest sendSkillMessagingRequest) throws com.amazon.ask.model.services.ServiceException;
+    void sendSkillMessage(String userId, com.amazon.ask.model.services.skillMessaging.SendSkillMessagingRequest sendSkillMessagingRequest) throws ServiceException;
 
-    ApiResponse<Void> callSendSkillMessage(String userId, com.amazon.ask.model.services.skillMessaging.SendSkillMessagingRequest sendSkillMessagingRequest) throws com.amazon.ask.model.services.ServiceException;
+    ApiResponse<Void> callSendSkillMessage(String userId, com.amazon.ask.model.services.skillMessaging.SendSkillMessagingRequest sendSkillMessagingRequest) throws ServiceException;
 
 }

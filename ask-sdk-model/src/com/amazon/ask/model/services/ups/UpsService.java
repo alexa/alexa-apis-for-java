@@ -14,6 +14,7 @@
 package com.amazon.ask.model.services.ups;
 
 import com.amazon.ask.model.services.*;
+import com.amazon.ask.model.services.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,38 +23,38 @@ import java.util.List;
 
 public interface UpsService {
 
-    String getProfileEmail() throws com.amazon.ask.model.services.ServiceException;
+    String getProfileEmail() throws ServiceException;
 
-    ApiResponse<String> callGetProfileEmail() throws com.amazon.ask.model.services.ServiceException;
-
-
-    String getProfileGivenName() throws com.amazon.ask.model.services.ServiceException;
-
-    ApiResponse<String> callGetProfileGivenName() throws com.amazon.ask.model.services.ServiceException;
+    ApiResponse<String> callGetProfileEmail() throws ServiceException;
 
 
-    com.amazon.ask.model.services.ups.PhoneNumber getProfileMobileNumber() throws com.amazon.ask.model.services.ServiceException;
+    String getProfileGivenName() throws ServiceException;
 
-    ApiResponse<com.amazon.ask.model.services.ups.PhoneNumber> callGetProfileMobileNumber() throws com.amazon.ask.model.services.ServiceException;
-
-
-    String getProfileName() throws com.amazon.ask.model.services.ServiceException;
-
-    ApiResponse<String> callGetProfileName() throws com.amazon.ask.model.services.ServiceException;
+    ApiResponse<String> callGetProfileGivenName() throws ServiceException;
 
 
-    com.amazon.ask.model.services.ups.DistanceUnits getSystemDistanceUnits(String deviceId) throws com.amazon.ask.model.services.ServiceException;
+    com.amazon.ask.model.services.ups.PhoneNumber getProfileMobileNumber() throws ServiceException;
 
-    ApiResponse<com.amazon.ask.model.services.ups.DistanceUnits> callGetSystemDistanceUnits(String deviceId) throws com.amazon.ask.model.services.ServiceException;
-
-
-    com.amazon.ask.model.services.ups.TemperatureUnit getSystemTemperatureUnit(String deviceId) throws com.amazon.ask.model.services.ServiceException;
-
-    ApiResponse<com.amazon.ask.model.services.ups.TemperatureUnit> callGetSystemTemperatureUnit(String deviceId) throws com.amazon.ask.model.services.ServiceException;
+    ApiResponse<com.amazon.ask.model.services.ups.PhoneNumber> callGetProfileMobileNumber() throws ServiceException;
 
 
-    String getSystemTimeZone(String deviceId) throws com.amazon.ask.model.services.ServiceException;
+    String getProfileName() throws ServiceException;
 
-    ApiResponse<String> callGetSystemTimeZone(String deviceId) throws com.amazon.ask.model.services.ServiceException;
+    ApiResponse<String> callGetProfileName() throws ServiceException;
+
+
+    com.amazon.ask.model.services.ups.DistanceUnits getSystemDistanceUnits(String deviceId) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.model.services.ups.DistanceUnits> callGetSystemDistanceUnits(String deviceId) throws ServiceException;
+
+
+    com.amazon.ask.model.services.ups.TemperatureUnit getSystemTemperatureUnit(String deviceId) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.model.services.ups.TemperatureUnit> callGetSystemTemperatureUnit(String deviceId) throws ServiceException;
+
+
+    String getSystemTimeZone(String deviceId) throws ServiceException;
+
+    ApiResponse<String> callGetSystemTimeZone(String deviceId) throws ServiceException;
 
 }

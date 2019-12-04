@@ -14,6 +14,7 @@
 package com.amazon.ask.model.services.endpointEnumeration;
 
 import com.amazon.ask.model.services.*;
+import com.amazon.ask.model.services.*;
 import com.amazon.ask.model.services.lwa.*;
 import com.amazon.ask.model.services.lwa.model.GrantType;
 
@@ -36,7 +37,7 @@ public class EndpointEnumerationServiceClient extends BaseServiceClient implemen
    * @return com.amazon.ask.model.services.endpointEnumeration.EndpointEnumerationResponse
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.model.services.endpointEnumeration.EndpointEnumerationResponse> callGetEndpoints() throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<com.amazon.ask.model.services.endpointEnumeration.EndpointEnumerationResponse> callGetEndpoints() throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
     List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
@@ -57,7 +58,7 @@ public class EndpointEnumerationServiceClient extends BaseServiceClient implemen
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.endpointEnumeration.Error.class, 0, "Unexpected error"));
 
     return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, null ,com.amazon.ask.model.services.endpointEnumeration.EndpointEnumerationResponse.class, false);
+      pathParams, serviceResponseDefinitions, null, com.amazon.ask.model.services.endpointEnumeration.EndpointEnumerationResponse.class, false);
   }
 
   /**
@@ -66,7 +67,7 @@ public class EndpointEnumerationServiceClient extends BaseServiceClient implemen
    * @return com.amazon.ask.model.services.endpointEnumeration.EndpointEnumerationResponse
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.model.services.endpointEnumeration.EndpointEnumerationResponse getEndpoints() throws com.amazon.ask.model.services.ServiceException {
+  public com.amazon.ask.model.services.endpointEnumeration.EndpointEnumerationResponse getEndpoints() throws ServiceException {
     return this.callGetEndpoints().getResponse();
   }
 

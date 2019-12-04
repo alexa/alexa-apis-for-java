@@ -14,6 +14,7 @@
 package com.amazon.ask.model.services.directive;
 
 import com.amazon.ask.model.services.*;
+import com.amazon.ask.model.services.*;
 import com.amazon.ask.model.services.lwa.*;
 import com.amazon.ask.model.services.lwa.model.GrantType;
 
@@ -36,7 +37,7 @@ public class DirectiveServiceClient extends BaseServiceClient implements Directi
    * @param sendDirectiveRequest Represents the request object to send in the payload. (required)
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<Void> callEnqueue(com.amazon.ask.model.services.directive.SendDirectiveRequest sendDirectiveRequest) throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<Void> callEnqueue(com.amazon.ask.model.services.directive.SendDirectiveRequest sendDirectiveRequest) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
     List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
@@ -55,7 +56,7 @@ public class DirectiveServiceClient extends BaseServiceClient implements Directi
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.directive.Error.class, 0, "Unexpected error."));
 
     return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, sendDirectiveRequest ,null, false);
+      pathParams, serviceResponseDefinitions, sendDirectiveRequest, null, false);
   }
 
   /**
@@ -64,7 +65,7 @@ public class DirectiveServiceClient extends BaseServiceClient implements Directi
    * @param sendDirectiveRequest Represents the request object to send in the payload. (required)
    * @throws ServiceException if fails to make API call
    */
-  public void enqueue(com.amazon.ask.model.services.directive.SendDirectiveRequest sendDirectiveRequest) throws com.amazon.ask.model.services.ServiceException {
+  public void enqueue(com.amazon.ask.model.services.directive.SendDirectiveRequest sendDirectiveRequest) throws ServiceException {
     this.callEnqueue(sendDirectiveRequest).getResponse();
   }
 

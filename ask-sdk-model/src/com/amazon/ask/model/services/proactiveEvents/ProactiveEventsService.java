@@ -14,6 +14,7 @@
 package com.amazon.ask.model.services.proactiveEvents;
 
 import com.amazon.ask.model.services.*;
+import com.amazon.ask.model.services.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,8 +23,8 @@ import java.util.List;
 
 public interface ProactiveEventsService {
 
-    void createProactiveEvent(com.amazon.ask.model.services.proactiveEvents.CreateProactiveEventRequest createProactiveEventRequest, com.amazon.ask.model.services.proactiveEvents.SkillStage stage) throws com.amazon.ask.model.services.ServiceException;
+    void createProactiveEvent(com.amazon.ask.model.services.proactiveEvents.CreateProactiveEventRequest createProactiveEventRequest, com.amazon.ask.model.services.proactiveEvents.SkillStage stage) throws ServiceException;
 
-    ApiResponse<Void> callCreateProactiveEvent(com.amazon.ask.model.services.proactiveEvents.CreateProactiveEventRequest createProactiveEventRequest, com.amazon.ask.model.services.proactiveEvents.SkillStage stage) throws com.amazon.ask.model.services.ServiceException;
+    ApiResponse<Void> callCreateProactiveEvent(com.amazon.ask.model.services.proactiveEvents.CreateProactiveEventRequest createProactiveEventRequest, com.amazon.ask.model.services.proactiveEvents.SkillStage stage) throws ServiceException;
 
 }

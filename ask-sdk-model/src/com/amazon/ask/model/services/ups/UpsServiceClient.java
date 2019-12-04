@@ -14,6 +14,7 @@
 package com.amazon.ask.model.services.ups;
 
 import com.amazon.ask.model.services.*;
+import com.amazon.ask.model.services.*;
 import com.amazon.ask.model.services.lwa.*;
 import com.amazon.ask.model.services.lwa.model.GrantType;
 
@@ -36,7 +37,7 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
    * @return String
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<String> callGetProfileEmail() throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<String> callGetProfileEmail() throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
     List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
@@ -56,7 +57,7 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 0, "An unexpected error occurred."));
 
     return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, null ,String.class, false);
+      pathParams, serviceResponseDefinitions, null, String.class, false);
   }
 
   /**
@@ -65,7 +66,7 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
    * @return String
    * @throws ServiceException if fails to make API call
    */
-  public String getProfileEmail() throws com.amazon.ask.model.services.ServiceException {
+  public String getProfileEmail() throws ServiceException {
     return this.callGetProfileEmail().getResponse();
   }
 
@@ -75,7 +76,7 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
    * @return String
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<String> callGetProfileGivenName() throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<String> callGetProfileGivenName() throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
     List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
@@ -95,7 +96,7 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 0, "An unexpected error occurred."));
 
     return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, null ,String.class, false);
+      pathParams, serviceResponseDefinitions, null, String.class, false);
   }
 
   /**
@@ -104,7 +105,7 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
    * @return String
    * @throws ServiceException if fails to make API call
    */
-  public String getProfileGivenName() throws com.amazon.ask.model.services.ServiceException {
+  public String getProfileGivenName() throws ServiceException {
     return this.callGetProfileGivenName().getResponse();
   }
 
@@ -114,7 +115,7 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
    * @return com.amazon.ask.model.services.ups.PhoneNumber
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.model.services.ups.PhoneNumber> callGetProfileMobileNumber() throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<com.amazon.ask.model.services.ups.PhoneNumber> callGetProfileMobileNumber() throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
     List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
@@ -134,7 +135,7 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 0, "An unexpected error occurred."));
 
     return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, null ,com.amazon.ask.model.services.ups.PhoneNumber.class, false);
+      pathParams, serviceResponseDefinitions, null, com.amazon.ask.model.services.ups.PhoneNumber.class, false);
   }
 
   /**
@@ -143,7 +144,7 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
    * @return com.amazon.ask.model.services.ups.PhoneNumber
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.model.services.ups.PhoneNumber getProfileMobileNumber() throws com.amazon.ask.model.services.ServiceException {
+  public com.amazon.ask.model.services.ups.PhoneNumber getProfileMobileNumber() throws ServiceException {
     return this.callGetProfileMobileNumber().getResponse();
   }
 
@@ -153,7 +154,7 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
    * @return String
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<String> callGetProfileName() throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<String> callGetProfileName() throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
     List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
@@ -173,7 +174,7 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 0, "An unexpected error occurred."));
 
     return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, null ,String.class, false);
+      pathParams, serviceResponseDefinitions, null, String.class, false);
   }
 
   /**
@@ -182,7 +183,7 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
    * @return String
    * @throws ServiceException if fails to make API call
    */
-  public String getProfileName() throws com.amazon.ask.model.services.ServiceException {
+  public String getProfileName() throws ServiceException {
     return this.callGetProfileName().getResponse();
   }
 
@@ -193,7 +194,7 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
    * @return com.amazon.ask.model.services.ups.DistanceUnits
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.model.services.ups.DistanceUnits> callGetSystemDistanceUnits(String deviceId) throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<com.amazon.ask.model.services.ups.DistanceUnits> callGetSystemDistanceUnits(String deviceId) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
     pathParams.put("deviceId", deviceId);
@@ -214,7 +215,7 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 0, "An unexpected error occurred."));
 
     return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, null ,com.amazon.ask.model.services.ups.DistanceUnits.class, false);
+      pathParams, serviceResponseDefinitions, null, com.amazon.ask.model.services.ups.DistanceUnits.class, false);
   }
 
   /**
@@ -224,7 +225,7 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
    * @return com.amazon.ask.model.services.ups.DistanceUnits
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.model.services.ups.DistanceUnits getSystemDistanceUnits(String deviceId) throws com.amazon.ask.model.services.ServiceException {
+  public com.amazon.ask.model.services.ups.DistanceUnits getSystemDistanceUnits(String deviceId) throws ServiceException {
     return this.callGetSystemDistanceUnits(deviceId).getResponse();
   }
 
@@ -235,7 +236,7 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
    * @return com.amazon.ask.model.services.ups.TemperatureUnit
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.model.services.ups.TemperatureUnit> callGetSystemTemperatureUnit(String deviceId) throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<com.amazon.ask.model.services.ups.TemperatureUnit> callGetSystemTemperatureUnit(String deviceId) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
     pathParams.put("deviceId", deviceId);
@@ -256,7 +257,7 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 0, "An unexpected error occurred."));
 
     return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, null ,com.amazon.ask.model.services.ups.TemperatureUnit.class, false);
+      pathParams, serviceResponseDefinitions, null, com.amazon.ask.model.services.ups.TemperatureUnit.class, false);
   }
 
   /**
@@ -266,7 +267,7 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
    * @return com.amazon.ask.model.services.ups.TemperatureUnit
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.model.services.ups.TemperatureUnit getSystemTemperatureUnit(String deviceId) throws com.amazon.ask.model.services.ServiceException {
+  public com.amazon.ask.model.services.ups.TemperatureUnit getSystemTemperatureUnit(String deviceId) throws ServiceException {
     return this.callGetSystemTemperatureUnit(deviceId).getResponse();
   }
 
@@ -277,7 +278,7 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
    * @return String
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<String> callGetSystemTimeZone(String deviceId) throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<String> callGetSystemTimeZone(String deviceId) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
     pathParams.put("deviceId", deviceId);
@@ -298,7 +299,7 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 0, "An unexpected error occurred."));
 
     return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, null ,String.class, false);
+      pathParams, serviceResponseDefinitions, null, String.class, false);
   }
 
   /**
@@ -308,7 +309,7 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
    * @return String
    * @throws ServiceException if fails to make API call
    */
-  public String getSystemTimeZone(String deviceId) throws com.amazon.ask.model.services.ServiceException {
+  public String getSystemTimeZone(String deviceId) throws ServiceException {
     return this.callGetSystemTimeZone(deviceId).getResponse();
   }
 

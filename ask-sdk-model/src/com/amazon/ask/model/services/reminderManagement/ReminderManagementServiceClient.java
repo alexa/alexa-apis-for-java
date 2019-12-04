@@ -14,6 +14,7 @@
 package com.amazon.ask.model.services.reminderManagement;
 
 import com.amazon.ask.model.services.*;
+import com.amazon.ask.model.services.*;
 import com.amazon.ask.model.services.lwa.*;
 import com.amazon.ask.model.services.lwa.model.GrantType;
 
@@ -36,7 +37,7 @@ public class ReminderManagementServiceClient extends BaseServiceClient implement
    * @param alertToken  (required)
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<Void> callDeleteReminder(String alertToken) throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<Void> callDeleteReminder(String alertToken) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
     pathParams.put("alertToken", alertToken);
@@ -55,7 +56,7 @@ public class ReminderManagementServiceClient extends BaseServiceClient implement
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.reminderManagement.Error.class, 500, "Internal Server Error"));
 
     return this.executeRequest("DELETE", this.apiEndpoint, path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, null ,null, false);
+      pathParams, serviceResponseDefinitions, null, null, false);
   }
 
   /**
@@ -64,7 +65,7 @@ public class ReminderManagementServiceClient extends BaseServiceClient implement
    * @param alertToken  (required)
    * @throws ServiceException if fails to make API call
    */
-  public void deleteReminder(String alertToken) throws com.amazon.ask.model.services.ServiceException {
+  public void deleteReminder(String alertToken) throws ServiceException {
     this.callDeleteReminder(alertToken).getResponse();
   }
 
@@ -75,7 +76,7 @@ public class ReminderManagementServiceClient extends BaseServiceClient implement
    * @return com.amazon.ask.model.services.reminderManagement.GetReminderResponse
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.model.services.reminderManagement.GetReminderResponse> callGetReminder(String alertToken) throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<com.amazon.ask.model.services.reminderManagement.GetReminderResponse> callGetReminder(String alertToken) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
     pathParams.put("alertToken", alertToken);
@@ -94,7 +95,7 @@ public class ReminderManagementServiceClient extends BaseServiceClient implement
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.reminderManagement.Error.class, 500, "Internal Server Error"));
 
     return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, null ,com.amazon.ask.model.services.reminderManagement.GetReminderResponse.class, false);
+      pathParams, serviceResponseDefinitions, null, com.amazon.ask.model.services.reminderManagement.GetReminderResponse.class, false);
   }
 
   /**
@@ -104,7 +105,7 @@ public class ReminderManagementServiceClient extends BaseServiceClient implement
    * @return com.amazon.ask.model.services.reminderManagement.GetReminderResponse
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.model.services.reminderManagement.GetReminderResponse getReminder(String alertToken) throws com.amazon.ask.model.services.ServiceException {
+  public com.amazon.ask.model.services.reminderManagement.GetReminderResponse getReminder(String alertToken) throws ServiceException {
     return this.callGetReminder(alertToken).getResponse();
   }
 
@@ -116,7 +117,7 @@ public class ReminderManagementServiceClient extends BaseServiceClient implement
    * @return com.amazon.ask.model.services.reminderManagement.ReminderResponse
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.model.services.reminderManagement.ReminderResponse> callUpdateReminder(String alertToken, com.amazon.ask.model.services.reminderManagement.ReminderRequest reminderRequest) throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<com.amazon.ask.model.services.reminderManagement.ReminderResponse> callUpdateReminder(String alertToken, com.amazon.ask.model.services.reminderManagement.ReminderRequest reminderRequest) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
     pathParams.put("alertToken", alertToken);
@@ -137,7 +138,7 @@ public class ReminderManagementServiceClient extends BaseServiceClient implement
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.reminderManagement.Error.class, 500, "Internal Server Error"));
 
     return this.executeRequest("PUT", this.apiEndpoint, path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, reminderRequest ,com.amazon.ask.model.services.reminderManagement.ReminderResponse.class, false);
+      pathParams, serviceResponseDefinitions, reminderRequest, com.amazon.ask.model.services.reminderManagement.ReminderResponse.class, false);
   }
 
   /**
@@ -148,7 +149,7 @@ public class ReminderManagementServiceClient extends BaseServiceClient implement
    * @return com.amazon.ask.model.services.reminderManagement.ReminderResponse
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.model.services.reminderManagement.ReminderResponse updateReminder(String alertToken, com.amazon.ask.model.services.reminderManagement.ReminderRequest reminderRequest) throws com.amazon.ask.model.services.ServiceException {
+  public com.amazon.ask.model.services.reminderManagement.ReminderResponse updateReminder(String alertToken, com.amazon.ask.model.services.reminderManagement.ReminderRequest reminderRequest) throws ServiceException {
     return this.callUpdateReminder(alertToken, reminderRequest).getResponse();
   }
 
@@ -158,7 +159,7 @@ public class ReminderManagementServiceClient extends BaseServiceClient implement
    * @return com.amazon.ask.model.services.reminderManagement.GetRemindersResponse
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.model.services.reminderManagement.GetRemindersResponse> callGetReminders() throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<com.amazon.ask.model.services.reminderManagement.GetRemindersResponse> callGetReminders() throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
     List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
@@ -176,7 +177,7 @@ public class ReminderManagementServiceClient extends BaseServiceClient implement
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.reminderManagement.Error.class, 500, "Internal Server Error"));
 
     return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, null ,com.amazon.ask.model.services.reminderManagement.GetRemindersResponse.class, false);
+      pathParams, serviceResponseDefinitions, null, com.amazon.ask.model.services.reminderManagement.GetRemindersResponse.class, false);
   }
 
   /**
@@ -185,7 +186,7 @@ public class ReminderManagementServiceClient extends BaseServiceClient implement
    * @return com.amazon.ask.model.services.reminderManagement.GetRemindersResponse
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.model.services.reminderManagement.GetRemindersResponse getReminders() throws com.amazon.ask.model.services.ServiceException {
+  public com.amazon.ask.model.services.reminderManagement.GetRemindersResponse getReminders() throws ServiceException {
     return this.callGetReminders().getResponse();
   }
 
@@ -196,7 +197,7 @@ public class ReminderManagementServiceClient extends BaseServiceClient implement
    * @return com.amazon.ask.model.services.reminderManagement.ReminderResponse
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.model.services.reminderManagement.ReminderResponse> callCreateReminder(com.amazon.ask.model.services.reminderManagement.ReminderRequest reminderRequest) throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<com.amazon.ask.model.services.reminderManagement.ReminderResponse> callCreateReminder(com.amazon.ask.model.services.reminderManagement.ReminderRequest reminderRequest) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
     List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
@@ -217,7 +218,7 @@ public class ReminderManagementServiceClient extends BaseServiceClient implement
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.reminderManagement.Error.class, 504, "Gateway Timeout"));
 
     return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, reminderRequest ,com.amazon.ask.model.services.reminderManagement.ReminderResponse.class, false);
+      pathParams, serviceResponseDefinitions, reminderRequest, com.amazon.ask.model.services.reminderManagement.ReminderResponse.class, false);
   }
 
   /**
@@ -227,7 +228,7 @@ public class ReminderManagementServiceClient extends BaseServiceClient implement
    * @return com.amazon.ask.model.services.reminderManagement.ReminderResponse
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.model.services.reminderManagement.ReminderResponse createReminder(com.amazon.ask.model.services.reminderManagement.ReminderRequest reminderRequest) throws com.amazon.ask.model.services.ServiceException {
+  public com.amazon.ask.model.services.reminderManagement.ReminderResponse createReminder(com.amazon.ask.model.services.reminderManagement.ReminderRequest reminderRequest) throws ServiceException {
     return this.callCreateReminder(reminderRequest).getResponse();
   }
 

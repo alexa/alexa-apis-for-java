@@ -14,6 +14,7 @@
 package com.amazon.ask.model.services.listManagement;
 
 import com.amazon.ask.model.services.*;
+import com.amazon.ask.model.services.*;
 import com.amazon.ask.model.services.lwa.*;
 import com.amazon.ask.model.services.lwa.model.GrantType;
 
@@ -36,7 +37,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
    * @return com.amazon.ask.model.services.listManagement.AlexaListsMetadata
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.model.services.listManagement.AlexaListsMetadata> callGetListsMetadata() throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<com.amazon.ask.model.services.listManagement.AlexaListsMetadata> callGetListsMetadata() throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
     List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
@@ -53,7 +54,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 500, "Internal Server Error"));
 
     return this.executeRequest("GET", "https://api.amazonalexa.com/", path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, null ,com.amazon.ask.model.services.listManagement.AlexaListsMetadata.class, false);
+      pathParams, serviceResponseDefinitions, null, com.amazon.ask.model.services.listManagement.AlexaListsMetadata.class, false);
   }
 
   /**
@@ -62,7 +63,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
    * @return com.amazon.ask.model.services.listManagement.AlexaListsMetadata
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.model.services.listManagement.AlexaListsMetadata getListsMetadata() throws com.amazon.ask.model.services.ServiceException {
+  public com.amazon.ask.model.services.listManagement.AlexaListsMetadata getListsMetadata() throws ServiceException {
     return this.callGetListsMetadata().getResponse();
   }
 
@@ -72,7 +73,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
    * @param listId Value of the customer’s listId retrieved from a getListsMetadata call (required)
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<Void> callDeleteList(String listId) throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<Void> callDeleteList(String listId) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
     pathParams.put("listId", listId);
@@ -92,7 +93,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 0, "Internal Server Error"));
 
     return this.executeRequest("DELETE", "https://api.amazonalexa.com/", path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, null ,null, false);
+      pathParams, serviceResponseDefinitions, null, null, false);
   }
 
   /**
@@ -101,7 +102,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
    * @param listId Value of the customer’s listId retrieved from a getListsMetadata call (required)
    * @throws ServiceException if fails to make API call
    */
-  public void deleteList(String listId) throws com.amazon.ask.model.services.ServiceException {
+  public void deleteList(String listId) throws ServiceException {
     this.callDeleteList(listId).getResponse();
   }
 
@@ -112,7 +113,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
    * @param itemId The customer’s itemId is retrieved from a GetList call. (required)
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<Void> callDeleteListItem(String listId, String itemId) throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<Void> callDeleteListItem(String listId, String itemId) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
     pathParams.put("listId", listId);
@@ -133,7 +134,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 0, "Internal Server Error"));
 
     return this.executeRequest("DELETE", "https://api.amazonalexa.com/", path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, null ,null, false);
+      pathParams, serviceResponseDefinitions, null, null, false);
   }
 
   /**
@@ -143,7 +144,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
    * @param itemId The customer’s itemId is retrieved from a GetList call. (required)
    * @throws ServiceException if fails to make API call
    */
-  public void deleteListItem(String listId, String itemId) throws com.amazon.ask.model.services.ServiceException {
+  public void deleteListItem(String listId, String itemId) throws ServiceException {
     this.callDeleteListItem(listId, itemId).getResponse();
   }
 
@@ -155,7 +156,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
    * @return com.amazon.ask.model.services.listManagement.AlexaListItem
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.model.services.listManagement.AlexaListItem> callGetListItem(String listId, String itemId) throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<com.amazon.ask.model.services.listManagement.AlexaListItem> callGetListItem(String listId, String itemId) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
     pathParams.put("listId", listId);
@@ -176,7 +177,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 0, "Internal Server Error"));
 
     return this.executeRequest("GET", "https://api.amazonalexa.com/", path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, null ,com.amazon.ask.model.services.listManagement.AlexaListItem.class, false);
+      pathParams, serviceResponseDefinitions, null, com.amazon.ask.model.services.listManagement.AlexaListItem.class, false);
   }
 
   /**
@@ -187,7 +188,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
    * @return com.amazon.ask.model.services.listManagement.AlexaListItem
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.model.services.listManagement.AlexaListItem getListItem(String listId, String itemId) throws com.amazon.ask.model.services.ServiceException {
+  public com.amazon.ask.model.services.listManagement.AlexaListItem getListItem(String listId, String itemId) throws ServiceException {
     return this.callGetListItem(listId, itemId).getResponse();
   }
 
@@ -200,7 +201,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
    * @return com.amazon.ask.model.services.listManagement.AlexaListItem
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.model.services.listManagement.AlexaListItem> callUpdateListItem(String listId, String itemId, com.amazon.ask.model.services.listManagement.UpdateListItemRequest updateListItemRequest) throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<com.amazon.ask.model.services.listManagement.AlexaListItem> callUpdateListItem(String listId, String itemId, com.amazon.ask.model.services.listManagement.UpdateListItemRequest updateListItemRequest) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
     pathParams.put("listId", listId);
@@ -222,7 +223,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 0, "Internal Server Error"));
 
     return this.executeRequest("PUT", "https://api.amazonalexa.com/", path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, updateListItemRequest ,com.amazon.ask.model.services.listManagement.AlexaListItem.class, false);
+      pathParams, serviceResponseDefinitions, updateListItemRequest, com.amazon.ask.model.services.listManagement.AlexaListItem.class, false);
   }
 
   /**
@@ -234,7 +235,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
    * @return com.amazon.ask.model.services.listManagement.AlexaListItem
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.model.services.listManagement.AlexaListItem updateListItem(String listId, String itemId, com.amazon.ask.model.services.listManagement.UpdateListItemRequest updateListItemRequest) throws com.amazon.ask.model.services.ServiceException {
+  public com.amazon.ask.model.services.listManagement.AlexaListItem updateListItem(String listId, String itemId, com.amazon.ask.model.services.listManagement.UpdateListItemRequest updateListItemRequest) throws ServiceException {
     return this.callUpdateListItem(listId, itemId, updateListItemRequest).getResponse();
   }
 
@@ -246,7 +247,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
    * @return com.amazon.ask.model.services.listManagement.AlexaListItem
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.model.services.listManagement.AlexaListItem> callCreateListItem(String listId, com.amazon.ask.model.services.listManagement.CreateListItemRequest createListItemRequest) throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<com.amazon.ask.model.services.listManagement.AlexaListItem> callCreateListItem(String listId, com.amazon.ask.model.services.listManagement.CreateListItemRequest createListItemRequest) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
     pathParams.put("listId", listId);
@@ -267,7 +268,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 0, "Internal Server Error"));
 
     return this.executeRequest("POST", "https://api.amazonalexa.com/", path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, createListItemRequest ,com.amazon.ask.model.services.listManagement.AlexaListItem.class, false);
+      pathParams, serviceResponseDefinitions, createListItemRequest, com.amazon.ask.model.services.listManagement.AlexaListItem.class, false);
   }
 
   /**
@@ -278,7 +279,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
    * @return com.amazon.ask.model.services.listManagement.AlexaListItem
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.model.services.listManagement.AlexaListItem createListItem(String listId, com.amazon.ask.model.services.listManagement.CreateListItemRequest createListItemRequest) throws com.amazon.ask.model.services.ServiceException {
+  public com.amazon.ask.model.services.listManagement.AlexaListItem createListItem(String listId, com.amazon.ask.model.services.listManagement.CreateListItemRequest createListItemRequest) throws ServiceException {
     return this.callCreateListItem(listId, createListItemRequest).getResponse();
   }
 
@@ -290,7 +291,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
    * @return com.amazon.ask.model.services.listManagement.AlexaListMetadata
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.model.services.listManagement.AlexaListMetadata> callUpdateList(String listId, com.amazon.ask.model.services.listManagement.UpdateListRequest updateListRequest) throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<com.amazon.ask.model.services.listManagement.AlexaListMetadata> callUpdateList(String listId, com.amazon.ask.model.services.listManagement.UpdateListRequest updateListRequest) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
     pathParams.put("listId", listId);
@@ -312,7 +313,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 0, "Internal Server Error"));
 
     return this.executeRequest("PUT", "https://api.amazonalexa.com/", path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, updateListRequest ,com.amazon.ask.model.services.listManagement.AlexaListMetadata.class, false);
+      pathParams, serviceResponseDefinitions, updateListRequest, com.amazon.ask.model.services.listManagement.AlexaListMetadata.class, false);
   }
 
   /**
@@ -323,7 +324,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
    * @return com.amazon.ask.model.services.listManagement.AlexaListMetadata
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.model.services.listManagement.AlexaListMetadata updateList(String listId, com.amazon.ask.model.services.listManagement.UpdateListRequest updateListRequest) throws com.amazon.ask.model.services.ServiceException {
+  public com.amazon.ask.model.services.listManagement.AlexaListMetadata updateList(String listId, com.amazon.ask.model.services.listManagement.UpdateListRequest updateListRequest) throws ServiceException {
     return this.callUpdateList(listId, updateListRequest).getResponse();
   }
 
@@ -335,7 +336,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
    * @return com.amazon.ask.model.services.listManagement.AlexaList
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.model.services.listManagement.AlexaList> callGetList(String listId, String status) throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<com.amazon.ask.model.services.listManagement.AlexaList> callGetList(String listId, String status) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
     pathParams.put("listId", listId);
@@ -357,7 +358,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 0, "Internal Server Error"));
 
     return this.executeRequest("GET", "https://api.amazonalexa.com/", path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, null ,com.amazon.ask.model.services.listManagement.AlexaList.class, false);
+      pathParams, serviceResponseDefinitions, null, com.amazon.ask.model.services.listManagement.AlexaList.class, false);
   }
 
   /**
@@ -368,7 +369,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
    * @return com.amazon.ask.model.services.listManagement.AlexaList
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.model.services.listManagement.AlexaList getList(String listId, String status) throws com.amazon.ask.model.services.ServiceException {
+  public com.amazon.ask.model.services.listManagement.AlexaList getList(String listId, String status) throws ServiceException {
     return this.callGetList(listId, status).getResponse();
   }
 
@@ -379,7 +380,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
    * @return com.amazon.ask.model.services.listManagement.AlexaListMetadata
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.model.services.listManagement.AlexaListMetadata> callCreateList(com.amazon.ask.model.services.listManagement.CreateListRequest createListRequest) throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<com.amazon.ask.model.services.listManagement.AlexaListMetadata> callCreateList(com.amazon.ask.model.services.listManagement.CreateListRequest createListRequest) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
     List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
@@ -399,7 +400,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 0, "Internal Server Error"));
 
     return this.executeRequest("POST", "https://api.amazonalexa.com/", path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, createListRequest ,com.amazon.ask.model.services.listManagement.AlexaListMetadata.class, false);
+      pathParams, serviceResponseDefinitions, createListRequest, com.amazon.ask.model.services.listManagement.AlexaListMetadata.class, false);
   }
 
   /**
@@ -409,7 +410,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
    * @return com.amazon.ask.model.services.listManagement.AlexaListMetadata
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.model.services.listManagement.AlexaListMetadata createList(com.amazon.ask.model.services.listManagement.CreateListRequest createListRequest) throws com.amazon.ask.model.services.ServiceException {
+  public com.amazon.ask.model.services.listManagement.AlexaListMetadata createList(com.amazon.ask.model.services.listManagement.CreateListRequest createListRequest) throws ServiceException {
     return this.callCreateList(createListRequest).getResponse();
   }
 

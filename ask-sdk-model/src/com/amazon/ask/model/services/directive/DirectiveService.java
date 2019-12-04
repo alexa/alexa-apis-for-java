@@ -14,6 +14,7 @@
 package com.amazon.ask.model.services.directive;
 
 import com.amazon.ask.model.services.*;
+import com.amazon.ask.model.services.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,8 +23,8 @@ import java.util.List;
 
 public interface DirectiveService {
 
-    void enqueue(com.amazon.ask.model.services.directive.SendDirectiveRequest sendDirectiveRequest) throws com.amazon.ask.model.services.ServiceException;
+    void enqueue(com.amazon.ask.model.services.directive.SendDirectiveRequest sendDirectiveRequest) throws ServiceException;
 
-    ApiResponse<Void> callEnqueue(com.amazon.ask.model.services.directive.SendDirectiveRequest sendDirectiveRequest) throws com.amazon.ask.model.services.ServiceException;
+    ApiResponse<Void> callEnqueue(com.amazon.ask.model.services.directive.SendDirectiveRequest sendDirectiveRequest) throws ServiceException;
 
 }

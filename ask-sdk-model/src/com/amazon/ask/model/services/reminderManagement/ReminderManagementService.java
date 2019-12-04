@@ -14,6 +14,7 @@
 package com.amazon.ask.model.services.reminderManagement;
 
 import com.amazon.ask.model.services.*;
+import com.amazon.ask.model.services.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,28 +23,28 @@ import java.util.List;
 
 public interface ReminderManagementService {
 
-    void deleteReminder(String alertToken) throws com.amazon.ask.model.services.ServiceException;
+    void deleteReminder(String alertToken) throws ServiceException;
 
-    ApiResponse<Void> callDeleteReminder(String alertToken) throws com.amazon.ask.model.services.ServiceException;
-
-
-    com.amazon.ask.model.services.reminderManagement.GetReminderResponse getReminder(String alertToken) throws com.amazon.ask.model.services.ServiceException;
-
-    ApiResponse<com.amazon.ask.model.services.reminderManagement.GetReminderResponse> callGetReminder(String alertToken) throws com.amazon.ask.model.services.ServiceException;
+    ApiResponse<Void> callDeleteReminder(String alertToken) throws ServiceException;
 
 
-    com.amazon.ask.model.services.reminderManagement.ReminderResponse updateReminder(String alertToken, com.amazon.ask.model.services.reminderManagement.ReminderRequest reminderRequest) throws com.amazon.ask.model.services.ServiceException;
+    com.amazon.ask.model.services.reminderManagement.GetReminderResponse getReminder(String alertToken) throws ServiceException;
 
-    ApiResponse<com.amazon.ask.model.services.reminderManagement.ReminderResponse> callUpdateReminder(String alertToken, com.amazon.ask.model.services.reminderManagement.ReminderRequest reminderRequest) throws com.amazon.ask.model.services.ServiceException;
-
-
-    com.amazon.ask.model.services.reminderManagement.GetRemindersResponse getReminders() throws com.amazon.ask.model.services.ServiceException;
-
-    ApiResponse<com.amazon.ask.model.services.reminderManagement.GetRemindersResponse> callGetReminders() throws com.amazon.ask.model.services.ServiceException;
+    ApiResponse<com.amazon.ask.model.services.reminderManagement.GetReminderResponse> callGetReminder(String alertToken) throws ServiceException;
 
 
-    com.amazon.ask.model.services.reminderManagement.ReminderResponse createReminder(com.amazon.ask.model.services.reminderManagement.ReminderRequest reminderRequest) throws com.amazon.ask.model.services.ServiceException;
+    com.amazon.ask.model.services.reminderManagement.ReminderResponse updateReminder(String alertToken, com.amazon.ask.model.services.reminderManagement.ReminderRequest reminderRequest) throws ServiceException;
 
-    ApiResponse<com.amazon.ask.model.services.reminderManagement.ReminderResponse> callCreateReminder(com.amazon.ask.model.services.reminderManagement.ReminderRequest reminderRequest) throws com.amazon.ask.model.services.ServiceException;
+    ApiResponse<com.amazon.ask.model.services.reminderManagement.ReminderResponse> callUpdateReminder(String alertToken, com.amazon.ask.model.services.reminderManagement.ReminderRequest reminderRequest) throws ServiceException;
+
+
+    com.amazon.ask.model.services.reminderManagement.GetRemindersResponse getReminders() throws ServiceException;
+
+    ApiResponse<com.amazon.ask.model.services.reminderManagement.GetRemindersResponse> callGetReminders() throws ServiceException;
+
+
+    com.amazon.ask.model.services.reminderManagement.ReminderResponse createReminder(com.amazon.ask.model.services.reminderManagement.ReminderRequest reminderRequest) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.model.services.reminderManagement.ReminderResponse> callCreateReminder(com.amazon.ask.model.services.reminderManagement.ReminderRequest reminderRequest) throws ServiceException;
 
 }

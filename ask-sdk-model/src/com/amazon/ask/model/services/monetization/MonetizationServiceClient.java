@@ -14,6 +14,7 @@
 package com.amazon.ask.model.services.monetization;
 
 import com.amazon.ask.model.services.*;
+import com.amazon.ask.model.services.*;
 import com.amazon.ask.model.services.lwa.*;
 import com.amazon.ask.model.services.lwa.model.GrantType;
 import java.math.BigDecimal;
@@ -44,7 +45,7 @@ public class MonetizationServiceClient extends BaseServiceClient implements Mone
    * @return com.amazon.ask.model.services.monetization.InSkillProductsResponse
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.model.services.monetization.InSkillProductsResponse> callGetInSkillProducts(String acceptLanguage, String purchasable, String entitled, String productType, String nextToken, BigDecimal maxResults) throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<com.amazon.ask.model.services.monetization.InSkillProductsResponse> callGetInSkillProducts(String acceptLanguage, String purchasable, String entitled, String productType, String nextToken, BigDecimal maxResults) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
 
     if(purchasable != null) {
@@ -86,7 +87,7 @@ public class MonetizationServiceClient extends BaseServiceClient implements Mone
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.monetization.Error.class, 500, "Internal Server Error"));
 
     return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, null ,com.amazon.ask.model.services.monetization.InSkillProductsResponse.class, false);
+      pathParams, serviceResponseDefinitions, null, com.amazon.ask.model.services.monetization.InSkillProductsResponse.class, false);
   }
 
   /**
@@ -101,7 +102,7 @@ public class MonetizationServiceClient extends BaseServiceClient implements Mone
    * @return com.amazon.ask.model.services.monetization.InSkillProductsResponse
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.model.services.monetization.InSkillProductsResponse getInSkillProducts(String acceptLanguage, String purchasable, String entitled, String productType, String nextToken, BigDecimal maxResults) throws com.amazon.ask.model.services.ServiceException {
+  public com.amazon.ask.model.services.monetization.InSkillProductsResponse getInSkillProducts(String acceptLanguage, String purchasable, String entitled, String productType, String nextToken, BigDecimal maxResults) throws ServiceException {
     return this.callGetInSkillProducts(acceptLanguage, purchasable, entitled, productType, nextToken, maxResults).getResponse();
   }
 
@@ -113,7 +114,7 @@ public class MonetizationServiceClient extends BaseServiceClient implements Mone
    * @return com.amazon.ask.model.services.monetization.InSkillProduct
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.model.services.monetization.InSkillProduct> callGetInSkillProduct(String acceptLanguage, String productId) throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<com.amazon.ask.model.services.monetization.InSkillProduct> callGetInSkillProduct(String acceptLanguage, String productId) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
     pathParams.put("productId", productId);
@@ -137,7 +138,7 @@ public class MonetizationServiceClient extends BaseServiceClient implements Mone
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.monetization.Error.class, 500, "Internal Server Error."));
 
     return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, null ,com.amazon.ask.model.services.monetization.InSkillProduct.class, false);
+      pathParams, serviceResponseDefinitions, null, com.amazon.ask.model.services.monetization.InSkillProduct.class, false);
   }
 
   /**
@@ -148,7 +149,7 @@ public class MonetizationServiceClient extends BaseServiceClient implements Mone
    * @return com.amazon.ask.model.services.monetization.InSkillProduct
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.model.services.monetization.InSkillProduct getInSkillProduct(String acceptLanguage, String productId) throws com.amazon.ask.model.services.ServiceException {
+  public com.amazon.ask.model.services.monetization.InSkillProduct getInSkillProduct(String acceptLanguage, String productId) throws ServiceException {
     return this.callGetInSkillProduct(acceptLanguage, productId).getResponse();
   }
 
@@ -165,7 +166,7 @@ public class MonetizationServiceClient extends BaseServiceClient implements Mone
    * @return com.amazon.ask.model.services.monetization.InSkillProductTransactionsResponse
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.model.services.monetization.InSkillProductTransactionsResponse> callGetInSkillProductsTransactions(String acceptLanguage, String productId, String status, OffsetDateTime fromLastModifiedTime, OffsetDateTime toLastModifiedTime, String nextToken, BigDecimal maxResults) throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<com.amazon.ask.model.services.monetization.InSkillProductTransactionsResponse> callGetInSkillProductsTransactions(String acceptLanguage, String productId, String status, OffsetDateTime fromLastModifiedTime, OffsetDateTime toLastModifiedTime, String nextToken, BigDecimal maxResults) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
 
     if(productId != null) {
@@ -215,7 +216,7 @@ public class MonetizationServiceClient extends BaseServiceClient implements Mone
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.monetization.Error.class, 500, "Internal Server Error"));
 
     return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, null ,com.amazon.ask.model.services.monetization.InSkillProductTransactionsResponse.class, false);
+      pathParams, serviceResponseDefinitions, null, com.amazon.ask.model.services.monetization.InSkillProductTransactionsResponse.class, false);
   }
 
   /**
@@ -231,7 +232,7 @@ public class MonetizationServiceClient extends BaseServiceClient implements Mone
    * @return com.amazon.ask.model.services.monetization.InSkillProductTransactionsResponse
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.model.services.monetization.InSkillProductTransactionsResponse getInSkillProductsTransactions(String acceptLanguage, String productId, String status, OffsetDateTime fromLastModifiedTime, OffsetDateTime toLastModifiedTime, String nextToken, BigDecimal maxResults) throws com.amazon.ask.model.services.ServiceException {
+  public com.amazon.ask.model.services.monetization.InSkillProductTransactionsResponse getInSkillProductsTransactions(String acceptLanguage, String productId, String status, OffsetDateTime fromLastModifiedTime, OffsetDateTime toLastModifiedTime, String nextToken, BigDecimal maxResults) throws ServiceException {
     return this.callGetInSkillProductsTransactions(acceptLanguage, productId, status, fromLastModifiedTime, toLastModifiedTime, nextToken, maxResults).getResponse();
   }
 
@@ -241,7 +242,7 @@ public class MonetizationServiceClient extends BaseServiceClient implements Mone
    * @return Boolean
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<Boolean> callGetVoicePurchaseSetting() throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<Boolean> callGetVoicePurchaseSetting() throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
     List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
@@ -259,7 +260,7 @@ public class MonetizationServiceClient extends BaseServiceClient implements Mone
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.monetization.Error.class, 500, "Internal Server Error."));
 
     return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, null ,Boolean.class, false);
+      pathParams, serviceResponseDefinitions, null, Boolean.class, false);
   }
 
   /**
@@ -268,7 +269,7 @@ public class MonetizationServiceClient extends BaseServiceClient implements Mone
    * @return Boolean
    * @throws ServiceException if fails to make API call
    */
-  public Boolean getVoicePurchaseSetting() throws com.amazon.ask.model.services.ServiceException {
+  public Boolean getVoicePurchaseSetting() throws ServiceException {
     return this.callGetVoicePurchaseSetting().getResponse();
   }
 

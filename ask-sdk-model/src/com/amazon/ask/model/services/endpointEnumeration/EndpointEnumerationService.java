@@ -14,6 +14,7 @@
 package com.amazon.ask.model.services.endpointEnumeration;
 
 import com.amazon.ask.model.services.*;
+import com.amazon.ask.model.services.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,8 +23,8 @@ import java.util.List;
 
 public interface EndpointEnumerationService {
 
-    com.amazon.ask.model.services.endpointEnumeration.EndpointEnumerationResponse getEndpoints() throws com.amazon.ask.model.services.ServiceException;
+    com.amazon.ask.model.services.endpointEnumeration.EndpointEnumerationResponse getEndpoints() throws ServiceException;
 
-    ApiResponse<com.amazon.ask.model.services.endpointEnumeration.EndpointEnumerationResponse> callGetEndpoints() throws com.amazon.ask.model.services.ServiceException;
+    ApiResponse<com.amazon.ask.model.services.endpointEnumeration.EndpointEnumerationResponse> callGetEndpoints() throws ServiceException;
 
 }

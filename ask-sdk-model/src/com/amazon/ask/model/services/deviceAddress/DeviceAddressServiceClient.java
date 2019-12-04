@@ -14,6 +14,7 @@
 package com.amazon.ask.model.services.deviceAddress;
 
 import com.amazon.ask.model.services.*;
+import com.amazon.ask.model.services.*;
 import com.amazon.ask.model.services.lwa.*;
 import com.amazon.ask.model.services.lwa.model.GrantType;
 
@@ -37,7 +38,7 @@ public class DeviceAddressServiceClient extends BaseServiceClient implements Dev
    * @return com.amazon.ask.model.services.deviceAddress.ShortAddress
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.model.services.deviceAddress.ShortAddress> callGetCountryAndPostalCode(String deviceId) throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<com.amazon.ask.model.services.deviceAddress.ShortAddress> callGetCountryAndPostalCode(String deviceId) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
     pathParams.put("deviceId", deviceId);
@@ -58,7 +59,7 @@ public class DeviceAddressServiceClient extends BaseServiceClient implements Dev
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.deviceAddress.Error.class, 0, "Unexpected error"));
 
     return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, null ,com.amazon.ask.model.services.deviceAddress.ShortAddress.class, false);
+      pathParams, serviceResponseDefinitions, null, com.amazon.ask.model.services.deviceAddress.ShortAddress.class, false);
   }
 
   /**
@@ -68,7 +69,7 @@ public class DeviceAddressServiceClient extends BaseServiceClient implements Dev
    * @return com.amazon.ask.model.services.deviceAddress.ShortAddress
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.model.services.deviceAddress.ShortAddress getCountryAndPostalCode(String deviceId) throws com.amazon.ask.model.services.ServiceException {
+  public com.amazon.ask.model.services.deviceAddress.ShortAddress getCountryAndPostalCode(String deviceId) throws ServiceException {
     return this.callGetCountryAndPostalCode(deviceId).getResponse();
   }
 
@@ -79,7 +80,7 @@ public class DeviceAddressServiceClient extends BaseServiceClient implements Dev
    * @return com.amazon.ask.model.services.deviceAddress.Address
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.model.services.deviceAddress.Address> callGetFullAddress(String deviceId) throws com.amazon.ask.model.services.ServiceException {
+  public ApiResponse<com.amazon.ask.model.services.deviceAddress.Address> callGetFullAddress(String deviceId) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
     pathParams.put("deviceId", deviceId);
@@ -100,7 +101,7 @@ public class DeviceAddressServiceClient extends BaseServiceClient implements Dev
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.deviceAddress.Error.class, 0, "Unexpected error"));
 
     return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, null ,com.amazon.ask.model.services.deviceAddress.Address.class, false);
+      pathParams, serviceResponseDefinitions, null, com.amazon.ask.model.services.deviceAddress.Address.class, false);
   }
 
   /**
@@ -110,7 +111,7 @@ public class DeviceAddressServiceClient extends BaseServiceClient implements Dev
    * @return com.amazon.ask.model.services.deviceAddress.Address
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.model.services.deviceAddress.Address getFullAddress(String deviceId) throws com.amazon.ask.model.services.ServiceException {
+  public com.amazon.ask.model.services.deviceAddress.Address getFullAddress(String deviceId) throws ServiceException {
     return this.callGetFullAddress(deviceId).getResponse();
   }
 
