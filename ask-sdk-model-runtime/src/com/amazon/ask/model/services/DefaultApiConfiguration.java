@@ -20,7 +20,7 @@ import com.amazon.ask.model.services.util.JacksonSerializer;
  */
 public class DefaultApiConfiguration implements ApiConfiguration {
 
-  private static final String DEFAULT_API_ENDPOINT = "https://api.amazonalexa.com";
+  private static final String DEFAULT_API_ENDPOINT = "https://api.amazon.com";
 
   private Serializer serializer;
   private ApiClient apiClient;
