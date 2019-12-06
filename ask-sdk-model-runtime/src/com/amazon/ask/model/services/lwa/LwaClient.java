@@ -43,6 +43,7 @@ public class LwaClient extends BaseServiceClient {
 
     private static final long EXPIRY_OFFSET_MILLIS = 60000;
     private static final String DEFAULT_LWA_ENDPOINT = "https://api.amazon.com";
+    private static final String DEFAULT_API_ENDPOINT = "https://api.amazonalexa.com";
 
     private LwaClient(Builder builder) {
         super(builder.apiConfiguration);
@@ -51,7 +52,8 @@ public class LwaClient extends BaseServiceClient {
         }
         this.authenticationConfiguration = builder.authenticationConfiguration;
         this.scopeTokenStore = new ConcurrentHashMap<>();
-        this.endpoint = builder.apiConfiguration.getApiEndpoint();
+        final String lwaEndpoint =  builder.apiConfiguration.getApiEndpoint();
+        this.endpoint = lwaEndpoint != null && !lwaEndpoint.equals(DEFAULT_API_ENDPOINT) ? lwaEndpoint : "https://api.amazon.com";
         this.grantType = builder.grantType != null ? builder.grantType : GrantType.CLIENT_CREDENTIALS;
     }
 

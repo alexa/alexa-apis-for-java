@@ -34,6 +34,7 @@ import static org.mockito.Mockito.when;
 
 public class LwaClientTest {
 
+    private static final String DEFAULT_API_ENDPOINT = "https://api.amazonalexa.com";
     private String testAccessToken = "fooBar";
     private String testScope = "1234";
     private String testClientId = "testClientId";
@@ -44,6 +45,11 @@ public class LwaClientTest {
     @Test
     public void api_request_properly_formed_with_default_endpoint() {
         api_request_properly_formed(null);
+    }
+
+    @Test
+    public void api_request_properly_formed_with_default_api_endpoint() {
+        api_request_properly_formed(DEFAULT_API_ENDPOINT);
     }
 
     @Test
@@ -73,7 +79,7 @@ public class LwaClientTest {
 
         lwaClient.getAccessTokenForScope(testScope);
         ApiClientRequest capturedRequest = requestCaptor.getValue();
-        String expectedEndpoint = endpoint != null ? endpoint : "https://api.amazon.com";
+        String expectedEndpoint = endpoint != null && !endpoint.equals(DEFAULT_API_ENDPOINT) ? endpoint : "https://api.amazon.com";
         assertEquals(capturedRequest.getUrl(), expectedEndpoint + "/auth/O2/token");
         assertEquals(capturedRequest.getMethod(), "POST");
         assertEquals(capturedRequest.getBody(), ("grant_type=client_credentials&client_id=" + testClientId
