@@ -1,0 +1,190 @@
+/*
+* Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file
+* except in compliance with the License. A copy of the License is located at
+*
+* http://aws.amazon.com/apache2.0/
+*
+* or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for
+* the specific language governing permissions and limitations under the License.
+*/
+
+
+package com.amazon.ask.smapi.model.v1.catalog.upload;
+
+import java.util.Objects;
+import java.util.ArrayList;
+import java.util.List;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.ArrayList;
+
+/**
+ * Represents a single step in the multi-step ingestion process of a new upload.
+ */
+
+@JsonDeserialize(builder = UploadIngestionStep.Builder.class)
+public final class UploadIngestionStep {
+
+    @JsonProperty("name")
+    private com.amazon.ask.smapi.model.v1.catalog.upload.IngestionStepName name = null;
+
+    @JsonProperty("status")
+    private com.amazon.ask.smapi.model.v1.catalog.upload.IngestionStatus status = null;
+
+    @JsonProperty("logUrl")
+    private String logUrl = null;
+
+    @JsonProperty("violations")
+    private List<com.amazon.ask.smapi.model.v1.Error> violations = new ArrayList<com.amazon.ask.smapi.model.v1.Error>();
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    private UploadIngestionStep(Builder builder) {
+        if (builder.name != null) {
+            this.name = builder.name;
+        }
+        if (builder.status != null) {
+            this.status = builder.status;
+        }
+        if (builder.logUrl != null) {
+            this.logUrl = builder.logUrl;
+        }
+        if (builder.violations != null) {
+            this.violations = builder.violations;
+        }
+    }
+
+    /**
+     * Get name
+     * @return name
+    **/
+    @JsonProperty("name")
+    public com.amazon.ask.smapi.model.v1.catalog.upload.IngestionStepName getName() {
+        return name;
+    }
+
+    /**
+     * Get status
+     * @return status
+    **/
+    @JsonProperty("status")
+    public com.amazon.ask.smapi.model.v1.catalog.upload.IngestionStatus getStatus() {
+        return status;
+    }
+
+    /**
+     * Url for the file containing logs of ingestion step.
+     * @return logUrl
+    **/
+    @JsonProperty("logUrl")
+    public String getLogUrl() {
+        return logUrl;
+    }
+
+    /**
+     * This array will contain the violations occurred during the execution of step. Will be empty, if execution succeeded.
+     * @return violations
+    **/
+    @JsonProperty("violations")
+    public List<com.amazon.ask.smapi.model.v1.Error> getViolations() {
+        return violations;
+    }
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        UploadIngestionStep v1CatalogUploadUploadIngestionStep = (UploadIngestionStep) o;
+        return Objects.equals(this.name, v1CatalogUploadUploadIngestionStep.name) &&
+            Objects.equals(this.status, v1CatalogUploadUploadIngestionStep.status) &&
+            Objects.equals(this.logUrl, v1CatalogUploadUploadIngestionStep.logUrl) &&
+            Objects.equals(this.violations, v1CatalogUploadUploadIngestionStep.violations);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, status, logUrl, violations);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class UploadIngestionStep {\n");
+        
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    logUrl: ").append(toIndentedString(logUrl)).append("\n");
+        sb.append("    violations: ").append(toIndentedString(violations)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private com.amazon.ask.smapi.model.v1.catalog.upload.IngestionStepName name;
+        private com.amazon.ask.smapi.model.v1.catalog.upload.IngestionStatus status;
+        private String logUrl;
+        private List<com.amazon.ask.smapi.model.v1.Error> violations;
+
+        private Builder() {}
+
+        @JsonProperty("name")
+        public Builder withName(com.amazon.ask.smapi.model.v1.catalog.upload.IngestionStepName name) {
+            this.name = name;
+            return this;
+        }
+
+
+        @JsonProperty("status")
+        public Builder withStatus(com.amazon.ask.smapi.model.v1.catalog.upload.IngestionStatus status) {
+            this.status = status;
+            return this;
+        }
+
+
+        @JsonProperty("logUrl")
+        public Builder withLogUrl(String logUrl) {
+            this.logUrl = logUrl;
+            return this;
+        }
+
+
+        @JsonProperty("violations")
+        public Builder withViolations(List<com.amazon.ask.smapi.model.v1.Error> violations) {
+            this.violations = violations;
+            return this;
+        }
+
+        public Builder addViolationsItem(com.amazon.ask.smapi.model.v1.Error violationsItem) {
+            if (this.violations == null) {
+                this.violations = new ArrayList<com.amazon.ask.smapi.model.v1.Error>();
+            }
+            this.violations.add(violationsItem);
+            return this;
+        }
+
+        public UploadIngestionStep build() {
+            return new UploadIngestionStep(this);
+        }
+    }
+}
+
