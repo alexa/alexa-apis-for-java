@@ -15,11 +15,8 @@
 package com.amazon.ask.smapi.model.v1.skill.simulations;
 
 import java.util.Objects;
-import java.util.ArrayList;
-import java.util.List;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.util.ArrayList;
 
 /**
  * SimulationResult
@@ -32,7 +29,7 @@ public final class SimulationResult {
     private com.amazon.ask.smapi.model.v1.skill.simulations.AlexaExecutionInfo alexaExecutionInfo = null;
 
     @JsonProperty("skillExecutionInfo")
-    private List<com.amazon.ask.smapi.model.v1.skill.simulations.Invocations> skillExecutionInfo = new ArrayList<com.amazon.ask.smapi.model.v1.skill.simulations.Invocations>();
+    private com.amazon.ask.smapi.model.v1.skill.simulations.Invocation skillExecutionInfo = null;
 
     @JsonProperty("error")
     private com.amazon.ask.smapi.model.v1.Error error = null;
@@ -67,7 +64,7 @@ public final class SimulationResult {
      * @return skillExecutionInfo
     **/
     @JsonProperty("skillExecutionInfo")
-    public List<com.amazon.ask.smapi.model.v1.skill.simulations.Invocations> getSkillExecutionInfo() {
+    public com.amazon.ask.smapi.model.v1.skill.simulations.Invocation getSkillExecutionInfo() {
         return skillExecutionInfo;
     }
 
@@ -124,7 +121,7 @@ public final class SimulationResult {
   
     public static class Builder {
         private com.amazon.ask.smapi.model.v1.skill.simulations.AlexaExecutionInfo alexaExecutionInfo;
-        private List<com.amazon.ask.smapi.model.v1.skill.simulations.Invocations> skillExecutionInfo;
+        private com.amazon.ask.smapi.model.v1.skill.simulations.Invocation skillExecutionInfo;
         private com.amazon.ask.smapi.model.v1.Error error;
 
         private Builder() {}
@@ -137,18 +134,11 @@ public final class SimulationResult {
 
 
         @JsonProperty("skillExecutionInfo")
-        public Builder withSkillExecutionInfo(List<com.amazon.ask.smapi.model.v1.skill.simulations.Invocations> skillExecutionInfo) {
+        public Builder withSkillExecutionInfo(com.amazon.ask.smapi.model.v1.skill.simulations.Invocation skillExecutionInfo) {
             this.skillExecutionInfo = skillExecutionInfo;
             return this;
         }
 
-        public Builder addSkillExecutionInfoItem(com.amazon.ask.smapi.model.v1.skill.simulations.Invocations skillExecutionInfoItem) {
-            if (this.skillExecutionInfo == null) {
-                this.skillExecutionInfo = new ArrayList<com.amazon.ask.smapi.model.v1.skill.simulations.Invocations>();
-            }
-            this.skillExecutionInfo.add(skillExecutionInfoItem);
-            return this;
-        }
 
         @JsonProperty("error")
         public Builder withError(com.amazon.ask.smapi.model.v1.Error error) {

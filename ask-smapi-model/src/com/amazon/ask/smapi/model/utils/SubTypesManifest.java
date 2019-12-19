@@ -28,9 +28,10 @@ public class SubTypesManifest {
 
     Map<String, Class> v1SkillManifestInterfaceSubTypes = new HashMap<>();
     v1SkillManifestInterfaceSubTypes.put("ALEXA_PRESENTATION_APL", com.amazon.ask.smapi.model.v1.skill.Manifest.AlexaPresentationAplInterface.class);
-    v1SkillManifestInterfaceSubTypes.put("VIDEO", com.amazon.ask.smapi.model.v1.skill.Manifest.VideoAppInterface.class);
+    v1SkillManifestInterfaceSubTypes.put("VIDEO_APP", com.amazon.ask.smapi.model.v1.skill.Manifest.VideoAppInterface.class);
     v1SkillManifestInterfaceSubTypes.put("CUSTOM_INTERFACE", com.amazon.ask.smapi.model.v1.skill.Manifest.CustomInterface.class);
-    v1SkillManifestInterfaceSubTypes.put("AUDIO", com.amazon.ask.smapi.model.v1.skill.Manifest.AudioInterface.class);
+    v1SkillManifestInterfaceSubTypes.put("ALEXA_PRESENTATION_HTML", com.amazon.ask.smapi.model.v1.skill.Manifest.AlexaPresentationHtmlInterface.class);
+    v1SkillManifestInterfaceSubTypes.put("AUDIO_PLAYER", com.amazon.ask.smapi.model.v1.skill.Manifest.AudioInterface.class);
     v1SkillManifestInterfaceSubTypes.put("GAME_ENGINE", com.amazon.ask.smapi.model.v1.skill.Manifest.GameEngineInterface.class);
     v1SkillManifestInterfaceSubTypes.put("RENDER_TEMPLATE", com.amazon.ask.smapi.model.v1.skill.Manifest.DisplayInterface.class);
     v1SkillManifestInterfaceSubTypes.put("GADGET_CONTROLLER", com.amazon.ask.smapi.model.v1.skill.Manifest.GadgetControllerInterface.class);

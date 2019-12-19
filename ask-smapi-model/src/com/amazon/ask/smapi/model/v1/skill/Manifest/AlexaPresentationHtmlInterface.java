@@ -19,18 +19,18 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * AudioInterface
+ * Used to declare that the skill uses the Alexa.Presentation.HTML interface.
  */
 
-@JsonDeserialize(builder = AudioInterface.Builder.class)
-public final class AudioInterface extends com.amazon.ask.smapi.model.v1.skill.Manifest.ModelInterface  {
+@JsonDeserialize(builder = AlexaPresentationHtmlInterface.Builder.class)
+public final class AlexaPresentationHtmlInterface extends com.amazon.ask.smapi.model.v1.skill.Manifest.ModelInterface  {
 
     public static Builder builder() {
         return new Builder();
     }
 
-    private AudioInterface(Builder builder) {
-        String discriminatorValue = "AUDIO_PLAYER";
+    private AlexaPresentationHtmlInterface(Builder builder) {
+        String discriminatorValue = "ALEXA_PRESENTATION_HTML";
 
         this.type = discriminatorValue;
     }
@@ -54,7 +54,7 @@ public final class AudioInterface extends com.amazon.ask.smapi.model.v1.skill.Ma
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class AudioInterface {\n");
+        sb.append("class AlexaPresentationHtmlInterface {\n");
         sb.append("    ").append(toIndentedString(super.toString())).append("\n");
         sb.append("}");
         return sb.toString();
@@ -75,8 +75,8 @@ public final class AudioInterface extends com.amazon.ask.smapi.model.v1.skill.Ma
 
         private Builder() {}
 
-        public AudioInterface build() {
-            return new AudioInterface(this);
+        public AlexaPresentationHtmlInterface build() {
+            return new AlexaPresentationHtmlInterface(this);
         }
     }
 }

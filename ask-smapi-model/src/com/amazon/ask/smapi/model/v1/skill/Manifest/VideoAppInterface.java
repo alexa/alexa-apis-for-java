@@ -30,7 +30,7 @@ public final class VideoAppInterface extends com.amazon.ask.smapi.model.v1.skill
     }
 
     private VideoAppInterface(Builder builder) {
-        String discriminatorValue = "VIDEO";
+        String discriminatorValue = "VIDEO_APP";
 
         this.type = discriminatorValue;
     }
