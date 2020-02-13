@@ -34,7 +34,7 @@ public final class MessageRequest extends com.amazon.ask.model.Request  {
     }
 
     private MessageRequest(Builder builder) {
-        String discriminatorValue = "Alexa.Presentation.html.Message";
+        String discriminatorValue = "Alexa.Presentation.HTML.Message";
 
         this.type = discriminatorValue;
         if (builder.requestId != null) {

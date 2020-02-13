@@ -17,6 +17,7 @@ import com.amazon.ask.model.services.*;
 import com.amazon.ask.model.services.*;
 import com.amazon.ask.model.services.lwa.*;
 import com.amazon.ask.model.services.lwa.model.GrantType;
+import com.amazon.ask.model.services.util.UserAgentHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +28,7 @@ import java.util.HashMap;
 
 public class SkillMessagingServiceClient extends BaseServiceClient implements SkillMessagingService {
 
+  private final UserAgentHelper userAgentHelper;
   private final LwaClient lwaClient;
 
   public SkillMessagingServiceClient(ApiConfiguration apiConfiguration, AuthenticationConfiguration authenticationConfiguration) {
@@ -39,11 +41,13 @@ public class SkillMessagingServiceClient extends BaseServiceClient implements Sk
                                     .withSerializer(apiConfiguration.getSerializer())
                                     .build())
           .build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.25.2").build();
   }
 
   public SkillMessagingServiceClient(ApiConfiguration apiConfiguration, LwaClient lwaClient) {
       super(apiConfiguration);
       this.lwaClient = lwaClient;
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.25.2").build();
   }
 
   /**
@@ -73,6 +77,8 @@ public class SkillMessagingServiceClient extends BaseServiceClient implements Sk
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.skillMessaging.Error.class, 429, "The requester has exceeded their maximum allowable rate of messages "));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.skillMessaging.Error.class, 500, "The SkillMessaging service encountered an internal error for a valid request. "));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.skillMessaging.Error.class, 0, "Unexpected error"));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
 
     return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, sendSkillMessagingRequest, null, false);

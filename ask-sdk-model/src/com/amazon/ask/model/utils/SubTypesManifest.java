@@ -72,7 +72,7 @@ public class SubTypesManifest {
     requestSubTypes.put("AudioPlayer.PlaybackFailed", com.amazon.ask.model.interfaces.audioplayer.PlaybackFailedRequest.class);
     requestSubTypes.put("CanFulfillIntentRequest", com.amazon.ask.model.canfulfill.CanFulfillIntentRequest.class);
     requestSubTypes.put("CustomInterfaceController.Expired", com.amazon.ask.model.interfaces.customInterfaceController.ExpiredRequest.class);
-    requestSubTypes.put("Alexa.Presentation.html.Message", com.amazon.ask.model.interfaces.alexa.presentation.html.MessageRequest.class);
+    requestSubTypes.put("Alexa.Presentation.HTML.Message", com.amazon.ask.model.interfaces.alexa.presentation.html.MessageRequest.class);
     requestSubTypes.put("LaunchRequest", com.amazon.ask.model.LaunchRequest.class);
     requestSubTypes.put("Reminders.ReminderCreated", com.amazon.ask.model.services.reminderManagement.ReminderCreatedEventRequest.class);
     requestSubTypes.put("Alexa.Presentation.APLT.UserEvent", com.amazon.ask.model.interfaces.alexa.presentation.aplt.UserEvent.class);
@@ -94,6 +94,7 @@ public class SubTypesManifest {
     requestSubTypes.put("Display.ElementSelected", com.amazon.ask.model.interfaces.display.ElementSelectedRequest.class);
     requestSubTypes.put("AlexaSkillEvent.SkillPermissionChanged", com.amazon.ask.model.events.skillevents.PermissionChangedRequest.class);
     requestSubTypes.put("Reminders.ReminderUpdated", com.amazon.ask.model.services.reminderManagement.ReminderUpdatedEventRequest.class);
+    requestSubTypes.put("Alexa.Presentation.HTML.RuntimeError", com.amazon.ask.model.interfaces.alexa.presentation.html.RuntimeErrorRequest.class);
     requestSubTypes.put("IntentRequest", com.amazon.ask.model.IntentRequest.class);
     requestSubTypes.put("Reminders.ReminderStarted", com.amazon.ask.model.services.reminderManagement.ReminderStartedEventRequest.class);
     requestSubTypes.put("AudioPlayer.PlaybackStopped", com.amazon.ask.model.interfaces.audioplayer.PlaybackStoppedRequest.class);

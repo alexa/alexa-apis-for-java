@@ -34,6 +34,9 @@ public final class CurrentConfiguration {
     @JsonProperty("size")
     private com.amazon.ask.model.interfaces.viewport.size.ViewportSize size = null;
 
+    @JsonProperty("dialog")
+    private com.amazon.ask.model.interfaces.viewport.Dialog dialog = null;
+
     public static Builder builder() {
         return new Builder();
     }
@@ -47,6 +50,9 @@ public final class CurrentConfiguration {
         }
         if (builder.size != null) {
             this.size = builder.size;
+        }
+        if (builder.dialog != null) {
+            this.dialog = builder.dialog;
         }
     }
 
@@ -77,6 +83,15 @@ public final class CurrentConfiguration {
         return size;
     }
 
+    /**
+     * Get dialog
+     * @return dialog
+    **/
+    @JsonProperty("dialog")
+    public com.amazon.ask.model.interfaces.viewport.Dialog getDialog() {
+        return dialog;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -88,12 +103,13 @@ public final class CurrentConfiguration {
         CurrentConfiguration interfacesViewportAplCurrentConfiguration = (CurrentConfiguration) o;
         return Objects.equals(this.mode, interfacesViewportAplCurrentConfiguration.mode) &&
             Objects.equals(this.video, interfacesViewportAplCurrentConfiguration.video) &&
-            Objects.equals(this.size, interfacesViewportAplCurrentConfiguration.size);
+            Objects.equals(this.size, interfacesViewportAplCurrentConfiguration.size) &&
+            Objects.equals(this.dialog, interfacesViewportAplCurrentConfiguration.dialog);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(mode, video, size);
+        return Objects.hash(mode, video, size, dialog);
     }
 
     @Override
@@ -104,6 +120,7 @@ public final class CurrentConfiguration {
         sb.append("    mode: ").append(toIndentedString(mode)).append("\n");
         sb.append("    video: ").append(toIndentedString(video)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    dialog: ").append(toIndentedString(dialog)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -123,6 +140,7 @@ public final class CurrentConfiguration {
         private com.amazon.ask.model.interfaces.viewport.Mode mode;
         private com.amazon.ask.model.interfaces.viewport.ViewportVideo video;
         private com.amazon.ask.model.interfaces.viewport.size.ViewportSize size;
+        private com.amazon.ask.model.interfaces.viewport.Dialog dialog;
 
         private Builder() {}
 
@@ -143,6 +161,13 @@ public final class CurrentConfiguration {
         @JsonProperty("size")
         public Builder withSize(com.amazon.ask.model.interfaces.viewport.size.ViewportSize size) {
             this.size = size;
+            return this;
+        }
+
+
+        @JsonProperty("dialog")
+        public Builder withDialog(com.amazon.ask.model.interfaces.viewport.Dialog dialog) {
+            this.dialog = dialog;
             return this;
         }
 

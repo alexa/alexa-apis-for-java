@@ -17,6 +17,7 @@ import com.amazon.ask.model.services.*;
 import com.amazon.ask.model.services.*;
 import com.amazon.ask.model.services.lwa.*;
 import com.amazon.ask.model.services.lwa.model.GrantType;
+import com.amazon.ask.model.services.util.UserAgentHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,8 +28,10 @@ import java.util.HashMap;
 
 public class EndpointEnumerationServiceClient extends BaseServiceClient implements EndpointEnumerationService {
 
+  private final UserAgentHelper userAgentHelper;
   public EndpointEnumerationServiceClient(ApiConfiguration apiConfiguration) {
       super(apiConfiguration);
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.25.2").build();
   }
 
   /**
@@ -56,6 +59,8 @@ public class EndpointEnumerationServiceClient extends BaseServiceClient implemen
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.endpointEnumeration.Error.class, 500, "Server Error. Returned when the server encountered an error processing the request."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.endpointEnumeration.Error.class, 503, "Service Unavailable. Returned when the server is not ready to handle the request."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.endpointEnumeration.Error.class, 0, "Unexpected error"));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
 
     return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.model.services.endpointEnumeration.EndpointEnumerationResponse.class, false);

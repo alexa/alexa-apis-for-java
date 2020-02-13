@@ -17,6 +17,7 @@ import com.amazon.ask.model.services.*;
 import com.amazon.ask.model.services.*;
 import com.amazon.ask.model.services.lwa.*;
 import com.amazon.ask.model.services.lwa.model.GrantType;
+import com.amazon.ask.model.services.util.UserAgentHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,8 +28,10 @@ import java.util.HashMap;
 
 public class ListManagementServiceClient extends BaseServiceClient implements ListManagementService {
 
+  private final UserAgentHelper userAgentHelper;
   public ListManagementServiceClient(ApiConfiguration apiConfiguration) {
       super(apiConfiguration);
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.25.2").build();
   }
 
   /**
@@ -52,6 +55,8 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.AlexaListsMetadata.class, 200, "Success"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.ForbiddenError.class, 403, "Forbidden"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 500, "Internal Server Error"));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
 
     return this.executeRequest("GET", "https://api.amazonalexa.com/", path, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.model.services.listManagement.AlexaListsMetadata.class, false);
@@ -91,6 +96,8 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 404, "Not Found"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 500, "Internal Server Error"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 0, "Internal Server Error"));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
 
     return this.executeRequest("DELETE", "https://api.amazonalexa.com/", path, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, null, false);
@@ -132,6 +139,8 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 404, "Not Found"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 500, "Internal Server Error"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 0, "Internal Server Error"));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
 
     return this.executeRequest("DELETE", "https://api.amazonalexa.com/", path, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, null, false);
@@ -175,6 +184,8 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 404, "Not Found"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 500, "Internal Server Error"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 0, "Internal Server Error"));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
 
     return this.executeRequest("GET", "https://api.amazonalexa.com/", path, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.model.services.listManagement.AlexaListItem.class, false);
@@ -221,6 +232,8 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 409, "Conflict"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 500, "Internal Server Error"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 0, "Internal Server Error"));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
 
     return this.executeRequest("PUT", "https://api.amazonalexa.com/", path, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, updateListItemRequest, com.amazon.ask.model.services.listManagement.AlexaListItem.class, false);
@@ -266,6 +279,8 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 404, "Not found"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 500, "Internal Server Error"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 0, "Internal Server Error"));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
 
     return this.executeRequest("POST", "https://api.amazonalexa.com/", path, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, createListItemRequest, com.amazon.ask.model.services.listManagement.AlexaListItem.class, false);
@@ -311,6 +326,8 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 409, "Conflict"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 500, "Internal Server Error"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 0, "Internal Server Error"));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
 
     return this.executeRequest("PUT", "https://api.amazonalexa.com/", path, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, updateListRequest, com.amazon.ask.model.services.listManagement.AlexaListMetadata.class, false);
@@ -356,6 +373,8 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 404, "Not Found"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 500, "Internal Server Error"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 0, "Internal Server Error"));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
 
     return this.executeRequest("GET", "https://api.amazonalexa.com/", path, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.model.services.listManagement.AlexaList.class, false);
@@ -398,6 +417,8 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 409, "Conflict"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 500, "Internal Server Error"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.Error.class, 0, "Internal Server Error"));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
 
     return this.executeRequest("POST", "https://api.amazonalexa.com/", path, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, createListRequest, com.amazon.ask.model.services.listManagement.AlexaListMetadata.class, false);

@@ -17,6 +17,7 @@ import com.amazon.ask.model.services.*;
 import com.amazon.ask.model.services.*;
 import com.amazon.ask.model.services.lwa.*;
 import com.amazon.ask.model.services.lwa.model.GrantType;
+import com.amazon.ask.model.services.util.UserAgentHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +28,7 @@ import java.util.HashMap;
 
 public class ProactiveEventsServiceClient extends BaseServiceClient implements ProactiveEventsService {
 
+  private final UserAgentHelper userAgentHelper;
   private final LwaClient lwaClient;
 
   public ProactiveEventsServiceClient(ApiConfiguration apiConfiguration, AuthenticationConfiguration authenticationConfiguration) {
@@ -39,11 +41,13 @@ public class ProactiveEventsServiceClient extends BaseServiceClient implements P
                                     .withSerializer(apiConfiguration.getSerializer())
                                     .build())
           .build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.25.2").build();
   }
 
   public ProactiveEventsServiceClient(ApiConfiguration apiConfiguration, LwaClient lwaClient) {
       super(apiConfiguration);
       this.lwaClient = lwaClient;
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.25.2").build();
   }
 
   /**
@@ -74,6 +78,8 @@ public class ProactiveEventsServiceClient extends BaseServiceClient implements P
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.proactiveEvents.Error.class, 429, "The client has made more calls than the allowed limit."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.proactiveEvents.Error.class, 500, "The ProactiveEvents service encounters an internal error for a valid request."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.proactiveEvents.Error.class, 0, "Unexpected error"));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
 
     return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, createProactiveEventRequest, null, false);

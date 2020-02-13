@@ -66,7 +66,7 @@ public final class SellerOrderAttributes {
     }
 
     /**
-     * The identifier of the store from which the order was placed. This overrides the default value in Seller Central under Settings &gt; Account Settings. It is displayed to the buyer in their emails and transaction history on the Amazon Payments website.
+     * The identifier of the store from which the order was placed. This overrides the default value in Seller Central under Settings &amp;gt; Account Settings. It is displayed to the buyer in their emails and transaction history on the Amazon Payments website.
      * @return storeName
     **/
     @JsonProperty("storeName")

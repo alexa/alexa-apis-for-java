@@ -17,6 +17,7 @@ import com.amazon.ask.model.services.*;
 import com.amazon.ask.model.services.*;
 import com.amazon.ask.model.services.lwa.*;
 import com.amazon.ask.model.services.lwa.model.GrantType;
+import com.amazon.ask.model.services.util.UserAgentHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,8 +28,10 @@ import java.util.HashMap;
 
 public class ReminderManagementServiceClient extends BaseServiceClient implements ReminderManagementService {
 
+  private final UserAgentHelper userAgentHelper;
   public ReminderManagementServiceClient(ApiConfiguration apiConfiguration) {
       super(apiConfiguration);
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.25.2").build();
   }
 
   /**
@@ -54,6 +57,8 @@ public class ReminderManagementServiceClient extends BaseServiceClient implement
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.reminderManagement.Error.class, 401, "UserAuthenticationException. Request is not authorized/authenticated e.g. If customer does not have permission to create a reminder."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.reminderManagement.Error.class, 429, "RateExceededException e.g. When the skill is throttled for exceeding the max rate"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.reminderManagement.Error.class, 500, "Internal Server Error"));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
 
     return this.executeRequest("DELETE", this.apiEndpoint, path, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, null, false);
@@ -93,6 +98,8 @@ public class ReminderManagementServiceClient extends BaseServiceClient implement
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.reminderManagement.Error.class, 401, "UserAuthenticationException. Request is not authorized/authenticated e.g. If customer does not have permission to create a reminder."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.reminderManagement.Error.class, 429, "RateExceededException e.g. When the skill is throttled for exceeding the max rate"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.reminderManagement.Error.class, 500, "Internal Server Error"));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
 
     return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.model.services.reminderManagement.GetReminderResponse.class, false);
@@ -136,6 +143,8 @@ public class ReminderManagementServiceClient extends BaseServiceClient implement
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.reminderManagement.Error.class, 409, "UserAuthenticationException. Request is not authorized/authenticated e.g. If customer does not have permission to create a reminder."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.reminderManagement.Error.class, 429, "RateExceededException e.g. When the skill is throttled for exceeding the max rate"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.reminderManagement.Error.class, 500, "Internal Server Error"));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
 
     return this.executeRequest("PUT", this.apiEndpoint, path, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, reminderRequest, com.amazon.ask.model.services.reminderManagement.ReminderResponse.class, false);
@@ -175,6 +184,8 @@ public class ReminderManagementServiceClient extends BaseServiceClient implement
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.reminderManagement.Error.class, 401, "UserAuthenticationException. Request is not authorized/authenticated e.g. If customer does not have permission to create a reminder."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.reminderManagement.Error.class, 429, "RateExceededException e.g. When the skill is throttled for exceeding the max rate"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.reminderManagement.Error.class, 500, "Internal Server Error"));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
 
     return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.model.services.reminderManagement.GetRemindersResponse.class, false);
@@ -216,6 +227,8 @@ public class ReminderManagementServiceClient extends BaseServiceClient implement
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.reminderManagement.Error.class, 500, "Internal Server Error"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.reminderManagement.Error.class, 503, "Service Unavailable"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.reminderManagement.Error.class, 504, "Gateway Timeout"));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
 
     return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, reminderRequest, com.amazon.ask.model.services.reminderManagement.ReminderResponse.class, false);

@@ -17,6 +17,7 @@ import com.amazon.ask.model.services.*;
 import com.amazon.ask.model.services.*;
 import com.amazon.ask.model.services.lwa.*;
 import com.amazon.ask.model.services.lwa.model.GrantType;
+import com.amazon.ask.model.services.util.UserAgentHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,8 +28,10 @@ import java.util.HashMap;
 
 public class DeviceAddressServiceClient extends BaseServiceClient implements DeviceAddressService {
 
+  private final UserAgentHelper userAgentHelper;
   public DeviceAddressServiceClient(ApiConfiguration apiConfiguration) {
       super(apiConfiguration);
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.25.2").build();
   }
 
   /**
@@ -57,6 +60,8 @@ public class DeviceAddressServiceClient extends BaseServiceClient implements Dev
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.deviceAddress.Error.class, 405, "The method is not supported"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.deviceAddress.Error.class, 429, "The request is throttled"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.deviceAddress.Error.class, 0, "Unexpected error"));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
 
     return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.model.services.deviceAddress.ShortAddress.class, false);
@@ -99,6 +104,8 @@ public class DeviceAddressServiceClient extends BaseServiceClient implements Dev
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.deviceAddress.Error.class, 405, "The method is not supported"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.deviceAddress.Error.class, 429, "The request is throttled"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.deviceAddress.Error.class, 0, "Unexpected error"));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
 
     return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.model.services.deviceAddress.Address.class, false);

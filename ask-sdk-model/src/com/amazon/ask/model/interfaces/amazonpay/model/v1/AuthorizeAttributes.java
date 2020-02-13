@@ -99,7 +99,7 @@ public final class AuthorizeAttributes {
     }
 
     /**
-     * The description to be shown on the user's payment instrument statement if AuthorizeAndCapture is chosen. Format of soft descriptor sent to the payment processor is \"AMZ* &lt;soft descriptor specified here&gt;\". Default is \"AMZ*&lt;SELLER_NAME&gt; amzn.com/ pmts WA\". Maximum length can be 16 characters.
+     * The description to be shown on the user's payment instrument statement if AuthorizeAndCapture is chosen. Format of soft descriptor sent to the payment processor is \"AMZ* &amp;lt;soft descriptor specified here&amp;gt;\". Default is \"AMZ*&amp;lt;SELLER_NAME&amp;gt; amzn.com/ pmts WA\". Maximum length can be 16 characters.
      * @return softDescriptor
     **/
     @JsonProperty("softDescriptor")

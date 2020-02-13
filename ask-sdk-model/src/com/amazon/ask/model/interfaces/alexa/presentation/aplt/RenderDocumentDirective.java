@@ -81,7 +81,7 @@ public final class RenderDocumentDirective extends com.amazon.ask.model.Directiv
     }
 
     /**
-     * The APL document that the devices need to render a presentation.
+     * Depending on the document type, it represents either an entire APLT document or a reference Link to the document. In a Link object, the value of the 'src' should follow a URI format defined like 'doc://alexa/aplt/documents/&amp;lt;document_id&amp;gt;'. The 'document_id' is a reference to the APLT document that the developer stores through APL Authoring Tool.
      * @return document
     **/
     @JsonProperty("document")

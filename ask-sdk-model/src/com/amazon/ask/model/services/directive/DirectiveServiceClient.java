@@ -17,6 +17,7 @@ import com.amazon.ask.model.services.*;
 import com.amazon.ask.model.services.*;
 import com.amazon.ask.model.services.lwa.*;
 import com.amazon.ask.model.services.lwa.model.GrantType;
+import com.amazon.ask.model.services.util.UserAgentHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,8 +28,10 @@ import java.util.HashMap;
 
 public class DirectiveServiceClient extends BaseServiceClient implements DirectiveService {
 
+  private final UserAgentHelper userAgentHelper;
   public DirectiveServiceClient(ApiConfiguration apiConfiguration) {
       super(apiConfiguration);
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.25.2").build();
   }
 
   /**
@@ -54,6 +57,8 @@ public class DirectiveServiceClient extends BaseServiceClient implements Directi
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.directive.Error.class, 401, "Not Authorized."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.directive.Error.class, 403, "The skill is not allowed to send directives at the moment."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.directive.Error.class, 0, "Unexpected error."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
 
     return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, sendDirectiveRequest, null, false);

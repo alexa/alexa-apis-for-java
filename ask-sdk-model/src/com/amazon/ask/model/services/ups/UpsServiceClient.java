@@ -17,6 +17,7 @@ import com.amazon.ask.model.services.*;
 import com.amazon.ask.model.services.*;
 import com.amazon.ask.model.services.lwa.*;
 import com.amazon.ask.model.services.lwa.model.GrantType;
+import com.amazon.ask.model.services.util.UserAgentHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,8 +28,10 @@ import java.util.HashMap;
 
 public class UpsServiceClient extends BaseServiceClient implements UpsService {
 
+  private final UserAgentHelper userAgentHelper;
   public UpsServiceClient(ApiConfiguration apiConfiguration) {
       super(apiConfiguration);
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.25.2").build();
   }
 
   /**
@@ -55,6 +58,8 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 403, "The authentication token does not have access to resource."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 429, "The skill has been throttled due to an excessive number of requests."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 0, "An unexpected error occurred."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
 
     return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, String.class, false);
@@ -94,6 +99,8 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 403, "The authentication token does not have access to resource."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 429, "The skill has been throttled due to an excessive number of requests."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 0, "An unexpected error occurred."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
 
     return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, String.class, false);
@@ -133,6 +140,8 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 403, "The authentication token does not have access to resource."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 429, "The skill has been throttled due to an excessive number of requests."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 0, "An unexpected error occurred."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
 
     return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.model.services.ups.PhoneNumber.class, false);
@@ -172,6 +181,8 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 403, "The authentication token does not have access to resource."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 429, "The skill has been throttled due to an excessive number of requests."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 0, "An unexpected error occurred."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
 
     return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, String.class, false);
@@ -213,6 +224,8 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 403, "The authentication token does not have access to resource."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 429, "The skill has been throttled due to an excessive number of requests."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 0, "An unexpected error occurred."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
 
     return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.model.services.ups.DistanceUnits.class, false);
@@ -255,6 +268,8 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 403, "The authentication token does not have access to resource."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 429, "The skill has been throttled due to an excessive number of requests."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 0, "An unexpected error occurred."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
 
     return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.model.services.ups.TemperatureUnit.class, false);
@@ -297,6 +312,8 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 403, "The authentication token does not have access to resource."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 429, "The skill has been throttled due to an excessive number of requests."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 0, "An unexpected error occurred."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
 
     return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, String.class, false);

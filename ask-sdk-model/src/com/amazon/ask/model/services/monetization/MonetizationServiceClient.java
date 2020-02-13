@@ -17,6 +17,7 @@ import com.amazon.ask.model.services.*;
 import com.amazon.ask.model.services.*;
 import com.amazon.ask.model.services.lwa.*;
 import com.amazon.ask.model.services.lwa.model.GrantType;
+import com.amazon.ask.model.services.util.UserAgentHelper;
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 
@@ -29,8 +30,10 @@ import java.util.HashMap;
 
 public class MonetizationServiceClient extends BaseServiceClient implements MonetizationService {
 
+  private final UserAgentHelper userAgentHelper;
   public MonetizationServiceClient(ApiConfiguration apiConfiguration) {
       super(apiConfiguration);
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.25.2").build();
   }
 
   /**
@@ -85,6 +88,8 @@ public class MonetizationServiceClient extends BaseServiceClient implements Mone
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.monetization.Error.class, 400, "Invalid request"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.monetization.Error.class, 401, "The authentication token is invalid or doesn't have access to make this request"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.monetization.Error.class, 500, "Internal Server Error"));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
 
     return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.model.services.monetization.InSkillProductsResponse.class, false);
@@ -136,6 +141,8 @@ public class MonetizationServiceClient extends BaseServiceClient implements Mone
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.monetization.Error.class, 401, "The authentication token is invalid or doesn't have access to make this request"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.monetization.Error.class, 404, "Requested resource not found."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.monetization.Error.class, 500, "Internal Server Error."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
 
     return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.model.services.monetization.InSkillProduct.class, false);
@@ -214,6 +221,8 @@ public class MonetizationServiceClient extends BaseServiceClient implements Mone
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.monetization.Error.class, 412, "Non-Child Directed Skill is not supported."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.monetization.Error.class, 429, "The request is throttled."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.monetization.Error.class, 500, "Internal Server Error"));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
 
     return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.model.services.monetization.InSkillProductTransactionsResponse.class, false);
@@ -258,6 +267,8 @@ public class MonetizationServiceClient extends BaseServiceClient implements Mone
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.monetization.Error.class, 400, "Invalid request."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.monetization.Error.class, 401, "The authentication token is invalid or doesn't have access to make this request"));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.monetization.Error.class, 500, "Internal Server Error."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
 
     return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, Boolean.class, false);
