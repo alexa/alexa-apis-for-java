@@ -98,9 +98,9 @@ public interface SkillManagementService {
     ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.CatalogDefinitionOutput> callGetInteractionModelCatalogDefinitionV1(String catalogId) throws ServiceException;
 
 
-    void updateInteractionModelCatalogV1(String catalogId, com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.UpdateRequest updateRequest) throws ServiceException;
+    void updateInteractionModelCatalogV1(String catalogId, com.amazon.ask.smapi.model.v1.skill.interactionModel.type.UpdateRequest updateRequest) throws ServiceException;
 
-    ApiResponse<Void> callUpdateInteractionModelCatalogV1(String catalogId, com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.UpdateRequest updateRequest) throws ServiceException;
+    ApiResponse<Void> callUpdateInteractionModelCatalogV1(String catalogId, com.amazon.ask.smapi.model.v1.skill.interactionModel.type.UpdateRequest updateRequest) throws ServiceException;
 
 
     com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.CatalogStatus getInteractionModelCatalogUpdateStatusV1(String catalogId, String updateRequestId) throws ServiceException;
@@ -141,6 +141,61 @@ public interface SkillManagementService {
     com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.CatalogResponse createInteractionModelCatalogV1(com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.DefinitionData catalog) throws ServiceException;
 
     ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.CatalogResponse> callCreateInteractionModelCatalogV1(com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.DefinitionData catalog) throws ServiceException;
+
+
+    com.amazon.ask.smapi.model.v1.skill.interactionModel.type.ListSlotTypeResponse listInteractionModelSlotTypesV1(String vendorId, BigDecimal maxResults, String nextToken, String sortDirection) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.type.ListSlotTypeResponse> callListInteractionModelSlotTypesV1(String vendorId, BigDecimal maxResults, String nextToken, String sortDirection) throws ServiceException;
+
+
+    com.amazon.ask.smapi.model.v1.skill.interactionModel.type.SlotTypeResponse createInteractionModelSlotTypeV1(com.amazon.ask.smapi.model.v1.skill.interactionModel.type.DefinitionData slotType) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.type.SlotTypeResponse> callCreateInteractionModelSlotTypeV1(com.amazon.ask.smapi.model.v1.skill.interactionModel.type.DefinitionData slotType) throws ServiceException;
+
+
+    void deleteInteractionModelSlotTypeV1(String slotTypeId) throws ServiceException;
+
+    ApiResponse<Void> callDeleteInteractionModelSlotTypeV1(String slotTypeId) throws ServiceException;
+
+
+    com.amazon.ask.smapi.model.v1.skill.interactionModel.type.SlotTypeDefinitionOutput getInteractionModelSlotTypeDefinitionV1(String slotTypeId) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.type.SlotTypeDefinitionOutput> callGetInteractionModelSlotTypeDefinitionV1(String slotTypeId) throws ServiceException;
+
+
+    void updateInteractionModelSlotTypeV1(String slotTypeId, com.amazon.ask.smapi.model.v1.skill.interactionModel.type.UpdateRequest updateRequest) throws ServiceException;
+
+    ApiResponse<Void> callUpdateInteractionModelSlotTypeV1(String slotTypeId, com.amazon.ask.smapi.model.v1.skill.interactionModel.type.UpdateRequest updateRequest) throws ServiceException;
+
+
+    com.amazon.ask.smapi.model.v1.skill.interactionModel.type.SlotTypeStatus getInteractionModelSlotTypeBuildStatusV1(String slotTypeId, String updateRequestId) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.type.SlotTypeStatus> callGetInteractionModelSlotTypeBuildStatusV1(String slotTypeId, String updateRequestId) throws ServiceException;
+
+
+    com.amazon.ask.smapi.model.v1.skill.interactionModel.typeVersion.ListSlotTypeVersionResponse listInteractionModelSlotTypeVersionsV1(String slotTypeId, BigDecimal maxResults, String nextToken, String sortDirection) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.typeVersion.ListSlotTypeVersionResponse> callListInteractionModelSlotTypeVersionsV1(String slotTypeId, BigDecimal maxResults, String nextToken, String sortDirection) throws ServiceException;
+
+
+    void createInteractionModelSlotTypeVersionV1(String slotTypeId, com.amazon.ask.smapi.model.v1.skill.interactionModel.typeVersion.VersionData slotType) throws ServiceException;
+
+    ApiResponse<Void> callCreateInteractionModelSlotTypeVersionV1(String slotTypeId, com.amazon.ask.smapi.model.v1.skill.interactionModel.typeVersion.VersionData slotType) throws ServiceException;
+
+
+    void deleteInteractionModelSlotTypeVersionV1(String slotTypeId, String version) throws ServiceException;
+
+    ApiResponse<Void> callDeleteInteractionModelSlotTypeVersionV1(String slotTypeId, String version) throws ServiceException;
+
+
+    com.amazon.ask.smapi.model.v1.skill.interactionModel.typeVersion.SlotTypeVersionData getInteractionModelSlotTypeVersionV1(String slotTypeId, String version) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.typeVersion.SlotTypeVersionData> callGetInteractionModelSlotTypeVersionV1(String slotTypeId, String version) throws ServiceException;
+
+
+    void updateInteractionModelSlotTypeVersionV1(String slotTypeId, String version, com.amazon.ask.smapi.model.v1.skill.interactionModel.typeVersion.SlotTypeUpdate slotTypeUpdate) throws ServiceException;
+
+    ApiResponse<Void> callUpdateInteractionModelSlotTypeVersionV1(String slotTypeId, String version, com.amazon.ask.smapi.model.v1.skill.interactionModel.typeVersion.SlotTypeUpdate slotTypeUpdate) throws ServiceException;
 
 
     com.amazon.ask.smapi.model.v1.skill.ExportResponse getStatusOfExportRequestV1(String exportId) throws ServiceException;

@@ -52,6 +52,11 @@ public class SubTypesManifest {
     Map<String, Class> v1SkillInteractionModelValueSupplierSubTypes = new HashMap<>();
     v1SkillInteractionModelValueSupplierSubTypes.put("CatalogValueSupplier", com.amazon.ask.smapi.model.v1.skill.interactionModel.CatalogValueSupplier.class);
     baseTypes.put(com.amazon.ask.smapi.model.v1.skill.interactionModel.ValueSupplier.class, v1SkillInteractionModelValueSupplierSubTypes);
+
+    Map<String, Class> v1SkillInteractionModelValueSupplierSlotSubTypes = new HashMap<>();
+    v1SkillInteractionModelValueSupplierSlotSubTypes.put("CatalogValueSupplier", com.amazon.ask.smapi.model.v1.skill.interactionModel.CatalogValueSupplierSlot.class);
+    v1SkillInteractionModelValueSupplierSlotSubTypes.put("InlineValueSupplier", com.amazon.ask.smapi.model.v1.skill.interactionModel.InlineValueSupplier.class);
+    baseTypes.put(com.amazon.ask.smapi.model.v1.skill.interactionModel.ValueSupplierSlot.class, v1SkillInteractionModelValueSupplierSlotSubTypes);
   }
 
   /**
