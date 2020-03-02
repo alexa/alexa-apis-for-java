@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Frequency of recurrence
+ * Frequency of recurrence. Deprecated.
  */
 public enum RecurrenceFreq {
   

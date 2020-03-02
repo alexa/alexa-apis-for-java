@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Day of recurrence
+ * Day of recurrence. Deprecated.
  */
 public enum RecurrenceDay {
   

@@ -15,6 +15,8 @@
 package com.amazon.ask.model.services.reminderManagement;
 
 import java.util.Objects;
+import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
@@ -37,6 +39,15 @@ public final class Recurrence {
     @JsonProperty("interval")
     private Integer interval = null;
 
+    @JsonProperty("startDateTime")
+    private LocalDateTime startDateTime = null;
+
+    @JsonProperty("endDateTime")
+    private LocalDateTime endDateTime = null;
+
+    @JsonProperty("recurrenceRules")
+    private List<String> recurrenceRules = new ArrayList<String>();
+
     public static Builder builder() {
         return new Builder();
     }
@@ -50,6 +61,15 @@ public final class Recurrence {
         }
         if (builder.interval != null) {
             this.interval = builder.interval;
+        }
+        if (builder.startDateTime != null) {
+            this.startDateTime = builder.startDateTime;
+        }
+        if (builder.endDateTime != null) {
+            this.endDateTime = builder.endDateTime;
+        }
+        if (builder.recurrenceRules != null) {
+            this.recurrenceRules = builder.recurrenceRules;
         }
     }
 
@@ -80,6 +100,33 @@ public final class Recurrence {
         return interval;
     }
 
+    /**
+     * Valid ISO 8601 format - optional start DateTime of recurrence.
+     * @return startDateTime
+    **/
+    @JsonProperty("startDateTime")
+    public LocalDateTime getStartDateTime() {
+        return startDateTime;
+    }
+
+    /**
+     * Valid ISO 8601 format - optional end DateTime of recurrence
+     * @return endDateTime
+    **/
+    @JsonProperty("endDateTime")
+    public LocalDateTime getEndDateTime() {
+        return endDateTime;
+    }
+
+    /**
+     * Get recurrenceRules
+     * @return recurrenceRules
+    **/
+    @JsonProperty("recurrenceRules")
+    public List<String> getRecurrenceRules() {
+        return recurrenceRules;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,12 +138,15 @@ public final class Recurrence {
         Recurrence servicesReminderManagementRecurrence = (Recurrence) o;
         return Objects.equals(this.freq, servicesReminderManagementRecurrence.freq) &&
             Objects.equals(this.byDay, servicesReminderManagementRecurrence.byDay) &&
-            Objects.equals(this.interval, servicesReminderManagementRecurrence.interval);
+            Objects.equals(this.interval, servicesReminderManagementRecurrence.interval) &&
+            Objects.equals(this.startDateTime, servicesReminderManagementRecurrence.startDateTime) &&
+            Objects.equals(this.endDateTime, servicesReminderManagementRecurrence.endDateTime) &&
+            Objects.equals(this.recurrenceRules, servicesReminderManagementRecurrence.recurrenceRules);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(freq, byDay, interval);
+        return Objects.hash(freq, byDay, interval, startDateTime, endDateTime, recurrenceRules);
     }
 
     @Override
@@ -107,6 +157,9 @@ public final class Recurrence {
         sb.append("    freq: ").append(toIndentedString(freq)).append("\n");
         sb.append("    byDay: ").append(toIndentedString(byDay)).append("\n");
         sb.append("    interval: ").append(toIndentedString(interval)).append("\n");
+        sb.append("    startDateTime: ").append(toIndentedString(startDateTime)).append("\n");
+        sb.append("    endDateTime: ").append(toIndentedString(endDateTime)).append("\n");
+        sb.append("    recurrenceRules: ").append(toIndentedString(recurrenceRules)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -126,6 +179,9 @@ public final class Recurrence {
         private com.amazon.ask.model.services.reminderManagement.RecurrenceFreq freq;
         private List<com.amazon.ask.model.services.reminderManagement.RecurrenceDay> byDay;
         private Integer interval;
+        private LocalDateTime startDateTime;
+        private LocalDateTime endDateTime;
+        private List<String> recurrenceRules;
 
         private Builder() {}
 
@@ -156,6 +212,34 @@ public final class Recurrence {
             return this;
         }
 
+
+        @JsonProperty("startDateTime")
+        public Builder withStartDateTime(LocalDateTime startDateTime) {
+            this.startDateTime = startDateTime;
+            return this;
+        }
+
+
+        @JsonProperty("endDateTime")
+        public Builder withEndDateTime(LocalDateTime endDateTime) {
+            this.endDateTime = endDateTime;
+            return this;
+        }
+
+
+        @JsonProperty("recurrenceRules")
+        public Builder withRecurrenceRules(List<String> recurrenceRules) {
+            this.recurrenceRules = recurrenceRules;
+            return this;
+        }
+
+        public Builder addRecurrenceRulesItem(String recurrenceRulesItem) {
+            if (this.recurrenceRules == null) {
+                this.recurrenceRules = new ArrayList<String>();
+            }
+            this.recurrenceRules.add(recurrenceRulesItem);
+            return this;
+        }
 
         public Recurrence build() {
             return new Recurrence(this);
