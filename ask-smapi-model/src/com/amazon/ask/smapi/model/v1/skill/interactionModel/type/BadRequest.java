@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;
 
 /**
- * The body of the bad request exception
+ * The body of the bad request exception.
  */
 
 @JsonDeserialize(builder = BadRequest.Builder.class)

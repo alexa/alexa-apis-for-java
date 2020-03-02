@@ -25,8 +25,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = ValueCatalog.Builder.class)
 public final class ValueCatalog {
 
-    @JsonProperty("id")
-    private String id = null;
+    @JsonProperty("catalogId")
+    private String catalogId = null;
 
     @JsonProperty("version")
     private String version = null;
@@ -36,8 +36,8 @@ public final class ValueCatalog {
     }
 
     private ValueCatalog(Builder builder) {
-        if (builder.id != null) {
-            this.id = builder.id;
+        if (builder.catalogId != null) {
+            this.catalogId = builder.catalogId;
         }
         if (builder.version != null) {
             this.version = builder.version;
@@ -45,16 +45,16 @@ public final class ValueCatalog {
     }
 
     /**
-     * CatalogId
-     * @return id
+     * CatalogId.
+     * @return catalogId
     **/
-    @JsonProperty("id")
-    public String getId() {
-        return id;
+    @JsonProperty("catalogId")
+    public String getCatalogId() {
+        return catalogId;
     }
 
     /**
-     * Catalog version
+     * Catalog version.
      * @return version
     **/
     @JsonProperty("version")
@@ -71,13 +71,13 @@ public final class ValueCatalog {
             return false;
         }
         ValueCatalog v1SkillInteractionModelValueCatalog = (ValueCatalog) o;
-        return Objects.equals(this.id, v1SkillInteractionModelValueCatalog.id) &&
+        return Objects.equals(this.catalogId, v1SkillInteractionModelValueCatalog.catalogId) &&
             Objects.equals(this.version, v1SkillInteractionModelValueCatalog.version);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, version);
+        return Objects.hash(catalogId, version);
     }
 
     @Override
@@ -85,7 +85,7 @@ public final class ValueCatalog {
         StringBuilder sb = new StringBuilder();
         sb.append("class ValueCatalog {\n");
         
-        sb.append("    id: ").append(toIndentedString(id)).append("\n");
+        sb.append("    catalogId: ").append(toIndentedString(catalogId)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("}");
         return sb.toString();
@@ -103,14 +103,14 @@ public final class ValueCatalog {
     }
   
     public static class Builder {
-        private String id;
+        private String catalogId;
         private String version;
 
         private Builder() {}
 
-        @JsonProperty("id")
-        public Builder withId(String id) {
-            this.id = id;
+        @JsonProperty("catalogId")
+        public Builder withCatalogId(String catalogId) {
+            this.catalogId = catalogId;
             return this;
         }
 

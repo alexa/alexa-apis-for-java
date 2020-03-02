@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;
 
 /**
- * The object that contains individual type values
+ * The object that contains individual type values.
  */
 
 @JsonDeserialize(builder = TypeValueObject.Builder.class)

@@ -32,7 +32,7 @@ public final class SlotType {
     private String name = null;
 
     @JsonProperty("values")
-    private List<String> values = new ArrayList<String>();
+    private List<com.amazon.ask.smapi.model.v1.skill.interactionModel.TypeValue> values = new ArrayList<com.amazon.ask.smapi.model.v1.skill.interactionModel.TypeValue>();
 
     @JsonProperty("valueSupplier")
     private com.amazon.ask.smapi.model.v1.skill.interactionModel.ValueSupplier valueSupplier = null;
@@ -67,7 +67,7 @@ public final class SlotType {
      * @return values
     **/
     @JsonProperty("values")
-    public List<String> getValues() {
+    public List<com.amazon.ask.smapi.model.v1.skill.interactionModel.TypeValue> getValues() {
         return values;
     }
 
@@ -124,7 +124,7 @@ public final class SlotType {
   
     public static class Builder {
         private String name;
-        private List<String> values;
+        private List<com.amazon.ask.smapi.model.v1.skill.interactionModel.TypeValue> values;
         private com.amazon.ask.smapi.model.v1.skill.interactionModel.ValueSupplier valueSupplier;
 
         private Builder() {}
@@ -137,14 +137,14 @@ public final class SlotType {
 
 
         @JsonProperty("values")
-        public Builder withValues(List<String> values) {
+        public Builder withValues(List<com.amazon.ask.smapi.model.v1.skill.interactionModel.TypeValue> values) {
             this.values = values;
             return this;
         }
 
-        public Builder addValuesItem(String valuesItem) {
+        public Builder addValuesItem(com.amazon.ask.smapi.model.v1.skill.interactionModel.TypeValue valuesItem) {
             if (this.values == null) {
-                this.values = new ArrayList<String>();
+                this.values = new ArrayList<com.amazon.ask.smapi.model.v1.skill.interactionModel.TypeValue>();
             }
             this.values.add(valuesItem);
             return this;

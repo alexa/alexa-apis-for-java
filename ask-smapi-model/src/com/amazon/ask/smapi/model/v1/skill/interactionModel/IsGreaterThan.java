@@ -33,7 +33,7 @@ public final class IsGreaterThan extends com.amazon.ask.smapi.model.v1.skill.int
     }
 
     private IsGreaterThan(Builder builder) {
-        String discriminatorValue = "IsGreaterThan";
+        String discriminatorValue = "isGreaterThan";
 
         this.type = discriminatorValue;
         if (builder.prompt != null) {

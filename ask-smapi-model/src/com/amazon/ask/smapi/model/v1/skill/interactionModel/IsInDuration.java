@@ -36,7 +36,7 @@ public final class IsInDuration extends com.amazon.ask.smapi.model.v1.skill.inte
     }
 
     private IsInDuration(Builder builder) {
-        String discriminatorValue = "IsInDuration";
+        String discriminatorValue = "isInDuration";
 
         this.type = discriminatorValue;
         if (builder.prompt != null) {

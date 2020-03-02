@@ -26,7 +26,7 @@ import java.util.ArrayList;
  */
 
 @JsonDeserialize(builder = InlineValueSupplier.Builder.class)
-public final class InlineValueSupplier extends com.amazon.ask.smapi.model.v1.skill.interactionModel.ValueSupplierSlot  {
+public final class InlineValueSupplier extends com.amazon.ask.smapi.model.v1.skill.interactionModel.ValueSupplier  {
 
     @JsonProperty("values")
     private List<com.amazon.ask.smapi.model.v1.skill.interactionModel.TypeValue> values = new ArrayList<com.amazon.ask.smapi.model.v1.skill.interactionModel.TypeValue>();

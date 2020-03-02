@@ -26,15 +26,15 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = true )
 @JsonSubTypes({
-  @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.interactionModel.HasEntityResolutionMatch.class, name = "HasEntityResolutionMatch"),
-  @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.interactionModel.IsLessThanOrEqualTo.class, name = "IsLessThanOrEqualTo"),
-  @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.interactionModel.IsInDuration.class, name = "IsInDuration"),
-  @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.interactionModel.IsLessThan.class, name = "IsLessThan"),
-  @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.interactionModel.IsGreaterThan.class, name = "IsGreaterThan"),
-  @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.interactionModel.IsNotInSet.class, name = "IsNotInSet"),
-  @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.interactionModel.IsNotInDuration.class, name = "IsNotInDuration"),
-  @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.interactionModel.IsGreaterThanOrEqualTo.class, name = "IsGreaterThanOrEqualTo"),
-  @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.interactionModel.IsInSet.class, name = "IsInSet"),
+  @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.interactionModel.HasEntityResolutionMatch.class, name = "hasEntityResolutionMatch"),
+  @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.interactionModel.IsLessThanOrEqualTo.class, name = "isLessThanOrEqualTo"),
+  @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.interactionModel.IsInDuration.class, name = "isInDuration"),
+  @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.interactionModel.IsLessThan.class, name = "isLessThan"),
+  @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.interactionModel.IsGreaterThan.class, name = "isGreaterThan"),
+  @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.interactionModel.IsNotInSet.class, name = "isNotInSet"),
+  @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.interactionModel.IsNotInDuration.class, name = "isNotInDuration"),
+  @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.interactionModel.IsGreaterThanOrEqualTo.class, name = "isGreaterThanOrEqualTo"),
+  @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.interactionModel.IsInSet.class, name = "isInSet"),
 })
 public abstract class SlotValidation {
 
@@ -47,7 +47,7 @@ public abstract class SlotValidation {
     }
 
     /**
-     * The exact type of validation e.g. IsLessThan,IsGreaterThan etc.
+     * The exact type of validation e.g. isLessThan,isGreaterThan etc.
      * @return type
     **/
     @JsonIgnore

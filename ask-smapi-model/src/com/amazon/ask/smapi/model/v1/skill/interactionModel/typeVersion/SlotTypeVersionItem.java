@@ -51,7 +51,7 @@ public final class SlotTypeVersionItem {
     }
 
     /**
-     * version number of slot type
+     * Version number of slot type.
      * @return version
     **/
     @JsonProperty("version")

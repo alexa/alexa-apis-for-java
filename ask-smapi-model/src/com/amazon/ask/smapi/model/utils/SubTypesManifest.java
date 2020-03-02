@@ -38,25 +38,21 @@ public class SubTypesManifest {
     baseTypes.put(com.amazon.ask.smapi.model.v1.skill.Manifest.ModelInterface.class, v1SkillManifestInterfaceSubTypes);
 
     Map<String, Class> v1SkillInteractionModelSlotValidationSubTypes = new HashMap<>();
-    v1SkillInteractionModelSlotValidationSubTypes.put("HasEntityResolutionMatch", com.amazon.ask.smapi.model.v1.skill.interactionModel.HasEntityResolutionMatch.class);
-    v1SkillInteractionModelSlotValidationSubTypes.put("IsLessThanOrEqualTo", com.amazon.ask.smapi.model.v1.skill.interactionModel.IsLessThanOrEqualTo.class);
-    v1SkillInteractionModelSlotValidationSubTypes.put("IsInDuration", com.amazon.ask.smapi.model.v1.skill.interactionModel.IsInDuration.class);
-    v1SkillInteractionModelSlotValidationSubTypes.put("IsLessThan", com.amazon.ask.smapi.model.v1.skill.interactionModel.IsLessThan.class);
-    v1SkillInteractionModelSlotValidationSubTypes.put("IsGreaterThan", com.amazon.ask.smapi.model.v1.skill.interactionModel.IsGreaterThan.class);
-    v1SkillInteractionModelSlotValidationSubTypes.put("IsNotInSet", com.amazon.ask.smapi.model.v1.skill.interactionModel.IsNotInSet.class);
-    v1SkillInteractionModelSlotValidationSubTypes.put("IsNotInDuration", com.amazon.ask.smapi.model.v1.skill.interactionModel.IsNotInDuration.class);
-    v1SkillInteractionModelSlotValidationSubTypes.put("IsGreaterThanOrEqualTo", com.amazon.ask.smapi.model.v1.skill.interactionModel.IsGreaterThanOrEqualTo.class);
-    v1SkillInteractionModelSlotValidationSubTypes.put("IsInSet", com.amazon.ask.smapi.model.v1.skill.interactionModel.IsInSet.class);
+    v1SkillInteractionModelSlotValidationSubTypes.put("hasEntityResolutionMatch", com.amazon.ask.smapi.model.v1.skill.interactionModel.HasEntityResolutionMatch.class);
+    v1SkillInteractionModelSlotValidationSubTypes.put("isLessThanOrEqualTo", com.amazon.ask.smapi.model.v1.skill.interactionModel.IsLessThanOrEqualTo.class);
+    v1SkillInteractionModelSlotValidationSubTypes.put("isInDuration", com.amazon.ask.smapi.model.v1.skill.interactionModel.IsInDuration.class);
+    v1SkillInteractionModelSlotValidationSubTypes.put("isLessThan", com.amazon.ask.smapi.model.v1.skill.interactionModel.IsLessThan.class);
+    v1SkillInteractionModelSlotValidationSubTypes.put("isGreaterThan", com.amazon.ask.smapi.model.v1.skill.interactionModel.IsGreaterThan.class);
+    v1SkillInteractionModelSlotValidationSubTypes.put("isNotInSet", com.amazon.ask.smapi.model.v1.skill.interactionModel.IsNotInSet.class);
+    v1SkillInteractionModelSlotValidationSubTypes.put("isNotInDuration", com.amazon.ask.smapi.model.v1.skill.interactionModel.IsNotInDuration.class);
+    v1SkillInteractionModelSlotValidationSubTypes.put("isGreaterThanOrEqualTo", com.amazon.ask.smapi.model.v1.skill.interactionModel.IsGreaterThanOrEqualTo.class);
+    v1SkillInteractionModelSlotValidationSubTypes.put("isInSet", com.amazon.ask.smapi.model.v1.skill.interactionModel.IsInSet.class);
     baseTypes.put(com.amazon.ask.smapi.model.v1.skill.interactionModel.SlotValidation.class, v1SkillInteractionModelSlotValidationSubTypes);
 
     Map<String, Class> v1SkillInteractionModelValueSupplierSubTypes = new HashMap<>();
     v1SkillInteractionModelValueSupplierSubTypes.put("CatalogValueSupplier", com.amazon.ask.smapi.model.v1.skill.interactionModel.CatalogValueSupplier.class);
+    v1SkillInteractionModelValueSupplierSubTypes.put("InlineValueSupplier", com.amazon.ask.smapi.model.v1.skill.interactionModel.InlineValueSupplier.class);
     baseTypes.put(com.amazon.ask.smapi.model.v1.skill.interactionModel.ValueSupplier.class, v1SkillInteractionModelValueSupplierSubTypes);
-
-    Map<String, Class> v1SkillInteractionModelValueSupplierSlotSubTypes = new HashMap<>();
-    v1SkillInteractionModelValueSupplierSlotSubTypes.put("CatalogValueSupplier", com.amazon.ask.smapi.model.v1.skill.interactionModel.CatalogValueSupplierSlot.class);
-    v1SkillInteractionModelValueSupplierSlotSubTypes.put("InlineValueSupplier", com.amazon.ask.smapi.model.v1.skill.interactionModel.InlineValueSupplier.class);
-    baseTypes.put(com.amazon.ask.smapi.model.v1.skill.interactionModel.ValueSupplierSlot.class, v1SkillInteractionModelValueSupplierSlotSubTypes);
   }
 
   /**

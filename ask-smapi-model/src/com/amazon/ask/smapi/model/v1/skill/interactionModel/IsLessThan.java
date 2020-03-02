@@ -33,7 +33,7 @@ public final class IsLessThan extends com.amazon.ask.smapi.model.v1.skill.intera
     }
 
     private IsLessThan(Builder builder) {
-        String discriminatorValue = "IsLessThan";
+        String discriminatorValue = "isLessThan";
 
         this.type = discriminatorValue;
         if (builder.prompt != null) {

@@ -26,7 +26,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public final class ValueSupplierObject {
 
     @JsonProperty("valueSupplier")
-    private com.amazon.ask.smapi.model.v1.skill.interactionModel.ValueSupplierSlot valueSupplier = null;
+    private com.amazon.ask.smapi.model.v1.skill.interactionModel.ValueSupplier valueSupplier = null;
 
     public static Builder builder() {
         return new Builder();
@@ -43,7 +43,7 @@ public final class ValueSupplierObject {
      * @return valueSupplier
     **/
     @JsonProperty("valueSupplier")
-    public com.amazon.ask.smapi.model.v1.skill.interactionModel.ValueSupplierSlot getValueSupplier() {
+    public com.amazon.ask.smapi.model.v1.skill.interactionModel.ValueSupplier getValueSupplier() {
         return valueSupplier;
     }
 
@@ -86,12 +86,12 @@ public final class ValueSupplierObject {
     }
   
     public static class Builder {
-        private com.amazon.ask.smapi.model.v1.skill.interactionModel.ValueSupplierSlot valueSupplier;
+        private com.amazon.ask.smapi.model.v1.skill.interactionModel.ValueSupplier valueSupplier;
 
         private Builder() {}
 
         @JsonProperty("valueSupplier")
-        public Builder withValueSupplier(com.amazon.ask.smapi.model.v1.skill.interactionModel.ValueSupplierSlot valueSupplier) {
+        public Builder withValueSupplier(com.amazon.ask.smapi.model.v1.skill.interactionModel.ValueSupplier valueSupplier) {
             this.valueSupplier = valueSupplier;
             return this;
         }

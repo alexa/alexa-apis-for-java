@@ -43,13 +43,13 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
                                     .withSerializer(apiConfiguration.getSerializer())
                                     .build())
           .build();
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.1.0").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.1.1").build();
   }
 
   public SkillManagementServiceClient(ApiConfiguration apiConfiguration, LwaClient lwaClient) {
       super(apiConfiguration);
       this.lwaClient = lwaClient;
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.1.0").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.1.1").build();
   }
 
   /**
@@ -1367,7 +1367,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.type.SlotTypeResponse.class, 200, "Returns the generated slotTypeId."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.type.BadRequest.class, 400, "Server cannot process the request due to a client error e.g. the slot type definition is invalid."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 500, "Internal Server Error."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 503, "Service Unavailable."));
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
@@ -1391,7 +1391,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Delete the slot type. 
-   * @param slotTypeId The identitfier for a slot type (required)
+   * @param slotTypeId The identifier for a slot type. (required)
    * @throws ServiceException if fails to make API call
    */
   public ApiResponse<Void> callDeleteInteractionModelSlotTypeV1(String slotTypeId) throws ServiceException {
@@ -1425,7 +1425,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Delete the slot type. 
-   * @param slotTypeId The identitfier for a slot type (required)
+   * @param slotTypeId The identifier for a slot type. (required)
    * @throws ServiceException if fails to make API call
    */
   public void deleteInteractionModelSlotTypeV1(String slotTypeId) throws ServiceException {
@@ -1434,8 +1434,8 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
 
   /**
    * 
-   * get the slot type definition 
-   * @param slotTypeId The identitfier for a slot type (required)
+   * Get the slot type definition. 
+   * @param slotTypeId The identifier for a slot type. (required)
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.type.SlotTypeDefinitionOutput
    * @throws ServiceException if fails to make API call
    */
@@ -1452,7 +1452,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String path = "/v1/skills/api/custom/interactionModel/slotTypes/{slotTypeId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.type.SlotTypeDefinitionOutput.class, 200, "the slot type definition"));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.type.SlotTypeDefinitionOutput.class, 200, "The slot type definition."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.type.BadRequest.class, 400, "The slot type cannot be retrieved due to errors listed."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 403, "The operation being requested is not allowed."));
@@ -1469,8 +1469,8 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
 
   /**
    * 
-   * get the slot type definition 
-   * @param slotTypeId The identitfier for a slot type (required)
+   * Get the slot type definition. 
+   * @param slotTypeId The identifier for a slot type. (required)
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.type.SlotTypeDefinitionOutput
    * @throws ServiceException if fails to make API call
    */
@@ -1480,8 +1480,8 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
 
   /**
    * 
-   * update description and vendorGuidance string for certain version of a slot type. 
-   * @param slotTypeId The identitfier for a slot type (required)
+   * Update description and vendorGuidance string for certain version of a slot type. 
+   * @param slotTypeId The identifier for a slot type. (required)
    * @param updateRequest  (required)
    * @throws ServiceException if fails to make API call
    */
@@ -1515,8 +1515,8 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
 
   /**
    * 
-   * update description and vendorGuidance string for certain version of a slot type. 
-   * @param slotTypeId The identitfier for a slot type (required)
+   * Update description and vendorGuidance string for certain version of a slot type. 
+   * @param slotTypeId The identifier for a slot type. (required)
    * @param updateRequest  (required)
    * @throws ServiceException if fails to make API call
    */
@@ -1527,7 +1527,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Get the status of slot type resource and its sub-resources for a given slotTypeId. 
-   * @param slotTypeId The identitfier for a slot type (required)
+   * @param slotTypeId The identifier for a slot type. (required)
    * @param updateRequestId The identifier for slotType version creation process (required)
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.type.SlotTypeStatus
    * @throws ServiceException if fails to make API call
@@ -1546,12 +1546,12 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String path = "/v1/skills/api/custom/interactionModel/slotTypes/{slotTypeId}/updateRequest/{updateRequestId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.type.SlotTypeStatus.class, 200, "Returns the build status and error codes for the given slotTypeId"));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.type.SlotTypeStatus.class, 200, "Returns the build status and error codes for the given slotTypeId."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.type.BadRequest.class, 400, "Server cannot process the request due to a client error."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 403, "The operation being requested is not allowed."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 404, "There is no slot type defined for the slotTypeId."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 500, "Internal Server Error."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 503, "Service Unavailable."));
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
@@ -1564,7 +1564,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Get the status of slot type resource and its sub-resources for a given slotTypeId. 
-   * @param slotTypeId The identitfier for a slot type (required)
+   * @param slotTypeId The identifier for a slot type. (required)
    * @param updateRequestId The identifier for slotType version creation process (required)
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.type.SlotTypeStatus
    * @throws ServiceException if fails to make API call
@@ -1576,7 +1576,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * List all slot type versions for the slot type id. 
-   * @param slotTypeId The identitfier for a slot type (required)
+   * @param slotTypeId The identifier for a slot type. (required)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
    * @param sortDirection Sets the sorting direction of the result items. When set to &#39;asc&#39; these items are returned in ascending order of sortField value and when set to &#39;desc&#39; these items are returned in descending order of sortField value. (optional)
@@ -1625,7 +1625,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * List all slot type versions for the slot type id. 
-   * @param slotTypeId The identitfier for a slot type (required)
+   * @param slotTypeId The identifier for a slot type. (required)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
    * @param sortDirection Sets the sorting direction of the result items. When set to &#39;asc&#39; these items are returned in ascending order of sortField value and when set to &#39;desc&#39; these items are returned in descending order of sortField value. (optional)
@@ -1639,7 +1639,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Create a new version of slot type entity for the given slotTypeId. 
-   * @param slotTypeId The identitfier for a slot type (required)
+   * @param slotTypeId The identifier for a slot type. (required)
    * @param slotType  (required)
    * @throws ServiceException if fails to make API call
    */
@@ -1674,7 +1674,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Create a new version of slot type entity for the given slotTypeId. 
-   * @param slotTypeId The identitfier for a slot type (required)
+   * @param slotTypeId The identifier for a slot type. (required)
    * @param slotType  (required)
    * @throws ServiceException if fails to make API call
    */
@@ -1685,7 +1685,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Delete slot type version. 
-   * @param slotTypeId The identitfier for a slot type (required)
+   * @param slotTypeId The identifier for a slot type. (required)
    * @param version Version for interaction model. (required)
    * @throws ServiceException if fails to make API call
    */
@@ -1721,7 +1721,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Delete slot type version. 
-   * @param slotTypeId The identitfier for a slot type (required)
+   * @param slotTypeId The identifier for a slot type. (required)
    * @param version Version for interaction model. (required)
    * @throws ServiceException if fails to make API call
    */
@@ -1732,7 +1732,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Get slot type version data of given slot type version. 
-   * @param slotTypeId The identitfier for a slot type (required)
+   * @param slotTypeId The identifier for a slot type. (required)
    * @param version Version for interaction model. (required)
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.typeVersion.SlotTypeVersionData
    * @throws ServiceException if fails to make API call
@@ -1769,7 +1769,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Get slot type version data of given slot type version. 
-   * @param slotTypeId The identitfier for a slot type (required)
+   * @param slotTypeId The identifier for a slot type. (required)
    * @param version Version for interaction model. (required)
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.typeVersion.SlotTypeVersionData
    * @throws ServiceException if fails to make API call
@@ -1781,7 +1781,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Update description and vendorGuidance string for certain version of a slot type. 
-   * @param slotTypeId The identitfier for a slot type (required)
+   * @param slotTypeId The identifier for a slot type. (required)
    * @param version Version for interaction model. (required)
    * @param slotTypeUpdate  (required)
    * @throws ServiceException if fails to make API call
@@ -1804,7 +1804,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.type.BadRequest.class, 400, "Server cannot process the request due to a client error."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 403, "The operation being requested is not allowed."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 404, "There is no slot type defined for the slotTypeId"));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 404, "There is no slot type defined for the slotTypeId."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 500, "Internal Server Error."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 503, "Service Unavailable."));
@@ -1818,7 +1818,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Update description and vendorGuidance string for certain version of a slot type. 
-   * @param slotTypeId The identitfier for a slot type (required)
+   * @param slotTypeId The identifier for a slot type. (required)
    * @param version Version for interaction model. (required)
    * @param slotTypeUpdate  (required)
    * @throws ServiceException if fails to make API call
@@ -3885,7 +3885,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String path = "/v1/skills/{skillId}/stages/{stageV2}/interactionModel/locales/{locale}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.InteractionModelData.class, 200, "Returns interaction model object on success"));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.InteractionModelData.class, 200, "Returns interaction model object on success."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
@@ -3915,7 +3915,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
 
   /**
    * 
-   * Get the latest metadata for the interaction model resource for the given stage 
+   * Get the latest metadata for the interaction model resource for the given stage. 
    * @param skillId The skill ID. (required)
    * @param stageV2 Stages of a skill including the new certified stage. * &#x60;development&#x60; - skills which are currently in development corresponds to this stage. * &#x60;certified&#x60; -  skills which have completed certification and ready for publishing corresponds to this stage. * &#x60;live&#x60; - skills which are currently live corresponds to this stage.  (required)
    * @param locale The locale for the model requested e.g. en-GB, en-US, de-DE. (required)
@@ -3936,7 +3936,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String path = "/v1/skills/{skillId}/stages/{stageV2}/interactionModel/locales/{locale}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
-    serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "success. There is no content but returns etag"));
+    serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "Success. There is no content but returns etag."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
@@ -3953,7 +3953,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
 
   /**
    * 
-   * Get the latest metadata for the interaction model resource for the given stage 
+   * Get the latest metadata for the interaction model resource for the given stage. 
    * @param skillId The skill ID. (required)
    * @param stageV2 Stages of a skill including the new certified stage. * &#x60;development&#x60; - skills which are currently in development corresponds to this stage. * &#x60;certified&#x60; -  skills which have completed certification and ready for publishing corresponds to this stage. * &#x60;live&#x60; - skills which are currently live corresponds to this stage.  (required)
    * @param locale The locale for the model requested e.g. en-GB, en-US, de-DE. (required)
@@ -3993,10 +3993,10 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 202, "Returns build status location link on success."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error e.g. the input interaction model is invalid"));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error e.g. the input interaction model is invalid."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 404, "The specified skill or stage or locale does not exist"));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 404, "The specified skill or stage or locale does not exist."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 412, "Precondition failed."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 500, "Internal Server Error."));

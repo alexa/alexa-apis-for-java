@@ -19,7 +19,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * the value schema in type object of interaction model
+ * The value schema in type object of interaction model.
  */
 
 @JsonDeserialize(builder = TypeValue.Builder.class)

@@ -33,7 +33,7 @@ public final class IsLessThanOrEqualTo extends com.amazon.ask.smapi.model.v1.ski
     }
 
     private IsLessThanOrEqualTo(Builder builder) {
-        String discriminatorValue = "IsLessThanOrEqualTo";
+        String discriminatorValue = "isLessThanOrEqualTo";
 
         this.type = discriminatorValue;
         if (builder.prompt != null) {

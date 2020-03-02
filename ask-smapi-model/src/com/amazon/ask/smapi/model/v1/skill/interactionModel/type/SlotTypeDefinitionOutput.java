@@ -26,7 +26,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public final class SlotTypeDefinitionOutput {
 
     @JsonProperty("slotType")
-    private com.amazon.ask.smapi.model.v1.skill.interactionModel.type.SlotTypeEntity slotType = null;
+    private com.amazon.ask.smapi.model.v1.skill.interactionModel.type.SlotTypeInput slotType = null;
 
     @JsonProperty("totalVersions")
     private String totalVersions = null;
@@ -49,7 +49,7 @@ public final class SlotTypeDefinitionOutput {
      * @return slotType
     **/
     @JsonProperty("slotType")
-    public com.amazon.ask.smapi.model.v1.skill.interactionModel.type.SlotTypeEntity getSlotType() {
+    public com.amazon.ask.smapi.model.v1.skill.interactionModel.type.SlotTypeInput getSlotType() {
         return slotType;
     }
 
@@ -103,13 +103,13 @@ public final class SlotTypeDefinitionOutput {
     }
   
     public static class Builder {
-        private com.amazon.ask.smapi.model.v1.skill.interactionModel.type.SlotTypeEntity slotType;
+        private com.amazon.ask.smapi.model.v1.skill.interactionModel.type.SlotTypeInput slotType;
         private String totalVersions;
 
         private Builder() {}
 
         @JsonProperty("slotType")
-        public Builder withSlotType(com.amazon.ask.smapi.model.v1.skill.interactionModel.type.SlotTypeEntity slotType) {
+        public Builder withSlotType(com.amazon.ask.smapi.model.v1.skill.interactionModel.type.SlotTypeInput slotType) {
             this.slotType = slotType;
             return this;
         }

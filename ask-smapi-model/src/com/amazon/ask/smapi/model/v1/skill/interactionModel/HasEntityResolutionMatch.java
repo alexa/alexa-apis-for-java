@@ -30,7 +30,7 @@ public final class HasEntityResolutionMatch extends com.amazon.ask.smapi.model.v
     }
 
     private HasEntityResolutionMatch(Builder builder) {
-        String discriminatorValue = "HasEntityResolutionMatch";
+        String discriminatorValue = "hasEntityResolutionMatch";
 
         this.type = discriminatorValue;
         if (builder.prompt != null) {

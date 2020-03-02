@@ -19,7 +19,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * The Error which would fail requests
+ * The error which would fail requests.
  */
 
 @JsonDeserialize(builder = Error.Builder.class)
@@ -45,7 +45,7 @@ public final class Error {
     }
 
     /**
-     * The error code
+     * The error code.
      * @return code
     **/
     @JsonProperty("code")
@@ -54,7 +54,7 @@ public final class Error {
     }
 
     /**
-     * The error message
+     * The error message.
      * @return message
     **/
     @JsonProperty("message")

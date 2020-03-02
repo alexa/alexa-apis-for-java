@@ -27,6 +27,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = true )
 @JsonSubTypes({
   @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.interactionModel.CatalogValueSupplier.class, name = "CatalogValueSupplier"),
+  @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.interactionModel.InlineValueSupplier.class, name = "InlineValueSupplier"),
 })
 public abstract class ValueSupplier {
 

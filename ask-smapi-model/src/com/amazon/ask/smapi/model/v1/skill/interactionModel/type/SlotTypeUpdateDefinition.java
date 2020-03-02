@@ -19,7 +19,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Slot type update request object.
+ * Slot type update definition object.
  */
 
 @JsonDeserialize(builder = SlotTypeUpdateDefinition.Builder.class)

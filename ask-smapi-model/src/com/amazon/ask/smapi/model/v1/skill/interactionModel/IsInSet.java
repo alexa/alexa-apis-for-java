@@ -36,7 +36,7 @@ public final class IsInSet extends com.amazon.ask.smapi.model.v1.skill.interacti
     }
 
     private IsInSet(Builder builder) {
-        String discriminatorValue = "IsInSet";
+        String discriminatorValue = "isInSet";
 
         this.type = discriminatorValue;
         if (builder.prompt != null) {

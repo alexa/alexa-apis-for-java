@@ -19,7 +19,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * The warning which would not fail requests
+ * The warning which would not fail requests.
  */
 
 @JsonDeserialize(builder = Warning.Builder.class)
@@ -45,7 +45,7 @@ public final class Warning {
     }
 
     /**
-     * The warning code
+     * The warning code.
      * @return code
     **/
     @JsonProperty("code")
@@ -54,7 +54,7 @@ public final class Warning {
     }
 
     /**
-     * The warning message
+     * The warning message.
      * @return message
     **/
     @JsonProperty("message")

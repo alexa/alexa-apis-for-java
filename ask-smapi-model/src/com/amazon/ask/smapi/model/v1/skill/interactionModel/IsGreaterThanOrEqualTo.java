@@ -33,7 +33,7 @@ public final class IsGreaterThanOrEqualTo extends com.amazon.ask.smapi.model.v1.
     }
 
     private IsGreaterThanOrEqualTo(Builder builder) {
-        String discriminatorValue = "IsGreaterThanOrEqualTo";
+        String discriminatorValue = "isGreaterThanOrEqualTo";
 
         this.type = discriminatorValue;
         if (builder.prompt != null) {

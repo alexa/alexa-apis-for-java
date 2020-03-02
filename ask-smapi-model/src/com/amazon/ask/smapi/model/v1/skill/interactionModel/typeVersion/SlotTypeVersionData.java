@@ -25,11 +25,26 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = SlotTypeVersionData.Builder.class)
 public final class SlotTypeVersionData {
 
+    @JsonProperty("slotType")
+    private com.amazon.ask.smapi.model.v1.skill.interactionModel.typeVersion.SlotTypeVersionDataObject slotType = null;
+
     public static Builder builder() {
         return new Builder();
     }
 
     private SlotTypeVersionData(Builder builder) {
+        if (builder.slotType != null) {
+            this.slotType = builder.slotType;
+        }
+    }
+
+    /**
+     * Get slotType
+     * @return slotType
+    **/
+    @JsonProperty("slotType")
+    public com.amazon.ask.smapi.model.v1.skill.interactionModel.typeVersion.SlotTypeVersionDataObject getSlotType() {
+        return slotType;
     }
 
     @Override
@@ -40,12 +55,13 @@ public final class SlotTypeVersionData {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        return true;
+        SlotTypeVersionData v1SkillInteractionModelTypeVersionSlotTypeVersionData = (SlotTypeVersionData) o;
+        return Objects.equals(this.slotType, v1SkillInteractionModelTypeVersionSlotTypeVersionData.slotType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash();
+        return Objects.hash(slotType);
     }
 
     @Override
@@ -53,6 +69,7 @@ public final class SlotTypeVersionData {
         StringBuilder sb = new StringBuilder();
         sb.append("class SlotTypeVersionData {\n");
         
+        sb.append("    slotType: ").append(toIndentedString(slotType)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -69,8 +86,16 @@ public final class SlotTypeVersionData {
     }
   
     public static class Builder {
+        private com.amazon.ask.smapi.model.v1.skill.interactionModel.typeVersion.SlotTypeVersionDataObject slotType;
 
         private Builder() {}
+
+        @JsonProperty("slotType")
+        public Builder withSlotType(com.amazon.ask.smapi.model.v1.skill.interactionModel.typeVersion.SlotTypeVersionDataObject slotType) {
+            this.slotType = slotType;
+            return this;
+        }
+
 
         public SlotTypeVersionData build() {
             return new SlotTypeVersionData(this);
