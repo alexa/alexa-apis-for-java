@@ -60,6 +60,7 @@ public final class ElementSelectedRequest extends com.amazon.ask.model.Request  
         return token;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -108,6 +109,7 @@ public final class ElementSelectedRequest extends com.amazon.ask.model.Request  
         private Builder() {}
 
         @JsonProperty("requestId")
+
         public Builder withRequestId(String requestId) {
             this.requestId = requestId;
             return this;
@@ -115,6 +117,7 @@ public final class ElementSelectedRequest extends com.amazon.ask.model.Request  
 
 
         @JsonProperty("timestamp")
+
         public Builder withTimestamp(OffsetDateTime timestamp) {
             this.timestamp = timestamp;
             return this;
@@ -122,6 +125,7 @@ public final class ElementSelectedRequest extends com.amazon.ask.model.Request  
 
 
         @JsonProperty("locale")
+
         public Builder withLocale(String locale) {
             this.locale = locale;
             return this;
@@ -129,6 +133,7 @@ public final class ElementSelectedRequest extends com.amazon.ask.model.Request  
 
 
         @JsonProperty("token")
+
         public Builder withToken(String token) {
             this.token = token;
             return this;

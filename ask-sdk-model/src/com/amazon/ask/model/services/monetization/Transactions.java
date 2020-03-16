@@ -27,7 +27,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public final class Transactions {
 
     @JsonProperty("status")
-    private com.amazon.ask.model.services.monetization.Status status = null;
+    private String status = null;
 
     @JsonProperty("productId")
     private String productId = null;
@@ -59,11 +59,29 @@ public final class Transactions {
 
     /**
      * Get status
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getStatusAsString().
+     *
      * @return status
     **/
-    @JsonProperty("status")
+    
     public com.amazon.ask.model.services.monetization.Status getStatus() {
-        return status;
+        return com.amazon.ask.model.services.monetization.Status.fromValue(status);
+    }
+
+    /**
+     * Get the underlying String value for status.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return status as a String value
+    **/
+    @JsonProperty("status")
+    public String getStatusAsString() {
+      return status;
     }
 
     /**
@@ -75,6 +93,7 @@ public final class Transactions {
         return productId;
     }
 
+
     /**
      * Time at which transaction's was initiated in ISO 8601 format i.e. yyyy-MM-dd'T'HH:mm:ss.SSS'Z'
      * @return createdTime
@@ -84,6 +103,7 @@ public final class Transactions {
         return createdTime;
     }
 
+
     /**
      * Time at which transaction's status was last updated in ISO 8601 format i.e. yyyy-MM-dd'T'HH:mm:ss.SSS'Z'
      * @return lastModifiedTime
@@ -92,6 +112,7 @@ public final class Transactions {
     public OffsetDateTime getLastModifiedTime() {
         return lastModifiedTime;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,7 +159,7 @@ public final class Transactions {
     }
   
     public static class Builder {
-        private com.amazon.ask.model.services.monetization.Status status;
+        private String status;
         private String productId;
         private OffsetDateTime createdTime;
         private OffsetDateTime lastModifiedTime;
@@ -146,13 +167,19 @@ public final class Transactions {
         private Builder() {}
 
         @JsonProperty("status")
+        public Builder withStatus(String status) {
+          this.status = status;
+          return this;
+        }
+
         public Builder withStatus(com.amazon.ask.model.services.monetization.Status status) {
-            this.status = status;
+            this.status = status != null ? status.toString() : null;
             return this;
         }
 
 
         @JsonProperty("productId")
+
         public Builder withProductId(String productId) {
             this.productId = productId;
             return this;
@@ -160,6 +187,7 @@ public final class Transactions {
 
 
         @JsonProperty("createdTime")
+
         public Builder withCreatedTime(OffsetDateTime createdTime) {
             this.createdTime = createdTime;
             return this;
@@ -167,6 +195,7 @@ public final class Transactions {
 
 
         @JsonProperty("lastModifiedTime")
+
         public Builder withLastModifiedTime(OffsetDateTime lastModifiedTime) {
             this.lastModifiedTime = lastModifiedTime;
             return this;

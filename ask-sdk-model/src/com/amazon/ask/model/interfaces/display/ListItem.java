@@ -59,6 +59,7 @@ public final class ListItem {
         return token;
     }
 
+
     /**
      * Get image
      * @return image
@@ -68,6 +69,7 @@ public final class ListItem {
         return image;
     }
 
+
     /**
      * Get textContent
      * @return textContent
@@ -76,6 +78,7 @@ public final class ListItem {
     public com.amazon.ask.model.interfaces.display.TextContent getTextContent() {
         return textContent;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -127,6 +130,7 @@ public final class ListItem {
         private Builder() {}
 
         @JsonProperty("token")
+
         public Builder withToken(String token) {
             this.token = token;
             return this;
@@ -134,6 +138,7 @@ public final class ListItem {
 
 
         @JsonProperty("image")
+
         public Builder withImage(com.amazon.ask.model.interfaces.display.Image image) {
             this.image = image;
             return this;
@@ -141,6 +146,7 @@ public final class ListItem {
 
 
         @JsonProperty("textContent")
+
         public Builder withTextContent(com.amazon.ask.model.interfaces.display.TextContent textContent) {
             this.textContent = textContent;
             return this;

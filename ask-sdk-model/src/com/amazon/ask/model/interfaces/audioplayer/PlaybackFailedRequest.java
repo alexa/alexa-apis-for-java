@@ -72,6 +72,7 @@ public final class PlaybackFailedRequest extends com.amazon.ask.model.Request  {
         return currentPlaybackState;
     }
 
+
     /**
      * Get error
      * @return error
@@ -81,6 +82,7 @@ public final class PlaybackFailedRequest extends com.amazon.ask.model.Request  {
         return error;
     }
 
+
     /**
      * Get token
      * @return token
@@ -89,6 +91,7 @@ public final class PlaybackFailedRequest extends com.amazon.ask.model.Request  {
     public String getToken() {
         return token;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -144,6 +147,7 @@ public final class PlaybackFailedRequest extends com.amazon.ask.model.Request  {
         private Builder() {}
 
         @JsonProperty("requestId")
+
         public Builder withRequestId(String requestId) {
             this.requestId = requestId;
             return this;
@@ -151,6 +155,7 @@ public final class PlaybackFailedRequest extends com.amazon.ask.model.Request  {
 
 
         @JsonProperty("timestamp")
+
         public Builder withTimestamp(OffsetDateTime timestamp) {
             this.timestamp = timestamp;
             return this;
@@ -158,6 +163,7 @@ public final class PlaybackFailedRequest extends com.amazon.ask.model.Request  {
 
 
         @JsonProperty("locale")
+
         public Builder withLocale(String locale) {
             this.locale = locale;
             return this;
@@ -165,6 +171,7 @@ public final class PlaybackFailedRequest extends com.amazon.ask.model.Request  {
 
 
         @JsonProperty("currentPlaybackState")
+
         public Builder withCurrentPlaybackState(com.amazon.ask.model.interfaces.audioplayer.CurrentPlaybackState currentPlaybackState) {
             this.currentPlaybackState = currentPlaybackState;
             return this;
@@ -172,6 +179,7 @@ public final class PlaybackFailedRequest extends com.amazon.ask.model.Request  {
 
 
         @JsonProperty("error")
+
         public Builder withError(com.amazon.ask.model.interfaces.audioplayer.Error error) {
             this.error = error;
             return this;
@@ -179,6 +187,7 @@ public final class PlaybackFailedRequest extends com.amazon.ask.model.Request  {
 
 
         @JsonProperty("token")
+
         public Builder withToken(String token) {
             this.token = token;
             return this;

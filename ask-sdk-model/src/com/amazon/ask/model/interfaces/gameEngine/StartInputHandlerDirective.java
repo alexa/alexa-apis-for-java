@@ -75,6 +75,7 @@ public final class StartInputHandlerDirective extends com.amazon.ask.model.Direc
         return timeout;
     }
 
+
     /**
      * Names for unknown gadget IDs to use in recognizers, allocated on a first-come, first-served basis.
      * @return proxies
@@ -83,6 +84,7 @@ public final class StartInputHandlerDirective extends com.amazon.ask.model.Direc
     public List<String> getProxies() {
         return proxies;
     }
+
 
     /**
      * Conditions that, at any moment, are either true or false. You use recognizers when you specify the conditions under which your skill is notified of Echo Button input. 
@@ -93,6 +95,7 @@ public final class StartInputHandlerDirective extends com.amazon.ask.model.Direc
         return recognizers;
     }
 
+
     /**
      * The logic that determines when your skill is notified of Echo Button input. Events are listed here as object keys, where the keys specify the name of an event. 
      * @return events
@@ -101,6 +104,7 @@ public final class StartInputHandlerDirective extends com.amazon.ask.model.Direc
     public Map<String, com.amazon.ask.model.services.gameEngine.Event> getEvents() {
         return events;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -156,6 +160,7 @@ public final class StartInputHandlerDirective extends com.amazon.ask.model.Direc
         private Builder() {}
 
         @JsonProperty("timeout")
+
         public Builder withTimeout(Long timeout) {
             this.timeout = timeout;
             return this;
@@ -163,6 +168,7 @@ public final class StartInputHandlerDirective extends com.amazon.ask.model.Direc
 
 
         @JsonProperty("proxies")
+
         public Builder withProxies(List<String> proxies) {
             this.proxies = proxies;
             return this;
@@ -177,6 +183,7 @@ public final class StartInputHandlerDirective extends com.amazon.ask.model.Direc
         }
 
         @JsonProperty("recognizers")
+
         public Builder withRecognizers(Map<String, com.amazon.ask.model.services.gameEngine.Recognizer> recognizers) {
             this.recognizers = recognizers;
             return this;
@@ -191,6 +198,7 @@ public final class StartInputHandlerDirective extends com.amazon.ask.model.Direc
         }
 
         @JsonProperty("events")
+
         public Builder withEvents(Map<String, com.amazon.ask.model.services.gameEngine.Event> events) {
             this.events = events;
             return this;

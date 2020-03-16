@@ -66,6 +66,7 @@ public final class SkillDisabledRequest extends com.amazon.ask.model.Request  {
         return eventCreationTime;
     }
 
+
     /**
      * Get eventPublishingTime
      * @return eventPublishingTime
@@ -74,6 +75,7 @@ public final class SkillDisabledRequest extends com.amazon.ask.model.Request  {
     public OffsetDateTime getEventPublishingTime() {
         return eventPublishingTime;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -126,6 +128,7 @@ public final class SkillDisabledRequest extends com.amazon.ask.model.Request  {
         private Builder() {}
 
         @JsonProperty("requestId")
+
         public Builder withRequestId(String requestId) {
             this.requestId = requestId;
             return this;
@@ -133,6 +136,7 @@ public final class SkillDisabledRequest extends com.amazon.ask.model.Request  {
 
 
         @JsonProperty("timestamp")
+
         public Builder withTimestamp(OffsetDateTime timestamp) {
             this.timestamp = timestamp;
             return this;
@@ -140,6 +144,7 @@ public final class SkillDisabledRequest extends com.amazon.ask.model.Request  {
 
 
         @JsonProperty("locale")
+
         public Builder withLocale(String locale) {
             this.locale = locale;
             return this;
@@ -147,6 +152,7 @@ public final class SkillDisabledRequest extends com.amazon.ask.model.Request  {
 
 
         @JsonProperty("eventCreationTime")
+
         public Builder withEventCreationTime(OffsetDateTime eventCreationTime) {
             this.eventCreationTime = eventCreationTime;
             return this;
@@ -154,6 +160,7 @@ public final class SkillDisabledRequest extends com.amazon.ask.model.Request  {
 
 
         @JsonProperty("eventPublishingTime")
+
         public Builder withEventPublishingTime(OffsetDateTime eventPublishingTime) {
             this.eventPublishingTime = eventPublishingTime;
             return this;

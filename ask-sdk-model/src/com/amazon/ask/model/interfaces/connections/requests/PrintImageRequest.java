@@ -71,6 +71,7 @@ public final class PrintImageRequest extends com.amazon.ask.model.interfaces.con
         return title;
     }
 
+
     /**
      * url of the image
      * @return url
@@ -79,6 +80,7 @@ public final class PrintImageRequest extends com.amazon.ask.model.interfaces.con
     public String getUrl() {
         return url;
     }
+
 
     /**
      * description of the image
@@ -89,6 +91,7 @@ public final class PrintImageRequest extends com.amazon.ask.model.interfaces.con
         return description;
     }
 
+
     /**
      * type of the image
      * @return imageType
@@ -97,6 +100,7 @@ public final class PrintImageRequest extends com.amazon.ask.model.interfaces.con
     public String getImageType() {
         return imageType;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -153,6 +157,7 @@ public final class PrintImageRequest extends com.amazon.ask.model.interfaces.con
         private Builder() {}
 
         @JsonProperty("@version")
+
         public Builder withVersion(String version) {
             this.version = version;
             return this;
@@ -160,6 +165,7 @@ public final class PrintImageRequest extends com.amazon.ask.model.interfaces.con
 
 
         @JsonProperty("title")
+
         public Builder withTitle(String title) {
             this.title = title;
             return this;
@@ -167,6 +173,7 @@ public final class PrintImageRequest extends com.amazon.ask.model.interfaces.con
 
 
         @JsonProperty("url")
+
         public Builder withUrl(String url) {
             this.url = url;
             return this;
@@ -174,6 +181,7 @@ public final class PrintImageRequest extends com.amazon.ask.model.interfaces.con
 
 
         @JsonProperty("description")
+
         public Builder withDescription(String description) {
             this.description = description;
             return this;
@@ -181,6 +189,7 @@ public final class PrintImageRequest extends com.amazon.ask.model.interfaces.con
 
 
         @JsonProperty("imageType")
+
         public Builder withImageType(String imageType) {
             this.imageType = imageType;
             return this;

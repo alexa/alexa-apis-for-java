@@ -27,7 +27,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public final class AuthorizationStatus {
 
     @JsonProperty("state")
-    private com.amazon.ask.model.interfaces.amazonpay.model.v1.State state = null;
+    private String state = null;
 
     @JsonProperty("reasonCode")
     private String reasonCode = null;
@@ -59,11 +59,29 @@ public final class AuthorizationStatus {
 
     /**
      * Get state
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getStateAsString().
+     *
      * @return state
     **/
-    @JsonProperty("state")
+    
     public com.amazon.ask.model.interfaces.amazonpay.model.v1.State getState() {
-        return state;
+        return com.amazon.ask.model.interfaces.amazonpay.model.v1.State.fromValue(state);
+    }
+
+    /**
+     * Get the underlying String value for state.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return state as a String value
+    **/
+    @JsonProperty("state")
+    public String getStateAsString() {
+      return state;
     }
 
     /**
@@ -75,6 +93,7 @@ public final class AuthorizationStatus {
         return reasonCode;
     }
 
+
     /**
      * Reason desciption corresponding to the reason code
      * @return reasonDescription
@@ -84,6 +103,7 @@ public final class AuthorizationStatus {
         return reasonDescription;
     }
 
+
     /**
      * A timestamp that indicates the time when the authorization, capture, or refund state was last updated. In ISO 8601 format
      * @return lastUpdateTimestamp
@@ -92,6 +112,7 @@ public final class AuthorizationStatus {
     public OffsetDateTime getLastUpdateTimestamp() {
         return lastUpdateTimestamp;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,7 +159,7 @@ public final class AuthorizationStatus {
     }
   
     public static class Builder {
-        private com.amazon.ask.model.interfaces.amazonpay.model.v1.State state;
+        private String state;
         private String reasonCode;
         private String reasonDescription;
         private OffsetDateTime lastUpdateTimestamp;
@@ -146,13 +167,19 @@ public final class AuthorizationStatus {
         private Builder() {}
 
         @JsonProperty("state")
+        public Builder withState(String state) {
+          this.state = state;
+          return this;
+        }
+
         public Builder withState(com.amazon.ask.model.interfaces.amazonpay.model.v1.State state) {
-            this.state = state;
+            this.state = state != null ? state.toString() : null;
             return this;
         }
 
 
         @JsonProperty("reasonCode")
+
         public Builder withReasonCode(String reasonCode) {
             this.reasonCode = reasonCode;
             return this;
@@ -160,6 +187,7 @@ public final class AuthorizationStatus {
 
 
         @JsonProperty("reasonDescription")
+
         public Builder withReasonDescription(String reasonDescription) {
             this.reasonDescription = reasonDescription;
             return this;
@@ -167,6 +195,7 @@ public final class AuthorizationStatus {
 
 
         @JsonProperty("lastUpdateTimestamp")
+
         public Builder withLastUpdateTimestamp(OffsetDateTime lastUpdateTimestamp) {
             this.lastUpdateTimestamp = lastUpdateTimestamp;
             return this;

@@ -50,6 +50,7 @@ public final class EndpointEnumerationResponse {
         return endpoints;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -94,6 +95,7 @@ public final class EndpointEnumerationResponse {
         private Builder() {}
 
         @JsonProperty("endpoints")
+
         public Builder withEndpoints(List<com.amazon.ask.model.services.endpointEnumeration.EndpointInfo> endpoints) {
             this.endpoints = endpoints;
             return this;

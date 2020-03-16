@@ -53,6 +53,7 @@ public final class Device {
         return deviceId;
     }
 
+
     /**
      * Lists each interface that the device supports. For example, if supportedInterfaces includes AudioPlayer {}, then you know that the device supports streaming audio using the AudioPlayer interface
      * @return supportedInterfaces
@@ -61,6 +62,7 @@ public final class Device {
     public com.amazon.ask.model.SupportedInterfaces getSupportedInterfaces() {
         return supportedInterfaces;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class Device {
         private Builder() {}
 
         @JsonProperty("deviceId")
+
         public Builder withDeviceId(String deviceId) {
             this.deviceId = deviceId;
             return this;
@@ -116,6 +119,7 @@ public final class Device {
 
 
         @JsonProperty("supportedInterfaces")
+
         public Builder withSupportedInterfaces(com.amazon.ask.model.SupportedInterfaces supportedInterfaces) {
             this.supportedInterfaces = supportedInterfaces;
             return this;

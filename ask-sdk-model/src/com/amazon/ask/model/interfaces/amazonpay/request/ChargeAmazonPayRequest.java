@@ -83,6 +83,7 @@ public final class ChargeAmazonPayRequest extends com.amazon.ask.model.interface
         return sellerId;
     }
 
+
     /**
      * The payment contract i.e. billing agreement created for the user.
      * @return billingAgreementId
@@ -91,6 +92,7 @@ public final class ChargeAmazonPayRequest extends com.amazon.ask.model.interface
     public String getBillingAgreementId() {
         return billingAgreementId;
     }
+
 
     /**
      * Get paymentAction
@@ -101,6 +103,7 @@ public final class ChargeAmazonPayRequest extends com.amazon.ask.model.interface
         return paymentAction;
     }
 
+
     /**
      * Get authorizeAttributes
      * @return authorizeAttributes
@@ -109,6 +112,7 @@ public final class ChargeAmazonPayRequest extends com.amazon.ask.model.interface
     public com.amazon.ask.model.interfaces.amazonpay.model.request.AuthorizeAttributes getAuthorizeAttributes() {
         return authorizeAttributes;
     }
+
 
     /**
      * Get sellerOrderAttributes
@@ -119,6 +123,7 @@ public final class ChargeAmazonPayRequest extends com.amazon.ask.model.interface
         return sellerOrderAttributes;
     }
 
+
     /**
      * Get providerAttributes
      * @return providerAttributes
@@ -127,6 +132,7 @@ public final class ChargeAmazonPayRequest extends com.amazon.ask.model.interface
     public com.amazon.ask.model.interfaces.amazonpay.model.request.ProviderAttributes getProviderAttributes() {
         return providerAttributes;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -189,6 +195,7 @@ public final class ChargeAmazonPayRequest extends com.amazon.ask.model.interface
         private Builder() {}
 
         @JsonProperty("@version")
+
         public Builder withVersion(String version) {
             this.version = version;
             return this;
@@ -196,6 +203,7 @@ public final class ChargeAmazonPayRequest extends com.amazon.ask.model.interface
 
 
         @JsonProperty("sellerId")
+
         public Builder withSellerId(String sellerId) {
             this.sellerId = sellerId;
             return this;
@@ -203,6 +211,7 @@ public final class ChargeAmazonPayRequest extends com.amazon.ask.model.interface
 
 
         @JsonProperty("billingAgreementId")
+
         public Builder withBillingAgreementId(String billingAgreementId) {
             this.billingAgreementId = billingAgreementId;
             return this;
@@ -210,6 +219,7 @@ public final class ChargeAmazonPayRequest extends com.amazon.ask.model.interface
 
 
         @JsonProperty("paymentAction")
+
         public Builder withPaymentAction(com.amazon.ask.model.interfaces.amazonpay.model.request.PaymentAction paymentAction) {
             this.paymentAction = paymentAction;
             return this;
@@ -217,6 +227,7 @@ public final class ChargeAmazonPayRequest extends com.amazon.ask.model.interface
 
 
         @JsonProperty("authorizeAttributes")
+
         public Builder withAuthorizeAttributes(com.amazon.ask.model.interfaces.amazonpay.model.request.AuthorizeAttributes authorizeAttributes) {
             this.authorizeAttributes = authorizeAttributes;
             return this;
@@ -224,6 +235,7 @@ public final class ChargeAmazonPayRequest extends com.amazon.ask.model.interface
 
 
         @JsonProperty("sellerOrderAttributes")
+
         public Builder withSellerOrderAttributes(com.amazon.ask.model.interfaces.amazonpay.model.request.SellerOrderAttributes sellerOrderAttributes) {
             this.sellerOrderAttributes = sellerOrderAttributes;
             return this;
@@ -231,6 +243,7 @@ public final class ChargeAmazonPayRequest extends com.amazon.ask.model.interface
 
 
         @JsonProperty("providerAttributes")
+
         public Builder withProviderAttributes(com.amazon.ask.model.interfaces.amazonpay.model.request.ProviderAttributes providerAttributes) {
             this.providerAttributes = providerAttributes;
             return this;

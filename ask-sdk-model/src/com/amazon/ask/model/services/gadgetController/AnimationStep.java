@@ -61,6 +61,7 @@ public final class AnimationStep {
         return durationMs;
     }
 
+
     /**
      * The color to render specified in RGB hexadecimal values. There are a number of Node.js libraries available for working with color. 
      * @return color
@@ -70,6 +71,7 @@ public final class AnimationStep {
         return color;
     }
 
+
     /**
      * A boolean that indicates whether to interpolate from the previous color into this one over the course of this directive's durationMs.
      * @return blend
@@ -78,6 +80,7 @@ public final class AnimationStep {
     public Boolean getBlend() {
         return blend;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -129,6 +132,7 @@ public final class AnimationStep {
         private Builder() {}
 
         @JsonProperty("durationMs")
+
         public Builder withDurationMs(Integer durationMs) {
             this.durationMs = durationMs;
             return this;
@@ -136,6 +140,7 @@ public final class AnimationStep {
 
 
         @JsonProperty("color")
+
         public Builder withColor(String color) {
             this.color = color;
             return this;
@@ -143,6 +148,7 @@ public final class AnimationStep {
 
 
         @JsonProperty("blend")
+
         public Builder withBlend(Boolean blend) {
             this.blend = blend;
             return this;

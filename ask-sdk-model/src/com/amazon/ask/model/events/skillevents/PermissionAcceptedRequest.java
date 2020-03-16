@@ -72,6 +72,7 @@ public final class PermissionAcceptedRequest extends com.amazon.ask.model.Reques
         return body;
     }
 
+
     /**
      * Get eventCreationTime
      * @return eventCreationTime
@@ -81,6 +82,7 @@ public final class PermissionAcceptedRequest extends com.amazon.ask.model.Reques
         return eventCreationTime;
     }
 
+
     /**
      * Get eventPublishingTime
      * @return eventPublishingTime
@@ -89,6 +91,7 @@ public final class PermissionAcceptedRequest extends com.amazon.ask.model.Reques
     public OffsetDateTime getEventPublishingTime() {
         return eventPublishingTime;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -144,6 +147,7 @@ public final class PermissionAcceptedRequest extends com.amazon.ask.model.Reques
         private Builder() {}
 
         @JsonProperty("requestId")
+
         public Builder withRequestId(String requestId) {
             this.requestId = requestId;
             return this;
@@ -151,6 +155,7 @@ public final class PermissionAcceptedRequest extends com.amazon.ask.model.Reques
 
 
         @JsonProperty("timestamp")
+
         public Builder withTimestamp(OffsetDateTime timestamp) {
             this.timestamp = timestamp;
             return this;
@@ -158,6 +163,7 @@ public final class PermissionAcceptedRequest extends com.amazon.ask.model.Reques
 
 
         @JsonProperty("locale")
+
         public Builder withLocale(String locale) {
             this.locale = locale;
             return this;
@@ -165,6 +171,7 @@ public final class PermissionAcceptedRequest extends com.amazon.ask.model.Reques
 
 
         @JsonProperty("body")
+
         public Builder withBody(com.amazon.ask.model.events.skillevents.PermissionBody body) {
             this.body = body;
             return this;
@@ -172,6 +179,7 @@ public final class PermissionAcceptedRequest extends com.amazon.ask.model.Reques
 
 
         @JsonProperty("eventCreationTime")
+
         public Builder withEventCreationTime(OffsetDateTime eventCreationTime) {
             this.eventCreationTime = eventCreationTime;
             return this;
@@ -179,6 +187,7 @@ public final class PermissionAcceptedRequest extends com.amazon.ask.model.Reques
 
 
         @JsonProperty("eventPublishingTime")
+
         public Builder withEventPublishingTime(OffsetDateTime eventPublishingTime) {
             this.eventPublishingTime = eventPublishingTime;
             return this;

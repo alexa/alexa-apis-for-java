@@ -59,6 +59,7 @@ public final class ProviderCredit extends com.amazon.ask.model.interfaces.amazon
         return providerId;
     }
 
+
     /**
      * Get credit
      * @return credit
@@ -67,6 +68,7 @@ public final class ProviderCredit extends com.amazon.ask.model.interfaces.amazon
     public com.amazon.ask.model.interfaces.amazonpay.model.request.Price getCredit() {
         return credit;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -117,6 +119,7 @@ public final class ProviderCredit extends com.amazon.ask.model.interfaces.amazon
         private Builder() {}
 
         @JsonProperty("providerId")
+
         public Builder withProviderId(String providerId) {
             this.providerId = providerId;
             return this;
@@ -124,6 +127,7 @@ public final class ProviderCredit extends com.amazon.ask.model.interfaces.amazon
 
 
         @JsonProperty("credit")
+
         public Builder withCredit(com.amazon.ask.model.interfaces.amazonpay.model.request.Price credit) {
             this.credit = credit;
             return this;
@@ -131,6 +135,7 @@ public final class ProviderCredit extends com.amazon.ask.model.interfaces.amazon
 
 
         @JsonProperty("@version")
+
         public Builder withVersion(String version) {
             this.version = version;
             return this;

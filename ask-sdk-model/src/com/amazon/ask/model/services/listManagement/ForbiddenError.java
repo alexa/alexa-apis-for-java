@@ -47,6 +47,7 @@ public final class ForbiddenError {
         return message;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class ForbiddenError {
         private Builder() {}
 
         @JsonProperty("Message")
+
         public Builder withMessage(String message) {
             this.message = message;
             return this;

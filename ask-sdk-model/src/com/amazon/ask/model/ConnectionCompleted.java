@@ -62,6 +62,7 @@ public final class ConnectionCompleted extends com.amazon.ask.model.Cause  {
         return token;
     }
 
+
     /**
      * Get status
      * @return status
@@ -71,6 +72,7 @@ public final class ConnectionCompleted extends com.amazon.ask.model.Cause  {
         return status;
     }
 
+
     /**
      * This is the result object to resume the skill's suspended session.
      * @return result
@@ -79,6 +81,7 @@ public final class ConnectionCompleted extends com.amazon.ask.model.Cause  {
     public Object getResult() {
         return result;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -131,6 +134,7 @@ public final class ConnectionCompleted extends com.amazon.ask.model.Cause  {
         private Builder() {}
 
         @JsonProperty("token")
+
         public Builder withToken(String token) {
             this.token = token;
             return this;
@@ -138,6 +142,7 @@ public final class ConnectionCompleted extends com.amazon.ask.model.Cause  {
 
 
         @JsonProperty("status")
+
         public Builder withStatus(com.amazon.ask.model.Status status) {
             this.status = status;
             return this;
@@ -145,6 +150,7 @@ public final class ConnectionCompleted extends com.amazon.ask.model.Cause  {
 
 
         @JsonProperty("result")
+
         public Builder withResult(Object result) {
             this.result = result;
             return this;

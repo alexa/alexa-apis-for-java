@@ -56,6 +56,7 @@ public final class ProviderAttributes {
         return providerId;
     }
 
+
     /**
      * List of provider credit.
      * @return providerCreditList
@@ -64,6 +65,7 @@ public final class ProviderAttributes {
     public List<com.amazon.ask.model.interfaces.amazonpay.model.v1.ProviderCredit> getProviderCreditList() {
         return providerCreditList;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,6 +114,7 @@ public final class ProviderAttributes {
         private Builder() {}
 
         @JsonProperty("providerId")
+
         public Builder withProviderId(String providerId) {
             this.providerId = providerId;
             return this;
@@ -119,6 +122,7 @@ public final class ProviderAttributes {
 
 
         @JsonProperty("providerCreditList")
+
         public Builder withProviderCreditList(List<com.amazon.ask.model.interfaces.amazonpay.model.v1.ProviderCredit> providerCreditList) {
             this.providerCreditList = providerCreditList;
             return this;

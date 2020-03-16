@@ -62,6 +62,7 @@ public final class RenderedDocumentState {
         return token;
     }
 
+
     /**
      * The APL version of the document which rendered the content shown on screen.
      * @return version
@@ -71,6 +72,7 @@ public final class RenderedDocumentState {
         return version;
     }
 
+
     /**
      * List of the visible APL components currently shown on screen.
      * @return componentsVisibleOnScreen
@@ -79,6 +81,7 @@ public final class RenderedDocumentState {
     public List<com.amazon.ask.model.interfaces.alexa.presentation.apl.ComponentVisibleOnScreen> getComponentsVisibleOnScreen() {
         return componentsVisibleOnScreen;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -130,6 +133,7 @@ public final class RenderedDocumentState {
         private Builder() {}
 
         @JsonProperty("token")
+
         public Builder withToken(String token) {
             this.token = token;
             return this;
@@ -137,6 +141,7 @@ public final class RenderedDocumentState {
 
 
         @JsonProperty("version")
+
         public Builder withVersion(String version) {
             this.version = version;
             return this;
@@ -144,6 +149,7 @@ public final class RenderedDocumentState {
 
 
         @JsonProperty("componentsVisibleOnScreen")
+
         public Builder withComponentsVisibleOnScreen(List<com.amazon.ask.model.interfaces.alexa.presentation.apl.ComponentVisibleOnScreen> componentsVisibleOnScreen) {
             this.componentsVisibleOnScreen = componentsVisibleOnScreen;
             return this;

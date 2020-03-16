@@ -59,6 +59,7 @@ public final class Task {
         return name;
     }
 
+
     /**
      * Represents the version of the task.
      * @return version
@@ -68,6 +69,7 @@ public final class Task {
         return version;
     }
 
+
     /**
      * Represents the input to handle the task.
      * @return input
@@ -76,6 +78,7 @@ public final class Task {
     public Object getInput() {
         return input;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -127,6 +130,7 @@ public final class Task {
         private Builder() {}
 
         @JsonProperty("name")
+
         public Builder withName(String name) {
             this.name = name;
             return this;
@@ -134,6 +138,7 @@ public final class Task {
 
 
         @JsonProperty("version")
+
         public Builder withVersion(String version) {
             this.version = version;
             return this;
@@ -141,6 +146,7 @@ public final class Task {
 
 
         @JsonProperty("input")
+
         public Builder withInput(Object input) {
             this.input = input;
             return this;

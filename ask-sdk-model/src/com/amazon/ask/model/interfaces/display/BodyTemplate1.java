@@ -68,6 +68,7 @@ public final class BodyTemplate1 extends com.amazon.ask.model.interfaces.display
         return backgroundImage;
     }
 
+
     /**
      * Get title
      * @return title
@@ -77,6 +78,7 @@ public final class BodyTemplate1 extends com.amazon.ask.model.interfaces.display
         return title;
     }
 
+
     /**
      * Get textContent
      * @return textContent
@@ -85,6 +87,7 @@ public final class BodyTemplate1 extends com.amazon.ask.model.interfaces.display
     public com.amazon.ask.model.interfaces.display.TextContent getTextContent() {
         return textContent;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -131,7 +134,7 @@ public final class BodyTemplate1 extends com.amazon.ask.model.interfaces.display
   
     public static class Builder {
         private String token;
-        private com.amazon.ask.model.interfaces.display.BackButtonBehavior backButton;
+        private String backButton;
         private com.amazon.ask.model.interfaces.display.Image backgroundImage;
         private String title;
         private com.amazon.ask.model.interfaces.display.TextContent textContent;
@@ -139,6 +142,7 @@ public final class BodyTemplate1 extends com.amazon.ask.model.interfaces.display
         private Builder() {}
 
         @JsonProperty("token")
+
         public Builder withToken(String token) {
             this.token = token;
             return this;
@@ -146,13 +150,19 @@ public final class BodyTemplate1 extends com.amazon.ask.model.interfaces.display
 
 
         @JsonProperty("backButton")
+        public Builder withBackButton(String backButton) {
+          this.backButton = backButton;
+          return this;
+        }
+
         public Builder withBackButton(com.amazon.ask.model.interfaces.display.BackButtonBehavior backButton) {
-            this.backButton = backButton;
+            this.backButton = backButton != null ? backButton.toString() : null;
             return this;
         }
 
 
         @JsonProperty("backgroundImage")
+
         public Builder withBackgroundImage(com.amazon.ask.model.interfaces.display.Image backgroundImage) {
             this.backgroundImage = backgroundImage;
             return this;
@@ -160,6 +170,7 @@ public final class BodyTemplate1 extends com.amazon.ask.model.interfaces.display
 
 
         @JsonProperty("title")
+
         public Builder withTitle(String title) {
             this.title = title;
             return this;
@@ -167,6 +178,7 @@ public final class BodyTemplate1 extends com.amazon.ask.model.interfaces.display
 
 
         @JsonProperty("textContent")
+
         public Builder withTextContent(com.amazon.ask.model.interfaces.display.TextContent textContent) {
             this.textContent = textContent;
             return this;

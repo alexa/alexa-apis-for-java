@@ -71,6 +71,7 @@ public final class ComponentVisibleOnScreenListTag {
         return itemCount;
     }
 
+
     /**
      * The index of the lowest item seen.
      * @return lowestIndexSeen
@@ -79,6 +80,7 @@ public final class ComponentVisibleOnScreenListTag {
     public Integer getLowestIndexSeen() {
         return lowestIndexSeen;
     }
+
 
     /**
      * The index of the highest item seen.
@@ -89,6 +91,7 @@ public final class ComponentVisibleOnScreenListTag {
         return highestIndexSeen;
     }
 
+
     /**
      * The ordinal of the lowest ordinal-equipped item seen.
      * @return lowestOrdinalSeen
@@ -98,6 +101,7 @@ public final class ComponentVisibleOnScreenListTag {
         return lowestOrdinalSeen;
     }
 
+
     /**
      * The ordinal of the highest ordinal-equipped item seen.
      * @return highestOrdinalSeen
@@ -106,6 +110,7 @@ public final class ComponentVisibleOnScreenListTag {
     public Integer getHighestOrdinalSeen() {
         return highestOrdinalSeen;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -163,6 +168,7 @@ public final class ComponentVisibleOnScreenListTag {
         private Builder() {}
 
         @JsonProperty("itemCount")
+
         public Builder withItemCount(Integer itemCount) {
             this.itemCount = itemCount;
             return this;
@@ -170,6 +176,7 @@ public final class ComponentVisibleOnScreenListTag {
 
 
         @JsonProperty("lowestIndexSeen")
+
         public Builder withLowestIndexSeen(Integer lowestIndexSeen) {
             this.lowestIndexSeen = lowestIndexSeen;
             return this;
@@ -177,6 +184,7 @@ public final class ComponentVisibleOnScreenListTag {
 
 
         @JsonProperty("highestIndexSeen")
+
         public Builder withHighestIndexSeen(Integer highestIndexSeen) {
             this.highestIndexSeen = highestIndexSeen;
             return this;
@@ -184,6 +192,7 @@ public final class ComponentVisibleOnScreenListTag {
 
 
         @JsonProperty("lowestOrdinalSeen")
+
         public Builder withLowestOrdinalSeen(Integer lowestOrdinalSeen) {
             this.lowestOrdinalSeen = lowestOrdinalSeen;
             return this;
@@ -191,6 +200,7 @@ public final class ComponentVisibleOnScreenListTag {
 
 
         @JsonProperty("highestOrdinalSeen")
+
         public Builder withHighestOrdinalSeen(Integer highestOrdinalSeen) {
             this.highestOrdinalSeen = highestOrdinalSeen;
             return this;

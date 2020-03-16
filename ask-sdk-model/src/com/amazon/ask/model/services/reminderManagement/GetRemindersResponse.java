@@ -62,6 +62,7 @@ public final class GetRemindersResponse {
         return totalCount;
     }
 
+
     /**
      * List of reminders
      * @return alerts
@@ -71,6 +72,7 @@ public final class GetRemindersResponse {
         return alerts;
     }
 
+
     /**
      * Link to retrieve next set of alerts if total count is greater than max results
      * @return links
@@ -79,6 +81,7 @@ public final class GetRemindersResponse {
     public String getLinks() {
         return links;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -130,6 +133,7 @@ public final class GetRemindersResponse {
         private Builder() {}
 
         @JsonProperty("totalCount")
+
         public Builder withTotalCount(String totalCount) {
             this.totalCount = totalCount;
             return this;
@@ -137,6 +141,7 @@ public final class GetRemindersResponse {
 
 
         @JsonProperty("alerts")
+
         public Builder withAlerts(List<com.amazon.ask.model.services.reminderManagement.Reminder> alerts) {
             this.alerts = alerts;
             return this;
@@ -151,6 +156,7 @@ public final class GetRemindersResponse {
         }
 
         @JsonProperty("links")
+
         public Builder withLinks(String links) {
             this.links = links;
             return this;

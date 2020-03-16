@@ -26,7 +26,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public final class Status {
 
     @JsonProperty("code")
-    private com.amazon.ask.model.slu.entityresolution.StatusCode code = null;
+    private String code = null;
 
     public static Builder builder() {
         return new Builder();
@@ -40,11 +40,29 @@ public final class Status {
 
     /**
      * Indication of the results of attempting to resolve the user utterance against the defined slot types.
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getCodeAsString().
+     *
      * @return code
     **/
-    @JsonProperty("code")
+    
     public com.amazon.ask.model.slu.entityresolution.StatusCode getCode() {
-        return code;
+        return com.amazon.ask.model.slu.entityresolution.StatusCode.fromValue(code);
+    }
+
+    /**
+     * Get the underlying String value for code.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return code as a String value
+    **/
+    @JsonProperty("code")
+    public String getCodeAsString() {
+      return code;
     }
 
     @Override
@@ -86,13 +104,18 @@ public final class Status {
     }
   
     public static class Builder {
-        private com.amazon.ask.model.slu.entityresolution.StatusCode code;
+        private String code;
 
         private Builder() {}
 
         @JsonProperty("code")
+        public Builder withCode(String code) {
+          this.code = code;
+          return this;
+        }
+
         public Builder withCode(com.amazon.ask.model.slu.entityresolution.StatusCode code) {
-            this.code = code;
+            this.code = code != null ? code.toString() : null;
             return this;
         }
 

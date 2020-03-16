@@ -60,6 +60,7 @@ public final class ReminderCreatedEventRequest extends com.amazon.ask.model.Requ
         return body;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -108,6 +109,7 @@ public final class ReminderCreatedEventRequest extends com.amazon.ask.model.Requ
         private Builder() {}
 
         @JsonProperty("requestId")
+
         public Builder withRequestId(String requestId) {
             this.requestId = requestId;
             return this;
@@ -115,6 +117,7 @@ public final class ReminderCreatedEventRequest extends com.amazon.ask.model.Requ
 
 
         @JsonProperty("timestamp")
+
         public Builder withTimestamp(OffsetDateTime timestamp) {
             this.timestamp = timestamp;
             return this;
@@ -122,6 +125,7 @@ public final class ReminderCreatedEventRequest extends com.amazon.ask.model.Requ
 
 
         @JsonProperty("locale")
+
         public Builder withLocale(String locale) {
             this.locale = locale;
             return this;
@@ -129,6 +133,7 @@ public final class ReminderCreatedEventRequest extends com.amazon.ask.model.Requ
 
 
         @JsonProperty("body")
+
         public Builder withBody(com.amazon.ask.model.services.reminderManagement.Event body) {
             this.body = body;
             return this;

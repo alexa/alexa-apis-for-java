@@ -29,7 +29,7 @@ public final class Error {
     private String message = null;
 
     @JsonProperty("type")
-    private com.amazon.ask.model.interfaces.audioplayer.ErrorType type = null;
+    private String type = null;
 
     public static Builder builder() {
         return new Builder();
@@ -53,13 +53,32 @@ public final class Error {
         return message;
     }
 
+
     /**
      * Get type
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getTypeAsString().
+     *
      * @return type
     **/
-    @JsonProperty("type")
+    
     public com.amazon.ask.model.interfaces.audioplayer.ErrorType getType() {
-        return type;
+        return com.amazon.ask.model.interfaces.audioplayer.ErrorType.fromValue(type);
+    }
+
+    /**
+     * Get the underlying String value for type.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return type as a String value
+    **/
+    @JsonProperty("type")
+    public String getTypeAsString() {
+      return type;
     }
 
     @Override
@@ -104,11 +123,12 @@ public final class Error {
   
     public static class Builder {
         private String message;
-        private com.amazon.ask.model.interfaces.audioplayer.ErrorType type;
+        private String type;
 
         private Builder() {}
 
         @JsonProperty("message")
+
         public Builder withMessage(String message) {
             this.message = message;
             return this;
@@ -116,8 +136,13 @@ public final class Error {
 
 
         @JsonProperty("type")
+        public Builder withType(String type) {
+          this.type = type;
+          return this;
+        }
+
         public Builder withType(com.amazon.ask.model.interfaces.audioplayer.ErrorType type) {
-            this.type = type;
+            this.type = type != null ? type.toString() : null;
             return this;
         }
 

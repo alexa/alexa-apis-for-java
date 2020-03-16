@@ -81,6 +81,7 @@ public final class CreateProactiveEventRequest {
         return timestamp;
     }
 
+
     /**
      * Client-supplied ID for correlating the event with external entities. The allowed characters for the referenceId field are alphanumeric and ~, and the length of the referenceId field must be 1-100 characters. 
      * @return referenceId
@@ -89,6 +90,7 @@ public final class CreateProactiveEventRequest {
     public String getReferenceId() {
         return referenceId;
     }
+
 
     /**
      * The date and time, in ISO 8601 format, when the service will automatically delete the notification if it is still in the pending state. 
@@ -99,6 +101,7 @@ public final class CreateProactiveEventRequest {
         return expiryTime;
     }
 
+
     /**
      * Get event
      * @return event
@@ -107,6 +110,7 @@ public final class CreateProactiveEventRequest {
     public com.amazon.ask.model.services.proactiveEvents.Event getEvent() {
         return event;
     }
+
 
     /**
      * A list of items, each of which contains the set of event attributes that requires localization support.
@@ -117,6 +121,7 @@ public final class CreateProactiveEventRequest {
         return localizedAttributes;
     }
 
+
     /**
      * Get relevantAudience
      * @return relevantAudience
@@ -125,6 +130,7 @@ public final class CreateProactiveEventRequest {
     public com.amazon.ask.model.services.proactiveEvents.RelevantAudience getRelevantAudience() {
         return relevantAudience;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -185,6 +191,7 @@ public final class CreateProactiveEventRequest {
         private Builder() {}
 
         @JsonProperty("timestamp")
+
         public Builder withTimestamp(OffsetDateTime timestamp) {
             this.timestamp = timestamp;
             return this;
@@ -192,6 +199,7 @@ public final class CreateProactiveEventRequest {
 
 
         @JsonProperty("referenceId")
+
         public Builder withReferenceId(String referenceId) {
             this.referenceId = referenceId;
             return this;
@@ -199,6 +207,7 @@ public final class CreateProactiveEventRequest {
 
 
         @JsonProperty("expiryTime")
+
         public Builder withExpiryTime(OffsetDateTime expiryTime) {
             this.expiryTime = expiryTime;
             return this;
@@ -206,6 +215,7 @@ public final class CreateProactiveEventRequest {
 
 
         @JsonProperty("event")
+
         public Builder withEvent(com.amazon.ask.model.services.proactiveEvents.Event event) {
             this.event = event;
             return this;
@@ -213,6 +223,7 @@ public final class CreateProactiveEventRequest {
 
 
         @JsonProperty("localizedAttributes")
+
         public Builder withLocalizedAttributes(List<Object> localizedAttributes) {
             this.localizedAttributes = localizedAttributes;
             return this;
@@ -227,6 +238,7 @@ public final class CreateProactiveEventRequest {
         }
 
         @JsonProperty("relevantAudience")
+
         public Builder withRelevantAudience(com.amazon.ask.model.services.proactiveEvents.RelevantAudience relevantAudience) {
             this.relevantAudience = relevantAudience;
             return this;

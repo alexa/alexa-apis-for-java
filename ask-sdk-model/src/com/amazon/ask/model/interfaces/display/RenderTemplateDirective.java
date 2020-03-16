@@ -50,6 +50,7 @@ public final class RenderTemplateDirective extends com.amazon.ask.model.Directiv
         return template;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -95,6 +96,7 @@ public final class RenderTemplateDirective extends com.amazon.ask.model.Directiv
         private Builder() {}
 
         @JsonProperty("template")
+
         public Builder withTemplate(com.amazon.ask.model.interfaces.display.Template template) {
             this.template = template;
             return this;

@@ -65,6 +65,7 @@ public final class AudioItemMetadata {
         return title;
     }
 
+
     /**
      * An optional subtitle of the audio item.
      * @return subtitle
@@ -73,6 +74,7 @@ public final class AudioItemMetadata {
     public String getSubtitle() {
         return subtitle;
     }
+
 
     /**
      * An optional cover art image for the audio item.
@@ -83,6 +85,7 @@ public final class AudioItemMetadata {
         return art;
     }
 
+
     /**
      * An optional background image for the audio item.
      * @return backgroundImage
@@ -91,6 +94,7 @@ public final class AudioItemMetadata {
     public com.amazon.ask.model.interfaces.display.Image getBackgroundImage() {
         return backgroundImage;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -145,6 +149,7 @@ public final class AudioItemMetadata {
         private Builder() {}
 
         @JsonProperty("title")
+
         public Builder withTitle(String title) {
             this.title = title;
             return this;
@@ -152,6 +157,7 @@ public final class AudioItemMetadata {
 
 
         @JsonProperty("subtitle")
+
         public Builder withSubtitle(String subtitle) {
             this.subtitle = subtitle;
             return this;
@@ -159,6 +165,7 @@ public final class AudioItemMetadata {
 
 
         @JsonProperty("art")
+
         public Builder withArt(com.amazon.ask.model.interfaces.display.Image art) {
             this.art = art;
             return this;
@@ -166,6 +173,7 @@ public final class AudioItemMetadata {
 
 
         @JsonProperty("backgroundImage")
+
         public Builder withBackgroundImage(com.amazon.ask.model.interfaces.display.Image backgroundImage) {
             this.backgroundImage = backgroundImage;
             return this;

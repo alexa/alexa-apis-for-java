@@ -53,6 +53,7 @@ public final class ShortAddress {
         return countryCode;
     }
 
+
     /**
      * Get postalCode
      * @return postalCode
@@ -61,6 +62,7 @@ public final class ShortAddress {
     public String getPostalCode() {
         return postalCode;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class ShortAddress {
         private Builder() {}
 
         @JsonProperty("countryCode")
+
         public Builder withCountryCode(String countryCode) {
             this.countryCode = countryCode;
             return this;
@@ -116,6 +119,7 @@ public final class ShortAddress {
 
 
         @JsonProperty("postalCode")
+
         public Builder withPostalCode(String postalCode) {
             this.postalCode = postalCode;
             return this;

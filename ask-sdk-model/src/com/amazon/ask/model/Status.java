@@ -53,6 +53,7 @@ public final class Status {
         return code;
     }
 
+
     /**
      * This is a message that goes along with response code that can provide more information about what occurred.
      * @return message
@@ -61,6 +62,7 @@ public final class Status {
     public String getMessage() {
         return message;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class Status {
         private Builder() {}
 
         @JsonProperty("code")
+
         public Builder withCode(String code) {
             this.code = code;
             return this;
@@ -116,6 +119,7 @@ public final class Status {
 
 
         @JsonProperty("message")
+
         public Builder withMessage(String message) {
             this.message = message;
             return this;

@@ -42,7 +42,7 @@ public abstract class Template {
     protected String token = null;
 
     @JsonProperty("backButton")
-    protected com.amazon.ask.model.interfaces.display.BackButtonBehavior backButton = null;
+    protected String backButton = null;
 
     protected Template() {
     }
@@ -56,6 +56,7 @@ public abstract class Template {
         return type;
     }
 
+
     /**
      * Get token
      * @return token
@@ -65,13 +66,32 @@ public abstract class Template {
         return token;
     }
 
+
     /**
      * Get backButton
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getBackButtonAsString().
+     *
      * @return backButton
     **/
-    @JsonProperty("backButton")
+    
     public com.amazon.ask.model.interfaces.display.BackButtonBehavior getBackButton() {
-        return backButton;
+        return com.amazon.ask.model.interfaces.display.BackButtonBehavior.fromValue(backButton);
+    }
+
+    /**
+     * Get the underlying String value for backButton.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return backButton as a String value
+    **/
+    @JsonProperty("backButton")
+    public String getBackButtonAsString() {
+      return backButton;
     }
 
     @Override

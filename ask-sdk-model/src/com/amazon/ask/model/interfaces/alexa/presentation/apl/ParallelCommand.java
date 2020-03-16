@@ -62,6 +62,7 @@ public final class ParallelCommand extends com.amazon.ask.model.interfaces.alexa
         return commands;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -110,6 +111,7 @@ public final class ParallelCommand extends com.amazon.ask.model.interfaces.alexa
         private Builder() {}
 
         @JsonProperty("delay")
+
         public Builder withDelay(Integer delay) {
             this.delay = String.valueOf(delay);
             return this;
@@ -121,6 +123,7 @@ public final class ParallelCommand extends com.amazon.ask.model.interfaces.alexa
         }
 
         @JsonProperty("description")
+
         public Builder withDescription(String description) {
             this.description = description;
             return this;
@@ -128,6 +131,7 @@ public final class ParallelCommand extends com.amazon.ask.model.interfaces.alexa
 
 
         @JsonProperty("when")
+
         public Builder withWhen(Boolean when) {
             this.when = when;
             return this;
@@ -135,6 +139,7 @@ public final class ParallelCommand extends com.amazon.ask.model.interfaces.alexa
 
 
         @JsonProperty("commands")
+
         public Builder withCommands(List<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command> commands) {
             this.commands = commands;
             return this;

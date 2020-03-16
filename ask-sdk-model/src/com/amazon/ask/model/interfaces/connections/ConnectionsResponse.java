@@ -81,6 +81,7 @@ public final class ConnectionsResponse extends com.amazon.ask.model.Request  {
         return status;
     }
 
+
     /**
      * Name of the action for which response is received.
      * @return name
@@ -89,6 +90,7 @@ public final class ConnectionsResponse extends com.amazon.ask.model.Request  {
     public String getName() {
         return name;
     }
+
 
     /**
      * This is an object sent from referrer skill as is.
@@ -99,6 +101,7 @@ public final class ConnectionsResponse extends com.amazon.ask.model.Request  {
         return payload;
     }
 
+
     /**
      * This is the token that the skill originally sent with the ConnectionsSendRequest directive.
      * @return token
@@ -107,6 +110,7 @@ public final class ConnectionsResponse extends com.amazon.ask.model.Request  {
     public String getToken() {
         return token;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -165,6 +169,7 @@ public final class ConnectionsResponse extends com.amazon.ask.model.Request  {
         private Builder() {}
 
         @JsonProperty("requestId")
+
         public Builder withRequestId(String requestId) {
             this.requestId = requestId;
             return this;
@@ -172,6 +177,7 @@ public final class ConnectionsResponse extends com.amazon.ask.model.Request  {
 
 
         @JsonProperty("timestamp")
+
         public Builder withTimestamp(OffsetDateTime timestamp) {
             this.timestamp = timestamp;
             return this;
@@ -179,6 +185,7 @@ public final class ConnectionsResponse extends com.amazon.ask.model.Request  {
 
 
         @JsonProperty("locale")
+
         public Builder withLocale(String locale) {
             this.locale = locale;
             return this;
@@ -186,6 +193,7 @@ public final class ConnectionsResponse extends com.amazon.ask.model.Request  {
 
 
         @JsonProperty("status")
+
         public Builder withStatus(com.amazon.ask.model.interfaces.connections.ConnectionsStatus status) {
             this.status = status;
             return this;
@@ -193,6 +201,7 @@ public final class ConnectionsResponse extends com.amazon.ask.model.Request  {
 
 
         @JsonProperty("name")
+
         public Builder withName(String name) {
             this.name = name;
             return this;
@@ -200,6 +209,7 @@ public final class ConnectionsResponse extends com.amazon.ask.model.Request  {
 
 
         @JsonProperty("payload")
+
         public Builder withPayload(Map<String, Object> payload) {
             this.payload = payload;
             return this;
@@ -214,6 +224,7 @@ public final class ConnectionsResponse extends com.amazon.ask.model.Request  {
         }
 
         @JsonProperty("token")
+
         public Builder withToken(String token) {
             this.token = token;
             return this;

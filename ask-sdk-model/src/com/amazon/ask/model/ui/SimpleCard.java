@@ -56,6 +56,7 @@ public final class SimpleCard extends com.amazon.ask.model.ui.Card  {
         return title;
     }
 
+
     /**
      * Get content
      * @return content
@@ -64,6 +65,7 @@ public final class SimpleCard extends com.amazon.ask.model.ui.Card  {
     public String getContent() {
         return content;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -113,6 +115,7 @@ public final class SimpleCard extends com.amazon.ask.model.ui.Card  {
         private Builder() {}
 
         @JsonProperty("title")
+
         public Builder withTitle(String title) {
             this.title = title;
             return this;
@@ -120,6 +123,7 @@ public final class SimpleCard extends com.amazon.ask.model.ui.Card  {
 
 
         @JsonProperty("content")
+
         public Builder withContent(String content) {
             this.content = content;
             return this;

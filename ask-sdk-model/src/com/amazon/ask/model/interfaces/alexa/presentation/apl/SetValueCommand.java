@@ -71,6 +71,7 @@ public final class SetValueCommand extends com.amazon.ask.model.interfaces.alexa
         return componentId;
     }
 
+
     /**
      * The name of the property to set.
      * @return property
@@ -80,6 +81,7 @@ public final class SetValueCommand extends com.amazon.ask.model.interfaces.alexa
         return property;
     }
 
+
     /**
      * The property value to set.
      * @return value
@@ -88,6 +90,7 @@ public final class SetValueCommand extends com.amazon.ask.model.interfaces.alexa
     public String getValue() {
         return value;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -143,6 +146,7 @@ public final class SetValueCommand extends com.amazon.ask.model.interfaces.alexa
         private Builder() {}
 
         @JsonProperty("delay")
+
         public Builder withDelay(Integer delay) {
             this.delay = String.valueOf(delay);
             return this;
@@ -154,6 +158,7 @@ public final class SetValueCommand extends com.amazon.ask.model.interfaces.alexa
         }
 
         @JsonProperty("description")
+
         public Builder withDescription(String description) {
             this.description = description;
             return this;
@@ -161,6 +166,7 @@ public final class SetValueCommand extends com.amazon.ask.model.interfaces.alexa
 
 
         @JsonProperty("when")
+
         public Builder withWhen(Boolean when) {
             this.when = when;
             return this;
@@ -168,6 +174,7 @@ public final class SetValueCommand extends com.amazon.ask.model.interfaces.alexa
 
 
         @JsonProperty("componentId")
+
         public Builder withComponentId(String componentId) {
             this.componentId = componentId;
             return this;
@@ -175,6 +182,7 @@ public final class SetValueCommand extends com.amazon.ask.model.interfaces.alexa
 
 
         @JsonProperty("property")
+
         public Builder withProperty(String property) {
             this.property = property;
             return this;
@@ -182,6 +190,7 @@ public final class SetValueCommand extends com.amazon.ask.model.interfaces.alexa
 
 
         @JsonProperty("value")
+
         public Builder withValue(String value) {
             this.value = value;
             return this;

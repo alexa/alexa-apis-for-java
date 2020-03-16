@@ -60,6 +60,7 @@ public final class InterSegment {
         return x;
     }
 
+
     /**
      * vertical position (0-based index) in rows
      * minimum: 0
@@ -70,6 +71,7 @@ public final class InterSegment {
         return y;
     }
 
+
     /**
      * list of characters that can be rendered
      * @return characters
@@ -78,6 +80,7 @@ public final class InterSegment {
     public String getCharacters() {
         return characters;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -129,6 +132,7 @@ public final class InterSegment {
         private Builder() {}
 
         @JsonProperty("x")
+
         public Builder withX(Integer x) {
             this.x = x;
             return this;
@@ -136,6 +140,7 @@ public final class InterSegment {
 
 
         @JsonProperty("y")
+
         public Builder withY(Integer y) {
             this.y = y;
             return this;
@@ -143,6 +148,7 @@ public final class InterSegment {
 
 
         @JsonProperty("characters")
+
         public Builder withCharacters(String characters) {
             this.characters = characters;
             return this;

@@ -69,6 +69,7 @@ public final class EventsReceivedRequest extends com.amazon.ask.model.Request  {
         return token;
     }
 
+
     /**
      * A list of events that meet the filter criteria.
      * @return events
@@ -77,6 +78,7 @@ public final class EventsReceivedRequest extends com.amazon.ask.model.Request  {
     public List<com.amazon.ask.model.interfaces.customInterfaceController.Event> getEvents() {
         return events;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -129,6 +131,7 @@ public final class EventsReceivedRequest extends com.amazon.ask.model.Request  {
         private Builder() {}
 
         @JsonProperty("requestId")
+
         public Builder withRequestId(String requestId) {
             this.requestId = requestId;
             return this;
@@ -136,6 +139,7 @@ public final class EventsReceivedRequest extends com.amazon.ask.model.Request  {
 
 
         @JsonProperty("timestamp")
+
         public Builder withTimestamp(OffsetDateTime timestamp) {
             this.timestamp = timestamp;
             return this;
@@ -143,6 +147,7 @@ public final class EventsReceivedRequest extends com.amazon.ask.model.Request  {
 
 
         @JsonProperty("locale")
+
         public Builder withLocale(String locale) {
             this.locale = locale;
             return this;
@@ -150,6 +155,7 @@ public final class EventsReceivedRequest extends com.amazon.ask.model.Request  {
 
 
         @JsonProperty("token")
+
         public Builder withToken(String token) {
             this.token = token;
             return this;
@@ -157,6 +163,7 @@ public final class EventsReceivedRequest extends com.amazon.ask.model.Request  {
 
 
         @JsonProperty("events")
+
         public Builder withEvents(List<com.amazon.ask.model.interfaces.customInterfaceController.Event> events) {
             this.events = events;
             return this;

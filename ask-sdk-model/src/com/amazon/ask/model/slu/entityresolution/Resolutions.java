@@ -50,6 +50,7 @@ public final class Resolutions {
         return resolutionsPerAuthority;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -94,6 +95,7 @@ public final class Resolutions {
         private Builder() {}
 
         @JsonProperty("resolutionsPerAuthority")
+
         public Builder withResolutionsPerAuthority(List<com.amazon.ask.model.slu.entityresolution.Resolution> resolutionsPerAuthority) {
             this.resolutionsPerAuthority = resolutionsPerAuthority;
             return this;

@@ -59,6 +59,7 @@ public final class CompleteTaskDirective extends com.amazon.ask.model.Directive 
         return status;
     }
 
+
     /**
      * This is an object sent to the requester.
      * @return result
@@ -67,6 +68,7 @@ public final class CompleteTaskDirective extends com.amazon.ask.model.Directive 
     public Map<String, Object> getResult() {
         return result;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -116,6 +118,7 @@ public final class CompleteTaskDirective extends com.amazon.ask.model.Directive 
         private Builder() {}
 
         @JsonProperty("status")
+
         public Builder withStatus(com.amazon.ask.model.Status status) {
             this.status = status;
             return this;
@@ -123,6 +126,7 @@ public final class CompleteTaskDirective extends com.amazon.ask.model.Directive 
 
 
         @JsonProperty("result")
+
         public Builder withResult(Map<String, Object> result) {
             this.result = result;
             return this;

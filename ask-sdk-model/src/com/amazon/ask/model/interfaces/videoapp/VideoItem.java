@@ -53,6 +53,7 @@ public final class VideoItem {
         return source;
     }
 
+
     /**
      * Get metadata
      * @return metadata
@@ -61,6 +62,7 @@ public final class VideoItem {
     public com.amazon.ask.model.interfaces.videoapp.Metadata getMetadata() {
         return metadata;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class VideoItem {
         private Builder() {}
 
         @JsonProperty("source")
+
         public Builder withSource(String source) {
             this.source = source;
             return this;
@@ -116,6 +119,7 @@ public final class VideoItem {
 
 
         @JsonProperty("metadata")
+
         public Builder withMetadata(com.amazon.ask.model.interfaces.videoapp.Metadata metadata) {
             this.metadata = metadata;
             return this;

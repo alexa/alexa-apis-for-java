@@ -77,6 +77,7 @@ public final class PostalAddress extends com.amazon.ask.model.interfaces.connect
         return streetAddress;
     }
 
+
     /**
      * locality/city
      * @return locality
@@ -85,6 +86,7 @@ public final class PostalAddress extends com.amazon.ask.model.interfaces.connect
     public String getLocality() {
         return locality;
     }
+
 
     /**
      * state/region
@@ -95,6 +97,7 @@ public final class PostalAddress extends com.amazon.ask.model.interfaces.connect
         return region;
     }
 
+
     /**
      * postal/zip code
      * @return postalCode
@@ -104,6 +107,7 @@ public final class PostalAddress extends com.amazon.ask.model.interfaces.connect
         return postalCode;
     }
 
+
     /**
      * country
      * @return country
@@ -112,6 +116,7 @@ public final class PostalAddress extends com.amazon.ask.model.interfaces.connect
     public String getCountry() {
         return country;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -171,6 +176,7 @@ public final class PostalAddress extends com.amazon.ask.model.interfaces.connect
         private Builder() {}
 
         @JsonProperty("@version")
+
         public Builder withVersion(String version) {
             this.version = version;
             return this;
@@ -178,6 +184,7 @@ public final class PostalAddress extends com.amazon.ask.model.interfaces.connect
 
 
         @JsonProperty("streetAddress")
+
         public Builder withStreetAddress(String streetAddress) {
             this.streetAddress = streetAddress;
             return this;
@@ -185,6 +192,7 @@ public final class PostalAddress extends com.amazon.ask.model.interfaces.connect
 
 
         @JsonProperty("locality")
+
         public Builder withLocality(String locality) {
             this.locality = locality;
             return this;
@@ -192,6 +200,7 @@ public final class PostalAddress extends com.amazon.ask.model.interfaces.connect
 
 
         @JsonProperty("region")
+
         public Builder withRegion(String region) {
             this.region = region;
             return this;
@@ -199,6 +208,7 @@ public final class PostalAddress extends com.amazon.ask.model.interfaces.connect
 
 
         @JsonProperty("postalCode")
+
         public Builder withPostalCode(String postalCode) {
             this.postalCode = postalCode;
             return this;
@@ -206,6 +216,7 @@ public final class PostalAddress extends com.amazon.ask.model.interfaces.connect
 
 
         @JsonProperty("country")
+
         public Builder withCountry(String country) {
             this.country = country;
             return this;

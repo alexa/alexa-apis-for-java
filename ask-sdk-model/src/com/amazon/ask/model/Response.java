@@ -80,6 +80,7 @@ public final class Response {
         return outputSpeech;
     }
 
+
     /**
      * Get card
      * @return card
@@ -88,6 +89,7 @@ public final class Response {
     public com.amazon.ask.model.ui.Card getCard() {
         return card;
     }
+
 
     /**
      * Get reprompt
@@ -98,6 +100,7 @@ public final class Response {
         return reprompt;
     }
 
+
     /**
      * Get directives
      * @return directives
@@ -106,6 +109,7 @@ public final class Response {
     public List<com.amazon.ask.model.Directive> getDirectives() {
         return directives;
     }
+
 
     /**
      * Get shouldEndSession
@@ -116,6 +120,7 @@ public final class Response {
         return shouldEndSession;
     }
 
+
     /**
      * Get canFulfillIntent
      * @return canFulfillIntent
@@ -124,6 +129,7 @@ public final class Response {
     public com.amazon.ask.model.canfulfill.CanFulfillIntent getCanFulfillIntent() {
         return canFulfillIntent;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -184,6 +190,7 @@ public final class Response {
         private Builder() {}
 
         @JsonProperty("outputSpeech")
+
         public Builder withOutputSpeech(com.amazon.ask.model.ui.OutputSpeech outputSpeech) {
             this.outputSpeech = outputSpeech;
             return this;
@@ -191,6 +198,7 @@ public final class Response {
 
 
         @JsonProperty("card")
+
         public Builder withCard(com.amazon.ask.model.ui.Card card) {
             this.card = card;
             return this;
@@ -198,6 +206,7 @@ public final class Response {
 
 
         @JsonProperty("reprompt")
+
         public Builder withReprompt(com.amazon.ask.model.ui.Reprompt reprompt) {
             this.reprompt = reprompt;
             return this;
@@ -205,6 +214,7 @@ public final class Response {
 
 
         @JsonProperty("directives")
+
         public Builder withDirectives(List<com.amazon.ask.model.Directive> directives) {
             this.directives = directives;
             return this;
@@ -219,6 +229,7 @@ public final class Response {
         }
 
         @JsonProperty("shouldEndSession")
+
         public Builder withShouldEndSession(Boolean shouldEndSession) {
             this.shouldEndSession = shouldEndSession;
             return this;
@@ -226,6 +237,7 @@ public final class Response {
 
 
         @JsonProperty("canFulfillIntent")
+
         public Builder withCanFulfillIntent(com.amazon.ask.model.canfulfill.CanFulfillIntent canFulfillIntent) {
             this.canFulfillIntent = canFulfillIntent;
             return this;

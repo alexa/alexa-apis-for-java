@@ -53,6 +53,7 @@ public final class Speed {
         return speedInMetersPerSecond;
     }
 
+
     /**
      * A double representing the accuracy of the speed measurement in meters.
      * @return accuracyInMetersPerSecond
@@ -61,6 +62,7 @@ public final class Speed {
     public Double getAccuracyInMetersPerSecond() {
         return accuracyInMetersPerSecond;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class Speed {
         private Builder() {}
 
         @JsonProperty("speedInMetersPerSecond")
+
         public Builder withSpeedInMetersPerSecond(Double speedInMetersPerSecond) {
             this.speedInMetersPerSecond = speedInMetersPerSecond;
             return this;
@@ -116,6 +119,7 @@ public final class Speed {
 
 
         @JsonProperty("accuracyInMetersPerSecond")
+
         public Builder withAccuracyInMetersPerSecond(Double accuracyInMetersPerSecond) {
             this.accuracyInMetersPerSecond = accuracyInMetersPerSecond;
             return this;

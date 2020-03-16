@@ -64,6 +64,7 @@ public final class LightAnimation {
         return repeat;
     }
 
+
     /**
      * An array of strings that represent the light addresses on the target gadgets that this animation will be applied to. Because the Echo Button has one light only, use [\"1\"] to signify that this animation should be sent to light one.
      * @return targetLights
@@ -73,6 +74,7 @@ public final class LightAnimation {
         return targetLights;
     }
 
+
     /**
      * The animation steps to render in order. The maximum number of steps that you can define is 38. The minimum is 0. Each step must have the following fields, all of which are required.
      * @return sequence
@@ -81,6 +83,7 @@ public final class LightAnimation {
     public List<com.amazon.ask.model.services.gadgetController.AnimationStep> getSequence() {
         return sequence;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -132,6 +135,7 @@ public final class LightAnimation {
         private Builder() {}
 
         @JsonProperty("repeat")
+
         public Builder withRepeat(Integer repeat) {
             this.repeat = repeat;
             return this;
@@ -139,6 +143,7 @@ public final class LightAnimation {
 
 
         @JsonProperty("targetLights")
+
         public Builder withTargetLights(List<String> targetLights) {
             this.targetLights = targetLights;
             return this;
@@ -153,6 +158,7 @@ public final class LightAnimation {
         }
 
         @JsonProperty("sequence")
+
         public Builder withSequence(List<com.amazon.ask.model.services.gadgetController.AnimationStep> sequence) {
             this.sequence = sequence;
             return this;

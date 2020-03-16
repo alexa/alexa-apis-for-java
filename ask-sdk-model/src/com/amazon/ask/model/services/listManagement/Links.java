@@ -47,6 +47,7 @@ public final class Links {
         return next;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class Links {
         private Builder() {}
 
         @JsonProperty("next")
+
         public Builder withNext(String next) {
             this.next = next;
             return this;

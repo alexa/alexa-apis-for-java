@@ -48,6 +48,7 @@ public abstract class TypedViewportState {
         return id;
     }
 
+
     /**
      * name of the type of a viewport object
      * @return type
@@ -56,6 +57,7 @@ public abstract class TypedViewportState {
     public String getType() {
         return type;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {

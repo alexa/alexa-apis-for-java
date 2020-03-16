@@ -53,6 +53,7 @@ public final class Metadata {
         return title;
     }
 
+
     /**
      * Get subtitle
      * @return subtitle
@@ -61,6 +62,7 @@ public final class Metadata {
     public String getSubtitle() {
         return subtitle;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class Metadata {
         private Builder() {}
 
         @JsonProperty("title")
+
         public Builder withTitle(String title) {
             this.title = title;
             return this;
@@ -116,6 +119,7 @@ public final class Metadata {
 
 
         @JsonProperty("subtitle")
+
         public Builder withSubtitle(String subtitle) {
             this.subtitle = subtitle;
             return this;

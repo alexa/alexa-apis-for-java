@@ -56,6 +56,7 @@ public final class ConfirmSlotDirective extends com.amazon.ask.model.Directive  
         return updatedIntent;
     }
 
+
     /**
      * Get slotToConfirm
      * @return slotToConfirm
@@ -64,6 +65,7 @@ public final class ConfirmSlotDirective extends com.amazon.ask.model.Directive  
     public String getSlotToConfirm() {
         return slotToConfirm;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -113,6 +115,7 @@ public final class ConfirmSlotDirective extends com.amazon.ask.model.Directive  
         private Builder() {}
 
         @JsonProperty("updatedIntent")
+
         public Builder withUpdatedIntent(com.amazon.ask.model.Intent updatedIntent) {
             this.updatedIntent = updatedIntent;
             return this;
@@ -120,6 +123,7 @@ public final class ConfirmSlotDirective extends com.amazon.ask.model.Directive  
 
 
         @JsonProperty("slotToConfirm")
+
         public Builder withSlotToConfirm(String slotToConfirm) {
             this.slotToConfirm = slotToConfirm;
             return this;

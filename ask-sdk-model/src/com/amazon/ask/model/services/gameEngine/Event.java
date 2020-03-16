@@ -38,7 +38,7 @@ public final class Event {
     private List<String> fails = new ArrayList<String>();
 
     @JsonProperty("reports")
-    private com.amazon.ask.model.services.gameEngine.EventReportingType reports = null;
+    private String reports = null;
 
     @JsonProperty("maximumInvocations")
     private Integer maximumInvocations = null;
@@ -80,6 +80,7 @@ public final class Event {
         return shouldEndInputHandler;
     }
 
+
     /**
      * Get meets
      * @return meets
@@ -88,6 +89,7 @@ public final class Event {
     public List<String> getMeets() {
         return meets;
     }
+
 
     /**
      * Get fails
@@ -98,13 +100,32 @@ public final class Event {
         return fails;
     }
 
+
     /**
      * Get reports
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getReportsAsString().
+     *
      * @return reports
     **/
-    @JsonProperty("reports")
+    
     public com.amazon.ask.model.services.gameEngine.EventReportingType getReports() {
-        return reports;
+        return com.amazon.ask.model.services.gameEngine.EventReportingType.fromValue(reports);
+    }
+
+    /**
+     * Get the underlying String value for reports.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return reports as a String value
+    **/
+    @JsonProperty("reports")
+    public String getReportsAsString() {
+      return reports;
     }
 
     /**
@@ -118,6 +139,7 @@ public final class Event {
         return maximumInvocations;
     }
 
+
     /**
      * Adds a time constraint to the event. Instead of being considered whenever a raw button event occurs, an event that has this parameter will only be considered once at triggerTimeMilliseconds after the Input Handler has started. Because a time-triggered event can only fire once, the maximumInvocations value is ignored. Omit this property entirely if you do not want to time-constrain the event. 
      * minimum: 0
@@ -128,6 +150,7 @@ public final class Event {
     public Long getTriggerTimeMilliseconds() {
         return triggerTimeMilliseconds;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -181,13 +204,14 @@ public final class Event {
         private Boolean shouldEndInputHandler;
         private List<String> meets;
         private List<String> fails;
-        private com.amazon.ask.model.services.gameEngine.EventReportingType reports;
+        private String reports;
         private Integer maximumInvocations;
         private Long triggerTimeMilliseconds;
 
         private Builder() {}
 
         @JsonProperty("shouldEndInputHandler")
+
         public Builder withShouldEndInputHandler(Boolean shouldEndInputHandler) {
             this.shouldEndInputHandler = shouldEndInputHandler;
             return this;
@@ -195,6 +219,7 @@ public final class Event {
 
 
         @JsonProperty("meets")
+
         public Builder withMeets(List<String> meets) {
             this.meets = meets;
             return this;
@@ -209,6 +234,7 @@ public final class Event {
         }
 
         @JsonProperty("fails")
+
         public Builder withFails(List<String> fails) {
             this.fails = fails;
             return this;
@@ -223,13 +249,19 @@ public final class Event {
         }
 
         @JsonProperty("reports")
+        public Builder withReports(String reports) {
+          this.reports = reports;
+          return this;
+        }
+
         public Builder withReports(com.amazon.ask.model.services.gameEngine.EventReportingType reports) {
-            this.reports = reports;
+            this.reports = reports != null ? reports.toString() : null;
             return this;
         }
 
 
         @JsonProperty("maximumInvocations")
+
         public Builder withMaximumInvocations(Integer maximumInvocations) {
             this.maximumInvocations = maximumInvocations;
             return this;
@@ -237,6 +269,7 @@ public final class Event {
 
 
         @JsonProperty("triggerTimeMilliseconds")
+
         public Builder withTriggerTimeMilliseconds(Long triggerTimeMilliseconds) {
             this.triggerTimeMilliseconds = triggerTimeMilliseconds;
             return this;

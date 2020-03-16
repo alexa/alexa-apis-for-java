@@ -29,7 +29,7 @@ import java.util.ArrayList;
 public final class SetLightParameters {
 
     @JsonProperty("triggerEvent")
-    private com.amazon.ask.model.services.gadgetController.TriggerEventType triggerEvent = null;
+    private String triggerEvent = null;
 
     @JsonProperty("triggerEventTimeMs")
     private Integer triggerEventTimeMs = null;
@@ -55,11 +55,29 @@ public final class SetLightParameters {
 
     /**
      * Get triggerEvent
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getTriggerEventAsString().
+     *
      * @return triggerEvent
     **/
-    @JsonProperty("triggerEvent")
+    
     public com.amazon.ask.model.services.gadgetController.TriggerEventType getTriggerEvent() {
-        return triggerEvent;
+        return com.amazon.ask.model.services.gadgetController.TriggerEventType.fromValue(triggerEvent);
+    }
+
+    /**
+     * Get the underlying String value for triggerEvent.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return triggerEvent as a String value
+    **/
+    @JsonProperty("triggerEvent")
+    public String getTriggerEventAsString() {
+      return triggerEvent;
     }
 
     /**
@@ -71,6 +89,7 @@ public final class SetLightParameters {
         return triggerEventTimeMs;
     }
 
+
     /**
      * Get animations
      * @return animations
@@ -79,6 +98,7 @@ public final class SetLightParameters {
     public List<com.amazon.ask.model.services.gadgetController.LightAnimation> getAnimations() {
         return animations;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -123,20 +143,26 @@ public final class SetLightParameters {
     }
   
     public static class Builder {
-        private com.amazon.ask.model.services.gadgetController.TriggerEventType triggerEvent;
+        private String triggerEvent;
         private Integer triggerEventTimeMs;
         private List<com.amazon.ask.model.services.gadgetController.LightAnimation> animations;
 
         private Builder() {}
 
         @JsonProperty("triggerEvent")
+        public Builder withTriggerEvent(String triggerEvent) {
+          this.triggerEvent = triggerEvent;
+          return this;
+        }
+
         public Builder withTriggerEvent(com.amazon.ask.model.services.gadgetController.TriggerEventType triggerEvent) {
-            this.triggerEvent = triggerEvent;
+            this.triggerEvent = triggerEvent != null ? triggerEvent.toString() : null;
             return this;
         }
 
 
         @JsonProperty("triggerEventTimeMs")
+
         public Builder withTriggerEventTimeMs(Integer triggerEventTimeMs) {
             this.triggerEventTimeMs = triggerEventTimeMs;
             return this;
@@ -144,6 +170,7 @@ public final class SetLightParameters {
 
 
         @JsonProperty("animations")
+
         public Builder withAnimations(List<com.amazon.ask.model.services.gadgetController.LightAnimation> animations) {
             this.animations = animations;
             return this;

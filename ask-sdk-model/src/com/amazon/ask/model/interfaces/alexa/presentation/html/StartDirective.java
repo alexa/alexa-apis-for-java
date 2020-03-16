@@ -71,6 +71,7 @@ public final class StartDirective extends com.amazon.ask.model.Directive  {
         return data;
     }
 
+
     /**
      * An array of objects for performing text-to-speech transformations with message data
      * @return transformers
@@ -79,6 +80,7 @@ public final class StartDirective extends com.amazon.ask.model.Directive  {
     public List<com.amazon.ask.model.interfaces.alexa.presentation.html.Transformer> getTransformers() {
         return transformers;
     }
+
 
     /**
      * Get request
@@ -89,6 +91,7 @@ public final class StartDirective extends com.amazon.ask.model.Directive  {
         return request;
     }
 
+
     /**
      * Get _configuration
      * @return _configuration
@@ -97,6 +100,7 @@ public final class StartDirective extends com.amazon.ask.model.Directive  {
     public com.amazon.ask.model.interfaces.alexa.presentation.html.ModelConfiguration getConfiguration() {
         return _configuration;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -152,6 +156,7 @@ public final class StartDirective extends com.amazon.ask.model.Directive  {
         private Builder() {}
 
         @JsonProperty("data")
+
         public Builder withData(Object data) {
             this.data = data;
             return this;
@@ -159,6 +164,7 @@ public final class StartDirective extends com.amazon.ask.model.Directive  {
 
 
         @JsonProperty("transformers")
+
         public Builder withTransformers(List<com.amazon.ask.model.interfaces.alexa.presentation.html.Transformer> transformers) {
             this.transformers = transformers;
             return this;
@@ -173,6 +179,7 @@ public final class StartDirective extends com.amazon.ask.model.Directive  {
         }
 
         @JsonProperty("request")
+
         public Builder withRequest(com.amazon.ask.model.interfaces.alexa.presentation.html.StartRequest request) {
             this.request = request;
             return this;
@@ -180,6 +187,7 @@ public final class StartDirective extends com.amazon.ask.model.Directive  {
 
 
         @JsonProperty("configuration")
+
         public Builder withConfiguration(com.amazon.ask.model.interfaces.alexa.presentation.html.ModelConfiguration _configuration) {
             this._configuration = _configuration;
             return this;

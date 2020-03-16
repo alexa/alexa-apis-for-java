@@ -50,6 +50,7 @@ public final class ViewportVideo {
         return codecs;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -94,6 +95,7 @@ public final class ViewportVideo {
         private Builder() {}
 
         @JsonProperty("codecs")
+
         public Builder withCodecs(List<com.amazon.ask.model.interfaces.viewport.video.Codecs> codecs) {
             this.codecs = codecs;
             return this;

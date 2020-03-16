@@ -66,6 +66,7 @@ public final class ReminderRequest {
         return requestTime;
     }
 
+
     /**
      * Get trigger
      * @return trigger
@@ -74,6 +75,7 @@ public final class ReminderRequest {
     public com.amazon.ask.model.services.reminderManagement.Trigger getTrigger() {
         return trigger;
     }
+
 
     /**
      * Get alertInfo
@@ -84,6 +86,7 @@ public final class ReminderRequest {
         return alertInfo;
     }
 
+
     /**
      * Get pushNotification
      * @return pushNotification
@@ -92,6 +95,7 @@ public final class ReminderRequest {
     public com.amazon.ask.model.services.reminderManagement.PushNotification getPushNotification() {
         return pushNotification;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -146,6 +150,7 @@ public final class ReminderRequest {
         private Builder() {}
 
         @JsonProperty("requestTime")
+
         public Builder withRequestTime(OffsetDateTime requestTime) {
             this.requestTime = requestTime;
             return this;
@@ -153,6 +158,7 @@ public final class ReminderRequest {
 
 
         @JsonProperty("trigger")
+
         public Builder withTrigger(com.amazon.ask.model.services.reminderManagement.Trigger trigger) {
             this.trigger = trigger;
             return this;
@@ -160,6 +166,7 @@ public final class ReminderRequest {
 
 
         @JsonProperty("alertInfo")
+
         public Builder withAlertInfo(com.amazon.ask.model.services.reminderManagement.AlertInfo alertInfo) {
             this.alertInfo = alertInfo;
             return this;
@@ -167,6 +174,7 @@ public final class ReminderRequest {
 
 
         @JsonProperty("pushNotification")
+
         public Builder withPushNotification(com.amazon.ask.model.services.reminderManagement.PushNotification pushNotification) {
             this.pushNotification = pushNotification;
             return this;

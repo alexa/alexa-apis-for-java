@@ -77,6 +77,7 @@ public final class AuthorizeAttributes extends com.amazon.ask.model.interfaces.a
         return authorizationReferenceId;
     }
 
+
     /**
      * Get authorizationAmount
      * @return authorizationAmount
@@ -85,6 +86,7 @@ public final class AuthorizeAttributes extends com.amazon.ask.model.interfaces.a
     public com.amazon.ask.model.interfaces.amazonpay.model.request.Price getAuthorizationAmount() {
         return authorizationAmount;
     }
+
 
     /**
      * The maximum number of minutes allocated for the Authorize operation call to be processed. After this the authorization is automatically declined and you cannot capture funds against the authorization. The default value for Alexa transactions is 0. In order to speed up checkout time for voice users we recommend to not change this value.
@@ -95,6 +97,7 @@ public final class AuthorizeAttributes extends com.amazon.ask.model.interfaces.a
         return transactionTimeout;
     }
 
+
     /**
      * A description for the transaction that is included in emails to the user. Appears only when AuthorizeAndCapture is chosen.
      * @return sellerAuthorizationNote
@@ -104,6 +107,7 @@ public final class AuthorizeAttributes extends com.amazon.ask.model.interfaces.a
         return sellerAuthorizationNote;
     }
 
+
     /**
      * The description to be shown on the user's payment instrument statement if AuthorizeAndCapture is chosen. Format of soft descriptor sent to the payment processor is \"AMZ* &amp;lt;soft descriptor specified here&amp;gt;\". Default is \"AMZ*&amp;lt;SELLER_NAME&amp;gt; amzn.com/ pmts WA\". Maximum length can be 16 characters.
      * @return softDescriptor
@@ -112,6 +116,7 @@ public final class AuthorizeAttributes extends com.amazon.ask.model.interfaces.a
     public String getSoftDescriptor() {
         return softDescriptor;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -171,6 +176,7 @@ public final class AuthorizeAttributes extends com.amazon.ask.model.interfaces.a
         private Builder() {}
 
         @JsonProperty("authorizationReferenceId")
+
         public Builder withAuthorizationReferenceId(String authorizationReferenceId) {
             this.authorizationReferenceId = authorizationReferenceId;
             return this;
@@ -178,6 +184,7 @@ public final class AuthorizeAttributes extends com.amazon.ask.model.interfaces.a
 
 
         @JsonProperty("authorizationAmount")
+
         public Builder withAuthorizationAmount(com.amazon.ask.model.interfaces.amazonpay.model.request.Price authorizationAmount) {
             this.authorizationAmount = authorizationAmount;
             return this;
@@ -185,6 +192,7 @@ public final class AuthorizeAttributes extends com.amazon.ask.model.interfaces.a
 
 
         @JsonProperty("transactionTimeout")
+
         public Builder withTransactionTimeout(Integer transactionTimeout) {
             this.transactionTimeout = transactionTimeout;
             return this;
@@ -192,6 +200,7 @@ public final class AuthorizeAttributes extends com.amazon.ask.model.interfaces.a
 
 
         @JsonProperty("sellerAuthorizationNote")
+
         public Builder withSellerAuthorizationNote(String sellerAuthorizationNote) {
             this.sellerAuthorizationNote = sellerAuthorizationNote;
             return this;
@@ -199,6 +208,7 @@ public final class AuthorizeAttributes extends com.amazon.ask.model.interfaces.a
 
 
         @JsonProperty("softDescriptor")
+
         public Builder withSoftDescriptor(String softDescriptor) {
             this.softDescriptor = softDescriptor;
             return this;
@@ -206,6 +216,7 @@ public final class AuthorizeAttributes extends com.amazon.ask.model.interfaces.a
 
 
         @JsonProperty("@version")
+
         public Builder withVersion(String version) {
             this.version = version;
             return this;

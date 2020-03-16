@@ -48,6 +48,7 @@ public abstract class BaseEntity {
         return type;
     }
 
+
     /**
      * version of the request
      * @return version
@@ -56,6 +57,7 @@ public abstract class BaseEntity {
     public String getVersion() {
         return version;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {

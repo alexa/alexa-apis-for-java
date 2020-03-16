@@ -99,6 +99,7 @@ public final class ComponentVisibleOnScreen {
         return children;
     }
 
+
     /**
      * The entities which were attached to the element.
      * @return entities
@@ -107,6 +108,7 @@ public final class ComponentVisibleOnScreen {
     public List<com.amazon.ask.model.interfaces.alexa.presentation.apl.ComponentEntity> getEntities() {
         return entities;
     }
+
 
     /**
      * The id of the element.
@@ -117,6 +119,7 @@ public final class ComponentVisibleOnScreen {
         return id;
     }
 
+
     /**
      * Global position of the element (as seen by the device user).
      * @return position
@@ -125,6 +128,7 @@ public final class ComponentVisibleOnScreen {
     public String getPosition() {
         return position;
     }
+
 
     /**
      * The tags which were attached to the element.
@@ -135,6 +139,7 @@ public final class ComponentVisibleOnScreen {
         return tags;
     }
 
+
     /**
      * The transform which was applied to the element's position, specified as a 6-element numeric array containing the 2D homogeneous transformation matrix. The center of the transformation coordinate system is the center of the component. The transformation array is ordered as [A,B,C,D,Tx,Ty]. For more information refer to the W3C's CSS transforms documentation. 
      * @return transform
@@ -143,6 +148,7 @@ public final class ComponentVisibleOnScreen {
     public List<BigDecimal> getTransform() {
         return transform;
     }
+
 
     /**
      * The visual appearance of the element.
@@ -153,6 +159,7 @@ public final class ComponentVisibleOnScreen {
         return type;
     }
 
+
     /**
      * The system-generated uid of the element.
      * @return uid
@@ -162,6 +169,7 @@ public final class ComponentVisibleOnScreen {
         return uid;
     }
 
+
     /**
      * The relative visibility of the element. 0 = not visible, 1 = fully visible on screen.
      * @return visibility
@@ -170,6 +178,7 @@ public final class ComponentVisibleOnScreen {
     public Float getVisibility() {
         return visibility;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -239,6 +248,7 @@ public final class ComponentVisibleOnScreen {
         private Builder() {}
 
         @JsonProperty("children")
+
         public Builder withChildren(List<com.amazon.ask.model.interfaces.alexa.presentation.apl.ComponentVisibleOnScreen> children) {
             this.children = children;
             return this;
@@ -253,6 +263,7 @@ public final class ComponentVisibleOnScreen {
         }
 
         @JsonProperty("entities")
+
         public Builder withEntities(List<com.amazon.ask.model.interfaces.alexa.presentation.apl.ComponentEntity> entities) {
             this.entities = entities;
             return this;
@@ -267,6 +278,7 @@ public final class ComponentVisibleOnScreen {
         }
 
         @JsonProperty("id")
+
         public Builder withId(String id) {
             this.id = id;
             return this;
@@ -274,6 +286,7 @@ public final class ComponentVisibleOnScreen {
 
 
         @JsonProperty("position")
+
         public Builder withPosition(String position) {
             this.position = position;
             return this;
@@ -281,6 +294,7 @@ public final class ComponentVisibleOnScreen {
 
 
         @JsonProperty("tags")
+
         public Builder withTags(com.amazon.ask.model.interfaces.alexa.presentation.apl.ComponentVisibleOnScreenTags tags) {
             this.tags = tags;
             return this;
@@ -288,6 +302,7 @@ public final class ComponentVisibleOnScreen {
 
 
         @JsonProperty("transform")
+
         public Builder withTransform(List<BigDecimal> transform) {
             this.transform = transform;
             return this;
@@ -302,6 +317,7 @@ public final class ComponentVisibleOnScreen {
         }
 
         @JsonProperty("type")
+
         public Builder withType(String type) {
             this.type = type;
             return this;
@@ -309,6 +325,7 @@ public final class ComponentVisibleOnScreen {
 
 
         @JsonProperty("uid")
+
         public Builder withUid(String uid) {
             this.uid = uid;
             return this;
@@ -316,6 +333,7 @@ public final class ComponentVisibleOnScreen {
 
 
         @JsonProperty("visibility")
+
         public Builder withVisibility(Float visibility) {
             this.visibility = visibility;
             return this;

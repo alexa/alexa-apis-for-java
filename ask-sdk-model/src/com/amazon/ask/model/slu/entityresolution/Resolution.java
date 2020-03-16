@@ -62,6 +62,7 @@ public final class Resolution {
         return authority;
     }
 
+
     /**
      * Get status
      * @return status
@@ -71,6 +72,7 @@ public final class Resolution {
         return status;
     }
 
+
     /**
      * Get values
      * @return values
@@ -79,6 +81,7 @@ public final class Resolution {
     public List<com.amazon.ask.model.slu.entityresolution.ValueWrapper> getValues() {
         return values;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -130,6 +133,7 @@ public final class Resolution {
         private Builder() {}
 
         @JsonProperty("authority")
+
         public Builder withAuthority(String authority) {
             this.authority = authority;
             return this;
@@ -137,6 +141,7 @@ public final class Resolution {
 
 
         @JsonProperty("status")
+
         public Builder withStatus(com.amazon.ask.model.slu.entityresolution.Status status) {
             this.status = status;
             return this;
@@ -144,6 +149,7 @@ public final class Resolution {
 
 
         @JsonProperty("values")
+
         public Builder withValues(List<com.amazon.ask.model.slu.entityresolution.ValueWrapper> values) {
             this.values = values;
             return this;

@@ -47,6 +47,7 @@ public final class Reprompt {
         return outputSpeech;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class Reprompt {
         private Builder() {}
 
         @JsonProperty("outputSpeech")
+
         public Builder withOutputSpeech(com.amazon.ask.model.ui.OutputSpeech outputSpeech) {
             this.outputSpeech = outputSpeech;
             return this;

@@ -77,6 +77,7 @@ public final class SystemState {
         return application;
     }
 
+
     /**
      * Get user
      * @return user
@@ -85,6 +86,7 @@ public final class SystemState {
     public com.amazon.ask.model.User getUser() {
         return user;
     }
+
 
     /**
      * Get device
@@ -95,6 +97,7 @@ public final class SystemState {
         return device;
     }
 
+
     /**
      * Get person
      * @return person
@@ -103,6 +106,7 @@ public final class SystemState {
     public com.amazon.ask.model.Person getPerson() {
         return person;
     }
+
 
     /**
      * A string that references the correct base URI to refer to by region, for use with APIs such as the Device Location API and Progressive Response API.
@@ -113,6 +117,7 @@ public final class SystemState {
         return apiEndpoint;
     }
 
+
     /**
      * A bearer token string that can be used by the skill (during the skill session) to access Alexa APIs resources of the registered Alexa customer and/or person who is making the request. This token encapsulates the permissions authorized under the registered Alexa account and device, and (optionally) the recognized person. Some resources, such as name or email, require explicit customer consent.\" 
      * @return apiAccessToken
@@ -121,6 +126,7 @@ public final class SystemState {
     public String getApiAccessToken() {
         return apiAccessToken;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -181,6 +187,7 @@ public final class SystemState {
         private Builder() {}
 
         @JsonProperty("application")
+
         public Builder withApplication(com.amazon.ask.model.Application application) {
             this.application = application;
             return this;
@@ -188,6 +195,7 @@ public final class SystemState {
 
 
         @JsonProperty("user")
+
         public Builder withUser(com.amazon.ask.model.User user) {
             this.user = user;
             return this;
@@ -195,6 +203,7 @@ public final class SystemState {
 
 
         @JsonProperty("device")
+
         public Builder withDevice(com.amazon.ask.model.Device device) {
             this.device = device;
             return this;
@@ -202,6 +211,7 @@ public final class SystemState {
 
 
         @JsonProperty("person")
+
         public Builder withPerson(com.amazon.ask.model.Person person) {
             this.person = person;
             return this;
@@ -209,6 +219,7 @@ public final class SystemState {
 
 
         @JsonProperty("apiEndpoint")
+
         public Builder withApiEndpoint(String apiEndpoint) {
             this.apiEndpoint = apiEndpoint;
             return this;
@@ -216,6 +227,7 @@ public final class SystemState {
 
 
         @JsonProperty("apiAccessToken")
+
         public Builder withApiAccessToken(String apiAccessToken) {
             this.apiAccessToken = apiAccessToken;
             return this;

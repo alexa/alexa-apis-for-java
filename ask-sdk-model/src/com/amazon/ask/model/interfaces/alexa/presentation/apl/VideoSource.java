@@ -71,6 +71,7 @@ public final class VideoSource {
         return description;
     }
 
+
     /**
      * Duration of time to play. If not set, defaults to the entire stream. Expressed in milliseconds.
      * @return duration
@@ -79,6 +80,7 @@ public final class VideoSource {
     public String getDuration() {
         return duration;
     }
+
 
     /**
      * Media source material
@@ -89,6 +91,7 @@ public final class VideoSource {
         return url;
     }
 
+
     /**
      * Number of times to loop the video. Defaults to 0.
      * @return repeatCount
@@ -98,6 +101,7 @@ public final class VideoSource {
         return repeatCount;
     }
 
+
     /**
      * Offset to start playing at in the stream (defaults to 0).
      * @return offset
@@ -106,6 +110,7 @@ public final class VideoSource {
     public String getOffset() {
         return offset;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -163,6 +168,7 @@ public final class VideoSource {
         private Builder() {}
 
         @JsonProperty("description")
+
         public Builder withDescription(String description) {
             this.description = description;
             return this;
@@ -170,6 +176,7 @@ public final class VideoSource {
 
 
         @JsonProperty("duration")
+
         public Builder withDuration(Integer duration) {
             this.duration = String.valueOf(duration);
             return this;
@@ -181,6 +188,7 @@ public final class VideoSource {
         }
 
         @JsonProperty("url")
+
         public Builder withUrl(String url) {
             this.url = url;
             return this;
@@ -188,6 +196,7 @@ public final class VideoSource {
 
 
         @JsonProperty("repeatCount")
+
         public Builder withRepeatCount(Integer repeatCount) {
             this.repeatCount = String.valueOf(repeatCount);
             return this;
@@ -199,6 +208,7 @@ public final class VideoSource {
         }
 
         @JsonProperty("offset")
+
         public Builder withOffset(Integer offset) {
             this.offset = String.valueOf(offset);
             return this;

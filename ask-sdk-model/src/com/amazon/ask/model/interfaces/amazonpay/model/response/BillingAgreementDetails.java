@@ -42,7 +42,7 @@ public final class BillingAgreementDetails {
     private com.amazon.ask.model.interfaces.amazonpay.model.response.ReleaseEnvironment releaseEnvironment = null;
 
     @JsonProperty("billingAgreementStatus")
-    private com.amazon.ask.model.interfaces.amazonpay.model.v1.BillingAgreementStatus billingAgreementStatus = null;
+    private String billingAgreementStatus = null;
 
     @JsonProperty("billingAddress")
     private com.amazon.ask.model.interfaces.amazonpay.model.response.Destination billingAddress = null;
@@ -84,6 +84,7 @@ public final class BillingAgreementDetails {
         return billingAgreementId;
     }
 
+
     /**
      * Time at which billing agreement details created.
      * @return creationTimestamp
@@ -92,6 +93,7 @@ public final class BillingAgreementDetails {
     public OffsetDateTime getCreationTimestamp() {
         return creationTimestamp;
     }
+
 
     /**
      * The default shipping address of the buyer. Returned if needAmazonShippingAddress is set to true.
@@ -102,6 +104,7 @@ public final class BillingAgreementDetails {
         return destination;
     }
 
+
     /**
      * Merchant's preferred language of checkout.
      * @return checkoutLanguage
@@ -110,6 +113,7 @@ public final class BillingAgreementDetails {
     public String getCheckoutLanguage() {
         return checkoutLanguage;
     }
+
 
     /**
      * Get releaseEnvironment
@@ -120,13 +124,32 @@ public final class BillingAgreementDetails {
         return releaseEnvironment;
     }
 
+
     /**
      * Get billingAgreementStatus
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getBillingAgreementStatusAsString().
+     *
      * @return billingAgreementStatus
     **/
-    @JsonProperty("billingAgreementStatus")
+    
     public com.amazon.ask.model.interfaces.amazonpay.model.v1.BillingAgreementStatus getBillingAgreementStatus() {
-        return billingAgreementStatus;
+        return com.amazon.ask.model.interfaces.amazonpay.model.v1.BillingAgreementStatus.fromValue(billingAgreementStatus);
+    }
+
+    /**
+     * Get the underlying String value for billingAgreementStatus.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return billingAgreementStatus as a String value
+    **/
+    @JsonProperty("billingAgreementStatus")
+    public String getBillingAgreementStatusAsString() {
+      return billingAgreementStatus;
     }
 
     /**
@@ -137,6 +160,7 @@ public final class BillingAgreementDetails {
     public com.amazon.ask.model.interfaces.amazonpay.model.response.Destination getBillingAddress() {
         return billingAddress;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -194,12 +218,13 @@ public final class BillingAgreementDetails {
         private com.amazon.ask.model.interfaces.amazonpay.model.v1.Destination destination;
         private String checkoutLanguage;
         private com.amazon.ask.model.interfaces.amazonpay.model.response.ReleaseEnvironment releaseEnvironment;
-        private com.amazon.ask.model.interfaces.amazonpay.model.v1.BillingAgreementStatus billingAgreementStatus;
+        private String billingAgreementStatus;
         private com.amazon.ask.model.interfaces.amazonpay.model.response.Destination billingAddress;
 
         private Builder() {}
 
         @JsonProperty("billingAgreementId")
+
         public Builder withBillingAgreementId(String billingAgreementId) {
             this.billingAgreementId = billingAgreementId;
             return this;
@@ -207,6 +232,7 @@ public final class BillingAgreementDetails {
 
 
         @JsonProperty("creationTimestamp")
+
         public Builder withCreationTimestamp(OffsetDateTime creationTimestamp) {
             this.creationTimestamp = creationTimestamp;
             return this;
@@ -214,6 +240,7 @@ public final class BillingAgreementDetails {
 
 
         @JsonProperty("destination")
+
         public Builder withDestination(com.amazon.ask.model.interfaces.amazonpay.model.v1.Destination destination) {
             this.destination = destination;
             return this;
@@ -221,6 +248,7 @@ public final class BillingAgreementDetails {
 
 
         @JsonProperty("checkoutLanguage")
+
         public Builder withCheckoutLanguage(String checkoutLanguage) {
             this.checkoutLanguage = checkoutLanguage;
             return this;
@@ -228,6 +256,7 @@ public final class BillingAgreementDetails {
 
 
         @JsonProperty("releaseEnvironment")
+
         public Builder withReleaseEnvironment(com.amazon.ask.model.interfaces.amazonpay.model.response.ReleaseEnvironment releaseEnvironment) {
             this.releaseEnvironment = releaseEnvironment;
             return this;
@@ -235,13 +264,19 @@ public final class BillingAgreementDetails {
 
 
         @JsonProperty("billingAgreementStatus")
+        public Builder withBillingAgreementStatus(String billingAgreementStatus) {
+          this.billingAgreementStatus = billingAgreementStatus;
+          return this;
+        }
+
         public Builder withBillingAgreementStatus(com.amazon.ask.model.interfaces.amazonpay.model.v1.BillingAgreementStatus billingAgreementStatus) {
-            this.billingAgreementStatus = billingAgreementStatus;
+            this.billingAgreementStatus = billingAgreementStatus != null ? billingAgreementStatus.toString() : null;
             return this;
         }
 
 
         @JsonProperty("billingAddress")
+
         public Builder withBillingAddress(com.amazon.ask.model.interfaces.amazonpay.model.response.Destination billingAddress) {
             this.billingAddress = billingAddress;
             return this;

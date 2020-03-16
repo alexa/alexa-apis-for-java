@@ -62,6 +62,7 @@ public final class SendDirectiveDirective extends com.amazon.ask.model.Directive
         return header;
     }
 
+
     /**
      * The free form JSON object.
      * @return payload
@@ -71,6 +72,7 @@ public final class SendDirectiveDirective extends com.amazon.ask.model.Directive
         return payload;
     }
 
+
     /**
      * Identifies the gadget where the directive should be sent to. Each directive is targeted to one gadget (that is, one endpointId). If the same directive is be sent to multiple gadgets,  include one directive for each gadget in the response.
      * @return endpoint
@@ -79,6 +81,7 @@ public final class SendDirectiveDirective extends com.amazon.ask.model.Directive
     public com.amazon.ask.model.interfaces.customInterfaceController.Endpoint getEndpoint() {
         return endpoint;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -131,6 +134,7 @@ public final class SendDirectiveDirective extends com.amazon.ask.model.Directive
         private Builder() {}
 
         @JsonProperty("header")
+
         public Builder withHeader(com.amazon.ask.model.interfaces.customInterfaceController.Header header) {
             this.header = header;
             return this;
@@ -138,6 +142,7 @@ public final class SendDirectiveDirective extends com.amazon.ask.model.Directive
 
 
         @JsonProperty("payload")
+
         public Builder withPayload(Object payload) {
             this.payload = payload;
             return this;
@@ -145,6 +150,7 @@ public final class SendDirectiveDirective extends com.amazon.ask.model.Directive
 
 
         @JsonProperty("endpoint")
+
         public Builder withEndpoint(com.amazon.ask.model.interfaces.customInterfaceController.Endpoint endpoint) {
             this.endpoint = endpoint;
             return this;

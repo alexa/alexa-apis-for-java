@@ -28,7 +28,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public final class Trigger {
 
     @JsonProperty("type")
-    private com.amazon.ask.model.services.reminderManagement.TriggerType type = null;
+    private String type = null;
 
     @JsonProperty("scheduledTime")
     private LocalDateTime scheduledTime = null;
@@ -66,11 +66,29 @@ public final class Trigger {
 
     /**
      * Get type
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getTypeAsString().
+     *
      * @return type
     **/
-    @JsonProperty("type")
+    
     public com.amazon.ask.model.services.reminderManagement.TriggerType getType() {
-        return type;
+        return com.amazon.ask.model.services.reminderManagement.TriggerType.fromValue(type);
+    }
+
+    /**
+     * Get the underlying String value for type.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return type as a String value
+    **/
+    @JsonProperty("type")
+    public String getTypeAsString() {
+      return type;
     }
 
     /**
@@ -82,6 +100,7 @@ public final class Trigger {
         return scheduledTime;
     }
 
+
     /**
      * If reminder is set using relative time, use this field to specify the time after which reminder ll ring (in seconds)
      * @return offsetInSeconds
@@ -90,6 +109,7 @@ public final class Trigger {
     public Integer getOffsetInSeconds() {
         return offsetInSeconds;
     }
+
 
     /**
      * Intended reminder's timezone
@@ -100,6 +120,7 @@ public final class Trigger {
         return timeZoneId;
     }
 
+
     /**
      * Get recurrence
      * @return recurrence
@@ -108,6 +129,7 @@ public final class Trigger {
     public com.amazon.ask.model.services.reminderManagement.Recurrence getRecurrence() {
         return recurrence;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -156,7 +178,7 @@ public final class Trigger {
     }
   
     public static class Builder {
-        private com.amazon.ask.model.services.reminderManagement.TriggerType type;
+        private String type;
         private LocalDateTime scheduledTime;
         private Integer offsetInSeconds;
         private String timeZoneId;
@@ -165,13 +187,19 @@ public final class Trigger {
         private Builder() {}
 
         @JsonProperty("type")
+        public Builder withType(String type) {
+          this.type = type;
+          return this;
+        }
+
         public Builder withType(com.amazon.ask.model.services.reminderManagement.TriggerType type) {
-            this.type = type;
+            this.type = type != null ? type.toString() : null;
             return this;
         }
 
 
         @JsonProperty("scheduledTime")
+
         public Builder withScheduledTime(LocalDateTime scheduledTime) {
             this.scheduledTime = scheduledTime;
             return this;
@@ -179,6 +207,7 @@ public final class Trigger {
 
 
         @JsonProperty("offsetInSeconds")
+
         public Builder withOffsetInSeconds(Integer offsetInSeconds) {
             this.offsetInSeconds = offsetInSeconds;
             return this;
@@ -186,6 +215,7 @@ public final class Trigger {
 
 
         @JsonProperty("timeZoneId")
+
         public Builder withTimeZoneId(String timeZoneId) {
             this.timeZoneId = timeZoneId;
             return this;
@@ -193,6 +223,7 @@ public final class Trigger {
 
 
         @JsonProperty("recurrence")
+
         public Builder withRecurrence(com.amazon.ask.model.services.reminderManagement.Recurrence recurrence) {
             this.recurrence = recurrence;
             return this;

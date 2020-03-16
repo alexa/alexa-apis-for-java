@@ -65,6 +65,7 @@ public final class SellerOrderAttributes {
         return sellerOrderId;
     }
 
+
     /**
      * The identifier of the store from which the order was placed. This overrides the default value in Seller Central under Settings &amp;gt; Account Settings. It is displayed to the buyer in their emails and transaction history on the Amazon Payments website.
      * @return storeName
@@ -73,6 +74,7 @@ public final class SellerOrderAttributes {
     public String getStoreName() {
         return storeName;
     }
+
 
     /**
      * Any additional information that you want to include with this order reference.
@@ -83,6 +85,7 @@ public final class SellerOrderAttributes {
         return customInformation;
     }
 
+
     /**
      * This represents a description of the order that is displayed in emails to the buyer.
      * @return sellerNote
@@ -91,6 +94,7 @@ public final class SellerOrderAttributes {
     public String getSellerNote() {
         return sellerNote;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -145,6 +149,7 @@ public final class SellerOrderAttributes {
         private Builder() {}
 
         @JsonProperty("sellerOrderId")
+
         public Builder withSellerOrderId(String sellerOrderId) {
             this.sellerOrderId = sellerOrderId;
             return this;
@@ -152,6 +157,7 @@ public final class SellerOrderAttributes {
 
 
         @JsonProperty("storeName")
+
         public Builder withStoreName(String storeName) {
             this.storeName = storeName;
             return this;
@@ -159,6 +165,7 @@ public final class SellerOrderAttributes {
 
 
         @JsonProperty("customInformation")
+
         public Builder withCustomInformation(String customInformation) {
             this.customInformation = customInformation;
             return this;
@@ -166,6 +173,7 @@ public final class SellerOrderAttributes {
 
 
         @JsonProperty("sellerNote")
+
         public Builder withSellerNote(String sellerNote) {
             this.sellerNote = sellerNote;
             return this;

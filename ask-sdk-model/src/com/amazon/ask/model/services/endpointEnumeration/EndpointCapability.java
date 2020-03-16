@@ -59,6 +59,7 @@ public final class EndpointCapability {
         return _interface;
     }
 
+
     /**
      * The type of capability interface. This is usually AlexaInterface.
      * @return type
@@ -68,6 +69,7 @@ public final class EndpointCapability {
         return type;
     }
 
+
     /**
      * The version of the capability interface that the endpoint supports.
      * @return version
@@ -76,6 +78,7 @@ public final class EndpointCapability {
     public String getVersion() {
         return version;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -127,6 +130,7 @@ public final class EndpointCapability {
         private Builder() {}
 
         @JsonProperty("interface")
+
         public Builder withInterface(String _interface) {
             this._interface = _interface;
             return this;
@@ -134,6 +138,7 @@ public final class EndpointCapability {
 
 
         @JsonProperty("type")
+
         public Builder withType(String type) {
             this.type = type;
             return this;
@@ -141,6 +146,7 @@ public final class EndpointCapability {
 
 
         @JsonProperty("version")
+
         public Builder withVersion(String version) {
             this.version = version;
             return this;

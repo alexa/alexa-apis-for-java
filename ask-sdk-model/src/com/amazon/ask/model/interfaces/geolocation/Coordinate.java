@@ -59,6 +59,7 @@ public final class Coordinate {
         return latitudeInDegrees;
     }
 
+
     /**
      * A double representing the longitude in degrees of the device.
      * @return longitudeInDegrees
@@ -68,6 +69,7 @@ public final class Coordinate {
         return longitudeInDegrees;
     }
 
+
     /**
      * A double representing the accuracy of geolocation data in meters.
      * @return accuracyInMeters
@@ -76,6 +78,7 @@ public final class Coordinate {
     public Double getAccuracyInMeters() {
         return accuracyInMeters;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -127,6 +130,7 @@ public final class Coordinate {
         private Builder() {}
 
         @JsonProperty("latitudeInDegrees")
+
         public Builder withLatitudeInDegrees(Double latitudeInDegrees) {
             this.latitudeInDegrees = latitudeInDegrees;
             return this;
@@ -134,6 +138,7 @@ public final class Coordinate {
 
 
         @JsonProperty("longitudeInDegrees")
+
         public Builder withLongitudeInDegrees(Double longitudeInDegrees) {
             this.longitudeInDegrees = longitudeInDegrees;
             return this;
@@ -141,6 +146,7 @@ public final class Coordinate {
 
 
         @JsonProperty("accuracyInMeters")
+
         public Builder withAccuracyInMeters(Double accuracyInMeters) {
             this.accuracyInMeters = accuracyInMeters;
             return this;

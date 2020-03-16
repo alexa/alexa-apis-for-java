@@ -26,7 +26,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public final class ComponentVisibleOnScreenScrollableTag {
 
     @JsonProperty("direction")
-    private com.amazon.ask.model.interfaces.alexa.presentation.apl.ComponentVisibleOnScreenScrollableTagDirectionEnum direction = null;
+    private String direction = null;
 
     @JsonProperty("allowForward")
     private Boolean allowForward = null;
@@ -52,11 +52,29 @@ public final class ComponentVisibleOnScreenScrollableTag {
 
     /**
      * Get direction
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getDirectionAsString().
+     *
      * @return direction
     **/
-    @JsonProperty("direction")
+    
     public com.amazon.ask.model.interfaces.alexa.presentation.apl.ComponentVisibleOnScreenScrollableTagDirectionEnum getDirection() {
-        return direction;
+        return com.amazon.ask.model.interfaces.alexa.presentation.apl.ComponentVisibleOnScreenScrollableTagDirectionEnum.fromValue(direction);
+    }
+
+    /**
+     * Get the underlying String value for direction.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return direction as a String value
+    **/
+    @JsonProperty("direction")
+    public String getDirectionAsString() {
+      return direction;
     }
 
     /**
@@ -68,6 +86,7 @@ public final class ComponentVisibleOnScreenScrollableTag {
         return allowForward;
     }
 
+
     /**
      * Whether scrolling backward is accepted.
      * @return allowBackward
@@ -76,6 +95,7 @@ public final class ComponentVisibleOnScreenScrollableTag {
     public Boolean getAllowBackward() {
         return allowBackward;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -120,20 +140,26 @@ public final class ComponentVisibleOnScreenScrollableTag {
     }
   
     public static class Builder {
-        private com.amazon.ask.model.interfaces.alexa.presentation.apl.ComponentVisibleOnScreenScrollableTagDirectionEnum direction;
+        private String direction;
         private Boolean allowForward;
         private Boolean allowBackward;
 
         private Builder() {}
 
         @JsonProperty("direction")
+        public Builder withDirection(String direction) {
+          this.direction = direction;
+          return this;
+        }
+
         public Builder withDirection(com.amazon.ask.model.interfaces.alexa.presentation.apl.ComponentVisibleOnScreenScrollableTagDirectionEnum direction) {
-            this.direction = direction;
+            this.direction = direction != null ? direction.toString() : null;
             return this;
         }
 
 
         @JsonProperty("allowForward")
+
         public Builder withAllowForward(Boolean allowForward) {
             this.allowForward = allowForward;
             return this;
@@ -141,6 +167,7 @@ public final class ComponentVisibleOnScreenScrollableTag {
 
 
         @JsonProperty("allowBackward")
+
         public Builder withAllowBackward(Boolean allowBackward) {
             this.allowBackward = allowBackward;
             return this;

@@ -59,6 +59,7 @@ public final class AnimatedTransformProperty extends com.amazon.ask.model.interf
         return from;
     }
 
+
     /**
      * The ending value of the property.
      * @return to
@@ -67,6 +68,7 @@ public final class AnimatedTransformProperty extends com.amazon.ask.model.interf
     public List<com.amazon.ask.model.interfaces.alexa.presentation.apl.TransformProperty> getTo() {
         return to;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -116,6 +118,7 @@ public final class AnimatedTransformProperty extends com.amazon.ask.model.interf
         private Builder() {}
 
         @JsonProperty("from")
+
         public Builder withFrom(List<com.amazon.ask.model.interfaces.alexa.presentation.apl.TransformProperty> from) {
             this.from = from;
             return this;
@@ -130,6 +133,7 @@ public final class AnimatedTransformProperty extends com.amazon.ask.model.interf
         }
 
         @JsonProperty("to")
+
         public Builder withTo(List<com.amazon.ask.model.interfaces.alexa.presentation.apl.TransformProperty> to) {
             this.to = to;
             return this;

@@ -63,6 +63,7 @@ public abstract class Command {
         return type;
     }
 
+
     /**
      * The delay in milliseconds before this command starts executing; must be non-negative. Defaults to 0.
      * @return delay
@@ -71,6 +72,7 @@ public abstract class Command {
     public Integer getDelay() {
         return delay;
     }
+
 
     /**
      * A user-provided description of this command.
@@ -81,6 +83,7 @@ public abstract class Command {
         return description;
     }
 
+
     /**
      * If true, disable the Interaction Timer.
      * @return screenLock
@@ -90,6 +93,7 @@ public abstract class Command {
         return screenLock;
     }
 
+
     /**
      * A conditional expression to be evaluated in device. If false, the execution of the command is skipped. Defaults to true.
      * @return when
@@ -98,6 +102,7 @@ public abstract class Command {
     public String getWhen() {
         return when;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {

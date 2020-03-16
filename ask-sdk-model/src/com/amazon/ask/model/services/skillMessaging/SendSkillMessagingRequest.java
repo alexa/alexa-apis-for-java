@@ -53,6 +53,7 @@ public final class SendSkillMessagingRequest {
         return data;
     }
 
+
     /**
      * The number of seconds that the message will be retained to retry if message delivery is not successful. Allowed values are from 60 (1 minute) to 86400 (1 day), inclusive. The default is 3600 (1 hour). Multiple retries may occur during this interval. The retry logic is exponential. The first retry executes after 30 seconds, and this time period doubles on every retry. The retries will end when the total time elapsed since the message was first sent has exceeded the value you provided for expiresAfterSeconds. Message expiry is rarely a problem if the message handler has been set up correctly. With a correct setup, you will receive the message once promptly. This mechanism for retries is provided as a safeguard in case your skill goes down during a message delivery. 
      * minimum: 60
@@ -63,6 +64,7 @@ public final class SendSkillMessagingRequest {
     public Long getExpiresAfterSeconds() {
         return expiresAfterSeconds;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -111,6 +113,7 @@ public final class SendSkillMessagingRequest {
         private Builder() {}
 
         @JsonProperty("data")
+
         public Builder withData(Object data) {
             this.data = data;
             return this;
@@ -118,6 +121,7 @@ public final class SendSkillMessagingRequest {
 
 
         @JsonProperty("expiresAfterSeconds")
+
         public Builder withExpiresAfterSeconds(Long expiresAfterSeconds) {
             this.expiresAfterSeconds = expiresAfterSeconds;
             return this;

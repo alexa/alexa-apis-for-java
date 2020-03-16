@@ -50,6 +50,7 @@ public final class StopEventHandlerDirective extends com.amazon.ask.model.Direct
         return token;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -95,6 +96,7 @@ public final class StopEventHandlerDirective extends com.amazon.ask.model.Direct
         private Builder() {}
 
         @JsonProperty("token")
+
         public Builder withToken(String token) {
             this.token = token;
             return this;

@@ -77,6 +77,7 @@ public final class GeolocationState {
         return timestamp;
     }
 
+
     /**
      * Get coordinate
      * @return coordinate
@@ -85,6 +86,7 @@ public final class GeolocationState {
     public com.amazon.ask.model.interfaces.geolocation.Coordinate getCoordinate() {
         return coordinate;
     }
+
 
     /**
      * Get altitude
@@ -95,6 +97,7 @@ public final class GeolocationState {
         return altitude;
     }
 
+
     /**
      * Get heading
      * @return heading
@@ -103,6 +106,7 @@ public final class GeolocationState {
     public com.amazon.ask.model.interfaces.geolocation.Heading getHeading() {
         return heading;
     }
+
 
     /**
      * Get speed
@@ -113,6 +117,7 @@ public final class GeolocationState {
         return speed;
     }
 
+
     /**
      * Get locationServices
      * @return locationServices
@@ -121,6 +126,7 @@ public final class GeolocationState {
     public com.amazon.ask.model.interfaces.geolocation.LocationServices getLocationServices() {
         return locationServices;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -181,6 +187,7 @@ public final class GeolocationState {
         private Builder() {}
 
         @JsonProperty("timestamp")
+
         public Builder withTimestamp(String timestamp) {
             this.timestamp = timestamp;
             return this;
@@ -188,6 +195,7 @@ public final class GeolocationState {
 
 
         @JsonProperty("coordinate")
+
         public Builder withCoordinate(com.amazon.ask.model.interfaces.geolocation.Coordinate coordinate) {
             this.coordinate = coordinate;
             return this;
@@ -195,6 +203,7 @@ public final class GeolocationState {
 
 
         @JsonProperty("altitude")
+
         public Builder withAltitude(com.amazon.ask.model.interfaces.geolocation.Altitude altitude) {
             this.altitude = altitude;
             return this;
@@ -202,6 +211,7 @@ public final class GeolocationState {
 
 
         @JsonProperty("heading")
+
         public Builder withHeading(com.amazon.ask.model.interfaces.geolocation.Heading heading) {
             this.heading = heading;
             return this;
@@ -209,6 +219,7 @@ public final class GeolocationState {
 
 
         @JsonProperty("speed")
+
         public Builder withSpeed(com.amazon.ask.model.interfaces.geolocation.Speed speed) {
             this.speed = speed;
             return this;
@@ -216,6 +227,7 @@ public final class GeolocationState {
 
 
         @JsonProperty("locationServices")
+
         public Builder withLocationServices(com.amazon.ask.model.interfaces.geolocation.LocationServices locationServices) {
             this.locationServices = locationServices;
             return this;

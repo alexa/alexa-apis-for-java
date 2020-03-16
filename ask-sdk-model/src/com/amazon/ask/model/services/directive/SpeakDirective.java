@@ -50,6 +50,7 @@ public final class SpeakDirective extends com.amazon.ask.model.services.directiv
         return speech;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -95,6 +96,7 @@ public final class SpeakDirective extends com.amazon.ask.model.services.directiv
         private Builder() {}
 
         @JsonProperty("speech")
+
         public Builder withSpeech(String speech) {
             this.speech = speech;
             return this;

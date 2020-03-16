@@ -34,7 +34,7 @@ public abstract class OutputSpeech {
     protected String type = null;
 
     @JsonProperty("playBehavior")
-    protected com.amazon.ask.model.ui.PlayBehavior playBehavior = null;
+    protected String playBehavior = null;
 
     protected OutputSpeech() {
     }
@@ -48,13 +48,32 @@ public abstract class OutputSpeech {
         return type;
     }
 
+
     /**
      * Get playBehavior
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getPlayBehaviorAsString().
+     *
      * @return playBehavior
     **/
-    @JsonProperty("playBehavior")
+    
     public com.amazon.ask.model.ui.PlayBehavior getPlayBehavior() {
-        return playBehavior;
+        return com.amazon.ask.model.ui.PlayBehavior.fromValue(playBehavior);
+    }
+
+    /**
+     * Get the underlying String value for playBehavior.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return playBehavior as a String value
+    **/
+    @JsonProperty("playBehavior")
+    public String getPlayBehaviorAsString() {
+      return playBehavior;
     }
 
     @Override

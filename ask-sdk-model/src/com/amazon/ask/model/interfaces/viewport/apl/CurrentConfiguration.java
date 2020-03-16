@@ -26,7 +26,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public final class CurrentConfiguration {
 
     @JsonProperty("mode")
-    private com.amazon.ask.model.interfaces.viewport.Mode mode = null;
+    private String mode = null;
 
     @JsonProperty("video")
     private com.amazon.ask.model.interfaces.viewport.ViewportVideo video = null;
@@ -35,7 +35,7 @@ public final class CurrentConfiguration {
     private com.amazon.ask.model.interfaces.viewport.size.ViewportSize size = null;
 
     @JsonProperty("dialog")
-    private com.amazon.ask.model.interfaces.viewport.Dialog dialog = null;
+    private String dialog = null;
 
     public static Builder builder() {
         return new Builder();
@@ -58,11 +58,29 @@ public final class CurrentConfiguration {
 
     /**
      * Get mode
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getModeAsString().
+     *
      * @return mode
     **/
-    @JsonProperty("mode")
+    
     public com.amazon.ask.model.interfaces.viewport.Mode getMode() {
-        return mode;
+        return com.amazon.ask.model.interfaces.viewport.Mode.fromValue(mode);
+    }
+
+    /**
+     * Get the underlying String value for mode.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return mode as a String value
+    **/
+    @JsonProperty("mode")
+    public String getModeAsString() {
+      return mode;
     }
 
     /**
@@ -74,6 +92,7 @@ public final class CurrentConfiguration {
         return video;
     }
 
+
     /**
      * Get size
      * @return size
@@ -83,13 +102,32 @@ public final class CurrentConfiguration {
         return size;
     }
 
+
     /**
      * Get dialog
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getDialogAsString().
+     *
      * @return dialog
     **/
-    @JsonProperty("dialog")
+    
     public com.amazon.ask.model.interfaces.viewport.Dialog getDialog() {
-        return dialog;
+        return com.amazon.ask.model.interfaces.viewport.Dialog.fromValue(dialog);
+    }
+
+    /**
+     * Get the underlying String value for dialog.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return dialog as a String value
+    **/
+    @JsonProperty("dialog")
+    public String getDialogAsString() {
+      return dialog;
     }
 
     @Override
@@ -137,21 +175,27 @@ public final class CurrentConfiguration {
     }
   
     public static class Builder {
-        private com.amazon.ask.model.interfaces.viewport.Mode mode;
+        private String mode;
         private com.amazon.ask.model.interfaces.viewport.ViewportVideo video;
         private com.amazon.ask.model.interfaces.viewport.size.ViewportSize size;
-        private com.amazon.ask.model.interfaces.viewport.Dialog dialog;
+        private String dialog;
 
         private Builder() {}
 
         @JsonProperty("mode")
+        public Builder withMode(String mode) {
+          this.mode = mode;
+          return this;
+        }
+
         public Builder withMode(com.amazon.ask.model.interfaces.viewport.Mode mode) {
-            this.mode = mode;
+            this.mode = mode != null ? mode.toString() : null;
             return this;
         }
 
 
         @JsonProperty("video")
+
         public Builder withVideo(com.amazon.ask.model.interfaces.viewport.ViewportVideo video) {
             this.video = video;
             return this;
@@ -159,6 +203,7 @@ public final class CurrentConfiguration {
 
 
         @JsonProperty("size")
+
         public Builder withSize(com.amazon.ask.model.interfaces.viewport.size.ViewportSize size) {
             this.size = size;
             return this;
@@ -166,8 +211,13 @@ public final class CurrentConfiguration {
 
 
         @JsonProperty("dialog")
+        public Builder withDialog(String dialog) {
+          this.dialog = dialog;
+          return this;
+        }
+
         public Builder withDialog(com.amazon.ask.model.interfaces.viewport.Dialog dialog) {
-            this.dialog = dialog;
+            this.dialog = dialog != null ? dialog.toString() : null;
             return this;
         }
 

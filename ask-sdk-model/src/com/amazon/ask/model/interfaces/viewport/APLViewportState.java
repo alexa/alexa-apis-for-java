@@ -78,6 +78,7 @@ public final class APLViewportState extends com.amazon.ask.model.interfaces.view
         return shape;
     }
 
+
     /**
      * The pixel density of the viewport.
      * @return dpi
@@ -86,6 +87,7 @@ public final class APLViewportState extends com.amazon.ask.model.interfaces.view
     public BigDecimal getDpi() {
         return dpi;
     }
+
 
     /**
      * Get presentationType
@@ -96,6 +98,7 @@ public final class APLViewportState extends com.amazon.ask.model.interfaces.view
         return presentationType;
     }
 
+
     /**
      * Indicates if the viewport can be rotated through 90 degrees.
      * @return canRotate
@@ -105,6 +108,7 @@ public final class APLViewportState extends com.amazon.ask.model.interfaces.view
         return canRotate;
     }
 
+
     /**
      * Get _configuration
      * @return _configuration
@@ -113,6 +117,7 @@ public final class APLViewportState extends com.amazon.ask.model.interfaces.view
     public com.amazon.ask.model.interfaces.viewport.apl.ViewportConfiguration getConfiguration() {
         return _configuration;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -172,6 +177,7 @@ public final class APLViewportState extends com.amazon.ask.model.interfaces.view
         private Builder() {}
 
         @JsonProperty("id")
+
         public Builder withId(String id) {
             this.id = id;
             return this;
@@ -179,6 +185,7 @@ public final class APLViewportState extends com.amazon.ask.model.interfaces.view
 
 
         @JsonProperty("shape")
+
         public Builder withShape(com.amazon.ask.model.interfaces.viewport.Shape shape) {
             this.shape = shape;
             return this;
@@ -186,6 +193,7 @@ public final class APLViewportState extends com.amazon.ask.model.interfaces.view
 
 
         @JsonProperty("dpi")
+
         public Builder withDpi(BigDecimal dpi) {
             this.dpi = dpi;
             return this;
@@ -193,6 +201,7 @@ public final class APLViewportState extends com.amazon.ask.model.interfaces.view
 
 
         @JsonProperty("presentationType")
+
         public Builder withPresentationType(com.amazon.ask.model.interfaces.viewport.PresentationType presentationType) {
             this.presentationType = presentationType;
             return this;
@@ -200,6 +209,7 @@ public final class APLViewportState extends com.amazon.ask.model.interfaces.view
 
 
         @JsonProperty("canRotate")
+
         public Builder withCanRotate(Boolean canRotate) {
             this.canRotate = canRotate;
             return this;
@@ -207,6 +217,7 @@ public final class APLViewportState extends com.amazon.ask.model.interfaces.view
 
 
         @JsonProperty("configuration")
+
         public Builder withConfiguration(com.amazon.ask.model.interfaces.viewport.apl.ViewportConfiguration _configuration) {
             this._configuration = _configuration;
             return this;

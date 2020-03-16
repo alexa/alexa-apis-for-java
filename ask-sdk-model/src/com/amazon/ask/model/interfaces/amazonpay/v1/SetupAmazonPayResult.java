@@ -47,6 +47,7 @@ public final class SetupAmazonPayResult {
         return billingAgreementDetails;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class SetupAmazonPayResult {
         private Builder() {}
 
         @JsonProperty("billingAgreementDetails")
+
         public Builder withBillingAgreementDetails(com.amazon.ask.model.interfaces.amazonpay.model.v1.BillingAgreementDetails billingAgreementDetails) {
             this.billingAgreementDetails = billingAgreementDetails;
             return this;

@@ -53,6 +53,7 @@ public final class Value {
         return name;
     }
 
+
     /**
      * The id for the resolution value.
      * @return id
@@ -61,6 +62,7 @@ public final class Value {
     public String getId() {
         return id;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class Value {
         private Builder() {}
 
         @JsonProperty("name")
+
         public Builder withName(String name) {
             this.name = name;
             return this;
@@ -116,6 +119,7 @@ public final class Value {
 
 
         @JsonProperty("id")
+
         public Builder withId(String id) {
             this.id = id;
             return this;

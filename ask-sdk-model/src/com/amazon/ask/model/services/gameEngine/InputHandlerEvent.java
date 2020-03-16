@@ -56,6 +56,7 @@ public final class InputHandlerEvent {
         return name;
     }
 
+
     /**
      * A chronologically ordered report of the raw Button Events that contributed to this Input Handler Event.
      * @return inputEvents
@@ -64,6 +65,7 @@ public final class InputHandlerEvent {
     public List<com.amazon.ask.model.services.gameEngine.InputEvent> getInputEvents() {
         return inputEvents;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,6 +114,7 @@ public final class InputHandlerEvent {
         private Builder() {}
 
         @JsonProperty("name")
+
         public Builder withName(String name) {
             this.name = name;
             return this;
@@ -119,6 +122,7 @@ public final class InputHandlerEvent {
 
 
         @JsonProperty("inputEvents")
+
         public Builder withInputEvents(List<com.amazon.ask.model.services.gameEngine.InputEvent> inputEvents) {
             this.inputEvents = inputEvents;
             return this;

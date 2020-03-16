@@ -35,7 +35,7 @@ public final class AlexaListMetadata {
     private String name = null;
 
     @JsonProperty("state")
-    private com.amazon.ask.model.services.listManagement.ListState state = null;
+    private String state = null;
 
     @JsonProperty("version")
     private Long version = null;
@@ -74,6 +74,7 @@ public final class AlexaListMetadata {
         return listId;
     }
 
+
     /**
      * Get name
      * @return name
@@ -83,13 +84,32 @@ public final class AlexaListMetadata {
         return name;
     }
 
+
     /**
      * Get state
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getStateAsString().
+     *
      * @return state
     **/
-    @JsonProperty("state")
+    
     public com.amazon.ask.model.services.listManagement.ListState getState() {
-        return state;
+        return com.amazon.ask.model.services.listManagement.ListState.fromValue(state);
+    }
+
+    /**
+     * Get the underlying String value for state.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return state as a String value
+    **/
+    @JsonProperty("state")
+    public String getStateAsString() {
+      return state;
     }
 
     /**
@@ -101,6 +121,7 @@ public final class AlexaListMetadata {
         return version;
     }
 
+
     /**
      * Get statusMap
      * @return statusMap
@@ -109,6 +130,7 @@ public final class AlexaListMetadata {
     public List<com.amazon.ask.model.services.listManagement.Status> getStatusMap() {
         return statusMap;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -159,13 +181,14 @@ public final class AlexaListMetadata {
     public static class Builder {
         private String listId;
         private String name;
-        private com.amazon.ask.model.services.listManagement.ListState state;
+        private String state;
         private Long version;
         private List<com.amazon.ask.model.services.listManagement.Status> statusMap;
 
         private Builder() {}
 
         @JsonProperty("listId")
+
         public Builder withListId(String listId) {
             this.listId = listId;
             return this;
@@ -173,6 +196,7 @@ public final class AlexaListMetadata {
 
 
         @JsonProperty("name")
+
         public Builder withName(String name) {
             this.name = name;
             return this;
@@ -180,13 +204,19 @@ public final class AlexaListMetadata {
 
 
         @JsonProperty("state")
+        public Builder withState(String state) {
+          this.state = state;
+          return this;
+        }
+
         public Builder withState(com.amazon.ask.model.services.listManagement.ListState state) {
-            this.state = state;
+            this.state = state != null ? state.toString() : null;
             return this;
         }
 
 
         @JsonProperty("version")
+
         public Builder withVersion(Long version) {
             this.version = version;
             return this;
@@ -194,6 +224,7 @@ public final class AlexaListMetadata {
 
 
         @JsonProperty("statusMap")
+
         public Builder withStatusMap(List<com.amazon.ask.model.services.listManagement.Status> statusMap) {
             this.statusMap = statusMap;
             return this;

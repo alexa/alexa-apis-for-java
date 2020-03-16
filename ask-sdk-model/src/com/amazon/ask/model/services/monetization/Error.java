@@ -47,6 +47,7 @@ public final class Error {
         return message;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class Error {
         private Builder() {}
 
         @JsonProperty("message")
+
         public Builder withMessage(String message) {
             this.message = message;
             return this;

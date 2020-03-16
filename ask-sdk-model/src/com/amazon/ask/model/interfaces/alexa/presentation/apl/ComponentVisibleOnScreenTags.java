@@ -113,6 +113,7 @@ public final class ComponentVisibleOnScreenTags {
         return checked;
     }
 
+
     /**
      * A button or item that can be pressed.
      * @return clickable
@@ -121,6 +122,7 @@ public final class ComponentVisibleOnScreenTags {
     public Boolean getClickable() {
         return clickable;
     }
+
 
     /**
      * Whether the element is disabled.
@@ -131,6 +133,7 @@ public final class ComponentVisibleOnScreenTags {
         return disabled;
     }
 
+
     /**
      * The focused state of a component that can take focus.
      * @return focused
@@ -139,6 +142,7 @@ public final class ComponentVisibleOnScreenTags {
     public Boolean getFocused() {
         return focused;
     }
+
 
     /**
      * An ordered list of items.
@@ -149,6 +153,7 @@ public final class ComponentVisibleOnScreenTags {
         return list;
     }
 
+
     /**
      * An element in a sequence.
      * @return listItem
@@ -157,6 +162,7 @@ public final class ComponentVisibleOnScreenTags {
     public com.amazon.ask.model.interfaces.alexa.presentation.apl.ComponentVisibleOnScreenListItemTag getListItem() {
         return listItem;
     }
+
 
     /**
      * Media player
@@ -167,6 +173,7 @@ public final class ComponentVisibleOnScreenTags {
         return media;
     }
 
+
     /**
      * A visibly numbered element.
      * @return ordinal
@@ -175,6 +182,7 @@ public final class ComponentVisibleOnScreenTags {
     public Integer getOrdinal() {
         return ordinal;
     }
+
 
     /**
      * A collection of items that are displayed one at a time.
@@ -185,6 +193,7 @@ public final class ComponentVisibleOnScreenTags {
         return pager;
     }
 
+
     /**
      * A scrolling region
      * @return scrollable
@@ -193,6 +202,7 @@ public final class ComponentVisibleOnScreenTags {
     public com.amazon.ask.model.interfaces.alexa.presentation.apl.ComponentVisibleOnScreenScrollableTag getScrollable() {
         return scrollable;
     }
+
 
     /**
      * A region of the screen that can be read out by TTS
@@ -203,6 +213,7 @@ public final class ComponentVisibleOnScreenTags {
         return spoken;
     }
 
+
     /**
      * The entire screen in which a document is rendered.
      * @return viewport
@@ -211,6 +222,7 @@ public final class ComponentVisibleOnScreenTags {
     public com.amazon.ask.model.interfaces.alexa.presentation.apl.ComponentVisibleOnScreenViewportTag getViewport() {
         return viewport;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -289,6 +301,7 @@ public final class ComponentVisibleOnScreenTags {
         private Builder() {}
 
         @JsonProperty("checked")
+
         public Builder withChecked(Boolean checked) {
             this.checked = checked;
             return this;
@@ -296,6 +309,7 @@ public final class ComponentVisibleOnScreenTags {
 
 
         @JsonProperty("clickable")
+
         public Builder withClickable(Boolean clickable) {
             this.clickable = clickable;
             return this;
@@ -303,6 +317,7 @@ public final class ComponentVisibleOnScreenTags {
 
 
         @JsonProperty("disabled")
+
         public Builder withDisabled(Boolean disabled) {
             this.disabled = disabled;
             return this;
@@ -310,6 +325,7 @@ public final class ComponentVisibleOnScreenTags {
 
 
         @JsonProperty("focused")
+
         public Builder withFocused(Boolean focused) {
             this.focused = focused;
             return this;
@@ -317,6 +333,7 @@ public final class ComponentVisibleOnScreenTags {
 
 
         @JsonProperty("list")
+
         public Builder withList(com.amazon.ask.model.interfaces.alexa.presentation.apl.ComponentVisibleOnScreenListTag list) {
             this.list = list;
             return this;
@@ -324,6 +341,7 @@ public final class ComponentVisibleOnScreenTags {
 
 
         @JsonProperty("listItem")
+
         public Builder withListItem(com.amazon.ask.model.interfaces.alexa.presentation.apl.ComponentVisibleOnScreenListItemTag listItem) {
             this.listItem = listItem;
             return this;
@@ -331,6 +349,7 @@ public final class ComponentVisibleOnScreenTags {
 
 
         @JsonProperty("media")
+
         public Builder withMedia(com.amazon.ask.model.interfaces.alexa.presentation.apl.ComponentVisibleOnScreenMediaTag media) {
             this.media = media;
             return this;
@@ -338,6 +357,7 @@ public final class ComponentVisibleOnScreenTags {
 
 
         @JsonProperty("ordinal")
+
         public Builder withOrdinal(Integer ordinal) {
             this.ordinal = ordinal;
             return this;
@@ -345,6 +365,7 @@ public final class ComponentVisibleOnScreenTags {
 
 
         @JsonProperty("pager")
+
         public Builder withPager(com.amazon.ask.model.interfaces.alexa.presentation.apl.ComponentVisibleOnScreenPagerTag pager) {
             this.pager = pager;
             return this;
@@ -352,6 +373,7 @@ public final class ComponentVisibleOnScreenTags {
 
 
         @JsonProperty("scrollable")
+
         public Builder withScrollable(com.amazon.ask.model.interfaces.alexa.presentation.apl.ComponentVisibleOnScreenScrollableTag scrollable) {
             this.scrollable = scrollable;
             return this;
@@ -359,6 +381,7 @@ public final class ComponentVisibleOnScreenTags {
 
 
         @JsonProperty("spoken")
+
         public Builder withSpoken(Boolean spoken) {
             this.spoken = spoken;
             return this;
@@ -366,6 +389,7 @@ public final class ComponentVisibleOnScreenTags {
 
 
         @JsonProperty("viewport")
+
         public Builder withViewport(com.amazon.ask.model.interfaces.alexa.presentation.apl.ComponentVisibleOnScreenViewportTag viewport) {
             this.viewport = viewport;
             return this;

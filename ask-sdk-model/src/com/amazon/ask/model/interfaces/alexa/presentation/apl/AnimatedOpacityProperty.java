@@ -56,6 +56,7 @@ public final class AnimatedOpacityProperty extends com.amazon.ask.model.interfac
         return from;
     }
 
+
     /**
      * The ending value of the property.
      * @return to
@@ -64,6 +65,7 @@ public final class AnimatedOpacityProperty extends com.amazon.ask.model.interfac
     public String getTo() {
         return to;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -113,6 +115,7 @@ public final class AnimatedOpacityProperty extends com.amazon.ask.model.interfac
         private Builder() {}
 
         @JsonProperty("from")
+
         public Builder withFrom(Double from) {
             this.from = String.valueOf(from);
             return this;
@@ -124,6 +127,7 @@ public final class AnimatedOpacityProperty extends com.amazon.ask.model.interfac
         }
 
         @JsonProperty("to")
+
         public Builder withTo(Double to) {
             this.to = String.valueOf(to);
             return this;

@@ -26,7 +26,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public final class Transformer {
 
     @JsonProperty("transformer")
-    private com.amazon.ask.model.interfaces.alexa.presentation.html.TransformerType transformer = null;
+    private String transformer = null;
 
     @JsonProperty("inputPath")
     private String inputPath = null;
@@ -52,11 +52,29 @@ public final class Transformer {
 
     /**
      * Get transformer
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getTransformerAsString().
+     *
      * @return transformer
     **/
-    @JsonProperty("transformer")
+    
     public com.amazon.ask.model.interfaces.alexa.presentation.html.TransformerType getTransformer() {
-        return transformer;
+        return com.amazon.ask.model.interfaces.alexa.presentation.html.TransformerType.fromValue(transformer);
+    }
+
+    /**
+     * Get the underlying String value for transformer.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return transformer as a String value
+    **/
+    @JsonProperty("transformer")
+    public String getTransformerAsString() {
+      return transformer;
     }
 
     /**
@@ -68,6 +86,7 @@ public final class Transformer {
         return inputPath;
     }
 
+
     /**
      * Name of the output property to add to the message object. For example, if the inputPath is \"address.street\", the transformer output will be stored at \"address.outputName\". If no outputName is supplied, the transformer output will override the value at inputPath. 
      * @return outputName
@@ -76,6 +95,7 @@ public final class Transformer {
     public String getOutputName() {
         return outputName;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -120,20 +140,26 @@ public final class Transformer {
     }
   
     public static class Builder {
-        private com.amazon.ask.model.interfaces.alexa.presentation.html.TransformerType transformer;
+        private String transformer;
         private String inputPath;
         private String outputName;
 
         private Builder() {}
 
         @JsonProperty("transformer")
+        public Builder withTransformer(String transformer) {
+          this.transformer = transformer;
+          return this;
+        }
+
         public Builder withTransformer(com.amazon.ask.model.interfaces.alexa.presentation.html.TransformerType transformer) {
-            this.transformer = transformer;
+            this.transformer = transformer != null ? transformer.toString() : null;
             return this;
         }
 
 
         @JsonProperty("inputPath")
+
         public Builder withInputPath(String inputPath) {
             this.inputPath = inputPath;
             return this;
@@ -141,6 +167,7 @@ public final class Transformer {
 
 
         @JsonProperty("outputName")
+
         public Builder withOutputName(String outputName) {
             this.outputName = outputName;
             return this;

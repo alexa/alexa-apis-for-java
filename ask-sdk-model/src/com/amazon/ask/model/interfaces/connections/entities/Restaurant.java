@@ -59,6 +59,7 @@ public final class Restaurant extends com.amazon.ask.model.interfaces.connection
         return name;
     }
 
+
     /**
      * location
      * @return location
@@ -67,6 +68,7 @@ public final class Restaurant extends com.amazon.ask.model.interfaces.connection
     public com.amazon.ask.model.interfaces.connections.entities.PostalAddress getLocation() {
         return location;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -117,6 +119,7 @@ public final class Restaurant extends com.amazon.ask.model.interfaces.connection
         private Builder() {}
 
         @JsonProperty("@version")
+
         public Builder withVersion(String version) {
             this.version = version;
             return this;
@@ -124,6 +127,7 @@ public final class Restaurant extends com.amazon.ask.model.interfaces.connection
 
 
         @JsonProperty("name")
+
         public Builder withName(String name) {
             this.name = name;
             return this;
@@ -131,6 +135,7 @@ public final class Restaurant extends com.amazon.ask.model.interfaces.connection
 
 
         @JsonProperty("location")
+
         public Builder withLocation(com.amazon.ask.model.interfaces.connections.entities.PostalAddress location) {
             this.location = location;
             return this;

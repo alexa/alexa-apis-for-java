@@ -208,6 +208,12 @@ public class SubTypesManifest {
     servicesGameEngineRecognizerSubTypes.put("progress", com.amazon.ask.model.services.gameEngine.ProgressRecognizer.class);
     baseTypes.put(com.amazon.ask.model.services.gameEngine.Recognizer.class, servicesGameEngineRecognizerSubTypes);
 
+    Map<String, Class> servicesTimerManagementOperationSubTypes = new HashMap<>();
+    servicesTimerManagementOperationSubTypes.put("LAUNCH_TASK", com.amazon.ask.model.services.timerManagement.LaunchTaskOperation.class);
+    servicesTimerManagementOperationSubTypes.put("ANNOUNCE", com.amazon.ask.model.services.timerManagement.AnnounceOperation.class);
+    servicesTimerManagementOperationSubTypes.put("NOTIFY_ONLY", com.amazon.ask.model.services.timerManagement.NotifyOnlyOperation.class);
+    baseTypes.put(com.amazon.ask.model.services.timerManagement.Operation.class, servicesTimerManagementOperationSubTypes);
+
     Map<String, Class> uiCardSubTypes = new HashMap<>();
     uiCardSubTypes.put("AskForPermissionsConsent", com.amazon.ask.model.ui.AskForPermissionsConsentCard.class);
     uiCardSubTypes.put("LinkAccount", com.amazon.ask.model.ui.LinkAccountCard.class);

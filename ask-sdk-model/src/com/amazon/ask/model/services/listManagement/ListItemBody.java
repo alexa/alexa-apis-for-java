@@ -56,6 +56,7 @@ public final class ListItemBody {
         return listId;
     }
 
+
     /**
      * Get listItemIds
      * @return listItemIds
@@ -64,6 +65,7 @@ public final class ListItemBody {
     public List<String> getListItemIds() {
         return listItemIds;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,6 +114,7 @@ public final class ListItemBody {
         private Builder() {}
 
         @JsonProperty("listId")
+
         public Builder withListId(String listId) {
             this.listId = listId;
             return this;
@@ -119,6 +122,7 @@ public final class ListItemBody {
 
 
         @JsonProperty("listItemIds")
+
         public Builder withListItemIds(List<String> listItemIds) {
             this.listItemIds = listItemIds;
             return this;

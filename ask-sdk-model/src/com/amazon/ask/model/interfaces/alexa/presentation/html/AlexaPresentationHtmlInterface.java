@@ -47,6 +47,7 @@ public final class AlexaPresentationHtmlInterface {
         return runtime;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class AlexaPresentationHtmlInterface {
         private Builder() {}
 
         @JsonProperty("runtime")
+
         public Builder withRuntime(com.amazon.ask.model.interfaces.alexa.presentation.html.Runtime runtime) {
             this.runtime = runtime;
             return this;

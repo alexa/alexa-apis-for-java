@@ -56,6 +56,7 @@ public final class ProgressRecognizer extends com.amazon.ask.model.services.game
         return recognizer;
     }
 
+
     /**
      * The completion threshold, as a decimal percentage, of the specified recognizer before which this recognizer becomes true.
      * @return completion
@@ -64,6 +65,7 @@ public final class ProgressRecognizer extends com.amazon.ask.model.services.game
     public Double getCompletion() {
         return completion;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -113,6 +115,7 @@ public final class ProgressRecognizer extends com.amazon.ask.model.services.game
         private Builder() {}
 
         @JsonProperty("recognizer")
+
         public Builder withRecognizer(String recognizer) {
             this.recognizer = recognizer;
             return this;
@@ -120,6 +123,7 @@ public final class ProgressRecognizer extends com.amazon.ask.model.services.game
 
 
         @JsonProperty("completion")
+
         public Builder withCompletion(Double completion) {
             this.completion = completion;
             return this;

@@ -71,6 +71,7 @@ public final class RenderDocumentDirective extends com.amazon.ask.model.Directiv
         return token;
     }
 
+
     /**
      * One of supported profiles in character display. Default value is NONE.
      * @return targetProfile
@@ -79,6 +80,7 @@ public final class RenderDocumentDirective extends com.amazon.ask.model.Directiv
     public com.amazon.ask.model.interfaces.alexa.presentation.aplt.TargetProfile getTargetProfile() {
         return targetProfile;
     }
+
 
     /**
      * Depending on the document type, it represents either an entire APLT document or a reference Link to the document. In a Link object, the value of the 'src' should follow a URI format defined like 'doc://alexa/aplt/documents/&amp;lt;document_id&amp;gt;'. The 'document_id' is a reference to the APLT document that the developer stores through APL Authoring Tool.
@@ -89,6 +91,7 @@ public final class RenderDocumentDirective extends com.amazon.ask.model.Directiv
         return document;
     }
 
+
     /**
      * Data sources to bind to the document when rendering.
      * @return datasources
@@ -97,6 +100,7 @@ public final class RenderDocumentDirective extends com.amazon.ask.model.Directiv
     public Map<String, Object> getDatasources() {
         return datasources;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -152,6 +156,7 @@ public final class RenderDocumentDirective extends com.amazon.ask.model.Directiv
         private Builder() {}
 
         @JsonProperty("token")
+
         public Builder withToken(String token) {
             this.token = token;
             return this;
@@ -159,6 +164,7 @@ public final class RenderDocumentDirective extends com.amazon.ask.model.Directiv
 
 
         @JsonProperty("targetProfile")
+
         public Builder withTargetProfile(com.amazon.ask.model.interfaces.alexa.presentation.aplt.TargetProfile targetProfile) {
             this.targetProfile = targetProfile;
             return this;
@@ -166,6 +172,7 @@ public final class RenderDocumentDirective extends com.amazon.ask.model.Directiv
 
 
         @JsonProperty("document")
+
         public Builder withDocument(Map<String, Object> document) {
             this.document = document;
             return this;
@@ -180,6 +187,7 @@ public final class RenderDocumentDirective extends com.amazon.ask.model.Directiv
         }
 
         @JsonProperty("datasources")
+
         public Builder withDatasources(Map<String, Object> datasources) {
             this.datasources = datasources;
             return this;

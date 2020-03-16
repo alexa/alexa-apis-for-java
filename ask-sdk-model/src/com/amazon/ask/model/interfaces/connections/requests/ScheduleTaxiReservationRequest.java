@@ -71,6 +71,7 @@ public final class ScheduleTaxiReservationRequest extends com.amazon.ask.model.i
         return pickupTime;
     }
 
+
     /**
      * party size
      * @return partySize
@@ -79,6 +80,7 @@ public final class ScheduleTaxiReservationRequest extends com.amazon.ask.model.i
     public String getPartySize() {
         return partySize;
     }
+
 
     /**
      * pick up location
@@ -89,6 +91,7 @@ public final class ScheduleTaxiReservationRequest extends com.amazon.ask.model.i
         return pickupLocation;
     }
 
+
     /**
      * drop off location
      * @return dropOffLocation
@@ -97,6 +100,7 @@ public final class ScheduleTaxiReservationRequest extends com.amazon.ask.model.i
     public com.amazon.ask.model.interfaces.connections.entities.PostalAddress getDropOffLocation() {
         return dropOffLocation;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -153,6 +157,7 @@ public final class ScheduleTaxiReservationRequest extends com.amazon.ask.model.i
         private Builder() {}
 
         @JsonProperty("@version")
+
         public Builder withVersion(String version) {
             this.version = version;
             return this;
@@ -160,6 +165,7 @@ public final class ScheduleTaxiReservationRequest extends com.amazon.ask.model.i
 
 
         @JsonProperty("pickupTime")
+
         public Builder withPickupTime(String pickupTime) {
             this.pickupTime = pickupTime;
             return this;
@@ -167,6 +173,7 @@ public final class ScheduleTaxiReservationRequest extends com.amazon.ask.model.i
 
 
         @JsonProperty("partySize")
+
         public Builder withPartySize(String partySize) {
             this.partySize = partySize;
             return this;
@@ -174,6 +181,7 @@ public final class ScheduleTaxiReservationRequest extends com.amazon.ask.model.i
 
 
         @JsonProperty("pickupLocation")
+
         public Builder withPickupLocation(com.amazon.ask.model.interfaces.connections.entities.PostalAddress pickupLocation) {
             this.pickupLocation = pickupLocation;
             return this;
@@ -181,6 +189,7 @@ public final class ScheduleTaxiReservationRequest extends com.amazon.ask.model.i
 
 
         @JsonProperty("dropOffLocation")
+
         public Builder withDropOffLocation(com.amazon.ask.model.interfaces.connections.entities.PostalAddress dropOffLocation) {
             this.dropOffLocation = dropOffLocation;
             return this;

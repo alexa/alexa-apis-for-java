@@ -83,6 +83,7 @@ public final class SpeakListCommand extends com.amazon.ask.model.interfaces.alex
         return align;
     }
 
+
     /**
      * The id of the component to read.
      * @return componentId
@@ -91,6 +92,7 @@ public final class SpeakListCommand extends com.amazon.ask.model.interfaces.alex
     public String getComponentId() {
         return componentId;
     }
+
 
     /**
      * The number of items to speak
@@ -101,6 +103,7 @@ public final class SpeakListCommand extends com.amazon.ask.model.interfaces.alex
         return count;
     }
 
+
     /**
      * The minimum number of milliseconds that an item will be highlighted for. Defaults to 0.
      * @return minimumDwellTime
@@ -110,6 +113,7 @@ public final class SpeakListCommand extends com.amazon.ask.model.interfaces.alex
         return minimumDwellTime;
     }
 
+
     /**
      * The 0-based index of the first item to speak
      * @return start
@@ -118,6 +122,7 @@ public final class SpeakListCommand extends com.amazon.ask.model.interfaces.alex
     public String getStart() {
         return start;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -179,6 +184,7 @@ public final class SpeakListCommand extends com.amazon.ask.model.interfaces.alex
         private Builder() {}
 
         @JsonProperty("delay")
+
         public Builder withDelay(Integer delay) {
             this.delay = String.valueOf(delay);
             return this;
@@ -190,6 +196,7 @@ public final class SpeakListCommand extends com.amazon.ask.model.interfaces.alex
         }
 
         @JsonProperty("description")
+
         public Builder withDescription(String description) {
             this.description = description;
             return this;
@@ -197,6 +204,7 @@ public final class SpeakListCommand extends com.amazon.ask.model.interfaces.alex
 
 
         @JsonProperty("when")
+
         public Builder withWhen(Boolean when) {
             this.when = when;
             return this;
@@ -204,6 +212,7 @@ public final class SpeakListCommand extends com.amazon.ask.model.interfaces.alex
 
 
         @JsonProperty("align")
+
         public Builder withAlign(com.amazon.ask.model.interfaces.alexa.presentation.apl.Align align) {
             this.align = align;
             return this;
@@ -211,6 +220,7 @@ public final class SpeakListCommand extends com.amazon.ask.model.interfaces.alex
 
 
         @JsonProperty("componentId")
+
         public Builder withComponentId(String componentId) {
             this.componentId = componentId;
             return this;
@@ -218,6 +228,7 @@ public final class SpeakListCommand extends com.amazon.ask.model.interfaces.alex
 
 
         @JsonProperty("count")
+
         public Builder withCount(Integer count) {
             this.count = String.valueOf(count);
             return this;
@@ -229,6 +240,7 @@ public final class SpeakListCommand extends com.amazon.ask.model.interfaces.alex
         }
 
         @JsonProperty("minimumDwellTime")
+
         public Builder withMinimumDwellTime(Integer minimumDwellTime) {
             this.minimumDwellTime = String.valueOf(minimumDwellTime);
             return this;
@@ -240,6 +252,7 @@ public final class SpeakListCommand extends com.amazon.ask.model.interfaces.alex
         }
 
         @JsonProperty("start")
+
         public Builder withStart(Integer start) {
             this.start = String.valueOf(start);
             return this;

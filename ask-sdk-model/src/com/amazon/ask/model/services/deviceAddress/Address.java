@@ -89,6 +89,7 @@ public final class Address {
         return addressLine1;
     }
 
+
     /**
      * Get addressLine2
      * @return addressLine2
@@ -97,6 +98,7 @@ public final class Address {
     public String getAddressLine2() {
         return addressLine2;
     }
+
 
     /**
      * Get addressLine3
@@ -107,6 +109,7 @@ public final class Address {
         return addressLine3;
     }
 
+
     /**
      * Get countryCode
      * @return countryCode
@@ -115,6 +118,7 @@ public final class Address {
     public String getCountryCode() {
         return countryCode;
     }
+
 
     /**
      * Get stateOrRegion
@@ -125,6 +129,7 @@ public final class Address {
         return stateOrRegion;
     }
 
+
     /**
      * Get city
      * @return city
@@ -133,6 +138,7 @@ public final class Address {
     public String getCity() {
         return city;
     }
+
 
     /**
      * Get districtOrCounty
@@ -143,6 +149,7 @@ public final class Address {
         return districtOrCounty;
     }
 
+
     /**
      * Get postalCode
      * @return postalCode
@@ -151,6 +158,7 @@ public final class Address {
     public String getPostalCode() {
         return postalCode;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -217,6 +225,7 @@ public final class Address {
         private Builder() {}
 
         @JsonProperty("addressLine1")
+
         public Builder withAddressLine1(String addressLine1) {
             this.addressLine1 = addressLine1;
             return this;
@@ -224,6 +233,7 @@ public final class Address {
 
 
         @JsonProperty("addressLine2")
+
         public Builder withAddressLine2(String addressLine2) {
             this.addressLine2 = addressLine2;
             return this;
@@ -231,6 +241,7 @@ public final class Address {
 
 
         @JsonProperty("addressLine3")
+
         public Builder withAddressLine3(String addressLine3) {
             this.addressLine3 = addressLine3;
             return this;
@@ -238,6 +249,7 @@ public final class Address {
 
 
         @JsonProperty("countryCode")
+
         public Builder withCountryCode(String countryCode) {
             this.countryCode = countryCode;
             return this;
@@ -245,6 +257,7 @@ public final class Address {
 
 
         @JsonProperty("stateOrRegion")
+
         public Builder withStateOrRegion(String stateOrRegion) {
             this.stateOrRegion = stateOrRegion;
             return this;
@@ -252,6 +265,7 @@ public final class Address {
 
 
         @JsonProperty("city")
+
         public Builder withCity(String city) {
             this.city = city;
             return this;
@@ -259,6 +273,7 @@ public final class Address {
 
 
         @JsonProperty("districtOrCounty")
+
         public Builder withDistrictOrCounty(String districtOrCounty) {
             this.districtOrCounty = districtOrCounty;
             return this;
@@ -266,6 +281,7 @@ public final class Address {
 
 
         @JsonProperty("postalCode")
+
         public Builder withPostalCode(String postalCode) {
             this.postalCode = postalCode;
             return this;

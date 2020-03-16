@@ -53,6 +53,7 @@ public final class SendDirectiveRequest {
         return header;
     }
 
+
     /**
      * Directive Content.
      * @return directive
@@ -61,6 +62,7 @@ public final class SendDirectiveRequest {
     public com.amazon.ask.model.services.directive.Directive getDirective() {
         return directive;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class SendDirectiveRequest {
         private Builder() {}
 
         @JsonProperty("header")
+
         public Builder withHeader(com.amazon.ask.model.services.directive.Header header) {
             this.header = header;
             return this;
@@ -116,6 +119,7 @@ public final class SendDirectiveRequest {
 
 
         @JsonProperty("directive")
+
         public Builder withDirective(com.amazon.ask.model.services.directive.Directive directive) {
             this.directive = directive;
             return this;

@@ -59,6 +59,7 @@ public final class ComponentEntity {
         return type;
     }
 
+
     /**
      * Get value
      * @return value
@@ -68,6 +69,7 @@ public final class ComponentEntity {
         return value;
     }
 
+
     /**
      * Get id
      * @return id
@@ -76,6 +78,7 @@ public final class ComponentEntity {
     public String getId() {
         return id;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -127,6 +130,7 @@ public final class ComponentEntity {
         private Builder() {}
 
         @JsonProperty("type")
+
         public Builder withType(String type) {
             this.type = type;
             return this;
@@ -134,6 +138,7 @@ public final class ComponentEntity {
 
 
         @JsonProperty("value")
+
         public Builder withValue(String value) {
             this.value = value;
             return this;
@@ -141,6 +146,7 @@ public final class ComponentEntity {
 
 
         @JsonProperty("id")
+
         public Builder withId(String id) {
             this.id = id;
             return this;

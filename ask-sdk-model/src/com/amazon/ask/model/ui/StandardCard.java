@@ -62,6 +62,7 @@ public final class StandardCard extends com.amazon.ask.model.ui.Card  {
         return title;
     }
 
+
     /**
      * Get text
      * @return text
@@ -71,6 +72,7 @@ public final class StandardCard extends com.amazon.ask.model.ui.Card  {
         return text;
     }
 
+
     /**
      * Get image
      * @return image
@@ -79,6 +81,7 @@ public final class StandardCard extends com.amazon.ask.model.ui.Card  {
     public com.amazon.ask.model.ui.Image getImage() {
         return image;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -131,6 +134,7 @@ public final class StandardCard extends com.amazon.ask.model.ui.Card  {
         private Builder() {}
 
         @JsonProperty("title")
+
         public Builder withTitle(String title) {
             this.title = title;
             return this;
@@ -138,6 +142,7 @@ public final class StandardCard extends com.amazon.ask.model.ui.Card  {
 
 
         @JsonProperty("text")
+
         public Builder withText(String text) {
             this.text = text;
             return this;
@@ -145,6 +150,7 @@ public final class StandardCard extends com.amazon.ask.model.ui.Card  {
 
 
         @JsonProperty("image")
+
         public Builder withImage(com.amazon.ask.model.ui.Image image) {
             this.image = image;
             return this;

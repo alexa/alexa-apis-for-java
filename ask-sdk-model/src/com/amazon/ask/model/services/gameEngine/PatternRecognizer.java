@@ -77,6 +77,7 @@ public final class PatternRecognizer extends com.amazon.ask.model.services.gameE
         return anchor;
     }
 
+
     /**
      * When true, the recognizer will ignore additional events that occur between the events specified in the pattern.
      * @return fuzzy
@@ -85,6 +86,7 @@ public final class PatternRecognizer extends com.amazon.ask.model.services.gameE
     public Boolean getFuzzy() {
         return fuzzy;
     }
+
 
     /**
      * The gadget IDs of the Echo Buttons to consider in this pattern recognizer.
@@ -95,6 +97,7 @@ public final class PatternRecognizer extends com.amazon.ask.model.services.gameE
         return gadgetIds;
     }
 
+
     /**
      * The actions to consider in this pattern recognizer. All other actions will be ignored.
      * @return actions
@@ -104,6 +107,7 @@ public final class PatternRecognizer extends com.amazon.ask.model.services.gameE
         return actions;
     }
 
+
     /**
      * An object that provides all of the events that need to occur, in a specific order, for this recognizer to be true. Omitting any parameters in this object means \"match anything\".
      * @return pattern
@@ -112,6 +116,7 @@ public final class PatternRecognizer extends com.amazon.ask.model.services.gameE
     public List<com.amazon.ask.model.services.gameEngine.Pattern> getPattern() {
         return pattern;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -170,6 +175,7 @@ public final class PatternRecognizer extends com.amazon.ask.model.services.gameE
         private Builder() {}
 
         @JsonProperty("anchor")
+
         public Builder withAnchor(com.amazon.ask.model.services.gameEngine.PatternRecognizerAnchorType anchor) {
             this.anchor = anchor;
             return this;
@@ -177,6 +183,7 @@ public final class PatternRecognizer extends com.amazon.ask.model.services.gameE
 
 
         @JsonProperty("fuzzy")
+
         public Builder withFuzzy(Boolean fuzzy) {
             this.fuzzy = fuzzy;
             return this;
@@ -184,6 +191,7 @@ public final class PatternRecognizer extends com.amazon.ask.model.services.gameE
 
 
         @JsonProperty("gadgetIds")
+
         public Builder withGadgetIds(List<String> gadgetIds) {
             this.gadgetIds = gadgetIds;
             return this;
@@ -198,6 +206,7 @@ public final class PatternRecognizer extends com.amazon.ask.model.services.gameE
         }
 
         @JsonProperty("actions")
+
         public Builder withActions(List<String> actions) {
             this.actions = actions;
             return this;
@@ -212,6 +221,7 @@ public final class PatternRecognizer extends com.amazon.ask.model.services.gameE
         }
 
         @JsonProperty("pattern")
+
         public Builder withPattern(List<com.amazon.ask.model.services.gameEngine.Pattern> pattern) {
             this.pattern = pattern;
             return this;

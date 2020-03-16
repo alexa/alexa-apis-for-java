@@ -65,6 +65,7 @@ public final class SendRequestDirective extends com.amazon.ask.model.Directive  
         return name;
     }
 
+
     /**
      * This is an object sent between the two skills for processing a ConnectionsRequest or ConnectionsResponse. The contract for the object is based on the schema of the Action used in the SendRequestDirective. Invalid payloads will result in errors sent back to the referrer.
      * @return payload
@@ -74,6 +75,7 @@ public final class SendRequestDirective extends com.amazon.ask.model.Directive  
         return payload;
     }
 
+
     /**
      * This is an echo back string that skills send when during Connections.SendRequest directive. They will receive it when they get the ConnectionsResponse. It is never sent to the skill handling the request.
      * @return token
@@ -82,6 +84,7 @@ public final class SendRequestDirective extends com.amazon.ask.model.Directive  
     public String getToken() {
         return token;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -134,6 +137,7 @@ public final class SendRequestDirective extends com.amazon.ask.model.Directive  
         private Builder() {}
 
         @JsonProperty("name")
+
         public Builder withName(String name) {
             this.name = name;
             return this;
@@ -141,6 +145,7 @@ public final class SendRequestDirective extends com.amazon.ask.model.Directive  
 
 
         @JsonProperty("payload")
+
         public Builder withPayload(Map<String, Object> payload) {
             this.payload = payload;
             return this;
@@ -155,6 +160,7 @@ public final class SendRequestDirective extends com.amazon.ask.model.Directive  
         }
 
         @JsonProperty("token")
+
         public Builder withToken(String token) {
             this.token = token;
             return this;

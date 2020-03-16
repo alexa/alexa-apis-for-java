@@ -45,6 +45,7 @@ public abstract class TextField {
         return type;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

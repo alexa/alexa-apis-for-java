@@ -53,6 +53,7 @@ public final class Altitude {
         return altitudeInMeters;
     }
 
+
     /**
      * A double representing the accuracy of the altitude measurement in meters.
      * @return accuracyInMeters
@@ -61,6 +62,7 @@ public final class Altitude {
     public Double getAccuracyInMeters() {
         return accuracyInMeters;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class Altitude {
         private Builder() {}
 
         @JsonProperty("altitudeInMeters")
+
         public Builder withAltitudeInMeters(Double altitudeInMeters) {
             this.altitudeInMeters = altitudeInMeters;
             return this;
@@ -116,6 +119,7 @@ public final class Altitude {
 
 
         @JsonProperty("accuracyInMeters")
+
         public Builder withAccuracyInMeters(Double accuracyInMeters) {
             this.accuracyInMeters = accuracyInMeters;
             return this;

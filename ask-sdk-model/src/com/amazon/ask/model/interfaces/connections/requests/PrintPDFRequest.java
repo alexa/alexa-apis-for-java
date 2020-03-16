@@ -65,6 +65,7 @@ public final class PrintPDFRequest extends com.amazon.ask.model.interfaces.conne
         return title;
     }
 
+
     /**
      * url of the image
      * @return url
@@ -74,6 +75,7 @@ public final class PrintPDFRequest extends com.amazon.ask.model.interfaces.conne
         return url;
     }
 
+
     /**
      * description of the image
      * @return description
@@ -82,6 +84,7 @@ public final class PrintPDFRequest extends com.amazon.ask.model.interfaces.conne
     public String getDescription() {
         return description;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -135,6 +138,7 @@ public final class PrintPDFRequest extends com.amazon.ask.model.interfaces.conne
         private Builder() {}
 
         @JsonProperty("@version")
+
         public Builder withVersion(String version) {
             this.version = version;
             return this;
@@ -142,6 +146,7 @@ public final class PrintPDFRequest extends com.amazon.ask.model.interfaces.conne
 
 
         @JsonProperty("title")
+
         public Builder withTitle(String title) {
             this.title = title;
             return this;
@@ -149,6 +154,7 @@ public final class PrintPDFRequest extends com.amazon.ask.model.interfaces.conne
 
 
         @JsonProperty("url")
+
         public Builder withUrl(String url) {
             this.url = url;
             return this;
@@ -156,6 +162,7 @@ public final class PrintPDFRequest extends com.amazon.ask.model.interfaces.conne
 
 
         @JsonProperty("description")
+
         public Builder withDescription(String description) {
             this.description = description;
             return this;

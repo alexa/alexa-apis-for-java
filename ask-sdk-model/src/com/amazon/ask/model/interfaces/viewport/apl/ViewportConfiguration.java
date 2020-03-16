@@ -47,6 +47,7 @@ public final class ViewportConfiguration {
         return current;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class ViewportConfiguration {
         private Builder() {}
 
         @JsonProperty("current")
+
         public Builder withCurrent(com.amazon.ask.model.interfaces.viewport.apl.CurrentConfiguration current) {
             this.current = current;
             return this;

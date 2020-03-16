@@ -54,6 +54,7 @@ public final class MoveTransformProperty extends com.amazon.ask.model.interfaces
         return translateX;
     }
 
+
     /**
      * Distance to translate the object down.
      * @return translateY
@@ -62,6 +63,7 @@ public final class MoveTransformProperty extends com.amazon.ask.model.interfaces
     public String getTranslateY() {
         return translateY;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,6 +112,7 @@ public final class MoveTransformProperty extends com.amazon.ask.model.interfaces
         private Builder() {}
 
         @JsonProperty("translateX")
+
         public Builder withTranslateX(String translateX) {
             this.translateX = translateX;
             return this;
@@ -117,6 +120,7 @@ public final class MoveTransformProperty extends com.amazon.ask.model.interfaces
 
 
         @JsonProperty("translateY")
+
         public Builder withTranslateY(String translateY) {
             this.translateY = translateY;
             return this;

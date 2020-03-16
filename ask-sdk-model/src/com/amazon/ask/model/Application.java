@@ -47,6 +47,7 @@ public final class Application {
         return applicationId;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class Application {
         private Builder() {}
 
         @JsonProperty("applicationId")
+
         public Builder withApplicationId(String applicationId) {
             this.applicationId = applicationId;
             return this;

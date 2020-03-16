@@ -50,6 +50,7 @@ public final class AlexaListsMetadata {
         return lists;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -94,6 +95,7 @@ public final class AlexaListsMetadata {
         private Builder() {}
 
         @JsonProperty("lists")
+
         public Builder withLists(List<com.amazon.ask.model.services.listManagement.AlexaListMetadata> lists) {
             this.lists = lists;
             return this;

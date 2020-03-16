@@ -47,6 +47,7 @@ public final class ModelConfiguration {
         return timeoutInSeconds;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class ModelConfiguration {
         private Builder() {}
 
         @JsonProperty("timeoutInSeconds")
+
         public Builder withTimeoutInSeconds(Integer timeoutInSeconds) {
             this.timeoutInSeconds = timeoutInSeconds;
             return this;

@@ -88,6 +88,7 @@ public final class IdleCommand extends com.amazon.ask.model.interfaces.alexa.pre
         private Builder() {}
 
         @JsonProperty("delay")
+
         public Builder withDelay(Integer delay) {
             this.delay = String.valueOf(delay);
             return this;
@@ -99,6 +100,7 @@ public final class IdleCommand extends com.amazon.ask.model.interfaces.alexa.pre
         }
 
         @JsonProperty("description")
+
         public Builder withDescription(String description) {
             this.description = description;
             return this;
@@ -106,6 +108,7 @@ public final class IdleCommand extends com.amazon.ask.model.interfaces.alexa.pre
 
 
         @JsonProperty("when")
+
         public Builder withWhen(Boolean when) {
             this.when = when;
             return this;

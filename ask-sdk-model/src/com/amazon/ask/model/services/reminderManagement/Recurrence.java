@@ -31,7 +31,7 @@ import java.util.ArrayList;
 public final class Recurrence {
 
     @JsonProperty("freq")
-    private com.amazon.ask.model.services.reminderManagement.RecurrenceFreq freq = null;
+    private String freq = null;
 
     @JsonProperty("byDay")
     private List<com.amazon.ask.model.services.reminderManagement.RecurrenceDay> byDay = new ArrayList<com.amazon.ask.model.services.reminderManagement.RecurrenceDay>();
@@ -75,11 +75,29 @@ public final class Recurrence {
 
     /**
      * Get freq
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getFreqAsString().
+     *
      * @return freq
     **/
-    @JsonProperty("freq")
+    
     public com.amazon.ask.model.services.reminderManagement.RecurrenceFreq getFreq() {
-        return freq;
+        return com.amazon.ask.model.services.reminderManagement.RecurrenceFreq.fromValue(freq);
+    }
+
+    /**
+     * Get the underlying String value for freq.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return freq as a String value
+    **/
+    @JsonProperty("freq")
+    public String getFreqAsString() {
+      return freq;
     }
 
     /**
@@ -91,6 +109,7 @@ public final class Recurrence {
         return byDay;
     }
 
+
     /**
      * contains a positive integer representing at which intervals the recurrence rule repeats
      * @return interval
@@ -99,6 +118,7 @@ public final class Recurrence {
     public Integer getInterval() {
         return interval;
     }
+
 
     /**
      * Valid ISO 8601 format - optional start DateTime of recurrence.
@@ -109,6 +129,7 @@ public final class Recurrence {
         return startDateTime;
     }
 
+
     /**
      * Valid ISO 8601 format - optional end DateTime of recurrence
      * @return endDateTime
@@ -118,6 +139,7 @@ public final class Recurrence {
         return endDateTime;
     }
 
+
     /**
      * Get recurrenceRules
      * @return recurrenceRules
@@ -126,6 +148,7 @@ public final class Recurrence {
     public List<String> getRecurrenceRules() {
         return recurrenceRules;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -176,7 +199,7 @@ public final class Recurrence {
     }
   
     public static class Builder {
-        private com.amazon.ask.model.services.reminderManagement.RecurrenceFreq freq;
+        private String freq;
         private List<com.amazon.ask.model.services.reminderManagement.RecurrenceDay> byDay;
         private Integer interval;
         private LocalDateTime startDateTime;
@@ -186,13 +209,19 @@ public final class Recurrence {
         private Builder() {}
 
         @JsonProperty("freq")
+        public Builder withFreq(String freq) {
+          this.freq = freq;
+          return this;
+        }
+
         public Builder withFreq(com.amazon.ask.model.services.reminderManagement.RecurrenceFreq freq) {
-            this.freq = freq;
+            this.freq = freq != null ? freq.toString() : null;
             return this;
         }
 
 
         @JsonProperty("byDay")
+
         public Builder withByDay(List<com.amazon.ask.model.services.reminderManagement.RecurrenceDay> byDay) {
             this.byDay = byDay;
             return this;
@@ -207,6 +236,7 @@ public final class Recurrence {
         }
 
         @JsonProperty("interval")
+
         public Builder withInterval(Integer interval) {
             this.interval = interval;
             return this;
@@ -214,6 +244,7 @@ public final class Recurrence {
 
 
         @JsonProperty("startDateTime")
+
         public Builder withStartDateTime(LocalDateTime startDateTime) {
             this.startDateTime = startDateTime;
             return this;
@@ -221,6 +252,7 @@ public final class Recurrence {
 
 
         @JsonProperty("endDateTime")
+
         public Builder withEndDateTime(LocalDateTime endDateTime) {
             this.endDateTime = endDateTime;
             return this;
@@ -228,6 +260,7 @@ public final class Recurrence {
 
 
         @JsonProperty("recurrenceRules")
+
         public Builder withRecurrenceRules(List<String> recurrenceRules) {
             this.recurrenceRules = recurrenceRules;
             return this;

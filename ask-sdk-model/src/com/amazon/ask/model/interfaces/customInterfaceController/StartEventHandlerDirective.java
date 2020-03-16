@@ -62,6 +62,7 @@ public final class StartEventHandlerDirective extends com.amazon.ask.model.Direc
         return token;
     }
 
+
     /**
      * Get eventFilter
      * @return eventFilter
@@ -71,6 +72,7 @@ public final class StartEventHandlerDirective extends com.amazon.ask.model.Direc
         return eventFilter;
     }
 
+
     /**
      * Get expiration
      * @return expiration
@@ -79,6 +81,7 @@ public final class StartEventHandlerDirective extends com.amazon.ask.model.Direc
     public com.amazon.ask.model.interfaces.customInterfaceController.Expiration getExpiration() {
         return expiration;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -131,6 +134,7 @@ public final class StartEventHandlerDirective extends com.amazon.ask.model.Direc
         private Builder() {}
 
         @JsonProperty("token")
+
         public Builder withToken(String token) {
             this.token = token;
             return this;
@@ -138,6 +142,7 @@ public final class StartEventHandlerDirective extends com.amazon.ask.model.Direc
 
 
         @JsonProperty("eventFilter")
+
         public Builder withEventFilter(com.amazon.ask.model.interfaces.customInterfaceController.EventFilter eventFilter) {
             this.eventFilter = eventFilter;
             return this;
@@ -145,6 +150,7 @@ public final class StartEventHandlerDirective extends com.amazon.ask.model.Direc
 
 
         @JsonProperty("expiration")
+
         public Builder withExpiration(com.amazon.ask.model.interfaces.customInterfaceController.Expiration expiration) {
             this.expiration = expiration;
             return this;

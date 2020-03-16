@@ -95,6 +95,7 @@ public final class SetupAmazonPay {
         return consentToken;
     }
 
+
     /**
      * The seller ID (also known as merchant ID). If you are an Ecommerce Provider (Solution Provider), please specify the ID of the merchant, not your provider ID.
      * @return sellerId
@@ -103,6 +104,7 @@ public final class SetupAmazonPay {
     public String getSellerId() {
         return sellerId;
     }
+
 
     /**
      * The country in which the merchant has registered, as an Amazon Payments legal entity.
@@ -113,6 +115,7 @@ public final class SetupAmazonPay {
         return countryOfEstablishment;
     }
 
+
     /**
      * The currency of the merchant’s ledger account.
      * @return ledgerCurrency
@@ -121,6 +124,7 @@ public final class SetupAmazonPay {
     public String getLedgerCurrency() {
         return ledgerCurrency;
     }
+
 
     /**
      * The merchant's preferred language for checkout.
@@ -131,6 +135,7 @@ public final class SetupAmazonPay {
         return checkoutLanguage;
     }
 
+
     /**
      * Get billingAgreementAttributes
      * @return billingAgreementAttributes
@@ -139,6 +144,7 @@ public final class SetupAmazonPay {
     public com.amazon.ask.model.interfaces.amazonpay.model.v1.BillingAgreementAttributes getBillingAgreementAttributes() {
         return billingAgreementAttributes;
     }
+
 
     /**
      * To receive the default user shipping address in the response, set this parameter to true. Not required if a user shipping address is not required.
@@ -149,6 +155,7 @@ public final class SetupAmazonPay {
         return needAmazonShippingAddress;
     }
 
+
     /**
      * To test in Sandbox mode, set this parameter to true.
      * @return sandboxMode
@@ -158,6 +165,7 @@ public final class SetupAmazonPay {
         return sandboxMode;
     }
 
+
     /**
      * Use this parameter to create a Sandbox payment object. In order to use this parameter, you first create a Sandbox user account in Seller Central. Then, pass the email address associated with that Sandbox user account.
      * @return sandboxCustomerEmailId
@@ -166,6 +174,7 @@ public final class SetupAmazonPay {
     public String getSandboxCustomerEmailId() {
         return sandboxCustomerEmailId;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -235,6 +244,7 @@ public final class SetupAmazonPay {
         private Builder() {}
 
         @JsonProperty("consentToken")
+
         public Builder withConsentToken(String consentToken) {
             this.consentToken = consentToken;
             return this;
@@ -242,6 +252,7 @@ public final class SetupAmazonPay {
 
 
         @JsonProperty("sellerId")
+
         public Builder withSellerId(String sellerId) {
             this.sellerId = sellerId;
             return this;
@@ -249,6 +260,7 @@ public final class SetupAmazonPay {
 
 
         @JsonProperty("countryOfEstablishment")
+
         public Builder withCountryOfEstablishment(String countryOfEstablishment) {
             this.countryOfEstablishment = countryOfEstablishment;
             return this;
@@ -256,6 +268,7 @@ public final class SetupAmazonPay {
 
 
         @JsonProperty("ledgerCurrency")
+
         public Builder withLedgerCurrency(String ledgerCurrency) {
             this.ledgerCurrency = ledgerCurrency;
             return this;
@@ -263,6 +276,7 @@ public final class SetupAmazonPay {
 
 
         @JsonProperty("checkoutLanguage")
+
         public Builder withCheckoutLanguage(String checkoutLanguage) {
             this.checkoutLanguage = checkoutLanguage;
             return this;
@@ -270,6 +284,7 @@ public final class SetupAmazonPay {
 
 
         @JsonProperty("billingAgreementAttributes")
+
         public Builder withBillingAgreementAttributes(com.amazon.ask.model.interfaces.amazonpay.model.v1.BillingAgreementAttributes billingAgreementAttributes) {
             this.billingAgreementAttributes = billingAgreementAttributes;
             return this;
@@ -277,6 +292,7 @@ public final class SetupAmazonPay {
 
 
         @JsonProperty("needAmazonShippingAddress")
+
         public Builder withNeedAmazonShippingAddress(Boolean needAmazonShippingAddress) {
             this.needAmazonShippingAddress = needAmazonShippingAddress;
             return this;
@@ -284,6 +300,7 @@ public final class SetupAmazonPay {
 
 
         @JsonProperty("sandboxMode")
+
         public Builder withSandboxMode(Boolean sandboxMode) {
             this.sandboxMode = sandboxMode;
             return this;
@@ -291,6 +308,7 @@ public final class SetupAmazonPay {
 
 
         @JsonProperty("sandboxCustomerEmailId")
+
         public Builder withSandboxCustomerEmailId(String sandboxCustomerEmailId) {
             this.sandboxCustomerEmailId = sandboxCustomerEmailId;
             return this;

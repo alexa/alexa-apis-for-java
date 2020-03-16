@@ -65,6 +65,7 @@ public final class ComponentVisibleOnScreenPagerTag {
         return index;
     }
 
+
     /**
      * The total number of pages.
      * @return pageCount
@@ -73,6 +74,7 @@ public final class ComponentVisibleOnScreenPagerTag {
     public Integer getPageCount() {
         return pageCount;
     }
+
 
     /**
      * Indicates whether the pager will accept a forward command.
@@ -83,6 +85,7 @@ public final class ComponentVisibleOnScreenPagerTag {
         return allowForward;
     }
 
+
     /**
      * Indicates whether the pager will accept a backward command.
      * @return allowBackwards
@@ -91,6 +94,7 @@ public final class ComponentVisibleOnScreenPagerTag {
     public Boolean getAllowBackwards() {
         return allowBackwards;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -145,6 +149,7 @@ public final class ComponentVisibleOnScreenPagerTag {
         private Builder() {}
 
         @JsonProperty("index")
+
         public Builder withIndex(Integer index) {
             this.index = index;
             return this;
@@ -152,6 +157,7 @@ public final class ComponentVisibleOnScreenPagerTag {
 
 
         @JsonProperty("pageCount")
+
         public Builder withPageCount(Integer pageCount) {
             this.pageCount = pageCount;
             return this;
@@ -159,6 +165,7 @@ public final class ComponentVisibleOnScreenPagerTag {
 
 
         @JsonProperty("allowForward")
+
         public Builder withAllowForward(Boolean allowForward) {
             this.allowForward = allowForward;
             return this;
@@ -166,6 +173,7 @@ public final class ComponentVisibleOnScreenPagerTag {
 
 
         @JsonProperty("allowBackwards")
+
         public Builder withAllowBackwards(Boolean allowBackwards) {
             this.allowBackwards = allowBackwards;
             return this;

@@ -33,10 +33,10 @@ public final class ViewportState {
     private List<com.amazon.ask.model.interfaces.viewport.Experience> experiences = new ArrayList<com.amazon.ask.model.interfaces.viewport.Experience>();
 
     @JsonProperty("mode")
-    private com.amazon.ask.model.interfaces.viewport.Mode mode = null;
+    private String mode = null;
 
     @JsonProperty("shape")
-    private com.amazon.ask.model.interfaces.viewport.Shape shape = null;
+    private String shape = null;
 
     @JsonProperty("pixelWidth")
     private BigDecimal pixelWidth = null;
@@ -111,22 +111,59 @@ public final class ViewportState {
         return experiences;
     }
 
+
     /**
      * Get mode
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getModeAsString().
+     *
      * @return mode
     **/
-    @JsonProperty("mode")
+    
     public com.amazon.ask.model.interfaces.viewport.Mode getMode() {
-        return mode;
+        return com.amazon.ask.model.interfaces.viewport.Mode.fromValue(mode);
+    }
+
+    /**
+     * Get the underlying String value for mode.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return mode as a String value
+    **/
+    @JsonProperty("mode")
+    public String getModeAsString() {
+      return mode;
     }
 
     /**
      * Get shape
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getShapeAsString().
+     *
      * @return shape
     **/
-    @JsonProperty("shape")
+    
     public com.amazon.ask.model.interfaces.viewport.Shape getShape() {
-        return shape;
+        return com.amazon.ask.model.interfaces.viewport.Shape.fromValue(shape);
+    }
+
+    /**
+     * Get the underlying String value for shape.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return shape as a String value
+    **/
+    @JsonProperty("shape")
+    public String getShapeAsString() {
+      return shape;
     }
 
     /**
@@ -138,6 +175,7 @@ public final class ViewportState {
         return pixelWidth;
     }
 
+
     /**
      * The number of pixels present in the viewport at its maximum height.
      * @return pixelHeight
@@ -146,6 +184,7 @@ public final class ViewportState {
     public BigDecimal getPixelHeight() {
         return pixelHeight;
     }
+
 
     /**
      * The pixel density of the viewport.
@@ -156,6 +195,7 @@ public final class ViewportState {
         return dpi;
     }
 
+
     /**
      * The number of horizontal pixels in the viewport that are currently available for Alexa to render an experience.
      * @return currentPixelWidth
@@ -164,6 +204,7 @@ public final class ViewportState {
     public BigDecimal getCurrentPixelWidth() {
         return currentPixelWidth;
     }
+
 
     /**
      * The number of vertical pixels in the viewport that are currently available for Alexa to render an experience.
@@ -174,6 +215,7 @@ public final class ViewportState {
         return currentPixelHeight;
     }
 
+
     /**
      * The types of touch supported by the device. An empty array indicates no touch support.
      * @return touch
@@ -182,6 +224,7 @@ public final class ViewportState {
     public List<com.amazon.ask.model.interfaces.viewport.Touch> getTouch() {
         return touch;
     }
+
 
     /**
      * The physical button input mechanisms supported by the device. An empty array indicates physical button input is unsupported.
@@ -192,6 +235,7 @@ public final class ViewportState {
         return keyboard;
     }
 
+
     /**
      * Get video
      * @return video
@@ -200,6 +244,7 @@ public final class ViewportState {
     public com.amazon.ask.model.interfaces.viewport.ViewportStateVideo getVideo() {
         return video;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -261,8 +306,8 @@ public final class ViewportState {
   
     public static class Builder {
         private List<com.amazon.ask.model.interfaces.viewport.Experience> experiences;
-        private com.amazon.ask.model.interfaces.viewport.Mode mode;
-        private com.amazon.ask.model.interfaces.viewport.Shape shape;
+        private String mode;
+        private String shape;
         private BigDecimal pixelWidth;
         private BigDecimal pixelHeight;
         private BigDecimal dpi;
@@ -275,6 +320,7 @@ public final class ViewportState {
         private Builder() {}
 
         @JsonProperty("experiences")
+
         public Builder withExperiences(List<com.amazon.ask.model.interfaces.viewport.Experience> experiences) {
             this.experiences = experiences;
             return this;
@@ -289,20 +335,31 @@ public final class ViewportState {
         }
 
         @JsonProperty("mode")
+        public Builder withMode(String mode) {
+          this.mode = mode;
+          return this;
+        }
+
         public Builder withMode(com.amazon.ask.model.interfaces.viewport.Mode mode) {
-            this.mode = mode;
+            this.mode = mode != null ? mode.toString() : null;
             return this;
         }
 
 
         @JsonProperty("shape")
+        public Builder withShape(String shape) {
+          this.shape = shape;
+          return this;
+        }
+
         public Builder withShape(com.amazon.ask.model.interfaces.viewport.Shape shape) {
-            this.shape = shape;
+            this.shape = shape != null ? shape.toString() : null;
             return this;
         }
 
 
         @JsonProperty("pixelWidth")
+
         public Builder withPixelWidth(BigDecimal pixelWidth) {
             this.pixelWidth = pixelWidth;
             return this;
@@ -310,6 +367,7 @@ public final class ViewportState {
 
 
         @JsonProperty("pixelHeight")
+
         public Builder withPixelHeight(BigDecimal pixelHeight) {
             this.pixelHeight = pixelHeight;
             return this;
@@ -317,6 +375,7 @@ public final class ViewportState {
 
 
         @JsonProperty("dpi")
+
         public Builder withDpi(BigDecimal dpi) {
             this.dpi = dpi;
             return this;
@@ -324,6 +383,7 @@ public final class ViewportState {
 
 
         @JsonProperty("currentPixelWidth")
+
         public Builder withCurrentPixelWidth(BigDecimal currentPixelWidth) {
             this.currentPixelWidth = currentPixelWidth;
             return this;
@@ -331,6 +391,7 @@ public final class ViewportState {
 
 
         @JsonProperty("currentPixelHeight")
+
         public Builder withCurrentPixelHeight(BigDecimal currentPixelHeight) {
             this.currentPixelHeight = currentPixelHeight;
             return this;
@@ -338,6 +399,7 @@ public final class ViewportState {
 
 
         @JsonProperty("touch")
+
         public Builder withTouch(List<com.amazon.ask.model.interfaces.viewport.Touch> touch) {
             this.touch = touch;
             return this;
@@ -352,6 +414,7 @@ public final class ViewportState {
         }
 
         @JsonProperty("keyboard")
+
         public Builder withKeyboard(List<com.amazon.ask.model.interfaces.viewport.Keyboard> keyboard) {
             this.keyboard = keyboard;
             return this;
@@ -366,6 +429,7 @@ public final class ViewportState {
         }
 
         @JsonProperty("video")
+
         public Builder withVideo(com.amazon.ask.model.interfaces.viewport.ViewportStateVideo video) {
             this.video = video;
             return this;

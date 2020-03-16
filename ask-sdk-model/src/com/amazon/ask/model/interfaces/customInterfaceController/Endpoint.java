@@ -47,6 +47,7 @@ public final class Endpoint {
         return endpointId;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class Endpoint {
         private Builder() {}
 
         @JsonProperty("endpointId")
+
         public Builder withEndpointId(String endpointId) {
             this.endpointId = endpointId;
             return this;

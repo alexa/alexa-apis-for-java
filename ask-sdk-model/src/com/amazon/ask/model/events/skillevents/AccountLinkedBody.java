@@ -47,6 +47,7 @@ public final class AccountLinkedBody {
         return accessToken;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class AccountLinkedBody {
         private Builder() {}
 
         @JsonProperty("accessToken")
+
         public Builder withAccessToken(String accessToken) {
             this.accessToken = accessToken;
             return this;

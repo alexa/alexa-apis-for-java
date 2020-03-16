@@ -65,6 +65,7 @@ public final class RequestEnvelope {
         return version;
     }
 
+
     /**
      * The session object provides additional context associated with the request.
      * @return session
@@ -73,6 +74,7 @@ public final class RequestEnvelope {
     public com.amazon.ask.model.Session getSession() {
         return session;
     }
+
 
     /**
      * The context object provides your skill with information about the current state of the Alexa service and device at the time the request is sent to your service. This is included on all requests. For requests sent in the context of a session (LaunchRequest and IntentRequest), the context object duplicates the user and application information that is also available in the session.
@@ -83,6 +85,7 @@ public final class RequestEnvelope {
         return context;
     }
 
+
     /**
      * A request object that provides the details of the user’s request.
      * @return request
@@ -91,6 +94,7 @@ public final class RequestEnvelope {
     public com.amazon.ask.model.Request getRequest() {
         return request;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -145,6 +149,7 @@ public final class RequestEnvelope {
         private Builder() {}
 
         @JsonProperty("version")
+
         public Builder withVersion(String version) {
             this.version = version;
             return this;
@@ -152,6 +157,7 @@ public final class RequestEnvelope {
 
 
         @JsonProperty("session")
+
         public Builder withSession(com.amazon.ask.model.Session session) {
             this.session = session;
             return this;
@@ -159,6 +165,7 @@ public final class RequestEnvelope {
 
 
         @JsonProperty("context")
+
         public Builder withContext(com.amazon.ask.model.Context context) {
             this.context = context;
             return this;
@@ -166,6 +173,7 @@ public final class RequestEnvelope {
 
 
         @JsonProperty("request")
+
         public Builder withRequest(com.amazon.ask.model.Request request) {
             this.request = request;
             return this;

@@ -26,7 +26,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public final class Error {
 
     @JsonProperty("code")
-    private com.amazon.ask.model.services.ups.ErrorCode code = null;
+    private String code = null;
 
     @JsonProperty("message")
     private String message = null;
@@ -46,11 +46,29 @@ public final class Error {
 
     /**
      * Get code
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getCodeAsString().
+     *
      * @return code
     **/
-    @JsonProperty("code")
+    
     public com.amazon.ask.model.services.ups.ErrorCode getCode() {
-        return code;
+        return com.amazon.ask.model.services.ups.ErrorCode.fromValue(code);
+    }
+
+    /**
+     * Get the underlying String value for code.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return code as a String value
+    **/
+    @JsonProperty("code")
+    public String getCodeAsString() {
+      return code;
     }
 
     /**
@@ -61,6 +79,7 @@ public final class Error {
     public String getMessage() {
         return message;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -103,19 +122,25 @@ public final class Error {
     }
   
     public static class Builder {
-        private com.amazon.ask.model.services.ups.ErrorCode code;
+        private String code;
         private String message;
 
         private Builder() {}
 
         @JsonProperty("code")
+        public Builder withCode(String code) {
+          this.code = code;
+          return this;
+        }
+
         public Builder withCode(com.amazon.ask.model.services.ups.ErrorCode code) {
-            this.code = code;
+            this.code = code != null ? code.toString() : null;
             return this;
         }
 
 
         @JsonProperty("message")
+
         public Builder withMessage(String message) {
             this.message = message;
             return this;

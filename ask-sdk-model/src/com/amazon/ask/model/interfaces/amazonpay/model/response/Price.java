@@ -53,6 +53,7 @@ public final class Price {
         return amount;
     }
 
+
     /**
      * Currency code for the amount.
      * @return currencyCode
@@ -61,6 +62,7 @@ public final class Price {
     public String getCurrencyCode() {
         return currencyCode;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class Price {
         private Builder() {}
 
         @JsonProperty("amount")
+
         public Builder withAmount(String amount) {
             this.amount = amount;
             return this;
@@ -116,6 +119,7 @@ public final class Price {
 
 
         @JsonProperty("currencyCode")
+
         public Builder withCurrencyCode(String currencyCode) {
             this.currencyCode = currencyCode;
             return this;

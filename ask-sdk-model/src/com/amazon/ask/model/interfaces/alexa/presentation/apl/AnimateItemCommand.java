@@ -92,6 +92,7 @@ public final class AnimateItemCommand extends com.amazon.ask.model.interfaces.al
         return componentId;
     }
 
+
     /**
      * The duration of the animation (in milliseconds).
      * @return duration
@@ -100,6 +101,7 @@ public final class AnimateItemCommand extends com.amazon.ask.model.interfaces.al
     public String getDuration() {
         return duration;
     }
+
 
     /**
      * The easing curve.
@@ -110,6 +112,7 @@ public final class AnimateItemCommand extends com.amazon.ask.model.interfaces.al
         return easing;
     }
 
+
     /**
      * Number of times to repeat.
      * @return repeatCount
@@ -118,6 +121,7 @@ public final class AnimateItemCommand extends com.amazon.ask.model.interfaces.al
     public String getRepeatCount() {
         return repeatCount;
     }
+
 
     /**
      * Get repeatMode
@@ -128,6 +132,7 @@ public final class AnimateItemCommand extends com.amazon.ask.model.interfaces.al
         return repeatMode;
     }
 
+
     /**
      * An array of animated properties.
      * @return value
@@ -136,6 +141,7 @@ public final class AnimateItemCommand extends com.amazon.ask.model.interfaces.al
     public List<com.amazon.ask.model.interfaces.alexa.presentation.apl.AnimatedProperty> getValue() {
         return value;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -200,6 +206,7 @@ public final class AnimateItemCommand extends com.amazon.ask.model.interfaces.al
         private Builder() {}
 
         @JsonProperty("delay")
+
         public Builder withDelay(Integer delay) {
             this.delay = String.valueOf(delay);
             return this;
@@ -211,6 +218,7 @@ public final class AnimateItemCommand extends com.amazon.ask.model.interfaces.al
         }
 
         @JsonProperty("description")
+
         public Builder withDescription(String description) {
             this.description = description;
             return this;
@@ -218,6 +226,7 @@ public final class AnimateItemCommand extends com.amazon.ask.model.interfaces.al
 
 
         @JsonProperty("when")
+
         public Builder withWhen(Boolean when) {
             this.when = when;
             return this;
@@ -225,6 +234,7 @@ public final class AnimateItemCommand extends com.amazon.ask.model.interfaces.al
 
 
         @JsonProperty("componentId")
+
         public Builder withComponentId(String componentId) {
             this.componentId = componentId;
             return this;
@@ -232,6 +242,7 @@ public final class AnimateItemCommand extends com.amazon.ask.model.interfaces.al
 
 
         @JsonProperty("duration")
+
         public Builder withDuration(Integer duration) {
             this.duration = String.valueOf(duration);
             return this;
@@ -243,6 +254,7 @@ public final class AnimateItemCommand extends com.amazon.ask.model.interfaces.al
         }
 
         @JsonProperty("easing")
+
         public Builder withEasing(String easing) {
             this.easing = easing;
             return this;
@@ -250,6 +262,7 @@ public final class AnimateItemCommand extends com.amazon.ask.model.interfaces.al
 
 
         @JsonProperty("repeatCount")
+
         public Builder withRepeatCount(Integer repeatCount) {
             this.repeatCount = String.valueOf(repeatCount);
             return this;
@@ -261,6 +274,7 @@ public final class AnimateItemCommand extends com.amazon.ask.model.interfaces.al
         }
 
         @JsonProperty("repeatMode")
+
         public Builder withRepeatMode(com.amazon.ask.model.interfaces.alexa.presentation.apl.AnimateItemRepeatMode repeatMode) {
             this.repeatMode = repeatMode;
             return this;
@@ -268,6 +282,7 @@ public final class AnimateItemCommand extends com.amazon.ask.model.interfaces.al
 
 
         @JsonProperty("value")
+
         public Builder withValue(List<com.amazon.ask.model.interfaces.alexa.presentation.apl.AnimatedProperty> value) {
             this.value = value;
             return this;

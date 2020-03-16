@@ -65,6 +65,7 @@ public final class ScheduleFoodEstablishmentReservationRequest extends com.amazo
         return startTime;
     }
 
+
     /**
      * party size
      * @return partySize
@@ -74,6 +75,7 @@ public final class ScheduleFoodEstablishmentReservationRequest extends com.amazo
         return partySize;
     }
 
+
     /**
      * restaurant
      * @return restaurant
@@ -82,6 +84,7 @@ public final class ScheduleFoodEstablishmentReservationRequest extends com.amazo
     public com.amazon.ask.model.interfaces.connections.entities.Restaurant getRestaurant() {
         return restaurant;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -135,6 +138,7 @@ public final class ScheduleFoodEstablishmentReservationRequest extends com.amazo
         private Builder() {}
 
         @JsonProperty("@version")
+
         public Builder withVersion(String version) {
             this.version = version;
             return this;
@@ -142,6 +146,7 @@ public final class ScheduleFoodEstablishmentReservationRequest extends com.amazo
 
 
         @JsonProperty("startTime")
+
         public Builder withStartTime(String startTime) {
             this.startTime = startTime;
             return this;
@@ -149,6 +154,7 @@ public final class ScheduleFoodEstablishmentReservationRequest extends com.amazo
 
 
         @JsonProperty("partySize")
+
         public Builder withPartySize(String partySize) {
             this.partySize = partySize;
             return this;
@@ -156,6 +162,7 @@ public final class ScheduleFoodEstablishmentReservationRequest extends com.amazo
 
 
         @JsonProperty("restaurant")
+
         public Builder withRestaurant(com.amazon.ask.model.interfaces.connections.entities.Restaurant restaurant) {
             this.restaurant = restaurant;
             return this;

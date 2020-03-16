@@ -35,7 +35,7 @@ public final class Pattern {
     private List<String> colors = new ArrayList<String>();
 
     @JsonProperty("action")
-    private com.amazon.ask.model.services.gameEngine.InputEventActionType action = null;
+    private String action = null;
 
     @JsonProperty("repeat")
     private Integer repeat = null;
@@ -68,6 +68,7 @@ public final class Pattern {
         return gadgetIds;
     }
 
+
     /**
      * A whitelist of colors that are eligible for this match.
      * @return colors
@@ -77,13 +78,32 @@ public final class Pattern {
         return colors;
     }
 
+
     /**
      * Get action
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getActionAsString().
+     *
      * @return action
     **/
-    @JsonProperty("action")
+    
     public com.amazon.ask.model.services.gameEngine.InputEventActionType getAction() {
-        return action;
+        return com.amazon.ask.model.services.gameEngine.InputEventActionType.fromValue(action);
+    }
+
+    /**
+     * Get the underlying String value for action.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return action as a String value
+    **/
+    @JsonProperty("action")
+    public String getActionAsString() {
+      return action;
     }
 
     /**
@@ -96,6 +116,7 @@ public final class Pattern {
     public Integer getRepeat() {
         return repeat;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -144,12 +165,13 @@ public final class Pattern {
     public static class Builder {
         private List<String> gadgetIds;
         private List<String> colors;
-        private com.amazon.ask.model.services.gameEngine.InputEventActionType action;
+        private String action;
         private Integer repeat;
 
         private Builder() {}
 
         @JsonProperty("gadgetIds")
+
         public Builder withGadgetIds(List<String> gadgetIds) {
             this.gadgetIds = gadgetIds;
             return this;
@@ -164,6 +186,7 @@ public final class Pattern {
         }
 
         @JsonProperty("colors")
+
         public Builder withColors(List<String> colors) {
             this.colors = colors;
             return this;
@@ -178,13 +201,19 @@ public final class Pattern {
         }
 
         @JsonProperty("action")
+        public Builder withAction(String action) {
+          this.action = action;
+          return this;
+        }
+
         public Builder withAction(com.amazon.ask.model.services.gameEngine.InputEventActionType action) {
-            this.action = action;
+            this.action = action != null ? action.toString() : null;
             return this;
         }
 
 
         @JsonProperty("repeat")
+
         public Builder withRepeat(Integer repeat) {
             this.repeat = repeat;
             return this;

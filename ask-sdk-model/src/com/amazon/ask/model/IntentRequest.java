@@ -66,6 +66,7 @@ public final class IntentRequest extends com.amazon.ask.model.Request  {
         return dialogState;
     }
 
+
     /**
      * An object that represents what the user wants.
      * @return intent
@@ -74,6 +75,7 @@ public final class IntentRequest extends com.amazon.ask.model.Request  {
     public com.amazon.ask.model.Intent getIntent() {
         return intent;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -126,6 +128,7 @@ public final class IntentRequest extends com.amazon.ask.model.Request  {
         private Builder() {}
 
         @JsonProperty("requestId")
+
         public Builder withRequestId(String requestId) {
             this.requestId = requestId;
             return this;
@@ -133,6 +136,7 @@ public final class IntentRequest extends com.amazon.ask.model.Request  {
 
 
         @JsonProperty("timestamp")
+
         public Builder withTimestamp(OffsetDateTime timestamp) {
             this.timestamp = timestamp;
             return this;
@@ -140,6 +144,7 @@ public final class IntentRequest extends com.amazon.ask.model.Request  {
 
 
         @JsonProperty("locale")
+
         public Builder withLocale(String locale) {
             this.locale = locale;
             return this;
@@ -147,6 +152,7 @@ public final class IntentRequest extends com.amazon.ask.model.Request  {
 
 
         @JsonProperty("dialogState")
+
         public Builder withDialogState(com.amazon.ask.model.DialogState dialogState) {
             this.dialogState = dialogState;
             return this;
@@ -154,6 +160,7 @@ public final class IntentRequest extends com.amazon.ask.model.Request  {
 
 
         @JsonProperty("intent")
+
         public Builder withIntent(com.amazon.ask.model.Intent intent) {
             this.intent = intent;
             return this;

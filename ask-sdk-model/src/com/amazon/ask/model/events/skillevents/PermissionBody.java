@@ -50,6 +50,7 @@ public final class PermissionBody {
         return acceptedPermissions;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -94,6 +95,7 @@ public final class PermissionBody {
         private Builder() {}
 
         @JsonProperty("acceptedPermissions")
+
         public Builder withAcceptedPermissions(List<com.amazon.ask.model.events.skillevents.Permission> acceptedPermissions) {
             this.acceptedPermissions = acceptedPermissions;
             return this;

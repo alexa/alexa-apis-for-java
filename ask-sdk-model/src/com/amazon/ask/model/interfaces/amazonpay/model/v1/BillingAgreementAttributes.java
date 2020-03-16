@@ -35,7 +35,7 @@ public final class BillingAgreementAttributes {
     private com.amazon.ask.model.interfaces.amazonpay.model.v1.SellerBillingAgreementAttributes sellerBillingAgreementAttributes = null;
 
     @JsonProperty("billingAgreementType")
-    private com.amazon.ask.model.interfaces.amazonpay.model.v1.BillingAgreementType billingAgreementType = null;
+    private String billingAgreementType = null;
 
     @JsonProperty("subscriptionAmount")
     private com.amazon.ask.model.interfaces.amazonpay.model.v1.Price subscriptionAmount = null;
@@ -71,6 +71,7 @@ public final class BillingAgreementAttributes {
         return platformId;
     }
 
+
     /**
      * Represents a description of the billing agreement that is displayed in emails to the buyer.
      * @return sellerNote
@@ -79,6 +80,7 @@ public final class BillingAgreementAttributes {
     public String getSellerNote() {
         return sellerNote;
     }
+
 
     /**
      * Get sellerBillingAgreementAttributes
@@ -89,13 +91,32 @@ public final class BillingAgreementAttributes {
         return sellerBillingAgreementAttributes;
     }
 
+
     /**
      * Get billingAgreementType
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getBillingAgreementTypeAsString().
+     *
      * @return billingAgreementType
     **/
-    @JsonProperty("billingAgreementType")
+    
     public com.amazon.ask.model.interfaces.amazonpay.model.v1.BillingAgreementType getBillingAgreementType() {
-        return billingAgreementType;
+        return com.amazon.ask.model.interfaces.amazonpay.model.v1.BillingAgreementType.fromValue(billingAgreementType);
+    }
+
+    /**
+     * Get the underlying String value for billingAgreementType.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return billingAgreementType as a String value
+    **/
+    @JsonProperty("billingAgreementType")
+    public String getBillingAgreementTypeAsString() {
+      return billingAgreementType;
     }
 
     /**
@@ -106,6 +127,7 @@ public final class BillingAgreementAttributes {
     public com.amazon.ask.model.interfaces.amazonpay.model.v1.Price getSubscriptionAmount() {
         return subscriptionAmount;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -157,12 +179,13 @@ public final class BillingAgreementAttributes {
         private String platformId;
         private String sellerNote;
         private com.amazon.ask.model.interfaces.amazonpay.model.v1.SellerBillingAgreementAttributes sellerBillingAgreementAttributes;
-        private com.amazon.ask.model.interfaces.amazonpay.model.v1.BillingAgreementType billingAgreementType;
+        private String billingAgreementType;
         private com.amazon.ask.model.interfaces.amazonpay.model.v1.Price subscriptionAmount;
 
         private Builder() {}
 
         @JsonProperty("platformId")
+
         public Builder withPlatformId(String platformId) {
             this.platformId = platformId;
             return this;
@@ -170,6 +193,7 @@ public final class BillingAgreementAttributes {
 
 
         @JsonProperty("sellerNote")
+
         public Builder withSellerNote(String sellerNote) {
             this.sellerNote = sellerNote;
             return this;
@@ -177,6 +201,7 @@ public final class BillingAgreementAttributes {
 
 
         @JsonProperty("sellerBillingAgreementAttributes")
+
         public Builder withSellerBillingAgreementAttributes(com.amazon.ask.model.interfaces.amazonpay.model.v1.SellerBillingAgreementAttributes sellerBillingAgreementAttributes) {
             this.sellerBillingAgreementAttributes = sellerBillingAgreementAttributes;
             return this;
@@ -184,13 +209,19 @@ public final class BillingAgreementAttributes {
 
 
         @JsonProperty("billingAgreementType")
+        public Builder withBillingAgreementType(String billingAgreementType) {
+          this.billingAgreementType = billingAgreementType;
+          return this;
+        }
+
         public Builder withBillingAgreementType(com.amazon.ask.model.interfaces.amazonpay.model.v1.BillingAgreementType billingAgreementType) {
-            this.billingAgreementType = billingAgreementType;
+            this.billingAgreementType = billingAgreementType != null ? billingAgreementType.toString() : null;
             return this;
         }
 
 
         @JsonProperty("subscriptionAmount")
+
         public Builder withSubscriptionAmount(com.amazon.ask.model.interfaces.amazonpay.model.v1.Price subscriptionAmount) {
             this.subscriptionAmount = subscriptionAmount;
             return this;

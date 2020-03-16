@@ -53,6 +53,7 @@ public final class DisplayInterface {
         return templateVersion;
     }
 
+
     /**
      * Get markupVersion
      * @return markupVersion
@@ -61,6 +62,7 @@ public final class DisplayInterface {
     public String getMarkupVersion() {
         return markupVersion;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class DisplayInterface {
         private Builder() {}
 
         @JsonProperty("templateVersion")
+
         public Builder withTemplateVersion(String templateVersion) {
             this.templateVersion = templateVersion;
             return this;
@@ -116,6 +119,7 @@ public final class DisplayInterface {
 
 
         @JsonProperty("markupVersion")
+
         public Builder withMarkupVersion(String markupVersion) {
             this.markupVersion = markupVersion;
             return this;

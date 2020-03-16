@@ -53,6 +53,7 @@ public final class Event {
         return name;
     }
 
+
     /**
      * Get payload
      * @return payload
@@ -61,6 +62,7 @@ public final class Event {
     public Object getPayload() {
         return payload;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class Event {
         private Builder() {}
 
         @JsonProperty("name")
+
         public Builder withName(String name) {
             this.name = name;
             return this;
@@ -116,6 +119,7 @@ public final class Event {
 
 
         @JsonProperty("payload")
+
         public Builder withPayload(Object payload) {
             this.payload = payload;
             return this;

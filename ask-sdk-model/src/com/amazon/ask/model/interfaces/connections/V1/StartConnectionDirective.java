@@ -65,6 +65,7 @@ public final class StartConnectionDirective extends com.amazon.ask.model.Directi
         return uri;
     }
 
+
     /**
      * This is the input to the connection that the requester is trying to send. It is predefined by the handler of the connection. If the input format is incorrect, an error will be sent to to the requester.
      * @return input
@@ -74,6 +75,7 @@ public final class StartConnectionDirective extends com.amazon.ask.model.Directi
         return input;
     }
 
+
     /**
      * This is an echo back string that requester will receive it when it gets resumed. It is never sent to the handler of the connection.
      * @return token
@@ -82,6 +84,7 @@ public final class StartConnectionDirective extends com.amazon.ask.model.Directi
     public String getToken() {
         return token;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -134,6 +137,7 @@ public final class StartConnectionDirective extends com.amazon.ask.model.Directi
         private Builder() {}
 
         @JsonProperty("uri")
+
         public Builder withUri(String uri) {
             this.uri = uri;
             return this;
@@ -141,6 +145,7 @@ public final class StartConnectionDirective extends com.amazon.ask.model.Directi
 
 
         @JsonProperty("input")
+
         public Builder withInput(Map<String, Object> input) {
             this.input = input;
             return this;
@@ -155,6 +160,7 @@ public final class StartConnectionDirective extends com.amazon.ask.model.Directi
         }
 
         @JsonProperty("token")
+
         public Builder withToken(String token) {
             this.token = token;
             return this;

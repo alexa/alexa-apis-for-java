@@ -50,6 +50,7 @@ public final class StopInputHandlerDirective extends com.amazon.ask.model.Direct
         return originatingRequestId;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -95,6 +96,7 @@ public final class StopInputHandlerDirective extends com.amazon.ask.model.Direct
         private Builder() {}
 
         @JsonProperty("originatingRequestId")
+
         public Builder withOriginatingRequestId(String originatingRequestId) {
             this.originatingRequestId = originatingRequestId;
             return this;

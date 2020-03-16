@@ -71,6 +71,7 @@ public final class Stream {
         return expectedPreviousToken;
     }
 
+
     /**
      * Get token
      * @return token
@@ -79,6 +80,7 @@ public final class Stream {
     public String getToken() {
         return token;
     }
+
 
     /**
      * Get url
@@ -89,6 +91,7 @@ public final class Stream {
         return url;
     }
 
+
     /**
      * Get offsetInMilliseconds
      * @return offsetInMilliseconds
@@ -98,6 +101,7 @@ public final class Stream {
         return offsetInMilliseconds;
     }
 
+
     /**
      * Get captionData
      * @return captionData
@@ -106,6 +110,7 @@ public final class Stream {
     public com.amazon.ask.model.interfaces.audioplayer.CaptionData getCaptionData() {
         return captionData;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -163,6 +168,7 @@ public final class Stream {
         private Builder() {}
 
         @JsonProperty("expectedPreviousToken")
+
         public Builder withExpectedPreviousToken(String expectedPreviousToken) {
             this.expectedPreviousToken = expectedPreviousToken;
             return this;
@@ -170,6 +176,7 @@ public final class Stream {
 
 
         @JsonProperty("token")
+
         public Builder withToken(String token) {
             this.token = token;
             return this;
@@ -177,6 +184,7 @@ public final class Stream {
 
 
         @JsonProperty("url")
+
         public Builder withUrl(String url) {
             this.url = url;
             return this;
@@ -184,6 +192,7 @@ public final class Stream {
 
 
         @JsonProperty("offsetInMilliseconds")
+
         public Builder withOffsetInMilliseconds(Long offsetInMilliseconds) {
             this.offsetInMilliseconds = offsetInMilliseconds;
             return this;
@@ -191,6 +200,7 @@ public final class Stream {
 
 
         @JsonProperty("captionData")
+
         public Builder withCaptionData(com.amazon.ask.model.interfaces.audioplayer.CaptionData captionData) {
             this.captionData = captionData;
             return this;

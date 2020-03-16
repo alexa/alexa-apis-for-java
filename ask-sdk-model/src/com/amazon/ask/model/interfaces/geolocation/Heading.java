@@ -53,6 +53,7 @@ public final class Heading {
         return directionInDegrees;
     }
 
+
     /**
      * A double representing the accuracy of the heading measurement in degrees.
      * @return accuracyInDegrees
@@ -61,6 +62,7 @@ public final class Heading {
     public Double getAccuracyInDegrees() {
         return accuracyInDegrees;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class Heading {
         private Builder() {}
 
         @JsonProperty("directionInDegrees")
+
         public Builder withDirectionInDegrees(Double directionInDegrees) {
             this.directionInDegrees = directionInDegrees;
             return this;
@@ -116,6 +119,7 @@ public final class Heading {
 
 
         @JsonProperty("accuracyInDegrees")
+
         public Builder withAccuracyInDegrees(Double accuracyInDegrees) {
             this.accuracyInDegrees = accuracyInDegrees;
             return this;

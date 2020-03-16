@@ -77,6 +77,7 @@ public final class SpeakItemCommand extends com.amazon.ask.model.interfaces.alex
         return align;
     }
 
+
     /**
      * The id of the component to speak.
      * @return componentId
@@ -85,6 +86,7 @@ public final class SpeakItemCommand extends com.amazon.ask.model.interfaces.alex
     public String getComponentId() {
         return componentId;
     }
+
 
     /**
      * Get highlightMode
@@ -95,6 +97,7 @@ public final class SpeakItemCommand extends com.amazon.ask.model.interfaces.alex
         return highlightMode;
     }
 
+
     /**
      * The minimum number of milliseconds that an item should be highlighted for. Defaults to 0.
      * @return minimumDwellTime
@@ -103,6 +106,7 @@ public final class SpeakItemCommand extends com.amazon.ask.model.interfaces.alex
     public String getMinimumDwellTime() {
         return minimumDwellTime;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -161,6 +165,7 @@ public final class SpeakItemCommand extends com.amazon.ask.model.interfaces.alex
         private Builder() {}
 
         @JsonProperty("delay")
+
         public Builder withDelay(Integer delay) {
             this.delay = String.valueOf(delay);
             return this;
@@ -172,6 +177,7 @@ public final class SpeakItemCommand extends com.amazon.ask.model.interfaces.alex
         }
 
         @JsonProperty("description")
+
         public Builder withDescription(String description) {
             this.description = description;
             return this;
@@ -179,6 +185,7 @@ public final class SpeakItemCommand extends com.amazon.ask.model.interfaces.alex
 
 
         @JsonProperty("when")
+
         public Builder withWhen(Boolean when) {
             this.when = when;
             return this;
@@ -186,6 +193,7 @@ public final class SpeakItemCommand extends com.amazon.ask.model.interfaces.alex
 
 
         @JsonProperty("align")
+
         public Builder withAlign(com.amazon.ask.model.interfaces.alexa.presentation.apl.Align align) {
             this.align = align;
             return this;
@@ -193,6 +201,7 @@ public final class SpeakItemCommand extends com.amazon.ask.model.interfaces.alex
 
 
         @JsonProperty("componentId")
+
         public Builder withComponentId(String componentId) {
             this.componentId = componentId;
             return this;
@@ -200,6 +209,7 @@ public final class SpeakItemCommand extends com.amazon.ask.model.interfaces.alex
 
 
         @JsonProperty("highlightMode")
+
         public Builder withHighlightMode(com.amazon.ask.model.interfaces.alexa.presentation.apl.HighlightMode highlightMode) {
             this.highlightMode = highlightMode;
             return this;
@@ -207,6 +217,7 @@ public final class SpeakItemCommand extends com.amazon.ask.model.interfaces.alex
 
 
         @JsonProperty("minimumDwellTime")
+
         public Builder withMinimumDwellTime(Integer minimumDwellTime) {
             this.minimumDwellTime = String.valueOf(minimumDwellTime);
             return this;

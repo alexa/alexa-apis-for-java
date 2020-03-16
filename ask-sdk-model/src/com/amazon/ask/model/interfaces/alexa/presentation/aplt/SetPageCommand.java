@@ -74,6 +74,7 @@ public final class SetPageCommand extends com.amazon.ask.model.interfaces.alexa.
         return componentId;
     }
 
+
     /**
      * Get position
      * @return position
@@ -83,6 +84,7 @@ public final class SetPageCommand extends com.amazon.ask.model.interfaces.alexa.
         return position;
     }
 
+
     /**
      * The distance to move. May be an absolute value or a relative value.
      * @return value
@@ -91,6 +93,7 @@ public final class SetPageCommand extends com.amazon.ask.model.interfaces.alexa.
     public String getValue() {
         return value;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -147,6 +150,7 @@ public final class SetPageCommand extends com.amazon.ask.model.interfaces.alexa.
         private Builder() {}
 
         @JsonProperty("delay")
+
         public Builder withDelay(Integer delay) {
             this.delay = delay;
             return this;
@@ -154,6 +158,7 @@ public final class SetPageCommand extends com.amazon.ask.model.interfaces.alexa.
 
 
         @JsonProperty("description")
+
         public Builder withDescription(String description) {
             this.description = description;
             return this;
@@ -161,6 +166,7 @@ public final class SetPageCommand extends com.amazon.ask.model.interfaces.alexa.
 
 
         @JsonProperty("screenLock")
+
         public Builder withScreenLock(Boolean screenLock) {
             this.screenLock = screenLock;
             return this;
@@ -168,6 +174,7 @@ public final class SetPageCommand extends com.amazon.ask.model.interfaces.alexa.
 
 
         @JsonProperty("when")
+
         public Builder withWhen(Boolean when) {
             this.when = String.valueOf(when);
             return this;
@@ -179,6 +186,7 @@ public final class SetPageCommand extends com.amazon.ask.model.interfaces.alexa.
         }
 
         @JsonProperty("componentId")
+
         public Builder withComponentId(String componentId) {
             this.componentId = componentId;
             return this;
@@ -186,6 +194,7 @@ public final class SetPageCommand extends com.amazon.ask.model.interfaces.alexa.
 
 
         @JsonProperty("position")
+
         public Builder withPosition(com.amazon.ask.model.interfaces.alexa.presentation.aplt.Position position) {
             this.position = position;
             return this;
@@ -193,6 +202,7 @@ public final class SetPageCommand extends com.amazon.ask.model.interfaces.alexa.
 
 
         @JsonProperty("value")
+
         public Builder withValue(Integer value) {
             this.value = String.valueOf(value);
             return this;

@@ -50,6 +50,7 @@ public final class LaunchDirective extends com.amazon.ask.model.Directive  {
         return videoItem;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -95,6 +96,7 @@ public final class LaunchDirective extends com.amazon.ask.model.Directive  {
         private Builder() {}
 
         @JsonProperty("videoItem")
+
         public Builder withVideoItem(com.amazon.ask.model.interfaces.videoapp.VideoItem videoItem) {
             this.videoItem = videoItem;
             return this;

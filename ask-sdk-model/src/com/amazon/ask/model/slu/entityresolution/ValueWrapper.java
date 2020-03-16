@@ -47,6 +47,7 @@ public final class ValueWrapper {
         return value;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class ValueWrapper {
         private Builder() {}
 
         @JsonProperty("value")
+
         public Builder withValue(com.amazon.ask.model.slu.entityresolution.Value value) {
             this.value = value;
             return this;

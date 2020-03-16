@@ -27,7 +27,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public final class RelevantAudience {
 
     @JsonProperty("type")
-    private com.amazon.ask.model.services.proactiveEvents.RelevantAudienceType type = null;
+    private String type = null;
 
     @JsonProperty("payload")
     @JsonInclude(JsonInclude.Include.ALWAYS)
@@ -48,11 +48,29 @@ public final class RelevantAudience {
 
     /**
      * Get type
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getTypeAsString().
+     *
      * @return type
     **/
-    @JsonProperty("type")
+    
     public com.amazon.ask.model.services.proactiveEvents.RelevantAudienceType getType() {
-        return type;
+        return com.amazon.ask.model.services.proactiveEvents.RelevantAudienceType.fromValue(type);
+    }
+
+    /**
+     * Get the underlying String value for type.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return type as a String value
+    **/
+    @JsonProperty("type")
+    public String getTypeAsString() {
+      return type;
     }
 
     /**
@@ -63,6 +81,7 @@ public final class RelevantAudience {
     public Object getPayload() {
         return payload;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -105,19 +124,25 @@ public final class RelevantAudience {
     }
   
     public static class Builder {
-        private com.amazon.ask.model.services.proactiveEvents.RelevantAudienceType type;
+        private String type;
         private Object payload;
 
         private Builder() {}
 
         @JsonProperty("type")
+        public Builder withType(String type) {
+          this.type = type;
+          return this;
+        }
+
         public Builder withType(com.amazon.ask.model.services.proactiveEvents.RelevantAudienceType type) {
-            this.type = type;
+            this.type = type != null ? type.toString() : null;
             return this;
         }
 
 
         @JsonProperty("payload")
+
         public Builder withPayload(Object payload) {
             this.payload = payload;
             return this;

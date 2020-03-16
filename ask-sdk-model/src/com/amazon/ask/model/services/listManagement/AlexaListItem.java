@@ -35,7 +35,7 @@ public final class AlexaListItem {
     private String value = null;
 
     @JsonProperty("status")
-    private com.amazon.ask.model.services.listManagement.ListItemState status = null;
+    private String status = null;
 
     @JsonProperty("createdTime")
     private String createdTime = null;
@@ -83,6 +83,7 @@ public final class AlexaListItem {
         return id;
     }
 
+
     /**
      * Get version
      * @return version
@@ -91,6 +92,7 @@ public final class AlexaListItem {
     public Long getVersion() {
         return version;
     }
+
 
     /**
      * Get value
@@ -101,13 +103,32 @@ public final class AlexaListItem {
         return value;
     }
 
+
     /**
      * Get status
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getStatusAsString().
+     *
      * @return status
     **/
-    @JsonProperty("status")
+    
     public com.amazon.ask.model.services.listManagement.ListItemState getStatus() {
-        return status;
+        return com.amazon.ask.model.services.listManagement.ListItemState.fromValue(status);
+    }
+
+    /**
+     * Get the underlying String value for status.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return status as a String value
+    **/
+    @JsonProperty("status")
+    public String getStatusAsString() {
+      return status;
     }
 
     /**
@@ -119,6 +140,7 @@ public final class AlexaListItem {
         return createdTime;
     }
 
+
     /**
      * Get updatedTime
      * @return updatedTime
@@ -128,6 +150,7 @@ public final class AlexaListItem {
         return updatedTime;
     }
 
+
     /**
      * URL to retrieve the item from.
      * @return href
@@ -136,6 +159,7 @@ public final class AlexaListItem {
     public String getHref() {
         return href;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -191,7 +215,7 @@ public final class AlexaListItem {
         private String id;
         private Long version;
         private String value;
-        private com.amazon.ask.model.services.listManagement.ListItemState status;
+        private String status;
         private String createdTime;
         private String updatedTime;
         private String href;
@@ -199,6 +223,7 @@ public final class AlexaListItem {
         private Builder() {}
 
         @JsonProperty("id")
+
         public Builder withId(String id) {
             this.id = id;
             return this;
@@ -206,6 +231,7 @@ public final class AlexaListItem {
 
 
         @JsonProperty("version")
+
         public Builder withVersion(Long version) {
             this.version = version;
             return this;
@@ -213,6 +239,7 @@ public final class AlexaListItem {
 
 
         @JsonProperty("value")
+
         public Builder withValue(String value) {
             this.value = value;
             return this;
@@ -220,13 +247,19 @@ public final class AlexaListItem {
 
 
         @JsonProperty("status")
+        public Builder withStatus(String status) {
+          this.status = status;
+          return this;
+        }
+
         public Builder withStatus(com.amazon.ask.model.services.listManagement.ListItemState status) {
-            this.status = status;
+            this.status = status != null ? status.toString() : null;
             return this;
         }
 
 
         @JsonProperty("createdTime")
+
         public Builder withCreatedTime(String createdTime) {
             this.createdTime = createdTime;
             return this;
@@ -234,6 +267,7 @@ public final class AlexaListItem {
 
 
         @JsonProperty("updatedTime")
+
         public Builder withUpdatedTime(String updatedTime) {
             this.updatedTime = updatedTime;
             return this;
@@ -241,6 +275,7 @@ public final class AlexaListItem {
 
 
         @JsonProperty("href")
+
         public Builder withHref(String href) {
             this.href = href;
             return this;

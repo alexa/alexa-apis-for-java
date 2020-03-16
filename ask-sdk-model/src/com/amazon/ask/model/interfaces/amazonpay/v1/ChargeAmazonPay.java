@@ -35,7 +35,7 @@ public final class ChargeAmazonPay {
     private String billingAgreementId = null;
 
     @JsonProperty("paymentAction")
-    private com.amazon.ask.model.interfaces.amazonpay.model.v1.PaymentAction paymentAction = null;
+    private String paymentAction = null;
 
     @JsonProperty("authorizeAttributes")
     private com.amazon.ask.model.interfaces.amazonpay.model.v1.AuthorizeAttributes authorizeAttributes = null;
@@ -83,6 +83,7 @@ public final class ChargeAmazonPay {
         return consentToken;
     }
 
+
     /**
      * The seller ID (also known as merchant ID). If you are an Ecommerce Provider (Solution Provider), please specify the ID of the merchant, not your provider ID.
      * @return sellerId
@@ -91,6 +92,7 @@ public final class ChargeAmazonPay {
     public String getSellerId() {
         return sellerId;
     }
+
 
     /**
      * The payment contract i.e. billing agreement created for the user.
@@ -101,13 +103,32 @@ public final class ChargeAmazonPay {
         return billingAgreementId;
     }
 
+
     /**
      * Get paymentAction
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getPaymentActionAsString().
+     *
      * @return paymentAction
     **/
-    @JsonProperty("paymentAction")
+    
     public com.amazon.ask.model.interfaces.amazonpay.model.v1.PaymentAction getPaymentAction() {
-        return paymentAction;
+        return com.amazon.ask.model.interfaces.amazonpay.model.v1.PaymentAction.fromValue(paymentAction);
+    }
+
+    /**
+     * Get the underlying String value for paymentAction.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return paymentAction as a String value
+    **/
+    @JsonProperty("paymentAction")
+    public String getPaymentActionAsString() {
+      return paymentAction;
     }
 
     /**
@@ -119,6 +140,7 @@ public final class ChargeAmazonPay {
         return authorizeAttributes;
     }
 
+
     /**
      * Get sellerOrderAttributes
      * @return sellerOrderAttributes
@@ -128,6 +150,7 @@ public final class ChargeAmazonPay {
         return sellerOrderAttributes;
     }
 
+
     /**
      * Get providerAttributes
      * @return providerAttributes
@@ -136,6 +159,7 @@ public final class ChargeAmazonPay {
     public com.amazon.ask.model.interfaces.amazonpay.model.v1.ProviderAttributes getProviderAttributes() {
         return providerAttributes;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -191,7 +215,7 @@ public final class ChargeAmazonPay {
         private String consentToken;
         private String sellerId;
         private String billingAgreementId;
-        private com.amazon.ask.model.interfaces.amazonpay.model.v1.PaymentAction paymentAction;
+        private String paymentAction;
         private com.amazon.ask.model.interfaces.amazonpay.model.v1.AuthorizeAttributes authorizeAttributes;
         private com.amazon.ask.model.interfaces.amazonpay.model.v1.SellerOrderAttributes sellerOrderAttributes;
         private com.amazon.ask.model.interfaces.amazonpay.model.v1.ProviderAttributes providerAttributes;
@@ -199,6 +223,7 @@ public final class ChargeAmazonPay {
         private Builder() {}
 
         @JsonProperty("consentToken")
+
         public Builder withConsentToken(String consentToken) {
             this.consentToken = consentToken;
             return this;
@@ -206,6 +231,7 @@ public final class ChargeAmazonPay {
 
 
         @JsonProperty("sellerId")
+
         public Builder withSellerId(String sellerId) {
             this.sellerId = sellerId;
             return this;
@@ -213,6 +239,7 @@ public final class ChargeAmazonPay {
 
 
         @JsonProperty("billingAgreementId")
+
         public Builder withBillingAgreementId(String billingAgreementId) {
             this.billingAgreementId = billingAgreementId;
             return this;
@@ -220,13 +247,19 @@ public final class ChargeAmazonPay {
 
 
         @JsonProperty("paymentAction")
+        public Builder withPaymentAction(String paymentAction) {
+          this.paymentAction = paymentAction;
+          return this;
+        }
+
         public Builder withPaymentAction(com.amazon.ask.model.interfaces.amazonpay.model.v1.PaymentAction paymentAction) {
-            this.paymentAction = paymentAction;
+            this.paymentAction = paymentAction != null ? paymentAction.toString() : null;
             return this;
         }
 
 
         @JsonProperty("authorizeAttributes")
+
         public Builder withAuthorizeAttributes(com.amazon.ask.model.interfaces.amazonpay.model.v1.AuthorizeAttributes authorizeAttributes) {
             this.authorizeAttributes = authorizeAttributes;
             return this;
@@ -234,6 +267,7 @@ public final class ChargeAmazonPay {
 
 
         @JsonProperty("sellerOrderAttributes")
+
         public Builder withSellerOrderAttributes(com.amazon.ask.model.interfaces.amazonpay.model.v1.SellerOrderAttributes sellerOrderAttributes) {
             this.sellerOrderAttributes = sellerOrderAttributes;
             return this;
@@ -241,6 +275,7 @@ public final class ChargeAmazonPay {
 
 
         @JsonProperty("providerAttributes")
+
         public Builder withProviderAttributes(com.amazon.ask.model.interfaces.amazonpay.model.v1.ProviderAttributes providerAttributes) {
             this.providerAttributes = providerAttributes;
             return this;

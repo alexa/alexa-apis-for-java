@@ -56,6 +56,7 @@ public final class EntityListItem {
         return name;
     }
 
+
     /**
      * A list of dynamic entities which are of the same type
      * @return values
@@ -64,6 +65,7 @@ public final class EntityListItem {
     public List<com.amazon.ask.model.er.dynamic.Entity> getValues() {
         return values;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,6 +114,7 @@ public final class EntityListItem {
         private Builder() {}
 
         @JsonProperty("name")
+
         public Builder withName(String name) {
             this.name = name;
             return this;
@@ -119,6 +122,7 @@ public final class EntityListItem {
 
 
         @JsonProperty("values")
+
         public Builder withValues(List<com.amazon.ask.model.er.dynamic.Entity> values) {
             this.values = values;
             return this;

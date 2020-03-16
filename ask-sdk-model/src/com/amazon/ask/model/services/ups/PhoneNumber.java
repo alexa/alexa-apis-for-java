@@ -53,6 +53,7 @@ public final class PhoneNumber {
         return countryCode;
     }
 
+
     /**
      * Get phoneNumber
      * @return phoneNumber
@@ -61,6 +62,7 @@ public final class PhoneNumber {
     public String getPhoneNumber() {
         return phoneNumber;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class PhoneNumber {
         private Builder() {}
 
         @JsonProperty("countryCode")
+
         public Builder withCountryCode(String countryCode) {
             this.countryCode = countryCode;
             return this;
@@ -116,6 +119,7 @@ public final class PhoneNumber {
 
 
         @JsonProperty("phoneNumber")
+
         public Builder withPhoneNumber(String phoneNumber) {
             this.phoneNumber = phoneNumber;
             return this;

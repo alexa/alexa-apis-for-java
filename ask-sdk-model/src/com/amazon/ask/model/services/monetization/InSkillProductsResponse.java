@@ -62,6 +62,7 @@ public final class InSkillProductsResponse {
         return inSkillProducts;
     }
 
+
     /**
      * Get isTruncated
      * @return isTruncated
@@ -71,6 +72,7 @@ public final class InSkillProductsResponse {
         return isTruncated;
     }
 
+
     /**
      * Get nextToken
      * @return nextToken
@@ -79,6 +81,7 @@ public final class InSkillProductsResponse {
     public String getNextToken() {
         return nextToken;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -130,6 +133,7 @@ public final class InSkillProductsResponse {
         private Builder() {}
 
         @JsonProperty("inSkillProducts")
+
         public Builder withInSkillProducts(List<com.amazon.ask.model.services.monetization.InSkillProduct> inSkillProducts) {
             this.inSkillProducts = inSkillProducts;
             return this;
@@ -144,6 +148,7 @@ public final class InSkillProductsResponse {
         }
 
         @JsonProperty("isTruncated")
+
         public Builder withIsTruncated(Boolean isTruncated) {
             this.isTruncated = isTruncated;
             return this;
@@ -151,6 +156,7 @@ public final class InSkillProductsResponse {
 
 
         @JsonProperty("nextToken")
+
         public Builder withNextToken(String nextToken) {
             this.nextToken = nextToken;
             return this;

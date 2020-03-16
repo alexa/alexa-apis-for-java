@@ -26,10 +26,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public final class LocationServices {
 
     @JsonProperty("status")
-    private com.amazon.ask.model.interfaces.geolocation.Status status = null;
+    private String status = null;
 
     @JsonProperty("access")
-    private com.amazon.ask.model.interfaces.geolocation.Access access = null;
+    private String access = null;
 
     public static Builder builder() {
         return new Builder();
@@ -46,20 +46,56 @@ public final class LocationServices {
 
     /**
      * A string representing the status of whether location services is currently running or not on the host OS of device.
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getStatusAsString().
+     *
      * @return status
     **/
-    @JsonProperty("status")
+    
     public com.amazon.ask.model.interfaces.geolocation.Status getStatus() {
-        return status;
+        return com.amazon.ask.model.interfaces.geolocation.Status.fromValue(status);
+    }
+
+    /**
+     * Get the underlying String value for status.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return status as a String value
+    **/
+    @JsonProperty("status")
+    public String getStatusAsString() {
+      return status;
     }
 
     /**
      * A string representing if Alexa has access to location services running on the hostOS of device.
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getAccessAsString().
+     *
      * @return access
     **/
-    @JsonProperty("access")
+    
     public com.amazon.ask.model.interfaces.geolocation.Access getAccess() {
-        return access;
+        return com.amazon.ask.model.interfaces.geolocation.Access.fromValue(access);
+    }
+
+    /**
+     * Get the underlying String value for access.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return access as a String value
+    **/
+    @JsonProperty("access")
+    public String getAccessAsString() {
+      return access;
     }
 
     @Override
@@ -103,21 +139,31 @@ public final class LocationServices {
     }
   
     public static class Builder {
-        private com.amazon.ask.model.interfaces.geolocation.Status status;
-        private com.amazon.ask.model.interfaces.geolocation.Access access;
+        private String status;
+        private String access;
 
         private Builder() {}
 
         @JsonProperty("status")
+        public Builder withStatus(String status) {
+          this.status = status;
+          return this;
+        }
+
         public Builder withStatus(com.amazon.ask.model.interfaces.geolocation.Status status) {
-            this.status = status;
+            this.status = status != null ? status.toString() : null;
             return this;
         }
 
 
         @JsonProperty("access")
+        public Builder withAccess(String access) {
+          this.access = access;
+          return this;
+        }
+
         public Builder withAccess(com.amazon.ask.model.interfaces.geolocation.Access access) {
-            this.access = access;
+            this.access = access != null ? access.toString() : null;
             return this;
         }
 

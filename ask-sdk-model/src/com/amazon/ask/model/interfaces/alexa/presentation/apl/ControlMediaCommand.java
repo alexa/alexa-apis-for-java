@@ -71,6 +71,7 @@ public final class ControlMediaCommand extends com.amazon.ask.model.interfaces.a
         return command;
     }
 
+
     /**
      * The name of the media playing component
      * @return componentId
@@ -80,6 +81,7 @@ public final class ControlMediaCommand extends com.amazon.ask.model.interfaces.a
         return componentId;
     }
 
+
     /**
      * Optional data value
      * @return value
@@ -88,6 +90,7 @@ public final class ControlMediaCommand extends com.amazon.ask.model.interfaces.a
     public String getValue() {
         return value;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -143,6 +146,7 @@ public final class ControlMediaCommand extends com.amazon.ask.model.interfaces.a
         private Builder() {}
 
         @JsonProperty("delay")
+
         public Builder withDelay(Integer delay) {
             this.delay = String.valueOf(delay);
             return this;
@@ -154,6 +158,7 @@ public final class ControlMediaCommand extends com.amazon.ask.model.interfaces.a
         }
 
         @JsonProperty("description")
+
         public Builder withDescription(String description) {
             this.description = description;
             return this;
@@ -161,6 +166,7 @@ public final class ControlMediaCommand extends com.amazon.ask.model.interfaces.a
 
 
         @JsonProperty("when")
+
         public Builder withWhen(Boolean when) {
             this.when = when;
             return this;
@@ -168,6 +174,7 @@ public final class ControlMediaCommand extends com.amazon.ask.model.interfaces.a
 
 
         @JsonProperty("command")
+
         public Builder withCommand(com.amazon.ask.model.interfaces.alexa.presentation.apl.MediaCommandType command) {
             this.command = command;
             return this;
@@ -175,6 +182,7 @@ public final class ControlMediaCommand extends com.amazon.ask.model.interfaces.a
 
 
         @JsonProperty("componentId")
+
         public Builder withComponentId(String componentId) {
             this.componentId = componentId;
             return this;
@@ -182,6 +190,7 @@ public final class ControlMediaCommand extends com.amazon.ask.model.interfaces.a
 
 
         @JsonProperty("value")
+
         public Builder withValue(Integer value) {
             this.value = String.valueOf(value);
             return this;

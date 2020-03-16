@@ -51,6 +51,7 @@ public abstract class BaseRequest {
         return type;
     }
 
+
     /**
      * version of the request
      * @return version
@@ -59,6 +60,7 @@ public abstract class BaseRequest {
     public String getVersion() {
         return version;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {

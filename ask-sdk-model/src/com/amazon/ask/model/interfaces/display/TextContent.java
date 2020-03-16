@@ -59,6 +59,7 @@ public final class TextContent {
         return primaryText;
     }
 
+
     /**
      * Get secondaryText
      * @return secondaryText
@@ -68,6 +69,7 @@ public final class TextContent {
         return secondaryText;
     }
 
+
     /**
      * Get tertiaryText
      * @return tertiaryText
@@ -76,6 +78,7 @@ public final class TextContent {
     public com.amazon.ask.model.interfaces.display.TextField getTertiaryText() {
         return tertiaryText;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -127,6 +130,7 @@ public final class TextContent {
         private Builder() {}
 
         @JsonProperty("primaryText")
+
         public Builder withPrimaryText(com.amazon.ask.model.interfaces.display.TextField primaryText) {
             this.primaryText = primaryText;
             return this;
@@ -134,6 +138,7 @@ public final class TextContent {
 
 
         @JsonProperty("secondaryText")
+
         public Builder withSecondaryText(com.amazon.ask.model.interfaces.display.TextField secondaryText) {
             this.secondaryText = secondaryText;
             return this;
@@ -141,6 +146,7 @@ public final class TextContent {
 
 
         @JsonProperty("tertiaryText")
+
         public Builder withTertiaryText(com.amazon.ask.model.interfaces.display.TextField tertiaryText) {
             this.tertiaryText = tertiaryText;
             return this;

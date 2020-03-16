@@ -45,6 +45,7 @@ public abstract class AnimatedProperty {
         return property;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

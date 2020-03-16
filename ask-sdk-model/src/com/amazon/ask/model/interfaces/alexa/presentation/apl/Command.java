@@ -70,6 +70,7 @@ public abstract class Command {
         return type;
     }
 
+
     /**
      * The delay in milliseconds before this command starts executing; must be non-negative. Defaults to 0.
      * @return delay
@@ -78,6 +79,7 @@ public abstract class Command {
     public String getDelay() {
         return delay;
     }
+
 
     /**
      * A user-provided description of this command.
@@ -88,6 +90,7 @@ public abstract class Command {
         return description;
     }
 
+
     /**
      * If false, the execution of the command is skipped. Defaults to true.
      * @return when
@@ -96,6 +99,7 @@ public abstract class Command {
     public Boolean getWhen() {
         return when;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {

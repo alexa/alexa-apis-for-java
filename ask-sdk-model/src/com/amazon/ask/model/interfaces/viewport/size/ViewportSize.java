@@ -45,6 +45,7 @@ public abstract class ViewportSize {
         return type;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {

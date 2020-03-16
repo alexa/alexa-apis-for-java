@@ -68,6 +68,7 @@ public final class ScrollCommand extends com.amazon.ask.model.interfaces.alexa.p
         return distance;
     }
 
+
     /**
      * The id of the component.
      * @return componentId
@@ -76,6 +77,7 @@ public final class ScrollCommand extends com.amazon.ask.model.interfaces.alexa.p
     public String getComponentId() {
         return componentId;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -129,6 +131,7 @@ public final class ScrollCommand extends com.amazon.ask.model.interfaces.alexa.p
         private Builder() {}
 
         @JsonProperty("delay")
+
         public Builder withDelay(Integer delay) {
             this.delay = delay;
             return this;
@@ -136,6 +139,7 @@ public final class ScrollCommand extends com.amazon.ask.model.interfaces.alexa.p
 
 
         @JsonProperty("description")
+
         public Builder withDescription(String description) {
             this.description = description;
             return this;
@@ -143,6 +147,7 @@ public final class ScrollCommand extends com.amazon.ask.model.interfaces.alexa.p
 
 
         @JsonProperty("screenLock")
+
         public Builder withScreenLock(Boolean screenLock) {
             this.screenLock = screenLock;
             return this;
@@ -150,6 +155,7 @@ public final class ScrollCommand extends com.amazon.ask.model.interfaces.alexa.p
 
 
         @JsonProperty("when")
+
         public Builder withWhen(Boolean when) {
             this.when = String.valueOf(when);
             return this;
@@ -161,6 +167,7 @@ public final class ScrollCommand extends com.amazon.ask.model.interfaces.alexa.p
         }
 
         @JsonProperty("distance")
+
         public Builder withDistance(Integer distance) {
             this.distance = String.valueOf(distance);
             return this;
@@ -172,6 +179,7 @@ public final class ScrollCommand extends com.amazon.ask.model.interfaces.alexa.p
         }
 
         @JsonProperty("componentId")
+
         public Builder withComponentId(String componentId) {
             this.componentId = componentId;
             return this;

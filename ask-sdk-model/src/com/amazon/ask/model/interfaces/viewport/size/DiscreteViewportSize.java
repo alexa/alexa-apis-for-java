@@ -56,6 +56,7 @@ public final class DiscreteViewportSize extends com.amazon.ask.model.interfaces.
         return pixelWidth;
     }
 
+
     /**
      * Get pixelHeight
      * @return pixelHeight
@@ -64,6 +65,7 @@ public final class DiscreteViewportSize extends com.amazon.ask.model.interfaces.
     public Integer getPixelHeight() {
         return pixelHeight;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -113,6 +115,7 @@ public final class DiscreteViewportSize extends com.amazon.ask.model.interfaces.
         private Builder() {}
 
         @JsonProperty("pixelWidth")
+
         public Builder withPixelWidth(Integer pixelWidth) {
             this.pixelWidth = pixelWidth;
             return this;
@@ -120,6 +123,7 @@ public final class DiscreteViewportSize extends com.amazon.ask.model.interfaces.
 
 
         @JsonProperty("pixelHeight")
+
         public Builder withPixelHeight(Integer pixelHeight) {
             this.pixelHeight = pixelHeight;
             return this;

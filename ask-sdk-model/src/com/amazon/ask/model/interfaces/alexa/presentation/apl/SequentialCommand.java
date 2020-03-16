@@ -80,6 +80,7 @@ public final class SequentialCommand extends com.amazon.ask.model.interfaces.ale
         return _catch;
     }
 
+
     /**
      * An array of commands to execute. The commands execute in order; each command must finish before the next can begin. Please note that the delay of sequential command and the delay of the first command in the sequence are additive.
      * @return commands
@@ -88,6 +89,7 @@ public final class SequentialCommand extends com.amazon.ask.model.interfaces.ale
     public List<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command> getCommands() {
         return commands;
     }
+
 
     /**
      * An ordered list of commands to execute after the normal commands and the catch commands.
@@ -98,6 +100,7 @@ public final class SequentialCommand extends com.amazon.ask.model.interfaces.ale
         return _finally;
     }
 
+
     /**
      * The number of times to repeat this series of commands. Defaults to 0. Negative values will be ignored. Note that the delay assigned to overall sequential command only applies the first time. For example, in the sample sequential command below the first SendEvent fires at 3000 milliseconds, the second at 5000, the first SendEvent fires again at 7000 milliseconds, and so forth. {\"type\": \"Sequential\",\"delay\": 1000,\"repeatCount\": 2,\"commands\": [{ \"type\": \"SendEvent\",\"delay\": 2000},{\"type\": \"SendEvent\",\"delay\": 2000}]}
      * @return repeatCount
@@ -106,6 +109,7 @@ public final class SequentialCommand extends com.amazon.ask.model.interfaces.ale
     public String getRepeatCount() {
         return repeatCount;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -164,6 +168,7 @@ public final class SequentialCommand extends com.amazon.ask.model.interfaces.ale
         private Builder() {}
 
         @JsonProperty("delay")
+
         public Builder withDelay(Integer delay) {
             this.delay = String.valueOf(delay);
             return this;
@@ -175,6 +180,7 @@ public final class SequentialCommand extends com.amazon.ask.model.interfaces.ale
         }
 
         @JsonProperty("description")
+
         public Builder withDescription(String description) {
             this.description = description;
             return this;
@@ -182,6 +188,7 @@ public final class SequentialCommand extends com.amazon.ask.model.interfaces.ale
 
 
         @JsonProperty("when")
+
         public Builder withWhen(Boolean when) {
             this.when = when;
             return this;
@@ -189,6 +196,7 @@ public final class SequentialCommand extends com.amazon.ask.model.interfaces.ale
 
 
         @JsonProperty("catch")
+
         public Builder withCatch(List<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command> _catch) {
             this._catch = _catch;
             return this;
@@ -203,6 +211,7 @@ public final class SequentialCommand extends com.amazon.ask.model.interfaces.ale
         }
 
         @JsonProperty("commands")
+
         public Builder withCommands(List<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command> commands) {
             this.commands = commands;
             return this;
@@ -217,6 +226,7 @@ public final class SequentialCommand extends com.amazon.ask.model.interfaces.ale
         }
 
         @JsonProperty("finally")
+
         public Builder withFinally(List<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command> _finally) {
             this._finally = _finally;
             return this;
@@ -231,6 +241,7 @@ public final class SequentialCommand extends com.amazon.ask.model.interfaces.ale
         }
 
         @JsonProperty("repeatCount")
+
         public Builder withRepeatCount(Integer repeatCount) {
             this.repeatCount = String.valueOf(repeatCount);
             return this;

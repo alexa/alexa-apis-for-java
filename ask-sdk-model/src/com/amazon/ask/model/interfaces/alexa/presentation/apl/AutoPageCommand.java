@@ -71,6 +71,7 @@ public final class AutoPageCommand extends com.amazon.ask.model.interfaces.alexa
         return componentId;
     }
 
+
     /**
      * Number of pages to display. Defaults to all of them.
      * @return count
@@ -80,6 +81,7 @@ public final class AutoPageCommand extends com.amazon.ask.model.interfaces.alexa
         return count;
     }
 
+
     /**
      * Time to wait between pages (in milliseconds). Defaults to 0.
      * @return duration
@@ -88,6 +90,7 @@ public final class AutoPageCommand extends com.amazon.ask.model.interfaces.alexa
     public String getDuration() {
         return duration;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -143,6 +146,7 @@ public final class AutoPageCommand extends com.amazon.ask.model.interfaces.alexa
         private Builder() {}
 
         @JsonProperty("delay")
+
         public Builder withDelay(Integer delay) {
             this.delay = String.valueOf(delay);
             return this;
@@ -154,6 +158,7 @@ public final class AutoPageCommand extends com.amazon.ask.model.interfaces.alexa
         }
 
         @JsonProperty("description")
+
         public Builder withDescription(String description) {
             this.description = description;
             return this;
@@ -161,6 +166,7 @@ public final class AutoPageCommand extends com.amazon.ask.model.interfaces.alexa
 
 
         @JsonProperty("when")
+
         public Builder withWhen(Boolean when) {
             this.when = when;
             return this;
@@ -168,6 +174,7 @@ public final class AutoPageCommand extends com.amazon.ask.model.interfaces.alexa
 
 
         @JsonProperty("componentId")
+
         public Builder withComponentId(String componentId) {
             this.componentId = componentId;
             return this;
@@ -175,6 +182,7 @@ public final class AutoPageCommand extends com.amazon.ask.model.interfaces.alexa
 
 
         @JsonProperty("count")
+
         public Builder withCount(Integer count) {
             this.count = String.valueOf(count);
             return this;
@@ -186,6 +194,7 @@ public final class AutoPageCommand extends com.amazon.ask.model.interfaces.alexa
         }
 
         @JsonProperty("duration")
+
         public Builder withDuration(Integer duration) {
             this.duration = String.valueOf(duration);
             return this;

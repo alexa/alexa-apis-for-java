@@ -47,6 +47,7 @@ public final class Permission {
         return scope;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class Permission {
         private Builder() {}
 
         @JsonProperty("scope")
+
         public Builder withScope(String scope) {
             this.scope = scope;
             return this;

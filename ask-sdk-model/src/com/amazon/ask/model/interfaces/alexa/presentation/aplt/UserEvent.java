@@ -75,6 +75,7 @@ public final class UserEvent extends com.amazon.ask.model.Request  {
         return token;
     }
 
+
     /**
      * The array of argument data to pass to Alexa.
      * @return arguments
@@ -84,6 +85,7 @@ public final class UserEvent extends com.amazon.ask.model.Request  {
         return arguments;
     }
 
+
     /**
      * Meta-information about what caused the event to be generated.
      * @return source
@@ -92,6 +94,7 @@ public final class UserEvent extends com.amazon.ask.model.Request  {
     public Object getSource() {
         return source;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -147,6 +150,7 @@ public final class UserEvent extends com.amazon.ask.model.Request  {
         private Builder() {}
 
         @JsonProperty("requestId")
+
         public Builder withRequestId(String requestId) {
             this.requestId = requestId;
             return this;
@@ -154,6 +158,7 @@ public final class UserEvent extends com.amazon.ask.model.Request  {
 
 
         @JsonProperty("timestamp")
+
         public Builder withTimestamp(OffsetDateTime timestamp) {
             this.timestamp = timestamp;
             return this;
@@ -161,6 +166,7 @@ public final class UserEvent extends com.amazon.ask.model.Request  {
 
 
         @JsonProperty("locale")
+
         public Builder withLocale(String locale) {
             this.locale = locale;
             return this;
@@ -168,6 +174,7 @@ public final class UserEvent extends com.amazon.ask.model.Request  {
 
 
         @JsonProperty("token")
+
         public Builder withToken(String token) {
             this.token = token;
             return this;
@@ -175,6 +182,7 @@ public final class UserEvent extends com.amazon.ask.model.Request  {
 
 
         @JsonProperty("arguments")
+
         public Builder withArguments(List<Object> arguments) {
             this.arguments = arguments;
             return this;
@@ -189,6 +197,7 @@ public final class UserEvent extends com.amazon.ask.model.Request  {
         }
 
         @JsonProperty("source")
+
         public Builder withSource(Object source) {
             this.source = source;
             return this;

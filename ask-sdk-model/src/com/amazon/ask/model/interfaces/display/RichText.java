@@ -50,6 +50,7 @@ public final class RichText extends com.amazon.ask.model.interfaces.display.Text
         return text;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -95,6 +96,7 @@ public final class RichText extends com.amazon.ask.model.interfaces.display.Text
         private Builder() {}
 
         @JsonProperty("text")
+
         public Builder withText(String text) {
             this.text = text;
             return this;

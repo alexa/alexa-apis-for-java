@@ -74,6 +74,7 @@ public final class PlayMediaCommand extends com.amazon.ask.model.interfaces.alex
         return audioTrack;
     }
 
+
     /**
      * The name of the media playing component
      * @return componentId
@@ -83,6 +84,7 @@ public final class PlayMediaCommand extends com.amazon.ask.model.interfaces.alex
         return componentId;
     }
 
+
     /**
      * The media source
      * @return source
@@ -91,6 +93,7 @@ public final class PlayMediaCommand extends com.amazon.ask.model.interfaces.alex
     public List<com.amazon.ask.model.interfaces.alexa.presentation.apl.VideoSource> getSource() {
         return source;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -146,6 +149,7 @@ public final class PlayMediaCommand extends com.amazon.ask.model.interfaces.alex
         private Builder() {}
 
         @JsonProperty("delay")
+
         public Builder withDelay(Integer delay) {
             this.delay = String.valueOf(delay);
             return this;
@@ -157,6 +161,7 @@ public final class PlayMediaCommand extends com.amazon.ask.model.interfaces.alex
         }
 
         @JsonProperty("description")
+
         public Builder withDescription(String description) {
             this.description = description;
             return this;
@@ -164,6 +169,7 @@ public final class PlayMediaCommand extends com.amazon.ask.model.interfaces.alex
 
 
         @JsonProperty("when")
+
         public Builder withWhen(Boolean when) {
             this.when = when;
             return this;
@@ -171,6 +177,7 @@ public final class PlayMediaCommand extends com.amazon.ask.model.interfaces.alex
 
 
         @JsonProperty("audioTrack")
+
         public Builder withAudioTrack(com.amazon.ask.model.interfaces.alexa.presentation.apl.AudioTrack audioTrack) {
             this.audioTrack = audioTrack;
             return this;
@@ -178,6 +185,7 @@ public final class PlayMediaCommand extends com.amazon.ask.model.interfaces.alex
 
 
         @JsonProperty("componentId")
+
         public Builder withComponentId(String componentId) {
             this.componentId = componentId;
             return this;
@@ -185,6 +193,7 @@ public final class PlayMediaCommand extends com.amazon.ask.model.interfaces.alex
 
 
         @JsonProperty("source")
+
         public Builder withSource(List<com.amazon.ask.model.interfaces.alexa.presentation.apl.VideoSource> source) {
             this.source = source;
             return this;

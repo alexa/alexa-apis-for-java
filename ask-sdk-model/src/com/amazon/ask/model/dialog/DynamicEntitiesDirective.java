@@ -59,6 +59,7 @@ public final class DynamicEntitiesDirective extends com.amazon.ask.model.Directi
         return updateBehavior;
     }
 
+
     /**
      * Get types
      * @return types
@@ -67,6 +68,7 @@ public final class DynamicEntitiesDirective extends com.amazon.ask.model.Directi
     public List<com.amazon.ask.model.er.dynamic.EntityListItem> getTypes() {
         return types;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -116,6 +118,7 @@ public final class DynamicEntitiesDirective extends com.amazon.ask.model.Directi
         private Builder() {}
 
         @JsonProperty("updateBehavior")
+
         public Builder withUpdateBehavior(com.amazon.ask.model.er.dynamic.UpdateBehavior updateBehavior) {
             this.updateBehavior = updateBehavior;
             return this;
@@ -123,6 +126,7 @@ public final class DynamicEntitiesDirective extends com.amazon.ask.model.Directi
 
 
         @JsonProperty("types")
+
         public Builder withTypes(List<com.amazon.ask.model.er.dynamic.EntityListItem> types) {
             this.types = types;
             return this;

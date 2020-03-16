@@ -29,7 +29,7 @@ public final class EventFilter {
     private Object filterExpression = null;
 
     @JsonProperty("filterMatchAction")
-    private com.amazon.ask.model.interfaces.customInterfaceController.FilterMatchAction filterMatchAction = null;
+    private String filterMatchAction = null;
 
     public static Builder builder() {
         return new Builder();
@@ -53,13 +53,32 @@ public final class EventFilter {
         return filterExpression;
     }
 
+
     /**
      * Get filterMatchAction
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getFilterMatchActionAsString().
+     *
      * @return filterMatchAction
     **/
-    @JsonProperty("filterMatchAction")
+    
     public com.amazon.ask.model.interfaces.customInterfaceController.FilterMatchAction getFilterMatchAction() {
-        return filterMatchAction;
+        return com.amazon.ask.model.interfaces.customInterfaceController.FilterMatchAction.fromValue(filterMatchAction);
+    }
+
+    /**
+     * Get the underlying String value for filterMatchAction.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return filterMatchAction as a String value
+    **/
+    @JsonProperty("filterMatchAction")
+    public String getFilterMatchActionAsString() {
+      return filterMatchAction;
     }
 
     @Override
@@ -104,11 +123,12 @@ public final class EventFilter {
   
     public static class Builder {
         private Object filterExpression;
-        private com.amazon.ask.model.interfaces.customInterfaceController.FilterMatchAction filterMatchAction;
+        private String filterMatchAction;
 
         private Builder() {}
 
         @JsonProperty("filterExpression")
+
         public Builder withFilterExpression(Object filterExpression) {
             this.filterExpression = filterExpression;
             return this;
@@ -116,8 +136,13 @@ public final class EventFilter {
 
 
         @JsonProperty("filterMatchAction")
+        public Builder withFilterMatchAction(String filterMatchAction) {
+          this.filterMatchAction = filterMatchAction;
+          return this;
+        }
+
         public Builder withFilterMatchAction(com.amazon.ask.model.interfaces.customInterfaceController.FilterMatchAction filterMatchAction) {
-            this.filterMatchAction = filterMatchAction;
+            this.filterMatchAction = filterMatchAction != null ? filterMatchAction.toString() : null;
             return this;
         }
 

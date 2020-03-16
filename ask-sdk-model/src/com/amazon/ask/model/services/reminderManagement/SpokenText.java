@@ -59,6 +59,7 @@ public final class SpokenText {
         return locale;
     }
 
+
     /**
      * Spoken text in SSML format.
      * @return ssml
@@ -68,6 +69,7 @@ public final class SpokenText {
         return ssml;
     }
 
+
     /**
      * Spoken text in plain text format.
      * @return text
@@ -76,6 +78,7 @@ public final class SpokenText {
     public String getText() {
         return text;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -127,6 +130,7 @@ public final class SpokenText {
         private Builder() {}
 
         @JsonProperty("locale")
+
         public Builder withLocale(String locale) {
             this.locale = locale;
             return this;
@@ -134,6 +138,7 @@ public final class SpokenText {
 
 
         @JsonProperty("ssml")
+
         public Builder withSsml(String ssml) {
             this.ssml = ssml;
             return this;
@@ -141,6 +146,7 @@ public final class SpokenText {
 
 
         @JsonProperty("text")
+
         public Builder withText(String text) {
             this.text = text;
             return this;

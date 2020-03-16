@@ -48,6 +48,7 @@ public final class RotateTransformProperty extends com.amazon.ask.model.interfac
         return rotate;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -92,6 +93,7 @@ public final class RotateTransformProperty extends com.amazon.ask.model.interfac
         private Builder() {}
 
         @JsonProperty("rotate")
+
         public Builder withRotate(Double rotate) {
             this.rotate = String.valueOf(rotate);
             return this;

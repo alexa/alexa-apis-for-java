@@ -65,6 +65,7 @@ public final class SellerBillingAgreementAttributes extends com.amazon.ask.model
         return sellerBillingAgreementId;
     }
 
+
     /**
      * The identifier of the store from which the order was placed. This overrides the default value in Seller Central under Settings &amp;gt; Account Settings. It is displayed to the buyer in their emails and transaction history on the Amazon Payments website.
      * @return storeName
@@ -74,6 +75,7 @@ public final class SellerBillingAgreementAttributes extends com.amazon.ask.model
         return storeName;
     }
 
+
     /**
      * Any additional information that you wish to include with this billing agreement. At least one request parameter must be specified.
      * @return customInformation
@@ -82,6 +84,7 @@ public final class SellerBillingAgreementAttributes extends com.amazon.ask.model
     public String getCustomInformation() {
         return customInformation;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -135,6 +138,7 @@ public final class SellerBillingAgreementAttributes extends com.amazon.ask.model
         private Builder() {}
 
         @JsonProperty("sellerBillingAgreementId")
+
         public Builder withSellerBillingAgreementId(String sellerBillingAgreementId) {
             this.sellerBillingAgreementId = sellerBillingAgreementId;
             return this;
@@ -142,6 +146,7 @@ public final class SellerBillingAgreementAttributes extends com.amazon.ask.model
 
 
         @JsonProperty("storeName")
+
         public Builder withStoreName(String storeName) {
             this.storeName = storeName;
             return this;
@@ -149,6 +154,7 @@ public final class SellerBillingAgreementAttributes extends com.amazon.ask.model
 
 
         @JsonProperty("customInformation")
+
         public Builder withCustomInformation(String customInformation) {
             this.customInformation = customInformation;
             return this;
@@ -156,6 +162,7 @@ public final class SellerBillingAgreementAttributes extends com.amazon.ask.model
 
 
         @JsonProperty("@version")
+
         public Builder withVersion(String version) {
             this.version = version;
             return this;

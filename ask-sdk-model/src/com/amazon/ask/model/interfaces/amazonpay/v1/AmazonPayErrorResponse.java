@@ -53,6 +53,7 @@ public final class AmazonPayErrorResponse {
         return errorCode;
     }
 
+
     /**
      * Description of the error.
      * @return errorMessage
@@ -61,6 +62,7 @@ public final class AmazonPayErrorResponse {
     public String getErrorMessage() {
         return errorMessage;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class AmazonPayErrorResponse {
         private Builder() {}
 
         @JsonProperty("errorCode")
+
         public Builder withErrorCode(String errorCode) {
             this.errorCode = errorCode;
             return this;
@@ -116,6 +119,7 @@ public final class AmazonPayErrorResponse {
 
 
         @JsonProperty("errorMessage")
+
         public Builder withErrorMessage(String errorMessage) {
             this.errorMessage = errorMessage;
             return this;

@@ -53,6 +53,7 @@ public final class AskForPermissionsConsentCard extends com.amazon.ask.model.ui.
         return permissions;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -98,6 +99,7 @@ public final class AskForPermissionsConsentCard extends com.amazon.ask.model.ui.
         private Builder() {}
 
         @JsonProperty("permissions")
+
         public Builder withPermissions(List<String> permissions) {
             this.permissions = permissions;
             return this;

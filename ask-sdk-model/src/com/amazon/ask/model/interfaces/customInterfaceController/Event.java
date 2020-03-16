@@ -59,6 +59,7 @@ public final class Event {
         return header;
     }
 
+
     /**
      * The free form JSON object.
      * @return payload
@@ -68,6 +69,7 @@ public final class Event {
         return payload;
     }
 
+
     /**
      * Identifies where the event orginated from.
      * @return endpoint
@@ -76,6 +78,7 @@ public final class Event {
     public com.amazon.ask.model.interfaces.customInterfaceController.Endpoint getEndpoint() {
         return endpoint;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -127,6 +130,7 @@ public final class Event {
         private Builder() {}
 
         @JsonProperty("header")
+
         public Builder withHeader(com.amazon.ask.model.interfaces.customInterfaceController.Header header) {
             this.header = header;
             return this;
@@ -134,6 +138,7 @@ public final class Event {
 
 
         @JsonProperty("payload")
+
         public Builder withPayload(Object payload) {
             this.payload = payload;
             return this;
@@ -141,6 +146,7 @@ public final class Event {
 
 
         @JsonProperty("endpoint")
+
         public Builder withEndpoint(com.amazon.ask.model.interfaces.customInterfaceController.Endpoint endpoint) {
             this.endpoint = endpoint;
             return this;

@@ -68,6 +68,7 @@ public final class SendEventCommand extends com.amazon.ask.model.interfaces.alex
         return arguments;
     }
 
+
     /**
      * An array of components to extract value data from and provide to Alexa.
      * @return components
@@ -76,6 +77,7 @@ public final class SendEventCommand extends com.amazon.ask.model.interfaces.alex
     public List<String> getComponents() {
         return components;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -128,6 +130,7 @@ public final class SendEventCommand extends com.amazon.ask.model.interfaces.alex
         private Builder() {}
 
         @JsonProperty("delay")
+
         public Builder withDelay(Integer delay) {
             this.delay = String.valueOf(delay);
             return this;
@@ -139,6 +142,7 @@ public final class SendEventCommand extends com.amazon.ask.model.interfaces.alex
         }
 
         @JsonProperty("description")
+
         public Builder withDescription(String description) {
             this.description = description;
             return this;
@@ -146,6 +150,7 @@ public final class SendEventCommand extends com.amazon.ask.model.interfaces.alex
 
 
         @JsonProperty("when")
+
         public Builder withWhen(Boolean when) {
             this.when = when;
             return this;
@@ -153,6 +158,7 @@ public final class SendEventCommand extends com.amazon.ask.model.interfaces.alex
 
 
         @JsonProperty("arguments")
+
         public Builder withArguments(List<String> arguments) {
             this.arguments = arguments;
             return this;
@@ -167,6 +173,7 @@ public final class SendEventCommand extends com.amazon.ask.model.interfaces.alex
         }
 
         @JsonProperty("components")
+
         public Builder withComponents(List<String> components) {
             this.components = components;
             return this;

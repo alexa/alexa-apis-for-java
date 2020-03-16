@@ -62,6 +62,7 @@ public final class ProviderAttributes extends com.amazon.ask.model.interfaces.am
         return providerId;
     }
 
+
     /**
      * List of provider credit.
      * @return providerCreditList
@@ -70,6 +71,7 @@ public final class ProviderAttributes extends com.amazon.ask.model.interfaces.am
     public List<com.amazon.ask.model.interfaces.amazonpay.model.request.ProviderCredit> getProviderCreditList() {
         return providerCreditList;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -120,6 +122,7 @@ public final class ProviderAttributes extends com.amazon.ask.model.interfaces.am
         private Builder() {}
 
         @JsonProperty("providerId")
+
         public Builder withProviderId(String providerId) {
             this.providerId = providerId;
             return this;
@@ -127,6 +130,7 @@ public final class ProviderAttributes extends com.amazon.ask.model.interfaces.am
 
 
         @JsonProperty("providerCreditList")
+
         public Builder withProviderCreditList(List<com.amazon.ask.model.interfaces.amazonpay.model.request.ProviderCredit> providerCreditList) {
             this.providerCreditList = providerCreditList;
             return this;
@@ -141,6 +145,7 @@ public final class ProviderAttributes extends com.amazon.ask.model.interfaces.am
         }
 
         @JsonProperty("@version")
+
         public Builder withVersion(String version) {
             this.version = version;
             return this;

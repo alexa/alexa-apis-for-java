@@ -29,7 +29,7 @@ public final class CurrentPlaybackState {
     private Long offsetInMilliseconds = null;
 
     @JsonProperty("playerActivity")
-    private com.amazon.ask.model.interfaces.audioplayer.PlayerActivity playerActivity = null;
+    private String playerActivity = null;
 
     @JsonProperty("token")
     private String token = null;
@@ -59,13 +59,32 @@ public final class CurrentPlaybackState {
         return offsetInMilliseconds;
     }
 
+
     /**
      * Get playerActivity
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getPlayerActivityAsString().
+     *
      * @return playerActivity
     **/
-    @JsonProperty("playerActivity")
+    
     public com.amazon.ask.model.interfaces.audioplayer.PlayerActivity getPlayerActivity() {
-        return playerActivity;
+        return com.amazon.ask.model.interfaces.audioplayer.PlayerActivity.fromValue(playerActivity);
+    }
+
+    /**
+     * Get the underlying String value for playerActivity.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return playerActivity as a String value
+    **/
+    @JsonProperty("playerActivity")
+    public String getPlayerActivityAsString() {
+      return playerActivity;
     }
 
     /**
@@ -76,6 +95,7 @@ public final class CurrentPlaybackState {
     public String getToken() {
         return token;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -121,12 +141,13 @@ public final class CurrentPlaybackState {
   
     public static class Builder {
         private Long offsetInMilliseconds;
-        private com.amazon.ask.model.interfaces.audioplayer.PlayerActivity playerActivity;
+        private String playerActivity;
         private String token;
 
         private Builder() {}
 
         @JsonProperty("offsetInMilliseconds")
+
         public Builder withOffsetInMilliseconds(Long offsetInMilliseconds) {
             this.offsetInMilliseconds = offsetInMilliseconds;
             return this;
@@ -134,13 +155,19 @@ public final class CurrentPlaybackState {
 
 
         @JsonProperty("playerActivity")
+        public Builder withPlayerActivity(String playerActivity) {
+          this.playerActivity = playerActivity;
+          return this;
+        }
+
         public Builder withPlayerActivity(com.amazon.ask.model.interfaces.audioplayer.PlayerActivity playerActivity) {
-            this.playerActivity = playerActivity;
+            this.playerActivity = playerActivity != null ? playerActivity.toString() : null;
             return this;
         }
 
 
         @JsonProperty("token")
+
         public Builder withToken(String token) {
             this.token = token;
             return this;

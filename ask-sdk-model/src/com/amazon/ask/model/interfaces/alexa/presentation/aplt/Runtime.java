@@ -47,6 +47,7 @@ public final class Runtime {
         return maxVersion;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class Runtime {
         private Builder() {}
 
         @JsonProperty("maxVersion")
+
         public Builder withMaxVersion(String maxVersion) {
             this.maxVersion = maxVersion;
             return this;

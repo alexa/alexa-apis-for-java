@@ -59,6 +59,7 @@ public final class ExecuteCommandsDirective extends com.amazon.ask.model.Directi
         return commands;
     }
 
+
     /**
      * A skill defined token, unique for each presentation. Must match the token provided by the skill in the RenderDocument directive used to render the original APL document.
      * @return token
@@ -67,6 +68,7 @@ public final class ExecuteCommandsDirective extends com.amazon.ask.model.Directi
     public String getToken() {
         return token;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -116,6 +118,7 @@ public final class ExecuteCommandsDirective extends com.amazon.ask.model.Directi
         private Builder() {}
 
         @JsonProperty("commands")
+
         public Builder withCommands(List<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command> commands) {
             this.commands = commands;
             return this;
@@ -130,6 +133,7 @@ public final class ExecuteCommandsDirective extends com.amazon.ask.model.Directi
         }
 
         @JsonProperty("token")
+
         public Builder withToken(String token) {
             this.token = token;
             return this;

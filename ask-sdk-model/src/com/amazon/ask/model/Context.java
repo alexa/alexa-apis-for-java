@@ -92,6 +92,7 @@ public final class Context {
         return system;
     }
 
+
     /**
      * Provides the current state for the Alexa.Presentation.APL interface.
      * @return alexaPresentationAPL
@@ -100,6 +101,7 @@ public final class Context {
     public com.amazon.ask.model.interfaces.alexa.presentation.apl.RenderedDocumentState getAlexaPresentationAPL() {
         return alexaPresentationAPL;
     }
+
 
     /**
      * Provides the current state for the AudioPlayer interface.
@@ -110,6 +112,7 @@ public final class Context {
         return audioPlayer;
     }
 
+
     /**
      * Provides the automotive specific information of the device.
      * @return automotive
@@ -118,6 +121,7 @@ public final class Context {
     public com.amazon.ask.model.interfaces.automotive.AutomotiveState getAutomotive() {
         return automotive;
     }
+
 
     /**
      * Provides the current state for the Display interface.
@@ -128,6 +132,7 @@ public final class Context {
         return display;
     }
 
+
     /**
      * Provides the last gathered geolocation information of the device.
      * @return geolocation
@@ -136,6 +141,7 @@ public final class Context {
     public com.amazon.ask.model.interfaces.geolocation.GeolocationState getGeolocation() {
         return geolocation;
     }
+
 
     /**
      * Provides the characteristics of a device's viewport.
@@ -146,6 +152,7 @@ public final class Context {
         return viewport;
     }
 
+
     /**
      * This object contains a list of viewports characteristics related to the device's viewports.
      * @return viewports
@@ -154,6 +161,7 @@ public final class Context {
     public List<com.amazon.ask.model.interfaces.viewport.TypedViewportState> getViewports() {
         return viewports;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -220,6 +228,7 @@ public final class Context {
         private Builder() {}
 
         @JsonProperty("System")
+
         public Builder withSystem(com.amazon.ask.model.interfaces.system.SystemState system) {
             this.system = system;
             return this;
@@ -227,6 +236,7 @@ public final class Context {
 
 
         @JsonProperty("Alexa.Presentation.APL")
+
         public Builder withAlexaPresentationAPL(com.amazon.ask.model.interfaces.alexa.presentation.apl.RenderedDocumentState alexaPresentationAPL) {
             this.alexaPresentationAPL = alexaPresentationAPL;
             return this;
@@ -234,6 +244,7 @@ public final class Context {
 
 
         @JsonProperty("AudioPlayer")
+
         public Builder withAudioPlayer(com.amazon.ask.model.interfaces.audioplayer.AudioPlayerState audioPlayer) {
             this.audioPlayer = audioPlayer;
             return this;
@@ -241,6 +252,7 @@ public final class Context {
 
 
         @JsonProperty("Automotive")
+
         public Builder withAutomotive(com.amazon.ask.model.interfaces.automotive.AutomotiveState automotive) {
             this.automotive = automotive;
             return this;
@@ -248,6 +260,7 @@ public final class Context {
 
 
         @JsonProperty("Display")
+
         public Builder withDisplay(com.amazon.ask.model.interfaces.display.DisplayState display) {
             this.display = display;
             return this;
@@ -255,6 +268,7 @@ public final class Context {
 
 
         @JsonProperty("Geolocation")
+
         public Builder withGeolocation(com.amazon.ask.model.interfaces.geolocation.GeolocationState geolocation) {
             this.geolocation = geolocation;
             return this;
@@ -262,6 +276,7 @@ public final class Context {
 
 
         @JsonProperty("Viewport")
+
         public Builder withViewport(com.amazon.ask.model.interfaces.viewport.ViewportState viewport) {
             this.viewport = viewport;
             return this;
@@ -269,6 +284,7 @@ public final class Context {
 
 
         @JsonProperty("Viewports")
+
         public Builder withViewports(List<com.amazon.ask.model.interfaces.viewport.TypedViewportState> viewports) {
             this.viewports = viewports;
             return this;

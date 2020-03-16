@@ -68,6 +68,7 @@ public final class ContinuousViewportSize extends com.amazon.ask.model.interface
         return minPixelWidth;
     }
 
+
     /**
      * Get minPixelHeight
      * @return minPixelHeight
@@ -76,6 +77,7 @@ public final class ContinuousViewportSize extends com.amazon.ask.model.interface
     public Integer getMinPixelHeight() {
         return minPixelHeight;
     }
+
 
     /**
      * Get maxPixelWidth
@@ -86,6 +88,7 @@ public final class ContinuousViewportSize extends com.amazon.ask.model.interface
         return maxPixelWidth;
     }
 
+
     /**
      * Get maxPixelHeight
      * @return maxPixelHeight
@@ -94,6 +97,7 @@ public final class ContinuousViewportSize extends com.amazon.ask.model.interface
     public Integer getMaxPixelHeight() {
         return maxPixelHeight;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -149,6 +153,7 @@ public final class ContinuousViewportSize extends com.amazon.ask.model.interface
         private Builder() {}
 
         @JsonProperty("minPixelWidth")
+
         public Builder withMinPixelWidth(Integer minPixelWidth) {
             this.minPixelWidth = minPixelWidth;
             return this;
@@ -156,6 +161,7 @@ public final class ContinuousViewportSize extends com.amazon.ask.model.interface
 
 
         @JsonProperty("minPixelHeight")
+
         public Builder withMinPixelHeight(Integer minPixelHeight) {
             this.minPixelHeight = minPixelHeight;
             return this;
@@ -163,6 +169,7 @@ public final class ContinuousViewportSize extends com.amazon.ask.model.interface
 
 
         @JsonProperty("maxPixelWidth")
+
         public Builder withMaxPixelWidth(Integer maxPixelWidth) {
             this.maxPixelWidth = maxPixelWidth;
             return this;
@@ -170,6 +177,7 @@ public final class ContinuousViewportSize extends com.amazon.ask.model.interface
 
 
         @JsonProperty("maxPixelHeight")
+
         public Builder withMaxPixelHeight(Integer maxPixelHeight) {
             this.maxPixelHeight = maxPixelHeight;
             return this;

@@ -53,6 +53,7 @@ public final class Error {
         return code;
     }
 
+
     /**
      * Detailed error message.
      * @return message
@@ -61,6 +62,7 @@ public final class Error {
     public String getMessage() {
         return message;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class Error {
         private Builder() {}
 
         @JsonProperty("code")
+
         public Builder withCode(String code) {
             this.code = code;
             return this;
@@ -116,6 +119,7 @@ public final class Error {
 
 
         @JsonProperty("message")
+
         public Builder withMessage(String message) {
             this.message = message;
             return this;

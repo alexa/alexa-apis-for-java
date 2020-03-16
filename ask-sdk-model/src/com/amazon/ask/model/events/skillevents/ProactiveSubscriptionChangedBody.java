@@ -50,6 +50,7 @@ public final class ProactiveSubscriptionChangedBody {
         return subscriptions;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -94,6 +95,7 @@ public final class ProactiveSubscriptionChangedBody {
         private Builder() {}
 
         @JsonProperty("subscriptions")
+
         public Builder withSubscriptions(List<com.amazon.ask.model.events.skillevents.ProactiveSubscriptionEvent> subscriptions) {
             this.subscriptions = subscriptions;
             return this;

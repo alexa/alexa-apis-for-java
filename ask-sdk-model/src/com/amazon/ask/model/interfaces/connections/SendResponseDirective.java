@@ -59,6 +59,7 @@ public final class SendResponseDirective extends com.amazon.ask.model.Directive 
         return status;
     }
 
+
     /**
      * This is an object sent to referrer skill as is.
      * @return payload
@@ -67,6 +68,7 @@ public final class SendResponseDirective extends com.amazon.ask.model.Directive 
     public Map<String, Object> getPayload() {
         return payload;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -116,6 +118,7 @@ public final class SendResponseDirective extends com.amazon.ask.model.Directive 
         private Builder() {}
 
         @JsonProperty("status")
+
         public Builder withStatus(com.amazon.ask.model.interfaces.connections.ConnectionsStatus status) {
             this.status = status;
             return this;
@@ -123,6 +126,7 @@ public final class SendResponseDirective extends com.amazon.ask.model.Directive 
 
 
         @JsonProperty("payload")
+
         public Builder withPayload(Map<String, Object> payload) {
             this.payload = payload;
             return this;

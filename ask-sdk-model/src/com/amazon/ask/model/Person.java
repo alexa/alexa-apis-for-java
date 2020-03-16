@@ -53,6 +53,7 @@ public final class Person {
         return personId;
     }
 
+
     /**
      * A token identifying the user in another system. This is only provided if the recognized user has successfully linked their skill account with their Alexa profile. The accessToken field will not appear if null.
      * @return accessToken
@@ -61,6 +62,7 @@ public final class Person {
     public String getAccessToken() {
         return accessToken;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class Person {
         private Builder() {}
 
         @JsonProperty("personId")
+
         public Builder withPersonId(String personId) {
             this.personId = personId;
             return this;
@@ -116,6 +119,7 @@ public final class Person {
 
 
         @JsonProperty("accessToken")
+
         public Builder withAccessToken(String accessToken) {
             this.accessToken = accessToken;
             return this;

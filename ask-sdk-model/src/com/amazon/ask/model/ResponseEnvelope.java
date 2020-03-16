@@ -68,6 +68,7 @@ public final class ResponseEnvelope {
         return version;
     }
 
+
     /**
      * Get sessionAttributes
      * @return sessionAttributes
@@ -76,6 +77,7 @@ public final class ResponseEnvelope {
     public Map<String, Object> getSessionAttributes() {
         return sessionAttributes;
     }
+
 
     /**
      * Get userAgent
@@ -86,6 +88,7 @@ public final class ResponseEnvelope {
         return userAgent;
     }
 
+
     /**
      * Get response
      * @return response
@@ -94,6 +97,7 @@ public final class ResponseEnvelope {
     public com.amazon.ask.model.Response getResponse() {
         return response;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -148,6 +152,7 @@ public final class ResponseEnvelope {
         private Builder() {}
 
         @JsonProperty("version")
+
         public Builder withVersion(String version) {
             this.version = version;
             return this;
@@ -155,6 +160,7 @@ public final class ResponseEnvelope {
 
 
         @JsonProperty("sessionAttributes")
+
         public Builder withSessionAttributes(Map<String, Object> sessionAttributes) {
             this.sessionAttributes = sessionAttributes;
             return this;
@@ -169,6 +175,7 @@ public final class ResponseEnvelope {
         }
 
         @JsonProperty("userAgent")
+
         public Builder withUserAgent(String userAgent) {
             this.userAgent = userAgent;
             return this;
@@ -176,6 +183,7 @@ public final class ResponseEnvelope {
 
 
         @JsonProperty("response")
+
         public Builder withResponse(com.amazon.ask.model.Response response) {
             this.response = response;
             return this;

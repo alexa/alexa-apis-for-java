@@ -26,7 +26,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public final class StartRequest {
 
     @JsonProperty("method")
-    private com.amazon.ask.model.interfaces.alexa.presentation.html.StartRequestMethod method = null;
+    private String method = null;
 
     @JsonProperty("uri")
     private String uri = null;
@@ -52,11 +52,29 @@ public final class StartRequest {
 
     /**
      * Get method
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getMethodAsString().
+     *
      * @return method
     **/
-    @JsonProperty("method")
+    
     public com.amazon.ask.model.interfaces.alexa.presentation.html.StartRequestMethod getMethod() {
-        return method;
+        return com.amazon.ask.model.interfaces.alexa.presentation.html.StartRequestMethod.fromValue(method);
+    }
+
+    /**
+     * Get the underlying String value for method.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return method as a String value
+    **/
+    @JsonProperty("method")
+    public String getMethodAsString() {
+      return method;
     }
 
     /**
@@ -68,6 +86,7 @@ public final class StartRequest {
         return uri;
     }
 
+
     /**
      * HTTP headers that the HTML runtime requires to access resources. Only the Authorization header and custom headers are allowed
      * @return headers
@@ -76,6 +95,7 @@ public final class StartRequest {
     public Object getHeaders() {
         return headers;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -120,20 +140,26 @@ public final class StartRequest {
     }
   
     public static class Builder {
-        private com.amazon.ask.model.interfaces.alexa.presentation.html.StartRequestMethod method;
+        private String method;
         private String uri;
         private Object headers;
 
         private Builder() {}
 
         @JsonProperty("method")
+        public Builder withMethod(String method) {
+          this.method = method;
+          return this;
+        }
+
         public Builder withMethod(com.amazon.ask.model.interfaces.alexa.presentation.html.StartRequestMethod method) {
-            this.method = method;
+            this.method = method != null ? method.toString() : null;
             return this;
         }
 
 
         @JsonProperty("uri")
+
         public Builder withUri(String uri) {
             this.uri = uri;
             return this;
@@ -141,6 +167,7 @@ public final class StartRequest {
 
 
         @JsonProperty("headers")
+
         public Builder withHeaders(Object headers) {
             this.headers = headers;
             return this;

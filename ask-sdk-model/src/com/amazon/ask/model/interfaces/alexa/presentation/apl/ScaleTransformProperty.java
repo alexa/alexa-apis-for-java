@@ -60,6 +60,7 @@ public final class ScaleTransformProperty extends com.amazon.ask.model.interface
         return scale;
     }
 
+
     /**
      * Scaling in the X direction (overrides “scale” if in same group).
      * @return scaleX
@@ -69,6 +70,7 @@ public final class ScaleTransformProperty extends com.amazon.ask.model.interface
         return scaleX;
     }
 
+
     /**
      * Scaling in the Y direction (overrides “scale” if in same group).
      * @return scaleY
@@ -77,6 +79,7 @@ public final class ScaleTransformProperty extends com.amazon.ask.model.interface
     public String getScaleY() {
         return scaleY;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -128,6 +131,7 @@ public final class ScaleTransformProperty extends com.amazon.ask.model.interface
         private Builder() {}
 
         @JsonProperty("scale")
+
         public Builder withScale(Double scale) {
             this.scale = String.valueOf(scale);
             return this;
@@ -139,6 +143,7 @@ public final class ScaleTransformProperty extends com.amazon.ask.model.interface
         }
 
         @JsonProperty("scaleX")
+
         public Builder withScaleX(Double scaleX) {
             this.scaleX = String.valueOf(scaleX);
             return this;
@@ -150,6 +155,7 @@ public final class ScaleTransformProperty extends com.amazon.ask.model.interface
         }
 
         @JsonProperty("scaleY")
+
         public Builder withScaleY(Double scaleY) {
             this.scaleY = String.valueOf(scaleY);
             return this;

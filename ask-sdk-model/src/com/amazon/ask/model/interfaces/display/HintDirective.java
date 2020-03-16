@@ -50,6 +50,7 @@ public final class HintDirective extends com.amazon.ask.model.Directive  {
         return hint;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -95,6 +96,7 @@ public final class HintDirective extends com.amazon.ask.model.Directive  {
         private Builder() {}
 
         @JsonProperty("hint")
+
         public Builder withHint(com.amazon.ask.model.interfaces.display.Hint hint) {
             this.hint = hint;
             return this;

@@ -35,7 +35,7 @@ public final class ReminderResponse {
     private String updatedTime = null;
 
     @JsonProperty("status")
-    private com.amazon.ask.model.services.reminderManagement.Status status = null;
+    private String status = null;
 
     @JsonProperty("version")
     private String version = null;
@@ -77,6 +77,7 @@ public final class ReminderResponse {
         return alertToken;
     }
 
+
     /**
      * Valid ISO 8601 format - Creation time of this reminder alert
      * @return createdTime
@@ -85,6 +86,7 @@ public final class ReminderResponse {
     public String getCreatedTime() {
         return createdTime;
     }
+
 
     /**
      * Valid ISO 8601 format - Last updated time of this reminder alert
@@ -95,13 +97,32 @@ public final class ReminderResponse {
         return updatedTime;
     }
 
+
     /**
      * Get status
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getStatusAsString().
+     *
      * @return status
     **/
-    @JsonProperty("status")
+    
     public com.amazon.ask.model.services.reminderManagement.Status getStatus() {
-        return status;
+        return com.amazon.ask.model.services.reminderManagement.Status.fromValue(status);
+    }
+
+    /**
+     * Get the underlying String value for status.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return status as a String value
+    **/
+    @JsonProperty("status")
+    public String getStatusAsString() {
+      return status;
     }
 
     /**
@@ -113,6 +134,7 @@ public final class ReminderResponse {
         return version;
     }
 
+
     /**
      * URI to retrieve the created alert
      * @return href
@@ -121,6 +143,7 @@ public final class ReminderResponse {
     public String getHref() {
         return href;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -174,13 +197,14 @@ public final class ReminderResponse {
         private String alertToken;
         private String createdTime;
         private String updatedTime;
-        private com.amazon.ask.model.services.reminderManagement.Status status;
+        private String status;
         private String version;
         private String href;
 
         private Builder() {}
 
         @JsonProperty("alertToken")
+
         public Builder withAlertToken(String alertToken) {
             this.alertToken = alertToken;
             return this;
@@ -188,6 +212,7 @@ public final class ReminderResponse {
 
 
         @JsonProperty("createdTime")
+
         public Builder withCreatedTime(String createdTime) {
             this.createdTime = createdTime;
             return this;
@@ -195,6 +220,7 @@ public final class ReminderResponse {
 
 
         @JsonProperty("updatedTime")
+
         public Builder withUpdatedTime(String updatedTime) {
             this.updatedTime = updatedTime;
             return this;
@@ -202,13 +228,19 @@ public final class ReminderResponse {
 
 
         @JsonProperty("status")
+        public Builder withStatus(String status) {
+          this.status = status;
+          return this;
+        }
+
         public Builder withStatus(com.amazon.ask.model.services.reminderManagement.Status status) {
-            this.status = status;
+            this.status = status != null ? status.toString() : null;
             return this;
         }
 
 
         @JsonProperty("version")
+
         public Builder withVersion(String version) {
             this.version = version;
             return this;
@@ -216,6 +248,7 @@ public final class ReminderResponse {
 
 
         @JsonProperty("href")
+
         public Builder withHref(String href) {
             this.href = href;
             return this;

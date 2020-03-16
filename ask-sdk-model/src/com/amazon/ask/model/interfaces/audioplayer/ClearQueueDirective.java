@@ -50,6 +50,7 @@ public final class ClearQueueDirective extends com.amazon.ask.model.Directive  {
         return clearBehavior;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -95,6 +96,7 @@ public final class ClearQueueDirective extends com.amazon.ask.model.Directive  {
         private Builder() {}
 
         @JsonProperty("clearBehavior")
+
         public Builder withClearBehavior(com.amazon.ask.model.interfaces.audioplayer.ClearBehavior clearBehavior) {
             this.clearBehavior = clearBehavior;
             return this;

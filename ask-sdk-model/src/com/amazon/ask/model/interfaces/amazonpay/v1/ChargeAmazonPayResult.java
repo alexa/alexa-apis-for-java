@@ -53,6 +53,7 @@ public final class ChargeAmazonPayResult {
         return amazonOrderReferenceId;
     }
 
+
     /**
      * Get authorizationDetails
      * @return authorizationDetails
@@ -61,6 +62,7 @@ public final class ChargeAmazonPayResult {
     public com.amazon.ask.model.interfaces.amazonpay.model.v1.AuthorizationDetails getAuthorizationDetails() {
         return authorizationDetails;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class ChargeAmazonPayResult {
         private Builder() {}
 
         @JsonProperty("amazonOrderReferenceId")
+
         public Builder withAmazonOrderReferenceId(String amazonOrderReferenceId) {
             this.amazonOrderReferenceId = amazonOrderReferenceId;
             return this;
@@ -116,6 +119,7 @@ public final class ChargeAmazonPayResult {
 
 
         @JsonProperty("authorizationDetails")
+
         public Builder withAuthorizationDetails(com.amazon.ask.model.interfaces.amazonpay.model.v1.AuthorizationDetails authorizationDetails) {
             this.authorizationDetails = authorizationDetails;
             return this;

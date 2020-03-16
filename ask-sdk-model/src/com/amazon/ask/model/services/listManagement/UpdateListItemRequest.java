@@ -29,7 +29,7 @@ public final class UpdateListItemRequest {
     private String value = null;
 
     @JsonProperty("status")
-    private com.amazon.ask.model.services.listManagement.ListItemState status = null;
+    private String status = null;
 
     @JsonProperty("version")
     private Long version = null;
@@ -59,13 +59,32 @@ public final class UpdateListItemRequest {
         return value;
     }
 
+
     /**
      * Item Status
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getStatusAsString().
+     *
      * @return status
     **/
-    @JsonProperty("status")
+    
     public com.amazon.ask.model.services.listManagement.ListItemState getStatus() {
-        return status;
+        return com.amazon.ask.model.services.listManagement.ListItemState.fromValue(status);
+    }
+
+    /**
+     * Get the underlying String value for status.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return status as a String value
+    **/
+    @JsonProperty("status")
+    public String getStatusAsString() {
+      return status;
     }
 
     /**
@@ -76,6 +95,7 @@ public final class UpdateListItemRequest {
     public Long getVersion() {
         return version;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -121,12 +141,13 @@ public final class UpdateListItemRequest {
   
     public static class Builder {
         private String value;
-        private com.amazon.ask.model.services.listManagement.ListItemState status;
+        private String status;
         private Long version;
 
         private Builder() {}
 
         @JsonProperty("value")
+
         public Builder withValue(String value) {
             this.value = value;
             return this;
@@ -134,13 +155,19 @@ public final class UpdateListItemRequest {
 
 
         @JsonProperty("status")
+        public Builder withStatus(String status) {
+          this.status = status;
+          return this;
+        }
+
         public Builder withStatus(com.amazon.ask.model.services.listManagement.ListItemState status) {
-            this.status = status;
+            this.status = status != null ? status.toString() : null;
             return this;
         }
 
 
         @JsonProperty("version")
+
         public Builder withVersion(Long version) {
             this.version = version;
             return this;

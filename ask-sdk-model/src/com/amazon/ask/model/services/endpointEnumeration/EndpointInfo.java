@@ -62,6 +62,7 @@ public final class EndpointInfo {
         return endpointId;
     }
 
+
     /**
      * The name of the endpoint. Because this name might be changed by the user or the platform, it might be different than the Bluetooth friendly name.
      * @return friendlyName
@@ -71,6 +72,7 @@ public final class EndpointInfo {
         return friendlyName;
     }
 
+
     /**
      * The list of endpoint capabilities.
      * @return capabilities
@@ -79,6 +81,7 @@ public final class EndpointInfo {
     public List<com.amazon.ask.model.services.endpointEnumeration.EndpointCapability> getCapabilities() {
         return capabilities;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -130,6 +133,7 @@ public final class EndpointInfo {
         private Builder() {}
 
         @JsonProperty("endpointId")
+
         public Builder withEndpointId(String endpointId) {
             this.endpointId = endpointId;
             return this;
@@ -137,6 +141,7 @@ public final class EndpointInfo {
 
 
         @JsonProperty("friendlyName")
+
         public Builder withFriendlyName(String friendlyName) {
             this.friendlyName = friendlyName;
             return this;
@@ -144,6 +149,7 @@ public final class EndpointInfo {
 
 
         @JsonProperty("capabilities")
+
         public Builder withCapabilities(List<com.amazon.ask.model.services.endpointEnumeration.EndpointCapability> capabilities) {
             this.capabilities = capabilities;
             return this;

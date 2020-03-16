@@ -47,6 +47,7 @@ public final class ComponentVisibleOnScreenListItemTag {
         return index;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class ComponentVisibleOnScreenListItemTag {
         private Builder() {}
 
         @JsonProperty("index")
+
         public Builder withIndex(Integer index) {
             this.index = index;
             return this;

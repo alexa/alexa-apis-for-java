@@ -53,6 +53,7 @@ public final class Header {
         return namespace;
     }
 
+
     /**
      * The developer-defined name of the custom interface.
      * @return name
@@ -61,6 +62,7 @@ public final class Header {
     public String getName() {
         return name;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class Header {
         private Builder() {}
 
         @JsonProperty("namespace")
+
         public Builder withNamespace(String namespace) {
             this.namespace = namespace;
             return this;
@@ -116,6 +119,7 @@ public final class Header {
 
 
         @JsonProperty("name")
+
         public Builder withName(String name) {
             this.name = name;
             return this;

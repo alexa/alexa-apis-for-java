@@ -53,6 +53,7 @@ public final class Image {
         return smallImageUrl;
     }
 
+
     /**
      * Get largeImageUrl
      * @return largeImageUrl
@@ -61,6 +62,7 @@ public final class Image {
     public String getLargeImageUrl() {
         return largeImageUrl;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class Image {
         private Builder() {}
 
         @JsonProperty("smallImageUrl")
+
         public Builder withSmallImageUrl(String smallImageUrl) {
             this.smallImageUrl = smallImageUrl;
             return this;
@@ -116,6 +119,7 @@ public final class Image {
 
 
         @JsonProperty("largeImageUrl")
+
         public Builder withLargeImageUrl(String largeImageUrl) {
             this.largeImageUrl = largeImageUrl;
             return this;

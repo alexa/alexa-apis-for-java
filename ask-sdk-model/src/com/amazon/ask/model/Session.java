@@ -74,6 +74,7 @@ public final class Session {
         return _new;
     }
 
+
     /**
      * A string that represents a unique identifier per a user’s active session.
      * @return sessionId
@@ -82,6 +83,7 @@ public final class Session {
     public String getSessionId() {
         return sessionId;
     }
+
 
     /**
      * An object that describes the user making the request.
@@ -92,6 +94,7 @@ public final class Session {
         return user;
     }
 
+
     /**
      * A map of key-value pairs. The attributes map is empty for requests where a new session has started with the property new set to true. When returning your response, you can include data you need to persist during the session in the sessionAttributes property. The attributes you provide are then passed back to your skill on the next request.
      * @return attributes
@@ -101,6 +104,7 @@ public final class Session {
         return attributes;
     }
 
+
     /**
      * Get application
      * @return application
@@ -109,6 +113,7 @@ public final class Session {
     public com.amazon.ask.model.Application getApplication() {
         return application;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,6 +171,7 @@ public final class Session {
         private Builder() {}
 
         @JsonProperty("new")
+
         public Builder withNew(Boolean _new) {
             this._new = _new;
             return this;
@@ -173,6 +179,7 @@ public final class Session {
 
 
         @JsonProperty("sessionId")
+
         public Builder withSessionId(String sessionId) {
             this.sessionId = sessionId;
             return this;
@@ -180,6 +187,7 @@ public final class Session {
 
 
         @JsonProperty("user")
+
         public Builder withUser(com.amazon.ask.model.User user) {
             this.user = user;
             return this;
@@ -187,6 +195,7 @@ public final class Session {
 
 
         @JsonProperty("attributes")
+
         public Builder withAttributes(Map<String, Object> attributes) {
             this.attributes = attributes;
             return this;
@@ -201,6 +210,7 @@ public final class Session {
         }
 
         @JsonProperty("application")
+
         public Builder withApplication(com.amazon.ask.model.Application application) {
             this.application = application;
             return this;

@@ -23,6 +23,7 @@ import com.amazon.ask.model.services.monetization.MonetizationServiceClient;
 import com.amazon.ask.model.services.proactiveEvents.ProactiveEventsServiceClient;
 import com.amazon.ask.model.services.reminderManagement.ReminderManagementServiceClient;
 import com.amazon.ask.model.services.skillMessaging.SkillMessagingServiceClient;
+import com.amazon.ask.model.services.timerManagement.TimerManagementServiceClient;
 import com.amazon.ask.model.services.ups.UpsServiceClient;
 
 /**
@@ -80,6 +81,13 @@ public class ServiceClientFactory {
             return new ReminderManagementServiceClient(this.defaultApiConfiguration);
         } catch(Exception ex) {
             throw new IllegalStateException("Error while initializing ReminderManagementServiceClient: " + ex.getMessage(), ex);
+        }
+    }
+    public TimerManagementServiceClient getTimerManagementService() {
+        try {
+            return new TimerManagementServiceClient(this.defaultApiConfiguration);
+        } catch(Exception ex) {
+            throw new IllegalStateException("Error while initializing TimerManagementServiceClient: " + ex.getMessage(), ex);
         }
     }
     public UpsServiceClient getUpsService() {

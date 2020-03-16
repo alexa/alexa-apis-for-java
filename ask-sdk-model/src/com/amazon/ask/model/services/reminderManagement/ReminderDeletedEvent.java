@@ -50,6 +50,7 @@ public final class ReminderDeletedEvent {
         return alertTokens;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -94,6 +95,7 @@ public final class ReminderDeletedEvent {
         private Builder() {}
 
         @JsonProperty("alertTokens")
+
         public Builder withAlertTokens(List<String> alertTokens) {
             this.alertTokens = alertTokens;
             return this;

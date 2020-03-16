@@ -32,7 +32,7 @@ public final class ComponentVisibleOnScreenMediaTag {
     private Integer positionInMilliseconds = null;
 
     @JsonProperty("state")
-    private com.amazon.ask.model.interfaces.alexa.presentation.apl.ComponentVisibleOnScreenMediaTagStateEnum state = null;
+    private String state = null;
 
     @JsonProperty("allowAdjustSeekPositionForward")
     private Boolean allowAdjustSeekPositionForward = null;
@@ -92,13 +92,32 @@ public final class ComponentVisibleOnScreenMediaTag {
         return positionInMilliseconds;
     }
 
+
     /**
      * Get state
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getStateAsString().
+     *
      * @return state
     **/
-    @JsonProperty("state")
+    
     public com.amazon.ask.model.interfaces.alexa.presentation.apl.ComponentVisibleOnScreenMediaTagStateEnum getState() {
-        return state;
+        return com.amazon.ask.model.interfaces.alexa.presentation.apl.ComponentVisibleOnScreenMediaTagStateEnum.fromValue(state);
+    }
+
+    /**
+     * Get the underlying String value for state.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return state as a String value
+    **/
+    @JsonProperty("state")
+    public String getStateAsString() {
+      return state;
     }
 
     /**
@@ -110,6 +129,7 @@ public final class ComponentVisibleOnScreenMediaTag {
         return allowAdjustSeekPositionForward;
     }
 
+
     /**
      * Whether the user may seek backwards relative to the current position.
      * @return allowAdjustSeekPositionBackwards
@@ -118,6 +138,7 @@ public final class ComponentVisibleOnScreenMediaTag {
     public Boolean getAllowAdjustSeekPositionBackwards() {
         return allowAdjustSeekPositionBackwards;
     }
+
 
     /**
      * Whether the user may move forward to the next track.
@@ -128,6 +149,7 @@ public final class ComponentVisibleOnScreenMediaTag {
         return allowNext;
     }
 
+
     /**
      * Whether the user may move backward to the previous track.
      * @return allowPrevious
@@ -136,6 +158,7 @@ public final class ComponentVisibleOnScreenMediaTag {
     public Boolean getAllowPrevious() {
         return allowPrevious;
     }
+
 
     /**
      * Get entities
@@ -146,6 +169,7 @@ public final class ComponentVisibleOnScreenMediaTag {
         return entities;
     }
 
+
     /**
      * The URL of the current media track.
      * @return url
@@ -154,6 +178,7 @@ public final class ComponentVisibleOnScreenMediaTag {
     public String getUrl() {
         return url;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -209,7 +234,7 @@ public final class ComponentVisibleOnScreenMediaTag {
   
     public static class Builder {
         private Integer positionInMilliseconds;
-        private com.amazon.ask.model.interfaces.alexa.presentation.apl.ComponentVisibleOnScreenMediaTagStateEnum state;
+        private String state;
         private Boolean allowAdjustSeekPositionForward;
         private Boolean allowAdjustSeekPositionBackwards;
         private Boolean allowNext;
@@ -220,6 +245,7 @@ public final class ComponentVisibleOnScreenMediaTag {
         private Builder() {}
 
         @JsonProperty("positionInMilliseconds")
+
         public Builder withPositionInMilliseconds(Integer positionInMilliseconds) {
             this.positionInMilliseconds = positionInMilliseconds;
             return this;
@@ -227,13 +253,19 @@ public final class ComponentVisibleOnScreenMediaTag {
 
 
         @JsonProperty("state")
+        public Builder withState(String state) {
+          this.state = state;
+          return this;
+        }
+
         public Builder withState(com.amazon.ask.model.interfaces.alexa.presentation.apl.ComponentVisibleOnScreenMediaTagStateEnum state) {
-            this.state = state;
+            this.state = state != null ? state.toString() : null;
             return this;
         }
 
 
         @JsonProperty("allowAdjustSeekPositionForward")
+
         public Builder withAllowAdjustSeekPositionForward(Boolean allowAdjustSeekPositionForward) {
             this.allowAdjustSeekPositionForward = allowAdjustSeekPositionForward;
             return this;
@@ -241,6 +273,7 @@ public final class ComponentVisibleOnScreenMediaTag {
 
 
         @JsonProperty("allowAdjustSeekPositionBackwards")
+
         public Builder withAllowAdjustSeekPositionBackwards(Boolean allowAdjustSeekPositionBackwards) {
             this.allowAdjustSeekPositionBackwards = allowAdjustSeekPositionBackwards;
             return this;
@@ -248,6 +281,7 @@ public final class ComponentVisibleOnScreenMediaTag {
 
 
         @JsonProperty("allowNext")
+
         public Builder withAllowNext(Boolean allowNext) {
             this.allowNext = allowNext;
             return this;
@@ -255,6 +289,7 @@ public final class ComponentVisibleOnScreenMediaTag {
 
 
         @JsonProperty("allowPrevious")
+
         public Builder withAllowPrevious(Boolean allowPrevious) {
             this.allowPrevious = allowPrevious;
             return this;
@@ -262,6 +297,7 @@ public final class ComponentVisibleOnScreenMediaTag {
 
 
         @JsonProperty("entities")
+
         public Builder withEntities(List<com.amazon.ask.model.interfaces.alexa.presentation.apl.ComponentEntity> entities) {
             this.entities = entities;
             return this;
@@ -276,6 +312,7 @@ public final class ComponentVisibleOnScreenMediaTag {
         }
 
         @JsonProperty("url")
+
         public Builder withUrl(String url) {
             this.url = url;
             return this;

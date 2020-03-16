@@ -53,6 +53,7 @@ public final class Entity {
         return id;
     }
 
+
     /**
      * Get name
      * @return name
@@ -61,6 +62,7 @@ public final class Entity {
     public com.amazon.ask.model.er.dynamic.EntityValueAndSynonyms getName() {
         return name;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class Entity {
         private Builder() {}
 
         @JsonProperty("id")
+
         public Builder withId(String id) {
             this.id = id;
             return this;
@@ -116,6 +119,7 @@ public final class Entity {
 
 
         @JsonProperty("name")
+
         public Builder withName(com.amazon.ask.model.er.dynamic.EntityValueAndSynonyms name) {
             this.name = name;
             return this;

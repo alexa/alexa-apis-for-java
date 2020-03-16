@@ -59,6 +59,7 @@ public final class User {
         return userId;
     }
 
+
     /**
      * A token identifying the user in another system. This is only provided if the user has successfully linked their skill account with their Amazon account.
      * @return accessToken
@@ -68,6 +69,7 @@ public final class User {
         return accessToken;
     }
 
+
     /**
      * Get permissions
      * @return permissions
@@ -76,6 +78,7 @@ public final class User {
     public com.amazon.ask.model.Permissions getPermissions() {
         return permissions;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -127,6 +130,7 @@ public final class User {
         private Builder() {}
 
         @JsonProperty("userId")
+
         public Builder withUserId(String userId) {
             this.userId = userId;
             return this;
@@ -134,6 +138,7 @@ public final class User {
 
 
         @JsonProperty("accessToken")
+
         public Builder withAccessToken(String accessToken) {
             this.accessToken = accessToken;
             return this;
@@ -141,6 +146,7 @@ public final class User {
 
 
         @JsonProperty("permissions")
+
         public Builder withPermissions(com.amazon.ask.model.Permissions permissions) {
             this.permissions = permissions;
             return this;

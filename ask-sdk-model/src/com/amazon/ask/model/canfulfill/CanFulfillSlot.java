@@ -26,10 +26,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public final class CanFulfillSlot {
 
     @JsonProperty("canUnderstand")
-    private com.amazon.ask.model.canfulfill.CanUnderstandSlotValues canUnderstand = null;
+    private String canUnderstand = null;
 
     @JsonProperty("canFulfill")
-    private com.amazon.ask.model.canfulfill.CanFulfillSlotValues canFulfill = null;
+    private String canFulfill = null;
 
     public static Builder builder() {
         return new Builder();
@@ -46,20 +46,56 @@ public final class CanFulfillSlot {
 
     /**
      * Get canUnderstand
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getCanUnderstandAsString().
+     *
      * @return canUnderstand
     **/
-    @JsonProperty("canUnderstand")
+    
     public com.amazon.ask.model.canfulfill.CanUnderstandSlotValues getCanUnderstand() {
-        return canUnderstand;
+        return com.amazon.ask.model.canfulfill.CanUnderstandSlotValues.fromValue(canUnderstand);
+    }
+
+    /**
+     * Get the underlying String value for canUnderstand.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return canUnderstand as a String value
+    **/
+    @JsonProperty("canUnderstand")
+    public String getCanUnderstandAsString() {
+      return canUnderstand;
     }
 
     /**
      * Get canFulfill
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getCanFulfillAsString().
+     *
      * @return canFulfill
     **/
-    @JsonProperty("canFulfill")
+    
     public com.amazon.ask.model.canfulfill.CanFulfillSlotValues getCanFulfill() {
-        return canFulfill;
+        return com.amazon.ask.model.canfulfill.CanFulfillSlotValues.fromValue(canFulfill);
+    }
+
+    /**
+     * Get the underlying String value for canFulfill.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return canFulfill as a String value
+    **/
+    @JsonProperty("canFulfill")
+    public String getCanFulfillAsString() {
+      return canFulfill;
     }
 
     @Override
@@ -103,21 +139,31 @@ public final class CanFulfillSlot {
     }
   
     public static class Builder {
-        private com.amazon.ask.model.canfulfill.CanUnderstandSlotValues canUnderstand;
-        private com.amazon.ask.model.canfulfill.CanFulfillSlotValues canFulfill;
+        private String canUnderstand;
+        private String canFulfill;
 
         private Builder() {}
 
         @JsonProperty("canUnderstand")
+        public Builder withCanUnderstand(String canUnderstand) {
+          this.canUnderstand = canUnderstand;
+          return this;
+        }
+
         public Builder withCanUnderstand(com.amazon.ask.model.canfulfill.CanUnderstandSlotValues canUnderstand) {
-            this.canUnderstand = canUnderstand;
+            this.canUnderstand = canUnderstand != null ? canUnderstand.toString() : null;
             return this;
         }
 
 
         @JsonProperty("canFulfill")
+        public Builder withCanFulfill(String canFulfill) {
+          this.canFulfill = canFulfill;
+          return this;
+        }
+
         public Builder withCanFulfill(com.amazon.ask.model.canfulfill.CanFulfillSlotValues canFulfill) {
-            this.canFulfill = canFulfill;
+            this.canFulfill = canFulfill != null ? canFulfill.toString() : null;
             return this;
         }
 

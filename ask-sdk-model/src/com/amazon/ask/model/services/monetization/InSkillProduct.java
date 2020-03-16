@@ -35,25 +35,25 @@ public final class InSkillProduct {
     private String name = null;
 
     @JsonProperty("type")
-    private com.amazon.ask.model.services.monetization.ProductType type = null;
+    private String type = null;
 
     @JsonProperty("summary")
     private String summary = null;
 
     @JsonProperty("purchasable")
-    private com.amazon.ask.model.services.monetization.PurchasableState purchasable = null;
+    private String purchasable = null;
 
     @JsonProperty("entitled")
-    private com.amazon.ask.model.services.monetization.EntitledState entitled = null;
+    private String entitled = null;
 
     @JsonProperty("entitlementReason")
-    private com.amazon.ask.model.services.monetization.EntitlementReason entitlementReason = null;
+    private String entitlementReason = null;
 
     @JsonProperty("activeEntitlementCount")
     private Integer activeEntitlementCount = null;
 
     @JsonProperty("purchaseMode")
-    private com.amazon.ask.model.services.monetization.PurchaseMode purchaseMode = null;
+    private String purchaseMode = null;
 
     public static Builder builder() {
         return new Builder();
@@ -101,6 +101,7 @@ public final class InSkillProduct {
         return productId;
     }
 
+
     /**
      * Developer selected in-skill product name. This is for developer reference only.
      * @return referenceName
@@ -109,6 +110,7 @@ public final class InSkillProduct {
     public String getReferenceName() {
         return referenceName;
     }
+
 
     /**
      * Name of the product in the language from the \"Accept-Language\" header
@@ -119,13 +121,32 @@ public final class InSkillProduct {
         return name;
     }
 
+
     /**
      * Get type
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getTypeAsString().
+     *
      * @return type
     **/
-    @JsonProperty("type")
+    
     public com.amazon.ask.model.services.monetization.ProductType getType() {
-        return type;
+        return com.amazon.ask.model.services.monetization.ProductType.fromValue(type);
+    }
+
+    /**
+     * Get the underlying String value for type.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return type as a String value
+    **/
+    @JsonProperty("type")
+    public String getTypeAsString() {
+      return type;
     }
 
     /**
@@ -137,31 +158,86 @@ public final class InSkillProduct {
         return summary;
     }
 
+
     /**
      * Get purchasable
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getPurchasableAsString().
+     *
      * @return purchasable
     **/
-    @JsonProperty("purchasable")
+    
     public com.amazon.ask.model.services.monetization.PurchasableState getPurchasable() {
-        return purchasable;
+        return com.amazon.ask.model.services.monetization.PurchasableState.fromValue(purchasable);
+    }
+
+    /**
+     * Get the underlying String value for purchasable.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return purchasable as a String value
+    **/
+    @JsonProperty("purchasable")
+    public String getPurchasableAsString() {
+      return purchasable;
     }
 
     /**
      * Get entitled
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getEntitledAsString().
+     *
      * @return entitled
     **/
-    @JsonProperty("entitled")
+    
     public com.amazon.ask.model.services.monetization.EntitledState getEntitled() {
-        return entitled;
+        return com.amazon.ask.model.services.monetization.EntitledState.fromValue(entitled);
+    }
+
+    /**
+     * Get the underlying String value for entitled.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return entitled as a String value
+    **/
+    @JsonProperty("entitled")
+    public String getEntitledAsString() {
+      return entitled;
     }
 
     /**
      * Get entitlementReason
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getEntitlementReasonAsString().
+     *
      * @return entitlementReason
     **/
-    @JsonProperty("entitlementReason")
+    
     public com.amazon.ask.model.services.monetization.EntitlementReason getEntitlementReason() {
-        return entitlementReason;
+        return com.amazon.ask.model.services.monetization.EntitlementReason.fromValue(entitlementReason);
+    }
+
+    /**
+     * Get the underlying String value for entitlementReason.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return entitlementReason as a String value
+    **/
+    @JsonProperty("entitlementReason")
+    public String getEntitlementReasonAsString() {
+      return entitlementReason;
     }
 
     /**
@@ -173,13 +249,32 @@ public final class InSkillProduct {
         return activeEntitlementCount;
     }
 
+
     /**
      * Get purchaseMode
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getPurchaseModeAsString().
+     *
      * @return purchaseMode
     **/
-    @JsonProperty("purchaseMode")
+    
     public com.amazon.ask.model.services.monetization.PurchaseMode getPurchaseMode() {
-        return purchaseMode;
+        return com.amazon.ask.model.services.monetization.PurchaseMode.fromValue(purchaseMode);
+    }
+
+    /**
+     * Get the underlying String value for purchaseMode.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return purchaseMode as a String value
+    **/
+    @JsonProperty("purchaseMode")
+    public String getPurchaseModeAsString() {
+      return purchaseMode;
     }
 
     @Override
@@ -242,17 +337,18 @@ public final class InSkillProduct {
         private String productId;
         private String referenceName;
         private String name;
-        private com.amazon.ask.model.services.monetization.ProductType type;
+        private String type;
         private String summary;
-        private com.amazon.ask.model.services.monetization.PurchasableState purchasable;
-        private com.amazon.ask.model.services.monetization.EntitledState entitled;
-        private com.amazon.ask.model.services.monetization.EntitlementReason entitlementReason;
+        private String purchasable;
+        private String entitled;
+        private String entitlementReason;
         private Integer activeEntitlementCount;
-        private com.amazon.ask.model.services.monetization.PurchaseMode purchaseMode;
+        private String purchaseMode;
 
         private Builder() {}
 
         @JsonProperty("productId")
+
         public Builder withProductId(String productId) {
             this.productId = productId;
             return this;
@@ -260,6 +356,7 @@ public final class InSkillProduct {
 
 
         @JsonProperty("referenceName")
+
         public Builder withReferenceName(String referenceName) {
             this.referenceName = referenceName;
             return this;
@@ -267,6 +364,7 @@ public final class InSkillProduct {
 
 
         @JsonProperty("name")
+
         public Builder withName(String name) {
             this.name = name;
             return this;
@@ -274,13 +372,19 @@ public final class InSkillProduct {
 
 
         @JsonProperty("type")
+        public Builder withType(String type) {
+          this.type = type;
+          return this;
+        }
+
         public Builder withType(com.amazon.ask.model.services.monetization.ProductType type) {
-            this.type = type;
+            this.type = type != null ? type.toString() : null;
             return this;
         }
 
 
         @JsonProperty("summary")
+
         public Builder withSummary(String summary) {
             this.summary = summary;
             return this;
@@ -288,27 +392,43 @@ public final class InSkillProduct {
 
 
         @JsonProperty("purchasable")
+        public Builder withPurchasable(String purchasable) {
+          this.purchasable = purchasable;
+          return this;
+        }
+
         public Builder withPurchasable(com.amazon.ask.model.services.monetization.PurchasableState purchasable) {
-            this.purchasable = purchasable;
+            this.purchasable = purchasable != null ? purchasable.toString() : null;
             return this;
         }
 
 
         @JsonProperty("entitled")
+        public Builder withEntitled(String entitled) {
+          this.entitled = entitled;
+          return this;
+        }
+
         public Builder withEntitled(com.amazon.ask.model.services.monetization.EntitledState entitled) {
-            this.entitled = entitled;
+            this.entitled = entitled != null ? entitled.toString() : null;
             return this;
         }
 
 
         @JsonProperty("entitlementReason")
+        public Builder withEntitlementReason(String entitlementReason) {
+          this.entitlementReason = entitlementReason;
+          return this;
+        }
+
         public Builder withEntitlementReason(com.amazon.ask.model.services.monetization.EntitlementReason entitlementReason) {
-            this.entitlementReason = entitlementReason;
+            this.entitlementReason = entitlementReason != null ? entitlementReason.toString() : null;
             return this;
         }
 
 
         @JsonProperty("activeEntitlementCount")
+
         public Builder withActiveEntitlementCount(Integer activeEntitlementCount) {
             this.activeEntitlementCount = activeEntitlementCount;
             return this;
@@ -316,8 +436,13 @@ public final class InSkillProduct {
 
 
         @JsonProperty("purchaseMode")
+        public Builder withPurchaseMode(String purchaseMode) {
+          this.purchaseMode = purchaseMode;
+          return this;
+        }
+
         public Builder withPurchaseMode(com.amazon.ask.model.services.monetization.PurchaseMode purchaseMode) {
-            this.purchaseMode = purchaseMode;
+            this.purchaseMode = purchaseMode != null ? purchaseMode.toString() : null;
             return this;
         }
 

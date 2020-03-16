@@ -56,6 +56,7 @@ public final class Permissions {
         return consentToken;
     }
 
+
     /**
      * A map where the key is a LoginWithAmazon(LWA) scope and value is a list of key:value pairs which describe the state of user actions on the LWA scope. For e.g. \"scopes\" :{ \"alexa::devices:all:geolocation:read\":{\"status\":\"GRANTED\"}} This value of \"alexa::devices:all:geolocation:read\" will determine if the Geolocation data access is granted by the user, or else it will show a card of type AskForPermissionsConsent to the user to get this permission.
      * @return scopes
@@ -64,6 +65,7 @@ public final class Permissions {
     public Map<String, com.amazon.ask.model.Scope> getScopes() {
         return scopes;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,6 +114,7 @@ public final class Permissions {
         private Builder() {}
 
         @JsonProperty("consentToken")
+
         public Builder withConsentToken(String consentToken) {
             this.consentToken = consentToken;
             return this;
@@ -119,6 +122,7 @@ public final class Permissions {
 
 
         @JsonProperty("scopes")
+
         public Builder withScopes(Map<String, com.amazon.ask.model.Scope> scopes) {
             this.scopes = scopes;
             return this;

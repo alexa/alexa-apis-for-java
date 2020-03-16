@@ -73,6 +73,7 @@ public final class RenderDocumentDirective extends com.amazon.ask.model.Directiv
         return token;
     }
 
+
     /**
      * Depending on the document type, it represents either an entire APL document or a reference Link to the document. In a Link object, the value of the 'src' should follow a URI format defined like 'doc://alexa/apl/documents/&amp;lt;document_id&amp;gt;'. The 'document_id' is a reference to the APL document that the developer stores through APL Authoring Tool.
      * @return document
@@ -81,6 +82,7 @@ public final class RenderDocumentDirective extends com.amazon.ask.model.Directiv
     public Map<String, Object> getDocument() {
         return document;
     }
+
 
     /**
      * Data sources to bind to the document when rendering.
@@ -91,6 +93,7 @@ public final class RenderDocumentDirective extends com.amazon.ask.model.Directiv
         return datasources;
     }
 
+
     /**
      * A list of packages including layouts, styles, and images etc.
      * @return packages
@@ -99,6 +102,7 @@ public final class RenderDocumentDirective extends com.amazon.ask.model.Directiv
     public List<Object> getPackages() {
         return packages;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -154,6 +158,7 @@ public final class RenderDocumentDirective extends com.amazon.ask.model.Directiv
         private Builder() {}
 
         @JsonProperty("token")
+
         public Builder withToken(String token) {
             this.token = token;
             return this;
@@ -161,6 +166,7 @@ public final class RenderDocumentDirective extends com.amazon.ask.model.Directiv
 
 
         @JsonProperty("document")
+
         public Builder withDocument(Map<String, Object> document) {
             this.document = document;
             return this;
@@ -175,6 +181,7 @@ public final class RenderDocumentDirective extends com.amazon.ask.model.Directiv
         }
 
         @JsonProperty("datasources")
+
         public Builder withDatasources(Map<String, Object> datasources) {
             this.datasources = datasources;
             return this;
@@ -189,6 +196,7 @@ public final class RenderDocumentDirective extends com.amazon.ask.model.Directiv
         }
 
         @JsonProperty("packages")
+
         public Builder withPackages(List<Object> packages) {
             this.packages = packages;
             return this;

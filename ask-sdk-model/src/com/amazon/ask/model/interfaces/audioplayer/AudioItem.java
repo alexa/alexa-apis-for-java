@@ -53,6 +53,7 @@ public final class AudioItem {
         return stream;
     }
 
+
     /**
      * Get metadata
      * @return metadata
@@ -61,6 +62,7 @@ public final class AudioItem {
     public com.amazon.ask.model.interfaces.audioplayer.AudioItemMetadata getMetadata() {
         return metadata;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class AudioItem {
         private Builder() {}
 
         @JsonProperty("stream")
+
         public Builder withStream(com.amazon.ask.model.interfaces.audioplayer.Stream stream) {
             this.stream = stream;
             return this;
@@ -116,6 +119,7 @@ public final class AudioItem {
 
 
         @JsonProperty("metadata")
+
         public Builder withMetadata(com.amazon.ask.model.interfaces.audioplayer.AudioItemMetadata metadata) {
             this.metadata = metadata;
             return this;

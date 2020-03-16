@@ -47,6 +47,7 @@ public final class AlertInfo {
         return spokenInfo;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class AlertInfo {
         private Builder() {}
 
         @JsonProperty("spokenInfo")
+
         public Builder withSpokenInfo(com.amazon.ask.model.services.reminderManagement.AlertInfoSpokenInfo spokenInfo) {
             this.spokenInfo = spokenInfo;
             return this;

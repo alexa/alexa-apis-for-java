@@ -36,7 +36,7 @@ public final class Reminder {
     private OffsetDateTime updatedTime = null;
 
     @JsonProperty("status")
-    private com.amazon.ask.model.services.reminderManagement.Status status = null;
+    private String status = null;
 
     @JsonProperty("trigger")
     private com.amazon.ask.model.services.reminderManagement.Trigger trigger = null;
@@ -90,6 +90,7 @@ public final class Reminder {
         return alertToken;
     }
 
+
     /**
      * Valid ISO 8601 format - Creation time of this reminder alert
      * @return createdTime
@@ -98,6 +99,7 @@ public final class Reminder {
     public OffsetDateTime getCreatedTime() {
         return createdTime;
     }
+
 
     /**
      * Valid ISO 8601 format - Last updated time of this reminder alert
@@ -108,13 +110,32 @@ public final class Reminder {
         return updatedTime;
     }
 
+
     /**
      * Get status
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getStatusAsString().
+     *
      * @return status
     **/
-    @JsonProperty("status")
+    
     public com.amazon.ask.model.services.reminderManagement.Status getStatus() {
-        return status;
+        return com.amazon.ask.model.services.reminderManagement.Status.fromValue(status);
+    }
+
+    /**
+     * Get the underlying String value for status.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return status as a String value
+    **/
+    @JsonProperty("status")
+    public String getStatusAsString() {
+      return status;
     }
 
     /**
@@ -126,6 +147,7 @@ public final class Reminder {
         return trigger;
     }
 
+
     /**
      * Get alertInfo
      * @return alertInfo
@@ -134,6 +156,7 @@ public final class Reminder {
     public com.amazon.ask.model.services.reminderManagement.AlertInfo getAlertInfo() {
         return alertInfo;
     }
+
 
     /**
      * Get pushNotification
@@ -144,6 +167,7 @@ public final class Reminder {
         return pushNotification;
     }
 
+
     /**
      * Version of reminder alert
      * @return version
@@ -152,6 +176,7 @@ public final class Reminder {
     public String getVersion() {
         return version;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -209,7 +234,7 @@ public final class Reminder {
         private String alertToken;
         private OffsetDateTime createdTime;
         private OffsetDateTime updatedTime;
-        private com.amazon.ask.model.services.reminderManagement.Status status;
+        private String status;
         private com.amazon.ask.model.services.reminderManagement.Trigger trigger;
         private com.amazon.ask.model.services.reminderManagement.AlertInfo alertInfo;
         private com.amazon.ask.model.services.reminderManagement.PushNotification pushNotification;
@@ -218,6 +243,7 @@ public final class Reminder {
         private Builder() {}
 
         @JsonProperty("alertToken")
+
         public Builder withAlertToken(String alertToken) {
             this.alertToken = alertToken;
             return this;
@@ -225,6 +251,7 @@ public final class Reminder {
 
 
         @JsonProperty("createdTime")
+
         public Builder withCreatedTime(OffsetDateTime createdTime) {
             this.createdTime = createdTime;
             return this;
@@ -232,6 +259,7 @@ public final class Reminder {
 
 
         @JsonProperty("updatedTime")
+
         public Builder withUpdatedTime(OffsetDateTime updatedTime) {
             this.updatedTime = updatedTime;
             return this;
@@ -239,13 +267,19 @@ public final class Reminder {
 
 
         @JsonProperty("status")
+        public Builder withStatus(String status) {
+          this.status = status;
+          return this;
+        }
+
         public Builder withStatus(com.amazon.ask.model.services.reminderManagement.Status status) {
-            this.status = status;
+            this.status = status != null ? status.toString() : null;
             return this;
         }
 
 
         @JsonProperty("trigger")
+
         public Builder withTrigger(com.amazon.ask.model.services.reminderManagement.Trigger trigger) {
             this.trigger = trigger;
             return this;
@@ -253,6 +287,7 @@ public final class Reminder {
 
 
         @JsonProperty("alertInfo")
+
         public Builder withAlertInfo(com.amazon.ask.model.services.reminderManagement.AlertInfo alertInfo) {
             this.alertInfo = alertInfo;
             return this;
@@ -260,6 +295,7 @@ public final class Reminder {
 
 
         @JsonProperty("pushNotification")
+
         public Builder withPushNotification(com.amazon.ask.model.services.reminderManagement.PushNotification pushNotification) {
             this.pushNotification = pushNotification;
             return this;
@@ -267,6 +303,7 @@ public final class Reminder {
 
 
         @JsonProperty("version")
+
         public Builder withVersion(String version) {
             this.version = version;
             return this;

@@ -35,7 +35,7 @@ public final class Intent {
     private Map<String, com.amazon.ask.model.Slot> slots = new HashMap<String, com.amazon.ask.model.Slot>();
 
     @JsonProperty("confirmationStatus")
-    private com.amazon.ask.model.IntentConfirmationStatus confirmationStatus = null;
+    private String confirmationStatus = null;
 
     public static Builder builder() {
         return new Builder();
@@ -62,6 +62,7 @@ public final class Intent {
         return name;
     }
 
+
     /**
      * A map of key-value pairs that further describes what the user meant based on a predefined intent schema. The map can be empty.
      * @return slots
@@ -71,13 +72,32 @@ public final class Intent {
         return slots;
     }
 
+
     /**
      * Get confirmationStatus
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getConfirmationStatusAsString().
+     *
      * @return confirmationStatus
     **/
-    @JsonProperty("confirmationStatus")
+    
     public com.amazon.ask.model.IntentConfirmationStatus getConfirmationStatus() {
-        return confirmationStatus;
+        return com.amazon.ask.model.IntentConfirmationStatus.fromValue(confirmationStatus);
+    }
+
+    /**
+     * Get the underlying String value for confirmationStatus.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return confirmationStatus as a String value
+    **/
+    @JsonProperty("confirmationStatus")
+    public String getConfirmationStatusAsString() {
+      return confirmationStatus;
     }
 
     @Override
@@ -125,11 +145,12 @@ public final class Intent {
     public static class Builder {
         private String name;
         private Map<String, com.amazon.ask.model.Slot> slots;
-        private com.amazon.ask.model.IntentConfirmationStatus confirmationStatus;
+        private String confirmationStatus;
 
         private Builder() {}
 
         @JsonProperty("name")
+
         public Builder withName(String name) {
             this.name = name;
             return this;
@@ -137,6 +158,7 @@ public final class Intent {
 
 
         @JsonProperty("slots")
+
         public Builder withSlots(Map<String, com.amazon.ask.model.Slot> slots) {
             this.slots = slots;
             return this;
@@ -151,8 +173,13 @@ public final class Intent {
         }
 
         @JsonProperty("confirmationStatus")
+        public Builder withConfirmationStatus(String confirmationStatus) {
+          this.confirmationStatus = confirmationStatus;
+          return this;
+        }
+
         public Builder withConfirmationStatus(com.amazon.ask.model.IntentConfirmationStatus confirmationStatus) {
-            this.confirmationStatus = confirmationStatus;
+            this.confirmationStatus = confirmationStatus != null ? confirmationStatus.toString() : null;
             return this;
         }
 

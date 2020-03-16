@@ -80,6 +80,7 @@ public final class APLTViewportState extends com.amazon.ask.model.interfaces.vie
         return supportedProfiles;
     }
 
+
     /**
      * horizontal dimension of text display in number of characters
      * @return lineLength
@@ -88,6 +89,7 @@ public final class APLTViewportState extends com.amazon.ask.model.interfaces.vie
     public Integer getLineLength() {
         return lineLength;
     }
+
 
     /**
      * vertical dimension of text display in number of rows
@@ -98,6 +100,7 @@ public final class APLTViewportState extends com.amazon.ask.model.interfaces.vie
         return lineCount;
     }
 
+
     /**
      * Get characterFormat
      * @return characterFormat
@@ -107,6 +110,7 @@ public final class APLTViewportState extends com.amazon.ask.model.interfaces.vie
         return characterFormat;
     }
 
+
     /**
      * list of inter-segment objects
      * @return interSegments
@@ -115,6 +119,7 @@ public final class APLTViewportState extends com.amazon.ask.model.interfaces.vie
     public List<com.amazon.ask.model.interfaces.viewport.aplt.InterSegment> getInterSegments() {
         return interSegments;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -174,6 +179,7 @@ public final class APLTViewportState extends com.amazon.ask.model.interfaces.vie
         private Builder() {}
 
         @JsonProperty("id")
+
         public Builder withId(String id) {
             this.id = id;
             return this;
@@ -181,6 +187,7 @@ public final class APLTViewportState extends com.amazon.ask.model.interfaces.vie
 
 
         @JsonProperty("supportedProfiles")
+
         public Builder withSupportedProfiles(List<com.amazon.ask.model.interfaces.viewport.aplt.ViewportProfile> supportedProfiles) {
             this.supportedProfiles = supportedProfiles;
             return this;
@@ -195,6 +202,7 @@ public final class APLTViewportState extends com.amazon.ask.model.interfaces.vie
         }
 
         @JsonProperty("lineLength")
+
         public Builder withLineLength(Integer lineLength) {
             this.lineLength = lineLength;
             return this;
@@ -202,6 +210,7 @@ public final class APLTViewportState extends com.amazon.ask.model.interfaces.vie
 
 
         @JsonProperty("lineCount")
+
         public Builder withLineCount(Integer lineCount) {
             this.lineCount = lineCount;
             return this;
@@ -209,6 +218,7 @@ public final class APLTViewportState extends com.amazon.ask.model.interfaces.vie
 
 
         @JsonProperty("characterFormat")
+
         public Builder withCharacterFormat(com.amazon.ask.model.interfaces.viewport.aplt.CharacterFormat characterFormat) {
             this.characterFormat = characterFormat;
             return this;
@@ -216,6 +226,7 @@ public final class APLTViewportState extends com.amazon.ask.model.interfaces.vie
 
 
         @JsonProperty("interSegments")
+
         public Builder withInterSegments(List<com.amazon.ask.model.interfaces.viewport.aplt.InterSegment> interSegments) {
             this.interSegments = interSegments;
             return this;

@@ -56,6 +56,7 @@ public final class PlayDirective extends com.amazon.ask.model.Directive  {
         return playBehavior;
     }
 
+
     /**
      * Get audioItem
      * @return audioItem
@@ -64,6 +65,7 @@ public final class PlayDirective extends com.amazon.ask.model.Directive  {
     public com.amazon.ask.model.interfaces.audioplayer.AudioItem getAudioItem() {
         return audioItem;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -113,6 +115,7 @@ public final class PlayDirective extends com.amazon.ask.model.Directive  {
         private Builder() {}
 
         @JsonProperty("playBehavior")
+
         public Builder withPlayBehavior(com.amazon.ask.model.interfaces.audioplayer.PlayBehavior playBehavior) {
             this.playBehavior = playBehavior;
             return this;
@@ -120,6 +123,7 @@ public final class PlayDirective extends com.amazon.ask.model.Directive  {
 
 
         @JsonProperty("audioItem")
+
         public Builder withAudioItem(com.amazon.ask.model.interfaces.audioplayer.AudioItem audioItem) {
             this.audioItem = audioItem;
             return this;

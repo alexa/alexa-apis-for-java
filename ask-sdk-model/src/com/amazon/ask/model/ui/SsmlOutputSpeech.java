@@ -53,6 +53,7 @@ public final class SsmlOutputSpeech extends com.amazon.ask.model.ui.OutputSpeech
         return ssml;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -93,19 +94,25 @@ public final class SsmlOutputSpeech extends com.amazon.ask.model.ui.OutputSpeech
     }
   
     public static class Builder {
-        private com.amazon.ask.model.ui.PlayBehavior playBehavior;
+        private String playBehavior;
         private String ssml;
 
         private Builder() {}
 
         @JsonProperty("playBehavior")
+        public Builder withPlayBehavior(String playBehavior) {
+          this.playBehavior = playBehavior;
+          return this;
+        }
+
         public Builder withPlayBehavior(com.amazon.ask.model.ui.PlayBehavior playBehavior) {
-            this.playBehavior = playBehavior;
+            this.playBehavior = playBehavior != null ? playBehavior.toString() : null;
             return this;
         }
 
 
         @JsonProperty("ssml")
+
         public Builder withSsml(String ssml) {
             this.ssml = ssml;
             return this;

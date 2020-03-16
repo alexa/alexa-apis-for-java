@@ -95,6 +95,7 @@ public final class SetupAmazonPayRequest extends com.amazon.ask.model.interfaces
         return sellerId;
     }
 
+
     /**
      * The country in which the merchant has registered, as an Amazon Payments legal entity.
      * @return countryOfEstablishment
@@ -103,6 +104,7 @@ public final class SetupAmazonPayRequest extends com.amazon.ask.model.interfaces
     public String getCountryOfEstablishment() {
         return countryOfEstablishment;
     }
+
 
     /**
      * The currency of the merchant’s ledger account.
@@ -113,6 +115,7 @@ public final class SetupAmazonPayRequest extends com.amazon.ask.model.interfaces
         return ledgerCurrency;
     }
 
+
     /**
      * The merchant's preferred language for checkout.
      * @return checkoutLanguage
@@ -121,6 +124,7 @@ public final class SetupAmazonPayRequest extends com.amazon.ask.model.interfaces
     public String getCheckoutLanguage() {
         return checkoutLanguage;
     }
+
 
     /**
      * Get billingAgreementAttributes
@@ -131,6 +135,7 @@ public final class SetupAmazonPayRequest extends com.amazon.ask.model.interfaces
         return billingAgreementAttributes;
     }
 
+
     /**
      * To receive the default user shipping address in the response, set this parameter to true. Not required if a user shipping address is not required.
      * @return needAmazonShippingAddress
@@ -139,6 +144,7 @@ public final class SetupAmazonPayRequest extends com.amazon.ask.model.interfaces
     public Boolean getNeedAmazonShippingAddress() {
         return needAmazonShippingAddress;
     }
+
 
     /**
      * To test in Sandbox mode, set this parameter to true.
@@ -149,6 +155,7 @@ public final class SetupAmazonPayRequest extends com.amazon.ask.model.interfaces
         return sandboxMode;
     }
 
+
     /**
      * Use this parameter to create a Sandbox payment object. In order to use this parameter, you first create a Sandbox user account in Seller Central. Then, pass the email address associated with that Sandbox user account.
      * @return sandboxCustomerEmailId
@@ -157,6 +164,7 @@ public final class SetupAmazonPayRequest extends com.amazon.ask.model.interfaces
     public String getSandboxCustomerEmailId() {
         return sandboxCustomerEmailId;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -225,6 +233,7 @@ public final class SetupAmazonPayRequest extends com.amazon.ask.model.interfaces
         private Builder() {}
 
         @JsonProperty("@version")
+
         public Builder withVersion(String version) {
             this.version = version;
             return this;
@@ -232,6 +241,7 @@ public final class SetupAmazonPayRequest extends com.amazon.ask.model.interfaces
 
 
         @JsonProperty("sellerId")
+
         public Builder withSellerId(String sellerId) {
             this.sellerId = sellerId;
             return this;
@@ -239,6 +249,7 @@ public final class SetupAmazonPayRequest extends com.amazon.ask.model.interfaces
 
 
         @JsonProperty("countryOfEstablishment")
+
         public Builder withCountryOfEstablishment(String countryOfEstablishment) {
             this.countryOfEstablishment = countryOfEstablishment;
             return this;
@@ -246,6 +257,7 @@ public final class SetupAmazonPayRequest extends com.amazon.ask.model.interfaces
 
 
         @JsonProperty("ledgerCurrency")
+
         public Builder withLedgerCurrency(String ledgerCurrency) {
             this.ledgerCurrency = ledgerCurrency;
             return this;
@@ -253,6 +265,7 @@ public final class SetupAmazonPayRequest extends com.amazon.ask.model.interfaces
 
 
         @JsonProperty("checkoutLanguage")
+
         public Builder withCheckoutLanguage(String checkoutLanguage) {
             this.checkoutLanguage = checkoutLanguage;
             return this;
@@ -260,6 +273,7 @@ public final class SetupAmazonPayRequest extends com.amazon.ask.model.interfaces
 
 
         @JsonProperty("billingAgreementAttributes")
+
         public Builder withBillingAgreementAttributes(com.amazon.ask.model.interfaces.amazonpay.model.request.BillingAgreementAttributes billingAgreementAttributes) {
             this.billingAgreementAttributes = billingAgreementAttributes;
             return this;
@@ -267,6 +281,7 @@ public final class SetupAmazonPayRequest extends com.amazon.ask.model.interfaces
 
 
         @JsonProperty("needAmazonShippingAddress")
+
         public Builder withNeedAmazonShippingAddress(Boolean needAmazonShippingAddress) {
             this.needAmazonShippingAddress = needAmazonShippingAddress;
             return this;
@@ -274,6 +289,7 @@ public final class SetupAmazonPayRequest extends com.amazon.ask.model.interfaces
 
 
         @JsonProperty("sandboxMode")
+
         public Builder withSandboxMode(Boolean sandboxMode) {
             this.sandboxMode = sandboxMode;
             return this;
@@ -281,6 +297,7 @@ public final class SetupAmazonPayRequest extends com.amazon.ask.model.interfaces
 
 
         @JsonProperty("sandboxCustomerEmailId")
+
         public Builder withSandboxCustomerEmailId(String sandboxCustomerEmailId) {
             this.sandboxCustomerEmailId = sandboxCustomerEmailId;
             return this;

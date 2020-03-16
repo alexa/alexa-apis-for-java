@@ -56,6 +56,7 @@ public final class InSkillProductTransactionsResponse {
         return results;
     }
 
+
     /**
      * Get metadata
      * @return metadata
@@ -64,6 +65,7 @@ public final class InSkillProductTransactionsResponse {
     public com.amazon.ask.model.services.monetization.Metadata getMetadata() {
         return metadata;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,6 +114,7 @@ public final class InSkillProductTransactionsResponse {
         private Builder() {}
 
         @JsonProperty("results")
+
         public Builder withResults(List<com.amazon.ask.model.services.monetization.Transactions> results) {
             this.results = results;
             return this;
@@ -126,6 +129,7 @@ public final class InSkillProductTransactionsResponse {
         }
 
         @JsonProperty("metadata")
+
         public Builder withMetadata(com.amazon.ask.model.services.monetization.Metadata metadata) {
             this.metadata = metadata;
             return this;

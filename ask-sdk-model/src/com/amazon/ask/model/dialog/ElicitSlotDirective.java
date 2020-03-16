@@ -56,6 +56,7 @@ public final class ElicitSlotDirective extends com.amazon.ask.model.Directive  {
         return updatedIntent;
     }
 
+
     /**
      * Get slotToElicit
      * @return slotToElicit
@@ -64,6 +65,7 @@ public final class ElicitSlotDirective extends com.amazon.ask.model.Directive  {
     public String getSlotToElicit() {
         return slotToElicit;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -113,6 +115,7 @@ public final class ElicitSlotDirective extends com.amazon.ask.model.Directive  {
         private Builder() {}
 
         @JsonProperty("updatedIntent")
+
         public Builder withUpdatedIntent(com.amazon.ask.model.Intent updatedIntent) {
             this.updatedIntent = updatedIntent;
             return this;
@@ -120,6 +123,7 @@ public final class ElicitSlotDirective extends com.amazon.ask.model.Directive  {
 
 
         @JsonProperty("slotToElicit")
+
         public Builder withSlotToElicit(String slotToElicit) {
             this.slotToElicit = slotToElicit;
             return this;

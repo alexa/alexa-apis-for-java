@@ -26,7 +26,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public final class Scope {
 
     @JsonProperty("status")
-    private com.amazon.ask.model.PermissionStatus status = null;
+    private String status = null;
 
     public static Builder builder() {
         return new Builder();
@@ -40,11 +40,29 @@ public final class Scope {
 
     /**
      * Get status
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getStatusAsString().
+     *
      * @return status
     **/
-    @JsonProperty("status")
+    
     public com.amazon.ask.model.PermissionStatus getStatus() {
-        return status;
+        return com.amazon.ask.model.PermissionStatus.fromValue(status);
+    }
+
+    /**
+     * Get the underlying String value for status.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return status as a String value
+    **/
+    @JsonProperty("status")
+    public String getStatusAsString() {
+      return status;
     }
 
     @Override
@@ -86,13 +104,18 @@ public final class Scope {
     }
   
     public static class Builder {
-        private com.amazon.ask.model.PermissionStatus status;
+        private String status;
 
         private Builder() {}
 
         @JsonProperty("status")
+        public Builder withStatus(String status) {
+          this.status = status;
+          return this;
+        }
+
         public Builder withStatus(com.amazon.ask.model.PermissionStatus status) {
-            this.status = status;
+            this.status = status != null ? status.toString() : null;
             return this;
         }
 

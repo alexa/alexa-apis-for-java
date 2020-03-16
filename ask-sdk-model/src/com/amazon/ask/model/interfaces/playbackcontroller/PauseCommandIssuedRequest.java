@@ -89,6 +89,7 @@ public final class PauseCommandIssuedRequest extends com.amazon.ask.model.Reques
         private Builder() {}
 
         @JsonProperty("requestId")
+
         public Builder withRequestId(String requestId) {
             this.requestId = requestId;
             return this;
@@ -96,6 +97,7 @@ public final class PauseCommandIssuedRequest extends com.amazon.ask.model.Reques
 
 
         @JsonProperty("timestamp")
+
         public Builder withTimestamp(OffsetDateTime timestamp) {
             this.timestamp = timestamp;
             return this;
@@ -103,6 +105,7 @@ public final class PauseCommandIssuedRequest extends com.amazon.ask.model.Reques
 
 
         @JsonProperty("locale")
+
         public Builder withLocale(String locale) {
             this.locale = locale;
             return this;

@@ -50,6 +50,7 @@ public final class ConfirmIntentDirective extends com.amazon.ask.model.Directive
         return updatedIntent;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -95,6 +96,7 @@ public final class ConfirmIntentDirective extends com.amazon.ask.model.Directive
         private Builder() {}
 
         @JsonProperty("updatedIntent")
+
         public Builder withUpdatedIntent(com.amazon.ask.model.Intent updatedIntent) {
             this.updatedIntent = updatedIntent;
             return this;

@@ -59,6 +59,7 @@ public final class HandleMessageDirective extends com.amazon.ask.model.Directive
         return message;
     }
 
+
     /**
      * An array of objects for performing text-to-speech transformations with message data
      * @return transformers
@@ -67,6 +68,7 @@ public final class HandleMessageDirective extends com.amazon.ask.model.Directive
     public List<com.amazon.ask.model.interfaces.alexa.presentation.html.Transformer> getTransformers() {
         return transformers;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -116,6 +118,7 @@ public final class HandleMessageDirective extends com.amazon.ask.model.Directive
         private Builder() {}
 
         @JsonProperty("message")
+
         public Builder withMessage(Object message) {
             this.message = message;
             return this;
@@ -123,6 +126,7 @@ public final class HandleMessageDirective extends com.amazon.ask.model.Directive
 
 
         @JsonProperty("transformers")
+
         public Builder withTransformers(List<com.amazon.ask.model.interfaces.alexa.presentation.html.Transformer> transformers) {
             this.transformers = transformers;
             return this;

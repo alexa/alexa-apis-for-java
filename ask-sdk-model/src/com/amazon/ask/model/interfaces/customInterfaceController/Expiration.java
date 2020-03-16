@@ -55,6 +55,7 @@ public final class Expiration {
         return durationInMilliseconds;
     }
 
+
     /**
      * The payload that was defined in the StartEventHandlerDirective. The skill will receive if and only if the Event Handler duration expired.
      * @return expirationPayload
@@ -63,6 +64,7 @@ public final class Expiration {
     public Object getExpirationPayload() {
         return expirationPayload;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -111,6 +113,7 @@ public final class Expiration {
         private Builder() {}
 
         @JsonProperty("durationInMilliseconds")
+
         public Builder withDurationInMilliseconds(Long durationInMilliseconds) {
             this.durationInMilliseconds = durationInMilliseconds;
             return this;
@@ -118,6 +121,7 @@ public final class Expiration {
 
 
         @JsonProperty("expirationPayload")
+
         public Builder withExpirationPayload(Object expirationPayload) {
             this.expirationPayload = expirationPayload;
             return this;

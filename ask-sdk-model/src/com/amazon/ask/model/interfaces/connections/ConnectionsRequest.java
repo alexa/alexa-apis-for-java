@@ -69,6 +69,7 @@ public final class ConnectionsRequest extends com.amazon.ask.model.Request  {
         return name;
     }
 
+
     /**
      * This is an object sent between the two skills for processing a ConnectionsRequest or ConnectionsResponse. This will always be a valid payload based on Action schema for the requester action.
      * @return payload
@@ -77,6 +78,7 @@ public final class ConnectionsRequest extends com.amazon.ask.model.Request  {
     public Map<String, Object> getPayload() {
         return payload;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -129,6 +131,7 @@ public final class ConnectionsRequest extends com.amazon.ask.model.Request  {
         private Builder() {}
 
         @JsonProperty("requestId")
+
         public Builder withRequestId(String requestId) {
             this.requestId = requestId;
             return this;
@@ -136,6 +139,7 @@ public final class ConnectionsRequest extends com.amazon.ask.model.Request  {
 
 
         @JsonProperty("timestamp")
+
         public Builder withTimestamp(OffsetDateTime timestamp) {
             this.timestamp = timestamp;
             return this;
@@ -143,6 +147,7 @@ public final class ConnectionsRequest extends com.amazon.ask.model.Request  {
 
 
         @JsonProperty("locale")
+
         public Builder withLocale(String locale) {
             this.locale = locale;
             return this;
@@ -150,6 +155,7 @@ public final class ConnectionsRequest extends com.amazon.ask.model.Request  {
 
 
         @JsonProperty("name")
+
         public Builder withName(String name) {
             this.name = name;
             return this;
@@ -157,6 +163,7 @@ public final class ConnectionsRequest extends com.amazon.ask.model.Request  {
 
 
         @JsonProperty("payload")
+
         public Builder withPayload(Map<String, Object> payload) {
             this.payload = payload;
             return this;

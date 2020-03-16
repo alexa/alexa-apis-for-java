@@ -59,6 +59,7 @@ public final class Price extends com.amazon.ask.model.interfaces.amazonpay.model
         return amount;
     }
 
+
     /**
      * Currency code for the amount.
      * @return currencyCode
@@ -67,6 +68,7 @@ public final class Price extends com.amazon.ask.model.interfaces.amazonpay.model
     public String getCurrencyCode() {
         return currencyCode;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -117,6 +119,7 @@ public final class Price extends com.amazon.ask.model.interfaces.amazonpay.model
         private Builder() {}
 
         @JsonProperty("amount")
+
         public Builder withAmount(String amount) {
             this.amount = amount;
             return this;
@@ -124,6 +127,7 @@ public final class Price extends com.amazon.ask.model.interfaces.amazonpay.model
 
 
         @JsonProperty("currencyCode")
+
         public Builder withCurrencyCode(String currencyCode) {
             this.currencyCode = currencyCode;
             return this;
@@ -131,6 +135,7 @@ public final class Price extends com.amazon.ask.model.interfaces.amazonpay.model
 
 
         @JsonProperty("@version")
+
         public Builder withVersion(String version) {
             this.version = version;
             return this;

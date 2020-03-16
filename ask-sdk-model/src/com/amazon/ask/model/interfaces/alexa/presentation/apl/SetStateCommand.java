@@ -71,6 +71,7 @@ public final class SetStateCommand extends com.amazon.ask.model.interfaces.alexa
         return componentId;
     }
 
+
     /**
      * The name of the state to set. Must be one of “checked”, “disabled”, and “focused”.
      * @return state
@@ -80,6 +81,7 @@ public final class SetStateCommand extends com.amazon.ask.model.interfaces.alexa
         return state;
     }
 
+
     /**
      * The value to set on the property
      * @return value
@@ -88,6 +90,7 @@ public final class SetStateCommand extends com.amazon.ask.model.interfaces.alexa
     public String getValue() {
         return value;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -143,6 +146,7 @@ public final class SetStateCommand extends com.amazon.ask.model.interfaces.alexa
         private Builder() {}
 
         @JsonProperty("delay")
+
         public Builder withDelay(Integer delay) {
             this.delay = String.valueOf(delay);
             return this;
@@ -154,6 +158,7 @@ public final class SetStateCommand extends com.amazon.ask.model.interfaces.alexa
         }
 
         @JsonProperty("description")
+
         public Builder withDescription(String description) {
             this.description = description;
             return this;
@@ -161,6 +166,7 @@ public final class SetStateCommand extends com.amazon.ask.model.interfaces.alexa
 
 
         @JsonProperty("when")
+
         public Builder withWhen(Boolean when) {
             this.when = when;
             return this;
@@ -168,6 +174,7 @@ public final class SetStateCommand extends com.amazon.ask.model.interfaces.alexa
 
 
         @JsonProperty("componentId")
+
         public Builder withComponentId(String componentId) {
             this.componentId = componentId;
             return this;
@@ -175,6 +182,7 @@ public final class SetStateCommand extends com.amazon.ask.model.interfaces.alexa
 
 
         @JsonProperty("state")
+
         public Builder withState(com.amazon.ask.model.interfaces.alexa.presentation.apl.ComponentState state) {
             this.state = state;
             return this;
@@ -182,6 +190,7 @@ public final class SetStateCommand extends com.amazon.ask.model.interfaces.alexa
 
 
         @JsonProperty("value")
+
         public Builder withValue(Boolean value) {
             this.value = String.valueOf(value);
             return this;

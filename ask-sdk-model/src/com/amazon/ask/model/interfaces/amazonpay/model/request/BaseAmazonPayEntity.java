@@ -55,6 +55,7 @@ public abstract class BaseAmazonPayEntity {
         return type;
     }
 
+
     /**
      * Version of the Amazon Pay Entity. Can be 1 or greater.
      * @return version
@@ -63,6 +64,7 @@ public abstract class BaseAmazonPayEntity {
     public String getVersion() {
         return version;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {

@@ -53,6 +53,7 @@ public final class PlainTextOutputSpeech extends com.amazon.ask.model.ui.OutputS
         return text;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -93,19 +94,25 @@ public final class PlainTextOutputSpeech extends com.amazon.ask.model.ui.OutputS
     }
   
     public static class Builder {
-        private com.amazon.ask.model.ui.PlayBehavior playBehavior;
+        private String playBehavior;
         private String text;
 
         private Builder() {}
 
         @JsonProperty("playBehavior")
+        public Builder withPlayBehavior(String playBehavior) {
+          this.playBehavior = playBehavior;
+          return this;
+        }
+
         public Builder withPlayBehavior(com.amazon.ask.model.ui.PlayBehavior playBehavior) {
-            this.playBehavior = playBehavior;
+            this.playBehavior = playBehavior != null ? playBehavior.toString() : null;
             return this;
         }
 
 
         @JsonProperty("text")
+
         public Builder withText(String text) {
             this.text = text;
             return this;

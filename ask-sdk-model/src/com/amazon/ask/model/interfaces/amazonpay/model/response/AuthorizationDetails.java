@@ -129,6 +129,7 @@ public final class AuthorizationDetails {
         return amazonAuthorizationId;
     }
 
+
     /**
      * This is 3P seller's identifier for this authorization transaction. This identifier must be unique for all of your authorization transactions.
      * @return authorizationReferenceId
@@ -137,6 +138,7 @@ public final class AuthorizationDetails {
     public String getAuthorizationReferenceId() {
         return authorizationReferenceId;
     }
+
 
     /**
      * A description for the transaction that is included in emails to the user. Appears only when AuthorizeAndCapture is chosen.
@@ -147,6 +149,7 @@ public final class AuthorizationDetails {
         return sellerAuthorizationNote;
     }
 
+
     /**
      * Get authorizationAmount
      * @return authorizationAmount
@@ -155,6 +158,7 @@ public final class AuthorizationDetails {
     public com.amazon.ask.model.interfaces.amazonpay.model.response.Price getAuthorizationAmount() {
         return authorizationAmount;
     }
+
 
     /**
      * Get capturedAmount
@@ -165,6 +169,7 @@ public final class AuthorizationDetails {
         return capturedAmount;
     }
 
+
     /**
      * Get authorizationFee
      * @return authorizationFee
@@ -173,6 +178,7 @@ public final class AuthorizationDetails {
     public com.amazon.ask.model.interfaces.amazonpay.model.response.Price getAuthorizationFee() {
         return authorizationFee;
     }
+
 
     /**
      * list of AmazonCaptureId identifiers that have been requested on this Authorization object.
@@ -183,6 +189,7 @@ public final class AuthorizationDetails {
         return idList;
     }
 
+
     /**
      * This is the time at which the authorization was created.
      * @return creationTimestamp
@@ -191,6 +198,7 @@ public final class AuthorizationDetails {
     public OffsetDateTime getCreationTimestamp() {
         return creationTimestamp;
     }
+
 
     /**
      * This is the time at which the authorization expires.
@@ -201,6 +209,7 @@ public final class AuthorizationDetails {
         return expirationTimestamp;
     }
 
+
     /**
      * Get authorizationStatus
      * @return authorizationStatus
@@ -209,6 +218,7 @@ public final class AuthorizationDetails {
     public com.amazon.ask.model.interfaces.amazonpay.model.response.AuthorizationStatus getAuthorizationStatus() {
         return authorizationStatus;
     }
+
 
     /**
      * This indicates whether an authorization resulted in a soft decline.
@@ -219,6 +229,7 @@ public final class AuthorizationDetails {
         return softDecline;
     }
 
+
     /**
      * This indicates whether a direct capture against the payment contract was specified.
      * @return captureNow
@@ -227,6 +238,7 @@ public final class AuthorizationDetails {
     public Boolean getCaptureNow() {
         return captureNow;
     }
+
 
     /**
      * This is the description to be shown on the buyer's payment instrument statement if AuthorizeAndCapture was chosen.
@@ -237,6 +249,7 @@ public final class AuthorizationDetails {
         return softDescriptor;
     }
 
+
     /**
      * Get authorizationBillingAddress
      * @return authorizationBillingAddress
@@ -245,6 +258,7 @@ public final class AuthorizationDetails {
     public com.amazon.ask.model.interfaces.amazonpay.model.response.Destination getAuthorizationBillingAddress() {
         return authorizationBillingAddress;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -329,6 +343,7 @@ public final class AuthorizationDetails {
         private Builder() {}
 
         @JsonProperty("amazonAuthorizationId")
+
         public Builder withAmazonAuthorizationId(String amazonAuthorizationId) {
             this.amazonAuthorizationId = amazonAuthorizationId;
             return this;
@@ -336,6 +351,7 @@ public final class AuthorizationDetails {
 
 
         @JsonProperty("authorizationReferenceId")
+
         public Builder withAuthorizationReferenceId(String authorizationReferenceId) {
             this.authorizationReferenceId = authorizationReferenceId;
             return this;
@@ -343,6 +359,7 @@ public final class AuthorizationDetails {
 
 
         @JsonProperty("sellerAuthorizationNote")
+
         public Builder withSellerAuthorizationNote(String sellerAuthorizationNote) {
             this.sellerAuthorizationNote = sellerAuthorizationNote;
             return this;
@@ -350,6 +367,7 @@ public final class AuthorizationDetails {
 
 
         @JsonProperty("authorizationAmount")
+
         public Builder withAuthorizationAmount(com.amazon.ask.model.interfaces.amazonpay.model.response.Price authorizationAmount) {
             this.authorizationAmount = authorizationAmount;
             return this;
@@ -357,6 +375,7 @@ public final class AuthorizationDetails {
 
 
         @JsonProperty("capturedAmount")
+
         public Builder withCapturedAmount(com.amazon.ask.model.interfaces.amazonpay.model.response.Price capturedAmount) {
             this.capturedAmount = capturedAmount;
             return this;
@@ -364,6 +383,7 @@ public final class AuthorizationDetails {
 
 
         @JsonProperty("authorizationFee")
+
         public Builder withAuthorizationFee(com.amazon.ask.model.interfaces.amazonpay.model.response.Price authorizationFee) {
             this.authorizationFee = authorizationFee;
             return this;
@@ -371,6 +391,7 @@ public final class AuthorizationDetails {
 
 
         @JsonProperty("idList")
+
         public Builder withIdList(List<String> idList) {
             this.idList = idList;
             return this;
@@ -385,6 +406,7 @@ public final class AuthorizationDetails {
         }
 
         @JsonProperty("creationTimestamp")
+
         public Builder withCreationTimestamp(OffsetDateTime creationTimestamp) {
             this.creationTimestamp = creationTimestamp;
             return this;
@@ -392,6 +414,7 @@ public final class AuthorizationDetails {
 
 
         @JsonProperty("expirationTimestamp")
+
         public Builder withExpirationTimestamp(OffsetDateTime expirationTimestamp) {
             this.expirationTimestamp = expirationTimestamp;
             return this;
@@ -399,6 +422,7 @@ public final class AuthorizationDetails {
 
 
         @JsonProperty("authorizationStatus")
+
         public Builder withAuthorizationStatus(com.amazon.ask.model.interfaces.amazonpay.model.response.AuthorizationStatus authorizationStatus) {
             this.authorizationStatus = authorizationStatus;
             return this;
@@ -406,6 +430,7 @@ public final class AuthorizationDetails {
 
 
         @JsonProperty("softDecline")
+
         public Builder withSoftDecline(Boolean softDecline) {
             this.softDecline = softDecline;
             return this;
@@ -413,6 +438,7 @@ public final class AuthorizationDetails {
 
 
         @JsonProperty("captureNow")
+
         public Builder withCaptureNow(Boolean captureNow) {
             this.captureNow = captureNow;
             return this;
@@ -420,6 +446,7 @@ public final class AuthorizationDetails {
 
 
         @JsonProperty("softDescriptor")
+
         public Builder withSoftDescriptor(String softDescriptor) {
             this.softDescriptor = softDescriptor;
             return this;
@@ -427,6 +454,7 @@ public final class AuthorizationDetails {
 
 
         @JsonProperty("authorizationBillingAddress")
+
         public Builder withAuthorizationBillingAddress(com.amazon.ask.model.interfaces.amazonpay.model.response.Destination authorizationBillingAddress) {
             this.authorizationBillingAddress = authorizationBillingAddress;
             return this;

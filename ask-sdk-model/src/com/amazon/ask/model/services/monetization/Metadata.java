@@ -47,6 +47,7 @@ public final class Metadata {
         return resultSet;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class Metadata {
         private Builder() {}
 
         @JsonProperty("resultSet")
+
         public Builder withResultSet(com.amazon.ask.model.services.monetization.ResultSet resultSet) {
             this.resultSet = resultSet;
             return this;

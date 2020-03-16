@@ -50,6 +50,7 @@ public final class DeviationRecognizer extends com.amazon.ask.model.services.gam
         return recognizer;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -95,6 +96,7 @@ public final class DeviationRecognizer extends com.amazon.ask.model.services.gam
         private Builder() {}
 
         @JsonProperty("recognizer")
+
         public Builder withRecognizer(String recognizer) {
             this.recognizer = recognizer;
             return this;

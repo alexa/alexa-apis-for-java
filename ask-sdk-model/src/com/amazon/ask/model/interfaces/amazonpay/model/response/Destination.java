@@ -107,6 +107,7 @@ public final class Destination {
         return name;
     }
 
+
     /**
      * The company name
      * @return companyName
@@ -115,6 +116,7 @@ public final class Destination {
     public String getCompanyName() {
         return companyName;
     }
+
 
     /**
      * The first line of the address. At least one AddressLine (AddressLine1, AddressLine2, or AddressLine3) is required.
@@ -125,6 +127,7 @@ public final class Destination {
         return addressLine1;
     }
 
+
     /**
      * The second line of the address. At least one AddressLine (AddressLine1, AddressLine2, or AddressLine3) is required.
      * @return addressLine2
@@ -133,6 +136,7 @@ public final class Destination {
     public String getAddressLine2() {
         return addressLine2;
     }
+
 
     /**
      * The third line of the address. At least one AddressLine (AddressLine1, AddressLine2, or AddressLine3) is required.
@@ -143,6 +147,7 @@ public final class Destination {
         return addressLine3;
     }
 
+
     /**
      * The city
      * @return city
@@ -151,6 +156,7 @@ public final class Destination {
     public String getCity() {
         return city;
     }
+
 
     /**
      * The district or County
@@ -161,6 +167,7 @@ public final class Destination {
         return districtOrCounty;
     }
 
+
     /**
      * The state or region. This element is free text and can be either a 2-character code, fully spelled out, or abbreviated. Required. Note :- This response element is returned only in the U.S.
      * @return stateOrRegion
@@ -169,6 +176,7 @@ public final class Destination {
     public String getStateOrRegion() {
         return stateOrRegion;
     }
+
 
     /**
      * The postal code.
@@ -179,6 +187,7 @@ public final class Destination {
         return postalCode;
     }
 
+
     /**
      * The country code, in ISO 3166 format
      * @return countryCode
@@ -188,6 +197,7 @@ public final class Destination {
         return countryCode;
     }
 
+
     /**
      * The phone number
      * @return phone
@@ -196,6 +206,7 @@ public final class Destination {
     public String getPhone() {
         return phone;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -271,6 +282,7 @@ public final class Destination {
         private Builder() {}
 
         @JsonProperty("name")
+
         public Builder withName(String name) {
             this.name = name;
             return this;
@@ -278,6 +290,7 @@ public final class Destination {
 
 
         @JsonProperty("companyName")
+
         public Builder withCompanyName(String companyName) {
             this.companyName = companyName;
             return this;
@@ -285,6 +298,7 @@ public final class Destination {
 
 
         @JsonProperty("addressLine1")
+
         public Builder withAddressLine1(String addressLine1) {
             this.addressLine1 = addressLine1;
             return this;
@@ -292,6 +306,7 @@ public final class Destination {
 
 
         @JsonProperty("addressLine2")
+
         public Builder withAddressLine2(String addressLine2) {
             this.addressLine2 = addressLine2;
             return this;
@@ -299,6 +314,7 @@ public final class Destination {
 
 
         @JsonProperty("addressLine3")
+
         public Builder withAddressLine3(String addressLine3) {
             this.addressLine3 = addressLine3;
             return this;
@@ -306,6 +322,7 @@ public final class Destination {
 
 
         @JsonProperty("city")
+
         public Builder withCity(String city) {
             this.city = city;
             return this;
@@ -313,6 +330,7 @@ public final class Destination {
 
 
         @JsonProperty("districtOrCounty")
+
         public Builder withDistrictOrCounty(String districtOrCounty) {
             this.districtOrCounty = districtOrCounty;
             return this;
@@ -320,6 +338,7 @@ public final class Destination {
 
 
         @JsonProperty("stateOrRegion")
+
         public Builder withStateOrRegion(String stateOrRegion) {
             this.stateOrRegion = stateOrRegion;
             return this;
@@ -327,6 +346,7 @@ public final class Destination {
 
 
         @JsonProperty("postalCode")
+
         public Builder withPostalCode(String postalCode) {
             this.postalCode = postalCode;
             return this;
@@ -334,6 +354,7 @@ public final class Destination {
 
 
         @JsonProperty("countryCode")
+
         public Builder withCountryCode(String countryCode) {
             this.countryCode = countryCode;
             return this;
@@ -341,6 +362,7 @@ public final class Destination {
 
 
         @JsonProperty("phone")
+
         public Builder withPhone(String phone) {
             this.phone = phone;
             return this;

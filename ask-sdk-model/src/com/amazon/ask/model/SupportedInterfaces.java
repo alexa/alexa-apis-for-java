@@ -89,6 +89,7 @@ public final class SupportedInterfaces {
         return alexaPresentationAPL;
     }
 
+
     /**
      * Get alexaPresentationAPLT
      * @return alexaPresentationAPLT
@@ -97,6 +98,7 @@ public final class SupportedInterfaces {
     public com.amazon.ask.model.interfaces.alexa.presentation.aplt.AlexaPresentationApltInterface getAlexaPresentationAPLT() {
         return alexaPresentationAPLT;
     }
+
 
     /**
      * Get alexaPresentationHTML
@@ -107,6 +109,7 @@ public final class SupportedInterfaces {
         return alexaPresentationHTML;
     }
 
+
     /**
      * Get audioPlayer
      * @return audioPlayer
@@ -115,6 +118,7 @@ public final class SupportedInterfaces {
     public com.amazon.ask.model.interfaces.audioplayer.AudioPlayerInterface getAudioPlayer() {
         return audioPlayer;
     }
+
 
     /**
      * Get display
@@ -125,6 +129,7 @@ public final class SupportedInterfaces {
         return display;
     }
 
+
     /**
      * Get videoApp
      * @return videoApp
@@ -133,6 +138,7 @@ public final class SupportedInterfaces {
     public com.amazon.ask.model.interfaces.videoapp.VideoAppInterface getVideoApp() {
         return videoApp;
     }
+
 
     /**
      * Get geolocation
@@ -143,6 +149,7 @@ public final class SupportedInterfaces {
         return geolocation;
     }
 
+
     /**
      * Get navigation
      * @return navigation
@@ -151,6 +158,7 @@ public final class SupportedInterfaces {
     public com.amazon.ask.model.interfaces.navigation.NavigationInterface getNavigation() {
         return navigation;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -217,6 +225,7 @@ public final class SupportedInterfaces {
         private Builder() {}
 
         @JsonProperty("Alexa.Presentation.APL")
+
         public Builder withAlexaPresentationAPL(com.amazon.ask.model.interfaces.alexa.presentation.apl.AlexaPresentationAplInterface alexaPresentationAPL) {
             this.alexaPresentationAPL = alexaPresentationAPL;
             return this;
@@ -224,6 +233,7 @@ public final class SupportedInterfaces {
 
 
         @JsonProperty("Alexa.Presentation.APLT")
+
         public Builder withAlexaPresentationAPLT(com.amazon.ask.model.interfaces.alexa.presentation.aplt.AlexaPresentationApltInterface alexaPresentationAPLT) {
             this.alexaPresentationAPLT = alexaPresentationAPLT;
             return this;
@@ -231,6 +241,7 @@ public final class SupportedInterfaces {
 
 
         @JsonProperty("Alexa.Presentation.HTML")
+
         public Builder withAlexaPresentationHTML(com.amazon.ask.model.interfaces.alexa.presentation.html.AlexaPresentationHtmlInterface alexaPresentationHTML) {
             this.alexaPresentationHTML = alexaPresentationHTML;
             return this;
@@ -238,6 +249,7 @@ public final class SupportedInterfaces {
 
 
         @JsonProperty("AudioPlayer")
+
         public Builder withAudioPlayer(com.amazon.ask.model.interfaces.audioplayer.AudioPlayerInterface audioPlayer) {
             this.audioPlayer = audioPlayer;
             return this;
@@ -245,6 +257,7 @@ public final class SupportedInterfaces {
 
 
         @JsonProperty("Display")
+
         public Builder withDisplay(com.amazon.ask.model.interfaces.display.DisplayInterface display) {
             this.display = display;
             return this;
@@ -252,6 +265,7 @@ public final class SupportedInterfaces {
 
 
         @JsonProperty("VideoApp")
+
         public Builder withVideoApp(com.amazon.ask.model.interfaces.videoapp.VideoAppInterface videoApp) {
             this.videoApp = videoApp;
             return this;
@@ -259,6 +273,7 @@ public final class SupportedInterfaces {
 
 
         @JsonProperty("Geolocation")
+
         public Builder withGeolocation(com.amazon.ask.model.interfaces.geolocation.GeolocationInterface geolocation) {
             this.geolocation = geolocation;
             return this;
@@ -266,6 +281,7 @@ public final class SupportedInterfaces {
 
 
         @JsonProperty("Navigation")
+
         public Builder withNavigation(com.amazon.ask.model.interfaces.navigation.NavigationInterface navigation) {
             this.navigation = navigation;
             return this;

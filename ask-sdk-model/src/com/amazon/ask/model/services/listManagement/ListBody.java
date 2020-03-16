@@ -47,6 +47,7 @@ public final class ListBody {
         return listId;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class ListBody {
         private Builder() {}
 
         @JsonProperty("listId")
+
         public Builder withListId(String listId) {
             this.listId = listId;
             return this;

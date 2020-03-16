@@ -50,6 +50,7 @@ public final class PlainTextHint extends com.amazon.ask.model.interfaces.display
         return text;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -95,6 +96,7 @@ public final class PlainTextHint extends com.amazon.ask.model.interfaces.display
         private Builder() {}
 
         @JsonProperty("text")
+
         public Builder withText(String text) {
             this.text = text;
             return this;

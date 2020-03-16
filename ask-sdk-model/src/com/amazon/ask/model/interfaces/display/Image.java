@@ -56,6 +56,7 @@ public final class Image {
         return contentDescription;
     }
 
+
     /**
      * Get sources
      * @return sources
@@ -64,6 +65,7 @@ public final class Image {
     public List<com.amazon.ask.model.interfaces.display.ImageInstance> getSources() {
         return sources;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,6 +114,7 @@ public final class Image {
         private Builder() {}
 
         @JsonProperty("contentDescription")
+
         public Builder withContentDescription(String contentDescription) {
             this.contentDescription = contentDescription;
             return this;
@@ -119,6 +122,7 @@ public final class Image {
 
 
         @JsonProperty("sources")
+
         public Builder withSources(List<com.amazon.ask.model.interfaces.display.ImageInstance> sources) {
             this.sources = sources;
             return this;

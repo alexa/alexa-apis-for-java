@@ -66,6 +66,7 @@ public final class AuthorizationStatus {
         return state;
     }
 
+
     /**
      * The reason that the Authorization object, Capture object, or Refund object is in the current state. For more information, see - https://pay.amazon.com/us/developer/documentation/apireference/201752950
      * @return reasonCode
@@ -74,6 +75,7 @@ public final class AuthorizationStatus {
     public String getReasonCode() {
         return reasonCode;
     }
+
 
     /**
      * Reason desciption corresponding to the reason code
@@ -84,6 +86,7 @@ public final class AuthorizationStatus {
         return reasonDescription;
     }
 
+
     /**
      * A timestamp that indicates the time when the authorization, capture, or refund state was last updated. In ISO 8601 format
      * @return lastUpdateTimestamp
@@ -92,6 +95,7 @@ public final class AuthorizationStatus {
     public OffsetDateTime getLastUpdateTimestamp() {
         return lastUpdateTimestamp;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -146,6 +150,7 @@ public final class AuthorizationStatus {
         private Builder() {}
 
         @JsonProperty("state")
+
         public Builder withState(com.amazon.ask.model.interfaces.amazonpay.model.response.State state) {
             this.state = state;
             return this;
@@ -153,6 +158,7 @@ public final class AuthorizationStatus {
 
 
         @JsonProperty("reasonCode")
+
         public Builder withReasonCode(String reasonCode) {
             this.reasonCode = reasonCode;
             return this;
@@ -160,6 +166,7 @@ public final class AuthorizationStatus {
 
 
         @JsonProperty("reasonDescription")
+
         public Builder withReasonDescription(String reasonDescription) {
             this.reasonDescription = reasonDescription;
             return this;
@@ -167,6 +174,7 @@ public final class AuthorizationStatus {
 
 
         @JsonProperty("lastUpdateTimestamp")
+
         public Builder withLastUpdateTimestamp(OffsetDateTime lastUpdateTimestamp) {
             this.lastUpdateTimestamp = lastUpdateTimestamp;
             return this;

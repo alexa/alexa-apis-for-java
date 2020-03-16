@@ -29,7 +29,7 @@ public final class ImageInstance {
     private String url = null;
 
     @JsonProperty("size")
-    private com.amazon.ask.model.interfaces.display.ImageSize size = null;
+    private String size = null;
 
     @JsonProperty("widthPixels")
     private Integer widthPixels = null;
@@ -65,13 +65,32 @@ public final class ImageInstance {
         return url;
     }
 
+
     /**
      * Get size
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getSizeAsString().
+     *
      * @return size
     **/
-    @JsonProperty("size")
+    
     public com.amazon.ask.model.interfaces.display.ImageSize getSize() {
-        return size;
+        return com.amazon.ask.model.interfaces.display.ImageSize.fromValue(size);
+    }
+
+    /**
+     * Get the underlying String value for size.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return size as a String value
+    **/
+    @JsonProperty("size")
+    public String getSizeAsString() {
+      return size;
     }
 
     /**
@@ -83,6 +102,7 @@ public final class ImageInstance {
         return widthPixels;
     }
 
+
     /**
      * Get heightPixels
      * @return heightPixels
@@ -91,6 +111,7 @@ public final class ImageInstance {
     public Integer getHeightPixels() {
         return heightPixels;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -138,13 +159,14 @@ public final class ImageInstance {
   
     public static class Builder {
         private String url;
-        private com.amazon.ask.model.interfaces.display.ImageSize size;
+        private String size;
         private Integer widthPixels;
         private Integer heightPixels;
 
         private Builder() {}
 
         @JsonProperty("url")
+
         public Builder withUrl(String url) {
             this.url = url;
             return this;
@@ -152,13 +174,19 @@ public final class ImageInstance {
 
 
         @JsonProperty("size")
+        public Builder withSize(String size) {
+          this.size = size;
+          return this;
+        }
+
         public Builder withSize(com.amazon.ask.model.interfaces.display.ImageSize size) {
-            this.size = size;
+            this.size = size != null ? size.toString() : null;
             return this;
         }
 
 
         @JsonProperty("widthPixels")
+
         public Builder withWidthPixels(Integer widthPixels) {
             this.widthPixels = widthPixels;
             return this;
@@ -166,6 +194,7 @@ public final class ImageInstance {
 
 
         @JsonProperty("heightPixels")
+
         public Builder withHeightPixels(Integer heightPixels) {
             this.heightPixels = heightPixels;
             return this;

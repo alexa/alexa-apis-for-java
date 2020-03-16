@@ -47,6 +47,7 @@ public final class ProactiveSubscriptionEvent {
         return eventName;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class ProactiveSubscriptionEvent {
         private Builder() {}
 
         @JsonProperty("eventName")
+
         public Builder withEventName(String eventName) {
             this.eventName = eventName;
             return this;

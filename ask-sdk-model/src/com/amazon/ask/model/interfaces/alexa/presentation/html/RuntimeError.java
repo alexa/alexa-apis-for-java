@@ -26,7 +26,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public final class RuntimeError {
 
     @JsonProperty("reason")
-    private com.amazon.ask.model.interfaces.alexa.presentation.html.RuntimeErrorReason reason = null;
+    private String reason = null;
 
     @JsonProperty("message")
     private String message = null;
@@ -52,11 +52,29 @@ public final class RuntimeError {
 
     /**
      * Get reason
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getReasonAsString().
+     *
      * @return reason
     **/
-    @JsonProperty("reason")
+    
     public com.amazon.ask.model.interfaces.alexa.presentation.html.RuntimeErrorReason getReason() {
-        return reason;
+        return com.amazon.ask.model.interfaces.alexa.presentation.html.RuntimeErrorReason.fromValue(reason);
+    }
+
+    /**
+     * Get the underlying String value for reason.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return reason as a String value
+    **/
+    @JsonProperty("reason")
+    public String getReasonAsString() {
+      return reason;
     }
 
     /**
@@ -68,6 +86,7 @@ public final class RuntimeError {
         return message;
     }
 
+
     /**
      * Error code
      * @return code
@@ -76,6 +95,7 @@ public final class RuntimeError {
     public String getCode() {
         return code;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -120,20 +140,26 @@ public final class RuntimeError {
     }
   
     public static class Builder {
-        private com.amazon.ask.model.interfaces.alexa.presentation.html.RuntimeErrorReason reason;
+        private String reason;
         private String message;
         private String code;
 
         private Builder() {}
 
         @JsonProperty("reason")
+        public Builder withReason(String reason) {
+          this.reason = reason;
+          return this;
+        }
+
         public Builder withReason(com.amazon.ask.model.interfaces.alexa.presentation.html.RuntimeErrorReason reason) {
-            this.reason = reason;
+            this.reason = reason != null ? reason.toString() : null;
             return this;
         }
 
 
         @JsonProperty("message")
+
         public Builder withMessage(String message) {
             this.message = message;
             return this;
@@ -141,6 +167,7 @@ public final class RuntimeError {
 
 
         @JsonProperty("code")
+
         public Builder withCode(String code) {
             this.code = code;
             return this;

@@ -68,6 +68,7 @@ public final class OpenUrlCommand extends com.amazon.ask.model.interfaces.alexa.
         return source;
     }
 
+
     /**
      * Commands to execute if the URL fails to open
      * @return onFail
@@ -76,6 +77,7 @@ public final class OpenUrlCommand extends com.amazon.ask.model.interfaces.alexa.
     public List<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command> getOnFail() {
         return onFail;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -128,6 +130,7 @@ public final class OpenUrlCommand extends com.amazon.ask.model.interfaces.alexa.
         private Builder() {}
 
         @JsonProperty("delay")
+
         public Builder withDelay(Integer delay) {
             this.delay = String.valueOf(delay);
             return this;
@@ -139,6 +142,7 @@ public final class OpenUrlCommand extends com.amazon.ask.model.interfaces.alexa.
         }
 
         @JsonProperty("description")
+
         public Builder withDescription(String description) {
             this.description = description;
             return this;
@@ -146,6 +150,7 @@ public final class OpenUrlCommand extends com.amazon.ask.model.interfaces.alexa.
 
 
         @JsonProperty("when")
+
         public Builder withWhen(Boolean when) {
             this.when = when;
             return this;
@@ -153,6 +158,7 @@ public final class OpenUrlCommand extends com.amazon.ask.model.interfaces.alexa.
 
 
         @JsonProperty("source")
+
         public Builder withSource(String source) {
             this.source = source;
             return this;
@@ -160,6 +166,7 @@ public final class OpenUrlCommand extends com.amazon.ask.model.interfaces.alexa.
 
 
         @JsonProperty("onFail")
+
         public Builder withOnFail(List<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command> onFail) {
             this.onFail = onFail;
             return this;

@@ -32,7 +32,7 @@ public final class InputEvent {
     private String timestamp = null;
 
     @JsonProperty("action")
-    private com.amazon.ask.model.services.gameEngine.InputEventActionType action = null;
+    private String action = null;
 
     @JsonProperty("color")
     private String color = null;
@@ -71,6 +71,7 @@ public final class InputEvent {
         return gadgetId;
     }
 
+
     /**
      * The event's original moment of occurrence, in ISO format.
      * @return timestamp
@@ -80,13 +81,32 @@ public final class InputEvent {
         return timestamp;
     }
 
+
     /**
      * Get action
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getActionAsString().
+     *
      * @return action
     **/
-    @JsonProperty("action")
+    
     public com.amazon.ask.model.services.gameEngine.InputEventActionType getAction() {
-        return action;
+        return com.amazon.ask.model.services.gameEngine.InputEventActionType.fromValue(action);
+    }
+
+    /**
+     * Get the underlying String value for action.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return action as a String value
+    **/
+    @JsonProperty("action")
+    public String getActionAsString() {
+      return action;
     }
 
     /**
@@ -98,6 +118,7 @@ public final class InputEvent {
         return color;
     }
 
+
     /**
      * For gadgets with multiple features, this is the feature that the event represents. Echo Buttons have one feature only, so this is always `press`.
      * @return feature
@@ -106,6 +127,7 @@ public final class InputEvent {
     public String getFeature() {
         return feature;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -156,13 +178,14 @@ public final class InputEvent {
     public static class Builder {
         private String gadgetId;
         private String timestamp;
-        private com.amazon.ask.model.services.gameEngine.InputEventActionType action;
+        private String action;
         private String color;
         private String feature;
 
         private Builder() {}
 
         @JsonProperty("gadgetId")
+
         public Builder withGadgetId(String gadgetId) {
             this.gadgetId = gadgetId;
             return this;
@@ -170,6 +193,7 @@ public final class InputEvent {
 
 
         @JsonProperty("timestamp")
+
         public Builder withTimestamp(String timestamp) {
             this.timestamp = timestamp;
             return this;
@@ -177,13 +201,19 @@ public final class InputEvent {
 
 
         @JsonProperty("action")
+        public Builder withAction(String action) {
+          this.action = action;
+          return this;
+        }
+
         public Builder withAction(com.amazon.ask.model.services.gameEngine.InputEventActionType action) {
-            this.action = action;
+            this.action = action != null ? action.toString() : null;
             return this;
         }
 
 
         @JsonProperty("color")
+
         public Builder withColor(String color) {
             this.color = color;
             return this;
@@ -191,6 +221,7 @@ public final class InputEvent {
 
 
         @JsonProperty("feature")
+
         public Builder withFeature(String feature) {
             this.feature = feature;
             return this;

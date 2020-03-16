@@ -65,6 +65,7 @@ public final class SetLightDirective extends com.amazon.ask.model.Directive  {
         return version;
     }
 
+
     /**
      * The gadget IDs that will receive the command. An empty array, or leaving this parameter out, signifies that all gadgets will receive the command.
      * @return targetGadgets
@@ -74,6 +75,7 @@ public final class SetLightDirective extends com.amazon.ask.model.Directive  {
         return targetGadgets;
     }
 
+
     /**
      * Get parameters
      * @return parameters
@@ -82,6 +84,7 @@ public final class SetLightDirective extends com.amazon.ask.model.Directive  {
     public com.amazon.ask.model.services.gadgetController.SetLightParameters getParameters() {
         return parameters;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -134,6 +137,7 @@ public final class SetLightDirective extends com.amazon.ask.model.Directive  {
         private Builder() {}
 
         @JsonProperty("version")
+
         public Builder withVersion(Integer version) {
             this.version = version;
             return this;
@@ -141,6 +145,7 @@ public final class SetLightDirective extends com.amazon.ask.model.Directive  {
 
 
         @JsonProperty("targetGadgets")
+
         public Builder withTargetGadgets(List<String> targetGadgets) {
             this.targetGadgets = targetGadgets;
             return this;
@@ -155,6 +160,7 @@ public final class SetLightDirective extends com.amazon.ask.model.Directive  {
         }
 
         @JsonProperty("parameters")
+
         public Builder withParameters(com.amazon.ask.model.services.gadgetController.SetLightParameters parameters) {
             this.parameters = parameters;
             return this;
