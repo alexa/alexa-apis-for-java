@@ -37,6 +37,7 @@ public class SubTypesManifest {
     directiveSubTypes.put("Dialog.UpdateDynamicEntities", com.amazon.ask.model.dialog.DynamicEntitiesDirective.class);
     directiveSubTypes.put("CustomInterfaceController.StartEventHandler", com.amazon.ask.model.interfaces.customInterfaceController.StartEventHandlerDirective.class);
     directiveSubTypes.put("GadgetController.SetLight", com.amazon.ask.model.interfaces.gadgetController.SetLightDirective.class);
+    directiveSubTypes.put("Alexa.Presentation.APL.SendIndexListData", com.amazon.ask.model.interfaces.alexa.presentation.apl.SendIndexListDataDirective.class);
     directiveSubTypes.put("Dialog.Delegate", com.amazon.ask.model.dialog.DelegateDirective.class);
     directiveSubTypes.put("Dialog.ConfirmIntent", com.amazon.ask.model.dialog.ConfirmIntentDirective.class);
     directiveSubTypes.put("CustomInterfaceController.SendDirective", com.amazon.ask.model.interfaces.customInterfaceController.SendDirectiveDirective.class);
@@ -59,6 +60,7 @@ public class SubTypesManifest {
     directiveSubTypes.put("Alexa.Presentation.APL.RenderDocument", com.amazon.ask.model.interfaces.alexa.presentation.apl.RenderDocumentDirective.class);
     directiveSubTypes.put("Connections.SendResponse", com.amazon.ask.model.interfaces.connections.SendResponseDirective.class);
     directiveSubTypes.put("AudioPlayer.ClearQueue", com.amazon.ask.model.interfaces.audioplayer.ClearQueueDirective.class);
+    directiveSubTypes.put("Alexa.Presentation.APL.UpdateIndexListData", com.amazon.ask.model.interfaces.alexa.presentation.apl.UpdateIndexListDataDirective.class);
     baseTypes.put(com.amazon.ask.model.Directive.class, directiveSubTypes);
 
     Map<String, Class> requestSubTypes = new HashMap<>();
@@ -69,6 +71,7 @@ public class SubTypesManifest {
     requestSubTypes.put("AlexaHouseholdListEvent.ItemsCreated", com.amazon.ask.model.services.listManagement.ListItemsCreatedEventRequest.class);
     requestSubTypes.put("SessionResumedRequest", com.amazon.ask.model.SessionResumedRequest.class);
     requestSubTypes.put("SessionEndedRequest", com.amazon.ask.model.SessionEndedRequest.class);
+    requestSubTypes.put("Alexa.Presentation.APL.LoadIndexListData", com.amazon.ask.model.interfaces.alexa.presentation.apl.LoadIndexListDataEvent.class);
     requestSubTypes.put("AudioPlayer.PlaybackFailed", com.amazon.ask.model.interfaces.audioplayer.PlaybackFailedRequest.class);
     requestSubTypes.put("CanFulfillIntentRequest", com.amazon.ask.model.canfulfill.CanFulfillIntentRequest.class);
     requestSubTypes.put("CustomInterfaceController.Expired", com.amazon.ask.model.interfaces.customInterfaceController.ExpiredRequest.class);
@@ -94,6 +97,7 @@ public class SubTypesManifest {
     requestSubTypes.put("Display.ElementSelected", com.amazon.ask.model.interfaces.display.ElementSelectedRequest.class);
     requestSubTypes.put("AlexaSkillEvent.SkillPermissionChanged", com.amazon.ask.model.events.skillevents.PermissionChangedRequest.class);
     requestSubTypes.put("Reminders.ReminderUpdated", com.amazon.ask.model.services.reminderManagement.ReminderUpdatedEventRequest.class);
+    requestSubTypes.put("Alexa.Presentation.APL.RuntimeError", com.amazon.ask.model.interfaces.alexa.presentation.apl.RuntimeErrorEvent.class);
     requestSubTypes.put("Alexa.Presentation.HTML.RuntimeError", com.amazon.ask.model.interfaces.alexa.presentation.html.RuntimeErrorRequest.class);
     requestSubTypes.put("IntentRequest", com.amazon.ask.model.IntentRequest.class);
     requestSubTypes.put("Reminders.ReminderStarted", com.amazon.ask.model.services.reminderManagement.ReminderStartedEventRequest.class);
@@ -132,6 +136,18 @@ public class SubTypesManifest {
     interfacesAlexaPresentationAplCommandSubTypes.put("SetValue", com.amazon.ask.model.interfaces.alexa.presentation.apl.SetValueCommand.class);
     interfacesAlexaPresentationAplCommandSubTypes.put("SetFocus", com.amazon.ask.model.interfaces.alexa.presentation.apl.SetFocusCommand.class);
     baseTypes.put(com.amazon.ask.model.interfaces.alexa.presentation.apl.Command.class, interfacesAlexaPresentationAplCommandSubTypes);
+
+    Map<String, Class> interfacesAlexaPresentationAplRuntimeErrorSubTypes = new HashMap<>();
+    interfacesAlexaPresentationAplRuntimeErrorSubTypes.put("LIST_ERROR", com.amazon.ask.model.interfaces.alexa.presentation.apl.ListRuntimeError.class);
+    baseTypes.put(com.amazon.ask.model.interfaces.alexa.presentation.apl.RuntimeError.class, interfacesAlexaPresentationAplRuntimeErrorSubTypes);
+
+    Map<String, Class> interfacesAlexaPresentationAplListoperationsOperationSubTypes = new HashMap<>();
+    interfacesAlexaPresentationAplListoperationsOperationSubTypes.put("SetItem", com.amazon.ask.model.interfaces.alexa.presentation.apl.listoperations.SetItemOperation.class);
+    interfacesAlexaPresentationAplListoperationsOperationSubTypes.put("InsertMultipleItems", com.amazon.ask.model.interfaces.alexa.presentation.apl.listoperations.InsertMultipleItemsOperation.class);
+    interfacesAlexaPresentationAplListoperationsOperationSubTypes.put("DeleteMultipleItems", com.amazon.ask.model.interfaces.alexa.presentation.apl.listoperations.DeleteMultipleItemsOperation.class);
+    interfacesAlexaPresentationAplListoperationsOperationSubTypes.put("InsertItem", com.amazon.ask.model.interfaces.alexa.presentation.apl.listoperations.InsertItemOperation.class);
+    interfacesAlexaPresentationAplListoperationsOperationSubTypes.put("DeleteItem", com.amazon.ask.model.interfaces.alexa.presentation.apl.listoperations.DeleteItemOperation.class);
+    baseTypes.put(com.amazon.ask.model.interfaces.alexa.presentation.apl.listoperations.Operation.class, interfacesAlexaPresentationAplListoperationsOperationSubTypes);
 
     Map<String, Class> interfacesAlexaPresentationApltCommandSubTypes = new HashMap<>();
     interfacesAlexaPresentationApltCommandSubTypes.put("SetValue", com.amazon.ask.model.interfaces.alexa.presentation.aplt.SetValueCommand.class);

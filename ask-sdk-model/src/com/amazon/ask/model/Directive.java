@@ -32,6 +32,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
   @JsonSubTypes.Type(value = com.amazon.ask.model.dialog.DynamicEntitiesDirective.class, name = "Dialog.UpdateDynamicEntities"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.customInterfaceController.StartEventHandlerDirective.class, name = "CustomInterfaceController.StartEventHandler"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.gadgetController.SetLightDirective.class, name = "GadgetController.SetLight"),
+  @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.SendIndexListDataDirective.class, name = "Alexa.Presentation.APL.SendIndexListData"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.dialog.DelegateDirective.class, name = "Dialog.Delegate"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.dialog.ConfirmIntentDirective.class, name = "Dialog.ConfirmIntent"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.customInterfaceController.SendDirectiveDirective.class, name = "CustomInterfaceController.SendDirective"),
@@ -54,6 +55,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.RenderDocumentDirective.class, name = "Alexa.Presentation.APL.RenderDocument"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.connections.SendResponseDirective.class, name = "Connections.SendResponse"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.audioplayer.ClearQueueDirective.class, name = "AudioPlayer.ClearQueue"),
+  @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.UpdateIndexListDataDirective.class, name = "Alexa.Presentation.APL.UpdateIndexListData"),
 })
 public abstract class Directive {
 
