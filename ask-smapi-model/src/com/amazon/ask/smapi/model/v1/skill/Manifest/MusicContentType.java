@@ -26,7 +26,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public final class MusicContentType {
 
     @JsonProperty("name")
-    private com.amazon.ask.smapi.model.v1.skill.Manifest.MusicContentName name = null;
+    private String name = null;
 
     public static Builder builder() {
         return new Builder();
@@ -40,11 +40,29 @@ public final class MusicContentType {
 
     /**
      * Get name
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getNameAsString().
+     *
      * @return name
     **/
-    @JsonProperty("name")
+    
     public com.amazon.ask.smapi.model.v1.skill.Manifest.MusicContentName getName() {
-        return name;
+        return com.amazon.ask.smapi.model.v1.skill.Manifest.MusicContentName.fromValue(name);
+    }
+
+    /**
+     * Get the underlying String value for name.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return name as a String value
+    **/
+    @JsonProperty("name")
+    public String getNameAsString() {
+      return name;
     }
 
     @Override
@@ -86,13 +104,18 @@ public final class MusicContentType {
     }
   
     public static class Builder {
-        private com.amazon.ask.smapi.model.v1.skill.Manifest.MusicContentName name;
+        private String name;
 
         private Builder() {}
 
         @JsonProperty("name")
+        public Builder withName(String name) {
+          this.name = name;
+          return this;
+        }
+
         public Builder withName(com.amazon.ask.smapi.model.v1.skill.Manifest.MusicContentName name) {
-            this.name = name;
+            this.name = name != null ? name.toString() : null;
             return this;
         }
 

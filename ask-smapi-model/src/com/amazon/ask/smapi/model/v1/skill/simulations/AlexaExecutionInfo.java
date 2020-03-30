@@ -50,6 +50,7 @@ public final class AlexaExecutionInfo {
         return alexaResponses;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -94,6 +95,7 @@ public final class AlexaExecutionInfo {
         private Builder() {}
 
         @JsonProperty("alexaResponses")
+
         public Builder withAlexaResponses(List<com.amazon.ask.smapi.model.v1.skill.simulations.AlexaResponse> alexaResponses) {
             this.alexaResponses = alexaResponses;
             return this;

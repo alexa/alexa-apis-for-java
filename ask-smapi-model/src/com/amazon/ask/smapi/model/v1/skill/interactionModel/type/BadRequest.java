@@ -56,6 +56,7 @@ public final class BadRequest {
         return errors;
     }
 
+
     /**
      * Get warnings
      * @return warnings
@@ -64,6 +65,7 @@ public final class BadRequest {
     public List<com.amazon.ask.smapi.model.v1.skill.interactionModel.type.Warning> getWarnings() {
         return warnings;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,6 +114,7 @@ public final class BadRequest {
         private Builder() {}
 
         @JsonProperty("errors")
+
         public Builder withErrors(List<com.amazon.ask.smapi.model.v1.skill.interactionModel.type.Error> errors) {
             this.errors = errors;
             return this;
@@ -126,6 +129,7 @@ public final class BadRequest {
         }
 
         @JsonProperty("warnings")
+
         public Builder withWarnings(List<com.amazon.ask.smapi.model.v1.skill.interactionModel.type.Warning> warnings) {
             this.warnings = warnings;
             return this;

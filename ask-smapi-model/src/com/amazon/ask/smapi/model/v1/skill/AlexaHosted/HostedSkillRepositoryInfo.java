@@ -29,7 +29,7 @@ public final class HostedSkillRepositoryInfo {
     private String url = null;
 
     @JsonProperty("type")
-    private com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillRepository type = null;
+    private String type = null;
 
     public static Builder builder() {
         return new Builder();
@@ -53,13 +53,32 @@ public final class HostedSkillRepositoryInfo {
         return url;
     }
 
+
     /**
      * Get type
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getTypeAsString().
+     *
      * @return type
     **/
-    @JsonProperty("type")
+    
     public com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillRepository getType() {
-        return type;
+        return com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillRepository.fromValue(type);
+    }
+
+    /**
+     * Get the underlying String value for type.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return type as a String value
+    **/
+    @JsonProperty("type")
+    public String getTypeAsString() {
+      return type;
     }
 
     @Override
@@ -104,11 +123,12 @@ public final class HostedSkillRepositoryInfo {
   
     public static class Builder {
         private String url;
-        private com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillRepository type;
+        private String type;
 
         private Builder() {}
 
         @JsonProperty("url")
+
         public Builder withUrl(String url) {
             this.url = url;
             return this;
@@ -116,8 +136,13 @@ public final class HostedSkillRepositoryInfo {
 
 
         @JsonProperty("type")
+        public Builder withType(String type) {
+          this.type = type;
+          return this;
+        }
+
         public Builder withType(com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillRepository type) {
-            this.type = type;
+            this.type = type != null ? type.toString() : null;
             return this;
         }
 

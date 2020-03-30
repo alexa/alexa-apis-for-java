@@ -53,6 +53,7 @@ public final class IsLessThan extends com.amazon.ask.smapi.model.v1.skill.intera
         return value;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -99,6 +100,7 @@ public final class IsLessThan extends com.amazon.ask.smapi.model.v1.skill.intera
         private Builder() {}
 
         @JsonProperty("prompt")
+
         public Builder withPrompt(String prompt) {
             this.prompt = prompt;
             return this;
@@ -106,6 +108,7 @@ public final class IsLessThan extends com.amazon.ask.smapi.model.v1.skill.intera
 
 
         @JsonProperty("value")
+
         public Builder withValue(String value) {
             this.value = value;
             return this;

@@ -54,6 +54,7 @@ public final class SummaryMarketplacePricing {
         return releaseDate;
     }
 
+
     /**
      * Get defaultPriceListing
      * @return defaultPriceListing
@@ -62,6 +63,7 @@ public final class SummaryMarketplacePricing {
     public com.amazon.ask.smapi.model.v1.isp.SummaryPriceListing getDefaultPriceListing() {
         return defaultPriceListing;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,6 +112,7 @@ public final class SummaryMarketplacePricing {
         private Builder() {}
 
         @JsonProperty("releaseDate")
+
         public Builder withReleaseDate(OffsetDateTime releaseDate) {
             this.releaseDate = releaseDate;
             return this;
@@ -117,6 +120,7 @@ public final class SummaryMarketplacePricing {
 
 
         @JsonProperty("defaultPriceListing")
+
         public Builder withDefaultPriceListing(com.amazon.ask.smapi.model.v1.isp.SummaryPriceListing defaultPriceListing) {
             this.defaultPriceListing = defaultPriceListing;
             return this;

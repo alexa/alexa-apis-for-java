@@ -32,7 +32,7 @@ public final class AlexaForBusinessInterface {
     private String namespace = null;
 
     @JsonProperty("version")
-    private com.amazon.ask.smapi.model.v1.skill.Manifest.Version version = null;
+    private String version = null;
 
     @JsonProperty("requests")
     private List<com.amazon.ask.smapi.model.v1.skill.Manifest.Request> requests = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.Request>();
@@ -62,13 +62,32 @@ public final class AlexaForBusinessInterface {
         return namespace;
     }
 
+
     /**
      * Get version
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getVersionAsString().
+     *
      * @return version
     **/
-    @JsonProperty("version")
+    
     public com.amazon.ask.smapi.model.v1.skill.Manifest.Version getVersion() {
-        return version;
+        return com.amazon.ask.smapi.model.v1.skill.Manifest.Version.fromValue(version);
+    }
+
+    /**
+     * Get the underlying String value for version.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return version as a String value
+    **/
+    @JsonProperty("version")
+    public String getVersionAsString() {
+      return version;
     }
 
     /**
@@ -79,6 +98,7 @@ public final class AlexaForBusinessInterface {
     public List<com.amazon.ask.smapi.model.v1.skill.Manifest.Request> getRequests() {
         return requests;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -124,12 +144,13 @@ public final class AlexaForBusinessInterface {
   
     public static class Builder {
         private String namespace;
-        private com.amazon.ask.smapi.model.v1.skill.Manifest.Version version;
+        private String version;
         private List<com.amazon.ask.smapi.model.v1.skill.Manifest.Request> requests;
 
         private Builder() {}
 
         @JsonProperty("namespace")
+
         public Builder withNamespace(String namespace) {
             this.namespace = namespace;
             return this;
@@ -137,13 +158,19 @@ public final class AlexaForBusinessInterface {
 
 
         @JsonProperty("version")
+        public Builder withVersion(String version) {
+          this.version = version;
+          return this;
+        }
+
         public Builder withVersion(com.amazon.ask.smapi.model.v1.skill.Manifest.Version version) {
-            this.version = version;
+            this.version = version != null ? version.toString() : null;
             return this;
         }
 
 
         @JsonProperty("requests")
+
         public Builder withRequests(List<com.amazon.ask.smapi.model.v1.skill.Manifest.Request> requests) {
             this.requests = requests;
             return this;

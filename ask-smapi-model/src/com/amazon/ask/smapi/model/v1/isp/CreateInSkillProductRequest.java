@@ -53,6 +53,7 @@ public final class CreateInSkillProductRequest {
         return vendorId;
     }
 
+
     /**
      * Get inSkillProductDefinition
      * @return inSkillProductDefinition
@@ -61,6 +62,7 @@ public final class CreateInSkillProductRequest {
     public com.amazon.ask.smapi.model.v1.isp.InSkillProductDefinition getInSkillProductDefinition() {
         return inSkillProductDefinition;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class CreateInSkillProductRequest {
         private Builder() {}
 
         @JsonProperty("vendorId")
+
         public Builder withVendorId(String vendorId) {
             this.vendorId = vendorId;
             return this;
@@ -116,6 +119,7 @@ public final class CreateInSkillProductRequest {
 
 
         @JsonProperty("inSkillProductDefinition")
+
         public Builder withInSkillProductDefinition(com.amazon.ask.smapi.model.v1.isp.InSkillProductDefinition inSkillProductDefinition) {
             this.inSkillProductDefinition = inSkillProductDefinition;
             return this;

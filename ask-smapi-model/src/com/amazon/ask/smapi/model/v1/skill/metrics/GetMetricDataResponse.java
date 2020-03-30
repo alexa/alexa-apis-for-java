@@ -70,6 +70,7 @@ public final class GetMetricDataResponse {
         return metric;
     }
 
+
     /**
      * The timestamps for the data points.
      * @return timestamps
@@ -78,6 +79,7 @@ public final class GetMetricDataResponse {
     public List<OffsetDateTime> getTimestamps() {
         return timestamps;
     }
+
 
     /**
      * The data points for the metric corresponding to Timestamps.
@@ -88,6 +90,7 @@ public final class GetMetricDataResponse {
         return values;
     }
 
+
     /**
      * A token that marks the next batch of returned results.
      * @return nextToken
@@ -96,6 +99,7 @@ public final class GetMetricDataResponse {
     public String getNextToken() {
         return nextToken;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -150,6 +154,7 @@ public final class GetMetricDataResponse {
         private Builder() {}
 
         @JsonProperty("metric")
+
         public Builder withMetric(String metric) {
             this.metric = metric;
             return this;
@@ -157,6 +162,7 @@ public final class GetMetricDataResponse {
 
 
         @JsonProperty("timestamps")
+
         public Builder withTimestamps(List<OffsetDateTime> timestamps) {
             this.timestamps = timestamps;
             return this;
@@ -171,6 +177,7 @@ public final class GetMetricDataResponse {
         }
 
         @JsonProperty("values")
+
         public Builder withValues(List<BigDecimal> values) {
             this.values = values;
             return this;
@@ -185,6 +192,7 @@ public final class GetMetricDataResponse {
         }
 
         @JsonProperty("nextToken")
+
         public Builder withNextToken(String nextToken) {
             this.nextToken = nextToken;
             return this;

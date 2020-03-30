@@ -65,6 +65,7 @@ public final class VersionItems {
         return version;
     }
 
+
     /**
      * Get creationTime
      * @return creationTime
@@ -73,6 +74,7 @@ public final class VersionItems {
     public String getCreationTime() {
         return creationTime;
     }
+
 
     /**
      * Get description
@@ -83,6 +85,7 @@ public final class VersionItems {
         return description;
     }
 
+
     /**
      * Get links
      * @return links
@@ -91,6 +94,7 @@ public final class VersionItems {
     public com.amazon.ask.smapi.model.v1.skill.interactionModel.version.Links getLinks() {
         return links;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -145,6 +149,7 @@ public final class VersionItems {
         private Builder() {}
 
         @JsonProperty("version")
+
         public Builder withVersion(String version) {
             this.version = version;
             return this;
@@ -152,6 +157,7 @@ public final class VersionItems {
 
 
         @JsonProperty("creationTime")
+
         public Builder withCreationTime(String creationTime) {
             this.creationTime = creationTime;
             return this;
@@ -159,6 +165,7 @@ public final class VersionItems {
 
 
         @JsonProperty("description")
+
         public Builder withDescription(String description) {
             this.description = description;
             return this;
@@ -166,6 +173,7 @@ public final class VersionItems {
 
 
         @JsonProperty("_links")
+
         public Builder withLinks(com.amazon.ask.smapi.model.v1.skill.interactionModel.version.Links links) {
             this.links = links;
             return this;

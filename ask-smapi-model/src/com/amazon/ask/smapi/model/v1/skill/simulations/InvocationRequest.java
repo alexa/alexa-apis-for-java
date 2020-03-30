@@ -56,6 +56,7 @@ public final class InvocationRequest {
         return endpoint;
     }
 
+
     /**
      * JSON payload that was sent to the skill's Lambda or HTTPS endpoint. 
      * @return body
@@ -64,6 +65,7 @@ public final class InvocationRequest {
     public Map<String, Object> getBody() {
         return body;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,6 +114,7 @@ public final class InvocationRequest {
         private Builder() {}
 
         @JsonProperty("endpoint")
+
         public Builder withEndpoint(String endpoint) {
             this.endpoint = endpoint;
             return this;
@@ -119,6 +122,7 @@ public final class InvocationRequest {
 
 
         @JsonProperty("body")
+
         public Builder withBody(Map<String, Object> body) {
             this.body = body;
             return this;

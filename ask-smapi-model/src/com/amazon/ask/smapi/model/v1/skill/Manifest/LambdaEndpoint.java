@@ -47,6 +47,7 @@ public final class LambdaEndpoint {
         return uri;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class LambdaEndpoint {
         private Builder() {}
 
         @JsonProperty("uri")
+
         public Builder withUri(String uri) {
             this.uri = uri;
             return this;

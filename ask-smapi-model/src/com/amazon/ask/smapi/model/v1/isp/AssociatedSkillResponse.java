@@ -68,6 +68,7 @@ public final class AssociatedSkillResponse {
         return associatedSkillIds;
     }
 
+
     /**
      * Get links
      * @return links
@@ -76,6 +77,7 @@ public final class AssociatedSkillResponse {
     public com.amazon.ask.smapi.model.v1.Links getLinks() {
         return links;
     }
+
 
     /**
      * Get isTruncated
@@ -86,6 +88,7 @@ public final class AssociatedSkillResponse {
         return isTruncated;
     }
 
+
     /**
      * Get nextToken
      * @return nextToken
@@ -94,6 +97,7 @@ public final class AssociatedSkillResponse {
     public String getNextToken() {
         return nextToken;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -148,6 +152,7 @@ public final class AssociatedSkillResponse {
         private Builder() {}
 
         @JsonProperty("associatedSkillIds")
+
         public Builder withAssociatedSkillIds(List<String> associatedSkillIds) {
             this.associatedSkillIds = associatedSkillIds;
             return this;
@@ -162,6 +167,7 @@ public final class AssociatedSkillResponse {
         }
 
         @JsonProperty("_links")
+
         public Builder withLinks(com.amazon.ask.smapi.model.v1.Links links) {
             this.links = links;
             return this;
@@ -169,6 +175,7 @@ public final class AssociatedSkillResponse {
 
 
         @JsonProperty("isTruncated")
+
         public Builder withIsTruncated(Boolean isTruncated) {
             this.isTruncated = isTruncated;
             return this;
@@ -176,6 +183,7 @@ public final class AssociatedSkillResponse {
 
 
         @JsonProperty("nextToken")
+
         public Builder withNextToken(String nextToken) {
             this.nextToken = nextToken;
             return this;

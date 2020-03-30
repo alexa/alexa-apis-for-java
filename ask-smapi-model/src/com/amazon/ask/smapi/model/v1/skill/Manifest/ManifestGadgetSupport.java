@@ -26,7 +26,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public final class ManifestGadgetSupport {
 
     @JsonProperty("requirement")
-    private com.amazon.ask.smapi.model.v1.skill.Manifest.GadgetSupport requirement = null;
+    private String requirement = null;
 
     @JsonProperty("minGadgetButtons")
     private Integer minGadgetButtons = null;
@@ -64,11 +64,29 @@ public final class ManifestGadgetSupport {
 
     /**
      * Get requirement
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getRequirementAsString().
+     *
      * @return requirement
     **/
-    @JsonProperty("requirement")
+    
     public com.amazon.ask.smapi.model.v1.skill.Manifest.GadgetSupport getRequirement() {
-        return requirement;
+        return com.amazon.ask.smapi.model.v1.skill.Manifest.GadgetSupport.fromValue(requirement);
+    }
+
+    /**
+     * Get the underlying String value for requirement.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return requirement as a String value
+    **/
+    @JsonProperty("requirement")
+    public String getRequirementAsString() {
+      return requirement;
     }
 
     /**
@@ -82,6 +100,7 @@ public final class ManifestGadgetSupport {
         return minGadgetButtons;
     }
 
+
     /**
      * Maximum number of gadget buttons required.
      * minimum: 1
@@ -92,6 +111,7 @@ public final class ManifestGadgetSupport {
     public Integer getMaxGadgetButtons() {
         return maxGadgetButtons;
     }
+
 
     /**
      * Maximum number of players in the game.
@@ -104,6 +124,7 @@ public final class ManifestGadgetSupport {
         return numPlayersMax;
     }
 
+
     /**
      * Minimum number of players in the game.
      * minimum: 1
@@ -114,6 +135,7 @@ public final class ManifestGadgetSupport {
     public Integer getNumPlayersMin() {
         return numPlayersMin;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -162,7 +184,7 @@ public final class ManifestGadgetSupport {
     }
   
     public static class Builder {
-        private com.amazon.ask.smapi.model.v1.skill.Manifest.GadgetSupport requirement;
+        private String requirement;
         private Integer minGadgetButtons;
         private Integer maxGadgetButtons;
         private Integer numPlayersMax;
@@ -171,13 +193,19 @@ public final class ManifestGadgetSupport {
         private Builder() {}
 
         @JsonProperty("requirement")
+        public Builder withRequirement(String requirement) {
+          this.requirement = requirement;
+          return this;
+        }
+
         public Builder withRequirement(com.amazon.ask.smapi.model.v1.skill.Manifest.GadgetSupport requirement) {
-            this.requirement = requirement;
+            this.requirement = requirement != null ? requirement.toString() : null;
             return this;
         }
 
 
         @JsonProperty("minGadgetButtons")
+
         public Builder withMinGadgetButtons(Integer minGadgetButtons) {
             this.minGadgetButtons = minGadgetButtons;
             return this;
@@ -185,6 +213,7 @@ public final class ManifestGadgetSupport {
 
 
         @JsonProperty("maxGadgetButtons")
+
         public Builder withMaxGadgetButtons(Integer maxGadgetButtons) {
             this.maxGadgetButtons = maxGadgetButtons;
             return this;
@@ -192,6 +221,7 @@ public final class ManifestGadgetSupport {
 
 
         @JsonProperty("numPlayersMax")
+
         public Builder withNumPlayersMax(Integer numPlayersMax) {
             this.numPlayersMax = numPlayersMax;
             return this;
@@ -199,6 +229,7 @@ public final class ManifestGadgetSupport {
 
 
         @JsonProperty("numPlayersMin")
+
         public Builder withNumPlayersMin(Integer numPlayersMin) {
             this.numPlayersMin = numPlayersMin;
             return this;

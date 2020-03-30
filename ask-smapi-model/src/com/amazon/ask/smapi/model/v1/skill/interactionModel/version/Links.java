@@ -47,6 +47,7 @@ public final class Links {
         return self;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class Links {
         private Builder() {}
 
         @JsonProperty("self")
+
         public Builder withSelf(com.amazon.ask.smapi.model.v1.Link self) {
             this.self = self;
             return this;

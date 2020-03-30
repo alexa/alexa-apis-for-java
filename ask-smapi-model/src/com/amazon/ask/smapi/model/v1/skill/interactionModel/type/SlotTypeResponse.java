@@ -47,6 +47,7 @@ public final class SlotTypeResponse {
         return slotType;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class SlotTypeResponse {
         private Builder() {}
 
         @JsonProperty("slotType")
+
         public Builder withSlotType(com.amazon.ask.smapi.model.v1.skill.interactionModel.type.SlotTypeResponseEntity slotType) {
             this.slotType = slotType;
             return this;

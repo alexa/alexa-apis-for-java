@@ -26,7 +26,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public final class Confidence {
 
     @JsonProperty("bin")
-    private com.amazon.ask.smapi.model.v1.skill.history.ConfidenceBin bin = null;
+    private String bin = null;
 
     public static Builder builder() {
         return new Builder();
@@ -40,11 +40,29 @@ public final class Confidence {
 
     /**
      * Get bin
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getBinAsString().
+     *
      * @return bin
     **/
-    @JsonProperty("bin")
+    
     public com.amazon.ask.smapi.model.v1.skill.history.ConfidenceBin getBin() {
-        return bin;
+        return com.amazon.ask.smapi.model.v1.skill.history.ConfidenceBin.fromValue(bin);
+    }
+
+    /**
+     * Get the underlying String value for bin.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return bin as a String value
+    **/
+    @JsonProperty("bin")
+    public String getBinAsString() {
+      return bin;
     }
 
     @Override
@@ -86,13 +104,18 @@ public final class Confidence {
     }
   
     public static class Builder {
-        private com.amazon.ask.smapi.model.v1.skill.history.ConfidenceBin bin;
+        private String bin;
 
         private Builder() {}
 
         @JsonProperty("bin")
+        public Builder withBin(String bin) {
+          this.bin = bin;
+          return this;
+        }
+
         public Builder withBin(com.amazon.ask.smapi.model.v1.skill.history.ConfidenceBin bin) {
-            this.bin = bin;
+            this.bin = bin != null ? bin.toString() : null;
             return this;
         }
 

@@ -53,6 +53,7 @@ public final class ValidationFeature {
         return name;
     }
 
+
     /**
      * Contact URL or email for the feature.
      * @return contact
@@ -61,6 +62,7 @@ public final class ValidationFeature {
     public String getContact() {
         return contact;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class ValidationFeature {
         private Builder() {}
 
         @JsonProperty("name")
+
         public Builder withName(String name) {
             this.name = name;
             return this;
@@ -116,6 +119,7 @@ public final class ValidationFeature {
 
 
         @JsonProperty("contact")
+
         public Builder withContact(String contact) {
             this.contact = contact;
             return this;

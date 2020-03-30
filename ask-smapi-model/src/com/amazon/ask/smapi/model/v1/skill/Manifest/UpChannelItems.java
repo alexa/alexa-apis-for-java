@@ -53,6 +53,7 @@ public final class UpChannelItems {
         return type;
     }
 
+
     /**
      * SNS Amazon Resource Name (ARN) for video skill through which video partner can send events to Alexa.
      * @return uri
@@ -61,6 +62,7 @@ public final class UpChannelItems {
     public String getUri() {
         return uri;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class UpChannelItems {
         private Builder() {}
 
         @JsonProperty("type")
+
         public Builder withType(String type) {
             this.type = type;
             return this;
@@ -116,6 +119,7 @@ public final class UpChannelItems {
 
 
         @JsonProperty("uri")
+
         public Builder withUri(String uri) {
             this.uri = uri;
             return this;

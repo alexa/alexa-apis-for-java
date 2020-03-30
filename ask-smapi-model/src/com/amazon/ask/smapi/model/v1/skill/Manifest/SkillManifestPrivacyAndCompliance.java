@@ -92,6 +92,7 @@ public final class SkillManifestPrivacyAndCompliance {
         return locales;
     }
 
+
     /**
      * True if the skill allows users to make purchases or spend real money false otherwise.
      * @return allowsPurchases
@@ -100,6 +101,7 @@ public final class SkillManifestPrivacyAndCompliance {
     public Boolean getAllowsPurchases() {
         return allowsPurchases;
     }
+
 
     /**
      * True if the skill collects users' personal information false otherwise.
@@ -110,6 +112,7 @@ public final class SkillManifestPrivacyAndCompliance {
         return usesPersonalInfo;
     }
 
+
     /**
      * True if the skill is directed to or targets children under the age of 13/16 false otherwise.
      * @return isChildDirected
@@ -118,6 +121,7 @@ public final class SkillManifestPrivacyAndCompliance {
     public Boolean getIsChildDirected() {
         return isChildDirected;
     }
+
 
     /**
      * True if it is certified that the skill may be imported to and exported from the United States and all other countries and regions in which Amazon operate its program or in which skill owner have authorized sales to end users (without the need for Amazon to obtain any license or clearance or take any other action) and is in full compliance with all applicable laws and regulations governing imports and export including those applicable to software that makes use of encryption technology.
@@ -128,6 +132,7 @@ public final class SkillManifestPrivacyAndCompliance {
         return isExportCompliant;
     }
 
+
     /**
      * True if the skill contains advertising false otherwise.
      * @return containsAds
@@ -136,6 +141,7 @@ public final class SkillManifestPrivacyAndCompliance {
     public Boolean getContainsAds() {
         return containsAds;
     }
+
 
     /**
      * True if the skill developer is a Covered Entity (CE) or Business Associate (BA) as defined by the Health Insurance Portability And Accountability Act (HIPAA) and the skill requires Amazon to process PHI on their behalf, false otherwise. This is an optional property and treated as false if not set.
@@ -146,6 +152,7 @@ public final class SkillManifestPrivacyAndCompliance {
         return usesHealthInfo;
     }
 
+
     /**
      * Get criticalDataHandling
      * @return criticalDataHandling
@@ -154,6 +161,7 @@ public final class SkillManifestPrivacyAndCompliance {
     public com.amazon.ask.smapi.model.v1.skill.Manifest.CriticalDataHandling getCriticalDataHandling() {
         return criticalDataHandling;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -220,6 +228,7 @@ public final class SkillManifestPrivacyAndCompliance {
         private Builder() {}
 
         @JsonProperty("locales")
+
         public Builder withLocales(Map<String, com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifestLocalizedPrivacyAndCompliance> locales) {
             this.locales = locales;
             return this;
@@ -234,6 +243,7 @@ public final class SkillManifestPrivacyAndCompliance {
         }
 
         @JsonProperty("allowsPurchases")
+
         public Builder withAllowsPurchases(Boolean allowsPurchases) {
             this.allowsPurchases = allowsPurchases;
             return this;
@@ -241,6 +251,7 @@ public final class SkillManifestPrivacyAndCompliance {
 
 
         @JsonProperty("usesPersonalInfo")
+
         public Builder withUsesPersonalInfo(Boolean usesPersonalInfo) {
             this.usesPersonalInfo = usesPersonalInfo;
             return this;
@@ -248,6 +259,7 @@ public final class SkillManifestPrivacyAndCompliance {
 
 
         @JsonProperty("isChildDirected")
+
         public Builder withIsChildDirected(Boolean isChildDirected) {
             this.isChildDirected = isChildDirected;
             return this;
@@ -255,6 +267,7 @@ public final class SkillManifestPrivacyAndCompliance {
 
 
         @JsonProperty("isExportCompliant")
+
         public Builder withIsExportCompliant(Boolean isExportCompliant) {
             this.isExportCompliant = isExportCompliant;
             return this;
@@ -262,6 +275,7 @@ public final class SkillManifestPrivacyAndCompliance {
 
 
         @JsonProperty("containsAds")
+
         public Builder withContainsAds(Boolean containsAds) {
             this.containsAds = containsAds;
             return this;
@@ -269,6 +283,7 @@ public final class SkillManifestPrivacyAndCompliance {
 
 
         @JsonProperty("usesHealthInfo")
+
         public Builder withUsesHealthInfo(Boolean usesHealthInfo) {
             this.usesHealthInfo = usesHealthInfo;
             return this;
@@ -276,6 +291,7 @@ public final class SkillManifestPrivacyAndCompliance {
 
 
         @JsonProperty("criticalDataHandling")
+
         public Builder withCriticalDataHandling(com.amazon.ask.smapi.model.v1.skill.Manifest.CriticalDataHandling criticalDataHandling) {
             this.criticalDataHandling = criticalDataHandling;
             return this;

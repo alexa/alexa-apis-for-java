@@ -59,6 +59,7 @@ public final class ExportResponseSkill {
         return eTag;
     }
 
+
     /**
      * Get location
      * @return location
@@ -68,6 +69,7 @@ public final class ExportResponseSkill {
         return location;
     }
 
+
     /**
      * ExpiresAt timestamp in milliseconds.
      * @return expiresAt
@@ -76,6 +78,7 @@ public final class ExportResponseSkill {
     public String getExpiresAt() {
         return expiresAt;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -127,6 +130,7 @@ public final class ExportResponseSkill {
         private Builder() {}
 
         @JsonProperty("eTag")
+
         public Builder withETag(String eTag) {
             this.eTag = eTag;
             return this;
@@ -134,6 +138,7 @@ public final class ExportResponseSkill {
 
 
         @JsonProperty("location")
+
         public Builder withLocation(String location) {
             this.location = location;
             return this;
@@ -141,6 +146,7 @@ public final class ExportResponseSkill {
 
 
         @JsonProperty("expiresAt")
+
         public Builder withExpiresAt(String expiresAt) {
             this.expiresAt = expiresAt;
             return this;

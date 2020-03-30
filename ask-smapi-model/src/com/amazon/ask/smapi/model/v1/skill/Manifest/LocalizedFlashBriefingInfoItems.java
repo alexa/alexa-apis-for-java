@@ -38,13 +38,13 @@ public final class LocalizedFlashBriefingInfoItems {
     private String imageUri = null;
 
     @JsonProperty("contentType")
-    private com.amazon.ask.smapi.model.v1.skill.Manifest.FlashBriefingContentType contentType = null;
+    private String contentType = null;
 
     @JsonProperty("genre")
-    private com.amazon.ask.smapi.model.v1.skill.Manifest.FlashBriefingGenre genre = null;
+    private String genre = null;
 
     @JsonProperty("updateFrequency")
-    private com.amazon.ask.smapi.model.v1.skill.Manifest.FlashBriefingUpdateFrequency updateFrequency = null;
+    private String updateFrequency = null;
 
     @JsonProperty("vuiPreamble")
     private String vuiPreamble = null;
@@ -95,6 +95,7 @@ public final class LocalizedFlashBriefingInfoItems {
         return logicalName;
     }
 
+
     /**
      * Name that identifies this feed.
      * @return name
@@ -103,6 +104,7 @@ public final class LocalizedFlashBriefingInfoItems {
     public String getName() {
         return name;
     }
+
 
     /**
      * Url for the feed
@@ -113,6 +115,7 @@ public final class LocalizedFlashBriefingInfoItems {
         return url;
     }
 
+
     /**
      * Uri for the feed image
      * @return imageUri
@@ -122,31 +125,86 @@ public final class LocalizedFlashBriefingInfoItems {
         return imageUri;
     }
 
+
     /**
      * Get contentType
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getContentTypeAsString().
+     *
      * @return contentType
     **/
-    @JsonProperty("contentType")
+    
     public com.amazon.ask.smapi.model.v1.skill.Manifest.FlashBriefingContentType getContentType() {
-        return contentType;
+        return com.amazon.ask.smapi.model.v1.skill.Manifest.FlashBriefingContentType.fromValue(contentType);
+    }
+
+    /**
+     * Get the underlying String value for contentType.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return contentType as a String value
+    **/
+    @JsonProperty("contentType")
+    public String getContentTypeAsString() {
+      return contentType;
     }
 
     /**
      * Get genre
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getGenreAsString().
+     *
      * @return genre
     **/
-    @JsonProperty("genre")
+    
     public com.amazon.ask.smapi.model.v1.skill.Manifest.FlashBriefingGenre getGenre() {
-        return genre;
+        return com.amazon.ask.smapi.model.v1.skill.Manifest.FlashBriefingGenre.fromValue(genre);
+    }
+
+    /**
+     * Get the underlying String value for genre.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return genre as a String value
+    **/
+    @JsonProperty("genre")
+    public String getGenreAsString() {
+      return genre;
     }
 
     /**
      * Get updateFrequency
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getUpdateFrequencyAsString().
+     *
      * @return updateFrequency
     **/
-    @JsonProperty("updateFrequency")
+    
     public com.amazon.ask.smapi.model.v1.skill.Manifest.FlashBriefingUpdateFrequency getUpdateFrequency() {
-        return updateFrequency;
+        return com.amazon.ask.smapi.model.v1.skill.Manifest.FlashBriefingUpdateFrequency.fromValue(updateFrequency);
+    }
+
+    /**
+     * Get the underlying String value for updateFrequency.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return updateFrequency as a String value
+    **/
+    @JsonProperty("updateFrequency")
+    public String getUpdateFrequencyAsString() {
+      return updateFrequency;
     }
 
     /**
@@ -158,6 +216,7 @@ public final class LocalizedFlashBriefingInfoItems {
         return vuiPreamble;
     }
 
+
     /**
      * True if this should be the default feed to be enabled when customer enables the skill false otherwise.
      * @return isDefault
@@ -166,6 +225,7 @@ public final class LocalizedFlashBriefingInfoItems {
     public Boolean getIsDefault() {
         return isDefault;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -226,15 +286,16 @@ public final class LocalizedFlashBriefingInfoItems {
         private String name;
         private String url;
         private String imageUri;
-        private com.amazon.ask.smapi.model.v1.skill.Manifest.FlashBriefingContentType contentType;
-        private com.amazon.ask.smapi.model.v1.skill.Manifest.FlashBriefingGenre genre;
-        private com.amazon.ask.smapi.model.v1.skill.Manifest.FlashBriefingUpdateFrequency updateFrequency;
+        private String contentType;
+        private String genre;
+        private String updateFrequency;
         private String vuiPreamble;
         private Boolean isDefault;
 
         private Builder() {}
 
         @JsonProperty("logicalName")
+
         public Builder withLogicalName(String logicalName) {
             this.logicalName = logicalName;
             return this;
@@ -242,6 +303,7 @@ public final class LocalizedFlashBriefingInfoItems {
 
 
         @JsonProperty("name")
+
         public Builder withName(String name) {
             this.name = name;
             return this;
@@ -249,6 +311,7 @@ public final class LocalizedFlashBriefingInfoItems {
 
 
         @JsonProperty("url")
+
         public Builder withUrl(String url) {
             this.url = url;
             return this;
@@ -256,6 +319,7 @@ public final class LocalizedFlashBriefingInfoItems {
 
 
         @JsonProperty("imageUri")
+
         public Builder withImageUri(String imageUri) {
             this.imageUri = imageUri;
             return this;
@@ -263,27 +327,43 @@ public final class LocalizedFlashBriefingInfoItems {
 
 
         @JsonProperty("contentType")
+        public Builder withContentType(String contentType) {
+          this.contentType = contentType;
+          return this;
+        }
+
         public Builder withContentType(com.amazon.ask.smapi.model.v1.skill.Manifest.FlashBriefingContentType contentType) {
-            this.contentType = contentType;
+            this.contentType = contentType != null ? contentType.toString() : null;
             return this;
         }
 
 
         @JsonProperty("genre")
+        public Builder withGenre(String genre) {
+          this.genre = genre;
+          return this;
+        }
+
         public Builder withGenre(com.amazon.ask.smapi.model.v1.skill.Manifest.FlashBriefingGenre genre) {
-            this.genre = genre;
+            this.genre = genre != null ? genre.toString() : null;
             return this;
         }
 
 
         @JsonProperty("updateFrequency")
+        public Builder withUpdateFrequency(String updateFrequency) {
+          this.updateFrequency = updateFrequency;
+          return this;
+        }
+
         public Builder withUpdateFrequency(com.amazon.ask.smapi.model.v1.skill.Manifest.FlashBriefingUpdateFrequency updateFrequency) {
-            this.updateFrequency = updateFrequency;
+            this.updateFrequency = updateFrequency != null ? updateFrequency.toString() : null;
             return this;
         }
 
 
         @JsonProperty("vuiPreamble")
+
         public Builder withVuiPreamble(String vuiPreamble) {
             this.vuiPreamble = vuiPreamble;
             return this;
@@ -291,6 +371,7 @@ public final class LocalizedFlashBriefingInfoItems {
 
 
         @JsonProperty("isDefault")
+
         public Builder withIsDefault(Boolean isDefault) {
             this.isDefault = isDefault;
             return this;

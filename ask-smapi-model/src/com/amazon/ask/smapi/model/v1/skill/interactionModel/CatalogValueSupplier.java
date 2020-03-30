@@ -50,6 +50,7 @@ public final class CatalogValueSupplier extends com.amazon.ask.smapi.model.v1.sk
         return valueCatalog;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -95,6 +96,7 @@ public final class CatalogValueSupplier extends com.amazon.ask.smapi.model.v1.sk
         private Builder() {}
 
         @JsonProperty("valueCatalog")
+
         public Builder withValueCatalog(com.amazon.ask.smapi.model.v1.skill.interactionModel.ValueCatalog valueCatalog) {
             this.valueCatalog = valueCatalog;
             return this;

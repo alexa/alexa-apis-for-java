@@ -50,6 +50,7 @@ public final class PrivacyAndCompliance {
         return locales;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -94,6 +95,7 @@ public final class PrivacyAndCompliance {
         private Builder() {}
 
         @JsonProperty("locales")
+
         public Builder withLocales(Map<String, com.amazon.ask.smapi.model.v1.isp.LocalizedPrivacyAndCompliance> locales) {
             this.locales = locales;
             return this;

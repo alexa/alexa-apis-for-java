@@ -29,10 +29,10 @@ import java.util.ArrayList;
 public final class UploadIngestionStep {
 
     @JsonProperty("name")
-    private com.amazon.ask.smapi.model.v1.catalog.upload.IngestionStepName name = null;
+    private String name = null;
 
     @JsonProperty("status")
-    private com.amazon.ask.smapi.model.v1.catalog.upload.IngestionStatus status = null;
+    private String status = null;
 
     @JsonProperty("logUrl")
     private String logUrl = null;
@@ -61,20 +61,56 @@ public final class UploadIngestionStep {
 
     /**
      * Get name
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getNameAsString().
+     *
      * @return name
     **/
-    @JsonProperty("name")
+    
     public com.amazon.ask.smapi.model.v1.catalog.upload.IngestionStepName getName() {
-        return name;
+        return com.amazon.ask.smapi.model.v1.catalog.upload.IngestionStepName.fromValue(name);
+    }
+
+    /**
+     * Get the underlying String value for name.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return name as a String value
+    **/
+    @JsonProperty("name")
+    public String getNameAsString() {
+      return name;
     }
 
     /**
      * Get status
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getStatusAsString().
+     *
      * @return status
     **/
-    @JsonProperty("status")
+    
     public com.amazon.ask.smapi.model.v1.catalog.upload.IngestionStatus getStatus() {
-        return status;
+        return com.amazon.ask.smapi.model.v1.catalog.upload.IngestionStatus.fromValue(status);
+    }
+
+    /**
+     * Get the underlying String value for status.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return status as a String value
+    **/
+    @JsonProperty("status")
+    public String getStatusAsString() {
+      return status;
     }
 
     /**
@@ -86,6 +122,7 @@ public final class UploadIngestionStep {
         return logUrl;
     }
 
+
     /**
      * This array will contain the violations occurred during the execution of step. Will be empty, if execution succeeded.
      * @return violations
@@ -94,6 +131,7 @@ public final class UploadIngestionStep {
     public List<com.amazon.ask.smapi.model.v1.Error> getViolations() {
         return violations;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -140,28 +178,39 @@ public final class UploadIngestionStep {
     }
   
     public static class Builder {
-        private com.amazon.ask.smapi.model.v1.catalog.upload.IngestionStepName name;
-        private com.amazon.ask.smapi.model.v1.catalog.upload.IngestionStatus status;
+        private String name;
+        private String status;
         private String logUrl;
         private List<com.amazon.ask.smapi.model.v1.Error> violations;
 
         private Builder() {}
 
         @JsonProperty("name")
+        public Builder withName(String name) {
+          this.name = name;
+          return this;
+        }
+
         public Builder withName(com.amazon.ask.smapi.model.v1.catalog.upload.IngestionStepName name) {
-            this.name = name;
+            this.name = name != null ? name.toString() : null;
             return this;
         }
 
 
         @JsonProperty("status")
+        public Builder withStatus(String status) {
+          this.status = status;
+          return this;
+        }
+
         public Builder withStatus(com.amazon.ask.smapi.model.v1.catalog.upload.IngestionStatus status) {
-            this.status = status;
+            this.status = status != null ? status.toString() : null;
             return this;
         }
 
 
         @JsonProperty("logUrl")
+
         public Builder withLogUrl(String logUrl) {
             this.logUrl = logUrl;
             return this;
@@ -169,6 +218,7 @@ public final class UploadIngestionStep {
 
 
         @JsonProperty("violations")
+
         public Builder withViolations(List<com.amazon.ask.smapi.model.v1.Error> violations) {
             this.violations = violations;
             return this;

@@ -53,6 +53,7 @@ public final class ResolutionsPerAuthorityValueItems {
         return name;
     }
 
+
     /**
      * The unique ID defined for the resolved slot value. This is based on the IDs defined in the slot type definition. 
      * @return id
@@ -61,6 +62,7 @@ public final class ResolutionsPerAuthorityValueItems {
     public String getId() {
         return id;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class ResolutionsPerAuthorityValueItems {
         private Builder() {}
 
         @JsonProperty("name")
+
         public Builder withName(String name) {
             this.name = name;
             return this;
@@ -116,6 +119,7 @@ public final class ResolutionsPerAuthorityValueItems {
 
 
         @JsonProperty("id")
+
         public Builder withId(String id) {
             this.id = id;
             return this;

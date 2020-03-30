@@ -47,6 +47,7 @@ public final class Region {
         return endpoint;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class Region {
         private Builder() {}
 
         @JsonProperty("endpoint")
+
         public Builder withEndpoint(com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifestEndpoint endpoint) {
             this.endpoint = endpoint;
             return this;

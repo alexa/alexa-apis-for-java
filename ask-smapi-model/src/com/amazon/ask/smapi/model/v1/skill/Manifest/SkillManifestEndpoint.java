@@ -32,7 +32,7 @@ public final class SkillManifestEndpoint {
     private String requestEnvelopeVersionSupported = null;
 
     @JsonProperty("sslCertificateType")
-    private com.amazon.ask.smapi.model.v1.skill.Manifest.SSLCertificateType sslCertificateType = null;
+    private String sslCertificateType = null;
 
     public static Builder builder() {
         return new Builder();
@@ -59,6 +59,7 @@ public final class SkillManifestEndpoint {
         return uri;
     }
 
+
     /**
      * Supported version of the requestEnvelope.
      * @return requestEnvelopeVersionSupported
@@ -68,13 +69,32 @@ public final class SkillManifestEndpoint {
         return requestEnvelopeVersionSupported;
     }
 
+
     /**
      * Get sslCertificateType
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getSslCertificateTypeAsString().
+     *
      * @return sslCertificateType
     **/
-    @JsonProperty("sslCertificateType")
+    
     public com.amazon.ask.smapi.model.v1.skill.Manifest.SSLCertificateType getSslCertificateType() {
-        return sslCertificateType;
+        return com.amazon.ask.smapi.model.v1.skill.Manifest.SSLCertificateType.fromValue(sslCertificateType);
+    }
+
+    /**
+     * Get the underlying String value for sslCertificateType.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return sslCertificateType as a String value
+    **/
+    @JsonProperty("sslCertificateType")
+    public String getSslCertificateTypeAsString() {
+      return sslCertificateType;
     }
 
     @Override
@@ -122,11 +142,12 @@ public final class SkillManifestEndpoint {
     public static class Builder {
         private String uri;
         private String requestEnvelopeVersionSupported;
-        private com.amazon.ask.smapi.model.v1.skill.Manifest.SSLCertificateType sslCertificateType;
+        private String sslCertificateType;
 
         private Builder() {}
 
         @JsonProperty("uri")
+
         public Builder withUri(String uri) {
             this.uri = uri;
             return this;
@@ -134,6 +155,7 @@ public final class SkillManifestEndpoint {
 
 
         @JsonProperty("requestEnvelopeVersionSupported")
+
         public Builder withRequestEnvelopeVersionSupported(String requestEnvelopeVersionSupported) {
             this.requestEnvelopeVersionSupported = requestEnvelopeVersionSupported;
             return this;
@@ -141,8 +163,13 @@ public final class SkillManifestEndpoint {
 
 
         @JsonProperty("sslCertificateType")
+        public Builder withSslCertificateType(String sslCertificateType) {
+          this.sslCertificateType = sslCertificateType;
+          return this;
+        }
+
         public Builder withSslCertificateType(com.amazon.ask.smapi.model.v1.skill.Manifest.SSLCertificateType sslCertificateType) {
-            this.sslCertificateType = sslCertificateType;
+            this.sslCertificateType = sslCertificateType != null ? sslCertificateType.toString() : null;
             return this;
         }
 

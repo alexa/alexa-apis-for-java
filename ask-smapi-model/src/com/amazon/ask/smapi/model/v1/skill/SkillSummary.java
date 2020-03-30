@@ -38,7 +38,7 @@ public final class SkillSummary {
     private List<com.amazon.ask.smapi.model.v1.skill.SkillSummaryApis> apis = new ArrayList<com.amazon.ask.smapi.model.v1.skill.SkillSummaryApis>();
 
     @JsonProperty("publicationStatus")
-    private com.amazon.ask.smapi.model.v1.skill.PublicationStatus publicationStatus = null;
+    private String publicationStatus = null;
 
     @JsonProperty("lastUpdated")
     private OffsetDateTime lastUpdated = null;
@@ -89,6 +89,7 @@ public final class SkillSummary {
         return skillId;
     }
 
+
     /**
      * List of APIs currently implemented by the skill.
      * @return apis
@@ -98,13 +99,32 @@ public final class SkillSummary {
         return apis;
     }
 
+
     /**
      * Get publicationStatus
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getPublicationStatusAsString().
+     *
      * @return publicationStatus
     **/
-    @JsonProperty("publicationStatus")
+    
     public com.amazon.ask.smapi.model.v1.skill.PublicationStatus getPublicationStatus() {
-        return publicationStatus;
+        return com.amazon.ask.smapi.model.v1.skill.PublicationStatus.fromValue(publicationStatus);
+    }
+
+    /**
+     * Get the underlying String value for publicationStatus.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return publicationStatus as a String value
+    **/
+    @JsonProperty("publicationStatus")
+    public String getPublicationStatusAsString() {
+      return publicationStatus;
     }
 
     /**
@@ -116,6 +136,7 @@ public final class SkillSummary {
         return lastUpdated;
     }
 
+
     /**
      * Name of the skill in skill locales (keys are locale names (e.g. 'en-US') whereas values are name of the skill in that locale. 
      * @return nameByLocale
@@ -124,6 +145,7 @@ public final class SkillSummary {
     public Map<String, String> getNameByLocale() {
         return nameByLocale;
     }
+
 
     /**
      * Amazon Standard Identification Number (ASIN) is unique blocks of 10 letters and/or numbers that identify items. More info about ASIN can be found here: https://www.amazon.com/gp/seller/asin-upc-isbn-info.html ASIN is available for those skills only, that have been published, at least once. 
@@ -134,6 +156,7 @@ public final class SkillSummary {
         return asin;
     }
 
+
     /**
      * Get links
      * @return links
@@ -142,6 +165,7 @@ public final class SkillSummary {
     public com.amazon.ask.smapi.model.v1.Links getLinks() {
         return links;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -196,7 +220,7 @@ public final class SkillSummary {
     public static class Builder {
         private String skillId;
         private List<com.amazon.ask.smapi.model.v1.skill.SkillSummaryApis> apis;
-        private com.amazon.ask.smapi.model.v1.skill.PublicationStatus publicationStatus;
+        private String publicationStatus;
         private OffsetDateTime lastUpdated;
         private Map<String, String> nameByLocale;
         private String asin;
@@ -205,6 +229,7 @@ public final class SkillSummary {
         private Builder() {}
 
         @JsonProperty("skillId")
+
         public Builder withSkillId(String skillId) {
             this.skillId = skillId;
             return this;
@@ -212,6 +237,7 @@ public final class SkillSummary {
 
 
         @JsonProperty("apis")
+
         public Builder withApis(List<com.amazon.ask.smapi.model.v1.skill.SkillSummaryApis> apis) {
             this.apis = apis;
             return this;
@@ -226,13 +252,19 @@ public final class SkillSummary {
         }
 
         @JsonProperty("publicationStatus")
+        public Builder withPublicationStatus(String publicationStatus) {
+          this.publicationStatus = publicationStatus;
+          return this;
+        }
+
         public Builder withPublicationStatus(com.amazon.ask.smapi.model.v1.skill.PublicationStatus publicationStatus) {
-            this.publicationStatus = publicationStatus;
+            this.publicationStatus = publicationStatus != null ? publicationStatus.toString() : null;
             return this;
         }
 
 
         @JsonProperty("lastUpdated")
+
         public Builder withLastUpdated(OffsetDateTime lastUpdated) {
             this.lastUpdated = lastUpdated;
             return this;
@@ -240,6 +272,7 @@ public final class SkillSummary {
 
 
         @JsonProperty("nameByLocale")
+
         public Builder withNameByLocale(Map<String, String> nameByLocale) {
             this.nameByLocale = nameByLocale;
             return this;
@@ -254,6 +287,7 @@ public final class SkillSummary {
         }
 
         @JsonProperty("asin")
+
         public Builder withAsin(String asin) {
             this.asin = asin;
             return this;
@@ -261,6 +295,7 @@ public final class SkillSummary {
 
 
         @JsonProperty("_links")
+
         public Builder withLinks(com.amazon.ask.smapi.model.v1.Links links) {
             this.links = links;
             return this;

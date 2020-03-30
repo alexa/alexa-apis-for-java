@@ -74,6 +74,7 @@ public final class ListCertificationsResponse {
         return links;
     }
 
+
     /**
      * boolean value for if the response is truncated. isTruncated = true if more than the assigned maxResults parameter value certification items are available for the skill. The results are then paginated and the remaining results can be retrieved in a similar paginated manner by using 'next' link in the _links or using the nextToken in a following request. 
      * @return isTruncated
@@ -82,6 +83,7 @@ public final class ListCertificationsResponse {
     public Boolean getIsTruncated() {
         return isTruncated;
     }
+
 
     /**
      * Encrypted token present when isTruncated is true.
@@ -92,6 +94,7 @@ public final class ListCertificationsResponse {
         return nextToken;
     }
 
+
     /**
      * Total number of certification results available for the skill.
      * @return totalCount
@@ -101,6 +104,7 @@ public final class ListCertificationsResponse {
         return totalCount;
     }
 
+
     /**
      * List of certifications available for a skill. The list of certifications is sorted in a default descending sort order on id field. 
      * @return items
@@ -109,6 +113,7 @@ public final class ListCertificationsResponse {
     public List<com.amazon.ask.smapi.model.v1.skill.certification.CertificationSummary> getItems() {
         return items;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,6 +171,7 @@ public final class ListCertificationsResponse {
         private Builder() {}
 
         @JsonProperty("_links")
+
         public Builder withLinks(com.amazon.ask.smapi.model.v1.Links links) {
             this.links = links;
             return this;
@@ -173,6 +179,7 @@ public final class ListCertificationsResponse {
 
 
         @JsonProperty("isTruncated")
+
         public Builder withIsTruncated(Boolean isTruncated) {
             this.isTruncated = isTruncated;
             return this;
@@ -180,6 +187,7 @@ public final class ListCertificationsResponse {
 
 
         @JsonProperty("nextToken")
+
         public Builder withNextToken(String nextToken) {
             this.nextToken = nextToken;
             return this;
@@ -187,6 +195,7 @@ public final class ListCertificationsResponse {
 
 
         @JsonProperty("totalCount")
+
         public Builder withTotalCount(Integer totalCount) {
             this.totalCount = totalCount;
             return this;
@@ -194,6 +203,7 @@ public final class ListCertificationsResponse {
 
 
         @JsonProperty("items")
+
         public Builder withItems(List<com.amazon.ask.smapi.model.v1.skill.certification.CertificationSummary> items) {
             this.items = items;
             return this;

@@ -53,6 +53,7 @@ public final class DialogIntentsPrompts {
         return elicitation;
     }
 
+
     /**
      * Enum value in the dialog_slots map to reference the confirmation prompt id.
      * @return confirmation
@@ -61,6 +62,7 @@ public final class DialogIntentsPrompts {
     public String getConfirmation() {
         return confirmation;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class DialogIntentsPrompts {
         private Builder() {}
 
         @JsonProperty("elicitation")
+
         public Builder withElicitation(String elicitation) {
             this.elicitation = elicitation;
             return this;
@@ -116,6 +119,7 @@ public final class DialogIntentsPrompts {
 
 
         @JsonProperty("confirmation")
+
         public Builder withConfirmation(String confirmation) {
             this.confirmation = confirmation;
             return this;

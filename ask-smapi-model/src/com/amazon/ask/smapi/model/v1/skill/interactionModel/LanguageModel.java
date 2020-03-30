@@ -62,6 +62,7 @@ public final class LanguageModel {
         return invocationName;
     }
 
+
     /**
      * Get types
      * @return types
@@ -71,6 +72,7 @@ public final class LanguageModel {
         return types;
     }
 
+
     /**
      * Get intents
      * @return intents
@@ -79,6 +81,7 @@ public final class LanguageModel {
     public List<com.amazon.ask.smapi.model.v1.skill.interactionModel.Intent> getIntents() {
         return intents;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -130,6 +133,7 @@ public final class LanguageModel {
         private Builder() {}
 
         @JsonProperty("invocationName")
+
         public Builder withInvocationName(String invocationName) {
             this.invocationName = invocationName;
             return this;
@@ -137,6 +141,7 @@ public final class LanguageModel {
 
 
         @JsonProperty("types")
+
         public Builder withTypes(List<com.amazon.ask.smapi.model.v1.skill.interactionModel.SlotType> types) {
             this.types = types;
             return this;
@@ -151,6 +156,7 @@ public final class LanguageModel {
         }
 
         @JsonProperty("intents")
+
         public Builder withIntents(List<com.amazon.ask.smapi.model.v1.skill.interactionModel.Intent> intents) {
             this.intents = intents;
             return this;

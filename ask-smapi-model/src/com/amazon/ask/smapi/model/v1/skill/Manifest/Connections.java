@@ -53,6 +53,7 @@ public final class Connections {
         return name;
     }
 
+
     /**
      * Get payload
      * @return payload
@@ -61,6 +62,7 @@ public final class Connections {
     public com.amazon.ask.smapi.model.v1.skill.Manifest.ConnectionsPayload getPayload() {
         return payload;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class Connections {
         private Builder() {}
 
         @JsonProperty("name")
+
         public Builder withName(String name) {
             this.name = name;
             return this;
@@ -116,6 +119,7 @@ public final class Connections {
 
 
         @JsonProperty("payload")
+
         public Builder withPayload(com.amazon.ask.smapi.model.v1.skill.Manifest.ConnectionsPayload payload) {
             this.payload = payload;
             return this;

@@ -47,6 +47,7 @@ public final class HostedSkillMetadata {
         return alexaHosted;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class HostedSkillMetadata {
         private Builder() {}
 
         @JsonProperty("alexaHosted")
+
         public Builder withAlexaHosted(com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillInfo alexaHosted) {
             this.alexaHosted = alexaHosted;
             return this;

@@ -74,6 +74,7 @@ public final class CatalogValues {
         return isTruncated;
     }
 
+
     /**
      * Get nextToken
      * @return nextToken
@@ -82,6 +83,7 @@ public final class CatalogValues {
     public String getNextToken() {
         return nextToken;
     }
+
 
     /**
      * Total number of catalog values.
@@ -92,6 +94,7 @@ public final class CatalogValues {
         return totalCount;
     }
 
+
     /**
      * Get links
      * @return links
@@ -101,6 +104,7 @@ public final class CatalogValues {
         return links;
     }
 
+
     /**
      * Get values
      * @return values
@@ -109,6 +113,7 @@ public final class CatalogValues {
     public List<com.amazon.ask.smapi.model.v1.skill.interactionModel.version.ValueSchema> getValues() {
         return values;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,6 +171,7 @@ public final class CatalogValues {
         private Builder() {}
 
         @JsonProperty("isTruncated")
+
         public Builder withIsTruncated(Boolean isTruncated) {
             this.isTruncated = isTruncated;
             return this;
@@ -173,6 +179,7 @@ public final class CatalogValues {
 
 
         @JsonProperty("nextToken")
+
         public Builder withNextToken(String nextToken) {
             this.nextToken = nextToken;
             return this;
@@ -180,6 +187,7 @@ public final class CatalogValues {
 
 
         @JsonProperty("totalCount")
+
         public Builder withTotalCount(Integer totalCount) {
             this.totalCount = totalCount;
             return this;
@@ -187,6 +195,7 @@ public final class CatalogValues {
 
 
         @JsonProperty("_links")
+
         public Builder withLinks(com.amazon.ask.smapi.model.v1.Links links) {
             this.links = links;
             return this;
@@ -194,6 +203,7 @@ public final class CatalogValues {
 
 
         @JsonProperty("values")
+
         public Builder withValues(List<com.amazon.ask.smapi.model.v1.skill.interactionModel.version.ValueSchema> values) {
             this.values = values;
             return this;

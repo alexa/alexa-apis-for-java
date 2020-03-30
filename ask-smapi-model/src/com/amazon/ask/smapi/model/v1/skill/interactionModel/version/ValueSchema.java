@@ -53,6 +53,7 @@ public final class ValueSchema {
         return id;
     }
 
+
     /**
      * Get name
      * @return name
@@ -61,6 +62,7 @@ public final class ValueSchema {
     public com.amazon.ask.smapi.model.v1.skill.interactionModel.version.ValueSchemaName getName() {
         return name;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class ValueSchema {
         private Builder() {}
 
         @JsonProperty("id")
+
         public Builder withId(String id) {
             this.id = id;
             return this;
@@ -116,6 +119,7 @@ public final class ValueSchema {
 
 
         @JsonProperty("name")
+
         public Builder withName(com.amazon.ask.smapi.model.v1.skill.interactionModel.version.ValueSchemaName name) {
             this.name = name;
             return this;

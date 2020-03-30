@@ -49,6 +49,7 @@ public final class CreateContentUploadUrlRequest {
         return numberOfUploadParts;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -93,6 +94,7 @@ public final class CreateContentUploadUrlRequest {
         private Builder() {}
 
         @JsonProperty("numberOfUploadParts")
+
         public Builder withNumberOfUploadParts(Integer numberOfUploadParts) {
             this.numberOfUploadParts = numberOfUploadParts;
             return this;

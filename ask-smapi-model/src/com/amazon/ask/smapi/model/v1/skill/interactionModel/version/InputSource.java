@@ -53,6 +53,7 @@ public final class InputSource {
         return type;
     }
 
+
     /**
      * Url to the catalog reference.
      * @return url
@@ -61,6 +62,7 @@ public final class InputSource {
     public String getUrl() {
         return url;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class InputSource {
         private Builder() {}
 
         @JsonProperty("type")
+
         public Builder withType(String type) {
             this.type = type;
             return this;
@@ -116,6 +119,7 @@ public final class InputSource {
 
 
         @JsonProperty("url")
+
         public Builder withUrl(String url) {
             this.url = url;
             return this;

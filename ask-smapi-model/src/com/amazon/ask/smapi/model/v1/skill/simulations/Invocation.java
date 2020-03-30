@@ -59,6 +59,7 @@ public final class Invocation {
         return invocationRequest;
     }
 
+
     /**
      * Get invocationResponse
      * @return invocationResponse
@@ -68,6 +69,7 @@ public final class Invocation {
         return invocationResponse;
     }
 
+
     /**
      * Get metrics
      * @return metrics
@@ -76,6 +78,7 @@ public final class Invocation {
     public com.amazon.ask.smapi.model.v1.skill.simulations.Metrics getMetrics() {
         return metrics;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -127,6 +130,7 @@ public final class Invocation {
         private Builder() {}
 
         @JsonProperty("invocationRequest")
+
         public Builder withInvocationRequest(com.amazon.ask.smapi.model.v1.skill.simulations.InvocationRequest invocationRequest) {
             this.invocationRequest = invocationRequest;
             return this;
@@ -134,6 +138,7 @@ public final class Invocation {
 
 
         @JsonProperty("invocationResponse")
+
         public Builder withInvocationResponse(com.amazon.ask.smapi.model.v1.skill.simulations.InvocationResponse invocationResponse) {
             this.invocationResponse = invocationResponse;
             return this;
@@ -141,6 +146,7 @@ public final class Invocation {
 
 
         @JsonProperty("metrics")
+
         public Builder withMetrics(com.amazon.ask.smapi.model.v1.skill.simulations.Metrics metrics) {
             this.metrics = metrics;
             return this;

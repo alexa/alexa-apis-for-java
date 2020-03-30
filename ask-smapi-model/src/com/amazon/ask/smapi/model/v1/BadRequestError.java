@@ -56,6 +56,7 @@ public final class BadRequestError {
         return message;
     }
 
+
     /**
      * An array of violation messages.
      * @return violations
@@ -64,6 +65,7 @@ public final class BadRequestError {
     public List<com.amazon.ask.smapi.model.v1.Error> getViolations() {
         return violations;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,6 +114,7 @@ public final class BadRequestError {
         private Builder() {}
 
         @JsonProperty("message")
+
         public Builder withMessage(String message) {
             this.message = message;
             return this;
@@ -119,6 +122,7 @@ public final class BadRequestError {
 
 
         @JsonProperty("violations")
+
         public Builder withViolations(List<com.amazon.ask.smapi.model.v1.Error> violations) {
             this.violations = violations;
             return this;

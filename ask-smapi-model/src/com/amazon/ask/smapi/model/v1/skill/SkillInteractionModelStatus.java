@@ -74,6 +74,7 @@ public final class SkillInteractionModelStatus {
         return lastUpdateRequest;
     }
 
+
     /**
      * An opaque identifier for last successfully updated resource.
      * @return eTag
@@ -82,6 +83,7 @@ public final class SkillInteractionModelStatus {
     public String getETag() {
         return eTag;
     }
+
 
     /**
      * Version for last successfully built model.
@@ -92,6 +94,7 @@ public final class SkillInteractionModelStatus {
         return version;
     }
 
+
     /**
      * Get errors
      * @return errors
@@ -101,6 +104,7 @@ public final class SkillInteractionModelStatus {
         return errors;
     }
 
+
     /**
      * Get warnings
      * @return warnings
@@ -109,6 +113,7 @@ public final class SkillInteractionModelStatus {
     public List<com.amazon.ask.smapi.model.v1.skill.StandardizedError> getWarnings() {
         return warnings;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,6 +171,7 @@ public final class SkillInteractionModelStatus {
         private Builder() {}
 
         @JsonProperty("lastUpdateRequest")
+
         public Builder withLastUpdateRequest(com.amazon.ask.smapi.model.v1.skill.LastUpdateRequest lastUpdateRequest) {
             this.lastUpdateRequest = lastUpdateRequest;
             return this;
@@ -173,6 +179,7 @@ public final class SkillInteractionModelStatus {
 
 
         @JsonProperty("eTag")
+
         public Builder withETag(String eTag) {
             this.eTag = eTag;
             return this;
@@ -180,6 +187,7 @@ public final class SkillInteractionModelStatus {
 
 
         @JsonProperty("version")
+
         public Builder withVersion(String version) {
             this.version = version;
             return this;
@@ -187,6 +195,7 @@ public final class SkillInteractionModelStatus {
 
 
         @JsonProperty("errors")
+
         public Builder withErrors(List<com.amazon.ask.smapi.model.v1.skill.StandardizedError> errors) {
             this.errors = errors;
             return this;
@@ -201,6 +210,7 @@ public final class SkillInteractionModelStatus {
         }
 
         @JsonProperty("warnings")
+
         public Builder withWarnings(List<com.amazon.ask.smapi.model.v1.skill.StandardizedError> warnings) {
             this.warnings = warnings;
             return this;

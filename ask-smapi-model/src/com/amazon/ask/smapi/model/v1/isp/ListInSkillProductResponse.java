@@ -47,6 +47,7 @@ public final class ListInSkillProductResponse {
         return inSkillProductSummaryList;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class ListInSkillProductResponse {
         private Builder() {}
 
         @JsonProperty("inSkillProductSummaryList")
+
         public Builder withInSkillProductSummaryList(com.amazon.ask.smapi.model.v1.isp.ListInSkillProduct inSkillProductSummaryList) {
             this.inSkillProductSummaryList = inSkillProductSummaryList;
             return this;

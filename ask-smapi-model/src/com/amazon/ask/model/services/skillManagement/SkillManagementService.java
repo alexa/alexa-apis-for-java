@@ -38,6 +38,11 @@ public interface SkillManagementService {
     ApiResponse<com.amazon.ask.smapi.model.v1.catalog.CreateContentUploadUrlResponse> callGenerateCatalogUploadUrlV1(String catalogId, com.amazon.ask.smapi.model.v1.catalog.CreateContentUploadUrlRequest generateCatalogUploadUrlRequestBody) throws ServiceException;
 
 
+    com.amazon.ask.smapi.model.v1.auditLogs.AuditLogsResponse queryDevelopmentAuditLogsV1(com.amazon.ask.smapi.model.v1.auditLogs.AuditLogsRequest getAuditLogsRequest) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v1.auditLogs.AuditLogsResponse> callQueryDevelopmentAuditLogsV1(com.amazon.ask.smapi.model.v1.auditLogs.AuditLogsRequest getAuditLogsRequest) throws ServiceException;
+
+
     com.amazon.ask.smapi.model.v1.isp.ListInSkillProductResponse getIspListForVendorV1(String vendorId, String nextToken, BigDecimal maxResults, List<String> productId, String stage, String type, String referenceName, String status, String isAssociatedWithSkill) throws ServiceException;
 
     ApiResponse<com.amazon.ask.smapi.model.v1.isp.ListInSkillProductResponse> callGetIspListForVendorV1(String vendorId, String nextToken, BigDecimal maxResults, List<String> productId, String stage, String type, String referenceName, String status, String isAssociatedWithSkill) throws ServiceException;
@@ -466,5 +471,20 @@ public interface SkillManagementService {
     com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillPermission getAlexaHostedSkillUserPermissionsV1(String vendorId, String permission) throws ServiceException;
 
     ApiResponse<com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillPermission> callGetAlexaHostedSkillUserPermissionsV1(String vendorId, String permission) throws ServiceException;
+
+
+    com.amazon.ask.smapi.model.v2.skill.invocations.InvocationsApiResponse invokeSkillEndPointV2(String skillId, String stage, com.amazon.ask.smapi.model.v2.skill.invocations.InvocationsApiRequest invocationsApiRequest) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v2.skill.invocations.InvocationsApiResponse> callInvokeSkillEndPointV2(String skillId, String stage, com.amazon.ask.smapi.model.v2.skill.invocations.InvocationsApiRequest invocationsApiRequest) throws ServiceException;
+
+
+    com.amazon.ask.smapi.model.v2.skill.simulations.SimulationsApiResponse simulateSkillV2(String skillId, String stage, com.amazon.ask.smapi.model.v2.skill.simulations.SimulationsApiRequest simulationsApiRequest) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v2.skill.simulations.SimulationsApiResponse> callSimulateSkillV2(String skillId, String stage, com.amazon.ask.smapi.model.v2.skill.simulations.SimulationsApiRequest simulationsApiRequest) throws ServiceException;
+
+
+    com.amazon.ask.smapi.model.v2.skill.simulations.SimulationsApiResponse getSkillSimulationV2(String skillId, String stage, String simulationId) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v2.skill.simulations.SimulationsApiResponse> callGetSkillSimulationV2(String skillId, String stage, String simulationId) throws ServiceException;
 
 }

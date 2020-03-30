@@ -59,6 +59,7 @@ public final class InteractionModelData {
         return version;
     }
 
+
     /**
      * Get description
      * @return description
@@ -68,6 +69,7 @@ public final class InteractionModelData {
         return description;
     }
 
+
     /**
      * Get interactionModel
      * @return interactionModel
@@ -76,6 +78,7 @@ public final class InteractionModelData {
     public com.amazon.ask.smapi.model.v1.skill.interactionModel.InteractionModelSchema getInteractionModel() {
         return interactionModel;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -127,6 +130,7 @@ public final class InteractionModelData {
         private Builder() {}
 
         @JsonProperty("version")
+
         public Builder withVersion(String version) {
             this.version = version;
             return this;
@@ -134,6 +138,7 @@ public final class InteractionModelData {
 
 
         @JsonProperty("description")
+
         public Builder withDescription(String description) {
             this.description = description;
             return this;
@@ -141,6 +146,7 @@ public final class InteractionModelData {
 
 
         @JsonProperty("interactionModel")
+
         public Builder withInteractionModel(com.amazon.ask.smapi.model.v1.skill.interactionModel.InteractionModelSchema interactionModel) {
             this.interactionModel = interactionModel;
             return this;

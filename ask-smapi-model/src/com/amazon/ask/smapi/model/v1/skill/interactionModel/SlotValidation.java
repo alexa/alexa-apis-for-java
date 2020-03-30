@@ -28,10 +28,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonSubTypes({
   @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.interactionModel.HasEntityResolutionMatch.class, name = "hasEntityResolutionMatch"),
   @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.interactionModel.IsLessThanOrEqualTo.class, name = "isLessThanOrEqualTo"),
-  @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.interactionModel.IsInDuration.class, name = "isInDuration"),
-  @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.interactionModel.IsLessThan.class, name = "isLessThan"),
   @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.interactionModel.IsGreaterThan.class, name = "isGreaterThan"),
   @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.interactionModel.IsNotInSet.class, name = "isNotInSet"),
+  @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.interactionModel.IsInDuration.class, name = "isInDuration"),
+  @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.interactionModel.IsLessThan.class, name = "isLessThan"),
   @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.interactionModel.IsNotInDuration.class, name = "isNotInDuration"),
   @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.interactionModel.IsGreaterThanOrEqualTo.class, name = "isGreaterThanOrEqualTo"),
   @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.interactionModel.IsInSet.class, name = "isInSet"),
@@ -55,6 +55,7 @@ public abstract class SlotValidation {
         return type;
     }
 
+
     /**
      * The prompt id that should be used if validation fails.
      * @return prompt
@@ -63,6 +64,7 @@ public abstract class SlotValidation {
     public String getPrompt() {
         return prompt;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {

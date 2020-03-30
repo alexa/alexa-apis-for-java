@@ -47,6 +47,7 @@ public final class SlotTypeResponseEntity {
         return id;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class SlotTypeResponseEntity {
         private Builder() {}
 
         @JsonProperty("id")
+
         public Builder withId(String id) {
             this.id = id;
             return this;

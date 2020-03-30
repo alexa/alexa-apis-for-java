@@ -26,7 +26,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public final class SubscriptionInformation {
 
     @JsonProperty("subscriptionPaymentFrequency")
-    private com.amazon.ask.smapi.model.v1.isp.SubscriptionPaymentFrequency subscriptionPaymentFrequency = null;
+    private String subscriptionPaymentFrequency = null;
 
     @JsonProperty("subscriptionTrialPeriodDays")
     private Integer subscriptionTrialPeriodDays = null;
@@ -46,11 +46,29 @@ public final class SubscriptionInformation {
 
     /**
      * Get subscriptionPaymentFrequency
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getSubscriptionPaymentFrequencyAsString().
+     *
      * @return subscriptionPaymentFrequency
     **/
-    @JsonProperty("subscriptionPaymentFrequency")
+    
     public com.amazon.ask.smapi.model.v1.isp.SubscriptionPaymentFrequency getSubscriptionPaymentFrequency() {
-        return subscriptionPaymentFrequency;
+        return com.amazon.ask.smapi.model.v1.isp.SubscriptionPaymentFrequency.fromValue(subscriptionPaymentFrequency);
+    }
+
+    /**
+     * Get the underlying String value for subscriptionPaymentFrequency.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return subscriptionPaymentFrequency as a String value
+    **/
+    @JsonProperty("subscriptionPaymentFrequency")
+    public String getSubscriptionPaymentFrequencyAsString() {
+      return subscriptionPaymentFrequency;
     }
 
     /**
@@ -61,6 +79,7 @@ public final class SubscriptionInformation {
     public Integer getSubscriptionTrialPeriodDays() {
         return subscriptionTrialPeriodDays;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -103,19 +122,25 @@ public final class SubscriptionInformation {
     }
   
     public static class Builder {
-        private com.amazon.ask.smapi.model.v1.isp.SubscriptionPaymentFrequency subscriptionPaymentFrequency;
+        private String subscriptionPaymentFrequency;
         private Integer subscriptionTrialPeriodDays;
 
         private Builder() {}
 
         @JsonProperty("subscriptionPaymentFrequency")
+        public Builder withSubscriptionPaymentFrequency(String subscriptionPaymentFrequency) {
+          this.subscriptionPaymentFrequency = subscriptionPaymentFrequency;
+          return this;
+        }
+
         public Builder withSubscriptionPaymentFrequency(com.amazon.ask.smapi.model.v1.isp.SubscriptionPaymentFrequency subscriptionPaymentFrequency) {
-            this.subscriptionPaymentFrequency = subscriptionPaymentFrequency;
+            this.subscriptionPaymentFrequency = subscriptionPaymentFrequency != null ? subscriptionPaymentFrequency.toString() : null;
             return this;
         }
 
 
         @JsonProperty("subscriptionTrialPeriodDays")
+
         public Builder withSubscriptionTrialPeriodDays(Integer subscriptionTrialPeriodDays) {
             this.subscriptionTrialPeriodDays = subscriptionTrialPeriodDays;
             return this;

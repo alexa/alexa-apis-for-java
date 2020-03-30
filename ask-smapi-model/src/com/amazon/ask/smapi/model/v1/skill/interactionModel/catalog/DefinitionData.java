@@ -53,6 +53,7 @@ public final class DefinitionData {
         return catalog;
     }
 
+
     /**
      * The vendorId that the catalog should belong to.
      * @return vendorId
@@ -61,6 +62,7 @@ public final class DefinitionData {
     public String getVendorId() {
         return vendorId;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class DefinitionData {
         private Builder() {}
 
         @JsonProperty("catalog")
+
         public Builder withCatalog(com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.CatalogInput catalog) {
             this.catalog = catalog;
             return this;
@@ -116,6 +119,7 @@ public final class DefinitionData {
 
 
         @JsonProperty("vendorId")
+
         public Builder withVendorId(String vendorId) {
             this.vendorId = vendorId;
             return this;

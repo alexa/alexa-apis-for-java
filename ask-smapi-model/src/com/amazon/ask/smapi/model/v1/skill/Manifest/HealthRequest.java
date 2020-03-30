@@ -47,6 +47,7 @@ public final class HealthRequest {
         return name;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class HealthRequest {
         private Builder() {}
 
         @JsonProperty("name")
+
         public Builder withName(String name) {
             this.name = name;
             return this;

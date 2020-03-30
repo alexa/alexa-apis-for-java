@@ -68,6 +68,7 @@ public final class ListInSkillProduct {
         return links;
     }
 
+
     /**
      * Information for each in-skill product.
      * @return inSkillProducts
@@ -76,6 +77,7 @@ public final class ListInSkillProduct {
     public List<com.amazon.ask.smapi.model.v1.isp.InSkillProductSummary> getInSkillProducts() {
         return inSkillProducts;
     }
+
 
     /**
      * Get isTruncated
@@ -86,6 +88,7 @@ public final class ListInSkillProduct {
         return isTruncated;
     }
 
+
     /**
      * Get nextToken
      * @return nextToken
@@ -94,6 +97,7 @@ public final class ListInSkillProduct {
     public String getNextToken() {
         return nextToken;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -148,6 +152,7 @@ public final class ListInSkillProduct {
         private Builder() {}
 
         @JsonProperty("_links")
+
         public Builder withLinks(com.amazon.ask.smapi.model.v1.Links links) {
             this.links = links;
             return this;
@@ -155,6 +160,7 @@ public final class ListInSkillProduct {
 
 
         @JsonProperty("inSkillProducts")
+
         public Builder withInSkillProducts(List<com.amazon.ask.smapi.model.v1.isp.InSkillProductSummary> inSkillProducts) {
             this.inSkillProducts = inSkillProducts;
             return this;
@@ -169,6 +175,7 @@ public final class ListInSkillProduct {
         }
 
         @JsonProperty("isTruncated")
+
         public Builder withIsTruncated(Boolean isTruncated) {
             this.isTruncated = isTruncated;
             return this;
@@ -176,6 +183,7 @@ public final class ListInSkillProduct {
 
 
         @JsonProperty("nextToken")
+
         public Builder withNextToken(String nextToken) {
             this.nextToken = nextToken;
             return this;

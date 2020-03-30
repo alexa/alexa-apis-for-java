@@ -53,6 +53,7 @@ public final class VersionData {
         return source;
     }
 
+
     /**
      * Description string for specific catalog version.
      * @return description
@@ -61,6 +62,7 @@ public final class VersionData {
     public String getDescription() {
         return description;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class VersionData {
         private Builder() {}
 
         @JsonProperty("source")
+
         public Builder withSource(com.amazon.ask.smapi.model.v1.skill.interactionModel.version.InputSource source) {
             this.source = source;
             return this;
@@ -116,6 +119,7 @@ public final class VersionData {
 
 
         @JsonProperty("description")
+
         public Builder withDescription(String description) {
             this.description = description;
             return this;

@@ -47,6 +47,7 @@ public final class CreateSkillResponse {
         return skillId;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class CreateSkillResponse {
         private Builder() {}
 
         @JsonProperty("skillId")
+
         public Builder withSkillId(String skillId) {
             this.skillId = skillId;
             return this;

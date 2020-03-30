@@ -59,6 +59,7 @@ public final class SlotTypeVersionItem {
         return version;
     }
 
+
     /**
      * Description string about the slot type version.
      * @return description
@@ -68,6 +69,7 @@ public final class SlotTypeVersionItem {
         return description;
     }
 
+
     /**
      * Get links
      * @return links
@@ -76,6 +78,7 @@ public final class SlotTypeVersionItem {
     public com.amazon.ask.smapi.model.v1.Links getLinks() {
         return links;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -127,6 +130,7 @@ public final class SlotTypeVersionItem {
         private Builder() {}
 
         @JsonProperty("version")
+
         public Builder withVersion(String version) {
             this.version = version;
             return this;
@@ -134,6 +138,7 @@ public final class SlotTypeVersionItem {
 
 
         @JsonProperty("description")
+
         public Builder withDescription(String description) {
             this.description = description;
             return this;
@@ -141,6 +146,7 @@ public final class SlotTypeVersionItem {
 
 
         @JsonProperty("_links")
+
         public Builder withLinks(com.amazon.ask.smapi.model.v1.Links links) {
             this.links = links;
             return this;

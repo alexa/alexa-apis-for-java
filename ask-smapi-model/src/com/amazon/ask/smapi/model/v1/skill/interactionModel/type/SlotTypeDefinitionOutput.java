@@ -53,6 +53,7 @@ public final class SlotTypeDefinitionOutput {
         return slotType;
     }
 
+
     /**
      * Total number of versions.
      * @return totalVersions
@@ -61,6 +62,7 @@ public final class SlotTypeDefinitionOutput {
     public String getTotalVersions() {
         return totalVersions;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class SlotTypeDefinitionOutput {
         private Builder() {}
 
         @JsonProperty("slotType")
+
         public Builder withSlotType(com.amazon.ask.smapi.model.v1.skill.interactionModel.type.SlotTypeInput slotType) {
             this.slotType = slotType;
             return this;
@@ -116,6 +119,7 @@ public final class SlotTypeDefinitionOutput {
 
 
         @JsonProperty("totalVersions")
+
         public Builder withTotalVersions(String totalVersions) {
             this.totalVersions = totalVersions;
             return this;

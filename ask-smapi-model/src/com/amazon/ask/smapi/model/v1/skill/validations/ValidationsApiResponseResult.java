@@ -56,6 +56,7 @@ public final class ValidationsApiResponseResult {
         return validations;
     }
 
+
     /**
      * Get error
      * @return error
@@ -64,6 +65,7 @@ public final class ValidationsApiResponseResult {
     public com.amazon.ask.smapi.model.v1.Error getError() {
         return error;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,6 +114,7 @@ public final class ValidationsApiResponseResult {
         private Builder() {}
 
         @JsonProperty("validations")
+
         public Builder withValidations(List<com.amazon.ask.smapi.model.v1.skill.validations.ResponseValidation> validations) {
             this.validations = validations;
             return this;
@@ -126,6 +129,7 @@ public final class ValidationsApiResponseResult {
         }
 
         @JsonProperty("error")
+
         public Builder withError(com.amazon.ask.smapi.model.v1.Error error) {
             this.error = error;
             return this;

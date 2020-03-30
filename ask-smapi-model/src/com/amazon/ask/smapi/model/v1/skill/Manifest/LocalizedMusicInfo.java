@@ -68,6 +68,7 @@ public final class LocalizedMusicInfo {
         return promptName;
     }
 
+
     /**
      * Get aliases
      * @return aliases
@@ -76,6 +77,7 @@ public final class LocalizedMusicInfo {
     public List<com.amazon.ask.smapi.model.v1.skill.Manifest.MusicAlias> getAliases() {
         return aliases;
     }
+
 
     /**
      * Get features
@@ -86,6 +88,7 @@ public final class LocalizedMusicInfo {
         return features;
     }
 
+
     /**
      * Get wordmarkLogos
      * @return wordmarkLogos
@@ -94,6 +97,7 @@ public final class LocalizedMusicInfo {
     public List<com.amazon.ask.smapi.model.v1.skill.Manifest.MusicWordmark> getWordmarkLogos() {
         return wordmarkLogos;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -148,6 +152,7 @@ public final class LocalizedMusicInfo {
         private Builder() {}
 
         @JsonProperty("promptName")
+
         public Builder withPromptName(String promptName) {
             this.promptName = promptName;
             return this;
@@ -155,6 +160,7 @@ public final class LocalizedMusicInfo {
 
 
         @JsonProperty("aliases")
+
         public Builder withAliases(List<com.amazon.ask.smapi.model.v1.skill.Manifest.MusicAlias> aliases) {
             this.aliases = aliases;
             return this;
@@ -169,6 +175,7 @@ public final class LocalizedMusicInfo {
         }
 
         @JsonProperty("features")
+
         public Builder withFeatures(List<com.amazon.ask.smapi.model.v1.skill.Manifest.MusicFeature> features) {
             this.features = features;
             return this;
@@ -183,6 +190,7 @@ public final class LocalizedMusicInfo {
         }
 
         @JsonProperty("wordmarkLogos")
+
         public Builder withWordmarkLogos(List<com.amazon.ask.smapi.model.v1.skill.Manifest.MusicWordmark> wordmarkLogos) {
             this.wordmarkLogos = wordmarkLogos;
             return this;

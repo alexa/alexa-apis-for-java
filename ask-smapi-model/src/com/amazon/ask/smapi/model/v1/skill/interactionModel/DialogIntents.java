@@ -32,7 +32,7 @@ public final class DialogIntents {
     private String name = null;
 
     @JsonProperty("delegationStrategy")
-    private com.amazon.ask.smapi.model.v1.skill.interactionModel.DelegationStrategyType delegationStrategy = null;
+    private String delegationStrategy = null;
 
     @JsonProperty("slots")
     private List<com.amazon.ask.smapi.model.v1.skill.interactionModel.DialogSlotItems> slots = new ArrayList<com.amazon.ask.smapi.model.v1.skill.interactionModel.DialogSlotItems>();
@@ -74,13 +74,32 @@ public final class DialogIntents {
         return name;
     }
 
+
     /**
      * Defines an intent-specific delegation strategy for this dialog intent. Overrides dialog-level setting.
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getDelegationStrategyAsString().
+     *
      * @return delegationStrategy
     **/
-    @JsonProperty("delegationStrategy")
+    
     public com.amazon.ask.smapi.model.v1.skill.interactionModel.DelegationStrategyType getDelegationStrategy() {
-        return delegationStrategy;
+        return com.amazon.ask.smapi.model.v1.skill.interactionModel.DelegationStrategyType.fromValue(delegationStrategy);
+    }
+
+    /**
+     * Get the underlying String value for delegationStrategy.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return delegationStrategy as a String value
+    **/
+    @JsonProperty("delegationStrategy")
+    public String getDelegationStrategyAsString() {
+      return delegationStrategy;
     }
 
     /**
@@ -92,6 +111,7 @@ public final class DialogIntents {
         return slots;
     }
 
+
     /**
      * Describes whether confirmation of the intent is required.
      * @return confirmationRequired
@@ -101,6 +121,7 @@ public final class DialogIntents {
         return confirmationRequired;
     }
 
+
     /**
      * Get prompts
      * @return prompts
@@ -109,6 +130,7 @@ public final class DialogIntents {
     public com.amazon.ask.smapi.model.v1.skill.interactionModel.DialogIntentsPrompts getPrompts() {
         return prompts;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -158,7 +180,7 @@ public final class DialogIntents {
   
     public static class Builder {
         private String name;
-        private com.amazon.ask.smapi.model.v1.skill.interactionModel.DelegationStrategyType delegationStrategy;
+        private String delegationStrategy;
         private List<com.amazon.ask.smapi.model.v1.skill.interactionModel.DialogSlotItems> slots;
         private Boolean confirmationRequired;
         private com.amazon.ask.smapi.model.v1.skill.interactionModel.DialogIntentsPrompts prompts;
@@ -166,6 +188,7 @@ public final class DialogIntents {
         private Builder() {}
 
         @JsonProperty("name")
+
         public Builder withName(String name) {
             this.name = name;
             return this;
@@ -173,13 +196,19 @@ public final class DialogIntents {
 
 
         @JsonProperty("delegationStrategy")
+        public Builder withDelegationStrategy(String delegationStrategy) {
+          this.delegationStrategy = delegationStrategy;
+          return this;
+        }
+
         public Builder withDelegationStrategy(com.amazon.ask.smapi.model.v1.skill.interactionModel.DelegationStrategyType delegationStrategy) {
-            this.delegationStrategy = delegationStrategy;
+            this.delegationStrategy = delegationStrategy != null ? delegationStrategy.toString() : null;
             return this;
         }
 
 
         @JsonProperty("slots")
+
         public Builder withSlots(List<com.amazon.ask.smapi.model.v1.skill.interactionModel.DialogSlotItems> slots) {
             this.slots = slots;
             return this;
@@ -194,6 +223,7 @@ public final class DialogIntents {
         }
 
         @JsonProperty("confirmationRequired")
+
         public Builder withConfirmationRequired(Boolean confirmationRequired) {
             this.confirmationRequired = confirmationRequired;
             return this;
@@ -201,6 +231,7 @@ public final class DialogIntents {
 
 
         @JsonProperty("prompts")
+
         public Builder withPrompts(com.amazon.ask.smapi.model.v1.skill.interactionModel.DialogIntentsPrompts prompts) {
             this.prompts = prompts;
             return this;

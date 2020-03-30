@@ -60,6 +60,7 @@ public final class PresignedUploadPartItems {
         return url;
     }
 
+
     /**
      * Get partNumber
      * @return partNumber
@@ -69,6 +70,7 @@ public final class PresignedUploadPartItems {
         return partNumber;
     }
 
+
     /**
      * Get expiresAt
      * @return expiresAt
@@ -77,6 +79,7 @@ public final class PresignedUploadPartItems {
     public OffsetDateTime getExpiresAt() {
         return expiresAt;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -128,6 +131,7 @@ public final class PresignedUploadPartItems {
         private Builder() {}
 
         @JsonProperty("url")
+
         public Builder withUrl(String url) {
             this.url = url;
             return this;
@@ -135,6 +139,7 @@ public final class PresignedUploadPartItems {
 
 
         @JsonProperty("partNumber")
+
         public Builder withPartNumber(Integer partNumber) {
             this.partNumber = partNumber;
             return this;
@@ -142,6 +147,7 @@ public final class PresignedUploadPartItems {
 
 
         @JsonProperty("expiresAt")
+
         public Builder withExpiresAt(OffsetDateTime expiresAt) {
             this.expiresAt = expiresAt;
             return this;

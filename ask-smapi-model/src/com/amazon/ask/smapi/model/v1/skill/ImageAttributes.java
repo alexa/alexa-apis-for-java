@@ -53,6 +53,7 @@ public final class ImageAttributes {
         return dimension;
     }
 
+
     /**
      * Get size
      * @return size
@@ -61,6 +62,7 @@ public final class ImageAttributes {
     public com.amazon.ask.smapi.model.v1.skill.ImageSize getSize() {
         return size;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class ImageAttributes {
         private Builder() {}
 
         @JsonProperty("dimension")
+
         public Builder withDimension(com.amazon.ask.smapi.model.v1.skill.ImageDimension dimension) {
             this.dimension = dimension;
             return this;
@@ -116,6 +119,7 @@ public final class ImageAttributes {
 
 
         @JsonProperty("size")
+
         public Builder withSize(com.amazon.ask.smapi.model.v1.skill.ImageSize size) {
             this.size = size;
             return this;

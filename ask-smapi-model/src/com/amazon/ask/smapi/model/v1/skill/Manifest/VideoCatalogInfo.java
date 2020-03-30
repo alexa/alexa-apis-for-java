@@ -47,6 +47,7 @@ public final class VideoCatalogInfo {
         return sourceId;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class VideoCatalogInfo {
         private Builder() {}
 
         @JsonProperty("sourceId")
+
         public Builder withSourceId(String sourceId) {
             this.sourceId = sourceId;
             return this;

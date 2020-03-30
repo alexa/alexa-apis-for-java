@@ -59,6 +59,7 @@ public final class ValidationEndpoint {
         return propertyPath;
     }
 
+
     /**
      * Type of the endpoint (https, http, arn etc).
      * @return type
@@ -68,6 +69,7 @@ public final class ValidationEndpoint {
         return type;
     }
 
+
     /**
      * Full URI of the endpoint.
      * @return value
@@ -76,6 +78,7 @@ public final class ValidationEndpoint {
     public String getValue() {
         return value;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -127,6 +130,7 @@ public final class ValidationEndpoint {
         private Builder() {}
 
         @JsonProperty("propertyPath")
+
         public Builder withPropertyPath(String propertyPath) {
             this.propertyPath = propertyPath;
             return this;
@@ -134,6 +138,7 @@ public final class ValidationEndpoint {
 
 
         @JsonProperty("type")
+
         public Builder withType(String type) {
             this.type = type;
             return this;
@@ -141,6 +146,7 @@ public final class ValidationEndpoint {
 
 
         @JsonProperty("value")
+
         public Builder withValue(String value) {
             this.value = value;
             return this;

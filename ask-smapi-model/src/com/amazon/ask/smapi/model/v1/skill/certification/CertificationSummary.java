@@ -30,7 +30,7 @@ public final class CertificationSummary {
     private String id = null;
 
     @JsonProperty("status")
-    private com.amazon.ask.smapi.model.v1.skill.certification.CertificationStatus status = null;
+    private String status = null;
 
     @JsonProperty("skillSubmissionTimestamp")
     private OffsetDateTime skillSubmissionTimestamp = null;
@@ -66,13 +66,32 @@ public final class CertificationSummary {
         return id;
     }
 
+
     /**
      * Get status
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getStatusAsString().
+     *
      * @return status
     **/
-    @JsonProperty("status")
+    
     public com.amazon.ask.smapi.model.v1.skill.certification.CertificationStatus getStatus() {
-        return status;
+        return com.amazon.ask.smapi.model.v1.skill.certification.CertificationStatus.fromValue(status);
+    }
+
+    /**
+     * Get the underlying String value for status.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return status as a String value
+    **/
+    @JsonProperty("status")
+    public String getStatusAsString() {
+      return status;
     }
 
     /**
@@ -84,6 +103,7 @@ public final class CertificationSummary {
         return skillSubmissionTimestamp;
     }
 
+
     /**
      * Get reviewTrackingInfo
      * @return reviewTrackingInfo
@@ -92,6 +112,7 @@ public final class CertificationSummary {
     public com.amazon.ask.smapi.model.v1.skill.certification.ReviewTrackingInfoSummary getReviewTrackingInfo() {
         return reviewTrackingInfo;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -139,13 +160,14 @@ public final class CertificationSummary {
   
     public static class Builder {
         private String id;
-        private com.amazon.ask.smapi.model.v1.skill.certification.CertificationStatus status;
+        private String status;
         private OffsetDateTime skillSubmissionTimestamp;
         private com.amazon.ask.smapi.model.v1.skill.certification.ReviewTrackingInfoSummary reviewTrackingInfo;
 
         private Builder() {}
 
         @JsonProperty("id")
+
         public Builder withId(String id) {
             this.id = id;
             return this;
@@ -153,13 +175,19 @@ public final class CertificationSummary {
 
 
         @JsonProperty("status")
+        public Builder withStatus(String status) {
+          this.status = status;
+          return this;
+        }
+
         public Builder withStatus(com.amazon.ask.smapi.model.v1.skill.certification.CertificationStatus status) {
-            this.status = status;
+            this.status = status != null ? status.toString() : null;
             return this;
         }
 
 
         @JsonProperty("skillSubmissionTimestamp")
+
         public Builder withSkillSubmissionTimestamp(OffsetDateTime skillSubmissionTimestamp) {
             this.skillSubmissionTimestamp = skillSubmissionTimestamp;
             return this;
@@ -167,6 +195,7 @@ public final class CertificationSummary {
 
 
         @JsonProperty("reviewTrackingInfo")
+
         public Builder withReviewTrackingInfo(com.amazon.ask.smapi.model.v1.skill.certification.ReviewTrackingInfoSummary reviewTrackingInfo) {
             this.reviewTrackingInfo = reviewTrackingInfo;
             return this;

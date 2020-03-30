@@ -50,6 +50,7 @@ public final class TestersList {
         return testers;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -94,6 +95,7 @@ public final class TestersList {
         private Builder() {}
 
         @JsonProperty("testers")
+
         public Builder withTesters(List<com.amazon.ask.smapi.model.v1.skill.betaTest.testers.Tester> testers) {
             this.testers = testers;
             return this;

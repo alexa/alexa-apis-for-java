@@ -59,6 +59,7 @@ public final class MusicCapability {
         return namespace;
     }
 
+
     /**
      * Name of music skill api.
      * @return name
@@ -68,6 +69,7 @@ public final class MusicCapability {
         return name;
     }
 
+
     /**
      * Version of music skill api.
      * @return version
@@ -76,6 +78,7 @@ public final class MusicCapability {
     public String getVersion() {
         return version;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -127,6 +130,7 @@ public final class MusicCapability {
         private Builder() {}
 
         @JsonProperty("namespace")
+
         public Builder withNamespace(String namespace) {
             this.namespace = namespace;
             return this;
@@ -134,6 +138,7 @@ public final class MusicCapability {
 
 
         @JsonProperty("name")
+
         public Builder withName(String name) {
             this.name = name;
             return this;
@@ -141,6 +146,7 @@ public final class MusicCapability {
 
 
         @JsonProperty("version")
+
         public Builder withVersion(String version) {
             this.version = version;
             return this;

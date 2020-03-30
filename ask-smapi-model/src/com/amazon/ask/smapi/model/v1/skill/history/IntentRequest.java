@@ -32,16 +32,16 @@ public final class IntentRequest {
     private com.amazon.ask.smapi.model.v1.skill.history.Intent intent = null;
 
     @JsonProperty("interactionType")
-    private com.amazon.ask.smapi.model.v1.skill.history.InteractionType interactionType = null;
+    private String interactionType = null;
 
     @JsonProperty("locale")
-    private com.amazon.ask.smapi.model.v1.skill.history.IntentRequestLocales locale = null;
+    private String locale = null;
 
     @JsonProperty("publicationStatus")
-    private com.amazon.ask.smapi.model.v1.skill.history.PublicationStatus publicationStatus = null;
+    private String publicationStatus = null;
 
     @JsonProperty("stage")
-    private com.amazon.ask.smapi.model.v1.StageType stage = null;
+    private String stage = null;
 
     @JsonProperty("utteranceText")
     private String utteranceText = null;
@@ -83,6 +83,7 @@ public final class IntentRequest {
         return dialogAct;
     }
 
+
     /**
      * Get intent
      * @return intent
@@ -92,40 +93,113 @@ public final class IntentRequest {
         return intent;
     }
 
+
     /**
      * Get interactionType
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getInteractionTypeAsString().
+     *
      * @return interactionType
     **/
-    @JsonProperty("interactionType")
+    
     public com.amazon.ask.smapi.model.v1.skill.history.InteractionType getInteractionType() {
-        return interactionType;
+        return com.amazon.ask.smapi.model.v1.skill.history.InteractionType.fromValue(interactionType);
+    }
+
+    /**
+     * Get the underlying String value for interactionType.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return interactionType as a String value
+    **/
+    @JsonProperty("interactionType")
+    public String getInteractionTypeAsString() {
+      return interactionType;
     }
 
     /**
      * Get locale
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getLocaleAsString().
+     *
      * @return locale
     **/
-    @JsonProperty("locale")
+    
     public com.amazon.ask.smapi.model.v1.skill.history.IntentRequestLocales getLocale() {
-        return locale;
+        return com.amazon.ask.smapi.model.v1.skill.history.IntentRequestLocales.fromValue(locale);
+    }
+
+    /**
+     * Get the underlying String value for locale.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return locale as a String value
+    **/
+    @JsonProperty("locale")
+    public String getLocaleAsString() {
+      return locale;
     }
 
     /**
      * Get publicationStatus
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getPublicationStatusAsString().
+     *
      * @return publicationStatus
     **/
-    @JsonProperty("publicationStatus")
+    
     public com.amazon.ask.smapi.model.v1.skill.history.PublicationStatus getPublicationStatus() {
-        return publicationStatus;
+        return com.amazon.ask.smapi.model.v1.skill.history.PublicationStatus.fromValue(publicationStatus);
+    }
+
+    /**
+     * Get the underlying String value for publicationStatus.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return publicationStatus as a String value
+    **/
+    @JsonProperty("publicationStatus")
+    public String getPublicationStatusAsString() {
+      return publicationStatus;
     }
 
     /**
      * Get stage
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getStageAsString().
+     *
      * @return stage
     **/
-    @JsonProperty("stage")
+    
     public com.amazon.ask.smapi.model.v1.StageType getStage() {
-        return stage;
+        return com.amazon.ask.smapi.model.v1.StageType.fromValue(stage);
+    }
+
+    /**
+     * Get the underlying String value for stage.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return stage as a String value
+    **/
+    @JsonProperty("stage")
+    public String getStageAsString() {
+      return stage;
     }
 
     /**
@@ -136,6 +210,7 @@ public final class IntentRequest {
     public String getUtteranceText() {
         return utteranceText;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -190,15 +265,16 @@ public final class IntentRequest {
     public static class Builder {
         private com.amazon.ask.smapi.model.v1.skill.history.DialogAct dialogAct;
         private com.amazon.ask.smapi.model.v1.skill.history.Intent intent;
-        private com.amazon.ask.smapi.model.v1.skill.history.InteractionType interactionType;
-        private com.amazon.ask.smapi.model.v1.skill.history.IntentRequestLocales locale;
-        private com.amazon.ask.smapi.model.v1.skill.history.PublicationStatus publicationStatus;
-        private com.amazon.ask.smapi.model.v1.StageType stage;
+        private String interactionType;
+        private String locale;
+        private String publicationStatus;
+        private String stage;
         private String utteranceText;
 
         private Builder() {}
 
         @JsonProperty("dialogAct")
+
         public Builder withDialogAct(com.amazon.ask.smapi.model.v1.skill.history.DialogAct dialogAct) {
             this.dialogAct = dialogAct;
             return this;
@@ -206,6 +282,7 @@ public final class IntentRequest {
 
 
         @JsonProperty("intent")
+
         public Builder withIntent(com.amazon.ask.smapi.model.v1.skill.history.Intent intent) {
             this.intent = intent;
             return this;
@@ -213,34 +290,55 @@ public final class IntentRequest {
 
 
         @JsonProperty("interactionType")
+        public Builder withInteractionType(String interactionType) {
+          this.interactionType = interactionType;
+          return this;
+        }
+
         public Builder withInteractionType(com.amazon.ask.smapi.model.v1.skill.history.InteractionType interactionType) {
-            this.interactionType = interactionType;
+            this.interactionType = interactionType != null ? interactionType.toString() : null;
             return this;
         }
 
 
         @JsonProperty("locale")
+        public Builder withLocale(String locale) {
+          this.locale = locale;
+          return this;
+        }
+
         public Builder withLocale(com.amazon.ask.smapi.model.v1.skill.history.IntentRequestLocales locale) {
-            this.locale = locale;
+            this.locale = locale != null ? locale.toString() : null;
             return this;
         }
 
 
         @JsonProperty("publicationStatus")
+        public Builder withPublicationStatus(String publicationStatus) {
+          this.publicationStatus = publicationStatus;
+          return this;
+        }
+
         public Builder withPublicationStatus(com.amazon.ask.smapi.model.v1.skill.history.PublicationStatus publicationStatus) {
-            this.publicationStatus = publicationStatus;
+            this.publicationStatus = publicationStatus != null ? publicationStatus.toString() : null;
             return this;
         }
 
 
         @JsonProperty("stage")
+        public Builder withStage(String stage) {
+          this.stage = stage;
+          return this;
+        }
+
         public Builder withStage(com.amazon.ask.smapi.model.v1.StageType stage) {
-            this.stage = stage;
+            this.stage = stage != null ? stage.toString() : null;
             return this;
         }
 
 
         @JsonProperty("utteranceText")
+
         public Builder withUtteranceText(String utteranceText) {
             this.utteranceText = utteranceText;
             return this;

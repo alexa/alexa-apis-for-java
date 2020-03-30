@@ -92,6 +92,7 @@ public final class LocalizedPublishingInformation {
         return name;
     }
 
+
     /**
      * Uri for the small icon image of the in-skill product.
      * @return smallIconUri
@@ -100,6 +101,7 @@ public final class LocalizedPublishingInformation {
     public String getSmallIconUri() {
         return smallIconUri;
     }
+
 
     /**
      * Uri for the large icon image of the in-skill product.
@@ -110,6 +112,7 @@ public final class LocalizedPublishingInformation {
         return largeIconUri;
     }
 
+
     /**
      * Short description of the in-skill product that displays on the in-skill product list page in the Alexa App.
      * @return summary
@@ -118,6 +121,7 @@ public final class LocalizedPublishingInformation {
     public String getSummary() {
         return summary;
     }
+
 
     /**
      * Description of the in-skill product's purpose and features, and how it works. Should describe any prerequisites like hardware or account requirements and detailed steps for the customer to get started. This description displays to customers on the in-skill product detail card in the Alexa app.
@@ -128,6 +132,7 @@ public final class LocalizedPublishingInformation {
         return description;
     }
 
+
     /**
      * Example phrases appear on the in-skill product detail page and are the key utterances that customers can say to interact directly with the in-skill product.
      * @return examplePhrases
@@ -136,6 +141,7 @@ public final class LocalizedPublishingInformation {
     public List<String> getExamplePhrases() {
         return examplePhrases;
     }
+
 
     /**
      * Search terms that can be used to describe the in-skill product. This helps customers find an in-skill product.
@@ -146,6 +152,7 @@ public final class LocalizedPublishingInformation {
         return keywords;
     }
 
+
     /**
      * Get customProductPrompts
      * @return customProductPrompts
@@ -154,6 +161,7 @@ public final class LocalizedPublishingInformation {
     public com.amazon.ask.smapi.model.v1.isp.CustomProductPrompts getCustomProductPrompts() {
         return customProductPrompts;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -220,6 +228,7 @@ public final class LocalizedPublishingInformation {
         private Builder() {}
 
         @JsonProperty("name")
+
         public Builder withName(String name) {
             this.name = name;
             return this;
@@ -227,6 +236,7 @@ public final class LocalizedPublishingInformation {
 
 
         @JsonProperty("smallIconUri")
+
         public Builder withSmallIconUri(String smallIconUri) {
             this.smallIconUri = smallIconUri;
             return this;
@@ -234,6 +244,7 @@ public final class LocalizedPublishingInformation {
 
 
         @JsonProperty("largeIconUri")
+
         public Builder withLargeIconUri(String largeIconUri) {
             this.largeIconUri = largeIconUri;
             return this;
@@ -241,6 +252,7 @@ public final class LocalizedPublishingInformation {
 
 
         @JsonProperty("summary")
+
         public Builder withSummary(String summary) {
             this.summary = summary;
             return this;
@@ -248,6 +260,7 @@ public final class LocalizedPublishingInformation {
 
 
         @JsonProperty("description")
+
         public Builder withDescription(String description) {
             this.description = description;
             return this;
@@ -255,6 +268,7 @@ public final class LocalizedPublishingInformation {
 
 
         @JsonProperty("examplePhrases")
+
         public Builder withExamplePhrases(List<String> examplePhrases) {
             this.examplePhrases = examplePhrases;
             return this;
@@ -269,6 +283,7 @@ public final class LocalizedPublishingInformation {
         }
 
         @JsonProperty("keywords")
+
         public Builder withKeywords(List<String> keywords) {
             this.keywords = keywords;
             return this;
@@ -283,6 +298,7 @@ public final class LocalizedPublishingInformation {
         }
 
         @JsonProperty("customProductPrompts")
+
         public Builder withCustomProductPrompts(com.amazon.ask.smapi.model.v1.isp.CustomProductPrompts customProductPrompts) {
             this.customProductPrompts = customProductPrompts;
             return this;

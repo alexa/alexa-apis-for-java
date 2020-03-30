@@ -53,6 +53,7 @@ public final class PreSignedUrlItem {
         return eTag;
     }
 
+
     /**
      * Get partNumber
      * @return partNumber
@@ -61,6 +62,7 @@ public final class PreSignedUrlItem {
     public Integer getPartNumber() {
         return partNumber;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class PreSignedUrlItem {
         private Builder() {}
 
         @JsonProperty("eTag")
+
         public Builder withETag(String eTag) {
             this.eTag = eTag;
             return this;
@@ -116,6 +119,7 @@ public final class PreSignedUrlItem {
 
 
         @JsonProperty("partNumber")
+
         public Builder withPartNumber(Integer partNumber) {
             this.partNumber = partNumber;
             return this;

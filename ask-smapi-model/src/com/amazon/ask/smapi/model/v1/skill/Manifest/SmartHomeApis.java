@@ -35,7 +35,7 @@ public final class SmartHomeApis {
     private com.amazon.ask.smapi.model.v1.skill.Manifest.LambdaEndpoint endpoint = null;
 
     @JsonProperty("protocolVersion")
-    private com.amazon.ask.smapi.model.v1.skill.Manifest.SmartHomeProtocol protocolVersion = null;
+    private String protocolVersion = null;
 
     public static Builder builder() {
         return new Builder();
@@ -62,6 +62,7 @@ public final class SmartHomeApis {
         return regions;
     }
 
+
     /**
      * Get endpoint
      * @return endpoint
@@ -71,13 +72,32 @@ public final class SmartHomeApis {
         return endpoint;
     }
 
+
     /**
      * Get protocolVersion
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getProtocolVersionAsString().
+     *
      * @return protocolVersion
     **/
-    @JsonProperty("protocolVersion")
+    
     public com.amazon.ask.smapi.model.v1.skill.Manifest.SmartHomeProtocol getProtocolVersion() {
-        return protocolVersion;
+        return com.amazon.ask.smapi.model.v1.skill.Manifest.SmartHomeProtocol.fromValue(protocolVersion);
+    }
+
+    /**
+     * Get the underlying String value for protocolVersion.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return protocolVersion as a String value
+    **/
+    @JsonProperty("protocolVersion")
+    public String getProtocolVersionAsString() {
+      return protocolVersion;
     }
 
     @Override
@@ -125,11 +145,12 @@ public final class SmartHomeApis {
     public static class Builder {
         private Map<String, com.amazon.ask.smapi.model.v1.skill.Manifest.LambdaRegion> regions;
         private com.amazon.ask.smapi.model.v1.skill.Manifest.LambdaEndpoint endpoint;
-        private com.amazon.ask.smapi.model.v1.skill.Manifest.SmartHomeProtocol protocolVersion;
+        private String protocolVersion;
 
         private Builder() {}
 
         @JsonProperty("regions")
+
         public Builder withRegions(Map<String, com.amazon.ask.smapi.model.v1.skill.Manifest.LambdaRegion> regions) {
             this.regions = regions;
             return this;
@@ -144,6 +165,7 @@ public final class SmartHomeApis {
         }
 
         @JsonProperty("endpoint")
+
         public Builder withEndpoint(com.amazon.ask.smapi.model.v1.skill.Manifest.LambdaEndpoint endpoint) {
             this.endpoint = endpoint;
             return this;
@@ -151,8 +173,13 @@ public final class SmartHomeApis {
 
 
         @JsonProperty("protocolVersion")
+        public Builder withProtocolVersion(String protocolVersion) {
+          this.protocolVersion = protocolVersion;
+          return this;
+        }
+
         public Builder withProtocolVersion(com.amazon.ask.smapi.model.v1.skill.Manifest.SmartHomeProtocol protocolVersion) {
-            this.protocolVersion = protocolVersion;
+            this.protocolVersion = protocolVersion != null ? protocolVersion.toString() : null;
             return this;
         }
 

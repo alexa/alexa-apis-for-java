@@ -59,6 +59,7 @@ public final class CatalogDefinitionOutput {
         return catalog;
     }
 
+
     /**
      * Time of the catalog definition creation.
      * @return creationTime
@@ -68,6 +69,7 @@ public final class CatalogDefinitionOutput {
         return creationTime;
     }
 
+
     /**
      * Total number of versions.
      * @return totalVersions
@@ -76,6 +78,7 @@ public final class CatalogDefinitionOutput {
     public String getTotalVersions() {
         return totalVersions;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -127,6 +130,7 @@ public final class CatalogDefinitionOutput {
         private Builder() {}
 
         @JsonProperty("catalog")
+
         public Builder withCatalog(com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.CatalogEntity catalog) {
             this.catalog = catalog;
             return this;
@@ -134,6 +138,7 @@ public final class CatalogDefinitionOutput {
 
 
         @JsonProperty("creationTime")
+
         public Builder withCreationTime(String creationTime) {
             this.creationTime = creationTime;
             return this;
@@ -141,6 +146,7 @@ public final class CatalogDefinitionOutput {
 
 
         @JsonProperty("totalVersions")
+
         public Builder withTotalVersions(String totalVersions) {
             this.totalVersions = totalVersions;
             return this;

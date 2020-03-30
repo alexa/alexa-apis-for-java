@@ -53,6 +53,7 @@ public final class ImageDimension {
         return widthInPixels;
     }
 
+
     /**
      * Height of the image in pixels.
      * @return heightInPixels
@@ -61,6 +62,7 @@ public final class ImageDimension {
     public Integer getHeightInPixels() {
         return heightInPixels;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class ImageDimension {
         private Builder() {}
 
         @JsonProperty("widthInPixels")
+
         public Builder withWidthInPixels(Integer widthInPixels) {
             this.widthInPixels = widthInPixels;
             return this;
@@ -116,6 +119,7 @@ public final class ImageDimension {
 
 
         @JsonProperty("heightInPixels")
+
         public Builder withHeightInPixels(Integer heightInPixels) {
             this.heightInPixels = heightInPixels;
             return this;

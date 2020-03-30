@@ -60,6 +60,7 @@ public final class ReviewTrackingInfoSummary {
         return estimatedCompletionTimestamp;
     }
 
+
     /**
      * Timestamp for actual completion of certification review workflow for the skill.
      * @return actualCompletionTimestamp
@@ -69,6 +70,7 @@ public final class ReviewTrackingInfoSummary {
         return actualCompletionTimestamp;
     }
 
+
     /**
      * Timestamp for when the last update was made to review tracking info.
      * @return lastUpdated
@@ -77,6 +79,7 @@ public final class ReviewTrackingInfoSummary {
     public OffsetDateTime getLastUpdated() {
         return lastUpdated;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -128,6 +131,7 @@ public final class ReviewTrackingInfoSummary {
         private Builder() {}
 
         @JsonProperty("estimatedCompletionTimestamp")
+
         public Builder withEstimatedCompletionTimestamp(OffsetDateTime estimatedCompletionTimestamp) {
             this.estimatedCompletionTimestamp = estimatedCompletionTimestamp;
             return this;
@@ -135,6 +139,7 @@ public final class ReviewTrackingInfoSummary {
 
 
         @JsonProperty("actualCompletionTimestamp")
+
         public Builder withActualCompletionTimestamp(OffsetDateTime actualCompletionTimestamp) {
             this.actualCompletionTimestamp = actualCompletionTimestamp;
             return this;
@@ -142,6 +147,7 @@ public final class ReviewTrackingInfoSummary {
 
 
         @JsonProperty("lastUpdated")
+
         public Builder withLastUpdated(OffsetDateTime lastUpdated) {
             this.lastUpdated = lastUpdated;
             return this;

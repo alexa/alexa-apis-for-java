@@ -62,6 +62,7 @@ public final class ImportResponseSkill {
         return skillId;
     }
 
+
     /**
      * Get eTag
      * @return eTag
@@ -71,6 +72,7 @@ public final class ImportResponseSkill {
         return eTag;
     }
 
+
     /**
      * Get resources
      * @return resources
@@ -79,6 +81,7 @@ public final class ImportResponseSkill {
     public List<com.amazon.ask.smapi.model.v1.skill.ResourceImportStatus> getResources() {
         return resources;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -130,6 +133,7 @@ public final class ImportResponseSkill {
         private Builder() {}
 
         @JsonProperty("skillId")
+
         public Builder withSkillId(String skillId) {
             this.skillId = skillId;
             return this;
@@ -137,6 +141,7 @@ public final class ImportResponseSkill {
 
 
         @JsonProperty("eTag")
+
         public Builder withETag(String eTag) {
             this.eTag = eTag;
             return this;
@@ -144,6 +149,7 @@ public final class ImportResponseSkill {
 
 
         @JsonProperty("resources")
+
         public Builder withResources(List<com.amazon.ask.smapi.model.v1.skill.ResourceImportStatus> resources) {
             this.resources = resources;
             return this;

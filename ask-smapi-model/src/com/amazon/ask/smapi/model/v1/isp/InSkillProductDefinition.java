@@ -29,13 +29,13 @@ public final class InSkillProductDefinition {
     private String version = null;
 
     @JsonProperty("type")
-    private com.amazon.ask.smapi.model.v1.isp.ProductType type = null;
+    private String type = null;
 
     @JsonProperty("referenceName")
     private String referenceName = null;
 
     @JsonProperty("purchasableState")
-    private com.amazon.ask.smapi.model.v1.isp.PurchasableState purchasableState = null;
+    private String purchasableState = null;
 
     @JsonProperty("subscriptionInformation")
     private com.amazon.ask.smapi.model.v1.isp.SubscriptionInformation subscriptionInformation = null;
@@ -89,13 +89,32 @@ public final class InSkillProductDefinition {
         return version;
     }
 
+
     /**
      * Get type
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getTypeAsString().
+     *
      * @return type
     **/
-    @JsonProperty("type")
+    
     public com.amazon.ask.smapi.model.v1.isp.ProductType getType() {
-        return type;
+        return com.amazon.ask.smapi.model.v1.isp.ProductType.fromValue(type);
+    }
+
+    /**
+     * Get the underlying String value for type.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return type as a String value
+    **/
+    @JsonProperty("type")
+    public String getTypeAsString() {
+      return type;
     }
 
     /**
@@ -107,13 +126,32 @@ public final class InSkillProductDefinition {
         return referenceName;
     }
 
+
     /**
      * Get purchasableState
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getPurchasableStateAsString().
+     *
      * @return purchasableState
     **/
-    @JsonProperty("purchasableState")
+    
     public com.amazon.ask.smapi.model.v1.isp.PurchasableState getPurchasableState() {
-        return purchasableState;
+        return com.amazon.ask.smapi.model.v1.isp.PurchasableState.fromValue(purchasableState);
+    }
+
+    /**
+     * Get the underlying String value for purchasableState.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return purchasableState as a String value
+    **/
+    @JsonProperty("purchasableState")
+    public String getPurchasableStateAsString() {
+      return purchasableState;
     }
 
     /**
@@ -125,6 +163,7 @@ public final class InSkillProductDefinition {
         return subscriptionInformation;
     }
 
+
     /**
      * Get publishingInformation
      * @return publishingInformation
@@ -133,6 +172,7 @@ public final class InSkillProductDefinition {
     public com.amazon.ask.smapi.model.v1.isp.PublishingInformation getPublishingInformation() {
         return publishingInformation;
     }
+
 
     /**
      * Get privacyAndCompliance
@@ -143,6 +183,7 @@ public final class InSkillProductDefinition {
         return privacyAndCompliance;
     }
 
+
     /**
      * Special instructions provided by the developer to test the in-skill product.
      * @return testingInstructions
@@ -151,6 +192,7 @@ public final class InSkillProductDefinition {
     public String getTestingInstructions() {
         return testingInstructions;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -206,9 +248,9 @@ public final class InSkillProductDefinition {
   
     public static class Builder {
         private String version;
-        private com.amazon.ask.smapi.model.v1.isp.ProductType type;
+        private String type;
         private String referenceName;
-        private com.amazon.ask.smapi.model.v1.isp.PurchasableState purchasableState;
+        private String purchasableState;
         private com.amazon.ask.smapi.model.v1.isp.SubscriptionInformation subscriptionInformation;
         private com.amazon.ask.smapi.model.v1.isp.PublishingInformation publishingInformation;
         private com.amazon.ask.smapi.model.v1.isp.PrivacyAndCompliance privacyAndCompliance;
@@ -217,6 +259,7 @@ public final class InSkillProductDefinition {
         private Builder() {}
 
         @JsonProperty("version")
+
         public Builder withVersion(String version) {
             this.version = version;
             return this;
@@ -224,13 +267,19 @@ public final class InSkillProductDefinition {
 
 
         @JsonProperty("type")
+        public Builder withType(String type) {
+          this.type = type;
+          return this;
+        }
+
         public Builder withType(com.amazon.ask.smapi.model.v1.isp.ProductType type) {
-            this.type = type;
+            this.type = type != null ? type.toString() : null;
             return this;
         }
 
 
         @JsonProperty("referenceName")
+
         public Builder withReferenceName(String referenceName) {
             this.referenceName = referenceName;
             return this;
@@ -238,13 +287,19 @@ public final class InSkillProductDefinition {
 
 
         @JsonProperty("purchasableState")
+        public Builder withPurchasableState(String purchasableState) {
+          this.purchasableState = purchasableState;
+          return this;
+        }
+
         public Builder withPurchasableState(com.amazon.ask.smapi.model.v1.isp.PurchasableState purchasableState) {
-            this.purchasableState = purchasableState;
+            this.purchasableState = purchasableState != null ? purchasableState.toString() : null;
             return this;
         }
 
 
         @JsonProperty("subscriptionInformation")
+
         public Builder withSubscriptionInformation(com.amazon.ask.smapi.model.v1.isp.SubscriptionInformation subscriptionInformation) {
             this.subscriptionInformation = subscriptionInformation;
             return this;
@@ -252,6 +307,7 @@ public final class InSkillProductDefinition {
 
 
         @JsonProperty("publishingInformation")
+
         public Builder withPublishingInformation(com.amazon.ask.smapi.model.v1.isp.PublishingInformation publishingInformation) {
             this.publishingInformation = publishingInformation;
             return this;
@@ -259,6 +315,7 @@ public final class InSkillProductDefinition {
 
 
         @JsonProperty("privacyAndCompliance")
+
         public Builder withPrivacyAndCompliance(com.amazon.ask.smapi.model.v1.isp.PrivacyAndCompliance privacyAndCompliance) {
             this.privacyAndCompliance = privacyAndCompliance;
             return this;
@@ -266,6 +323,7 @@ public final class InSkillProductDefinition {
 
 
         @JsonProperty("testingInstructions")
+
         public Builder withTestingInstructions(String testingInstructions) {
             this.testingInstructions = testingInstructions;
             return this;

@@ -47,6 +47,7 @@ public final class Input {
         return content;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class Input {
         private Builder() {}
 
         @JsonProperty("content")
+
         public Builder withContent(String content) {
             this.content = content;
             return this;

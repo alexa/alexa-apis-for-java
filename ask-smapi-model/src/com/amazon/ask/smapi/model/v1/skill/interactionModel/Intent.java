@@ -62,6 +62,7 @@ public final class Intent {
         return name;
     }
 
+
     /**
      * List of slots within the intent.
      * @return slots
@@ -71,6 +72,7 @@ public final class Intent {
         return slots;
     }
 
+
     /**
      * Phrases the user can speak e.g. to trigger an intent or provide value for a slot elicitation.
      * @return samples
@@ -79,6 +81,7 @@ public final class Intent {
     public List<String> getSamples() {
         return samples;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -130,6 +133,7 @@ public final class Intent {
         private Builder() {}
 
         @JsonProperty("name")
+
         public Builder withName(String name) {
             this.name = name;
             return this;
@@ -137,6 +141,7 @@ public final class Intent {
 
 
         @JsonProperty("slots")
+
         public Builder withSlots(List<com.amazon.ask.smapi.model.v1.skill.interactionModel.SlotDefinition> slots) {
             this.slots = slots;
             return this;
@@ -151,6 +156,7 @@ public final class Intent {
         }
 
         @JsonProperty("samples")
+
         public Builder withSamples(List<String> samples) {
             this.samples = samples;
             return this;

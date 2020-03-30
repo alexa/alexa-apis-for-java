@@ -62,6 +62,7 @@ public final class VideoApisLocale {
         return videoProviderTargetingNames;
     }
 
+
     /**
      * Get videoProviderLogoUri
      * @return videoProviderLogoUri
@@ -71,6 +72,7 @@ public final class VideoApisLocale {
         return videoProviderLogoUri;
     }
 
+
     /**
      * Get catalogInformation
      * @return catalogInformation
@@ -79,6 +81,7 @@ public final class VideoApisLocale {
     public List<com.amazon.ask.smapi.model.v1.skill.Manifest.VideoCatalogInfo> getCatalogInformation() {
         return catalogInformation;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -130,6 +133,7 @@ public final class VideoApisLocale {
         private Builder() {}
 
         @JsonProperty("videoProviderTargetingNames")
+
         public Builder withVideoProviderTargetingNames(List<String> videoProviderTargetingNames) {
             this.videoProviderTargetingNames = videoProviderTargetingNames;
             return this;
@@ -144,6 +148,7 @@ public final class VideoApisLocale {
         }
 
         @JsonProperty("videoProviderLogoUri")
+
         public Builder withVideoProviderLogoUri(String videoProviderLogoUri) {
             this.videoProviderLogoUri = videoProviderLogoUri;
             return this;
@@ -151,6 +156,7 @@ public final class VideoApisLocale {
 
 
         @JsonProperty("catalogInformation")
+
         public Builder withCatalogInformation(List<com.amazon.ask.smapi.model.v1.skill.Manifest.VideoCatalogInfo> catalogInformation) {
             this.catalogInformation = catalogInformation;
             return this;

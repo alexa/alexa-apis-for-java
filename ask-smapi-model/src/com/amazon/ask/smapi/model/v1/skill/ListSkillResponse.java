@@ -68,6 +68,7 @@ public final class ListSkillResponse {
         return links;
     }
 
+
     /**
      * List of skill summaries. List might contain either one, two or three entries for a given skillId depending on the skill's publication history and the publication method. `Skill containing certified stage` * If a skill was never published to live, this list will contain two entries `:` one with stage 'development' and another with stage 'certified'. Both of these summaries will have same skillId. * For any skill that has been published to 'live', this list will contain three entries `:` one with stage 'development', one with stage `certified` and one with stage 'live'. All of these summaries will have same skillId. `Skill without certified stage` * If a skill was never published to live, this list will contain only one entry for the skill with stage as 'development'. * For any skill that has been published to 'live', this list will contain two entries `:` one with stage 'development' and another with stage 'live'. Both of these summaries will have same skillId. 
      * @return skills
@@ -76,6 +77,7 @@ public final class ListSkillResponse {
     public List<com.amazon.ask.smapi.model.v1.skill.SkillSummary> getSkills() {
         return skills;
     }
+
 
     /**
      * Get isTruncated
@@ -86,6 +88,7 @@ public final class ListSkillResponse {
         return isTruncated;
     }
 
+
     /**
      * Get nextToken
      * @return nextToken
@@ -94,6 +97,7 @@ public final class ListSkillResponse {
     public String getNextToken() {
         return nextToken;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -148,6 +152,7 @@ public final class ListSkillResponse {
         private Builder() {}
 
         @JsonProperty("_links")
+
         public Builder withLinks(com.amazon.ask.smapi.model.v1.Links links) {
             this.links = links;
             return this;
@@ -155,6 +160,7 @@ public final class ListSkillResponse {
 
 
         @JsonProperty("skills")
+
         public Builder withSkills(List<com.amazon.ask.smapi.model.v1.skill.SkillSummary> skills) {
             this.skills = skills;
             return this;
@@ -169,6 +175,7 @@ public final class ListSkillResponse {
         }
 
         @JsonProperty("isTruncated")
+
         public Builder withIsTruncated(Boolean isTruncated) {
             this.isTruncated = isTruncated;
             return this;
@@ -176,6 +183,7 @@ public final class ListSkillResponse {
 
 
         @JsonProperty("nextToken")
+
         public Builder withNextToken(String nextToken) {
             this.nextToken = nextToken;
             return this;

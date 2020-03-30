@@ -47,6 +47,7 @@ public final class Tester {
         return emailId;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class Tester {
         private Builder() {}
 
         @JsonProperty("emailId")
+
         public Builder withEmailId(String emailId) {
             this.emailId = emailId;
             return this;

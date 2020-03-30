@@ -56,7 +56,7 @@ public final class ValidationDetails {
     private String expectedRegexPattern = null;
 
     @JsonProperty("agreementType")
-    private com.amazon.ask.smapi.model.v1.skill.AgreementType agreementType = null;
+    private String agreementType = null;
 
     @JsonProperty("feature")
     private com.amazon.ask.smapi.model.v1.skill.ValidationFeature feature = null;
@@ -176,6 +176,7 @@ public final class ValidationDetails {
         return actualImageAttributes;
     }
 
+
     /**
      * Number of items in an array provided by the customer.
      * @return actualNumberOfItems
@@ -184,6 +185,7 @@ public final class ValidationDetails {
     public Integer getActualNumberOfItems() {
         return actualNumberOfItems;
     }
+
 
     /**
      * Number of characters in a string provided by the customer.
@@ -194,6 +196,7 @@ public final class ValidationDetails {
         return actualStringLength;
     }
 
+
     /**
      * List of allowed content types for a resource.
      * @return allowedContentTypes
@@ -202,6 +205,7 @@ public final class ValidationDetails {
     public List<String> getAllowedContentTypes() {
         return allowedContentTypes;
     }
+
 
     /**
      * List of allowed data types for an instance.
@@ -212,6 +216,7 @@ public final class ValidationDetails {
         return allowedDataTypes;
     }
 
+
     /**
      * List of set of properties representing all possible allowed images.
      * @return allowedImageAttributes
@@ -220,6 +225,7 @@ public final class ValidationDetails {
     public List<com.amazon.ask.smapi.model.v1.skill.ImageAttributes> getAllowedImageAttributes() {
         return allowedImageAttributes;
     }
+
 
     /**
      * Instance conflicting with another instance.
@@ -230,6 +236,7 @@ public final class ValidationDetails {
         return conflictingInstance;
     }
 
+
     /**
      * Instance that is expected by a related instance.
      * @return expectedInstance
@@ -238,6 +245,7 @@ public final class ValidationDetails {
     public com.amazon.ask.smapi.model.v1.skill.Instance getExpectedInstance() {
         return expectedInstance;
     }
+
 
     /**
      * Regular expression that a string instance is expected to match.
@@ -248,13 +256,32 @@ public final class ValidationDetails {
         return expectedRegexPattern;
     }
 
+
     /**
      * Type of the agreement that the customer must be compliant to.
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getAgreementTypeAsString().
+     *
      * @return agreementType
     **/
-    @JsonProperty("agreementType")
+    
     public com.amazon.ask.smapi.model.v1.skill.AgreementType getAgreementType() {
-        return agreementType;
+        return com.amazon.ask.smapi.model.v1.skill.AgreementType.fromValue(agreementType);
+    }
+
+    /**
+     * Get the underlying String value for agreementType.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return agreementType as a String value
+    **/
+    @JsonProperty("agreementType")
+    public String getAgreementTypeAsString() {
+      return agreementType;
     }
 
     /**
@@ -266,6 +293,7 @@ public final class ValidationDetails {
         return feature;
     }
 
+
     /**
      * Endpoint which has a different value for property named type when compared to original endpoint.
      * @return inconsistentEndpoint
@@ -274,6 +302,7 @@ public final class ValidationDetails {
     public com.amazon.ask.smapi.model.v1.skill.ValidationEndpoint getInconsistentEndpoint() {
         return inconsistentEndpoint;
     }
+
 
     /**
      * Minimum allowed value of an integer instance.
@@ -284,6 +313,7 @@ public final class ValidationDetails {
         return minimumIntegerValue;
     }
 
+
     /**
      * Minimum allowed number of items in an array.
      * @return minimumNumberOfItems
@@ -292,6 +322,7 @@ public final class ValidationDetails {
     public Integer getMinimumNumberOfItems() {
         return minimumNumberOfItems;
     }
+
 
     /**
      * Minimum allowed number of characters in a string.
@@ -302,6 +333,7 @@ public final class ValidationDetails {
         return minimumStringLength;
     }
 
+
     /**
      * Maximum allowed value of an integer instance.
      * @return maximumIntegerValue
@@ -310,6 +342,7 @@ public final class ValidationDetails {
     public Integer getMaximumIntegerValue() {
         return maximumIntegerValue;
     }
+
 
     /**
      * Maximum allowed number of items in an array.
@@ -320,6 +353,7 @@ public final class ValidationDetails {
         return maximumNumberOfItems;
     }
 
+
     /**
      * Maximum allowed number of characters in a string.
      * @return maximumStringLength
@@ -328,6 +362,7 @@ public final class ValidationDetails {
     public Integer getMaximumStringLength() {
         return maximumStringLength;
     }
+
 
     /**
      * An Endpoint instance
@@ -338,6 +373,7 @@ public final class ValidationDetails {
         return originalEndpoint;
     }
 
+
     /**
      * An Instance
      * @return originalInstance
@@ -346,6 +382,7 @@ public final class ValidationDetails {
     public com.amazon.ask.smapi.model.v1.skill.Instance getOriginalInstance() {
         return originalInstance;
     }
+
 
     /**
      * Property required but missing in the object.
@@ -356,6 +393,7 @@ public final class ValidationDetails {
         return requiredProperty;
     }
 
+
     /**
      * Property not expected but present in the object.
      * @return unexpectedProperty
@@ -364,6 +402,7 @@ public final class ValidationDetails {
     public String getUnexpectedProperty() {
         return unexpectedProperty;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -455,7 +494,7 @@ public final class ValidationDetails {
         private com.amazon.ask.smapi.model.v1.skill.Instance conflictingInstance;
         private com.amazon.ask.smapi.model.v1.skill.Instance expectedInstance;
         private String expectedRegexPattern;
-        private com.amazon.ask.smapi.model.v1.skill.AgreementType agreementType;
+        private String agreementType;
         private com.amazon.ask.smapi.model.v1.skill.ValidationFeature feature;
         private com.amazon.ask.smapi.model.v1.skill.ValidationEndpoint inconsistentEndpoint;
         private Integer minimumIntegerValue;
@@ -472,6 +511,7 @@ public final class ValidationDetails {
         private Builder() {}
 
         @JsonProperty("actualImageAttributes")
+
         public Builder withActualImageAttributes(com.amazon.ask.smapi.model.v1.skill.ImageAttributes actualImageAttributes) {
             this.actualImageAttributes = actualImageAttributes;
             return this;
@@ -479,6 +519,7 @@ public final class ValidationDetails {
 
 
         @JsonProperty("actualNumberOfItems")
+
         public Builder withActualNumberOfItems(Integer actualNumberOfItems) {
             this.actualNumberOfItems = actualNumberOfItems;
             return this;
@@ -486,6 +527,7 @@ public final class ValidationDetails {
 
 
         @JsonProperty("actualStringLength")
+
         public Builder withActualStringLength(Integer actualStringLength) {
             this.actualStringLength = actualStringLength;
             return this;
@@ -493,6 +535,7 @@ public final class ValidationDetails {
 
 
         @JsonProperty("allowedContentTypes")
+
         public Builder withAllowedContentTypes(List<String> allowedContentTypes) {
             this.allowedContentTypes = allowedContentTypes;
             return this;
@@ -507,6 +550,7 @@ public final class ValidationDetails {
         }
 
         @JsonProperty("allowedDataTypes")
+
         public Builder withAllowedDataTypes(List<com.amazon.ask.smapi.model.v1.skill.ValidationDataTypes> allowedDataTypes) {
             this.allowedDataTypes = allowedDataTypes;
             return this;
@@ -521,6 +565,7 @@ public final class ValidationDetails {
         }
 
         @JsonProperty("allowedImageAttributes")
+
         public Builder withAllowedImageAttributes(List<com.amazon.ask.smapi.model.v1.skill.ImageAttributes> allowedImageAttributes) {
             this.allowedImageAttributes = allowedImageAttributes;
             return this;
@@ -535,6 +580,7 @@ public final class ValidationDetails {
         }
 
         @JsonProperty("conflictingInstance")
+
         public Builder withConflictingInstance(com.amazon.ask.smapi.model.v1.skill.Instance conflictingInstance) {
             this.conflictingInstance = conflictingInstance;
             return this;
@@ -542,6 +588,7 @@ public final class ValidationDetails {
 
 
         @JsonProperty("expectedInstance")
+
         public Builder withExpectedInstance(com.amazon.ask.smapi.model.v1.skill.Instance expectedInstance) {
             this.expectedInstance = expectedInstance;
             return this;
@@ -549,6 +596,7 @@ public final class ValidationDetails {
 
 
         @JsonProperty("expectedRegexPattern")
+
         public Builder withExpectedRegexPattern(String expectedRegexPattern) {
             this.expectedRegexPattern = expectedRegexPattern;
             return this;
@@ -556,13 +604,19 @@ public final class ValidationDetails {
 
 
         @JsonProperty("agreementType")
+        public Builder withAgreementType(String agreementType) {
+          this.agreementType = agreementType;
+          return this;
+        }
+
         public Builder withAgreementType(com.amazon.ask.smapi.model.v1.skill.AgreementType agreementType) {
-            this.agreementType = agreementType;
+            this.agreementType = agreementType != null ? agreementType.toString() : null;
             return this;
         }
 
 
         @JsonProperty("feature")
+
         public Builder withFeature(com.amazon.ask.smapi.model.v1.skill.ValidationFeature feature) {
             this.feature = feature;
             return this;
@@ -570,6 +624,7 @@ public final class ValidationDetails {
 
 
         @JsonProperty("inconsistentEndpoint")
+
         public Builder withInconsistentEndpoint(com.amazon.ask.smapi.model.v1.skill.ValidationEndpoint inconsistentEndpoint) {
             this.inconsistentEndpoint = inconsistentEndpoint;
             return this;
@@ -577,6 +632,7 @@ public final class ValidationDetails {
 
 
         @JsonProperty("minimumIntegerValue")
+
         public Builder withMinimumIntegerValue(Integer minimumIntegerValue) {
             this.minimumIntegerValue = minimumIntegerValue;
             return this;
@@ -584,6 +640,7 @@ public final class ValidationDetails {
 
 
         @JsonProperty("minimumNumberOfItems")
+
         public Builder withMinimumNumberOfItems(Integer minimumNumberOfItems) {
             this.minimumNumberOfItems = minimumNumberOfItems;
             return this;
@@ -591,6 +648,7 @@ public final class ValidationDetails {
 
 
         @JsonProperty("minimumStringLength")
+
         public Builder withMinimumStringLength(Integer minimumStringLength) {
             this.minimumStringLength = minimumStringLength;
             return this;
@@ -598,6 +656,7 @@ public final class ValidationDetails {
 
 
         @JsonProperty("maximumIntegerValue")
+
         public Builder withMaximumIntegerValue(Integer maximumIntegerValue) {
             this.maximumIntegerValue = maximumIntegerValue;
             return this;
@@ -605,6 +664,7 @@ public final class ValidationDetails {
 
 
         @JsonProperty("maximumNumberOfItems")
+
         public Builder withMaximumNumberOfItems(Integer maximumNumberOfItems) {
             this.maximumNumberOfItems = maximumNumberOfItems;
             return this;
@@ -612,6 +672,7 @@ public final class ValidationDetails {
 
 
         @JsonProperty("maximumStringLength")
+
         public Builder withMaximumStringLength(Integer maximumStringLength) {
             this.maximumStringLength = maximumStringLength;
             return this;
@@ -619,6 +680,7 @@ public final class ValidationDetails {
 
 
         @JsonProperty("originalEndpoint")
+
         public Builder withOriginalEndpoint(com.amazon.ask.smapi.model.v1.skill.ValidationEndpoint originalEndpoint) {
             this.originalEndpoint = originalEndpoint;
             return this;
@@ -626,6 +688,7 @@ public final class ValidationDetails {
 
 
         @JsonProperty("originalInstance")
+
         public Builder withOriginalInstance(com.amazon.ask.smapi.model.v1.skill.Instance originalInstance) {
             this.originalInstance = originalInstance;
             return this;
@@ -633,6 +696,7 @@ public final class ValidationDetails {
 
 
         @JsonProperty("requiredProperty")
+
         public Builder withRequiredProperty(String requiredProperty) {
             this.requiredProperty = requiredProperty;
             return this;
@@ -640,6 +704,7 @@ public final class ValidationDetails {
 
 
         @JsonProperty("unexpectedProperty")
+
         public Builder withUnexpectedProperty(String unexpectedProperty) {
             this.unexpectedProperty = unexpectedProperty;
             return this;

@@ -62,6 +62,7 @@ public final class ListPrivateDistributionAccountsResponse {
         return links;
     }
 
+
     /**
      * List of PrivateDistributionAccounts.
      * @return privateDistributionAccounts
@@ -71,6 +72,7 @@ public final class ListPrivateDistributionAccountsResponse {
         return privateDistributionAccounts;
     }
 
+
     /**
      * Get nextToken
      * @return nextToken
@@ -79,6 +81,7 @@ public final class ListPrivateDistributionAccountsResponse {
     public String getNextToken() {
         return nextToken;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -130,6 +133,7 @@ public final class ListPrivateDistributionAccountsResponse {
         private Builder() {}
 
         @JsonProperty("_links")
+
         public Builder withLinks(com.amazon.ask.smapi.model.v1.Links links) {
             this.links = links;
             return this;
@@ -137,6 +141,7 @@ public final class ListPrivateDistributionAccountsResponse {
 
 
         @JsonProperty("privateDistributionAccounts")
+
         public Builder withPrivateDistributionAccounts(List<com.amazon.ask.smapi.model.v1.skill.Private.PrivateDistributionAccount> privateDistributionAccounts) {
             this.privateDistributionAccounts = privateDistributionAccounts;
             return this;
@@ -151,6 +156,7 @@ public final class ListPrivateDistributionAccountsResponse {
         }
 
         @JsonProperty("nextToken")
+
         public Builder withNextToken(String nextToken) {
             this.nextToken = nextToken;
             return this;

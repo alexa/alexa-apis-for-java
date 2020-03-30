@@ -29,7 +29,7 @@ import java.util.ArrayList;
 public final class AccountLinkingResponse {
 
     @JsonProperty("type")
-    private com.amazon.ask.smapi.model.v1.skill.accountLinking.AccountLinkingType type = null;
+    private String type = null;
 
     @JsonProperty("authorizationUrl")
     private String authorizationUrl = null;
@@ -47,7 +47,7 @@ public final class AccountLinkingResponse {
     private String accessTokenUrl = null;
 
     @JsonProperty("accessTokenScheme")
-    private com.amazon.ask.smapi.model.v1.skill.accountLinking.AccessTokenSchemeType accessTokenScheme = null;
+    private String accessTokenScheme = null;
 
     @JsonProperty("defaultTokenExpirationInSeconds")
     private Integer defaultTokenExpirationInSeconds = null;
@@ -91,11 +91,29 @@ public final class AccountLinkingResponse {
 
     /**
      * Get type
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getTypeAsString().
+     *
      * @return type
     **/
-    @JsonProperty("type")
+    
     public com.amazon.ask.smapi.model.v1.skill.accountLinking.AccountLinkingType getType() {
-        return type;
+        return com.amazon.ask.smapi.model.v1.skill.accountLinking.AccountLinkingType.fromValue(type);
+    }
+
+    /**
+     * Get the underlying String value for type.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return type as a String value
+    **/
+    @JsonProperty("type")
+    public String getTypeAsString() {
+      return type;
     }
 
     /**
@@ -107,6 +125,7 @@ public final class AccountLinkingResponse {
         return authorizationUrl;
     }
 
+
     /**
      * The list of domains that the authorization URL will fetch content from.
      * @return domains
@@ -115,6 +134,7 @@ public final class AccountLinkingResponse {
     public List<String> getDomains() {
         return domains;
     }
+
 
     /**
      * The unique public string used to identify the client requesting for authentication.
@@ -125,6 +145,7 @@ public final class AccountLinkingResponse {
         return clientId;
     }
 
+
     /**
      * The list of permissions which will be requested from the skill user.
      * @return scopes
@@ -133,6 +154,7 @@ public final class AccountLinkingResponse {
     public List<String> getScopes() {
         return scopes;
     }
+
 
     /**
      * The url used for access token and token refresh requests.
@@ -143,13 +165,32 @@ public final class AccountLinkingResponse {
         return accessTokenUrl;
     }
 
+
     /**
      * Get accessTokenScheme
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getAccessTokenSchemeAsString().
+     *
      * @return accessTokenScheme
     **/
-    @JsonProperty("accessTokenScheme")
+    
     public com.amazon.ask.smapi.model.v1.skill.accountLinking.AccessTokenSchemeType getAccessTokenScheme() {
-        return accessTokenScheme;
+        return com.amazon.ask.smapi.model.v1.skill.accountLinking.AccessTokenSchemeType.fromValue(accessTokenScheme);
+    }
+
+    /**
+     * Get the underlying String value for accessTokenScheme.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return accessTokenScheme as a String value
+    **/
+    @JsonProperty("accessTokenScheme")
+    public String getAccessTokenSchemeAsString() {
+      return accessTokenScheme;
     }
 
     /**
@@ -161,6 +202,7 @@ public final class AccountLinkingResponse {
         return defaultTokenExpirationInSeconds;
     }
 
+
     /**
      * The list of valid urls to redirect back to, when the linking process is initiated from a third party system.
      * @return redirectUrls
@@ -169,6 +211,7 @@ public final class AccountLinkingResponse {
     public List<String> getRedirectUrls() {
         return redirectUrls;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -225,26 +268,32 @@ public final class AccountLinkingResponse {
     }
   
     public static class Builder {
-        private com.amazon.ask.smapi.model.v1.skill.accountLinking.AccountLinkingType type;
+        private String type;
         private String authorizationUrl;
         private List<String> domains;
         private String clientId;
         private List<String> scopes;
         private String accessTokenUrl;
-        private com.amazon.ask.smapi.model.v1.skill.accountLinking.AccessTokenSchemeType accessTokenScheme;
+        private String accessTokenScheme;
         private Integer defaultTokenExpirationInSeconds;
         private List<String> redirectUrls;
 
         private Builder() {}
 
         @JsonProperty("type")
+        public Builder withType(String type) {
+          this.type = type;
+          return this;
+        }
+
         public Builder withType(com.amazon.ask.smapi.model.v1.skill.accountLinking.AccountLinkingType type) {
-            this.type = type;
+            this.type = type != null ? type.toString() : null;
             return this;
         }
 
 
         @JsonProperty("authorizationUrl")
+
         public Builder withAuthorizationUrl(String authorizationUrl) {
             this.authorizationUrl = authorizationUrl;
             return this;
@@ -252,6 +301,7 @@ public final class AccountLinkingResponse {
 
 
         @JsonProperty("domains")
+
         public Builder withDomains(List<String> domains) {
             this.domains = domains;
             return this;
@@ -266,6 +316,7 @@ public final class AccountLinkingResponse {
         }
 
         @JsonProperty("clientId")
+
         public Builder withClientId(String clientId) {
             this.clientId = clientId;
             return this;
@@ -273,6 +324,7 @@ public final class AccountLinkingResponse {
 
 
         @JsonProperty("scopes")
+
         public Builder withScopes(List<String> scopes) {
             this.scopes = scopes;
             return this;
@@ -287,6 +339,7 @@ public final class AccountLinkingResponse {
         }
 
         @JsonProperty("accessTokenUrl")
+
         public Builder withAccessTokenUrl(String accessTokenUrl) {
             this.accessTokenUrl = accessTokenUrl;
             return this;
@@ -294,13 +347,19 @@ public final class AccountLinkingResponse {
 
 
         @JsonProperty("accessTokenScheme")
+        public Builder withAccessTokenScheme(String accessTokenScheme) {
+          this.accessTokenScheme = accessTokenScheme;
+          return this;
+        }
+
         public Builder withAccessTokenScheme(com.amazon.ask.smapi.model.v1.skill.accountLinking.AccessTokenSchemeType accessTokenScheme) {
-            this.accessTokenScheme = accessTokenScheme;
+            this.accessTokenScheme = accessTokenScheme != null ? accessTokenScheme.toString() : null;
             return this;
         }
 
 
         @JsonProperty("defaultTokenExpirationInSeconds")
+
         public Builder withDefaultTokenExpirationInSeconds(Integer defaultTokenExpirationInSeconds) {
             this.defaultTokenExpirationInSeconds = defaultTokenExpirationInSeconds;
             return this;
@@ -308,6 +367,7 @@ public final class AccountLinkingResponse {
 
 
         @JsonProperty("redirectUrls")
+
         public Builder withRedirectUrls(List<String> redirectUrls) {
             this.redirectUrls = redirectUrls;
             return this;

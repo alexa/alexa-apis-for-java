@@ -50,6 +50,7 @@ public final class ValidationsApiRequest {
         return locales;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -94,6 +95,7 @@ public final class ValidationsApiRequest {
         private Builder() {}
 
         @JsonProperty("locales")
+
         public Builder withLocales(List<String> locales) {
             this.locales = locales;
             return this;

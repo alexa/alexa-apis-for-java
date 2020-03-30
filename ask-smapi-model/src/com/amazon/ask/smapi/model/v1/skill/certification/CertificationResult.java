@@ -47,6 +47,7 @@ public final class CertificationResult {
         return distributionInfo;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class CertificationResult {
         private Builder() {}
 
         @JsonProperty("distributionInfo")
+
         public Builder withDistributionInfo(com.amazon.ask.smapi.model.v1.skill.certification.DistributionInfo distributionInfo) {
             this.distributionInfo = distributionInfo;
             return this;

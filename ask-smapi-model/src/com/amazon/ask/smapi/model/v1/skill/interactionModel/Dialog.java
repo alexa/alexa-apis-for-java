@@ -29,7 +29,7 @@ import java.util.ArrayList;
 public final class Dialog {
 
     @JsonProperty("delegationStrategy")
-    private com.amazon.ask.smapi.model.v1.skill.interactionModel.DelegationStrategyType delegationStrategy = null;
+    private String delegationStrategy = null;
 
     @JsonProperty("intents")
     private List<com.amazon.ask.smapi.model.v1.skill.interactionModel.DialogIntents> intents = new ArrayList<com.amazon.ask.smapi.model.v1.skill.interactionModel.DialogIntents>();
@@ -49,11 +49,29 @@ public final class Dialog {
 
     /**
      * Defines a delegation strategy for the dialogs in this dialog model.
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getDelegationStrategyAsString().
+     *
      * @return delegationStrategy
     **/
-    @JsonProperty("delegationStrategy")
+    
     public com.amazon.ask.smapi.model.v1.skill.interactionModel.DelegationStrategyType getDelegationStrategy() {
-        return delegationStrategy;
+        return com.amazon.ask.smapi.model.v1.skill.interactionModel.DelegationStrategyType.fromValue(delegationStrategy);
+    }
+
+    /**
+     * Get the underlying String value for delegationStrategy.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return delegationStrategy as a String value
+    **/
+    @JsonProperty("delegationStrategy")
+    public String getDelegationStrategyAsString() {
+      return delegationStrategy;
     }
 
     /**
@@ -64,6 +82,7 @@ public final class Dialog {
     public List<com.amazon.ask.smapi.model.v1.skill.interactionModel.DialogIntents> getIntents() {
         return intents;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -106,19 +125,25 @@ public final class Dialog {
     }
   
     public static class Builder {
-        private com.amazon.ask.smapi.model.v1.skill.interactionModel.DelegationStrategyType delegationStrategy;
+        private String delegationStrategy;
         private List<com.amazon.ask.smapi.model.v1.skill.interactionModel.DialogIntents> intents;
 
         private Builder() {}
 
         @JsonProperty("delegationStrategy")
+        public Builder withDelegationStrategy(String delegationStrategy) {
+          this.delegationStrategy = delegationStrategy;
+          return this;
+        }
+
         public Builder withDelegationStrategy(com.amazon.ask.smapi.model.v1.skill.interactionModel.DelegationStrategyType delegationStrategy) {
-            this.delegationStrategy = delegationStrategy;
+            this.delegationStrategy = delegationStrategy != null ? delegationStrategy.toString() : null;
             return this;
         }
 
 
         @JsonProperty("intents")
+
         public Builder withIntents(List<com.amazon.ask.smapi.model.v1.skill.interactionModel.DialogIntents> intents) {
             this.intents = intents;
             return this;

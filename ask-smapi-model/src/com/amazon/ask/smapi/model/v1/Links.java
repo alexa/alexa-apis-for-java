@@ -53,6 +53,7 @@ public final class Links {
         return self;
     }
 
+
     /**
      * Get next
      * @return next
@@ -61,6 +62,7 @@ public final class Links {
     public com.amazon.ask.smapi.model.v1.Link getNext() {
         return next;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class Links {
         private Builder() {}
 
         @JsonProperty("self")
+
         public Builder withSelf(com.amazon.ask.smapi.model.v1.Link self) {
             this.self = self;
             return this;
@@ -116,6 +119,7 @@ public final class Links {
 
 
         @JsonProperty("next")
+
         public Builder withNext(com.amazon.ask.smapi.model.v1.Link next) {
             this.next = next;
             return this;

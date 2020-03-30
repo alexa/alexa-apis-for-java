@@ -31,7 +31,7 @@ public final class BetaTest {
     private OffsetDateTime expiryDate = null;
 
     @JsonProperty("status")
-    private com.amazon.ask.smapi.model.v1.skill.betaTest.Status status = null;
+    private String status = null;
 
     @JsonProperty("feedbackEmail")
     private String feedbackEmail = null;
@@ -73,13 +73,32 @@ public final class BetaTest {
         return expiryDate;
     }
 
+
     /**
      * Get status
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getStatusAsString().
+     *
      * @return status
     **/
-    @JsonProperty("status")
+    
     public com.amazon.ask.smapi.model.v1.skill.betaTest.Status getStatus() {
-        return status;
+        return com.amazon.ask.smapi.model.v1.skill.betaTest.Status.fromValue(status);
+    }
+
+    /**
+     * Get the underlying String value for status.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return status as a String value
+    **/
+    @JsonProperty("status")
+    public String getStatusAsString() {
+      return status;
     }
 
     /**
@@ -91,6 +110,7 @@ public final class BetaTest {
         return feedbackEmail;
     }
 
+
     /**
      * Deeplinking for getting authorized to the beta test.
      * @return invitationUrl
@@ -100,6 +120,7 @@ public final class BetaTest {
         return invitationUrl;
     }
 
+
     /**
      * Remaining invite count for the beta test.
      * @return invitesRemaining
@@ -108,6 +129,7 @@ public final class BetaTest {
     public BigDecimal getInvitesRemaining() {
         return invitesRemaining;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -157,7 +179,7 @@ public final class BetaTest {
   
     public static class Builder {
         private OffsetDateTime expiryDate;
-        private com.amazon.ask.smapi.model.v1.skill.betaTest.Status status;
+        private String status;
         private String feedbackEmail;
         private String invitationUrl;
         private BigDecimal invitesRemaining;
@@ -165,6 +187,7 @@ public final class BetaTest {
         private Builder() {}
 
         @JsonProperty("expiryDate")
+
         public Builder withExpiryDate(OffsetDateTime expiryDate) {
             this.expiryDate = expiryDate;
             return this;
@@ -172,13 +195,19 @@ public final class BetaTest {
 
 
         @JsonProperty("status")
+        public Builder withStatus(String status) {
+          this.status = status;
+          return this;
+        }
+
         public Builder withStatus(com.amazon.ask.smapi.model.v1.skill.betaTest.Status status) {
-            this.status = status;
+            this.status = status != null ? status.toString() : null;
             return this;
         }
 
 
         @JsonProperty("feedbackEmail")
+
         public Builder withFeedbackEmail(String feedbackEmail) {
             this.feedbackEmail = feedbackEmail;
             return this;
@@ -186,6 +215,7 @@ public final class BetaTest {
 
 
         @JsonProperty("invitationUrl")
+
         public Builder withInvitationUrl(String invitationUrl) {
             this.invitationUrl = invitationUrl;
             return this;
@@ -193,6 +223,7 @@ public final class BetaTest {
 
 
         @JsonProperty("invitesRemaining")
+
         public Builder withInvitesRemaining(BigDecimal invitesRemaining) {
             this.invitesRemaining = invitesRemaining;
             return this;

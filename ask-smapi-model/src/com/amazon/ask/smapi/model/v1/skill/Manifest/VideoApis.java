@@ -68,6 +68,7 @@ public final class VideoApis {
         return regions;
     }
 
+
     /**
      * Defines the structure for the locale specific video api information.
      * @return locales
@@ -76,6 +77,7 @@ public final class VideoApis {
     public Map<String, com.amazon.ask.smapi.model.v1.skill.Manifest.VideoApisLocale> getLocales() {
         return locales;
     }
+
 
     /**
      * Get endpoint
@@ -86,6 +88,7 @@ public final class VideoApis {
         return endpoint;
     }
 
+
     /**
      * Object that contains &amp;lt;country&amp;gt; Objects for each supported country.
      * @return countries
@@ -94,6 +97,7 @@ public final class VideoApis {
     public Map<String, com.amazon.ask.smapi.model.v1.skill.Manifest.VideoCountryInfo> getCountries() {
         return countries;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -148,6 +152,7 @@ public final class VideoApis {
         private Builder() {}
 
         @JsonProperty("regions")
+
         public Builder withRegions(Map<String, com.amazon.ask.smapi.model.v1.skill.Manifest.VideoRegion> regions) {
             this.regions = regions;
             return this;
@@ -162,6 +167,7 @@ public final class VideoApis {
         }
 
         @JsonProperty("locales")
+
         public Builder withLocales(Map<String, com.amazon.ask.smapi.model.v1.skill.Manifest.VideoApisLocale> locales) {
             this.locales = locales;
             return this;
@@ -176,6 +182,7 @@ public final class VideoApis {
         }
 
         @JsonProperty("endpoint")
+
         public Builder withEndpoint(com.amazon.ask.smapi.model.v1.skill.Manifest.LambdaEndpoint endpoint) {
             this.endpoint = endpoint;
             return this;
@@ -183,6 +190,7 @@ public final class VideoApis {
 
 
         @JsonProperty("countries")
+
         public Builder withCountries(Map<String, com.amazon.ask.smapi.model.v1.skill.Manifest.VideoCountryInfo> countries) {
             this.countries = countries;
             return this;

@@ -53,6 +53,7 @@ public final class UpdateRequest {
         return name;
     }
 
+
     /**
      * The catalog description with a 255 character maximum.
      * @return description
@@ -61,6 +62,7 @@ public final class UpdateRequest {
     public String getDescription() {
         return description;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class UpdateRequest {
         private Builder() {}
 
         @JsonProperty("name")
+
         public Builder withName(String name) {
             this.name = name;
             return this;
@@ -116,6 +119,7 @@ public final class UpdateRequest {
 
 
         @JsonProperty("description")
+
         public Builder withDescription(String description) {
             this.description = description;
             return this;

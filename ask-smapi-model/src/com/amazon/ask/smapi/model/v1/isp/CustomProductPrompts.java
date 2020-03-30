@@ -53,6 +53,7 @@ public final class CustomProductPrompts {
         return purchasePromptDescription;
     }
 
+
     /**
      * Confirmation of in-skill product purchase.
      * @return boughtConfirmationPrompt
@@ -61,6 +62,7 @@ public final class CustomProductPrompts {
     public String getBoughtConfirmationPrompt() {
         return boughtConfirmationPrompt;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class CustomProductPrompts {
         private Builder() {}
 
         @JsonProperty("purchasePromptDescription")
+
         public Builder withPurchasePromptDescription(String purchasePromptDescription) {
             this.purchasePromptDescription = purchasePromptDescription;
             return this;
@@ -116,6 +119,7 @@ public final class CustomProductPrompts {
 
 
         @JsonProperty("boughtConfirmationPrompt")
+
         public Builder withBoughtConfirmationPrompt(String boughtConfirmationPrompt) {
             this.boughtConfirmationPrompt = boughtConfirmationPrompt;
             return this;

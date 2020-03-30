@@ -50,6 +50,7 @@ public final class VideoCountryInfo {
         return catalogInformation;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -94,6 +95,7 @@ public final class VideoCountryInfo {
         private Builder() {}
 
         @JsonProperty("catalogInformation")
+
         public Builder withCatalogInformation(List<com.amazon.ask.smapi.model.v1.skill.Manifest.VideoCatalogInfo> catalogInformation) {
             this.catalogInformation = catalogInformation;
             return this;

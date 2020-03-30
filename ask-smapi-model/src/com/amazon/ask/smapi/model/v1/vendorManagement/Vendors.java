@@ -50,6 +50,7 @@ public final class Vendors {
         return vendors;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -94,6 +95,7 @@ public final class Vendors {
         private Builder() {}
 
         @JsonProperty("vendors")
+
         public Builder withVendors(List<com.amazon.ask.smapi.model.v1.vendorManagement.Vendor> vendors) {
             this.vendors = vendors;
             return this;

@@ -26,7 +26,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public final class SubmitSkillForCertificationRequest {
 
     @JsonProperty("publicationMethod")
-    private com.amazon.ask.smapi.model.v1.skill.PublicationMethod publicationMethod = null;
+    private String publicationMethod = null;
 
     public static Builder builder() {
         return new Builder();
@@ -40,11 +40,29 @@ public final class SubmitSkillForCertificationRequest {
 
     /**
      * Get publicationMethod
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getPublicationMethodAsString().
+     *
      * @return publicationMethod
     **/
-    @JsonProperty("publicationMethod")
+    
     public com.amazon.ask.smapi.model.v1.skill.PublicationMethod getPublicationMethod() {
-        return publicationMethod;
+        return com.amazon.ask.smapi.model.v1.skill.PublicationMethod.fromValue(publicationMethod);
+    }
+
+    /**
+     * Get the underlying String value for publicationMethod.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return publicationMethod as a String value
+    **/
+    @JsonProperty("publicationMethod")
+    public String getPublicationMethodAsString() {
+      return publicationMethod;
     }
 
     @Override
@@ -86,13 +104,18 @@ public final class SubmitSkillForCertificationRequest {
     }
   
     public static class Builder {
-        private com.amazon.ask.smapi.model.v1.skill.PublicationMethod publicationMethod;
+        private String publicationMethod;
 
         private Builder() {}
 
         @JsonProperty("publicationMethod")
+        public Builder withPublicationMethod(String publicationMethod) {
+          this.publicationMethod = publicationMethod;
+          return this;
+        }
+
         public Builder withPublicationMethod(com.amazon.ask.smapi.model.v1.skill.PublicationMethod publicationMethod) {
-            this.publicationMethod = publicationMethod;
+            this.publicationMethod = publicationMethod != null ? publicationMethod.toString() : null;
             return this;
         }
 

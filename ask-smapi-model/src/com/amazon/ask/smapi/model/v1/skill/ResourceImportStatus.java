@@ -32,10 +32,10 @@ public final class ResourceImportStatus {
     private String name = null;
 
     @JsonProperty("status")
-    private com.amazon.ask.smapi.model.v1.skill.ResponseStatus status = null;
+    private String status = null;
 
     @JsonProperty("action")
-    private com.amazon.ask.smapi.model.v1.skill.Action action = null;
+    private String action = null;
 
     @JsonProperty("errors")
     private List<com.amazon.ask.smapi.model.v1.skill.StandardizedError> errors = new ArrayList<com.amazon.ask.smapi.model.v1.skill.StandardizedError>();
@@ -74,22 +74,59 @@ public final class ResourceImportStatus {
         return name;
     }
 
+
     /**
      * Get status
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getStatusAsString().
+     *
      * @return status
     **/
-    @JsonProperty("status")
+    
     public com.amazon.ask.smapi.model.v1.skill.ResponseStatus getStatus() {
-        return status;
+        return com.amazon.ask.smapi.model.v1.skill.ResponseStatus.fromValue(status);
+    }
+
+    /**
+     * Get the underlying String value for status.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return status as a String value
+    **/
+    @JsonProperty("status")
+    public String getStatusAsString() {
+      return status;
     }
 
     /**
      * Get action
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getActionAsString().
+     *
      * @return action
     **/
-    @JsonProperty("action")
+    
     public com.amazon.ask.smapi.model.v1.skill.Action getAction() {
-        return action;
+        return com.amazon.ask.smapi.model.v1.skill.Action.fromValue(action);
+    }
+
+    /**
+     * Get the underlying String value for action.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return action as a String value
+    **/
+    @JsonProperty("action")
+    public String getActionAsString() {
+      return action;
     }
 
     /**
@@ -101,6 +138,7 @@ public final class ResourceImportStatus {
         return errors;
     }
 
+
     /**
      * Get warnings
      * @return warnings
@@ -109,6 +147,7 @@ public final class ResourceImportStatus {
     public List<com.amazon.ask.smapi.model.v1.skill.StandardizedError> getWarnings() {
         return warnings;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -158,14 +197,15 @@ public final class ResourceImportStatus {
   
     public static class Builder {
         private String name;
-        private com.amazon.ask.smapi.model.v1.skill.ResponseStatus status;
-        private com.amazon.ask.smapi.model.v1.skill.Action action;
+        private String status;
+        private String action;
         private List<com.amazon.ask.smapi.model.v1.skill.StandardizedError> errors;
         private List<com.amazon.ask.smapi.model.v1.skill.StandardizedError> warnings;
 
         private Builder() {}
 
         @JsonProperty("name")
+
         public Builder withName(String name) {
             this.name = name;
             return this;
@@ -173,20 +213,31 @@ public final class ResourceImportStatus {
 
 
         @JsonProperty("status")
+        public Builder withStatus(String status) {
+          this.status = status;
+          return this;
+        }
+
         public Builder withStatus(com.amazon.ask.smapi.model.v1.skill.ResponseStatus status) {
-            this.status = status;
+            this.status = status != null ? status.toString() : null;
             return this;
         }
 
 
         @JsonProperty("action")
+        public Builder withAction(String action) {
+          this.action = action;
+          return this;
+        }
+
         public Builder withAction(com.amazon.ask.smapi.model.v1.skill.Action action) {
-            this.action = action;
+            this.action = action != null ? action.toString() : null;
             return this;
         }
 
 
         @JsonProperty("errors")
+
         public Builder withErrors(List<com.amazon.ask.smapi.model.v1.skill.StandardizedError> errors) {
             this.errors = errors;
             return this;
@@ -201,6 +252,7 @@ public final class ResourceImportStatus {
         }
 
         @JsonProperty("warnings")
+
         public Builder withWarnings(List<com.amazon.ask.smapi.model.v1.skill.StandardizedError> warnings) {
             this.warnings = warnings;
             return this;

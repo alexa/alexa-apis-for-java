@@ -53,6 +53,7 @@ public final class SkillManifestCustomTask {
         return name;
     }
 
+
     /**
      * Version of the task.
      * @return version
@@ -61,6 +62,7 @@ public final class SkillManifestCustomTask {
     public String getVersion() {
         return version;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class SkillManifestCustomTask {
         private Builder() {}
 
         @JsonProperty("name")
+
         public Builder withName(String name) {
             this.name = name;
             return this;
@@ -116,6 +119,7 @@ public final class SkillManifestCustomTask {
 
 
         @JsonProperty("version")
+
         public Builder withVersion(String version) {
             this.version = version;
             return this;

@@ -60,6 +60,7 @@ public final class EstimationUpdate {
         return originalEstimatedCompletionTimestamp;
     }
 
+
     /**
      * Timestamp for originally estimated completion of certification review for the skill.
      * @return revisedEstimatedCompletionTimestamp
@@ -69,6 +70,7 @@ public final class EstimationUpdate {
         return revisedEstimatedCompletionTimestamp;
     }
 
+
     /**
      * Reason for updates to estimates for certification review
      * @return reason
@@ -77,6 +79,7 @@ public final class EstimationUpdate {
     public String getReason() {
         return reason;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -128,6 +131,7 @@ public final class EstimationUpdate {
         private Builder() {}
 
         @JsonProperty("originalEstimatedCompletionTimestamp")
+
         public Builder withOriginalEstimatedCompletionTimestamp(OffsetDateTime originalEstimatedCompletionTimestamp) {
             this.originalEstimatedCompletionTimestamp = originalEstimatedCompletionTimestamp;
             return this;
@@ -135,6 +139,7 @@ public final class EstimationUpdate {
 
 
         @JsonProperty("revisedEstimatedCompletionTimestamp")
+
         public Builder withRevisedEstimatedCompletionTimestamp(OffsetDateTime revisedEstimatedCompletionTimestamp) {
             this.revisedEstimatedCompletionTimestamp = revisedEstimatedCompletionTimestamp;
             return this;
@@ -142,6 +147,7 @@ public final class EstimationUpdate {
 
 
         @JsonProperty("reason")
+
         public Builder withReason(String reason) {
             this.reason = reason;
             return this;

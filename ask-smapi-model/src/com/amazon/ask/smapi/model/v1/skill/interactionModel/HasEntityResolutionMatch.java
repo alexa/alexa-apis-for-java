@@ -80,6 +80,7 @@ public final class HasEntityResolutionMatch extends com.amazon.ask.smapi.model.v
         private Builder() {}
 
         @JsonProperty("prompt")
+
         public Builder withPrompt(String prompt) {
             this.prompt = prompt;
             return this;

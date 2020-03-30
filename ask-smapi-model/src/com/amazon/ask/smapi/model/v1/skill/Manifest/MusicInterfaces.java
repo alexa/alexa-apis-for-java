@@ -62,6 +62,7 @@ public final class MusicInterfaces {
         return namespace;
     }
 
+
     /**
      * Version of the interface.
      * @return version
@@ -71,6 +72,7 @@ public final class MusicInterfaces {
         return version;
     }
 
+
     /**
      * Contains a list of requests/messages that skill can handle.
      * @return requests
@@ -79,6 +81,7 @@ public final class MusicInterfaces {
     public List<com.amazon.ask.smapi.model.v1.skill.Manifest.MusicRequest> getRequests() {
         return requests;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -130,6 +133,7 @@ public final class MusicInterfaces {
         private Builder() {}
 
         @JsonProperty("namespace")
+
         public Builder withNamespace(String namespace) {
             this.namespace = namespace;
             return this;
@@ -137,6 +141,7 @@ public final class MusicInterfaces {
 
 
         @JsonProperty("version")
+
         public Builder withVersion(String version) {
             this.version = version;
             return this;
@@ -144,6 +149,7 @@ public final class MusicInterfaces {
 
 
         @JsonProperty("requests")
+
         public Builder withRequests(List<com.amazon.ask.smapi.model.v1.skill.Manifest.MusicRequest> requests) {
             this.requests = requests;
             return this;

@@ -30,7 +30,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public final class InSkillProductSummary {
 
     @JsonProperty("type")
-    private com.amazon.ask.smapi.model.v1.isp.ProductType type = null;
+    private String type = null;
 
     @JsonProperty("productId")
     private String productId = null;
@@ -45,16 +45,16 @@ public final class InSkillProductSummary {
     private Map<String, String> nameByLocale = new HashMap<String, String>();
 
     @JsonProperty("status")
-    private com.amazon.ask.smapi.model.v1.isp.Status status = null;
+    private String status = null;
 
     @JsonProperty("stage")
-    private com.amazon.ask.smapi.model.v1.isp.Stage stage = null;
+    private String stage = null;
 
     @JsonProperty("editableState")
-    private com.amazon.ask.smapi.model.v1.isp.EditableState editableState = null;
+    private String editableState = null;
 
     @JsonProperty("purchasableState")
-    private com.amazon.ask.smapi.model.v1.isp.PurchasableState purchasableState = null;
+    private String purchasableState = null;
 
     @JsonProperty("_links")
     private com.amazon.ask.smapi.model.v1.isp.IspSummaryLinks links = null;
@@ -104,11 +104,29 @@ public final class InSkillProductSummary {
 
     /**
      * Get type
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getTypeAsString().
+     *
      * @return type
     **/
-    @JsonProperty("type")
+    
     public com.amazon.ask.smapi.model.v1.isp.ProductType getType() {
-        return type;
+        return com.amazon.ask.smapi.model.v1.isp.ProductType.fromValue(type);
+    }
+
+    /**
+     * Get the underlying String value for type.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return type as a String value
+    **/
+    @JsonProperty("type")
+    public String getTypeAsString() {
+      return type;
     }
 
     /**
@@ -120,6 +138,7 @@ public final class InSkillProductSummary {
         return productId;
     }
 
+
     /**
      * Developer selected in-skill product name. This is for developer reference only, it can be used to filter query results to identify a matching in-skill product.
      * @return referenceName
@@ -128,6 +147,7 @@ public final class InSkillProductSummary {
     public String getReferenceName() {
         return referenceName;
     }
+
 
     /**
      * Date of last update.
@@ -138,6 +158,7 @@ public final class InSkillProductSummary {
         return lastUpdated;
     }
 
+
     /**
      * Get nameByLocale
      * @return nameByLocale
@@ -147,40 +168,113 @@ public final class InSkillProductSummary {
         return nameByLocale;
     }
 
+
     /**
      * Get status
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getStatusAsString().
+     *
      * @return status
     **/
-    @JsonProperty("status")
+    
     public com.amazon.ask.smapi.model.v1.isp.Status getStatus() {
-        return status;
+        return com.amazon.ask.smapi.model.v1.isp.Status.fromValue(status);
+    }
+
+    /**
+     * Get the underlying String value for status.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return status as a String value
+    **/
+    @JsonProperty("status")
+    public String getStatusAsString() {
+      return status;
     }
 
     /**
      * Get stage
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getStageAsString().
+     *
      * @return stage
     **/
-    @JsonProperty("stage")
+    
     public com.amazon.ask.smapi.model.v1.isp.Stage getStage() {
-        return stage;
+        return com.amazon.ask.smapi.model.v1.isp.Stage.fromValue(stage);
+    }
+
+    /**
+     * Get the underlying String value for stage.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return stage as a String value
+    **/
+    @JsonProperty("stage")
+    public String getStageAsString() {
+      return stage;
     }
 
     /**
      * Get editableState
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getEditableStateAsString().
+     *
      * @return editableState
     **/
-    @JsonProperty("editableState")
+    
     public com.amazon.ask.smapi.model.v1.isp.EditableState getEditableState() {
-        return editableState;
+        return com.amazon.ask.smapi.model.v1.isp.EditableState.fromValue(editableState);
+    }
+
+    /**
+     * Get the underlying String value for editableState.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return editableState as a String value
+    **/
+    @JsonProperty("editableState")
+    public String getEditableStateAsString() {
+      return editableState;
     }
 
     /**
      * Get purchasableState
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getPurchasableStateAsString().
+     *
      * @return purchasableState
     **/
-    @JsonProperty("purchasableState")
+    
     public com.amazon.ask.smapi.model.v1.isp.PurchasableState getPurchasableState() {
-        return purchasableState;
+        return com.amazon.ask.smapi.model.v1.isp.PurchasableState.fromValue(purchasableState);
+    }
+
+    /**
+     * Get the underlying String value for purchasableState.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return purchasableState as a String value
+    **/
+    @JsonProperty("purchasableState")
+    public String getPurchasableStateAsString() {
+      return purchasableState;
     }
 
     /**
@@ -192,6 +286,7 @@ public final class InSkillProductSummary {
         return links;
     }
 
+
     /**
      * In-skill product pricing information.
      * @return pricing
@@ -200,6 +295,7 @@ public final class InSkillProductSummary {
     public Map<String, com.amazon.ask.smapi.model.v1.isp.SummaryMarketplacePricing> getPricing() {
         return pricing;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -260,28 +356,34 @@ public final class InSkillProductSummary {
     }
   
     public static class Builder {
-        private com.amazon.ask.smapi.model.v1.isp.ProductType type;
+        private String type;
         private String productId;
         private String referenceName;
         private OffsetDateTime lastUpdated;
         private Map<String, String> nameByLocale;
-        private com.amazon.ask.smapi.model.v1.isp.Status status;
-        private com.amazon.ask.smapi.model.v1.isp.Stage stage;
-        private com.amazon.ask.smapi.model.v1.isp.EditableState editableState;
-        private com.amazon.ask.smapi.model.v1.isp.PurchasableState purchasableState;
+        private String status;
+        private String stage;
+        private String editableState;
+        private String purchasableState;
         private com.amazon.ask.smapi.model.v1.isp.IspSummaryLinks links;
         private Map<String, com.amazon.ask.smapi.model.v1.isp.SummaryMarketplacePricing> pricing;
 
         private Builder() {}
 
         @JsonProperty("type")
+        public Builder withType(String type) {
+          this.type = type;
+          return this;
+        }
+
         public Builder withType(com.amazon.ask.smapi.model.v1.isp.ProductType type) {
-            this.type = type;
+            this.type = type != null ? type.toString() : null;
             return this;
         }
 
 
         @JsonProperty("productId")
+
         public Builder withProductId(String productId) {
             this.productId = productId;
             return this;
@@ -289,6 +391,7 @@ public final class InSkillProductSummary {
 
 
         @JsonProperty("referenceName")
+
         public Builder withReferenceName(String referenceName) {
             this.referenceName = referenceName;
             return this;
@@ -296,6 +399,7 @@ public final class InSkillProductSummary {
 
 
         @JsonProperty("lastUpdated")
+
         public Builder withLastUpdated(OffsetDateTime lastUpdated) {
             this.lastUpdated = lastUpdated;
             return this;
@@ -303,6 +407,7 @@ public final class InSkillProductSummary {
 
 
         @JsonProperty("nameByLocale")
+
         public Builder withNameByLocale(Map<String, String> nameByLocale) {
             this.nameByLocale = nameByLocale;
             return this;
@@ -317,34 +422,55 @@ public final class InSkillProductSummary {
         }
 
         @JsonProperty("status")
+        public Builder withStatus(String status) {
+          this.status = status;
+          return this;
+        }
+
         public Builder withStatus(com.amazon.ask.smapi.model.v1.isp.Status status) {
-            this.status = status;
+            this.status = status != null ? status.toString() : null;
             return this;
         }
 
 
         @JsonProperty("stage")
+        public Builder withStage(String stage) {
+          this.stage = stage;
+          return this;
+        }
+
         public Builder withStage(com.amazon.ask.smapi.model.v1.isp.Stage stage) {
-            this.stage = stage;
+            this.stage = stage != null ? stage.toString() : null;
             return this;
         }
 
 
         @JsonProperty("editableState")
+        public Builder withEditableState(String editableState) {
+          this.editableState = editableState;
+          return this;
+        }
+
         public Builder withEditableState(com.amazon.ask.smapi.model.v1.isp.EditableState editableState) {
-            this.editableState = editableState;
+            this.editableState = editableState != null ? editableState.toString() : null;
             return this;
         }
 
 
         @JsonProperty("purchasableState")
+        public Builder withPurchasableState(String purchasableState) {
+          this.purchasableState = purchasableState;
+          return this;
+        }
+
         public Builder withPurchasableState(com.amazon.ask.smapi.model.v1.isp.PurchasableState purchasableState) {
-            this.purchasableState = purchasableState;
+            this.purchasableState = purchasableState != null ? purchasableState.toString() : null;
             return this;
         }
 
 
         @JsonProperty("_links")
+
         public Builder withLinks(com.amazon.ask.smapi.model.v1.isp.IspSummaryLinks links) {
             this.links = links;
             return this;
@@ -352,6 +478,7 @@ public final class InSkillProductSummary {
 
 
         @JsonProperty("pricing")
+
         public Builder withPricing(Map<String, com.amazon.ask.smapi.model.v1.isp.SummaryMarketplacePricing> pricing) {
             this.pricing = pricing;
             return this;

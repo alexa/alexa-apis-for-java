@@ -29,7 +29,7 @@ public final class HostedSkillInfo {
     private com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillRepositoryInfo repository = null;
 
     @JsonProperty("runtime")
-    private com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillRuntime runtime = null;
+    private String runtime = null;
 
     public static Builder builder() {
         return new Builder();
@@ -53,13 +53,32 @@ public final class HostedSkillInfo {
         return repository;
     }
 
+
     /**
      * Get runtime
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getRuntimeAsString().
+     *
      * @return runtime
     **/
-    @JsonProperty("runtime")
+    
     public com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillRuntime getRuntime() {
-        return runtime;
+        return com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillRuntime.fromValue(runtime);
+    }
+
+    /**
+     * Get the underlying String value for runtime.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return runtime as a String value
+    **/
+    @JsonProperty("runtime")
+    public String getRuntimeAsString() {
+      return runtime;
     }
 
     @Override
@@ -104,11 +123,12 @@ public final class HostedSkillInfo {
   
     public static class Builder {
         private com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillRepositoryInfo repository;
-        private com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillRuntime runtime;
+        private String runtime;
 
         private Builder() {}
 
         @JsonProperty("repository")
+
         public Builder withRepository(com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillRepositoryInfo repository) {
             this.repository = repository;
             return this;
@@ -116,8 +136,13 @@ public final class HostedSkillInfo {
 
 
         @JsonProperty("runtime")
+        public Builder withRuntime(String runtime) {
+          this.runtime = runtime;
+          return this;
+        }
+
         public Builder withRuntime(com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillRuntime runtime) {
-            this.runtime = runtime;
+            this.runtime = runtime != null ? runtime.toString() : null;
             return this;
         }
 

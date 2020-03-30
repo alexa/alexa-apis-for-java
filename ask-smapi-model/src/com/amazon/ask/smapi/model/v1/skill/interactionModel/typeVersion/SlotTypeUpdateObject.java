@@ -47,6 +47,7 @@ public final class SlotTypeUpdateObject {
         return description;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class SlotTypeUpdateObject {
         private Builder() {}
 
         @JsonProperty("description")
+
         public Builder withDescription(String description) {
             this.description = description;
             return this;

@@ -30,7 +30,7 @@ public final class ImageSize {
     private BigDecimal value = null;
 
     @JsonProperty("unit")
-    private com.amazon.ask.smapi.model.v1.skill.ImageSizeUnit unit = null;
+    private String unit = null;
 
     public static Builder builder() {
         return new Builder();
@@ -54,13 +54,32 @@ public final class ImageSize {
         return value;
     }
 
+
     /**
      * Get unit
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getUnitAsString().
+     *
      * @return unit
     **/
-    @JsonProperty("unit")
+    
     public com.amazon.ask.smapi.model.v1.skill.ImageSizeUnit getUnit() {
-        return unit;
+        return com.amazon.ask.smapi.model.v1.skill.ImageSizeUnit.fromValue(unit);
+    }
+
+    /**
+     * Get the underlying String value for unit.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return unit as a String value
+    **/
+    @JsonProperty("unit")
+    public String getUnitAsString() {
+      return unit;
     }
 
     @Override
@@ -105,11 +124,12 @@ public final class ImageSize {
   
     public static class Builder {
         private BigDecimal value;
-        private com.amazon.ask.smapi.model.v1.skill.ImageSizeUnit unit;
+        private String unit;
 
         private Builder() {}
 
         @JsonProperty("value")
+
         public Builder withValue(BigDecimal value) {
             this.value = value;
             return this;
@@ -117,8 +137,13 @@ public final class ImageSize {
 
 
         @JsonProperty("unit")
+        public Builder withUnit(String unit) {
+          this.unit = unit;
+          return this;
+        }
+
         public Builder withUnit(com.amazon.ask.smapi.model.v1.skill.ImageSizeUnit unit) {
-            this.unit = unit;
+            this.unit = unit != null ? unit.toString() : null;
             return this;
         }
 

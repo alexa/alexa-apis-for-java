@@ -92,6 +92,7 @@ public final class SkillManifestLocalizedPublishingInformation {
         return name;
     }
 
+
     /**
      * URL to a small icon for the skill, which is shown in the list of skills (108x108px).
      * @return smallIconUri
@@ -100,6 +101,7 @@ public final class SkillManifestLocalizedPublishingInformation {
     public String getSmallIconUri() {
         return smallIconUri;
     }
+
 
     /**
      * URL to a large icon that represents this skill (512x512px).
@@ -110,6 +112,7 @@ public final class SkillManifestLocalizedPublishingInformation {
         return largeIconUri;
     }
 
+
     /**
      * Summary description of the skill, which is shown when viewing the list of skills.
      * @return summary
@@ -118,6 +121,7 @@ public final class SkillManifestLocalizedPublishingInformation {
     public String getSummary() {
         return summary;
     }
+
 
     /**
      * A full description explaining the skill’s core functionality and any prerequisites to using it (such as additional hardware, software, or accounts). For a Flash Briefing skill, you must list the feeds for the skill.
@@ -128,6 +132,7 @@ public final class SkillManifestLocalizedPublishingInformation {
         return description;
     }
 
+
     /**
      * Updates description of the skill's new features and fixes in the version. Should describe changes in the revisions of the skill.
      * @return updatesDescription
@@ -136,6 +141,7 @@ public final class SkillManifestLocalizedPublishingInformation {
     public String getUpdatesDescription() {
         return updatesDescription;
     }
+
 
     /**
      * Three example phrases that illustrate how users can invoke your skill. For accuracy, these phrases must come directly from your sample utterances.
@@ -146,6 +152,7 @@ public final class SkillManifestLocalizedPublishingInformation {
         return examplePhrases;
     }
 
+
     /**
      * Sample keyword phrases that describe the skill.
      * @return keywords
@@ -154,6 +161,7 @@ public final class SkillManifestLocalizedPublishingInformation {
     public List<String> getKeywords() {
         return keywords;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -220,6 +228,7 @@ public final class SkillManifestLocalizedPublishingInformation {
         private Builder() {}
 
         @JsonProperty("name")
+
         public Builder withName(String name) {
             this.name = name;
             return this;
@@ -227,6 +236,7 @@ public final class SkillManifestLocalizedPublishingInformation {
 
 
         @JsonProperty("smallIconUri")
+
         public Builder withSmallIconUri(String smallIconUri) {
             this.smallIconUri = smallIconUri;
             return this;
@@ -234,6 +244,7 @@ public final class SkillManifestLocalizedPublishingInformation {
 
 
         @JsonProperty("largeIconUri")
+
         public Builder withLargeIconUri(String largeIconUri) {
             this.largeIconUri = largeIconUri;
             return this;
@@ -241,6 +252,7 @@ public final class SkillManifestLocalizedPublishingInformation {
 
 
         @JsonProperty("summary")
+
         public Builder withSummary(String summary) {
             this.summary = summary;
             return this;
@@ -248,6 +260,7 @@ public final class SkillManifestLocalizedPublishingInformation {
 
 
         @JsonProperty("description")
+
         public Builder withDescription(String description) {
             this.description = description;
             return this;
@@ -255,6 +268,7 @@ public final class SkillManifestLocalizedPublishingInformation {
 
 
         @JsonProperty("updatesDescription")
+
         public Builder withUpdatesDescription(String updatesDescription) {
             this.updatesDescription = updatesDescription;
             return this;
@@ -262,6 +276,7 @@ public final class SkillManifestLocalizedPublishingInformation {
 
 
         @JsonProperty("examplePhrases")
+
         public Builder withExamplePhrases(List<String> examplePhrases) {
             this.examplePhrases = examplePhrases;
             return this;
@@ -276,6 +291,7 @@ public final class SkillManifestLocalizedPublishingInformation {
         }
 
         @JsonProperty("keywords")
+
         public Builder withKeywords(List<String> keywords) {
             this.keywords = keywords;
             return this;

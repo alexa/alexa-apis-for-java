@@ -80,6 +80,7 @@ public final class DialogSlotItems {
         return name;
     }
 
+
     /**
      * Type of the slot in the dialog intent.
      * @return type
@@ -88,6 +89,7 @@ public final class DialogSlotItems {
     public String getType() {
         return type;
     }
+
 
     /**
      * Describes whether elicitation of the slot is required.
@@ -98,6 +100,7 @@ public final class DialogSlotItems {
         return elicitationRequired;
     }
 
+
     /**
      * Describes whether confirmation of the slot is required.
      * @return confirmationRequired
@@ -106,6 +109,7 @@ public final class DialogSlotItems {
     public Boolean getConfirmationRequired() {
         return confirmationRequired;
     }
+
 
     /**
      * Get prompts
@@ -116,6 +120,7 @@ public final class DialogSlotItems {
         return prompts;
     }
 
+
     /**
      * List of validations for the slot. if validation fails, user will be prompted with the provided prompt.
      * @return validations
@@ -124,6 +129,7 @@ public final class DialogSlotItems {
     public List<com.amazon.ask.smapi.model.v1.skill.interactionModel.SlotValidation> getValidations() {
         return validations;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -184,6 +190,7 @@ public final class DialogSlotItems {
         private Builder() {}
 
         @JsonProperty("name")
+
         public Builder withName(String name) {
             this.name = name;
             return this;
@@ -191,6 +198,7 @@ public final class DialogSlotItems {
 
 
         @JsonProperty("type")
+
         public Builder withType(String type) {
             this.type = type;
             return this;
@@ -198,6 +206,7 @@ public final class DialogSlotItems {
 
 
         @JsonProperty("elicitationRequired")
+
         public Builder withElicitationRequired(Boolean elicitationRequired) {
             this.elicitationRequired = elicitationRequired;
             return this;
@@ -205,6 +214,7 @@ public final class DialogSlotItems {
 
 
         @JsonProperty("confirmationRequired")
+
         public Builder withConfirmationRequired(Boolean confirmationRequired) {
             this.confirmationRequired = confirmationRequired;
             return this;
@@ -212,6 +222,7 @@ public final class DialogSlotItems {
 
 
         @JsonProperty("prompts")
+
         public Builder withPrompts(com.amazon.ask.smapi.model.v1.skill.interactionModel.DialogPrompts prompts) {
             this.prompts = prompts;
             return this;
@@ -219,6 +230,7 @@ public final class DialogSlotItems {
 
 
         @JsonProperty("validations")
+
         public Builder withValidations(List<com.amazon.ask.smapi.model.v1.skill.interactionModel.SlotValidation> validations) {
             this.validations = validations;
             return this;

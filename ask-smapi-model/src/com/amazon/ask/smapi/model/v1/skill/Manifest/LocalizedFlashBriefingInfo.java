@@ -56,6 +56,7 @@ public final class LocalizedFlashBriefingInfo {
         return feeds;
     }
 
+
     /**
      * Alexa says this to the customer if the skill fails to render the content.
      * @return customErrorMessage
@@ -64,6 +65,7 @@ public final class LocalizedFlashBriefingInfo {
     public String getCustomErrorMessage() {
         return customErrorMessage;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,6 +114,7 @@ public final class LocalizedFlashBriefingInfo {
         private Builder() {}
 
         @JsonProperty("feeds")
+
         public Builder withFeeds(List<com.amazon.ask.smapi.model.v1.skill.Manifest.LocalizedFlashBriefingInfoItems> feeds) {
             this.feeds = feeds;
             return this;
@@ -126,6 +129,7 @@ public final class LocalizedFlashBriefingInfo {
         }
 
         @JsonProperty("customErrorMessage")
+
         public Builder withCustomErrorMessage(String customErrorMessage) {
             this.customErrorMessage = customErrorMessage;
             return this;

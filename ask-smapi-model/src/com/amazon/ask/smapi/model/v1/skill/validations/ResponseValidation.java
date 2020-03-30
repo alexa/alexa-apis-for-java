@@ -38,10 +38,10 @@ public final class ResponseValidation {
     private String locale = null;
 
     @JsonProperty("importance")
-    private com.amazon.ask.smapi.model.v1.skill.validations.ResponseValidationImportance importance = null;
+    private String importance = null;
 
     @JsonProperty("status")
-    private com.amazon.ask.smapi.model.v1.skill.validations.ResponseValidationStatus status = null;
+    private String status = null;
 
     public static Builder builder() {
         return new Builder();
@@ -77,6 +77,7 @@ public final class ResponseValidation {
         return title;
     }
 
+
     /**
      * Human readable description of the validation performed. May include instructions to address validation failure. 
      * @return description
@@ -85,6 +86,7 @@ public final class ResponseValidation {
     public String getDescription() {
         return description;
     }
+
 
     /**
      * Dot-delimited category. 
@@ -95,6 +97,7 @@ public final class ResponseValidation {
         return category;
     }
 
+
     /**
      * Locale of the validation. 
      * @return locale
@@ -104,22 +107,59 @@ public final class ResponseValidation {
         return locale;
     }
 
+
     /**
      * Get importance
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getImportanceAsString().
+     *
      * @return importance
     **/
-    @JsonProperty("importance")
+    
     public com.amazon.ask.smapi.model.v1.skill.validations.ResponseValidationImportance getImportance() {
-        return importance;
+        return com.amazon.ask.smapi.model.v1.skill.validations.ResponseValidationImportance.fromValue(importance);
+    }
+
+    /**
+     * Get the underlying String value for importance.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return importance as a String value
+    **/
+    @JsonProperty("importance")
+    public String getImportanceAsString() {
+      return importance;
     }
 
     /**
      * Get status
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getStatusAsString().
+     *
      * @return status
     **/
-    @JsonProperty("status")
+    
     public com.amazon.ask.smapi.model.v1.skill.validations.ResponseValidationStatus getStatus() {
-        return status;
+        return com.amazon.ask.smapi.model.v1.skill.validations.ResponseValidationStatus.fromValue(status);
+    }
+
+    /**
+     * Get the underlying String value for status.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return status as a String value
+    **/
+    @JsonProperty("status")
+    public String getStatusAsString() {
+      return status;
     }
 
     @Override
@@ -175,12 +215,13 @@ public final class ResponseValidation {
         private String description;
         private String category;
         private String locale;
-        private com.amazon.ask.smapi.model.v1.skill.validations.ResponseValidationImportance importance;
-        private com.amazon.ask.smapi.model.v1.skill.validations.ResponseValidationStatus status;
+        private String importance;
+        private String status;
 
         private Builder() {}
 
         @JsonProperty("title")
+
         public Builder withTitle(String title) {
             this.title = title;
             return this;
@@ -188,6 +229,7 @@ public final class ResponseValidation {
 
 
         @JsonProperty("description")
+
         public Builder withDescription(String description) {
             this.description = description;
             return this;
@@ -195,6 +237,7 @@ public final class ResponseValidation {
 
 
         @JsonProperty("category")
+
         public Builder withCategory(String category) {
             this.category = category;
             return this;
@@ -202,6 +245,7 @@ public final class ResponseValidation {
 
 
         @JsonProperty("locale")
+
         public Builder withLocale(String locale) {
             this.locale = locale;
             return this;
@@ -209,15 +253,25 @@ public final class ResponseValidation {
 
 
         @JsonProperty("importance")
+        public Builder withImportance(String importance) {
+          this.importance = importance;
+          return this;
+        }
+
         public Builder withImportance(com.amazon.ask.smapi.model.v1.skill.validations.ResponseValidationImportance importance) {
-            this.importance = importance;
+            this.importance = importance != null ? importance.toString() : null;
             return this;
         }
 
 
         @JsonProperty("status")
+        public Builder withStatus(String status) {
+          this.status = status;
+          return this;
+        }
+
         public Builder withStatus(com.amazon.ask.smapi.model.v1.skill.validations.ResponseValidationStatus status) {
-            this.status = status;
+            this.status = status != null ? status.toString() : null;
             return this;
         }
 

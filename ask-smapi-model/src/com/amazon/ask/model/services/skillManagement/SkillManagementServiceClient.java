@@ -43,13 +43,13 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
                                     .withSerializer(apiConfiguration.getSerializer())
                                     .build())
           .build();
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.1.1").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.2.0").build();
   }
 
   public SkillManagementServiceClient(ApiConfiguration apiConfiguration, LwaClient lwaClient) {
       super(apiConfiguration);
       this.lwaClient = lwaClient;
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.1.1").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.2.0").build();
   }
 
   /**
@@ -192,6 +192,51 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    */
   public com.amazon.ask.smapi.model.v1.catalog.CreateContentUploadUrlResponse generateCatalogUploadUrlV1(String catalogId, com.amazon.ask.smapi.model.v1.catalog.CreateContentUploadUrlRequest generateCatalogUploadUrlRequestBody) throws ServiceException {
     return this.callGenerateCatalogUploadUrlV1(catalogId, generateCatalogUploadUrlRequestBody).getResponse();
+  }
+
+  /**
+   * 
+   * The SMAPI Audit Logs API provides customers with an audit history of all SMAPI calls made by a developer or developers with permissions on that account.
+   * @param getAuditLogsRequest Request object encompassing vendorId, optional request filters and optional pagination context. (required)
+   * @return com.amazon.ask.smapi.model.v1.auditLogs.AuditLogsResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<com.amazon.ask.smapi.model.v1.auditLogs.AuditLogsResponse> callQueryDevelopmentAuditLogsV1(com.amazon.ask.smapi.model.v1.auditLogs.AuditLogsRequest getAuditLogsRequest) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+    Map<String, String> pathParams = new HashMap<String, String>();
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String path = "/v1/developmentAuditLogs/query";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.auditLogs.AuditLogsResponse.class, 200, "Returns a list of audit logs for the given vendor."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Invalid request"));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 401, "Unauthorized"));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 403, "Forbidden"));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 404, "Not Found"));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 429, "Too Many Requests"));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 500, "Internal Server Error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 503, "Service Unavailable."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, getAuditLogsRequest, com.amazon.ask.smapi.model.v1.auditLogs.AuditLogsResponse.class, false);
+  }
+
+  /**
+   * 
+   * The SMAPI Audit Logs API provides customers with an audit history of all SMAPI calls made by a developer or developers with permissions on that account.
+   * @param getAuditLogsRequest Request object encompassing vendorId, optional request filters and optional pagination context. (required)
+   * @return com.amazon.ask.smapi.model.v1.auditLogs.AuditLogsResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.smapi.model.v1.auditLogs.AuditLogsResponse queryDevelopmentAuditLogsV1(com.amazon.ask.smapi.model.v1.auditLogs.AuditLogsRequest getAuditLogsRequest) throws ServiceException {
+    return this.callQueryDevelopmentAuditLogsV1(getAuditLogsRequest).getResponse();
   }
 
   /**
@@ -3117,7 +3162,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * Get the result of a previously executed simulation.
    * This API gets the result of a previously executed simulation. A successful response will contain the status of the executed simulation. If the simulation successfully completed, the response will also contain information related to skill invocation. In cases where requests to this API results in an error, the response will contain an error code and a description of the problem. In cases where the simulation failed, the response will contain a status attribute indicating that a failure occurred and details about what was sent to the skill endpoint. Note that simulation results are stored for 10 minutes. A request for an expired simulation result will return a 404 HTTP status code. 
    * @param skillId The skill ID. (required)
-   * @param simulationId Id of the simulation.  (required)
+   * @param simulationId Id of the simulation. (required)
    * @return com.amazon.ask.smapi.model.v1.skill.simulations.SimulationsApiResponse
    * @throws ServiceException if fails to make API call
    */
@@ -3153,7 +3198,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * Get the result of a previously executed simulation.
    * This API gets the result of a previously executed simulation. A successful response will contain the status of the executed simulation. If the simulation successfully completed, the response will also contain information related to skill invocation. In cases where requests to this API results in an error, the response will contain an error code and a description of the problem. In cases where the simulation failed, the response will contain a status attribute indicating that a failure occurred and details about what was sent to the skill endpoint. Note that simulation results are stored for 10 minutes. A request for an expired simulation result will return a 404 HTTP status code. 
    * @param skillId The skill ID. (required)
-   * @param simulationId Id of the simulation.  (required)
+   * @param simulationId Id of the simulation. (required)
    * @return com.amazon.ask.smapi.model.v1.skill.simulations.SimulationsApiResponse
    * @throws ServiceException if fails to make API call
    */
@@ -4636,6 +4681,160 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    */
   public com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillPermission getAlexaHostedSkillUserPermissionsV1(String vendorId, String permission) throws ServiceException {
     return this.callGetAlexaHostedSkillUserPermissionsV1(vendorId, permission).getResponse();
+  }
+
+  /**
+   * Invokes the Lambda or third party HTTPS endpoint for the given skill against a given stage.
+   * This is a synchronous API that invokes the Lambda or third party HTTPS endpoint for a given skill. A successful response will contain information related to what endpoint was called, payload sent to and received from the endpoint. In cases where requests to this API results in an error, the response will contain an error code and a description of the problem. In cases where invoking the skill endpoint specifically fails, the response will contain a status attribute indicating that a failure occurred and details about what was sent to the endpoint. The skill must belong to and be enabled by the user of this API. Also,  note that calls to the skill endpoint will timeout after 10 seconds. This  API is currently designed in a way that allows extension to an asynchronous  API if a significantly bigger timeout is required. 
+   * @param skillId The skill ID. (required)
+   * @param stage Stage for skill. (required)
+   * @param invocationsApiRequest Payload sent to the skill invocation API. (required)
+   * @return com.amazon.ask.smapi.model.v2.skill.invocations.InvocationsApiResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<com.amazon.ask.smapi.model.v2.skill.invocations.InvocationsApiResponse> callInvokeSkillEndPointV2(String skillId, String stage, com.amazon.ask.smapi.model.v2.skill.invocations.InvocationsApiRequest invocationsApiRequest) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    pathParams.put("stage", stage);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String path = "/v2/skills/{skillId}/stages/{stage}/invocations";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v2.skill.invocations.InvocationsApiResponse.class, 200, "Skill was invoked."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v2.BadRequestError.class, 400, "Bad request due to invalid or missing data."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v2.Error.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v2.BadRequestError.class, 403, "API user does not have permission to call this API or is currently in a state that does not allow invocation of this skill. "));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v2.Error.class, 404, "The specified skill does not exist."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v2.Error.class, 429, "API user has exceeded the permitted request rate."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v2.Error.class, 500, "Internal service error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v2.Error.class, 503, "Service Unavailable."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, invocationsApiRequest, com.amazon.ask.smapi.model.v2.skill.invocations.InvocationsApiResponse.class, false);
+  }
+
+  /**
+   * Invokes the Lambda or third party HTTPS endpoint for the given skill against a given stage.
+   * This is a synchronous API that invokes the Lambda or third party HTTPS endpoint for a given skill. A successful response will contain information related to what endpoint was called, payload sent to and received from the endpoint. In cases where requests to this API results in an error, the response will contain an error code and a description of the problem. In cases where invoking the skill endpoint specifically fails, the response will contain a status attribute indicating that a failure occurred and details about what was sent to the endpoint. The skill must belong to and be enabled by the user of this API. Also,  note that calls to the skill endpoint will timeout after 10 seconds. This  API is currently designed in a way that allows extension to an asynchronous  API if a significantly bigger timeout is required. 
+   * @param skillId The skill ID. (required)
+   * @param stage Stage for skill. (required)
+   * @param invocationsApiRequest Payload sent to the skill invocation API. (required)
+   * @return com.amazon.ask.smapi.model.v2.skill.invocations.InvocationsApiResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.smapi.model.v2.skill.invocations.InvocationsApiResponse invokeSkillEndPointV2(String skillId, String stage, com.amazon.ask.smapi.model.v2.skill.invocations.InvocationsApiRequest invocationsApiRequest) throws ServiceException {
+    return this.callInvokeSkillEndPointV2(skillId, stage, invocationsApiRequest).getResponse();
+  }
+
+  /**
+   * Simulate executing a skill with the given id against a given stage.
+   * This is an asynchronous API that simulates a skill execution in the Alexa eco-system given an utterance text of what a customer would say to Alexa. A successful response will contain a header with the location of the simulation resource. In cases where requests to this API results in an error, the response will contain an error code and a description of the problem. The skill being simulated must belong to and be enabled  by the user of this API. Concurrent requests per user is currently not supported. 
+   * @param skillId The skill ID. (required)
+   * @param stage Stage for skill. (required)
+   * @param simulationsApiRequest Payload sent to the skill simulation API. (required)
+   * @return com.amazon.ask.smapi.model.v2.skill.simulations.SimulationsApiResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<com.amazon.ask.smapi.model.v2.skill.simulations.SimulationsApiResponse> callSimulateSkillV2(String skillId, String stage, com.amazon.ask.smapi.model.v2.skill.simulations.SimulationsApiRequest simulationsApiRequest) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    pathParams.put("stage", stage);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String path = "/v2/skills/{skillId}/stages/{stage}/simulations";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v2.skill.simulations.SimulationsApiResponse.class, 200, "Skill simulation has successfully began."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v2.BadRequestError.class, 400, "Bad request due to invalid or missing data."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v2.Error.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v2.BadRequestError.class, 403, "API user does not have permission to call this API or is currently in a state that does not allow simulation of this skill. "));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v2.Error.class, 404, "The specified skill does not exist."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v2.Error.class, 409, "This requests conflicts with another one currently being processed. "));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v2.Error.class, 429, "API user has exceeded the permitted request rate."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v2.Error.class, 500, "Internal service error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v2.Error.class, 503, "Service Unavailable."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, simulationsApiRequest, com.amazon.ask.smapi.model.v2.skill.simulations.SimulationsApiResponse.class, false);
+  }
+
+  /**
+   * Simulate executing a skill with the given id against a given stage.
+   * This is an asynchronous API that simulates a skill execution in the Alexa eco-system given an utterance text of what a customer would say to Alexa. A successful response will contain a header with the location of the simulation resource. In cases where requests to this API results in an error, the response will contain an error code and a description of the problem. The skill being simulated must belong to and be enabled  by the user of this API. Concurrent requests per user is currently not supported. 
+   * @param skillId The skill ID. (required)
+   * @param stage Stage for skill. (required)
+   * @param simulationsApiRequest Payload sent to the skill simulation API. (required)
+   * @return com.amazon.ask.smapi.model.v2.skill.simulations.SimulationsApiResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.smapi.model.v2.skill.simulations.SimulationsApiResponse simulateSkillV2(String skillId, String stage, com.amazon.ask.smapi.model.v2.skill.simulations.SimulationsApiRequest simulationsApiRequest) throws ServiceException {
+    return this.callSimulateSkillV2(skillId, stage, simulationsApiRequest).getResponse();
+  }
+
+  /**
+   * Get the result of a previously executed simulation.
+   * This API gets the result of a previously executed simulation. A successful response will contain the status of the executed simulation. If the simulation successfully completed, the response will also contain information related to skill invocation. In cases where requests to this API results in an error, the response will contain an error code and a description of the problem. In cases where the simulation failed, the response will contain a status attribute indicating that a failure occurred and details about what was sent to the skill endpoint. Note that simulation results are stored for 10 minutes. A request for an expired simulation result will return a 404 HTTP status code. 
+   * @param skillId The skill ID. (required)
+   * @param stage Stage for skill. (required)
+   * @param simulationId Id of the simulation. (required)
+   * @return com.amazon.ask.smapi.model.v2.skill.simulations.SimulationsApiResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<com.amazon.ask.smapi.model.v2.skill.simulations.SimulationsApiResponse> callGetSkillSimulationV2(String skillId, String stage, String simulationId) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    pathParams.put("stage", stage);
+    pathParams.put("simulationId", simulationId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String path = "/v2/skills/{skillId}/stages/{stage}/simulations/{simulationId}";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v2.skill.simulations.SimulationsApiResponse.class, 200, "Successfully retrieved skill simulation information."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v2.Error.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v2.BadRequestError.class, 403, "API user does not have permission or is currently in a state that does not allow calls to this API. "));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v2.Error.class, 404, "The specified skill or simulation does not exist. The error response will contain a description that indicates the specific resource type that was not found. "));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v2.Error.class, 429, "API user has exceeded the permitted request rate."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v2.Error.class, 500, "Internal service error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v2.Error.class, 503, "Service Unavailable."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v2.skill.simulations.SimulationsApiResponse.class, false);
+  }
+
+  /**
+   * Get the result of a previously executed simulation.
+   * This API gets the result of a previously executed simulation. A successful response will contain the status of the executed simulation. If the simulation successfully completed, the response will also contain information related to skill invocation. In cases where requests to this API results in an error, the response will contain an error code and a description of the problem. In cases where the simulation failed, the response will contain a status attribute indicating that a failure occurred and details about what was sent to the skill endpoint. Note that simulation results are stored for 10 minutes. A request for an expired simulation result will return a 404 HTTP status code. 
+   * @param skillId The skill ID. (required)
+   * @param stage Stage for skill. (required)
+   * @param simulationId Id of the simulation. (required)
+   * @return com.amazon.ask.smapi.model.v2.skill.simulations.SimulationsApiResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.smapi.model.v2.skill.simulations.SimulationsApiResponse getSkillSimulationV2(String skillId, String stage, String simulationId) throws ServiceException {
+    return this.callGetSkillSimulationV2(skillId, stage, simulationId).getResponse();
   }
 
 }

@@ -53,6 +53,7 @@ public final class SlotTypeInput {
         return name;
     }
 
+
     /**
      * Description string about the slot type.
      * @return description
@@ -61,6 +62,7 @@ public final class SlotTypeInput {
     public String getDescription() {
         return description;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class SlotTypeInput {
         private Builder() {}
 
         @JsonProperty("name")
+
         public Builder withName(String name) {
             this.name = name;
             return this;
@@ -116,6 +119,7 @@ public final class SlotTypeInput {
 
 
         @JsonProperty("description")
+
         public Builder withDescription(String description) {
             this.description = description;
             return this;

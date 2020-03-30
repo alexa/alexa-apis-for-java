@@ -47,6 +47,7 @@ public final class SkillManifestEnvelope {
         return manifest;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class SkillManifestEnvelope {
         private Builder() {}
 
         @JsonProperty("manifest")
+
         public Builder withManifest(com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifest manifest) {
             this.manifest = manifest;
             return this;

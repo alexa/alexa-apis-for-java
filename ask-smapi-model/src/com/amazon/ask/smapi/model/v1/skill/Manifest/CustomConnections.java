@@ -56,6 +56,7 @@ public final class CustomConnections {
         return requires;
     }
 
+
     /**
      * List of provided connections.
      * @return provides
@@ -64,6 +65,7 @@ public final class CustomConnections {
     public List<com.amazon.ask.smapi.model.v1.skill.Manifest.Connections> getProvides() {
         return provides;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,6 +114,7 @@ public final class CustomConnections {
         private Builder() {}
 
         @JsonProperty("requires")
+
         public Builder withRequires(List<com.amazon.ask.smapi.model.v1.skill.Manifest.Connections> requires) {
             this.requires = requires;
             return this;
@@ -126,6 +129,7 @@ public final class CustomConnections {
         }
 
         @JsonProperty("provides")
+
         public Builder withProvides(List<com.amazon.ask.smapi.model.v1.skill.Manifest.Connections> provides) {
             this.provides = provides;
             return this;

@@ -47,6 +47,7 @@ public final class ProductResponse {
         return productId;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class ProductResponse {
         private Builder() {}
 
         @JsonProperty("productId")
+
         public Builder withProductId(String productId) {
             this.productId = productId;
             return this;

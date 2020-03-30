@@ -59,6 +59,7 @@ public final class MultiTurn {
         return dialogAct;
     }
 
+
     /**
      * Opaque string which contains multi-turn related context.
      * @return token
@@ -68,6 +69,7 @@ public final class MultiTurn {
         return token;
     }
 
+
     /**
      * A sample prompt defined in the dialog model for each DialogAct.
      * @return prompt
@@ -76,6 +78,7 @@ public final class MultiTurn {
     public String getPrompt() {
         return prompt;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -127,6 +130,7 @@ public final class MultiTurn {
         private Builder() {}
 
         @JsonProperty("dialogAct")
+
         public Builder withDialogAct(com.amazon.ask.smapi.model.v1.skill.evaluations.DialogAct dialogAct) {
             this.dialogAct = dialogAct;
             return this;
@@ -134,6 +138,7 @@ public final class MultiTurn {
 
 
         @JsonProperty("token")
+
         public Builder withToken(String token) {
             this.token = token;
             return this;
@@ -141,6 +146,7 @@ public final class MultiTurn {
 
 
         @JsonProperty("prompt")
+
         public Builder withPrompt(String prompt) {
             this.prompt = prompt;
             return this;

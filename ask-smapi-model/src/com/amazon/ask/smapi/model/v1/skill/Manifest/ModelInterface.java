@@ -27,13 +27,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = true )
 @JsonSubTypes({
   @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.Manifest.AlexaPresentationAplInterface.class, name = "ALEXA_PRESENTATION_APL"),
-  @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.Manifest.VideoAppInterface.class, name = "VIDEO_APP"),
   @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.Manifest.CustomInterface.class, name = "CUSTOM_INTERFACE"),
   @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.Manifest.AlexaPresentationHtmlInterface.class, name = "ALEXA_PRESENTATION_HTML"),
   @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.Manifest.AudioInterface.class, name = "AUDIO_PLAYER"),
   @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.Manifest.GameEngineInterface.class, name = "GAME_ENGINE"),
   @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.Manifest.DisplayInterface.class, name = "RENDER_TEMPLATE"),
   @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.Manifest.GadgetControllerInterface.class, name = "GADGET_CONTROLLER"),
+  @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.Manifest.VideoAppInterface.class, name = "VIDEO_APP"),
 })
 public abstract class ModelInterface {
 
@@ -50,6 +50,7 @@ public abstract class ModelInterface {
     public String getType() {
         return type;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {

@@ -89,6 +89,7 @@ public final class SkillManifestApis {
         return flashBriefing;
     }
 
+
     /**
      * Get custom
      * @return custom
@@ -97,6 +98,7 @@ public final class SkillManifestApis {
     public com.amazon.ask.smapi.model.v1.skill.Manifest.CustomApis getCustom() {
         return custom;
     }
+
 
     /**
      * Get smartHome
@@ -107,6 +109,7 @@ public final class SkillManifestApis {
         return smartHome;
     }
 
+
     /**
      * Get video
      * @return video
@@ -115,6 +118,7 @@ public final class SkillManifestApis {
     public com.amazon.ask.smapi.model.v1.skill.Manifest.VideoApis getVideo() {
         return video;
     }
+
 
     /**
      * Get alexaForBusiness
@@ -125,6 +129,7 @@ public final class SkillManifestApis {
         return alexaForBusiness;
     }
 
+
     /**
      * Get health
      * @return health
@@ -133,6 +138,7 @@ public final class SkillManifestApis {
     public com.amazon.ask.smapi.model.v1.skill.Manifest.HealthApis getHealth() {
         return health;
     }
+
 
     /**
      * Get householdList
@@ -143,6 +149,7 @@ public final class SkillManifestApis {
         return householdList;
     }
 
+
     /**
      * Get music
      * @return music
@@ -151,6 +158,7 @@ public final class SkillManifestApis {
     public com.amazon.ask.smapi.model.v1.skill.Manifest.MusicApis getMusic() {
         return music;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -217,6 +225,7 @@ public final class SkillManifestApis {
         private Builder() {}
 
         @JsonProperty("flashBriefing")
+
         public Builder withFlashBriefing(com.amazon.ask.smapi.model.v1.skill.Manifest.FlashBriefingApis flashBriefing) {
             this.flashBriefing = flashBriefing;
             return this;
@@ -224,6 +233,7 @@ public final class SkillManifestApis {
 
 
         @JsonProperty("custom")
+
         public Builder withCustom(com.amazon.ask.smapi.model.v1.skill.Manifest.CustomApis custom) {
             this.custom = custom;
             return this;
@@ -231,6 +241,7 @@ public final class SkillManifestApis {
 
 
         @JsonProperty("smartHome")
+
         public Builder withSmartHome(com.amazon.ask.smapi.model.v1.skill.Manifest.SmartHomeApis smartHome) {
             this.smartHome = smartHome;
             return this;
@@ -238,6 +249,7 @@ public final class SkillManifestApis {
 
 
         @JsonProperty("video")
+
         public Builder withVideo(com.amazon.ask.smapi.model.v1.skill.Manifest.VideoApis video) {
             this.video = video;
             return this;
@@ -245,6 +257,7 @@ public final class SkillManifestApis {
 
 
         @JsonProperty("alexaForBusiness")
+
         public Builder withAlexaForBusiness(com.amazon.ask.smapi.model.v1.skill.Manifest.AlexaForBusinessApis alexaForBusiness) {
             this.alexaForBusiness = alexaForBusiness;
             return this;
@@ -252,6 +265,7 @@ public final class SkillManifestApis {
 
 
         @JsonProperty("health")
+
         public Builder withHealth(com.amazon.ask.smapi.model.v1.skill.Manifest.HealthApis health) {
             this.health = health;
             return this;
@@ -259,6 +273,7 @@ public final class SkillManifestApis {
 
 
         @JsonProperty("householdList")
+
         public Builder withHouseholdList(com.amazon.ask.smapi.model.v1.skill.Manifest.HouseHoldList householdList) {
             this.householdList = householdList;
             return this;
@@ -266,6 +281,7 @@ public final class SkillManifestApis {
 
 
         @JsonProperty("music")
+
         public Builder withMusic(com.amazon.ask.smapi.model.v1.skill.Manifest.MusicApis music) {
             this.music = music;
             return this;

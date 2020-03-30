@@ -53,6 +53,7 @@ public final class DefinitionData {
         return slotType;
     }
 
+
     /**
      * The vendorId that the slot type should belong to.
      * @return vendorId
@@ -61,6 +62,7 @@ public final class DefinitionData {
     public String getVendorId() {
         return vendorId;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class DefinitionData {
         private Builder() {}
 
         @JsonProperty("slotType")
+
         public Builder withSlotType(com.amazon.ask.smapi.model.v1.skill.interactionModel.type.SlotTypeInput slotType) {
             this.slotType = slotType;
             return this;
@@ -116,6 +119,7 @@ public final class DefinitionData {
 
 
         @JsonProperty("vendorId")
+
         public Builder withVendorId(String vendorId) {
             this.vendorId = vendorId;
             return this;

@@ -29,7 +29,7 @@ public final class SimulationsApiResponse {
     private String id = null;
 
     @JsonProperty("status")
-    private com.amazon.ask.smapi.model.v1.skill.simulations.SimulationsApiResponseStatus status = null;
+    private String status = null;
 
     @JsonProperty("result")
     private com.amazon.ask.smapi.model.v1.skill.simulations.SimulationResult result = null;
@@ -59,13 +59,32 @@ public final class SimulationsApiResponse {
         return id;
     }
 
+
     /**
      * Get status
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getStatusAsString().
+     *
      * @return status
     **/
-    @JsonProperty("status")
+    
     public com.amazon.ask.smapi.model.v1.skill.simulations.SimulationsApiResponseStatus getStatus() {
-        return status;
+        return com.amazon.ask.smapi.model.v1.skill.simulations.SimulationsApiResponseStatus.fromValue(status);
+    }
+
+    /**
+     * Get the underlying String value for status.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return status as a String value
+    **/
+    @JsonProperty("status")
+    public String getStatusAsString() {
+      return status;
     }
 
     /**
@@ -76,6 +95,7 @@ public final class SimulationsApiResponse {
     public com.amazon.ask.smapi.model.v1.skill.simulations.SimulationResult getResult() {
         return result;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -121,12 +141,13 @@ public final class SimulationsApiResponse {
   
     public static class Builder {
         private String id;
-        private com.amazon.ask.smapi.model.v1.skill.simulations.SimulationsApiResponseStatus status;
+        private String status;
         private com.amazon.ask.smapi.model.v1.skill.simulations.SimulationResult result;
 
         private Builder() {}
 
         @JsonProperty("id")
+
         public Builder withId(String id) {
             this.id = id;
             return this;
@@ -134,13 +155,19 @@ public final class SimulationsApiResponse {
 
 
         @JsonProperty("status")
+        public Builder withStatus(String status) {
+          this.status = status;
+          return this;
+        }
+
         public Builder withStatus(com.amazon.ask.smapi.model.v1.skill.simulations.SimulationsApiResponseStatus status) {
-            this.status = status;
+            this.status = status != null ? status.toString() : null;
             return this;
         }
 
 
         @JsonProperty("result")
+
         public Builder withResult(com.amazon.ask.smapi.model.v1.skill.simulations.SimulationResult result) {
             this.result = result;
             return this;

@@ -26,7 +26,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public final class PromptItems {
 
     @JsonProperty("type")
-    private com.amazon.ask.smapi.model.v1.skill.interactionModel.PromptItemsType type = null;
+    private String type = null;
 
     @JsonProperty("value")
     private String value = null;
@@ -46,11 +46,29 @@ public final class PromptItems {
 
     /**
      * Get type
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getTypeAsString().
+     *
      * @return type
     **/
-    @JsonProperty("type")
+    
     public com.amazon.ask.smapi.model.v1.skill.interactionModel.PromptItemsType getType() {
-        return type;
+        return com.amazon.ask.smapi.model.v1.skill.interactionModel.PromptItemsType.fromValue(type);
+    }
+
+    /**
+     * Get the underlying String value for type.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return type as a String value
+    **/
+    @JsonProperty("type")
+    public String getTypeAsString() {
+      return type;
     }
 
     /**
@@ -61,6 +79,7 @@ public final class PromptItems {
     public String getValue() {
         return value;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -103,19 +122,25 @@ public final class PromptItems {
     }
   
     public static class Builder {
-        private com.amazon.ask.smapi.model.v1.skill.interactionModel.PromptItemsType type;
+        private String type;
         private String value;
 
         private Builder() {}
 
         @JsonProperty("type")
+        public Builder withType(String type) {
+          this.type = type;
+          return this;
+        }
+
         public Builder withType(com.amazon.ask.smapi.model.v1.skill.interactionModel.PromptItemsType type) {
-            this.type = type;
+            this.type = type != null ? type.toString() : null;
             return this;
         }
 
 
         @JsonProperty("value")
+
         public Builder withValue(String value) {
             this.value = value;
             return this;

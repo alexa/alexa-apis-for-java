@@ -68,6 +68,7 @@ public final class ListResponse {
         return links;
     }
 
+
     /**
      * List of interaction model versions. 
      * @return skillModelVersions
@@ -76,6 +77,7 @@ public final class ListResponse {
     public List<com.amazon.ask.smapi.model.v1.skill.interactionModel.version.VersionItems> getSkillModelVersions() {
         return skillModelVersions;
     }
+
 
     /**
      * Get isTruncated
@@ -86,6 +88,7 @@ public final class ListResponse {
         return isTruncated;
     }
 
+
     /**
      * Get nextToken
      * @return nextToken
@@ -94,6 +97,7 @@ public final class ListResponse {
     public String getNextToken() {
         return nextToken;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -148,6 +152,7 @@ public final class ListResponse {
         private Builder() {}
 
         @JsonProperty("_links")
+
         public Builder withLinks(com.amazon.ask.smapi.model.v1.Links links) {
             this.links = links;
             return this;
@@ -155,6 +160,7 @@ public final class ListResponse {
 
 
         @JsonProperty("skillModelVersions")
+
         public Builder withSkillModelVersions(List<com.amazon.ask.smapi.model.v1.skill.interactionModel.version.VersionItems> skillModelVersions) {
             this.skillModelVersions = skillModelVersions;
             return this;
@@ -169,6 +175,7 @@ public final class ListResponse {
         }
 
         @JsonProperty("isTruncated")
+
         public Builder withIsTruncated(Boolean isTruncated) {
             this.isTruncated = isTruncated;
             return this;
@@ -176,6 +183,7 @@ public final class ListResponse {
 
 
         @JsonProperty("nextToken")
+
         public Builder withNextToken(String nextToken) {
             this.nextToken = nextToken;
             return this;

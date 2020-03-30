@@ -47,6 +47,7 @@ public final class CatalogResponse {
         return catalogId;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class CatalogResponse {
         private Builder() {}
 
         @JsonProperty("catalogId")
+
         public Builder withCatalogId(String catalogId) {
             this.catalogId = catalogId;
             return this;

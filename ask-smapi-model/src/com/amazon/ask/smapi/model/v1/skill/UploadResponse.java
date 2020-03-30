@@ -54,6 +54,7 @@ public final class UploadResponse {
         return uploadUrl;
     }
 
+
     /**
      * Get expiresAt
      * @return expiresAt
@@ -62,6 +63,7 @@ public final class UploadResponse {
     public OffsetDateTime getExpiresAt() {
         return expiresAt;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -110,6 +112,7 @@ public final class UploadResponse {
         private Builder() {}
 
         @JsonProperty("uploadUrl")
+
         public Builder withUploadUrl(String uploadUrl) {
             this.uploadUrl = uploadUrl;
             return this;
@@ -117,6 +120,7 @@ public final class UploadResponse {
 
 
         @JsonProperty("expiresAt")
+
         public Builder withExpiresAt(OffsetDateTime expiresAt) {
             this.expiresAt = expiresAt;
             return this;

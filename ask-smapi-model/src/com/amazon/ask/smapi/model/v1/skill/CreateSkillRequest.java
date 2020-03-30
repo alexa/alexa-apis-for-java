@@ -53,6 +53,7 @@ public final class CreateSkillRequest {
         return vendorId;
     }
 
+
     /**
      * Get manifest
      * @return manifest
@@ -61,6 +62,7 @@ public final class CreateSkillRequest {
     public com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifest getManifest() {
         return manifest;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class CreateSkillRequest {
         private Builder() {}
 
         @JsonProperty("vendorId")
+
         public Builder withVendorId(String vendorId) {
             this.vendorId = vendorId;
             return this;
@@ -116,6 +119,7 @@ public final class CreateSkillRequest {
 
 
         @JsonProperty("manifest")
+
         public Builder withManifest(com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifest manifest) {
             this.manifest = manifest;
             return this;

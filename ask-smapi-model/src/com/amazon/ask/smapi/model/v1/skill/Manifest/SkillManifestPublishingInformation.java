@@ -43,7 +43,7 @@ public final class SkillManifestPublishingInformation {
     private Boolean isAvailableWorldwide = null;
 
     @JsonProperty("distributionMode")
-    private com.amazon.ask.smapi.model.v1.skill.Manifest.DistributionMode distributionMode = null;
+    private String distributionMode = null;
 
     @JsonProperty("gadgetSupport")
     private com.amazon.ask.smapi.model.v1.skill.Manifest.ManifestGadgetSupport gadgetSupport = null;
@@ -100,6 +100,7 @@ public final class SkillManifestPublishingInformation {
         return name;
     }
 
+
     /**
      * Description of the skill's purpose and feature and how it works. Should describe any prerequisites like hardware or account requirements and detailed steps for the customer to get started. For Flash Briefing skill list the feeds offered within the skill. Use a conversational tone and correct grammar and punctuation. This description displays to customers on the skill detail card in the Alexa app.
      * @return description
@@ -108,6 +109,7 @@ public final class SkillManifestPublishingInformation {
     public String getDescription() {
         return description;
     }
+
 
     /**
      * Defines the structure for locale specific publishing information in the skill manifest.
@@ -118,6 +120,7 @@ public final class SkillManifestPublishingInformation {
         return locales;
     }
 
+
     /**
      * True if the skill should be distributed in all countries where Amazon distributes skill false otherwise.
      * @return isAvailableWorldwide
@@ -127,13 +130,32 @@ public final class SkillManifestPublishingInformation {
         return isAvailableWorldwide;
     }
 
+
     /**
      * Get distributionMode
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getDistributionModeAsString().
+     *
      * @return distributionMode
     **/
-    @JsonProperty("distributionMode")
+    
     public com.amazon.ask.smapi.model.v1.skill.Manifest.DistributionMode getDistributionMode() {
-        return distributionMode;
+        return com.amazon.ask.smapi.model.v1.skill.Manifest.DistributionMode.fromValue(distributionMode);
+    }
+
+    /**
+     * Get the underlying String value for distributionMode.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return distributionMode as a String value
+    **/
+    @JsonProperty("distributionMode")
+    public String getDistributionModeAsString() {
+      return distributionMode;
     }
 
     /**
@@ -145,6 +167,7 @@ public final class SkillManifestPublishingInformation {
         return gadgetSupport;
     }
 
+
     /**
      * Special instructions provided by the developer to test the skill.
      * @return testingInstructions
@@ -153,6 +176,7 @@ public final class SkillManifestPublishingInformation {
     public String getTestingInstructions() {
         return testingInstructions;
     }
+
 
     /**
      * Category that best describes a skill. Indicates the filter category for the skill in the Alexa App.
@@ -163,6 +187,7 @@ public final class SkillManifestPublishingInformation {
         return category;
     }
 
+
     /**
      * Selected list of countries provided by the skill owner where Amazon can distribute the skill.
      * @return distributionCountries
@@ -171,6 +196,7 @@ public final class SkillManifestPublishingInformation {
     public List<com.amazon.ask.smapi.model.v1.skill.Manifest.DistributionCountries> getDistributionCountries() {
         return distributionCountries;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -231,7 +257,7 @@ public final class SkillManifestPublishingInformation {
         private String description;
         private Map<String, com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifestLocalizedPublishingInformation> locales;
         private Boolean isAvailableWorldwide;
-        private com.amazon.ask.smapi.model.v1.skill.Manifest.DistributionMode distributionMode;
+        private String distributionMode;
         private com.amazon.ask.smapi.model.v1.skill.Manifest.ManifestGadgetSupport gadgetSupport;
         private String testingInstructions;
         private String category;
@@ -240,6 +266,7 @@ public final class SkillManifestPublishingInformation {
         private Builder() {}
 
         @JsonProperty("name")
+
         public Builder withName(String name) {
             this.name = name;
             return this;
@@ -247,6 +274,7 @@ public final class SkillManifestPublishingInformation {
 
 
         @JsonProperty("description")
+
         public Builder withDescription(String description) {
             this.description = description;
             return this;
@@ -254,6 +282,7 @@ public final class SkillManifestPublishingInformation {
 
 
         @JsonProperty("locales")
+
         public Builder withLocales(Map<String, com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifestLocalizedPublishingInformation> locales) {
             this.locales = locales;
             return this;
@@ -268,6 +297,7 @@ public final class SkillManifestPublishingInformation {
         }
 
         @JsonProperty("isAvailableWorldwide")
+
         public Builder withIsAvailableWorldwide(Boolean isAvailableWorldwide) {
             this.isAvailableWorldwide = isAvailableWorldwide;
             return this;
@@ -275,13 +305,19 @@ public final class SkillManifestPublishingInformation {
 
 
         @JsonProperty("distributionMode")
+        public Builder withDistributionMode(String distributionMode) {
+          this.distributionMode = distributionMode;
+          return this;
+        }
+
         public Builder withDistributionMode(com.amazon.ask.smapi.model.v1.skill.Manifest.DistributionMode distributionMode) {
-            this.distributionMode = distributionMode;
+            this.distributionMode = distributionMode != null ? distributionMode.toString() : null;
             return this;
         }
 
 
         @JsonProperty("gadgetSupport")
+
         public Builder withGadgetSupport(com.amazon.ask.smapi.model.v1.skill.Manifest.ManifestGadgetSupport gadgetSupport) {
             this.gadgetSupport = gadgetSupport;
             return this;
@@ -289,6 +325,7 @@ public final class SkillManifestPublishingInformation {
 
 
         @JsonProperty("testingInstructions")
+
         public Builder withTestingInstructions(String testingInstructions) {
             this.testingInstructions = testingInstructions;
             return this;
@@ -296,6 +333,7 @@ public final class SkillManifestPublishingInformation {
 
 
         @JsonProperty("category")
+
         public Builder withCategory(String category) {
             this.category = category;
             return this;
@@ -303,6 +341,7 @@ public final class SkillManifestPublishingInformation {
 
 
         @JsonProperty("distributionCountries")
+
         public Builder withDistributionCountries(List<com.amazon.ask.smapi.model.v1.skill.Manifest.DistributionCountries> distributionCountries) {
             this.distributionCountries = distributionCountries;
             return this;

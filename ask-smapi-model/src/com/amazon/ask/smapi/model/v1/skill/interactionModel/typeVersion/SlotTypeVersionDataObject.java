@@ -65,6 +65,7 @@ public final class SlotTypeVersionDataObject {
         return id;
     }
 
+
     /**
      * Get definition
      * @return definition
@@ -73,6 +74,7 @@ public final class SlotTypeVersionDataObject {
     public com.amazon.ask.smapi.model.v1.skill.interactionModel.typeVersion.ValueSupplierObject getDefinition() {
         return definition;
     }
+
 
     /**
      * Description string for specific slot type version.
@@ -83,6 +85,7 @@ public final class SlotTypeVersionDataObject {
         return description;
     }
 
+
     /**
      * Specific slot type version.
      * @return version
@@ -91,6 +94,7 @@ public final class SlotTypeVersionDataObject {
     public String getVersion() {
         return version;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -145,6 +149,7 @@ public final class SlotTypeVersionDataObject {
         private Builder() {}
 
         @JsonProperty("id")
+
         public Builder withId(String id) {
             this.id = id;
             return this;
@@ -152,6 +157,7 @@ public final class SlotTypeVersionDataObject {
 
 
         @JsonProperty("definition")
+
         public Builder withDefinition(com.amazon.ask.smapi.model.v1.skill.interactionModel.typeVersion.ValueSupplierObject definition) {
             this.definition = definition;
             return this;
@@ -159,6 +165,7 @@ public final class SlotTypeVersionDataObject {
 
 
         @JsonProperty("description")
+
         public Builder withDescription(String description) {
             this.description = description;
             return this;
@@ -166,6 +173,7 @@ public final class SlotTypeVersionDataObject {
 
 
         @JsonProperty("version")
+
         public Builder withVersion(String version) {
             this.version = version;
             return this;

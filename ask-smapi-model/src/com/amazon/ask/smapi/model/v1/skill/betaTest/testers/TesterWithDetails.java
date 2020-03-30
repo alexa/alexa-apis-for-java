@@ -36,7 +36,7 @@ public final class TesterWithDetails {
     private Boolean isReminderAllowed = null;
 
     @JsonProperty("invitationStatus")
-    private com.amazon.ask.smapi.model.v1.skill.betaTest.testers.InvitationStatus invitationStatus = null;
+    private String invitationStatus = null;
 
     public static Builder builder() {
         return new Builder();
@@ -66,6 +66,7 @@ public final class TesterWithDetails {
         return emailId;
     }
 
+
     /**
      * Date and time when the tester is added to the beta test.
      * @return associationDate
@@ -74,6 +75,7 @@ public final class TesterWithDetails {
     public OffsetDateTime getAssociationDate() {
         return associationDate;
     }
+
 
     /**
      * Indicates whether the tester is allowed to be sent reminder.
@@ -84,13 +86,32 @@ public final class TesterWithDetails {
         return isReminderAllowed;
     }
 
+
     /**
      * Get invitationStatus
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getInvitationStatusAsString().
+     *
      * @return invitationStatus
     **/
-    @JsonProperty("invitationStatus")
+    
     public com.amazon.ask.smapi.model.v1.skill.betaTest.testers.InvitationStatus getInvitationStatus() {
-        return invitationStatus;
+        return com.amazon.ask.smapi.model.v1.skill.betaTest.testers.InvitationStatus.fromValue(invitationStatus);
+    }
+
+    /**
+     * Get the underlying String value for invitationStatus.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return invitationStatus as a String value
+    **/
+    @JsonProperty("invitationStatus")
+    public String getInvitationStatusAsString() {
+      return invitationStatus;
     }
 
     @Override
@@ -141,11 +162,12 @@ public final class TesterWithDetails {
         private String emailId;
         private OffsetDateTime associationDate;
         private Boolean isReminderAllowed;
-        private com.amazon.ask.smapi.model.v1.skill.betaTest.testers.InvitationStatus invitationStatus;
+        private String invitationStatus;
 
         private Builder() {}
 
         @JsonProperty("emailId")
+
         public Builder withEmailId(String emailId) {
             this.emailId = emailId;
             return this;
@@ -153,6 +175,7 @@ public final class TesterWithDetails {
 
 
         @JsonProperty("associationDate")
+
         public Builder withAssociationDate(OffsetDateTime associationDate) {
             this.associationDate = associationDate;
             return this;
@@ -160,6 +183,7 @@ public final class TesterWithDetails {
 
 
         @JsonProperty("isReminderAllowed")
+
         public Builder withIsReminderAllowed(Boolean isReminderAllowed) {
             this.isReminderAllowed = isReminderAllowed;
             return this;
@@ -167,8 +191,13 @@ public final class TesterWithDetails {
 
 
         @JsonProperty("invitationStatus")
+        public Builder withInvitationStatus(String invitationStatus) {
+          this.invitationStatus = invitationStatus;
+          return this;
+        }
+
         public Builder withInvitationStatus(com.amazon.ask.smapi.model.v1.skill.betaTest.testers.InvitationStatus invitationStatus) {
-            this.invitationStatus = invitationStatus;
+            this.invitationStatus = invitationStatus != null ? invitationStatus.toString() : null;
             return this;
         }
 

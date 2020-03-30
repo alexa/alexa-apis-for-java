@@ -26,7 +26,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public final class CriticalDataHandling {
 
     @JsonProperty("dataProtectionProvider")
-    private com.amazon.ask.smapi.model.v1.skill.Manifest.DataProtectionProvider dataProtectionProvider = null;
+    private String dataProtectionProvider = null;
 
     public static Builder builder() {
         return new Builder();
@@ -40,11 +40,29 @@ public final class CriticalDataHandling {
 
     /**
      * Get dataProtectionProvider
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getDataProtectionProviderAsString().
+     *
      * @return dataProtectionProvider
     **/
-    @JsonProperty("dataProtectionProvider")
+    
     public com.amazon.ask.smapi.model.v1.skill.Manifest.DataProtectionProvider getDataProtectionProvider() {
-        return dataProtectionProvider;
+        return com.amazon.ask.smapi.model.v1.skill.Manifest.DataProtectionProvider.fromValue(dataProtectionProvider);
+    }
+
+    /**
+     * Get the underlying String value for dataProtectionProvider.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return dataProtectionProvider as a String value
+    **/
+    @JsonProperty("dataProtectionProvider")
+    public String getDataProtectionProviderAsString() {
+      return dataProtectionProvider;
     }
 
     @Override
@@ -86,13 +104,18 @@ public final class CriticalDataHandling {
     }
   
     public static class Builder {
-        private com.amazon.ask.smapi.model.v1.skill.Manifest.DataProtectionProvider dataProtectionProvider;
+        private String dataProtectionProvider;
 
         private Builder() {}
 
         @JsonProperty("dataProtectionProvider")
+        public Builder withDataProtectionProvider(String dataProtectionProvider) {
+          this.dataProtectionProvider = dataProtectionProvider;
+          return this;
+        }
+
         public Builder withDataProtectionProvider(com.amazon.ask.smapi.model.v1.skill.Manifest.DataProtectionProvider dataProtectionProvider) {
-            this.dataProtectionProvider = dataProtectionProvider;
+            this.dataProtectionProvider = dataProtectionProvider != null ? dataProtectionProvider.toString() : null;
             return this;
         }
 

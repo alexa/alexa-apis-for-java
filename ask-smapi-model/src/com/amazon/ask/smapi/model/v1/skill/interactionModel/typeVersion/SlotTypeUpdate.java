@@ -47,6 +47,7 @@ public final class SlotTypeUpdate {
         return slotType;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class SlotTypeUpdate {
         private Builder() {}
 
         @JsonProperty("slotType")
+
         public Builder withSlotType(com.amazon.ask.smapi.model.v1.skill.interactionModel.typeVersion.SlotTypeUpdateObject slotType) {
             this.slotType = slotType;
             return this;

@@ -69,6 +69,7 @@ public final class ReviewTrackingInfo {
         return estimatedCompletionTimestamp;
     }
 
+
     /**
      * Timestamp for actual completion of certification review for the skill.
      * @return actualCompletionTimestamp
@@ -77,6 +78,7 @@ public final class ReviewTrackingInfo {
     public OffsetDateTime getActualCompletionTimestamp() {
         return actualCompletionTimestamp;
     }
+
 
     /**
      * Timestamp for when the last update was made to review tracking info.
@@ -87,6 +89,7 @@ public final class ReviewTrackingInfo {
         return lastUpdated;
     }
 
+
     /**
      * List of updates to estimation completion time for certification review for the skill.
      * @return estimationUpdates
@@ -95,6 +98,7 @@ public final class ReviewTrackingInfo {
     public List<com.amazon.ask.smapi.model.v1.skill.certification.EstimationUpdate> getEstimationUpdates() {
         return estimationUpdates;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -149,6 +153,7 @@ public final class ReviewTrackingInfo {
         private Builder() {}
 
         @JsonProperty("estimatedCompletionTimestamp")
+
         public Builder withEstimatedCompletionTimestamp(OffsetDateTime estimatedCompletionTimestamp) {
             this.estimatedCompletionTimestamp = estimatedCompletionTimestamp;
             return this;
@@ -156,6 +161,7 @@ public final class ReviewTrackingInfo {
 
 
         @JsonProperty("actualCompletionTimestamp")
+
         public Builder withActualCompletionTimestamp(OffsetDateTime actualCompletionTimestamp) {
             this.actualCompletionTimestamp = actualCompletionTimestamp;
             return this;
@@ -163,6 +169,7 @@ public final class ReviewTrackingInfo {
 
 
         @JsonProperty("lastUpdated")
+
         public Builder withLastUpdated(OffsetDateTime lastUpdated) {
             this.lastUpdated = lastUpdated;
             return this;
@@ -170,6 +177,7 @@ public final class ReviewTrackingInfo {
 
 
         @JsonProperty("estimationUpdates")
+
         public Builder withEstimationUpdates(List<com.amazon.ask.smapi.model.v1.skill.certification.EstimationUpdate> estimationUpdates) {
             this.estimationUpdates = estimationUpdates;
             return this;

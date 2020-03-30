@@ -65,6 +65,7 @@ public final class SlotTypeItem {
         return name;
     }
 
+
     /**
      * Description string about the slot type.
      * @return description
@@ -73,6 +74,7 @@ public final class SlotTypeItem {
     public String getDescription() {
         return description;
     }
+
 
     /**
      * Identifier of the slot type, optional in get response as the request already has slotTypeId.
@@ -83,6 +85,7 @@ public final class SlotTypeItem {
         return id;
     }
 
+
     /**
      * Get links
      * @return links
@@ -91,6 +94,7 @@ public final class SlotTypeItem {
     public com.amazon.ask.smapi.model.v1.Links getLinks() {
         return links;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -145,6 +149,7 @@ public final class SlotTypeItem {
         private Builder() {}
 
         @JsonProperty("name")
+
         public Builder withName(String name) {
             this.name = name;
             return this;
@@ -152,6 +157,7 @@ public final class SlotTypeItem {
 
 
         @JsonProperty("description")
+
         public Builder withDescription(String description) {
             this.description = description;
             return this;
@@ -159,6 +165,7 @@ public final class SlotTypeItem {
 
 
         @JsonProperty("id")
+
         public Builder withId(String id) {
             this.id = id;
             return this;
@@ -166,6 +173,7 @@ public final class SlotTypeItem {
 
 
         @JsonProperty("_links")
+
         public Builder withLinks(com.amazon.ask.smapi.model.v1.Links links) {
             this.links = links;
             return this;

@@ -26,10 +26,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public final class ViewportSpecification {
 
     @JsonProperty("mode")
-    private com.amazon.ask.smapi.model.v1.skill.Manifest.ViewportMode mode = null;
+    private String mode = null;
 
     @JsonProperty("shape")
-    private com.amazon.ask.smapi.model.v1.skill.Manifest.ViewportShape shape = null;
+    private String shape = null;
 
     @JsonProperty("minWidth")
     private Integer minWidth = null;
@@ -70,20 +70,56 @@ public final class ViewportSpecification {
 
     /**
      * Get mode
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getModeAsString().
+     *
      * @return mode
     **/
-    @JsonProperty("mode")
+    
     public com.amazon.ask.smapi.model.v1.skill.Manifest.ViewportMode getMode() {
-        return mode;
+        return com.amazon.ask.smapi.model.v1.skill.Manifest.ViewportMode.fromValue(mode);
+    }
+
+    /**
+     * Get the underlying String value for mode.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return mode as a String value
+    **/
+    @JsonProperty("mode")
+    public String getModeAsString() {
+      return mode;
     }
 
     /**
      * Get shape
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getShapeAsString().
+     *
      * @return shape
     **/
-    @JsonProperty("shape")
+    
     public com.amazon.ask.smapi.model.v1.skill.Manifest.ViewportShape getShape() {
-        return shape;
+        return com.amazon.ask.smapi.model.v1.skill.Manifest.ViewportShape.fromValue(shape);
+    }
+
+    /**
+     * Get the underlying String value for shape.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return shape as a String value
+    **/
+    @JsonProperty("shape")
+    public String getShapeAsString() {
+      return shape;
     }
 
     /**
@@ -95,6 +131,7 @@ public final class ViewportSpecification {
         return minWidth;
     }
 
+
     /**
      * Defines the maximum width of viewport that comply with this specification.
      * @return maxWidth
@@ -103,6 +140,7 @@ public final class ViewportSpecification {
     public Integer getMaxWidth() {
         return maxWidth;
     }
+
 
     /**
      * Defines the minimum height of viewport that comply with this specification.
@@ -113,6 +151,7 @@ public final class ViewportSpecification {
         return minHeight;
     }
 
+
     /**
      * Defines the maximum height of viewport that comply with this specification.
      * @return maxHeight
@@ -121,6 +160,7 @@ public final class ViewportSpecification {
     public Integer getMaxHeight() {
         return maxHeight;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -171,8 +211,8 @@ public final class ViewportSpecification {
     }
   
     public static class Builder {
-        private com.amazon.ask.smapi.model.v1.skill.Manifest.ViewportMode mode;
-        private com.amazon.ask.smapi.model.v1.skill.Manifest.ViewportShape shape;
+        private String mode;
+        private String shape;
         private Integer minWidth;
         private Integer maxWidth;
         private Integer minHeight;
@@ -181,20 +221,31 @@ public final class ViewportSpecification {
         private Builder() {}
 
         @JsonProperty("mode")
+        public Builder withMode(String mode) {
+          this.mode = mode;
+          return this;
+        }
+
         public Builder withMode(com.amazon.ask.smapi.model.v1.skill.Manifest.ViewportMode mode) {
-            this.mode = mode;
+            this.mode = mode != null ? mode.toString() : null;
             return this;
         }
 
 
         @JsonProperty("shape")
+        public Builder withShape(String shape) {
+          this.shape = shape;
+          return this;
+        }
+
         public Builder withShape(com.amazon.ask.smapi.model.v1.skill.Manifest.ViewportShape shape) {
-            this.shape = shape;
+            this.shape = shape != null ? shape.toString() : null;
             return this;
         }
 
 
         @JsonProperty("minWidth")
+
         public Builder withMinWidth(Integer minWidth) {
             this.minWidth = minWidth;
             return this;
@@ -202,6 +253,7 @@ public final class ViewportSpecification {
 
 
         @JsonProperty("maxWidth")
+
         public Builder withMaxWidth(Integer maxWidth) {
             this.maxWidth = maxWidth;
             return this;
@@ -209,6 +261,7 @@ public final class ViewportSpecification {
 
 
         @JsonProperty("minHeight")
+
         public Builder withMinHeight(Integer minHeight) {
             this.minHeight = minHeight;
             return this;
@@ -216,6 +269,7 @@ public final class ViewportSpecification {
 
 
         @JsonProperty("maxHeight")
+
         public Builder withMaxHeight(Integer maxHeight) {
             this.maxHeight = maxHeight;
             return this;

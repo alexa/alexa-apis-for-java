@@ -62,6 +62,7 @@ public final class ListSlotTypeResponse {
         return links;
     }
 
+
     /**
      * List of slot types. 
      * @return slotTypes
@@ -71,6 +72,7 @@ public final class ListSlotTypeResponse {
         return slotTypes;
     }
 
+
     /**
      * Get nextToken
      * @return nextToken
@@ -79,6 +81,7 @@ public final class ListSlotTypeResponse {
     public String getNextToken() {
         return nextToken;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -130,6 +133,7 @@ public final class ListSlotTypeResponse {
         private Builder() {}
 
         @JsonProperty("_links")
+
         public Builder withLinks(com.amazon.ask.smapi.model.v1.Links links) {
             this.links = links;
             return this;
@@ -137,6 +141,7 @@ public final class ListSlotTypeResponse {
 
 
         @JsonProperty("slotTypes")
+
         public Builder withSlotTypes(List<com.amazon.ask.smapi.model.v1.skill.interactionModel.type.SlotTypeItem> slotTypes) {
             this.slotTypes = slotTypes;
             return this;
@@ -151,6 +156,7 @@ public final class ListSlotTypeResponse {
         }
 
         @JsonProperty("nextToken")
+
         public Builder withNextToken(String nextToken) {
             this.nextToken = nextToken;
             return this;

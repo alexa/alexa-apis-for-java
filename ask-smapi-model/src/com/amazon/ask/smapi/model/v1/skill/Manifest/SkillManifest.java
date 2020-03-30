@@ -80,6 +80,7 @@ public final class SkillManifest {
         return manifestVersion;
     }
 
+
     /**
      * Get publishingInformation
      * @return publishingInformation
@@ -88,6 +89,7 @@ public final class SkillManifest {
     public com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifestPublishingInformation getPublishingInformation() {
         return publishingInformation;
     }
+
 
     /**
      * Get privacyAndCompliance
@@ -98,6 +100,7 @@ public final class SkillManifest {
         return privacyAndCompliance;
     }
 
+
     /**
      * Get events
      * @return events
@@ -106,6 +109,7 @@ public final class SkillManifest {
     public com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifestEvents getEvents() {
         return events;
     }
+
 
     /**
      * Defines the structure for required permissions information in the skill manifest.
@@ -116,6 +120,7 @@ public final class SkillManifest {
         return permissions;
     }
 
+
     /**
      * Get apis
      * @return apis
@@ -124,6 +129,7 @@ public final class SkillManifest {
     public com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifestApis getApis() {
         return apis;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -184,6 +190,7 @@ public final class SkillManifest {
         private Builder() {}
 
         @JsonProperty("manifestVersion")
+
         public Builder withManifestVersion(String manifestVersion) {
             this.manifestVersion = manifestVersion;
             return this;
@@ -191,6 +198,7 @@ public final class SkillManifest {
 
 
         @JsonProperty("publishingInformation")
+
         public Builder withPublishingInformation(com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifestPublishingInformation publishingInformation) {
             this.publishingInformation = publishingInformation;
             return this;
@@ -198,6 +206,7 @@ public final class SkillManifest {
 
 
         @JsonProperty("privacyAndCompliance")
+
         public Builder withPrivacyAndCompliance(com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifestPrivacyAndCompliance privacyAndCompliance) {
             this.privacyAndCompliance = privacyAndCompliance;
             return this;
@@ -205,6 +214,7 @@ public final class SkillManifest {
 
 
         @JsonProperty("events")
+
         public Builder withEvents(com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifestEvents events) {
             this.events = events;
             return this;
@@ -212,6 +222,7 @@ public final class SkillManifest {
 
 
         @JsonProperty("permissions")
+
         public Builder withPermissions(List<com.amazon.ask.smapi.model.v1.skill.Manifest.PermissionItems> permissions) {
             this.permissions = permissions;
             return this;
@@ -226,6 +237,7 @@ public final class SkillManifest {
         }
 
         @JsonProperty("apis")
+
         public Builder withApis(com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifestApis apis) {
             this.apis = apis;
             return this;

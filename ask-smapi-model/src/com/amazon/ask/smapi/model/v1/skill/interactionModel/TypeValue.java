@@ -53,6 +53,7 @@ public final class TypeValue {
         return id;
     }
 
+
     /**
      * Get name
      * @return name
@@ -61,6 +62,7 @@ public final class TypeValue {
     public com.amazon.ask.smapi.model.v1.skill.interactionModel.TypeValueObject getName() {
         return name;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class TypeValue {
         private Builder() {}
 
         @JsonProperty("id")
+
         public Builder withId(String id) {
             this.id = id;
             return this;
@@ -116,6 +119,7 @@ public final class TypeValue {
 
 
         @JsonProperty("name")
+
         public Builder withName(com.amazon.ask.smapi.model.v1.skill.interactionModel.TypeValueObject name) {
             this.name = name;
             return this;

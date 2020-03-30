@@ -47,6 +47,7 @@ public final class CatalogStatus {
         return lastUpdateRequest;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class CatalogStatus {
         private Builder() {}
 
         @JsonProperty("lastUpdateRequest")
+
         public Builder withLastUpdateRequest(com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.LastUpdateRequest lastUpdateRequest) {
             this.lastUpdateRequest = lastUpdateRequest;
             return this;

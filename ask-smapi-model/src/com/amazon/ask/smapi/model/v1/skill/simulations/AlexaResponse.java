@@ -53,6 +53,7 @@ public final class AlexaResponse {
         return type;
     }
 
+
     /**
      * The detail information needs to exposed in this type of Alexa response. 
      * @return content
@@ -61,6 +62,7 @@ public final class AlexaResponse {
     public com.amazon.ask.smapi.model.v1.skill.simulations.AlexaResponseContent getContent() {
         return content;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class AlexaResponse {
         private Builder() {}
 
         @JsonProperty("type")
+
         public Builder withType(String type) {
             this.type = type;
             return this;
@@ -116,6 +119,7 @@ public final class AlexaResponse {
 
 
         @JsonProperty("content")
+
         public Builder withContent(com.amazon.ask.smapi.model.v1.skill.simulations.AlexaResponseContent content) {
             this.content = content;
             return this;

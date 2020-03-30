@@ -28,22 +28,22 @@ public class SubTypesManifest {
 
     Map<String, Class> v1SkillManifestInterfaceSubTypes = new HashMap<>();
     v1SkillManifestInterfaceSubTypes.put("ALEXA_PRESENTATION_APL", com.amazon.ask.smapi.model.v1.skill.Manifest.AlexaPresentationAplInterface.class);
-    v1SkillManifestInterfaceSubTypes.put("VIDEO_APP", com.amazon.ask.smapi.model.v1.skill.Manifest.VideoAppInterface.class);
     v1SkillManifestInterfaceSubTypes.put("CUSTOM_INTERFACE", com.amazon.ask.smapi.model.v1.skill.Manifest.CustomInterface.class);
     v1SkillManifestInterfaceSubTypes.put("ALEXA_PRESENTATION_HTML", com.amazon.ask.smapi.model.v1.skill.Manifest.AlexaPresentationHtmlInterface.class);
     v1SkillManifestInterfaceSubTypes.put("AUDIO_PLAYER", com.amazon.ask.smapi.model.v1.skill.Manifest.AudioInterface.class);
     v1SkillManifestInterfaceSubTypes.put("GAME_ENGINE", com.amazon.ask.smapi.model.v1.skill.Manifest.GameEngineInterface.class);
     v1SkillManifestInterfaceSubTypes.put("RENDER_TEMPLATE", com.amazon.ask.smapi.model.v1.skill.Manifest.DisplayInterface.class);
     v1SkillManifestInterfaceSubTypes.put("GADGET_CONTROLLER", com.amazon.ask.smapi.model.v1.skill.Manifest.GadgetControllerInterface.class);
+    v1SkillManifestInterfaceSubTypes.put("VIDEO_APP", com.amazon.ask.smapi.model.v1.skill.Manifest.VideoAppInterface.class);
     baseTypes.put(com.amazon.ask.smapi.model.v1.skill.Manifest.ModelInterface.class, v1SkillManifestInterfaceSubTypes);
 
     Map<String, Class> v1SkillInteractionModelSlotValidationSubTypes = new HashMap<>();
     v1SkillInteractionModelSlotValidationSubTypes.put("hasEntityResolutionMatch", com.amazon.ask.smapi.model.v1.skill.interactionModel.HasEntityResolutionMatch.class);
     v1SkillInteractionModelSlotValidationSubTypes.put("isLessThanOrEqualTo", com.amazon.ask.smapi.model.v1.skill.interactionModel.IsLessThanOrEqualTo.class);
-    v1SkillInteractionModelSlotValidationSubTypes.put("isInDuration", com.amazon.ask.smapi.model.v1.skill.interactionModel.IsInDuration.class);
-    v1SkillInteractionModelSlotValidationSubTypes.put("isLessThan", com.amazon.ask.smapi.model.v1.skill.interactionModel.IsLessThan.class);
     v1SkillInteractionModelSlotValidationSubTypes.put("isGreaterThan", com.amazon.ask.smapi.model.v1.skill.interactionModel.IsGreaterThan.class);
     v1SkillInteractionModelSlotValidationSubTypes.put("isNotInSet", com.amazon.ask.smapi.model.v1.skill.interactionModel.IsNotInSet.class);
+    v1SkillInteractionModelSlotValidationSubTypes.put("isInDuration", com.amazon.ask.smapi.model.v1.skill.interactionModel.IsInDuration.class);
+    v1SkillInteractionModelSlotValidationSubTypes.put("isLessThan", com.amazon.ask.smapi.model.v1.skill.interactionModel.IsLessThan.class);
     v1SkillInteractionModelSlotValidationSubTypes.put("isNotInDuration", com.amazon.ask.smapi.model.v1.skill.interactionModel.IsNotInDuration.class);
     v1SkillInteractionModelSlotValidationSubTypes.put("isGreaterThanOrEqualTo", com.amazon.ask.smapi.model.v1.skill.interactionModel.IsGreaterThanOrEqualTo.class);
     v1SkillInteractionModelSlotValidationSubTypes.put("isInSet", com.amazon.ask.smapi.model.v1.skill.interactionModel.IsInSet.class);

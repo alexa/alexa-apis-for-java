@@ -47,6 +47,7 @@ public final class Metrics {
         return skillExecutionTimeInMilliseconds;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class Metrics {
         private Builder() {}
 
         @JsonProperty("skillExecutionTimeInMilliseconds")
+
         public Builder withSkillExecutionTimeInMilliseconds(Integer skillExecutionTimeInMilliseconds) {
             this.skillExecutionTimeInMilliseconds = skillExecutionTimeInMilliseconds;
             return this;

@@ -47,6 +47,7 @@ public final class HostedSkillRepositoryCredentialsList {
         return repositoryCredentials;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class HostedSkillRepositoryCredentialsList {
         private Builder() {}
 
         @JsonProperty("repositoryCredentials")
+
         public Builder withRepositoryCredentials(com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillRepositoryCredentials repositoryCredentials) {
             this.repositoryCredentials = repositoryCredentials;
             return this;

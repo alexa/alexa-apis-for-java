@@ -56,6 +56,7 @@ public final class PublicationFailure {
         return reason;
     }
 
+
     /**
      * List of countries where Amazon did not publish the skill for a specific reason
      * @return countries
@@ -64,6 +65,7 @@ public final class PublicationFailure {
     public List<String> getCountries() {
         return countries;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,6 +114,7 @@ public final class PublicationFailure {
         private Builder() {}
 
         @JsonProperty("reason")
+
         public Builder withReason(String reason) {
             this.reason = reason;
             return this;
@@ -119,6 +122,7 @@ public final class PublicationFailure {
 
 
         @JsonProperty("countries")
+
         public Builder withCountries(List<String> countries) {
             this.countries = countries;
             return this;

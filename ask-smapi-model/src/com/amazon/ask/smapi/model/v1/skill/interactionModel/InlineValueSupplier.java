@@ -53,6 +53,7 @@ public final class InlineValueSupplier extends com.amazon.ask.smapi.model.v1.ski
         return values;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -98,6 +99,7 @@ public final class InlineValueSupplier extends com.amazon.ask.smapi.model.v1.ski
         private Builder() {}
 
         @JsonProperty("values")
+
         public Builder withValues(List<com.amazon.ask.smapi.model.v1.skill.interactionModel.TypeValue> values) {
             this.values = values;
             return this;

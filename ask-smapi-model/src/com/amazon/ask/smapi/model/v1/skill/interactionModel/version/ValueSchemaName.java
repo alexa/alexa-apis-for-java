@@ -56,6 +56,7 @@ public final class ValueSchemaName {
         return value;
     }
 
+
     /**
      * Get synonyms
      * @return synonyms
@@ -64,6 +65,7 @@ public final class ValueSchemaName {
     public List<String> getSynonyms() {
         return synonyms;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,6 +114,7 @@ public final class ValueSchemaName {
         private Builder() {}
 
         @JsonProperty("value")
+
         public Builder withValue(String value) {
             this.value = value;
             return this;
@@ -119,6 +122,7 @@ public final class ValueSchemaName {
 
 
         @JsonProperty("synonyms")
+
         public Builder withSynonyms(List<String> synonyms) {
             this.synonyms = synonyms;
             return this;

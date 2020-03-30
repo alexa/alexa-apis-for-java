@@ -59,6 +59,7 @@ public final class SimulationsApiRequest {
         return input;
     }
 
+
     /**
      * Get device
      * @return device
@@ -68,6 +69,7 @@ public final class SimulationsApiRequest {
         return device;
     }
 
+
     /**
      * Get session
      * @return session
@@ -76,6 +78,7 @@ public final class SimulationsApiRequest {
     public com.amazon.ask.smapi.model.v1.skill.simulations.Session getSession() {
         return session;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -127,6 +130,7 @@ public final class SimulationsApiRequest {
         private Builder() {}
 
         @JsonProperty("input")
+
         public Builder withInput(com.amazon.ask.smapi.model.v1.skill.simulations.Input input) {
             this.input = input;
             return this;
@@ -134,6 +138,7 @@ public final class SimulationsApiRequest {
 
 
         @JsonProperty("device")
+
         public Builder withDevice(com.amazon.ask.smapi.model.v1.skill.simulations.Device device) {
             this.device = device;
             return this;
@@ -141,6 +146,7 @@ public final class SimulationsApiRequest {
 
 
         @JsonProperty("session")
+
         public Builder withSession(com.amazon.ask.smapi.model.v1.skill.simulations.Session session) {
             this.session = session;
             return this;

@@ -53,6 +53,7 @@ public final class AlexaPresentationAplInterface extends com.amazon.ask.smapi.mo
         return supportedViewports;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -98,6 +99,7 @@ public final class AlexaPresentationAplInterface extends com.amazon.ask.smapi.mo
         private Builder() {}
 
         @JsonProperty("supportedViewports")
+
         public Builder withSupportedViewports(List<com.amazon.ask.smapi.model.v1.skill.Manifest.ViewportSpecification> supportedViewports) {
             this.supportedViewports = supportedViewports;
             return this;

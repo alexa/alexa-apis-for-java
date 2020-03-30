@@ -56,6 +56,7 @@ public final class LocalizedHealthInfo {
         return promptName;
     }
 
+
     /**
      * Defines the names to use when a user tries to invoke the health skill.
      * @return aliases
@@ -64,6 +65,7 @@ public final class LocalizedHealthInfo {
     public List<com.amazon.ask.smapi.model.v1.skill.Manifest.HealthAlias> getAliases() {
         return aliases;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,6 +114,7 @@ public final class LocalizedHealthInfo {
         private Builder() {}
 
         @JsonProperty("promptName")
+
         public Builder withPromptName(String promptName) {
             this.promptName = promptName;
             return this;
@@ -119,6 +122,7 @@ public final class LocalizedHealthInfo {
 
 
         @JsonProperty("aliases")
+
         public Builder withAliases(List<com.amazon.ask.smapi.model.v1.skill.Manifest.HealthAlias> aliases) {
             this.aliases = aliases;
             return this;

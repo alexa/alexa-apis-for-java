@@ -53,6 +53,7 @@ public final class SkillManifestLocalizedPrivacyAndCompliance {
         return privacyPolicyUrl;
     }
 
+
     /**
      * link to the terms of use document for this skill
      * @return termsOfUseUrl
@@ -61,6 +62,7 @@ public final class SkillManifestLocalizedPrivacyAndCompliance {
     public String getTermsOfUseUrl() {
         return termsOfUseUrl;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class SkillManifestLocalizedPrivacyAndCompliance {
         private Builder() {}
 
         @JsonProperty("privacyPolicyUrl")
+
         public Builder withPrivacyPolicyUrl(String privacyPolicyUrl) {
             this.privacyPolicyUrl = privacyPolicyUrl;
             return this;
@@ -116,6 +119,7 @@ public final class SkillManifestLocalizedPrivacyAndCompliance {
 
 
         @JsonProperty("termsOfUseUrl")
+
         public Builder withTermsOfUseUrl(String termsOfUseUrl) {
             this.termsOfUseUrl = termsOfUseUrl;
             return this;

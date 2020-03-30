@@ -62,6 +62,7 @@ public final class SlotType {
         return name;
     }
 
+
     /**
      * List of expected values. Values outside the list are still returned.
      * @return values
@@ -71,6 +72,7 @@ public final class SlotType {
         return values;
     }
 
+
     /**
      * Get valueSupplier
      * @return valueSupplier
@@ -79,6 +81,7 @@ public final class SlotType {
     public com.amazon.ask.smapi.model.v1.skill.interactionModel.ValueSupplier getValueSupplier() {
         return valueSupplier;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -130,6 +133,7 @@ public final class SlotType {
         private Builder() {}
 
         @JsonProperty("name")
+
         public Builder withName(String name) {
             this.name = name;
             return this;
@@ -137,6 +141,7 @@ public final class SlotType {
 
 
         @JsonProperty("values")
+
         public Builder withValues(List<com.amazon.ask.smapi.model.v1.skill.interactionModel.TypeValue> values) {
             this.values = values;
             return this;
@@ -151,6 +156,7 @@ public final class SlotType {
         }
 
         @JsonProperty("valueSupplier")
+
         public Builder withValueSupplier(com.amazon.ask.smapi.model.v1.skill.interactionModel.ValueSupplier valueSupplier) {
             this.valueSupplier = valueSupplier;
             return this;

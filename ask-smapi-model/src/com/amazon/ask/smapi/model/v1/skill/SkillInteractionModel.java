@@ -50,6 +50,7 @@ public final class SkillInteractionModel {
         return locale;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -94,6 +95,7 @@ public final class SkillInteractionModel {
         private Builder() {}
 
         @JsonProperty("locale")
+
         public Builder withLocale(Map<String, com.amazon.ask.smapi.model.v1.skill.SkillInteractionModelStatus> locale) {
             this.locale = locale;
             return this;

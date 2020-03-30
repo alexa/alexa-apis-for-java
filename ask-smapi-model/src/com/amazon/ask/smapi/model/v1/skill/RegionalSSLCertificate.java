@@ -47,6 +47,7 @@ public final class RegionalSSLCertificate {
         return sslCertificate;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class RegionalSSLCertificate {
         private Builder() {}
 
         @JsonProperty("sslCertificate")
+
         public Builder withSslCertificate(String sslCertificate) {
             this.sslCertificate = sslCertificate;
             return this;

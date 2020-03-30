@@ -47,6 +47,7 @@ public final class ValueSupplierObject {
         return valueSupplier;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class ValueSupplierObject {
         private Builder() {}
 
         @JsonProperty("valueSupplier")
+
         public Builder withValueSupplier(com.amazon.ask.smapi.model.v1.skill.interactionModel.ValueSupplier valueSupplier) {
             this.valueSupplier = valueSupplier;
             return this;

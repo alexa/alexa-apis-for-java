@@ -47,6 +47,7 @@ public final class UpdateInSkillProductRequest {
         return inSkillProductDefinition;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class UpdateInSkillProductRequest {
         private Builder() {}
 
         @JsonProperty("inSkillProductDefinition")
+
         public Builder withInSkillProductDefinition(com.amazon.ask.smapi.model.v1.isp.InSkillProductDefinition inSkillProductDefinition) {
             this.inSkillProductDefinition = inSkillProductDefinition;
             return this;

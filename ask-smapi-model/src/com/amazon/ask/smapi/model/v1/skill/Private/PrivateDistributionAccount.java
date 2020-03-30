@@ -29,7 +29,7 @@ public final class PrivateDistributionAccount {
     private String principal = null;
 
     @JsonProperty("acceptStatus")
-    private com.amazon.ask.smapi.model.v1.skill.Private.AcceptStatus acceptStatus = null;
+    private String acceptStatus = null;
 
     public static Builder builder() {
         return new Builder();
@@ -53,13 +53,32 @@ public final class PrivateDistributionAccount {
         return principal;
     }
 
+
     /**
      * Get acceptStatus
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getAcceptStatusAsString().
+     *
      * @return acceptStatus
     **/
-    @JsonProperty("acceptStatus")
+    
     public com.amazon.ask.smapi.model.v1.skill.Private.AcceptStatus getAcceptStatus() {
-        return acceptStatus;
+        return com.amazon.ask.smapi.model.v1.skill.Private.AcceptStatus.fromValue(acceptStatus);
+    }
+
+    /**
+     * Get the underlying String value for acceptStatus.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return acceptStatus as a String value
+    **/
+    @JsonProperty("acceptStatus")
+    public String getAcceptStatusAsString() {
+      return acceptStatus;
     }
 
     @Override
@@ -104,11 +123,12 @@ public final class PrivateDistributionAccount {
   
     public static class Builder {
         private String principal;
-        private com.amazon.ask.smapi.model.v1.skill.Private.AcceptStatus acceptStatus;
+        private String acceptStatus;
 
         private Builder() {}
 
         @JsonProperty("principal")
+
         public Builder withPrincipal(String principal) {
             this.principal = principal;
             return this;
@@ -116,8 +136,13 @@ public final class PrivateDistributionAccount {
 
 
         @JsonProperty("acceptStatus")
+        public Builder withAcceptStatus(String acceptStatus) {
+          this.acceptStatus = acceptStatus;
+          return this;
+        }
+
         public Builder withAcceptStatus(com.amazon.ask.smapi.model.v1.skill.Private.AcceptStatus acceptStatus) {
-            this.acceptStatus = acceptStatus;
+            this.acceptStatus = acceptStatus != null ? acceptStatus.toString() : null;
             return this;
         }
 

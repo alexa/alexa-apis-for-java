@@ -32,7 +32,7 @@ public final class Slot {
     private String value = null;
 
     @JsonProperty("confirmationStatus")
-    private com.amazon.ask.smapi.model.v1.skill.evaluations.ConfirmationStatusType confirmationStatus = null;
+    private String confirmationStatus = null;
 
     @JsonProperty("resolutions")
     private com.amazon.ask.smapi.model.v1.skill.evaluations.SlotResolutions resolutions = null;
@@ -65,6 +65,7 @@ public final class Slot {
         return name;
     }
 
+
     /**
      * Get value
      * @return value
@@ -74,13 +75,32 @@ public final class Slot {
         return value;
     }
 
+
     /**
      * Get confirmationStatus
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getConfirmationStatusAsString().
+     *
      * @return confirmationStatus
     **/
-    @JsonProperty("confirmationStatus")
+    
     public com.amazon.ask.smapi.model.v1.skill.evaluations.ConfirmationStatusType getConfirmationStatus() {
-        return confirmationStatus;
+        return com.amazon.ask.smapi.model.v1.skill.evaluations.ConfirmationStatusType.fromValue(confirmationStatus);
+    }
+
+    /**
+     * Get the underlying String value for confirmationStatus.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return confirmationStatus as a String value
+    **/
+    @JsonProperty("confirmationStatus")
+    public String getConfirmationStatusAsString() {
+      return confirmationStatus;
     }
 
     /**
@@ -91,6 +111,7 @@ public final class Slot {
     public com.amazon.ask.smapi.model.v1.skill.evaluations.SlotResolutions getResolutions() {
         return resolutions;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -139,12 +160,13 @@ public final class Slot {
     public static class Builder {
         private String name;
         private String value;
-        private com.amazon.ask.smapi.model.v1.skill.evaluations.ConfirmationStatusType confirmationStatus;
+        private String confirmationStatus;
         private com.amazon.ask.smapi.model.v1.skill.evaluations.SlotResolutions resolutions;
 
         private Builder() {}
 
         @JsonProperty("name")
+
         public Builder withName(String name) {
             this.name = name;
             return this;
@@ -152,6 +174,7 @@ public final class Slot {
 
 
         @JsonProperty("value")
+
         public Builder withValue(String value) {
             this.value = value;
             return this;
@@ -159,13 +182,19 @@ public final class Slot {
 
 
         @JsonProperty("confirmationStatus")
+        public Builder withConfirmationStatus(String confirmationStatus) {
+          this.confirmationStatus = confirmationStatus;
+          return this;
+        }
+
         public Builder withConfirmationStatus(com.amazon.ask.smapi.model.v1.skill.evaluations.ConfirmationStatusType confirmationStatus) {
-            this.confirmationStatus = confirmationStatus;
+            this.confirmationStatus = confirmationStatus != null ? confirmationStatus.toString() : null;
             return this;
         }
 
 
         @JsonProperty("resolutions")
+
         public Builder withResolutions(com.amazon.ask.smapi.model.v1.skill.evaluations.SlotResolutions resolutions) {
             this.resolutions = resolutions;
             return this;

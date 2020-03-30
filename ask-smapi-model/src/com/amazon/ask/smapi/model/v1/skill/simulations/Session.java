@@ -26,7 +26,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public final class Session {
 
     @JsonProperty("mode")
-    private com.amazon.ask.smapi.model.v1.skill.simulations.SessionMode mode = null;
+    private String mode = null;
 
     public static Builder builder() {
         return new Builder();
@@ -40,11 +40,29 @@ public final class Session {
 
     /**
      * Get mode
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getModeAsString().
+     *
      * @return mode
     **/
-    @JsonProperty("mode")
+    
     public com.amazon.ask.smapi.model.v1.skill.simulations.SessionMode getMode() {
-        return mode;
+        return com.amazon.ask.smapi.model.v1.skill.simulations.SessionMode.fromValue(mode);
+    }
+
+    /**
+     * Get the underlying String value for mode.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return mode as a String value
+    **/
+    @JsonProperty("mode")
+    public String getModeAsString() {
+      return mode;
     }
 
     @Override
@@ -86,13 +104,18 @@ public final class Session {
     }
   
     public static class Builder {
-        private com.amazon.ask.smapi.model.v1.skill.simulations.SessionMode mode;
+        private String mode;
 
         private Builder() {}
 
         @JsonProperty("mode")
+        public Builder withMode(String mode) {
+          this.mode = mode;
+          return this;
+        }
+
         public Builder withMode(com.amazon.ask.smapi.model.v1.skill.simulations.SessionMode mode) {
-            this.mode = mode;
+            this.mode = mode != null ? mode.toString() : null;
             return this;
         }
 

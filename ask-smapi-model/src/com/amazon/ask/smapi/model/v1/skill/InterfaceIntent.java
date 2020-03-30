@@ -59,6 +59,7 @@ public final class InterfaceIntent {
         return isExtensible;
     }
 
+
     /**
      * Name of the intent.
      * @return name
@@ -68,6 +69,7 @@ public final class InterfaceIntent {
         return name;
     }
 
+
     /**
      * Whether the intent is required in the interface.
      * @return isRequired
@@ -76,6 +78,7 @@ public final class InterfaceIntent {
     public Boolean getIsRequired() {
         return isRequired;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -127,6 +130,7 @@ public final class InterfaceIntent {
         private Builder() {}
 
         @JsonProperty("isExtensible")
+
         public Builder withIsExtensible(Boolean isExtensible) {
             this.isExtensible = isExtensible;
             return this;
@@ -134,6 +138,7 @@ public final class InterfaceIntent {
 
 
         @JsonProperty("name")
+
         public Builder withName(String name) {
             this.name = name;
             return this;
@@ -141,6 +146,7 @@ public final class InterfaceIntent {
 
 
         @JsonProperty("isRequired")
+
         public Builder withIsRequired(Boolean isRequired) {
             this.isRequired = isRequired;
             return this;

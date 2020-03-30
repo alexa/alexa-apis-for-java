@@ -33,7 +33,7 @@ public final class SummaryPriceListing {
     private BigDecimal primeMemberPrice = null;
 
     @JsonProperty("currency")
-    private com.amazon.ask.smapi.model.v1.isp.Currency currency = null;
+    private String currency = null;
 
     public static Builder builder() {
         return new Builder();
@@ -60,6 +60,7 @@ public final class SummaryPriceListing {
         return price;
     }
 
+
     /**
      * The prime price of an in-skill product.
      * @return primeMemberPrice
@@ -69,13 +70,32 @@ public final class SummaryPriceListing {
         return primeMemberPrice;
     }
 
+
     /**
      * Get currency
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getCurrencyAsString().
+     *
      * @return currency
     **/
-    @JsonProperty("currency")
+    
     public com.amazon.ask.smapi.model.v1.isp.Currency getCurrency() {
-        return currency;
+        return com.amazon.ask.smapi.model.v1.isp.Currency.fromValue(currency);
+    }
+
+    /**
+     * Get the underlying String value for currency.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return currency as a String value
+    **/
+    @JsonProperty("currency")
+    public String getCurrencyAsString() {
+      return currency;
     }
 
     @Override
@@ -123,11 +143,12 @@ public final class SummaryPriceListing {
     public static class Builder {
         private BigDecimal price;
         private BigDecimal primeMemberPrice;
-        private com.amazon.ask.smapi.model.v1.isp.Currency currency;
+        private String currency;
 
         private Builder() {}
 
         @JsonProperty("price")
+
         public Builder withPrice(BigDecimal price) {
             this.price = price;
             return this;
@@ -135,6 +156,7 @@ public final class SummaryPriceListing {
 
 
         @JsonProperty("primeMemberPrice")
+
         public Builder withPrimeMemberPrice(BigDecimal primeMemberPrice) {
             this.primeMemberPrice = primeMemberPrice;
             return this;
@@ -142,8 +164,13 @@ public final class SummaryPriceListing {
 
 
         @JsonProperty("currency")
+        public Builder withCurrency(String currency) {
+          this.currency = currency;
+          return this;
+        }
+
         public Builder withCurrency(com.amazon.ask.smapi.model.v1.isp.Currency currency) {
-            this.currency = currency;
+            this.currency = currency != null ? currency.toString() : null;
             return this;
         }
 

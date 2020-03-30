@@ -60,6 +60,7 @@ public final class HostedSkillRepositoryCredentials {
         return username;
     }
 
+
     /**
      * signed AWS Credentials used to access hosted skill repository
      * @return password
@@ -69,6 +70,7 @@ public final class HostedSkillRepositoryCredentials {
         return password;
     }
 
+
     /**
      * expiration time for the credentials
      * @return expiresAt
@@ -77,6 +79,7 @@ public final class HostedSkillRepositoryCredentials {
     public OffsetDateTime getExpiresAt() {
         return expiresAt;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -128,6 +131,7 @@ public final class HostedSkillRepositoryCredentials {
         private Builder() {}
 
         @JsonProperty("username")
+
         public Builder withUsername(String username) {
             this.username = username;
             return this;
@@ -135,6 +139,7 @@ public final class HostedSkillRepositoryCredentials {
 
 
         @JsonProperty("password")
+
         public Builder withPassword(String password) {
             this.password = password;
             return this;
@@ -142,6 +147,7 @@ public final class HostedSkillRepositoryCredentials {
 
 
         @JsonProperty("expiresAt")
+
         public Builder withExpiresAt(OffsetDateTime expiresAt) {
             this.expiresAt = expiresAt;
             return this;

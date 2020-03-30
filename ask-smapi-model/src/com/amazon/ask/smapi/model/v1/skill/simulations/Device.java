@@ -47,6 +47,7 @@ public final class Device {
         return locale;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class Device {
         private Builder() {}
 
         @JsonProperty("locale")
+
         public Builder withLocale(String locale) {
             this.locale = locale;
             return this;

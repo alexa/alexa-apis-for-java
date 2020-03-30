@@ -82,6 +82,7 @@ public final class MusicApis {
         return regions;
     }
 
+
     /**
      * Get endpoint
      * @return endpoint
@@ -90,6 +91,7 @@ public final class MusicApis {
     public com.amazon.ask.smapi.model.v1.skill.Manifest.LambdaEndpoint getEndpoint() {
         return endpoint;
     }
+
 
     /**
      * Defines the structure of music capabilities information in the skill manifest.
@@ -100,6 +102,7 @@ public final class MusicApis {
         return capabilities;
     }
 
+
     /**
      * Get interfaces
      * @return interfaces
@@ -108,6 +111,7 @@ public final class MusicApis {
     public com.amazon.ask.smapi.model.v1.skill.Manifest.MusicInterfaces getInterfaces() {
         return interfaces;
     }
+
 
     /**
      * Defines the structure of locale specific music information in the skill manifest.
@@ -118,6 +122,7 @@ public final class MusicApis {
         return locales;
     }
 
+
     /**
      * List of the type of content to be provided by the music skill.
      * @return contentTypes
@@ -126,6 +131,7 @@ public final class MusicApis {
     public List<com.amazon.ask.smapi.model.v1.skill.Manifest.MusicContentType> getContentTypes() {
         return contentTypes;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -186,6 +192,7 @@ public final class MusicApis {
         private Builder() {}
 
         @JsonProperty("regions")
+
         public Builder withRegions(Map<String, com.amazon.ask.smapi.model.v1.skill.Manifest.LambdaRegion> regions) {
             this.regions = regions;
             return this;
@@ -200,6 +207,7 @@ public final class MusicApis {
         }
 
         @JsonProperty("endpoint")
+
         public Builder withEndpoint(com.amazon.ask.smapi.model.v1.skill.Manifest.LambdaEndpoint endpoint) {
             this.endpoint = endpoint;
             return this;
@@ -207,6 +215,7 @@ public final class MusicApis {
 
 
         @JsonProperty("capabilities")
+
         public Builder withCapabilities(List<com.amazon.ask.smapi.model.v1.skill.Manifest.MusicCapability> capabilities) {
             this.capabilities = capabilities;
             return this;
@@ -221,6 +230,7 @@ public final class MusicApis {
         }
 
         @JsonProperty("interfaces")
+
         public Builder withInterfaces(com.amazon.ask.smapi.model.v1.skill.Manifest.MusicInterfaces interfaces) {
             this.interfaces = interfaces;
             return this;
@@ -228,6 +238,7 @@ public final class MusicApis {
 
 
         @JsonProperty("locales")
+
         public Builder withLocales(Map<String, com.amazon.ask.smapi.model.v1.skill.Manifest.LocalizedMusicInfo> locales) {
             this.locales = locales;
             return this;
@@ -242,6 +253,7 @@ public final class MusicApis {
         }
 
         @JsonProperty("contentTypes")
+
         public Builder withContentTypes(List<com.amazon.ask.smapi.model.v1.skill.Manifest.MusicContentType> contentTypes) {
             this.contentTypes = contentTypes;
             return this;

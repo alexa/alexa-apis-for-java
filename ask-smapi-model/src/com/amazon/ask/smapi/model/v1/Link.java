@@ -47,6 +47,7 @@ public final class Link {
         return href;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class Link {
         private Builder() {}
 
         @JsonProperty("href")
+
         public Builder withHref(String href) {
             this.href = href;
             return this;

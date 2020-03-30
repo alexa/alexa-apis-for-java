@@ -50,6 +50,7 @@ public final class InvocationResponse {
         return body;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -94,6 +95,7 @@ public final class InvocationResponse {
         private Builder() {}
 
         @JsonProperty("body")
+
         public Builder withBody(Map<String, Object> body) {
             this.body = body;
             return this;

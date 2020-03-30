@@ -62,6 +62,7 @@ public final class InteractionModelSchema {
         return languageModel;
     }
 
+
     /**
      * Get dialog
      * @return dialog
@@ -71,6 +72,7 @@ public final class InteractionModelSchema {
         return dialog;
     }
 
+
     /**
      * List of prompts.
      * @return prompts
@@ -79,6 +81,7 @@ public final class InteractionModelSchema {
     public List<com.amazon.ask.smapi.model.v1.skill.interactionModel.Prompt> getPrompts() {
         return prompts;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -130,6 +133,7 @@ public final class InteractionModelSchema {
         private Builder() {}
 
         @JsonProperty("languageModel")
+
         public Builder withLanguageModel(com.amazon.ask.smapi.model.v1.skill.interactionModel.LanguageModel languageModel) {
             this.languageModel = languageModel;
             return this;
@@ -137,6 +141,7 @@ public final class InteractionModelSchema {
 
 
         @JsonProperty("dialog")
+
         public Builder withDialog(com.amazon.ask.smapi.model.v1.skill.interactionModel.Dialog dialog) {
             this.dialog = dialog;
             return this;
@@ -144,6 +149,7 @@ public final class InteractionModelSchema {
 
 
         @JsonProperty("prompts")
+
         public Builder withPrompts(List<com.amazon.ask.smapi.model.v1.skill.interactionModel.Prompt> prompts) {
             this.prompts = prompts;
             return this;

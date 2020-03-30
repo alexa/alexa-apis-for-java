@@ -35,7 +35,7 @@ public final class HealthApis {
     private com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifestEndpoint endpoint = null;
 
     @JsonProperty("protocolVersion")
-    private com.amazon.ask.smapi.model.v1.skill.Manifest.HealthProtocolVersion protocolVersion = null;
+    private String protocolVersion = null;
 
     @JsonProperty("interfaces")
     private com.amazon.ask.smapi.model.v1.skill.Manifest.HealthInterface interfaces = null;
@@ -68,6 +68,7 @@ public final class HealthApis {
         return regions;
     }
 
+
     /**
      * Get endpoint
      * @return endpoint
@@ -77,13 +78,32 @@ public final class HealthApis {
         return endpoint;
     }
 
+
     /**
      * Get protocolVersion
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getProtocolVersionAsString().
+     *
      * @return protocolVersion
     **/
-    @JsonProperty("protocolVersion")
+    
     public com.amazon.ask.smapi.model.v1.skill.Manifest.HealthProtocolVersion getProtocolVersion() {
-        return protocolVersion;
+        return com.amazon.ask.smapi.model.v1.skill.Manifest.HealthProtocolVersion.fromValue(protocolVersion);
+    }
+
+    /**
+     * Get the underlying String value for protocolVersion.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return protocolVersion as a String value
+    **/
+    @JsonProperty("protocolVersion")
+    public String getProtocolVersionAsString() {
+      return protocolVersion;
     }
 
     /**
@@ -94,6 +114,7 @@ public final class HealthApis {
     public com.amazon.ask.smapi.model.v1.skill.Manifest.HealthInterface getInterfaces() {
         return interfaces;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -142,12 +163,13 @@ public final class HealthApis {
     public static class Builder {
         private Map<String, com.amazon.ask.smapi.model.v1.skill.Manifest.Region> regions;
         private com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifestEndpoint endpoint;
-        private com.amazon.ask.smapi.model.v1.skill.Manifest.HealthProtocolVersion protocolVersion;
+        private String protocolVersion;
         private com.amazon.ask.smapi.model.v1.skill.Manifest.HealthInterface interfaces;
 
         private Builder() {}
 
         @JsonProperty("regions")
+
         public Builder withRegions(Map<String, com.amazon.ask.smapi.model.v1.skill.Manifest.Region> regions) {
             this.regions = regions;
             return this;
@@ -162,6 +184,7 @@ public final class HealthApis {
         }
 
         @JsonProperty("endpoint")
+
         public Builder withEndpoint(com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifestEndpoint endpoint) {
             this.endpoint = endpoint;
             return this;
@@ -169,13 +192,19 @@ public final class HealthApis {
 
 
         @JsonProperty("protocolVersion")
+        public Builder withProtocolVersion(String protocolVersion) {
+          this.protocolVersion = protocolVersion;
+          return this;
+        }
+
         public Builder withProtocolVersion(com.amazon.ask.smapi.model.v1.skill.Manifest.HealthProtocolVersion protocolVersion) {
-            this.protocolVersion = protocolVersion;
+            this.protocolVersion = protocolVersion != null ? protocolVersion.toString() : null;
             return this;
         }
 
 
         @JsonProperty("interfaces")
+
         public Builder withInterfaces(com.amazon.ask.smapi.model.v1.skill.Manifest.HealthInterface interfaces) {
             this.interfaces = interfaces;
             return this;

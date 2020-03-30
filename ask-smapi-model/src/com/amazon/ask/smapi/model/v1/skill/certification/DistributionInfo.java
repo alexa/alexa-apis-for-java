@@ -56,6 +56,7 @@ public final class DistributionInfo {
         return publishedCountries;
     }
 
+
     /**
      * Get publicationFailures
      * @return publicationFailures
@@ -64,6 +65,7 @@ public final class DistributionInfo {
     public List<com.amazon.ask.smapi.model.v1.skill.certification.PublicationFailure> getPublicationFailures() {
         return publicationFailures;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,6 +114,7 @@ public final class DistributionInfo {
         private Builder() {}
 
         @JsonProperty("publishedCountries")
+
         public Builder withPublishedCountries(List<String> publishedCountries) {
             this.publishedCountries = publishedCountries;
             return this;
@@ -126,6 +129,7 @@ public final class DistributionInfo {
         }
 
         @JsonProperty("publicationFailures")
+
         public Builder withPublicationFailures(List<com.amazon.ask.smapi.model.v1.skill.certification.PublicationFailure> publicationFailures) {
             this.publicationFailures = publicationFailures;
             return this;

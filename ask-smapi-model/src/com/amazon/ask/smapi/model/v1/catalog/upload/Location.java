@@ -48,6 +48,7 @@ public final class Location extends com.amazon.ask.smapi.model.v1.catalog.upload
         return location;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -92,6 +93,7 @@ public final class Location extends com.amazon.ask.smapi.model.v1.catalog.upload
         private Builder() {}
 
         @JsonProperty("location")
+
         public Builder withLocation(String location) {
             this.location = location;
             return this;

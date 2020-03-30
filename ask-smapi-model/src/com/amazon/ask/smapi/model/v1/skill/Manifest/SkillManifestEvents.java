@@ -70,6 +70,7 @@ public final class SkillManifestEvents {
         return subscriptions;
     }
 
+
     /**
      * Get publications
      * @return publications
@@ -78,6 +79,7 @@ public final class SkillManifestEvents {
     public List<com.amazon.ask.smapi.model.v1.skill.Manifest.EventPublications> getPublications() {
         return publications;
     }
+
 
     /**
      * Contains an array of the supported &amp;lt;region&amp;gt; Objects.
@@ -88,6 +90,7 @@ public final class SkillManifestEvents {
         return regions;
     }
 
+
     /**
      * Get endpoint
      * @return endpoint
@@ -96,6 +99,7 @@ public final class SkillManifestEvents {
     public com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifestEndpoint getEndpoint() {
         return endpoint;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -150,6 +154,7 @@ public final class SkillManifestEvents {
         private Builder() {}
 
         @JsonProperty("subscriptions")
+
         public Builder withSubscriptions(List<com.amazon.ask.smapi.model.v1.skill.Manifest.EventName> subscriptions) {
             this.subscriptions = subscriptions;
             return this;
@@ -164,6 +169,7 @@ public final class SkillManifestEvents {
         }
 
         @JsonProperty("publications")
+
         public Builder withPublications(List<com.amazon.ask.smapi.model.v1.skill.Manifest.EventPublications> publications) {
             this.publications = publications;
             return this;
@@ -178,6 +184,7 @@ public final class SkillManifestEvents {
         }
 
         @JsonProperty("regions")
+
         public Builder withRegions(Map<String, com.amazon.ask.smapi.model.v1.skill.Manifest.Region> regions) {
             this.regions = regions;
             return this;
@@ -192,6 +199,7 @@ public final class SkillManifestEvents {
         }
 
         @JsonProperty("endpoint")
+
         public Builder withEndpoint(com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifestEndpoint endpoint) {
             this.endpoint = endpoint;
             return this;

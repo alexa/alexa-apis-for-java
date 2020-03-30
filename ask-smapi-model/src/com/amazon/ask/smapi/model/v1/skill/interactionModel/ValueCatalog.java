@@ -53,6 +53,7 @@ public final class ValueCatalog {
         return catalogId;
     }
 
+
     /**
      * Catalog version.
      * @return version
@@ -61,6 +62,7 @@ public final class ValueCatalog {
     public String getVersion() {
         return version;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class ValueCatalog {
         private Builder() {}
 
         @JsonProperty("catalogId")
+
         public Builder withCatalogId(String catalogId) {
             this.catalogId = catalogId;
             return this;
@@ -116,6 +119,7 @@ public final class ValueCatalog {
 
 
         @JsonProperty("version")
+
         public Builder withVersion(String version) {
             this.version = version;
             return this;

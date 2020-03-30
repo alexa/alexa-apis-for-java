@@ -59,6 +59,7 @@ public final class SimulationResult {
         return alexaExecutionInfo;
     }
 
+
     /**
      * Get skillExecutionInfo
      * @return skillExecutionInfo
@@ -68,6 +69,7 @@ public final class SimulationResult {
         return skillExecutionInfo;
     }
 
+
     /**
      * Get error
      * @return error
@@ -76,6 +78,7 @@ public final class SimulationResult {
     public com.amazon.ask.smapi.model.v1.Error getError() {
         return error;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -127,6 +130,7 @@ public final class SimulationResult {
         private Builder() {}
 
         @JsonProperty("alexaExecutionInfo")
+
         public Builder withAlexaExecutionInfo(com.amazon.ask.smapi.model.v1.skill.simulations.AlexaExecutionInfo alexaExecutionInfo) {
             this.alexaExecutionInfo = alexaExecutionInfo;
             return this;
@@ -134,6 +138,7 @@ public final class SimulationResult {
 
 
         @JsonProperty("skillExecutionInfo")
+
         public Builder withSkillExecutionInfo(com.amazon.ask.smapi.model.v1.skill.simulations.Invocation skillExecutionInfo) {
             this.skillExecutionInfo = skillExecutionInfo;
             return this;
@@ -141,6 +146,7 @@ public final class SimulationResult {
 
 
         @JsonProperty("error")
+
         public Builder withError(com.amazon.ask.smapi.model.v1.Error error) {
             this.error = error;
             return this;

@@ -87,6 +87,7 @@ public final class IntentRequests {
         return links;
     }
 
+
     /**
      * This token can be used to load the next page of the result.
      * @return nextToken
@@ -95,6 +96,7 @@ public final class IntentRequests {
     public String getNextToken() {
         return nextToken;
     }
+
 
     /**
      * This property is true when all the results matching the search request haven't been returned, false otherwise.
@@ -105,6 +107,7 @@ public final class IntentRequests {
         return isTruncated;
     }
 
+
     /**
      * Total number of records that matched the given search query.
      * @return totalCount
@@ -113,6 +116,7 @@ public final class IntentRequests {
     public BigDecimal getTotalCount() {
         return totalCount;
     }
+
 
     /**
      * Position of the current page in the result set.
@@ -123,6 +127,7 @@ public final class IntentRequests {
         return startIndex;
     }
 
+
     /**
      * The Skill Id.
      * @return skillId
@@ -132,6 +137,7 @@ public final class IntentRequests {
         return skillId;
     }
 
+
     /**
      * List of intent requests for the skill
      * @return items
@@ -140,6 +146,7 @@ public final class IntentRequests {
     public List<com.amazon.ask.smapi.model.v1.skill.history.IntentRequest> getItems() {
         return items;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -203,6 +210,7 @@ public final class IntentRequests {
         private Builder() {}
 
         @JsonProperty("_links")
+
         public Builder withLinks(com.amazon.ask.smapi.model.v1.Links links) {
             this.links = links;
             return this;
@@ -210,6 +218,7 @@ public final class IntentRequests {
 
 
         @JsonProperty("nextToken")
+
         public Builder withNextToken(String nextToken) {
             this.nextToken = nextToken;
             return this;
@@ -217,6 +226,7 @@ public final class IntentRequests {
 
 
         @JsonProperty("isTruncated")
+
         public Builder withIsTruncated(Boolean isTruncated) {
             this.isTruncated = isTruncated;
             return this;
@@ -224,6 +234,7 @@ public final class IntentRequests {
 
 
         @JsonProperty("totalCount")
+
         public Builder withTotalCount(BigDecimal totalCount) {
             this.totalCount = totalCount;
             return this;
@@ -231,6 +242,7 @@ public final class IntentRequests {
 
 
         @JsonProperty("startIndex")
+
         public Builder withStartIndex(BigDecimal startIndex) {
             this.startIndex = startIndex;
             return this;
@@ -238,6 +250,7 @@ public final class IntentRequests {
 
 
         @JsonProperty("skillId")
+
         public Builder withSkillId(String skillId) {
             this.skillId = skillId;
             return this;
@@ -245,6 +258,7 @@ public final class IntentRequests {
 
 
         @JsonProperty("items")
+
         public Builder withItems(List<com.amazon.ask.smapi.model.v1.skill.history.IntentRequest> items) {
             this.items = items;
             return this;

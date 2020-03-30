@@ -53,6 +53,7 @@ public final class CatalogInput {
         return name;
     }
 
+
     /**
      * Description string about the catalog.
      * @return description
@@ -61,6 +62,7 @@ public final class CatalogInput {
     public String getDescription() {
         return description;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class CatalogInput {
         private Builder() {}
 
         @JsonProperty("name")
+
         public Builder withName(String name) {
             this.name = name;
             return this;
@@ -116,6 +119,7 @@ public final class CatalogInput {
 
 
         @JsonProperty("description")
+
         public Builder withDescription(String description) {
             this.description = description;
             return this;

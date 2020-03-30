@@ -56,6 +56,7 @@ public final class DisplayInterface extends com.amazon.ask.smapi.model.v1.skill.
         return minimumTemplateVersion;
     }
 
+
     /**
      * Get minimumApmlVersion
      * @return minimumApmlVersion
@@ -64,6 +65,7 @@ public final class DisplayInterface extends com.amazon.ask.smapi.model.v1.skill.
     public com.amazon.ask.smapi.model.v1.skill.Manifest.DisplayInterfaceApmlVersion getMinimumApmlVersion() {
         return minimumApmlVersion;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -113,6 +115,7 @@ public final class DisplayInterface extends com.amazon.ask.smapi.model.v1.skill.
         private Builder() {}
 
         @JsonProperty("minimumTemplateVersion")
+
         public Builder withMinimumTemplateVersion(com.amazon.ask.smapi.model.v1.skill.Manifest.DisplayInterfaceTemplateVersion minimumTemplateVersion) {
             this.minimumTemplateVersion = minimumTemplateVersion;
             return this;
@@ -120,6 +123,7 @@ public final class DisplayInterface extends com.amazon.ask.smapi.model.v1.skill.
 
 
         @JsonProperty("minimumApmlVersion")
+
         public Builder withMinimumApmlVersion(com.amazon.ask.smapi.model.v1.skill.Manifest.DisplayInterfaceApmlVersion minimumApmlVersion) {
             this.minimumApmlVersion = minimumApmlVersion;
             return this;

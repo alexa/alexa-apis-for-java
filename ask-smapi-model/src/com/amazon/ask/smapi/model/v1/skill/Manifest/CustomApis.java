@@ -76,6 +76,7 @@ public final class CustomApis {
         return regions;
     }
 
+
     /**
      * Get endpoint
      * @return endpoint
@@ -84,6 +85,7 @@ public final class CustomApis {
     public com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifestEndpoint getEndpoint() {
         return endpoint;
     }
+
 
     /**
      * Defines the structure for interfaces supported by the custom api of the skill.
@@ -94,6 +96,7 @@ public final class CustomApis {
         return interfaces;
     }
 
+
     /**
      * List of provided tasks.
      * @return tasks
@@ -103,6 +106,7 @@ public final class CustomApis {
         return tasks;
     }
 
+
     /**
      * Get connections
      * @return connections
@@ -111,6 +115,7 @@ public final class CustomApis {
     public com.amazon.ask.smapi.model.v1.skill.Manifest.CustomConnections getConnections() {
         return connections;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -168,6 +173,7 @@ public final class CustomApis {
         private Builder() {}
 
         @JsonProperty("regions")
+
         public Builder withRegions(Map<String, com.amazon.ask.smapi.model.v1.skill.Manifest.Region> regions) {
             this.regions = regions;
             return this;
@@ -182,6 +188,7 @@ public final class CustomApis {
         }
 
         @JsonProperty("endpoint")
+
         public Builder withEndpoint(com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifestEndpoint endpoint) {
             this.endpoint = endpoint;
             return this;
@@ -189,6 +196,7 @@ public final class CustomApis {
 
 
         @JsonProperty("interfaces")
+
         public Builder withInterfaces(List<com.amazon.ask.smapi.model.v1.skill.Manifest.ModelInterface> interfaces) {
             this.interfaces = interfaces;
             return this;
@@ -203,6 +211,7 @@ public final class CustomApis {
         }
 
         @JsonProperty("tasks")
+
         public Builder withTasks(List<com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifestCustomTask> tasks) {
             this.tasks = tasks;
             return this;
@@ -217,6 +226,7 @@ public final class CustomApis {
         }
 
         @JsonProperty("connections")
+
         public Builder withConnections(com.amazon.ask.smapi.model.v1.skill.Manifest.CustomConnections connections) {
             this.connections = connections;
             return this;

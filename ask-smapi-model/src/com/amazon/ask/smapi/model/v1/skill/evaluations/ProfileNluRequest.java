@@ -53,6 +53,7 @@ public final class ProfileNluRequest {
         return utterance;
     }
 
+
     /**
      * Opaque string which contains multi-turn related context.
      * @return multiTurnToken
@@ -61,6 +62,7 @@ public final class ProfileNluRequest {
     public String getMultiTurnToken() {
         return multiTurnToken;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class ProfileNluRequest {
         private Builder() {}
 
         @JsonProperty("utterance")
+
         public Builder withUtterance(String utterance) {
             this.utterance = utterance;
             return this;
@@ -116,6 +119,7 @@ public final class ProfileNluRequest {
 
 
         @JsonProperty("multiTurnToken")
+
         public Builder withMultiTurnToken(String multiTurnToken) {
             this.multiTurnToken = multiTurnToken;
             return this;

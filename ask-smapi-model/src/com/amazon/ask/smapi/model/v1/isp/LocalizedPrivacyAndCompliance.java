@@ -47,6 +47,7 @@ public final class LocalizedPrivacyAndCompliance {
         return privacyPolicyUrl;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class LocalizedPrivacyAndCompliance {
         private Builder() {}
 
         @JsonProperty("privacyPolicyUrl")
+
         public Builder withPrivacyPolicyUrl(String privacyPolicyUrl) {
             this.privacyPolicyUrl = privacyPolicyUrl;
             return this;

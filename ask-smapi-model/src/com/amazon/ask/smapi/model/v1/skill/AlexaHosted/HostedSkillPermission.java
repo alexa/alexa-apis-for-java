@@ -26,10 +26,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public final class HostedSkillPermission {
 
     @JsonProperty("permission")
-    private com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillPermissionType permission = null;
+    private String permission = null;
 
     @JsonProperty("status")
-    private com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillPermissionStatus status = null;
+    private String status = null;
 
     @JsonProperty("actionUrl")
     private String actionUrl = null;
@@ -52,20 +52,56 @@ public final class HostedSkillPermission {
 
     /**
      * Get permission
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getPermissionAsString().
+     *
      * @return permission
     **/
-    @JsonProperty("permission")
+    
     public com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillPermissionType getPermission() {
-        return permission;
+        return com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillPermissionType.fromValue(permission);
+    }
+
+    /**
+     * Get the underlying String value for permission.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return permission as a String value
+    **/
+    @JsonProperty("permission")
+    public String getPermissionAsString() {
+      return permission;
     }
 
     /**
      * Get status
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getStatusAsString().
+     *
      * @return status
     **/
-    @JsonProperty("status")
+    
     public com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillPermissionStatus getStatus() {
-        return status;
+        return com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillPermissionStatus.fromValue(status);
+    }
+
+    /**
+     * Get the underlying String value for status.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return status as a String value
+    **/
+    @JsonProperty("status")
+    public String getStatusAsString() {
+      return status;
     }
 
     /**
@@ -76,6 +112,7 @@ public final class HostedSkillPermission {
     public String getActionUrl() {
         return actionUrl;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -120,27 +157,38 @@ public final class HostedSkillPermission {
     }
   
     public static class Builder {
-        private com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillPermissionType permission;
-        private com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillPermissionStatus status;
+        private String permission;
+        private String status;
         private String actionUrl;
 
         private Builder() {}
 
         @JsonProperty("permission")
+        public Builder withPermission(String permission) {
+          this.permission = permission;
+          return this;
+        }
+
         public Builder withPermission(com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillPermissionType permission) {
-            this.permission = permission;
+            this.permission = permission != null ? permission.toString() : null;
             return this;
         }
 
 
         @JsonProperty("status")
+        public Builder withStatus(String status) {
+          this.status = status;
+          return this;
+        }
+
         public Builder withStatus(com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillPermissionStatus status) {
-            this.status = status;
+            this.status = status != null ? status.toString() : null;
             return this;
         }
 
 
         @JsonProperty("actionUrl")
+
         public Builder withActionUrl(String actionUrl) {
             this.actionUrl = actionUrl;
             return this;

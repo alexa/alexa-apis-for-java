@@ -64,6 +64,7 @@ public final class AlexaForBusinessApis {
         return regions;
     }
 
+
     /**
      * Get endpoint
      * @return endpoint
@@ -73,6 +74,7 @@ public final class AlexaForBusinessApis {
         return endpoint;
     }
 
+
     /**
      * Contains the list of supported interfaces.
      * @return interfaces
@@ -81,6 +83,7 @@ public final class AlexaForBusinessApis {
     public List<com.amazon.ask.smapi.model.v1.skill.Manifest.AlexaForBusinessInterface> getInterfaces() {
         return interfaces;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -132,6 +135,7 @@ public final class AlexaForBusinessApis {
         private Builder() {}
 
         @JsonProperty("regions")
+
         public Builder withRegions(Map<String, com.amazon.ask.smapi.model.v1.skill.Manifest.Region> regions) {
             this.regions = regions;
             return this;
@@ -146,6 +150,7 @@ public final class AlexaForBusinessApis {
         }
 
         @JsonProperty("endpoint")
+
         public Builder withEndpoint(com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifestEndpoint endpoint) {
             this.endpoint = endpoint;
             return this;
@@ -153,6 +158,7 @@ public final class AlexaForBusinessApis {
 
 
         @JsonProperty("interfaces")
+
         public Builder withInterfaces(List<com.amazon.ask.smapi.model.v1.skill.Manifest.AlexaForBusinessInterface> interfaces) {
             this.interfaces = interfaces;
             return this;

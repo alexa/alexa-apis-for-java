@@ -47,6 +47,7 @@ public final class UpdateSkillWithPackageRequest {
         return location;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class UpdateSkillWithPackageRequest {
         private Builder() {}
 
         @JsonProperty("location")
+
         public Builder withLocation(String location) {
             this.location = location;
             return this;

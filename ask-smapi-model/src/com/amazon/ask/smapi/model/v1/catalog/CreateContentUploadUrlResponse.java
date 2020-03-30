@@ -56,6 +56,7 @@ public final class CreateContentUploadUrlResponse {
         return urlId;
     }
 
+
     /**
      * Ordered list of presigned upload parts to perform a partitioned (multipart) file upload
      * @return preSignedUploadParts
@@ -64,6 +65,7 @@ public final class CreateContentUploadUrlResponse {
     public List<com.amazon.ask.smapi.model.v1.catalog.PresignedUploadPartItems> getPreSignedUploadParts() {
         return preSignedUploadParts;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,6 +114,7 @@ public final class CreateContentUploadUrlResponse {
         private Builder() {}
 
         @JsonProperty("urlId")
+
         public Builder withUrlId(String urlId) {
             this.urlId = urlId;
             return this;
@@ -119,6 +122,7 @@ public final class CreateContentUploadUrlResponse {
 
 
         @JsonProperty("preSignedUploadParts")
+
         public Builder withPreSignedUploadParts(List<com.amazon.ask.smapi.model.v1.catalog.PresignedUploadPartItems> preSignedUploadParts) {
             this.preSignedUploadParts = preSignedUploadParts;
             return this;

@@ -68,6 +68,7 @@ public final class ProfileNluResponse {
         return sessionEnded;
     }
 
+
     /**
      * Get selectedIntent
      * @return selectedIntent
@@ -76,6 +77,7 @@ public final class ProfileNluResponse {
     public com.amazon.ask.smapi.model.v1.skill.evaluations.ProfileNluSelectedIntent getSelectedIntent() {
         return selectedIntent;
     }
+
 
     /**
      * All intents that Alexa considered for the utterance in the request, but did not select.
@@ -86,6 +88,7 @@ public final class ProfileNluResponse {
         return consideredIntents;
     }
 
+
     /**
      * Get multiTurn
      * @return multiTurn
@@ -94,6 +97,7 @@ public final class ProfileNluResponse {
     public com.amazon.ask.smapi.model.v1.skill.evaluations.MultiTurn getMultiTurn() {
         return multiTurn;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -148,6 +152,7 @@ public final class ProfileNluResponse {
         private Builder() {}
 
         @JsonProperty("sessionEnded")
+
         public Builder withSessionEnded(Boolean sessionEnded) {
             this.sessionEnded = sessionEnded;
             return this;
@@ -155,6 +160,7 @@ public final class ProfileNluResponse {
 
 
         @JsonProperty("selectedIntent")
+
         public Builder withSelectedIntent(com.amazon.ask.smapi.model.v1.skill.evaluations.ProfileNluSelectedIntent selectedIntent) {
             this.selectedIntent = selectedIntent;
             return this;
@@ -162,6 +168,7 @@ public final class ProfileNluResponse {
 
 
         @JsonProperty("consideredIntents")
+
         public Builder withConsideredIntents(List<com.amazon.ask.smapi.model.v1.skill.evaluations.Intent> consideredIntents) {
             this.consideredIntents = consideredIntents;
             return this;
@@ -176,6 +183,7 @@ public final class ProfileNluResponse {
         }
 
         @JsonProperty("multiTurn")
+
         public Builder withMultiTurn(com.amazon.ask.smapi.model.v1.skill.evaluations.MultiTurn multiTurn) {
             this.multiTurn = multiTurn;
             return this;

@@ -53,6 +53,7 @@ public final class CreateSkillWithPackageRequest {
         return vendorId;
     }
 
+
     /**
      * Location of the package.
      * @return location
@@ -61,6 +62,7 @@ public final class CreateSkillWithPackageRequest {
     public String getLocation() {
         return location;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class CreateSkillWithPackageRequest {
         private Builder() {}
 
         @JsonProperty("vendorId")
+
         public Builder withVendorId(String vendorId) {
             this.vendorId = vendorId;
             return this;
@@ -116,6 +119,7 @@ public final class CreateSkillWithPackageRequest {
 
 
         @JsonProperty("location")
+
         public Builder withLocation(String location) {
             this.location = location;
             return this;

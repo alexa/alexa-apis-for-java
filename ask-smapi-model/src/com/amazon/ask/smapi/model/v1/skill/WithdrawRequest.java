@@ -26,7 +26,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public final class WithdrawRequest {
 
     @JsonProperty("reason")
-    private com.amazon.ask.smapi.model.v1.skill.Reason reason = null;
+    private String reason = null;
 
     @JsonProperty("message")
     private String message = null;
@@ -46,11 +46,29 @@ public final class WithdrawRequest {
 
     /**
      * Get reason
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getReasonAsString().
+     *
      * @return reason
     **/
-    @JsonProperty("reason")
+    
     public com.amazon.ask.smapi.model.v1.skill.Reason getReason() {
-        return reason;
+        return com.amazon.ask.smapi.model.v1.skill.Reason.fromValue(reason);
+    }
+
+    /**
+     * Get the underlying String value for reason.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return reason as a String value
+    **/
+    @JsonProperty("reason")
+    public String getReasonAsString() {
+      return reason;
     }
 
     /**
@@ -61,6 +79,7 @@ public final class WithdrawRequest {
     public String getMessage() {
         return message;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -103,19 +122,25 @@ public final class WithdrawRequest {
     }
   
     public static class Builder {
-        private com.amazon.ask.smapi.model.v1.skill.Reason reason;
+        private String reason;
         private String message;
 
         private Builder() {}
 
         @JsonProperty("reason")
+        public Builder withReason(String reason) {
+          this.reason = reason;
+          return this;
+        }
+
         public Builder withReason(com.amazon.ask.smapi.model.v1.skill.Reason reason) {
-            this.reason = reason;
+            this.reason = reason != null ? reason.toString() : null;
             return this;
         }
 
 
         @JsonProperty("message")
+
         public Builder withMessage(String message) {
             this.message = message;
             return this;

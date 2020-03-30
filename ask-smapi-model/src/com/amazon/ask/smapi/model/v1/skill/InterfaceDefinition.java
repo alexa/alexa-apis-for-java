@@ -62,6 +62,7 @@ public final class InterfaceDefinition {
         return isGlobal;
     }
 
+
     /**
      * The locales of the interface.
      * @return locales
@@ -71,6 +72,7 @@ public final class InterfaceDefinition {
         return locales;
     }
 
+
     /**
      * The intents in the interface.
      * @return intents
@@ -79,6 +81,7 @@ public final class InterfaceDefinition {
     public List<com.amazon.ask.smapi.model.v1.skill.InterfaceIntent> getIntents() {
         return intents;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -130,6 +133,7 @@ public final class InterfaceDefinition {
         private Builder() {}
 
         @JsonProperty("isGlobal")
+
         public Builder withIsGlobal(Boolean isGlobal) {
             this.isGlobal = isGlobal;
             return this;
@@ -137,6 +141,7 @@ public final class InterfaceDefinition {
 
 
         @JsonProperty("locales")
+
         public Builder withLocales(List<String> locales) {
             this.locales = locales;
             return this;
@@ -151,6 +156,7 @@ public final class InterfaceDefinition {
         }
 
         @JsonProperty("intents")
+
         public Builder withIntents(List<com.amazon.ask.smapi.model.v1.skill.InterfaceIntent> intents) {
             this.intents = intents;
             return this;

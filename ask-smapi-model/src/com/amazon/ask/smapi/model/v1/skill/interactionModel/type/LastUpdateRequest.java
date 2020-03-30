@@ -29,7 +29,7 @@ import java.util.ArrayList;
 public final class LastUpdateRequest {
 
     @JsonProperty("status")
-    private com.amazon.ask.smapi.model.v1.skill.interactionModel.type.SlotTypeStatusType status = null;
+    private String status = null;
 
     @JsonProperty("version")
     private String version = null;
@@ -61,11 +61,29 @@ public final class LastUpdateRequest {
 
     /**
      * Get status
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getStatusAsString().
+     *
      * @return status
     **/
-    @JsonProperty("status")
+    
     public com.amazon.ask.smapi.model.v1.skill.interactionModel.type.SlotTypeStatusType getStatus() {
-        return status;
+        return com.amazon.ask.smapi.model.v1.skill.interactionModel.type.SlotTypeStatusType.fromValue(status);
+    }
+
+    /**
+     * Get the underlying String value for status.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return status as a String value
+    **/
+    @JsonProperty("status")
+    public String getStatusAsString() {
+      return status;
     }
 
     /**
@@ -77,6 +95,7 @@ public final class LastUpdateRequest {
         return version;
     }
 
+
     /**
      * Get errors
      * @return errors
@@ -86,6 +105,7 @@ public final class LastUpdateRequest {
         return errors;
     }
 
+
     /**
      * Get warnings
      * @return warnings
@@ -94,6 +114,7 @@ public final class LastUpdateRequest {
     public List<com.amazon.ask.smapi.model.v1.skill.interactionModel.type.Warning> getWarnings() {
         return warnings;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -140,7 +161,7 @@ public final class LastUpdateRequest {
     }
   
     public static class Builder {
-        private com.amazon.ask.smapi.model.v1.skill.interactionModel.type.SlotTypeStatusType status;
+        private String status;
         private String version;
         private List<com.amazon.ask.smapi.model.v1.skill.interactionModel.type.Error> errors;
         private List<com.amazon.ask.smapi.model.v1.skill.interactionModel.type.Warning> warnings;
@@ -148,13 +169,19 @@ public final class LastUpdateRequest {
         private Builder() {}
 
         @JsonProperty("status")
+        public Builder withStatus(String status) {
+          this.status = status;
+          return this;
+        }
+
         public Builder withStatus(com.amazon.ask.smapi.model.v1.skill.interactionModel.type.SlotTypeStatusType status) {
-            this.status = status;
+            this.status = status != null ? status.toString() : null;
             return this;
         }
 
 
         @JsonProperty("version")
+
         public Builder withVersion(String version) {
             this.version = version;
             return this;
@@ -162,6 +189,7 @@ public final class LastUpdateRequest {
 
 
         @JsonProperty("errors")
+
         public Builder withErrors(List<com.amazon.ask.smapi.model.v1.skill.interactionModel.type.Error> errors) {
             this.errors = errors;
             return this;
@@ -176,6 +204,7 @@ public final class LastUpdateRequest {
         }
 
         @JsonProperty("warnings")
+
         public Builder withWarnings(List<com.amazon.ask.smapi.model.v1.skill.interactionModel.type.Warning> warnings) {
             this.warnings = warnings;
             return this;

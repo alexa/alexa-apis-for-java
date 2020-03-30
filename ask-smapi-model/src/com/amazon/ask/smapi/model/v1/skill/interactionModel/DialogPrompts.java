@@ -53,6 +53,7 @@ public final class DialogPrompts {
         return elicitation;
     }
 
+
     /**
      * Reference to a prompt-id to use to confirm the slots value.
      * @return confirmation
@@ -61,6 +62,7 @@ public final class DialogPrompts {
     public String getConfirmation() {
         return confirmation;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class DialogPrompts {
         private Builder() {}
 
         @JsonProperty("elicitation")
+
         public Builder withElicitation(String elicitation) {
             this.elicitation = elicitation;
             return this;
@@ -116,6 +119,7 @@ public final class DialogPrompts {
 
 
         @JsonProperty("confirmation")
+
         public Builder withConfirmation(String confirmation) {
             this.confirmation = confirmation;
             return this;

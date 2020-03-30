@@ -56,6 +56,7 @@ public final class Prompt {
         return id;
     }
 
+
     /**
      * List of variations of the prompt, each variation can be either a text string or a well defined ssml string depending on the type defined.
      * @return variations
@@ -64,6 +65,7 @@ public final class Prompt {
     public List<com.amazon.ask.smapi.model.v1.skill.interactionModel.PromptItems> getVariations() {
         return variations;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,6 +114,7 @@ public final class Prompt {
         private Builder() {}
 
         @JsonProperty("id")
+
         public Builder withId(String id) {
             this.id = id;
             return this;
@@ -119,6 +122,7 @@ public final class Prompt {
 
 
         @JsonProperty("variations")
+
         public Builder withVariations(List<com.amazon.ask.smapi.model.v1.skill.interactionModel.PromptItems> variations) {
             this.variations = variations;
             return this;

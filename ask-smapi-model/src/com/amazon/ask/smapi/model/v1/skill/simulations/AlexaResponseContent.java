@@ -47,6 +47,7 @@ public final class AlexaResponseContent {
         return caption;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,6 +92,7 @@ public final class AlexaResponseContent {
         private Builder() {}
 
         @JsonProperty("caption")
+
         public Builder withCaption(String caption) {
             this.caption = caption;
             return this;

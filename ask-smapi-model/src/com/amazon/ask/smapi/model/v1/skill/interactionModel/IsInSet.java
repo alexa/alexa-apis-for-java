@@ -56,6 +56,7 @@ public final class IsInSet extends com.amazon.ask.smapi.model.v1.skill.interacti
         return values;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -102,6 +103,7 @@ public final class IsInSet extends com.amazon.ask.smapi.model.v1.skill.interacti
         private Builder() {}
 
         @JsonProperty("prompt")
+
         public Builder withPrompt(String prompt) {
             this.prompt = prompt;
             return this;
@@ -109,6 +111,7 @@ public final class IsInSet extends com.amazon.ask.smapi.model.v1.skill.interacti
 
 
         @JsonProperty("values")
+
         public Builder withValues(List<String> values) {
             this.values = values;
             return this;

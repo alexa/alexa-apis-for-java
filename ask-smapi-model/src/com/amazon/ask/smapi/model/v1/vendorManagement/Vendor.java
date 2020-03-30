@@ -62,6 +62,7 @@ public final class Vendor {
         return name;
     }
 
+
     /**
      * Unique identifier of vendor associated with the API caller account.
      * @return id
@@ -71,6 +72,7 @@ public final class Vendor {
         return id;
     }
 
+
     /**
      * Roles that user has for this vendor.
      * @return roles
@@ -79,6 +81,7 @@ public final class Vendor {
     public List<String> getRoles() {
         return roles;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -130,6 +133,7 @@ public final class Vendor {
         private Builder() {}
 
         @JsonProperty("name")
+
         public Builder withName(String name) {
             this.name = name;
             return this;
@@ -137,6 +141,7 @@ public final class Vendor {
 
 
         @JsonProperty("id")
+
         public Builder withId(String id) {
             this.id = id;
             return this;
@@ -144,6 +149,7 @@ public final class Vendor {
 
 
         @JsonProperty("roles")
+
         public Builder withRoles(List<String> roles) {
             this.roles = roles;
             return this;

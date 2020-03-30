@@ -56,6 +56,7 @@ public final class VideoRegion {
         return endpoint;
     }
 
+
     /**
      * The channel through which the partner skill can communicate to Alexa.
      * @return upchannel
@@ -64,6 +65,7 @@ public final class VideoRegion {
     public List<com.amazon.ask.smapi.model.v1.skill.Manifest.UpChannelItems> getUpchannel() {
         return upchannel;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,6 +114,7 @@ public final class VideoRegion {
         private Builder() {}
 
         @JsonProperty("endpoint")
+
         public Builder withEndpoint(com.amazon.ask.smapi.model.v1.skill.Manifest.LambdaEndpoint endpoint) {
             this.endpoint = endpoint;
             return this;
@@ -119,6 +122,7 @@ public final class VideoRegion {
 
 
         @JsonProperty("upchannel")
+
         public Builder withUpchannel(List<com.amazon.ask.smapi.model.v1.skill.Manifest.UpChannelItems> upchannel) {
             this.upchannel = upchannel;
             return this;

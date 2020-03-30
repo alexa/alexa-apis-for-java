@@ -56,6 +56,7 @@ public final class SSLCertificatePayload {
         return sslCertificate;
     }
 
+
     /**
      * A map of region to ssl certificate. Keys are string region codes (https://developer.amazon.com/docs/smapi/skill-manifest.html#regions), values are regional ssl certificate objects which contain the ssl certificate blobs as strings.
      * @return regions
@@ -64,6 +65,7 @@ public final class SSLCertificatePayload {
     public Map<String, com.amazon.ask.smapi.model.v1.skill.RegionalSSLCertificate> getRegions() {
         return regions;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -112,6 +114,7 @@ public final class SSLCertificatePayload {
         private Builder() {}
 
         @JsonProperty("sslCertificate")
+
         public Builder withSslCertificate(String sslCertificate) {
             this.sslCertificate = sslCertificate;
             return this;
@@ -119,6 +122,7 @@ public final class SSLCertificatePayload {
 
 
         @JsonProperty("regions")
+
         public Builder withRegions(Map<String, com.amazon.ask.smapi.model.v1.skill.RegionalSSLCertificate> regions) {
             this.regions = regions;
             return this;

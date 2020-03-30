@@ -62,6 +62,7 @@ public final class Intent {
         return name;
     }
 
+
     /**
      * Get confidence
      * @return confidence
@@ -71,6 +72,7 @@ public final class Intent {
         return confidence;
     }
 
+
     /**
      * The hypothesized slot(s) for this interaction.
      * @return slots
@@ -79,6 +81,7 @@ public final class Intent {
     public Map<String, com.amazon.ask.smapi.model.v1.skill.history.Slot> getSlots() {
         return slots;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -130,6 +133,7 @@ public final class Intent {
         private Builder() {}
 
         @JsonProperty("name")
+
         public Builder withName(String name) {
             this.name = name;
             return this;
@@ -137,6 +141,7 @@ public final class Intent {
 
 
         @JsonProperty("confidence")
+
         public Builder withConfidence(com.amazon.ask.smapi.model.v1.skill.history.Confidence confidence) {
             this.confidence = confidence;
             return this;
@@ -144,6 +149,7 @@ public final class Intent {
 
 
         @JsonProperty("slots")
+
         public Builder withSlots(Map<String, com.amazon.ask.smapi.model.v1.skill.history.Slot> slots) {
             this.slots = slots;
             return this;

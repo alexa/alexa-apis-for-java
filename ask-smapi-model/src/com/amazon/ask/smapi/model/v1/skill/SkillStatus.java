@@ -53,6 +53,7 @@ public final class SkillStatus {
         return manifest;
     }
 
+
     /**
      * Get interactionModel
      * @return interactionModel
@@ -61,6 +62,7 @@ public final class SkillStatus {
     public com.amazon.ask.smapi.model.v1.skill.SkillInteractionModel getInteractionModel() {
         return interactionModel;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class SkillStatus {
         private Builder() {}
 
         @JsonProperty("manifest")
+
         public Builder withManifest(com.amazon.ask.smapi.model.v1.skill.ResourceStatus manifest) {
             this.manifest = manifest;
             return this;
@@ -116,6 +119,7 @@ public final class SkillStatus {
 
 
         @JsonProperty("interactionModel")
+
         public Builder withInteractionModel(com.amazon.ask.smapi.model.v1.skill.SkillInteractionModel interactionModel) {
             this.interactionModel = interactionModel;
             return this;

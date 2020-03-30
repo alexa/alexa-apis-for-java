@@ -57,6 +57,7 @@ public final class PreSignedUrl extends com.amazon.ask.smapi.model.v1.catalog.up
         return urlId;
     }
 
+
     /**
      * List of (eTag, part number) pairs for each part of the file uploaded
      * @return partETags
@@ -65,6 +66,7 @@ public final class PreSignedUrl extends com.amazon.ask.smapi.model.v1.catalog.up
     public List<com.amazon.ask.smapi.model.v1.catalog.upload.PreSignedUrlItem> getPartETags() {
         return partETags;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -113,6 +115,7 @@ public final class PreSignedUrl extends com.amazon.ask.smapi.model.v1.catalog.up
         private Builder() {}
 
         @JsonProperty("urlId")
+
         public Builder withUrlId(String urlId) {
             this.urlId = urlId;
             return this;
@@ -120,6 +123,7 @@ public final class PreSignedUrl extends com.amazon.ask.smapi.model.v1.catalog.up
 
 
         @JsonProperty("partETags")
+
         public Builder withPartETags(List<com.amazon.ask.smapi.model.v1.catalog.upload.PreSignedUrlItem> partETags) {
             this.partETags = partETags;
             return this;

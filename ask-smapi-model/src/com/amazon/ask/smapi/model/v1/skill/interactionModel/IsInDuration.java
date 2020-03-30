@@ -59,6 +59,7 @@ public final class IsInDuration extends com.amazon.ask.smapi.model.v1.skill.inte
         return start;
     }
 
+
     /**
      * * `AMAZON.DATE`: ISO 8601 Duration using Y, M or D components or ISO 8601 Calendar Date in YYYY-MM-DD format. * `AMAZON.TIME`: ISO 8601 Duration using H or M component or ISO 8601 24-Hour Clock Time in hh:mm format. 
      * @return end
@@ -67,6 +68,7 @@ public final class IsInDuration extends com.amazon.ask.smapi.model.v1.skill.inte
     public String getEnd() {
         return end;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -117,6 +119,7 @@ public final class IsInDuration extends com.amazon.ask.smapi.model.v1.skill.inte
         private Builder() {}
 
         @JsonProperty("prompt")
+
         public Builder withPrompt(String prompt) {
             this.prompt = prompt;
             return this;
@@ -124,6 +127,7 @@ public final class IsInDuration extends com.amazon.ask.smapi.model.v1.skill.inte
 
 
         @JsonProperty("start")
+
         public Builder withStart(String start) {
             this.start = start;
             return this;
@@ -131,6 +135,7 @@ public final class IsInDuration extends com.amazon.ask.smapi.model.v1.skill.inte
 
 
         @JsonProperty("end")
+
         public Builder withEnd(String end) {
             this.end = end;
             return this;

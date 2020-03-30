@@ -74,6 +74,7 @@ public final class ListCatalogResponse {
         return links;
     }
 
+
     /**
      * List of catalogs. 
      * @return catalogs
@@ -82,6 +83,7 @@ public final class ListCatalogResponse {
     public List<com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.CatalogItem> getCatalogs() {
         return catalogs;
     }
+
 
     /**
      * Get isTruncated
@@ -92,6 +94,7 @@ public final class ListCatalogResponse {
         return isTruncated;
     }
 
+
     /**
      * Get nextToken
      * @return nextToken
@@ -101,6 +104,7 @@ public final class ListCatalogResponse {
         return nextToken;
     }
 
+
     /**
      * Get totalCount
      * @return totalCount
@@ -109,6 +113,7 @@ public final class ListCatalogResponse {
     public Integer getTotalCount() {
         return totalCount;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -166,6 +171,7 @@ public final class ListCatalogResponse {
         private Builder() {}
 
         @JsonProperty("_links")
+
         public Builder withLinks(com.amazon.ask.smapi.model.v1.Links links) {
             this.links = links;
             return this;
@@ -173,6 +179,7 @@ public final class ListCatalogResponse {
 
 
         @JsonProperty("catalogs")
+
         public Builder withCatalogs(List<com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.CatalogItem> catalogs) {
             this.catalogs = catalogs;
             return this;
@@ -187,6 +194,7 @@ public final class ListCatalogResponse {
         }
 
         @JsonProperty("isTruncated")
+
         public Builder withIsTruncated(Boolean isTruncated) {
             this.isTruncated = isTruncated;
             return this;
@@ -194,6 +202,7 @@ public final class ListCatalogResponse {
 
 
         @JsonProperty("nextToken")
+
         public Builder withNextToken(String nextToken) {
             this.nextToken = nextToken;
             return this;
@@ -201,6 +210,7 @@ public final class ListCatalogResponse {
 
 
         @JsonProperty("totalCount")
+
         public Builder withTotalCount(Integer totalCount) {
             this.totalCount = totalCount;
             return this;

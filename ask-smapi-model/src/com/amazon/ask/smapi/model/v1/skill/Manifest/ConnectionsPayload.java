@@ -53,6 +53,7 @@ public final class ConnectionsPayload {
         return type;
     }
 
+
     /**
      * Version of the payload.
      * @return version
@@ -61,6 +62,7 @@ public final class ConnectionsPayload {
     public String getVersion() {
         return version;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class ConnectionsPayload {
         private Builder() {}
 
         @JsonProperty("type")
+
         public Builder withType(String type) {
             this.type = type;
             return this;
@@ -116,6 +119,7 @@ public final class ConnectionsPayload {
 
 
         @JsonProperty("version")
+
         public Builder withVersion(String version) {
             this.version = version;
             return this;

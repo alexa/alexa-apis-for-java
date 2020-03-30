@@ -53,6 +53,7 @@ public final class VersionDataObject {
         return definition;
     }
 
+
     /**
      * Description string for specific slot type version.
      * @return description
@@ -61,6 +62,7 @@ public final class VersionDataObject {
     public String getDescription() {
         return description;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -109,6 +111,7 @@ public final class VersionDataObject {
         private Builder() {}
 
         @JsonProperty("definition")
+
         public Builder withDefinition(com.amazon.ask.smapi.model.v1.skill.interactionModel.typeVersion.ValueSupplierObject definition) {
             this.definition = definition;
             return this;
@@ -116,6 +119,7 @@ public final class VersionDataObject {
 
 
         @JsonProperty("description")
+
         public Builder withDescription(String description) {
             this.description = description;
             return this;

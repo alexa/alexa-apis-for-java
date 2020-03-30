@@ -62,6 +62,7 @@ public final class SlotDefinition {
         return name;
     }
 
+
     /**
      * The type of the slot. It can be a built-in or custom type.
      * @return type
@@ -71,6 +72,7 @@ public final class SlotDefinition {
         return type;
     }
 
+
     /**
      * Phrases the user can speak e.g. to trigger an intent or provide value for a slot elicitation.
      * @return samples
@@ -79,6 +81,7 @@ public final class SlotDefinition {
     public List<String> getSamples() {
         return samples;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -130,6 +133,7 @@ public final class SlotDefinition {
         private Builder() {}
 
         @JsonProperty("name")
+
         public Builder withName(String name) {
             this.name = name;
             return this;
@@ -137,6 +141,7 @@ public final class SlotDefinition {
 
 
         @JsonProperty("type")
+
         public Builder withType(String type) {
             this.type = type;
             return this;
@@ -144,6 +149,7 @@ public final class SlotDefinition {
 
 
         @JsonProperty("samples")
+
         public Builder withSamples(List<String> samples) {
             this.samples = samples;
             return this;

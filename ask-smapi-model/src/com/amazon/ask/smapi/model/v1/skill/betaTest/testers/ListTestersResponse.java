@@ -62,6 +62,7 @@ public final class ListTestersResponse {
         return testers;
     }
 
+
     /**
      * Get isTruncated
      * @return isTruncated
@@ -71,6 +72,7 @@ public final class ListTestersResponse {
         return isTruncated;
     }
 
+
     /**
      * Get nextToken
      * @return nextToken
@@ -79,6 +81,7 @@ public final class ListTestersResponse {
     public String getNextToken() {
         return nextToken;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -130,6 +133,7 @@ public final class ListTestersResponse {
         private Builder() {}
 
         @JsonProperty("testers")
+
         public Builder withTesters(List<com.amazon.ask.smapi.model.v1.skill.betaTest.testers.TesterWithDetails> testers) {
             this.testers = testers;
             return this;
@@ -144,6 +148,7 @@ public final class ListTestersResponse {
         }
 
         @JsonProperty("isTruncated")
+
         public Builder withIsTruncated(Boolean isTruncated) {
             this.isTruncated = isTruncated;
             return this;
@@ -151,6 +156,7 @@ public final class ListTestersResponse {
 
 
         @JsonProperty("nextToken")
+
         public Builder withNextToken(String nextToken) {
             this.nextToken = nextToken;
             return this;

@@ -62,6 +62,7 @@ public final class ResolutionsPerAuthorityItems {
         return authority;
     }
 
+
     /**
      * Get status
      * @return status
@@ -71,6 +72,7 @@ public final class ResolutionsPerAuthorityItems {
         return status;
     }
 
+
     /**
      * An array of resolved values for the slot.
      * @return values
@@ -79,6 +81,7 @@ public final class ResolutionsPerAuthorityItems {
     public List<com.amazon.ask.smapi.model.v1.skill.evaluations.ResolutionsPerAuthorityValueItems> getValues() {
         return values;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -130,6 +133,7 @@ public final class ResolutionsPerAuthorityItems {
         private Builder() {}
 
         @JsonProperty("authority")
+
         public Builder withAuthority(String authority) {
             this.authority = authority;
             return this;
@@ -137,6 +141,7 @@ public final class ResolutionsPerAuthorityItems {
 
 
         @JsonProperty("status")
+
         public Builder withStatus(com.amazon.ask.smapi.model.v1.skill.evaluations.ResolutionsPerAuthorityStatus status) {
             this.status = status;
             return this;
@@ -144,6 +149,7 @@ public final class ResolutionsPerAuthorityItems {
 
 
         @JsonProperty("values")
+
         public Builder withValues(List<com.amazon.ask.smapi.model.v1.skill.evaluations.ResolutionsPerAuthorityValueItems> values) {
             this.values = values;
             return this;

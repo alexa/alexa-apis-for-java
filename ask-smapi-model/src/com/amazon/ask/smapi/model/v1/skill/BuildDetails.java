@@ -50,6 +50,7 @@ public final class BuildDetails {
         return steps;
     }
 
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -94,6 +95,7 @@ public final class BuildDetails {
         private Builder() {}
 
         @JsonProperty("steps")
+
         public Builder withSteps(List<com.amazon.ask.smapi.model.v1.skill.BuildStep> steps) {
             this.steps = steps;
             return this;

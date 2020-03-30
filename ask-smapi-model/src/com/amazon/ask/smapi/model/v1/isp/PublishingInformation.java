@@ -70,6 +70,7 @@ public final class PublishingInformation {
         return locales;
     }
 
+
     /**
      * List of countries where the in-skill product is available.
      * @return distributionCountries
@@ -78,6 +79,7 @@ public final class PublishingInformation {
     public List<com.amazon.ask.smapi.model.v1.isp.DistributionCountries> getDistributionCountries() {
         return distributionCountries;
     }
+
 
     /**
      * Defines the structure for in-skill product pricing.
@@ -88,6 +90,7 @@ public final class PublishingInformation {
         return pricing;
     }
 
+
     /**
      * Get taxInformation
      * @return taxInformation
@@ -96,6 +99,7 @@ public final class PublishingInformation {
     public com.amazon.ask.smapi.model.v1.isp.TaxInformation getTaxInformation() {
         return taxInformation;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -150,6 +154,7 @@ public final class PublishingInformation {
         private Builder() {}
 
         @JsonProperty("locales")
+
         public Builder withLocales(Map<String, com.amazon.ask.smapi.model.v1.isp.LocalizedPublishingInformation> locales) {
             this.locales = locales;
             return this;
@@ -164,6 +169,7 @@ public final class PublishingInformation {
         }
 
         @JsonProperty("distributionCountries")
+
         public Builder withDistributionCountries(List<com.amazon.ask.smapi.model.v1.isp.DistributionCountries> distributionCountries) {
             this.distributionCountries = distributionCountries;
             return this;
@@ -178,6 +184,7 @@ public final class PublishingInformation {
         }
 
         @JsonProperty("pricing")
+
         public Builder withPricing(Map<String, com.amazon.ask.smapi.model.v1.isp.MarketplacePricing> pricing) {
             this.pricing = pricing;
             return this;
@@ -192,6 +199,7 @@ public final class PublishingInformation {
         }
 
         @JsonProperty("taxInformation")
+
         public Builder withTaxInformation(com.amazon.ask.smapi.model.v1.isp.TaxInformation taxInformation) {
             this.taxInformation = taxInformation;
             return this;

@@ -29,7 +29,7 @@ public final class Instance {
     private String propertyPath = null;
 
     @JsonProperty("dataType")
-    private com.amazon.ask.smapi.model.v1.skill.ValidationDataTypes dataType = null;
+    private String dataType = null;
 
     @JsonProperty("value")
     private String value = null;
@@ -59,13 +59,32 @@ public final class Instance {
         return propertyPath;
     }
 
+
     /**
      * Get dataType
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getDataTypeAsString().
+     *
      * @return dataType
     **/
-    @JsonProperty("dataType")
+    
     public com.amazon.ask.smapi.model.v1.skill.ValidationDataTypes getDataType() {
-        return dataType;
+        return com.amazon.ask.smapi.model.v1.skill.ValidationDataTypes.fromValue(dataType);
+    }
+
+    /**
+     * Get the underlying String value for dataType.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return dataType as a String value
+    **/
+    @JsonProperty("dataType")
+    public String getDataTypeAsString() {
+      return dataType;
     }
 
     /**
@@ -76,6 +95,7 @@ public final class Instance {
     public String getValue() {
         return value;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -121,12 +141,13 @@ public final class Instance {
   
     public static class Builder {
         private String propertyPath;
-        private com.amazon.ask.smapi.model.v1.skill.ValidationDataTypes dataType;
+        private String dataType;
         private String value;
 
         private Builder() {}
 
         @JsonProperty("propertyPath")
+
         public Builder withPropertyPath(String propertyPath) {
             this.propertyPath = propertyPath;
             return this;
@@ -134,13 +155,19 @@ public final class Instance {
 
 
         @JsonProperty("dataType")
+        public Builder withDataType(String dataType) {
+          this.dataType = dataType;
+          return this;
+        }
+
         public Builder withDataType(com.amazon.ask.smapi.model.v1.skill.ValidationDataTypes dataType) {
-            this.dataType = dataType;
+            this.dataType = dataType != null ? dataType.toString() : null;
             return this;
         }
 
 
         @JsonProperty("value")
+
         public Builder withValue(String value) {
             this.value = value;
             return this;

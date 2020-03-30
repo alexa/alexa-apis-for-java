@@ -36,7 +36,7 @@ public final class GetContentUploadResponse {
     private String catalogId = null;
 
     @JsonProperty("status")
-    private com.amazon.ask.smapi.model.v1.catalog.upload.UploadStatus status = null;
+    private String status = null;
 
     @JsonProperty("createdDate")
     private OffsetDateTime createdDate = null;
@@ -87,6 +87,7 @@ public final class GetContentUploadResponse {
         return id;
     }
 
+
     /**
      * Unique identifier of the added catalog object
      * @return catalogId
@@ -96,13 +97,32 @@ public final class GetContentUploadResponse {
         return catalogId;
     }
 
+
     /**
      * Get status
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getStatusAsString().
+     *
      * @return status
     **/
-    @JsonProperty("status")
+    
     public com.amazon.ask.smapi.model.v1.catalog.upload.UploadStatus getStatus() {
-        return status;
+        return com.amazon.ask.smapi.model.v1.catalog.upload.UploadStatus.fromValue(status);
+    }
+
+    /**
+     * Get the underlying String value for status.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return status as a String value
+    **/
+    @JsonProperty("status")
+    public String getStatusAsString() {
+      return status;
     }
 
     /**
@@ -114,6 +134,7 @@ public final class GetContentUploadResponse {
         return createdDate;
     }
 
+
     /**
      * Get lastUpdatedDate
      * @return lastUpdatedDate
@@ -122,6 +143,7 @@ public final class GetContentUploadResponse {
     public OffsetDateTime getLastUpdatedDate() {
         return lastUpdatedDate;
     }
+
 
     /**
      * Get file
@@ -132,6 +154,7 @@ public final class GetContentUploadResponse {
         return file;
     }
 
+
     /**
      * List of different steps performed on the upload.
      * @return ingestionSteps
@@ -140,6 +163,7 @@ public final class GetContentUploadResponse {
     public List<com.amazon.ask.smapi.model.v1.catalog.upload.UploadIngestionStep> getIngestionSteps() {
         return ingestionSteps;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -194,7 +218,7 @@ public final class GetContentUploadResponse {
     public static class Builder {
         private String id;
         private String catalogId;
-        private com.amazon.ask.smapi.model.v1.catalog.upload.UploadStatus status;
+        private String status;
         private OffsetDateTime createdDate;
         private OffsetDateTime lastUpdatedDate;
         private com.amazon.ask.smapi.model.v1.catalog.upload.ContentUploadFileSummary file;
@@ -203,6 +227,7 @@ public final class GetContentUploadResponse {
         private Builder() {}
 
         @JsonProperty("id")
+
         public Builder withId(String id) {
             this.id = id;
             return this;
@@ -210,6 +235,7 @@ public final class GetContentUploadResponse {
 
 
         @JsonProperty("catalogId")
+
         public Builder withCatalogId(String catalogId) {
             this.catalogId = catalogId;
             return this;
@@ -217,13 +243,19 @@ public final class GetContentUploadResponse {
 
 
         @JsonProperty("status")
+        public Builder withStatus(String status) {
+          this.status = status;
+          return this;
+        }
+
         public Builder withStatus(com.amazon.ask.smapi.model.v1.catalog.upload.UploadStatus status) {
-            this.status = status;
+            this.status = status != null ? status.toString() : null;
             return this;
         }
 
 
         @JsonProperty("createdDate")
+
         public Builder withCreatedDate(OffsetDateTime createdDate) {
             this.createdDate = createdDate;
             return this;
@@ -231,6 +263,7 @@ public final class GetContentUploadResponse {
 
 
         @JsonProperty("lastUpdatedDate")
+
         public Builder withLastUpdatedDate(OffsetDateTime lastUpdatedDate) {
             this.lastUpdatedDate = lastUpdatedDate;
             return this;
@@ -238,6 +271,7 @@ public final class GetContentUploadResponse {
 
 
         @JsonProperty("file")
+
         public Builder withFile(com.amazon.ask.smapi.model.v1.catalog.upload.ContentUploadFileSummary file) {
             this.file = file;
             return this;
@@ -245,6 +279,7 @@ public final class GetContentUploadResponse {
 
 
         @JsonProperty("ingestionSteps")
+
         public Builder withIngestionSteps(List<com.amazon.ask.smapi.model.v1.catalog.upload.UploadIngestionStep> ingestionSteps) {
             this.ingestionSteps = ingestionSteps;
             return this;
