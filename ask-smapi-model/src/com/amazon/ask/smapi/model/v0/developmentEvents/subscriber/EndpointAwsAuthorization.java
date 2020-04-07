@@ -1,0 +1,111 @@
+/*
+* Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file
+* except in compliance with the License. A copy of the License is located at
+*
+* http://aws.amazon.com/apache2.0/
+*
+* or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for
+* the specific language governing permissions and limitations under the License.
+*/
+
+
+package com.amazon.ask.smapi.model.v0.developmentEvents.subscriber;
+
+import java.util.Objects;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+/**
+ * Authorization for accessing AWS SNS endpoint.
+ */
+
+@JsonDeserialize(builder = EndpointAwsAuthorization.Builder.class)
+public final class EndpointAwsAuthorization extends com.amazon.ask.smapi.model.v0.developmentEvents.subscriber.EndpointAuthorization  {
+
+    @JsonProperty("arn")
+    private String arn = null;
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    private EndpointAwsAuthorization(Builder builder) {
+        String discriminatorValue = "AWS_IAM";
+
+        this.type = discriminatorValue;
+        if (builder.arn != null) {
+            this.arn = builder.arn;
+        }
+    }
+
+    /**
+     * IAM Role arn to use/assumeRole for authorization.
+     * @return arn
+    **/
+    @JsonProperty("arn")
+    public String getArn() {
+        return arn;
+    }
+
+
+    @Override
+    public boolean equals(java.lang.Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        EndpointAwsAuthorization v0DevelopmentEventsSubscriberEndpointAwsAuthorization = (EndpointAwsAuthorization) o;
+        return Objects.equals(this.arn, v0DevelopmentEventsSubscriberEndpointAwsAuthorization.arn) &&
+            super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(arn, super.hashCode());
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("class EndpointAwsAuthorization {\n");
+        sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+        sb.append("    arn: ").append(toIndentedString(arn)).append("\n");
+        sb.append("}");
+        return sb.toString();
+    }
+
+    /**
+     * Convert the given object to string with each line indented by 4 spaces
+     * (except the first line).
+     */
+    private String toIndentedString(java.lang.Object o) {
+        if (o == null) {
+            return "null";
+        }
+        return o.toString().replace("\n", "\n    ");
+    }
+  
+    public static class Builder {
+        private String arn;
+
+        private Builder() {}
+
+        @JsonProperty("arn")
+
+        public Builder withArn(String arn) {
+            this.arn = arn;
+            return this;
+        }
+
+
+        public EndpointAwsAuthorization build() {
+            return new EndpointAwsAuthorization(this);
+        }
+    }
+}
+

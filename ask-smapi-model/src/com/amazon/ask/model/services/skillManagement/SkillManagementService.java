@@ -23,6 +23,101 @@ import java.util.List;
 
 public interface SkillManagementService {
 
+    com.amazon.ask.smapi.model.v0.catalog.CatalogDetails getCatalogV0(String catalogId) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v0.catalog.CatalogDetails> callGetCatalogV0(String catalogId) throws ServiceException;
+
+
+    com.amazon.ask.smapi.model.v0.catalog.upload.ListUploadsResponse listUploadsForCatalogV0(String catalogId, String nextToken, BigDecimal maxResults) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v0.catalog.upload.ListUploadsResponse> callListUploadsForCatalogV0(String catalogId, String nextToken, BigDecimal maxResults) throws ServiceException;
+
+
+    com.amazon.ask.smapi.model.v0.catalog.upload.CreateContentUploadResponse createContentUploadV0(String catalogId, com.amazon.ask.smapi.model.v0.catalog.upload.CreateContentUploadRequest createContentUploadRequest) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v0.catalog.upload.CreateContentUploadResponse> callCreateContentUploadV0(String catalogId, com.amazon.ask.smapi.model.v0.catalog.upload.CreateContentUploadRequest createContentUploadRequest) throws ServiceException;
+
+
+    com.amazon.ask.smapi.model.v0.catalog.upload.GetContentUploadResponse getContentUploadByIdV0(String catalogId, String uploadId) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v0.catalog.upload.GetContentUploadResponse> callGetContentUploadByIdV0(String catalogId, String uploadId) throws ServiceException;
+
+
+    void completeCatalogUploadV0(String catalogId, String uploadId, com.amazon.ask.smapi.model.v0.catalog.upload.CompleteUploadRequest completeUploadRequestPayload) throws ServiceException;
+
+    ApiResponse<Void> callCompleteCatalogUploadV0(String catalogId, String uploadId, com.amazon.ask.smapi.model.v0.catalog.upload.CompleteUploadRequest completeUploadRequestPayload) throws ServiceException;
+
+
+    com.amazon.ask.smapi.model.v0.catalog.ListCatalogsResponse listCatalogsForVendorV0(String vendorId, String nextToken, BigDecimal maxResults) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v0.catalog.ListCatalogsResponse> callListCatalogsForVendorV0(String vendorId, String nextToken, BigDecimal maxResults) throws ServiceException;
+
+
+    com.amazon.ask.smapi.model.v0.catalog.CatalogDetails createCatalogV0(com.amazon.ask.smapi.model.v0.catalog.CreateCatalogRequest createCatalogRequest) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v0.catalog.CatalogDetails> callCreateCatalogV0(com.amazon.ask.smapi.model.v0.catalog.CreateCatalogRequest createCatalogRequest) throws ServiceException;
+
+
+    com.amazon.ask.smapi.model.v0.developmentEvents.subscriber.ListSubscribersResponse listSubscribersForDevelopmentEventsV0(String vendorId, String nextToken, BigDecimal maxResults) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v0.developmentEvents.subscriber.ListSubscribersResponse> callListSubscribersForDevelopmentEventsV0(String vendorId, String nextToken, BigDecimal maxResults) throws ServiceException;
+
+
+    void createSubscriberForDevelopmentEventsV0(com.amazon.ask.smapi.model.v0.developmentEvents.subscriber.CreateSubscriberRequest createSubscriberRequest) throws ServiceException;
+
+    ApiResponse<Void> callCreateSubscriberForDevelopmentEventsV0(com.amazon.ask.smapi.model.v0.developmentEvents.subscriber.CreateSubscriberRequest createSubscriberRequest) throws ServiceException;
+
+
+    void deleteSubscriberForDevelopmentEventsV0(String subscriberId) throws ServiceException;
+
+    ApiResponse<Void> callDeleteSubscriberForDevelopmentEventsV0(String subscriberId) throws ServiceException;
+
+
+    com.amazon.ask.smapi.model.v0.developmentEvents.subscriber.SubscriberInfo getSubscriberForDevelopmentEventsV0(String subscriberId) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v0.developmentEvents.subscriber.SubscriberInfo> callGetSubscriberForDevelopmentEventsV0(String subscriberId) throws ServiceException;
+
+
+    void setSubscriberForDevelopmentEventsV0(String subscriberId, com.amazon.ask.smapi.model.v0.developmentEvents.subscriber.UpdateSubscriberRequest updateSubscriberRequest) throws ServiceException;
+
+    ApiResponse<Void> callSetSubscriberForDevelopmentEventsV0(String subscriberId, com.amazon.ask.smapi.model.v0.developmentEvents.subscriber.UpdateSubscriberRequest updateSubscriberRequest) throws ServiceException;
+
+
+    com.amazon.ask.smapi.model.v0.developmentEvents.subscription.ListSubscriptionsResponse listSubscriptionsForDevelopmentEventsV0(String vendorId, String nextToken, BigDecimal maxResults, String subscriberId) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v0.developmentEvents.subscription.ListSubscriptionsResponse> callListSubscriptionsForDevelopmentEventsV0(String vendorId, String nextToken, BigDecimal maxResults, String subscriberId) throws ServiceException;
+
+
+    void createSubscriptionForDevelopmentEventsV0(com.amazon.ask.smapi.model.v0.developmentEvents.subscription.CreateSubscriptionRequest createSubscriptionRequest) throws ServiceException;
+
+    ApiResponse<Void> callCreateSubscriptionForDevelopmentEventsV0(com.amazon.ask.smapi.model.v0.developmentEvents.subscription.CreateSubscriptionRequest createSubscriptionRequest) throws ServiceException;
+
+
+    void deleteSubscriptionForDevelopmentEventsV0(String subscriptionId) throws ServiceException;
+
+    ApiResponse<Void> callDeleteSubscriptionForDevelopmentEventsV0(String subscriptionId) throws ServiceException;
+
+
+    com.amazon.ask.smapi.model.v0.developmentEvents.subscription.SubscriptionInfo getSubscriptionForDevelopmentEventsV0(String subscriptionId) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v0.developmentEvents.subscription.SubscriptionInfo> callGetSubscriptionForDevelopmentEventsV0(String subscriptionId) throws ServiceException;
+
+
+    void setSubscriptionForDevelopmentEventsV0(String subscriptionId, com.amazon.ask.smapi.model.v0.developmentEvents.subscription.UpdateSubscriptionRequest updateSubscriptionRequest) throws ServiceException;
+
+    ApiResponse<Void> callSetSubscriptionForDevelopmentEventsV0(String subscriptionId, com.amazon.ask.smapi.model.v0.developmentEvents.subscription.UpdateSubscriptionRequest updateSubscriptionRequest) throws ServiceException;
+
+
+    void associateCatalogWithSkillV0(String skillId, String catalogId) throws ServiceException;
+
+    ApiResponse<Void> callAssociateCatalogWithSkillV0(String skillId, String catalogId) throws ServiceException;
+
+
+    com.amazon.ask.smapi.model.v0.catalog.ListCatalogsResponse listCatalogsForSkillV0(String skillId, String nextToken, BigDecimal maxResults) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v0.catalog.ListCatalogsResponse> callListCatalogsForSkillV0(String skillId, String nextToken, BigDecimal maxResults) throws ServiceException;
+
+
     void createCatalogUploadV1(String catalogId, com.amazon.ask.smapi.model.v1.catalog.upload.CatalogUploadBase catalogUploadRequestBody) throws ServiceException;
 
     ApiResponse<Void> callCreateCatalogUploadV1(String catalogId, com.amazon.ask.smapi.model.v1.catalog.upload.CatalogUploadBase catalogUploadRequestBody) throws ServiceException;

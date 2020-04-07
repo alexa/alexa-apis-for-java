@@ -37,6 +37,9 @@ public final class LanguageModel {
     @JsonProperty("intents")
     private List<com.amazon.ask.smapi.model.v1.skill.interactionModel.Intent> intents = new ArrayList<com.amazon.ask.smapi.model.v1.skill.interactionModel.Intent>();
 
+    @JsonProperty("modelConfiguration")
+    private com.amazon.ask.smapi.model.v1.skill.interactionModel.ModelConfiguration modelConfiguration = null;
+
     public static Builder builder() {
         return new Builder();
     }
@@ -50,6 +53,9 @@ public final class LanguageModel {
         }
         if (builder.intents != null) {
             this.intents = builder.intents;
+        }
+        if (builder.modelConfiguration != null) {
+            this.modelConfiguration = builder.modelConfiguration;
         }
     }
 
@@ -83,6 +89,16 @@ public final class LanguageModel {
     }
 
 
+    /**
+     * Get modelConfiguration
+     * @return modelConfiguration
+    **/
+    @JsonProperty("modelConfiguration")
+    public com.amazon.ask.smapi.model.v1.skill.interactionModel.ModelConfiguration getModelConfiguration() {
+        return modelConfiguration;
+    }
+
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -94,12 +110,13 @@ public final class LanguageModel {
         LanguageModel v1SkillInteractionModelLanguageModel = (LanguageModel) o;
         return Objects.equals(this.invocationName, v1SkillInteractionModelLanguageModel.invocationName) &&
             Objects.equals(this.types, v1SkillInteractionModelLanguageModel.types) &&
-            Objects.equals(this.intents, v1SkillInteractionModelLanguageModel.intents);
+            Objects.equals(this.intents, v1SkillInteractionModelLanguageModel.intents) &&
+            Objects.equals(this.modelConfiguration, v1SkillInteractionModelLanguageModel.modelConfiguration);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(invocationName, types, intents);
+        return Objects.hash(invocationName, types, intents, modelConfiguration);
     }
 
     @Override
@@ -110,6 +127,7 @@ public final class LanguageModel {
         sb.append("    invocationName: ").append(toIndentedString(invocationName)).append("\n");
         sb.append("    types: ").append(toIndentedString(types)).append("\n");
         sb.append("    intents: ").append(toIndentedString(intents)).append("\n");
+        sb.append("    modelConfiguration: ").append(toIndentedString(modelConfiguration)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -129,6 +147,7 @@ public final class LanguageModel {
         private String invocationName;
         private List<com.amazon.ask.smapi.model.v1.skill.interactionModel.SlotType> types;
         private List<com.amazon.ask.smapi.model.v1.skill.interactionModel.Intent> intents;
+        private com.amazon.ask.smapi.model.v1.skill.interactionModel.ModelConfiguration modelConfiguration;
 
         private Builder() {}
 
@@ -169,6 +188,14 @@ public final class LanguageModel {
             this.intents.add(intentsItem);
             return this;
         }
+
+        @JsonProperty("modelConfiguration")
+
+        public Builder withModelConfiguration(com.amazon.ask.smapi.model.v1.skill.interactionModel.ModelConfiguration modelConfiguration) {
+            this.modelConfiguration = modelConfiguration;
+            return this;
+        }
+
 
         public LanguageModel build() {
             return new LanguageModel(this);

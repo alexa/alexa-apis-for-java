@@ -26,6 +26,17 @@ public class SubTypesManifest {
   static {
     baseTypes = new HashMap<>();
 
+    Map<String, Class> v0DevelopmentEventsSubscriberEndpointAuthorizationSubTypes = new HashMap<>();
+    v0DevelopmentEventsSubscriberEndpointAuthorizationSubTypes.put("AWS_IAM", com.amazon.ask.smapi.model.v0.developmentEvents.subscriber.EndpointAwsAuthorization.class);
+    baseTypes.put(com.amazon.ask.smapi.model.v0.developmentEvents.subscriber.EndpointAuthorization.class, v0DevelopmentEventsSubscriberEndpointAuthorizationSubTypes);
+
+    Map<String, Class> v0EventSchemaBaseSchemaSubTypes = new HashMap<>();
+    v0EventSchemaBaseSchemaSubTypes.put("AlexaDevelopmentEvent.InteractionModelUpdate", com.amazon.ask.smapi.model.v0.eventSchema.AlexaDevelopmentEvent.InteractionModelUpdate.class);
+    v0EventSchemaBaseSchemaSubTypes.put("AlexaDevelopmentEvent.SkillPublish", com.amazon.ask.smapi.model.v0.eventSchema.AlexaDevelopmentEvent.SkillPublish.class);
+    v0EventSchemaBaseSchemaSubTypes.put("AlexaDevelopmentEvent.ManifestUpdate", com.amazon.ask.smapi.model.v0.eventSchema.AlexaDevelopmentEvent.ManifestUpdate.class);
+    v0EventSchemaBaseSchemaSubTypes.put("AlexaDevelopmentEvent.SkillCertification", com.amazon.ask.smapi.model.v0.eventSchema.AlexaDevelopmentEvent.SkillCertification.class);
+    baseTypes.put(com.amazon.ask.smapi.model.v0.eventSchema.BaseSchema.class, v0EventSchemaBaseSchemaSubTypes);
+
     Map<String, Class> v1SkillManifestInterfaceSubTypes = new HashMap<>();
     v1SkillManifestInterfaceSubTypes.put("ALEXA_PRESENTATION_APL", com.amazon.ask.smapi.model.v1.skill.Manifest.AlexaPresentationAplInterface.class);
     v1SkillManifestInterfaceSubTypes.put("CUSTOM_INTERFACE", com.amazon.ask.smapi.model.v1.skill.Manifest.CustomInterface.class);
