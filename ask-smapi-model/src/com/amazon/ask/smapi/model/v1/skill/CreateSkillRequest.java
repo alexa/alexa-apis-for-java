@@ -31,6 +31,9 @@ public final class CreateSkillRequest {
     @JsonProperty("manifest")
     private com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifest manifest = null;
 
+    @JsonProperty("hosting")
+    private com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostingConfiguration hosting = null;
+
     public static Builder builder() {
         return new Builder();
     }
@@ -41,6 +44,9 @@ public final class CreateSkillRequest {
         }
         if (builder.manifest != null) {
             this.manifest = builder.manifest;
+        }
+        if (builder.hosting != null) {
+            this.hosting = builder.hosting;
         }
     }
 
@@ -64,6 +70,16 @@ public final class CreateSkillRequest {
     }
 
 
+    /**
+     * Get hosting
+     * @return hosting
+    **/
+    @JsonProperty("hosting")
+    public com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostingConfiguration getHosting() {
+        return hosting;
+    }
+
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -74,12 +90,13 @@ public final class CreateSkillRequest {
         }
         CreateSkillRequest v1SkillCreateSkillRequest = (CreateSkillRequest) o;
         return Objects.equals(this.vendorId, v1SkillCreateSkillRequest.vendorId) &&
-            Objects.equals(this.manifest, v1SkillCreateSkillRequest.manifest);
+            Objects.equals(this.manifest, v1SkillCreateSkillRequest.manifest) &&
+            Objects.equals(this.hosting, v1SkillCreateSkillRequest.hosting);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(vendorId, manifest);
+        return Objects.hash(vendorId, manifest, hosting);
     }
 
     @Override
@@ -89,6 +106,7 @@ public final class CreateSkillRequest {
         
         sb.append("    vendorId: ").append(toIndentedString(vendorId)).append("\n");
         sb.append("    manifest: ").append(toIndentedString(manifest)).append("\n");
+        sb.append("    hosting: ").append(toIndentedString(hosting)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +125,7 @@ public final class CreateSkillRequest {
     public static class Builder {
         private String vendorId;
         private com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifest manifest;
+        private com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostingConfiguration hosting;
 
         private Builder() {}
 
@@ -122,6 +141,14 @@ public final class CreateSkillRequest {
 
         public Builder withManifest(com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifest manifest) {
             this.manifest = manifest;
+            return this;
+        }
+
+
+        @JsonProperty("hosting")
+
+        public Builder withHosting(com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostingConfiguration hosting) {
+            this.hosting = hosting;
             return this;
         }
 

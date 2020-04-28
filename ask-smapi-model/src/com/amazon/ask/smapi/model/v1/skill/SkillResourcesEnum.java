@@ -12,7 +12,7 @@
 */
 
 
-package com.amazon.ask.smapi.model.v1.skill.AlexaHosted;
+package com.amazon.ask.smapi.model.v1.skill;
 
 import java.util.Objects;
 
@@ -20,24 +20,28 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Hosted skill lambda runtime
+ * Gets or Sets v1.skill.skillResourcesEnum
  */
-public enum HostedSkillRuntime {
+public enum SkillResourcesEnum {
   
-  NODEJS10_X("nodejs10.x"),
+  MANIFEST("manifest"),
   
-  PYTHON3_7("python3.7"),
+  INTERACTIONMODEL("interactionModel"),
+  
+  HOSTEDSKILLDEPLOYMENT("hostedSkillDeployment"),
+  
+  HOSTEDSKILLPROVISIONING("hostedSkillProvisioning"),
   
   UNKNOWN_TO_SDK_VERSION(null);
 
-  private String value;
+  private Object value;
 
-  HostedSkillRuntime(String value) {
+  SkillResourcesEnum(Object value) {
     this.value = value;
   }
 
   @JsonValue
-  public String getValue() {
+  public Object getValue() {
     return value;
   }
 
@@ -47,13 +51,13 @@ public enum HostedSkillRuntime {
   }
 
   @JsonCreator
-  public static HostedSkillRuntime fromValue(String text) {
-    for (HostedSkillRuntime b : HostedSkillRuntime.values()) {
+  public static SkillResourcesEnum fromValue(String text) {
+    for (SkillResourcesEnum b : SkillResourcesEnum.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }
     }
-    return HostedSkillRuntime.UNKNOWN_TO_SDK_VERSION;
+    return SkillResourcesEnum.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

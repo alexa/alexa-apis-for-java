@@ -49,9 +49,6 @@ public final class SkillManifestPrivacyAndCompliance {
     @JsonProperty("usesHealthInfo")
     private Boolean usesHealthInfo = null;
 
-    @JsonProperty("criticalDataHandling")
-    private com.amazon.ask.smapi.model.v1.skill.Manifest.CriticalDataHandling criticalDataHandling = null;
-
     public static Builder builder() {
         return new Builder();
     }
@@ -77,9 +74,6 @@ public final class SkillManifestPrivacyAndCompliance {
         }
         if (builder.usesHealthInfo != null) {
             this.usesHealthInfo = builder.usesHealthInfo;
-        }
-        if (builder.criticalDataHandling != null) {
-            this.criticalDataHandling = builder.criticalDataHandling;
         }
     }
 
@@ -153,16 +147,6 @@ public final class SkillManifestPrivacyAndCompliance {
     }
 
 
-    /**
-     * Get criticalDataHandling
-     * @return criticalDataHandling
-    **/
-    @JsonProperty("criticalDataHandling")
-    public com.amazon.ask.smapi.model.v1.skill.Manifest.CriticalDataHandling getCriticalDataHandling() {
-        return criticalDataHandling;
-    }
-
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -178,13 +162,12 @@ public final class SkillManifestPrivacyAndCompliance {
             Objects.equals(this.isChildDirected, v1SkillManifestSkillManifestPrivacyAndCompliance.isChildDirected) &&
             Objects.equals(this.isExportCompliant, v1SkillManifestSkillManifestPrivacyAndCompliance.isExportCompliant) &&
             Objects.equals(this.containsAds, v1SkillManifestSkillManifestPrivacyAndCompliance.containsAds) &&
-            Objects.equals(this.usesHealthInfo, v1SkillManifestSkillManifestPrivacyAndCompliance.usesHealthInfo) &&
-            Objects.equals(this.criticalDataHandling, v1SkillManifestSkillManifestPrivacyAndCompliance.criticalDataHandling);
+            Objects.equals(this.usesHealthInfo, v1SkillManifestSkillManifestPrivacyAndCompliance.usesHealthInfo);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(locales, allowsPurchases, usesPersonalInfo, isChildDirected, isExportCompliant, containsAds, usesHealthInfo, criticalDataHandling);
+        return Objects.hash(locales, allowsPurchases, usesPersonalInfo, isChildDirected, isExportCompliant, containsAds, usesHealthInfo);
     }
 
     @Override
@@ -199,7 +182,6 @@ public final class SkillManifestPrivacyAndCompliance {
         sb.append("    isExportCompliant: ").append(toIndentedString(isExportCompliant)).append("\n");
         sb.append("    containsAds: ").append(toIndentedString(containsAds)).append("\n");
         sb.append("    usesHealthInfo: ").append(toIndentedString(usesHealthInfo)).append("\n");
-        sb.append("    criticalDataHandling: ").append(toIndentedString(criticalDataHandling)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -223,7 +205,6 @@ public final class SkillManifestPrivacyAndCompliance {
         private Boolean isExportCompliant;
         private Boolean containsAds;
         private Boolean usesHealthInfo;
-        private com.amazon.ask.smapi.model.v1.skill.Manifest.CriticalDataHandling criticalDataHandling;
 
         private Builder() {}
 
@@ -286,14 +267,6 @@ public final class SkillManifestPrivacyAndCompliance {
 
         public Builder withUsesHealthInfo(Boolean usesHealthInfo) {
             this.usesHealthInfo = usesHealthInfo;
-            return this;
-        }
-
-
-        @JsonProperty("criticalDataHandling")
-
-        public Builder withCriticalDataHandling(com.amazon.ask.smapi.model.v1.skill.Manifest.CriticalDataHandling criticalDataHandling) {
-            this.criticalDataHandling = criticalDataHandling;
             return this;
         }
 

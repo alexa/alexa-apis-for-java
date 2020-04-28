@@ -22,7 +22,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Status for available interaction models, keyed by locale. 
+ * Status for available interaction models, keyed by locale.
  */
 
 @JsonDeserialize(builder = SkillInteractionModel.Builder.class)

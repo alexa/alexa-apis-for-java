@@ -43,19 +43,19 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
                                     .withSerializer(apiConfiguration.getSerializer())
                                     .build())
           .build();
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.3.0").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.3.1").build();
   }
 
   public SkillManagementServiceClient(ApiConfiguration apiConfiguration, LwaClient lwaClient) {
       super(apiConfiguration);
       this.lwaClient = lwaClient;
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.3.0").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.3.1").build();
   }
 
   /**
    * 
    * Returns information about a particular catalog.
-   * @param catalogId Unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog (required)
    * @return com.amazon.ask.smapi.model.v0.catalog.CatalogDetails
    * @throws ServiceException if fails to make API call
    */
@@ -90,7 +90,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Returns information about a particular catalog.
-   * @param catalogId Unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog (required)
    * @return com.amazon.ask.smapi.model.v0.catalog.CatalogDetails
    * @throws ServiceException if fails to make API call
    */
@@ -101,7 +101,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Lists all the uploads for a particular catalog.
-   * @param catalogId Unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog (required)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
    * @return com.amazon.ask.smapi.model.v0.catalog.upload.ListUploadsResponse
@@ -146,7 +146,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Lists all the uploads for a particular catalog.
-   * @param catalogId Unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog (required)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
    * @return com.amazon.ask.smapi.model.v0.catalog.upload.ListUploadsResponse
@@ -159,7 +159,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Creates a new upload for a catalog and returns presigned upload parts for uploading the file.
-   * @param catalogId Unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog (required)
    * @param createContentUploadRequest Defines the request body for updateCatalog API. (required)
    * @return com.amazon.ask.smapi.model.v0.catalog.upload.CreateContentUploadResponse
    * @throws ServiceException if fails to make API call
@@ -195,7 +195,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Creates a new upload for a catalog and returns presigned upload parts for uploading the file.
-   * @param catalogId Unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog (required)
    * @param createContentUploadRequest Defines the request body for updateCatalog API. (required)
    * @return com.amazon.ask.smapi.model.v0.catalog.upload.CreateContentUploadResponse
    * @throws ServiceException if fails to make API call
@@ -207,7 +207,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Gets detailed information about an upload which was created for a specific catalog. Includes the upload&#39;s ingestion steps and a presigned url for downloading the file.
-   * @param catalogId Unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog (required)
    * @param uploadId Unique identifier of the upload (required)
    * @return com.amazon.ask.smapi.model.v0.catalog.upload.GetContentUploadResponse
    * @throws ServiceException if fails to make API call
@@ -244,7 +244,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Gets detailed information about an upload which was created for a specific catalog. Includes the upload&#39;s ingestion steps and a presigned url for downloading the file.
-   * @param catalogId Unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog (required)
    * @param uploadId Unique identifier of the upload (required)
    * @return com.amazon.ask.smapi.model.v0.catalog.upload.GetContentUploadResponse
    * @throws ServiceException if fails to make API call
@@ -256,7 +256,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Completes an upload. To be called after the file is uploaded to the backend data store using presigned url(s).
-   * @param catalogId Unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog (required)
    * @param uploadId Unique identifier of the upload (required)
    * @param completeUploadRequestPayload Request payload to complete an upload. (required)
    * @throws ServiceException if fails to make API call
@@ -293,7 +293,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Completes an upload. To be called after the file is uploaded to the backend data store using presigned url(s).
-   * @param catalogId Unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog (required)
    * @param uploadId Unique identifier of the upload (required)
    * @param completeUploadRequestPayload Request payload to complete an upload. (required)
    * @throws ServiceException if fails to make API call
@@ -472,7 +472,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Creates a new subscriber resource for a vendor.
-   * @param createSubscriberRequest Defines the request body for createSubscriber API. (optional)
+   * @param createSubscriberRequest Defines the request body for createSubscriber API. (required)
    * @throws ServiceException if fails to make API call
    */
   public ApiResponse<Void> callCreateSubscriberForDevelopmentEventsV0(com.amazon.ask.smapi.model.v0.developmentEvents.subscriber.CreateSubscriberRequest createSubscriberRequest) throws ServiceException {
@@ -503,7 +503,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Creates a new subscriber resource for a vendor.
-   * @param createSubscriberRequest Defines the request body for createSubscriber API. (optional)
+   * @param createSubscriberRequest Defines the request body for createSubscriber API. (required)
    * @throws ServiceException if fails to make API call
    */
   public void createSubscriberForDevelopmentEventsV0(com.amazon.ask.smapi.model.v0.developmentEvents.subscriber.CreateSubscriberRequest createSubscriberRequest) throws ServiceException {
@@ -604,7 +604,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * 
    * Updates the properties of a subscriber.
    * @param subscriberId Unique identifier of the subscriber. (required)
-   * @param updateSubscriberRequest Defines the request body for updateSubscriber API. (optional)
+   * @param updateSubscriberRequest Defines the request body for updateSubscriber API. (required)
    * @throws ServiceException if fails to make API call
    */
   public ApiResponse<Void> callSetSubscriberForDevelopmentEventsV0(String subscriberId, com.amazon.ask.smapi.model.v0.developmentEvents.subscriber.UpdateSubscriberRequest updateSubscriberRequest) throws ServiceException {
@@ -639,7 +639,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * 
    * Updates the properties of a subscriber.
    * @param subscriberId Unique identifier of the subscriber. (required)
-   * @param updateSubscriberRequest Defines the request body for updateSubscriber API. (optional)
+   * @param updateSubscriberRequest Defines the request body for updateSubscriber API. (required)
    * @throws ServiceException if fails to make API call
    */
   public void setSubscriberForDevelopmentEventsV0(String subscriberId, com.amazon.ask.smapi.model.v0.developmentEvents.subscriber.UpdateSubscriberRequest updateSubscriberRequest) throws ServiceException {
@@ -896,7 +896,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * 
    * Associate skill with catalog.
    * @param skillId The skill ID. (required)
-   * @param catalogId Unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog (required)
    * @throws ServiceException if fails to make API call
    */
   public ApiResponse<Void> callAssociateCatalogWithSkillV0(String skillId, String catalogId) throws ServiceException {
@@ -932,7 +932,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * 
    * Associate skill with catalog.
    * @param skillId The skill ID. (required)
-   * @param catalogId Unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog (required)
    * @throws ServiceException if fails to make API call
    */
   public void associateCatalogWithSkillV0(String skillId, String catalogId) throws ServiceException {
@@ -999,9 +999,9 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
 
   /**
    * Create new upload
-   * Create a new upload for a catalog and returns location to track the upload process.
-   * @param catalogId Unique identifier of the catalog (required)
-   * @param catalogUploadRequestBody Request body for create content upload (required)
+   * Creates a new upload for a catalog and returns location to track the upload process.
+   * @param catalogId Provides a unique identifier of the catalog (required)
+   * @param catalogUploadRequestBody Provides the request body for create content upload (required)
    * @throws ServiceException if fails to make API call
    */
   public ApiResponse<Void> callCreateCatalogUploadV1(String catalogId, com.amazon.ask.smapi.model.v1.catalog.upload.CatalogUploadBase catalogUploadRequestBody) throws ServiceException {
@@ -1034,9 +1034,9 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
 
   /**
    * Create new upload
-   * Create a new upload for a catalog and returns location to track the upload process.
-   * @param catalogId Unique identifier of the catalog (required)
-   * @param catalogUploadRequestBody Request body for create content upload (required)
+   * Creates a new upload for a catalog and returns location to track the upload process.
+   * @param catalogId Provides a unique identifier of the catalog (required)
+   * @param catalogUploadRequestBody Provides the request body for create content upload (required)
    * @throws ServiceException if fails to make API call
    */
   public void createCatalogUploadV1(String catalogId, com.amazon.ask.smapi.model.v1.catalog.upload.CatalogUploadBase catalogUploadRequestBody) throws ServiceException {
@@ -1046,7 +1046,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * Get upload
    * Gets detailed information about an upload which was created for a specific catalog. Includes the upload&#39;s ingestion steps and a url for downloading the file.
-   * @param catalogId Unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog (required)
    * @param uploadId Unique identifier of the upload (required)
    * @return com.amazon.ask.smapi.model.v1.catalog.upload.GetContentUploadResponse
    * @throws ServiceException if fails to make API call
@@ -1082,7 +1082,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * Get upload
    * Gets detailed information about an upload which was created for a specific catalog. Includes the upload&#39;s ingestion steps and a url for downloading the file.
-   * @param catalogId Unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog (required)
    * @param uploadId Unique identifier of the upload (required)
    * @return com.amazon.ask.smapi.model.v1.catalog.upload.GetContentUploadResponse
    * @throws ServiceException if fails to make API call
@@ -1093,8 +1093,8 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
 
   /**
    * 
-   * Generate preSigned urls to upload data
-   * @param catalogId Unique identifier of the catalog (required)
+   * Generates preSigned urls to upload data
+   * @param catalogId Provides a unique identifier of the catalog (required)
    * @param generateCatalogUploadUrlRequestBody Request body to generate catalog upload url (required)
    * @return com.amazon.ask.smapi.model.v1.catalog.CreateContentUploadUrlResponse
    * @throws ServiceException if fails to make API call
@@ -1129,8 +1129,8 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
 
   /**
    * 
-   * Generate preSigned urls to upload data
-   * @param catalogId Unique identifier of the catalog (required)
+   * Generates preSigned urls to upload data
+   * @param catalogId Provides a unique identifier of the catalog (required)
    * @param generateCatalogUploadUrlRequestBody Request body to generate catalog upload url (required)
    * @return com.amazon.ask.smapi.model.v1.catalog.CreateContentUploadUrlResponse
    * @throws ServiceException if fails to make API call
@@ -1723,7 +1723,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Delete the catalog. 
-   * @param catalogId Unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog (required)
    * @throws ServiceException if fails to make API call
    */
   public ApiResponse<Void> callDeleteInteractionModelCatalogV1(String catalogId) throws ServiceException {
@@ -1757,7 +1757,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Delete the catalog. 
-   * @param catalogId Unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog (required)
    * @throws ServiceException if fails to make API call
    */
   public void deleteInteractionModelCatalogV1(String catalogId) throws ServiceException {
@@ -1767,7 +1767,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * get the catalog definition 
-   * @param catalogId Unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog (required)
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.CatalogDefinitionOutput
    * @throws ServiceException if fails to make API call
    */
@@ -1802,7 +1802,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * get the catalog definition 
-   * @param catalogId Unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog (required)
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.CatalogDefinitionOutput
    * @throws ServiceException if fails to make API call
    */
@@ -1813,7 +1813,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * update description and vendorGuidance string for certain version of a catalog. 
-   * @param catalogId Unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog (required)
    * @param updateRequest  (required)
    * @throws ServiceException if fails to make API call
    */
@@ -1848,7 +1848,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * update description and vendorGuidance string for certain version of a catalog. 
-   * @param catalogId Unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog (required)
    * @param updateRequest  (required)
    * @throws ServiceException if fails to make API call
    */
@@ -1859,7 +1859,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Get the status of catalog resource and its sub-resources for a given catalogId. 
-   * @param catalogId Unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog (required)
    * @param updateRequestId The identifier for slotType version creation process (required)
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.CatalogStatus
    * @throws ServiceException if fails to make API call
@@ -1896,7 +1896,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Get the status of catalog resource and its sub-resources for a given catalogId. 
-   * @param catalogId Unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog (required)
    * @param updateRequestId The identifier for slotType version creation process (required)
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.CatalogStatus
    * @throws ServiceException if fails to make API call
@@ -1908,7 +1908,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Create a new version of catalog entity for the given catalogId. 
-   * @param catalogId Unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog (required)
    * @param catalog  (required)
    * @throws ServiceException if fails to make API call
    */
@@ -1943,7 +1943,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Create a new version of catalog entity for the given catalogId. 
-   * @param catalogId Unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog (required)
    * @param catalog  (required)
    * @throws ServiceException if fails to make API call
    */
@@ -1954,7 +1954,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Delete catalog version. 
-   * @param catalogId Unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog (required)
    * @param version Version for interaction model. (required)
    * @throws ServiceException if fails to make API call
    */
@@ -1990,7 +1990,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Delete catalog version. 
-   * @param catalogId Unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog (required)
    * @param version Version for interaction model. (required)
    * @throws ServiceException if fails to make API call
    */
@@ -2001,7 +2001,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Get catalog version data of given catalog version. 
-   * @param catalogId Unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog (required)
    * @param version Version for interaction model. (required)
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.version.CatalogVersionData
    * @throws ServiceException if fails to make API call
@@ -2038,7 +2038,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Get catalog version data of given catalog version. 
-   * @param catalogId Unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog (required)
    * @param version Version for interaction model. (required)
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.version.CatalogVersionData
    * @throws ServiceException if fails to make API call
@@ -2050,7 +2050,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Update description and vendorGuidance string for certain version of a catalog. 
-   * @param catalogId Unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog (required)
    * @param version Version for interaction model. (required)
    * @param catalogUpdate  (optional)
    * @throws ServiceException if fails to make API call
@@ -2087,7 +2087,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Update description and vendorGuidance string for certain version of a catalog. 
-   * @param catalogId Unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog (required)
    * @param version Version for interaction model. (required)
    * @param catalogUpdate  (optional)
    * @throws ServiceException if fails to make API call
@@ -2099,7 +2099,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Get catalog values from the given catalogId &amp;amp; version. 
-   * @param catalogId Unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog (required)
    * @param version Version for interaction model. (required)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
@@ -2146,7 +2146,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Get catalog values from the given catalogId &amp;amp; version. 
-   * @param catalogId Unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog (required)
    * @param version Version for interaction model. (required)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)

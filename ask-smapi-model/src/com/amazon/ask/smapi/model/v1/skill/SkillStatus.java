@@ -26,10 +26,16 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public final class SkillStatus {
 
     @JsonProperty("manifest")
-    private com.amazon.ask.smapi.model.v1.skill.ResourceStatus manifest = null;
+    private com.amazon.ask.smapi.model.v1.skill.ManifestStatus manifest = null;
 
     @JsonProperty("interactionModel")
     private com.amazon.ask.smapi.model.v1.skill.SkillInteractionModel interactionModel = null;
+
+    @JsonProperty("hostedSkillDeployment")
+    private com.amazon.ask.smapi.model.v1.skill.HostedSkillDeploymentStatus hostedSkillDeployment = null;
+
+    @JsonProperty("hostedSkillProvisioning")
+    private com.amazon.ask.smapi.model.v1.skill.HostedSkillProvisioningStatus hostedSkillProvisioning = null;
 
     public static Builder builder() {
         return new Builder();
@@ -42,6 +48,12 @@ public final class SkillStatus {
         if (builder.interactionModel != null) {
             this.interactionModel = builder.interactionModel;
         }
+        if (builder.hostedSkillDeployment != null) {
+            this.hostedSkillDeployment = builder.hostedSkillDeployment;
+        }
+        if (builder.hostedSkillProvisioning != null) {
+            this.hostedSkillProvisioning = builder.hostedSkillProvisioning;
+        }
     }
 
     /**
@@ -49,7 +61,7 @@ public final class SkillStatus {
      * @return manifest
     **/
     @JsonProperty("manifest")
-    public com.amazon.ask.smapi.model.v1.skill.ResourceStatus getManifest() {
+    public com.amazon.ask.smapi.model.v1.skill.ManifestStatus getManifest() {
         return manifest;
     }
 
@@ -64,6 +76,26 @@ public final class SkillStatus {
     }
 
 
+    /**
+     * Get hostedSkillDeployment
+     * @return hostedSkillDeployment
+    **/
+    @JsonProperty("hostedSkillDeployment")
+    public com.amazon.ask.smapi.model.v1.skill.HostedSkillDeploymentStatus getHostedSkillDeployment() {
+        return hostedSkillDeployment;
+    }
+
+
+    /**
+     * Get hostedSkillProvisioning
+     * @return hostedSkillProvisioning
+    **/
+    @JsonProperty("hostedSkillProvisioning")
+    public com.amazon.ask.smapi.model.v1.skill.HostedSkillProvisioningStatus getHostedSkillProvisioning() {
+        return hostedSkillProvisioning;
+    }
+
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -74,12 +106,14 @@ public final class SkillStatus {
         }
         SkillStatus v1SkillSkillStatus = (SkillStatus) o;
         return Objects.equals(this.manifest, v1SkillSkillStatus.manifest) &&
-            Objects.equals(this.interactionModel, v1SkillSkillStatus.interactionModel);
+            Objects.equals(this.interactionModel, v1SkillSkillStatus.interactionModel) &&
+            Objects.equals(this.hostedSkillDeployment, v1SkillSkillStatus.hostedSkillDeployment) &&
+            Objects.equals(this.hostedSkillProvisioning, v1SkillSkillStatus.hostedSkillProvisioning);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(manifest, interactionModel);
+        return Objects.hash(manifest, interactionModel, hostedSkillDeployment, hostedSkillProvisioning);
     }
 
     @Override
@@ -89,6 +123,8 @@ public final class SkillStatus {
         
         sb.append("    manifest: ").append(toIndentedString(manifest)).append("\n");
         sb.append("    interactionModel: ").append(toIndentedString(interactionModel)).append("\n");
+        sb.append("    hostedSkillDeployment: ").append(toIndentedString(hostedSkillDeployment)).append("\n");
+        sb.append("    hostedSkillProvisioning: ").append(toIndentedString(hostedSkillProvisioning)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -105,14 +141,16 @@ public final class SkillStatus {
     }
   
     public static class Builder {
-        private com.amazon.ask.smapi.model.v1.skill.ResourceStatus manifest;
+        private com.amazon.ask.smapi.model.v1.skill.ManifestStatus manifest;
         private com.amazon.ask.smapi.model.v1.skill.SkillInteractionModel interactionModel;
+        private com.amazon.ask.smapi.model.v1.skill.HostedSkillDeploymentStatus hostedSkillDeployment;
+        private com.amazon.ask.smapi.model.v1.skill.HostedSkillProvisioningStatus hostedSkillProvisioning;
 
         private Builder() {}
 
         @JsonProperty("manifest")
 
-        public Builder withManifest(com.amazon.ask.smapi.model.v1.skill.ResourceStatus manifest) {
+        public Builder withManifest(com.amazon.ask.smapi.model.v1.skill.ManifestStatus manifest) {
             this.manifest = manifest;
             return this;
         }
@@ -122,6 +160,22 @@ public final class SkillStatus {
 
         public Builder withInteractionModel(com.amazon.ask.smapi.model.v1.skill.SkillInteractionModel interactionModel) {
             this.interactionModel = interactionModel;
+            return this;
+        }
+
+
+        @JsonProperty("hostedSkillDeployment")
+
+        public Builder withHostedSkillDeployment(com.amazon.ask.smapi.model.v1.skill.HostedSkillDeploymentStatus hostedSkillDeployment) {
+            this.hostedSkillDeployment = hostedSkillDeployment;
+            return this;
+        }
+
+
+        @JsonProperty("hostedSkillProvisioning")
+
+        public Builder withHostedSkillProvisioning(com.amazon.ask.smapi.model.v1.skill.HostedSkillProvisioningStatus hostedSkillProvisioning) {
+            this.hostedSkillProvisioning = hostedSkillProvisioning;
             return this;
         }
 

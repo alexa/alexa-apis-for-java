@@ -12,41 +12,39 @@
 */
 
 
-package com.amazon.ask.smapi.model.v1.catalog;
+package com.amazon.ask.smapi.model.v1.skill;
 
 import java.util.Objects;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * CreateContentUploadUrlRequest
+ * Defines the provisioning status for hosted skill.
  */
 
-@JsonDeserialize(builder = CreateContentUploadUrlRequest.Builder.class)
-public final class CreateContentUploadUrlRequest {
+@JsonDeserialize(builder = HostedSkillProvisioningStatus.Builder.class)
+public final class HostedSkillProvisioningStatus {
 
-    @JsonProperty("numberOfUploadParts")
-    private Integer numberOfUploadParts = null;
+    @JsonProperty("lastUpdateRequest")
+    private com.amazon.ask.smapi.model.v1.skill.HostedSkillProvisioningLastUpdateRequest lastUpdateRequest = null;
 
     public static Builder builder() {
         return new Builder();
     }
 
-    private CreateContentUploadUrlRequest(Builder builder) {
-        if (builder.numberOfUploadParts != null) {
-            this.numberOfUploadParts = builder.numberOfUploadParts;
+    private HostedSkillProvisioningStatus(Builder builder) {
+        if (builder.lastUpdateRequest != null) {
+            this.lastUpdateRequest = builder.lastUpdateRequest;
         }
     }
 
     /**
-     * Provides the number of parts the file will be split into. An equal number of presigned upload urls are generated in response to facilitate each part's upload.
-     * minimum: 1
-     * maximum: 10000
-     * @return numberOfUploadParts
+     * Get lastUpdateRequest
+     * @return lastUpdateRequest
     **/
-    @JsonProperty("numberOfUploadParts")
-    public Integer getNumberOfUploadParts() {
-        return numberOfUploadParts;
+    @JsonProperty("lastUpdateRequest")
+    public com.amazon.ask.smapi.model.v1.skill.HostedSkillProvisioningLastUpdateRequest getLastUpdateRequest() {
+        return lastUpdateRequest;
     }
 
 
@@ -58,21 +56,21 @@ public final class CreateContentUploadUrlRequest {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        CreateContentUploadUrlRequest v1CatalogCreateContentUploadUrlRequest = (CreateContentUploadUrlRequest) o;
-        return Objects.equals(this.numberOfUploadParts, v1CatalogCreateContentUploadUrlRequest.numberOfUploadParts);
+        HostedSkillProvisioningStatus v1SkillHostedSkillProvisioningStatus = (HostedSkillProvisioningStatus) o;
+        return Objects.equals(this.lastUpdateRequest, v1SkillHostedSkillProvisioningStatus.lastUpdateRequest);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(numberOfUploadParts);
+        return Objects.hash(lastUpdateRequest);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class CreateContentUploadUrlRequest {\n");
+        sb.append("class HostedSkillProvisioningStatus {\n");
         
-        sb.append("    numberOfUploadParts: ").append(toIndentedString(numberOfUploadParts)).append("\n");
+        sb.append("    lastUpdateRequest: ").append(toIndentedString(lastUpdateRequest)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -89,20 +87,20 @@ public final class CreateContentUploadUrlRequest {
     }
   
     public static class Builder {
-        private Integer numberOfUploadParts;
+        private com.amazon.ask.smapi.model.v1.skill.HostedSkillProvisioningLastUpdateRequest lastUpdateRequest;
 
         private Builder() {}
 
-        @JsonProperty("numberOfUploadParts")
+        @JsonProperty("lastUpdateRequest")
 
-        public Builder withNumberOfUploadParts(Integer numberOfUploadParts) {
-            this.numberOfUploadParts = numberOfUploadParts;
+        public Builder withLastUpdateRequest(com.amazon.ask.smapi.model.v1.skill.HostedSkillProvisioningLastUpdateRequest lastUpdateRequest) {
+            this.lastUpdateRequest = lastUpdateRequest;
             return this;
         }
 
 
-        public CreateContentUploadUrlRequest build() {
-            return new CreateContentUploadUrlRequest(this);
+        public HostedSkillProvisioningStatus build() {
+            return new HostedSkillProvisioningStatus(this);
         }
     }
 }

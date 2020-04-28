@@ -28,9 +28,6 @@ public final class SkillManifestEndpoint {
     @JsonProperty("uri")
     private String uri = null;
 
-    @JsonProperty("requestEnvelopeVersionSupported")
-    private String requestEnvelopeVersionSupported = null;
-
     @JsonProperty("sslCertificateType")
     private String sslCertificateType = null;
 
@@ -41,9 +38,6 @@ public final class SkillManifestEndpoint {
     private SkillManifestEndpoint(Builder builder) {
         if (builder.uri != null) {
             this.uri = builder.uri;
-        }
-        if (builder.requestEnvelopeVersionSupported != null) {
-            this.requestEnvelopeVersionSupported = builder.requestEnvelopeVersionSupported;
         }
         if (builder.sslCertificateType != null) {
             this.sslCertificateType = builder.sslCertificateType;
@@ -57,16 +51,6 @@ public final class SkillManifestEndpoint {
     @JsonProperty("uri")
     public String getUri() {
         return uri;
-    }
-
-
-    /**
-     * Supported version of the requestEnvelope.
-     * @return requestEnvelopeVersionSupported
-    **/
-    @JsonProperty("requestEnvelopeVersionSupported")
-    public String getRequestEnvelopeVersionSupported() {
-        return requestEnvelopeVersionSupported;
     }
 
 
@@ -107,13 +91,12 @@ public final class SkillManifestEndpoint {
         }
         SkillManifestEndpoint v1SkillManifestSkillManifestEndpoint = (SkillManifestEndpoint) o;
         return Objects.equals(this.uri, v1SkillManifestSkillManifestEndpoint.uri) &&
-            Objects.equals(this.requestEnvelopeVersionSupported, v1SkillManifestSkillManifestEndpoint.requestEnvelopeVersionSupported) &&
             Objects.equals(this.sslCertificateType, v1SkillManifestSkillManifestEndpoint.sslCertificateType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(uri, requestEnvelopeVersionSupported, sslCertificateType);
+        return Objects.hash(uri, sslCertificateType);
     }
 
     @Override
@@ -122,7 +105,6 @@ public final class SkillManifestEndpoint {
         sb.append("class SkillManifestEndpoint {\n");
         
         sb.append("    uri: ").append(toIndentedString(uri)).append("\n");
-        sb.append("    requestEnvelopeVersionSupported: ").append(toIndentedString(requestEnvelopeVersionSupported)).append("\n");
         sb.append("    sslCertificateType: ").append(toIndentedString(sslCertificateType)).append("\n");
         sb.append("}");
         return sb.toString();
@@ -141,7 +123,6 @@ public final class SkillManifestEndpoint {
   
     public static class Builder {
         private String uri;
-        private String requestEnvelopeVersionSupported;
         private String sslCertificateType;
 
         private Builder() {}
@@ -150,14 +131,6 @@ public final class SkillManifestEndpoint {
 
         public Builder withUri(String uri) {
             this.uri = uri;
-            return this;
-        }
-
-
-        @JsonProperty("requestEnvelopeVersionSupported")
-
-        public Builder withRequestEnvelopeVersionSupported(String requestEnvelopeVersionSupported) {
-            this.requestEnvelopeVersionSupported = requestEnvelopeVersionSupported;
             return this;
         }
 

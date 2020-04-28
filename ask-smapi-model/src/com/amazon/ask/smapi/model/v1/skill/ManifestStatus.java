@@ -19,34 +19,28 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Defines the structure for interaction model build status.
+ * Defines the structure for a resource status.
  */
 
-@JsonDeserialize(builder = SkillInteractionModelStatus.Builder.class)
-public final class SkillInteractionModelStatus {
+@JsonDeserialize(builder = ManifestStatus.Builder.class)
+public final class ManifestStatus {
 
     @JsonProperty("lastUpdateRequest")
-    private com.amazon.ask.smapi.model.v1.skill.InteractionModelLastUpdateRequest lastUpdateRequest = null;
+    private com.amazon.ask.smapi.model.v1.skill.ManifestLastUpdateRequest lastUpdateRequest = null;
 
     @JsonProperty("eTag")
     private String eTag = null;
-
-    @JsonProperty("version")
-    private String version = null;
 
     public static Builder builder() {
         return new Builder();
     }
 
-    private SkillInteractionModelStatus(Builder builder) {
+    private ManifestStatus(Builder builder) {
         if (builder.lastUpdateRequest != null) {
             this.lastUpdateRequest = builder.lastUpdateRequest;
         }
         if (builder.eTag != null) {
             this.eTag = builder.eTag;
-        }
-        if (builder.version != null) {
-            this.version = builder.version;
         }
     }
 
@@ -55,7 +49,7 @@ public final class SkillInteractionModelStatus {
      * @return lastUpdateRequest
     **/
     @JsonProperty("lastUpdateRequest")
-    public com.amazon.ask.smapi.model.v1.skill.InteractionModelLastUpdateRequest getLastUpdateRequest() {
+    public com.amazon.ask.smapi.model.v1.skill.ManifestLastUpdateRequest getLastUpdateRequest() {
         return lastUpdateRequest;
     }
 
@@ -70,16 +64,6 @@ public final class SkillInteractionModelStatus {
     }
 
 
-    /**
-     * Version for last successfully built model.
-     * @return version
-    **/
-    @JsonProperty("version")
-    public String getVersion() {
-        return version;
-    }
-
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -88,25 +72,23 @@ public final class SkillInteractionModelStatus {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        SkillInteractionModelStatus v1SkillSkillInteractionModelStatus = (SkillInteractionModelStatus) o;
-        return Objects.equals(this.lastUpdateRequest, v1SkillSkillInteractionModelStatus.lastUpdateRequest) &&
-            Objects.equals(this.eTag, v1SkillSkillInteractionModelStatus.eTag) &&
-            Objects.equals(this.version, v1SkillSkillInteractionModelStatus.version);
+        ManifestStatus v1SkillManifestStatus = (ManifestStatus) o;
+        return Objects.equals(this.lastUpdateRequest, v1SkillManifestStatus.lastUpdateRequest) &&
+            Objects.equals(this.eTag, v1SkillManifestStatus.eTag);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(lastUpdateRequest, eTag, version);
+        return Objects.hash(lastUpdateRequest, eTag);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class SkillInteractionModelStatus {\n");
+        sb.append("class ManifestStatus {\n");
         
         sb.append("    lastUpdateRequest: ").append(toIndentedString(lastUpdateRequest)).append("\n");
         sb.append("    eTag: ").append(toIndentedString(eTag)).append("\n");
-        sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -123,15 +105,14 @@ public final class SkillInteractionModelStatus {
     }
   
     public static class Builder {
-        private com.amazon.ask.smapi.model.v1.skill.InteractionModelLastUpdateRequest lastUpdateRequest;
+        private com.amazon.ask.smapi.model.v1.skill.ManifestLastUpdateRequest lastUpdateRequest;
         private String eTag;
-        private String version;
 
         private Builder() {}
 
         @JsonProperty("lastUpdateRequest")
 
-        public Builder withLastUpdateRequest(com.amazon.ask.smapi.model.v1.skill.InteractionModelLastUpdateRequest lastUpdateRequest) {
+        public Builder withLastUpdateRequest(com.amazon.ask.smapi.model.v1.skill.ManifestLastUpdateRequest lastUpdateRequest) {
             this.lastUpdateRequest = lastUpdateRequest;
             return this;
         }
@@ -145,16 +126,8 @@ public final class SkillInteractionModelStatus {
         }
 
 
-        @JsonProperty("version")
-
-        public Builder withVersion(String version) {
-            this.version = version;
-            return this;
-        }
-
-
-        public SkillInteractionModelStatus build() {
-            return new SkillInteractionModelStatus(this);
+        public ManifestStatus build() {
+            return new ManifestStatus(this);
         }
     }
 }

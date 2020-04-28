@@ -39,7 +39,7 @@ public final class CreateContentUploadRequest {
     }
 
     /**
-     * The number of parts the file will be split into. An equal number of presigned upload urls will be generated in response to facilitate each part's upload.
+     * Provides the number of parts the file will be split into. An equal number of presigned upload urls are generated in response to facilitate each part's upload.
      * @return numberOfUploadParts
     **/
     @JsonProperty("numberOfUploadParts")

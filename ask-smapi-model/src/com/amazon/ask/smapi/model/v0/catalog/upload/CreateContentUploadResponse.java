@@ -89,7 +89,7 @@ public final class CreateContentUploadResponse {
 
 
     /**
-     * Unique identifier of the catalog.
+     * Provides a unique identifier of the catalog.
      * @return catalogId
     **/
     @JsonProperty("catalogId")
