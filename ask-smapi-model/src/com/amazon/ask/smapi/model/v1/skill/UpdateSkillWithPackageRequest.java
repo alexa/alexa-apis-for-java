@@ -39,7 +39,7 @@ public final class UpdateSkillWithPackageRequest {
     }
 
     /**
-     * Location of the package.
+     * The URL for the skill package.
      * @return location
     **/
     @JsonProperty("location")

@@ -55,7 +55,7 @@ public final class CreateSkillWithPackageRequest {
 
 
     /**
-     * Location of the package.
+     * The URL for the skill package.
      * @return location
     **/
     @JsonProperty("location")

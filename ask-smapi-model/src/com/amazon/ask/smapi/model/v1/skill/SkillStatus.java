@@ -15,6 +15,9 @@
 package com.amazon.ask.smapi.model.v1.skill;
 
 import java.util.Objects;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -29,7 +32,7 @@ public final class SkillStatus {
     private com.amazon.ask.smapi.model.v1.skill.ManifestStatus manifest = null;
 
     @JsonProperty("interactionModel")
-    private com.amazon.ask.smapi.model.v1.skill.SkillInteractionModel interactionModel = null;
+    private Map<String, com.amazon.ask.smapi.model.v1.skill.SkillInteractionModelStatus> interactionModel = new HashMap<String, com.amazon.ask.smapi.model.v1.skill.SkillInteractionModelStatus>();
 
     @JsonProperty("hostedSkillDeployment")
     private com.amazon.ask.smapi.model.v1.skill.HostedSkillDeploymentStatus hostedSkillDeployment = null;
@@ -67,11 +70,11 @@ public final class SkillStatus {
 
 
     /**
-     * Get interactionModel
+     * Status for available interaction models, keyed by locale.
      * @return interactionModel
     **/
     @JsonProperty("interactionModel")
-    public com.amazon.ask.smapi.model.v1.skill.SkillInteractionModel getInteractionModel() {
+    public Map<String, com.amazon.ask.smapi.model.v1.skill.SkillInteractionModelStatus> getInteractionModel() {
         return interactionModel;
     }
 
@@ -142,7 +145,7 @@ public final class SkillStatus {
   
     public static class Builder {
         private com.amazon.ask.smapi.model.v1.skill.ManifestStatus manifest;
-        private com.amazon.ask.smapi.model.v1.skill.SkillInteractionModel interactionModel;
+        private Map<String, com.amazon.ask.smapi.model.v1.skill.SkillInteractionModelStatus> interactionModel;
         private com.amazon.ask.smapi.model.v1.skill.HostedSkillDeploymentStatus hostedSkillDeployment;
         private com.amazon.ask.smapi.model.v1.skill.HostedSkillProvisioningStatus hostedSkillProvisioning;
 
@@ -158,11 +161,18 @@ public final class SkillStatus {
 
         @JsonProperty("interactionModel")
 
-        public Builder withInteractionModel(com.amazon.ask.smapi.model.v1.skill.SkillInteractionModel interactionModel) {
+        public Builder withInteractionModel(Map<String, com.amazon.ask.smapi.model.v1.skill.SkillInteractionModelStatus> interactionModel) {
             this.interactionModel = interactionModel;
             return this;
         }
 
+        public Builder putInteractionModelItem(String key, com.amazon.ask.smapi.model.v1.skill.SkillInteractionModelStatus interactionModelItem) {
+            if (this.interactionModel == null) {
+                this.interactionModel = new HashMap<String, com.amazon.ask.smapi.model.v1.skill.SkillInteractionModelStatus>();
+            }
+            this.interactionModel.put(key, interactionModelItem);
+            return this;
+        }
 
         @JsonProperty("hostedSkillDeployment")
 
