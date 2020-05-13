@@ -12,39 +12,39 @@
 */
 
 
-package com.amazon.ask.smapi.model.v1.skill.AlexaHosted;
+package com.amazon.ask.smapi.model.v1.skill.nlu.evaluations;
 
 import java.util.Objects;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Configurations for creating new hosted skill
+ * Results
  */
 
-@JsonDeserialize(builder = HostingConfiguration.Builder.class)
-public final class HostingConfiguration {
+@JsonDeserialize(builder = Results.Builder.class)
+public final class Results {
 
-    @JsonProperty("alexaHosted")
-    private com.amazon.ask.smapi.model.v1.skill.AlexaHosted.AlexaHostedConfig alexaHosted = null;
+    @JsonProperty("href")
+    private String href = null;
 
     public static Builder builder() {
         return new Builder();
     }
 
-    private HostingConfiguration(Builder builder) {
-        if (builder.alexaHosted != null) {
-            this.alexaHosted = builder.alexaHosted;
+    private Results(Builder builder) {
+        if (builder.href != null) {
+            this.href = builder.href;
         }
     }
 
     /**
-     * Get alexaHosted
-     * @return alexaHosted
+     * url to get the test case result details Example: /v1/skills/{skillId}/nluEvaluations/{evaluationId}/results 
+     * @return href
     **/
-    @JsonProperty("alexaHosted")
-    public com.amazon.ask.smapi.model.v1.skill.AlexaHosted.AlexaHostedConfig getAlexaHosted() {
-        return alexaHosted;
+    @JsonProperty("href")
+    public String getHref() {
+        return href;
     }
 
 
@@ -56,21 +56,21 @@ public final class HostingConfiguration {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        HostingConfiguration v1SkillAlexaHostedHostingConfiguration = (HostingConfiguration) o;
-        return Objects.equals(this.alexaHosted, v1SkillAlexaHostedHostingConfiguration.alexaHosted);
+        Results v1SkillNluEvaluationsResults = (Results) o;
+        return Objects.equals(this.href, v1SkillNluEvaluationsResults.href);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(alexaHosted);
+        return Objects.hash(href);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class HostingConfiguration {\n");
+        sb.append("class Results {\n");
         
-        sb.append("    alexaHosted: ").append(toIndentedString(alexaHosted)).append("\n");
+        sb.append("    href: ").append(toIndentedString(href)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -87,20 +87,20 @@ public final class HostingConfiguration {
     }
   
     public static class Builder {
-        private com.amazon.ask.smapi.model.v1.skill.AlexaHosted.AlexaHostedConfig alexaHosted;
+        private String href;
 
         private Builder() {}
 
-        @JsonProperty("alexaHosted")
+        @JsonProperty("href")
 
-        public Builder withAlexaHosted(com.amazon.ask.smapi.model.v1.skill.AlexaHosted.AlexaHostedConfig alexaHosted) {
-            this.alexaHosted = alexaHosted;
+        public Builder withHref(String href) {
+            this.href = href;
             return this;
         }
 
 
-        public HostingConfiguration build() {
-            return new HostingConfiguration(this);
+        public Results build() {
+            return new Results(this);
         }
     }
 }

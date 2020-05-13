@@ -43,13 +43,13 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
                                     .withSerializer(apiConfiguration.getSerializer())
                                     .build())
           .build();
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.3.2").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.4.1").build();
   }
 
   public SkillManagementServiceClient(ApiConfiguration apiConfiguration, LwaClient lwaClient) {
       super(apiConfiguration);
       this.lwaClient = lwaClient;
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.3.2").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.4.1").build();
   }
 
   /**
@@ -3713,6 +3713,50 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
 
   /**
    * 
+   * Get the client credentials for the skill.
+   * @param skillId The skill ID. (required)
+   * @return com.amazon.ask.smapi.model.v1.skill.SkillCredentials
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.SkillCredentials> callGetSkillCredentialsV1(String skillId) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String path = "/v1/skills/{skillId}/credentials";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.SkillCredentials.class, 200, "Response contains the skill credentials."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 500, "Internal Server Error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 503, "Service Unavailable."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.SkillCredentials.class, false);
+  }
+
+  /**
+   * 
+   * Get the client credentials for the skill.
+   * @param skillId The skill ID. (required)
+   * @return com.amazon.ask.smapi.model.v1.skill.SkillCredentials
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.smapi.model.v1.skill.SkillCredentials getSkillCredentialsV1(String skillId) throws ServiceException {
+    return this.callGetSkillCredentialsV1(skillId).getResponse();
+  }
+
+  /**
+   * 
    * Delete the skill and model for given skillId.
    * @param skillId The skill ID. (required)
    * @throws ServiceException if fails to make API call
@@ -4052,6 +4096,619 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    */
   public com.amazon.ask.smapi.model.v1.skill.metrics.GetMetricDataResponse getSkillMetricsV1(String skillId, OffsetDateTime startTime, OffsetDateTime endTime, String period, String metric, String stage, String skillType, String intent, String locale, BigDecimal maxResults, String nextToken) throws ServiceException {
     return this.callGetSkillMetricsV1(skillId, startTime, endTime, period, metric, stage, skillType, intent, locale, maxResults, nextToken).getResponse();
+  }
+
+  /**
+   * Get the annotations of an NLU annotation set
+   * 
+   * @param skillId The skill ID. (required)
+   * @param annotationId Identifier of the NLU annotation set. (required)
+   * @param accept Standard HTTP. Pass &#x60;application/json&#x60; or &#x60;test/csv&#x60; for GET calls.  (required)
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<Void> callGetAnnotationsForNLUAnnotationSetsV1(String skillId, String annotationId, String accept) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    pathParams.put("annotationId", annotationId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    if (accept != null) {
+      headerParams.add(new Pair<String, String>("Accept", accept));
+    }
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String path = "/v1/skills/{skillId}/nluAnnotationSets/{annotationId}/annotations";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(null, 200, "The specific version of a NLU annotation set has the content."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse400.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse400.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 500, "Internal Server Error."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null, null, false);
+  }
+
+  /**
+   * Get the annotations of an NLU annotation set
+   * 
+   * @param skillId The skill ID. (required)
+   * @param annotationId Identifier of the NLU annotation set. (required)
+   * @param accept Standard HTTP. Pass &#x60;application/json&#x60; or &#x60;test/csv&#x60; for GET calls.  (required)
+   * @throws ServiceException if fails to make API call
+   */
+  public void getAnnotationsForNLUAnnotationSetsV1(String skillId, String annotationId, String accept) throws ServiceException {
+    this.callGetAnnotationsForNLUAnnotationSetsV1(skillId, annotationId, accept).getResponse();
+  }
+
+  /**
+   * Replace the annotations in NLU annotation set.
+   * API which replaces the annotations in NLU annotation set. 
+   * @param skillId The skill ID. (required)
+   * @param annotationId Identifier of the NLU annotation set. (required)
+   * @param contentType Standard HTTP. Pass &#x60;application/json&#x60; or &#x60;test/csv&#x60; for POST calls with a json/csv body.  (required)
+   * @param updateNLUAnnotationSetAnnotationsRequest Payload sent to the update NLU annotation set API. (required)
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<Void> callUpdateAnnotationsForNLUAnnotationSetsV1(String skillId, String annotationId, String contentType, com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.UpdateNLUAnnotationSetAnnotationsRequest updateNLUAnnotationSetAnnotationsRequest) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    pathParams.put("annotationId", annotationId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    if (contentType != null) {
+      headerParams.add(new Pair<String, String>("Content-Type", contentType));
+    }
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String path = "/v1/skills/{skillId}/nluAnnotationSets/{annotationId}/annotations";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(null, 200, "NLU annotation set exists and starts the update."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse400.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse400.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 500, "Internal Server Error."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, updateNLUAnnotationSetAnnotationsRequest, null, false);
+  }
+
+  /**
+   * Replace the annotations in NLU annotation set.
+   * API which replaces the annotations in NLU annotation set. 
+   * @param skillId The skill ID. (required)
+   * @param annotationId Identifier of the NLU annotation set. (required)
+   * @param contentType Standard HTTP. Pass &#x60;application/json&#x60; or &#x60;test/csv&#x60; for POST calls with a json/csv body.  (required)
+   * @param updateNLUAnnotationSetAnnotationsRequest Payload sent to the update NLU annotation set API. (required)
+   * @throws ServiceException if fails to make API call
+   */
+  public void updateAnnotationsForNLUAnnotationSetsV1(String skillId, String annotationId, String contentType, com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.UpdateNLUAnnotationSetAnnotationsRequest updateNLUAnnotationSetAnnotationsRequest) throws ServiceException {
+    this.callUpdateAnnotationsForNLUAnnotationSetsV1(skillId, annotationId, contentType, updateNLUAnnotationSetAnnotationsRequest).getResponse();
+  }
+
+  /**
+   * Delete the NLU annotation set
+   * API which deletes the NLU annotation set. Developers cannot get/list the deleted annotation set. 
+   * @param skillId The skill ID. (required)
+   * @param annotationId Identifier of the NLU annotation set. (required)
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<Void> callDeletePropertiesForNLUAnnotationSetsV1(String skillId, String annotationId) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    pathParams.put("annotationId", annotationId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String path = "/v1/skills/{skillId}/nluAnnotationSets/{annotationId}";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "NLU annotation set exists and is deleted successfully."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse400.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse400.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 500, "Internal Server Error."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("DELETE", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null, null, false);
+  }
+
+  /**
+   * Delete the NLU annotation set
+   * API which deletes the NLU annotation set. Developers cannot get/list the deleted annotation set. 
+   * @param skillId The skill ID. (required)
+   * @param annotationId Identifier of the NLU annotation set. (required)
+   * @throws ServiceException if fails to make API call
+   */
+  public void deletePropertiesForNLUAnnotationSetsV1(String skillId, String annotationId) throws ServiceException {
+    this.callDeletePropertiesForNLUAnnotationSetsV1(skillId, annotationId).getResponse();
+  }
+
+  /**
+   * Get the properties of an NLU annotation set
+   * Return the properties for an NLU annotation set. 
+   * @param skillId The skill ID. (required)
+   * @param annotationId Identifier of the NLU annotation set. (required)
+   * @return com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.GetNLUAnnotationSetPropertiesResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.GetNLUAnnotationSetPropertiesResponse> callGetPropertiesForNLUAnnotationSetsV1(String skillId, String annotationId) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    pathParams.put("annotationId", annotationId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String path = "/v1/skills/{skillId}/nluAnnotationSets/{annotationId}/properties";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.GetNLUAnnotationSetPropertiesResponse.class, 200, "The NLU annotation set exists."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse400.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse400.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 500, "Internal Server Error."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.GetNLUAnnotationSetPropertiesResponse.class, false);
+  }
+
+  /**
+   * Get the properties of an NLU annotation set
+   * Return the properties for an NLU annotation set. 
+   * @param skillId The skill ID. (required)
+   * @param annotationId Identifier of the NLU annotation set. (required)
+   * @return com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.GetNLUAnnotationSetPropertiesResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.GetNLUAnnotationSetPropertiesResponse getPropertiesForNLUAnnotationSetsV1(String skillId, String annotationId) throws ServiceException {
+    return this.callGetPropertiesForNLUAnnotationSetsV1(skillId, annotationId).getResponse();
+  }
+
+  /**
+   * update the NLU annotation set properties.
+   * API which updates the NLU annotation set properties. Currently, the only data can be updated is annotation set name. 
+   * @param skillId The skill ID. (required)
+   * @param annotationId Identifier of the NLU annotation set. (required)
+   * @param updateNLUAnnotationSetPropertiesRequest Payload sent to the update NLU annotation set properties API. (required)
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<Void> callUpdatePropertiesForNLUAnnotationSetsV1(String skillId, String annotationId, com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.UpdateNLUAnnotationSetPropertiesRequest updateNLUAnnotationSetPropertiesRequest) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    pathParams.put("annotationId", annotationId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String path = "/v1/skills/{skillId}/nluAnnotationSets/{annotationId}/properties";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(null, 201, "NLU annotation set exists and properties are updated successfully."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse400.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse400.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 500, "Internal Server Error."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("PUT", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, updateNLUAnnotationSetPropertiesRequest, null, false);
+  }
+
+  /**
+   * update the NLU annotation set properties.
+   * API which updates the NLU annotation set properties. Currently, the only data can be updated is annotation set name. 
+   * @param skillId The skill ID. (required)
+   * @param annotationId Identifier of the NLU annotation set. (required)
+   * @param updateNLUAnnotationSetPropertiesRequest Payload sent to the update NLU annotation set properties API. (required)
+   * @throws ServiceException if fails to make API call
+   */
+  public void updatePropertiesForNLUAnnotationSetsV1(String skillId, String annotationId, com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.UpdateNLUAnnotationSetPropertiesRequest updateNLUAnnotationSetPropertiesRequest) throws ServiceException {
+    this.callUpdatePropertiesForNLUAnnotationSetsV1(skillId, annotationId, updateNLUAnnotationSetPropertiesRequest).getResponse();
+  }
+
+  /**
+   * List NLU annotation sets for a given skill.
+   * API which requests all the NLU annotation sets for a skill. Returns the annotationId and properties for each NLU annotation set. Developers can filter the results using locale. Supports paging of results. 
+   * @param skillId The skill ID. (required)
+   * @param locale filter to NLU annotation set created using this locale (optional)
+   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param maxResults Sets the maximum number of results returned in the response body. Defaults to 10. If more results are present, the response will contain a nextToken and a _link.next href.  (optional, default to 10)
+   * @return com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.ListNLUAnnotationSetsResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.ListNLUAnnotationSetsResponse> callListNLUAnnotationSetsV1(String skillId, String locale, String nextToken, BigDecimal maxResults) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+
+    if(locale != null) {
+    queryParams.add(new Pair<String, String>("locale", locale));
+  }
+
+    if(nextToken != null) {
+    queryParams.add(new Pair<String, String>("nextToken", nextToken));
+  }
+
+    if(maxResults != null) {
+    queryParams.add(new Pair<String, String>("maxResults", maxResults.toString()));
+  }
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String path = "/v1/skills/{skillId}/nluAnnotationSets";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.ListNLUAnnotationSetsResponse.class, 200, "NLU annotation sets are returned."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse400.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse400.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 500, "Internal Server Error."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.ListNLUAnnotationSetsResponse.class, false);
+  }
+
+  /**
+   * List NLU annotation sets for a given skill.
+   * API which requests all the NLU annotation sets for a skill. Returns the annotationId and properties for each NLU annotation set. Developers can filter the results using locale. Supports paging of results. 
+   * @param skillId The skill ID. (required)
+   * @param locale filter to NLU annotation set created using this locale (optional)
+   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param maxResults Sets the maximum number of results returned in the response body. Defaults to 10. If more results are present, the response will contain a nextToken and a _link.next href.  (optional, default to 10)
+   * @return com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.ListNLUAnnotationSetsResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.ListNLUAnnotationSetsResponse listNLUAnnotationSetsV1(String skillId, String locale, String nextToken, BigDecimal maxResults) throws ServiceException {
+    return this.callListNLUAnnotationSetsV1(skillId, locale, nextToken, maxResults).getResponse();
+  }
+
+  /**
+   * Create a new NLU annotation set for a skill which will generate a new annotationId.
+   * This is an API that creates a new NLU annotation set with properties and returns the annotationId. 
+   * @param skillId The skill ID. (required)
+   * @param createNLUAnnotationSetRequest Payload sent to the create NLU annotation set API. (required)
+   * @return com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.CreateNLUAnnotationSetResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.CreateNLUAnnotationSetResponse> callCreateNLUAnnotationSetV1(String skillId, com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.CreateNLUAnnotationSetRequest createNLUAnnotationSetRequest) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String path = "/v1/skills/{skillId}/nluAnnotationSets";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.CreateNLUAnnotationSetResponse.class, 201, "NLU annotation set created successfully."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse400.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse400.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 500, "Internal Server Error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 503, "Service Unavailable."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, createNLUAnnotationSetRequest, com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.CreateNLUAnnotationSetResponse.class, false);
+  }
+
+  /**
+   * Create a new NLU annotation set for a skill which will generate a new annotationId.
+   * This is an API that creates a new NLU annotation set with properties and returns the annotationId. 
+   * @param skillId The skill ID. (required)
+   * @param createNLUAnnotationSetRequest Payload sent to the create NLU annotation set API. (required)
+   * @return com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.CreateNLUAnnotationSetResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.CreateNLUAnnotationSetResponse createNLUAnnotationSetV1(String skillId, com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.CreateNLUAnnotationSetRequest createNLUAnnotationSetRequest) throws ServiceException {
+    return this.callCreateNLUAnnotationSetV1(skillId, createNLUAnnotationSetRequest).getResponse();
+  }
+
+  /**
+   * Get top level information and status of a nlu evaluation.
+   * API which requests top level information about the evaluation like the current state of the job, status of the evaluation (if complete). Also returns data used to start the job, like the number of test cases, stage, locale, and start time. This should be considered the &#39;cheap&#39; operation while getResultForNLUEvaluations is &#39;expensive&#39;. 
+   * @param skillId The skill ID. (required)
+   * @param evaluationId Identifier of the evaluation. (required)
+   * @return com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.GetNLUEvaluationResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.GetNLUEvaluationResponse> callGetNLUEvaluationV1(String skillId, String evaluationId) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    pathParams.put("evaluationId", evaluationId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String path = "/v1/skills/{skillId}/nluEvaluations/{evaluationId}";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.GetNLUEvaluationResponse.class, 200, "Evaluation exists and its status is queryable."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse400.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse400.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 500, "Internal Server Error."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.GetNLUEvaluationResponse.class, false);
+  }
+
+  /**
+   * Get top level information and status of a nlu evaluation.
+   * API which requests top level information about the evaluation like the current state of the job, status of the evaluation (if complete). Also returns data used to start the job, like the number of test cases, stage, locale, and start time. This should be considered the &#39;cheap&#39; operation while getResultForNLUEvaluations is &#39;expensive&#39;. 
+   * @param skillId The skill ID. (required)
+   * @param evaluationId Identifier of the evaluation. (required)
+   * @return com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.GetNLUEvaluationResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.GetNLUEvaluationResponse getNLUEvaluationV1(String skillId, String evaluationId) throws ServiceException {
+    return this.callGetNLUEvaluationV1(skillId, evaluationId).getResponse();
+  }
+
+  /**
+   * Get test case results for a completed Evaluation.
+   * Paginated API which returns the test case results of an evaluation. This should be considered the &#39;expensive&#39; operation while getNluEvaluation is &#39;cheap&#39;. 
+   * @param skillId The skill ID. (required)
+   * @param evaluationId Identifier of the evaluation. (required)
+   * @param sortField  (optional)
+   * @param testCaseStatus only returns test cases with this status (optional)
+   * @param actualIntentName only returns test cases with intents which resolve to this intent (optional)
+   * @param expectedIntentName only returns test cases with intents which are expected to be this intent (optional)
+   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param maxResults Sets the maximum number of results returned in the response body. Defaults to 1000. If more results are present, the response will contain a nextToken and a _link.next href.  (optional, default to 1000)
+   * @return com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.GetNLUEvaluationResultsResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.GetNLUEvaluationResultsResponse> callGetResultForNLUEvaluationsV1(String skillId, String evaluationId, String sortField, String testCaseStatus, String actualIntentName, String expectedIntentName, String nextToken, BigDecimal maxResults) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+
+    if(sortField != null) {
+    queryParams.add(new Pair<String, String>("sort.field", sortField));
+  }
+
+    if(testCaseStatus != null) {
+    queryParams.add(new Pair<String, String>("testCaseStatus", testCaseStatus));
+  }
+
+    if(actualIntentName != null) {
+    queryParams.add(new Pair<String, String>("actualIntentName", actualIntentName));
+  }
+
+    if(expectedIntentName != null) {
+    queryParams.add(new Pair<String, String>("expectedIntentName", expectedIntentName));
+  }
+
+    if(nextToken != null) {
+    queryParams.add(new Pair<String, String>("nextToken", nextToken));
+  }
+
+    if(maxResults != null) {
+    queryParams.add(new Pair<String, String>("maxResults", maxResults.toString()));
+  }
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    pathParams.put("evaluationId", evaluationId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String path = "/v1/skills/{skillId}/nluEvaluations/{evaluationId}/results";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.GetNLUEvaluationResultsResponse.class, 200, "Evaluation exists and its status is queryable."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse400.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse400.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 500, "Internal Server Error."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.GetNLUEvaluationResultsResponse.class, false);
+  }
+
+  /**
+   * Get test case results for a completed Evaluation.
+   * Paginated API which returns the test case results of an evaluation. This should be considered the &#39;expensive&#39; operation while getNluEvaluation is &#39;cheap&#39;. 
+   * @param skillId The skill ID. (required)
+   * @param evaluationId Identifier of the evaluation. (required)
+   * @param sortField  (optional)
+   * @param testCaseStatus only returns test cases with this status (optional)
+   * @param actualIntentName only returns test cases with intents which resolve to this intent (optional)
+   * @param expectedIntentName only returns test cases with intents which are expected to be this intent (optional)
+   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param maxResults Sets the maximum number of results returned in the response body. Defaults to 1000. If more results are present, the response will contain a nextToken and a _link.next href.  (optional, default to 1000)
+   * @return com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.GetNLUEvaluationResultsResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.GetNLUEvaluationResultsResponse getResultForNLUEvaluationsV1(String skillId, String evaluationId, String sortField, String testCaseStatus, String actualIntentName, String expectedIntentName, String nextToken, BigDecimal maxResults) throws ServiceException {
+    return this.callGetResultForNLUEvaluationsV1(skillId, evaluationId, sortField, testCaseStatus, actualIntentName, expectedIntentName, nextToken, maxResults).getResponse();
+  }
+
+  /**
+   * List nlu evaluations run for a skill.
+   * API which requests recently run nlu evaluations started by a vendor for a skill. Returns the evaluation id and some of the parameters used to start the evaluation. Developers can filter the results using locale and stage. Supports paging of results. 
+   * @param skillId The skill ID. (required)
+   * @param locale filter to evaluations started using this locale (optional)
+   * @param stage filter to evaluations started using this stage (optional)
+   * @param annotationId filter to evaluations started using this annotationId (optional)
+   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param maxResults Sets the maximum number of results returned in the response body. Defaults to 10. If more results are present, the response will contain a nextToken and a _link.next href.  (optional, default to 10)
+   * @return com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.ListNLUEvaluationsResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.ListNLUEvaluationsResponse> callListNLUEvaluationsV1(String skillId, String locale, String stage, String annotationId, String nextToken, BigDecimal maxResults) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+
+    if(locale != null) {
+    queryParams.add(new Pair<String, String>("locale", locale));
+  }
+
+    if(stage != null) {
+    queryParams.add(new Pair<String, String>("stage", stage));
+  }
+
+    if(annotationId != null) {
+    queryParams.add(new Pair<String, String>("annotationId", annotationId));
+  }
+
+    if(nextToken != null) {
+    queryParams.add(new Pair<String, String>("nextToken", nextToken));
+  }
+
+    if(maxResults != null) {
+    queryParams.add(new Pair<String, String>("maxResults", maxResults.toString()));
+  }
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String path = "/v1/skills/{skillId}/nluEvaluations";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.ListNLUEvaluationsResponse.class, 200, "Evaluations are returned."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse400.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse400.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 500, "Internal Server Error."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.ListNLUEvaluationsResponse.class, false);
+  }
+
+  /**
+   * List nlu evaluations run for a skill.
+   * API which requests recently run nlu evaluations started by a vendor for a skill. Returns the evaluation id and some of the parameters used to start the evaluation. Developers can filter the results using locale and stage. Supports paging of results. 
+   * @param skillId The skill ID. (required)
+   * @param locale filter to evaluations started using this locale (optional)
+   * @param stage filter to evaluations started using this stage (optional)
+   * @param annotationId filter to evaluations started using this annotationId (optional)
+   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param maxResults Sets the maximum number of results returned in the response body. Defaults to 10. If more results are present, the response will contain a nextToken and a _link.next href.  (optional, default to 10)
+   * @return com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.ListNLUEvaluationsResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.ListNLUEvaluationsResponse listNLUEvaluationsV1(String skillId, String locale, String stage, String annotationId, String nextToken, BigDecimal maxResults) throws ServiceException {
+    return this.callListNLUEvaluationsV1(skillId, locale, stage, annotationId, nextToken, maxResults).getResponse();
+  }
+
+  /**
+   * Start an evaluation against the NLU model built by the skill&#39;s interaction model.
+   * This is an asynchronous API that starts an evaluation against the NLU model built by the skill&#39;s interaction model. The operation outputs an evaluationId which allows the retrieval of the current status of the operation and the results upon completion. This operation is unified, meaning both internal and external skill developers may use it evaluate NLU models. 
+   * @param evaluateNLURequest Payload sent to the evaluate NLU API. (required)
+   * @param skillId The skill ID. (required)
+   * @return com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.EvaluateResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.EvaluateResponse> callCreateNLUEvaluationsV1(com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.EvaluateNLURequest evaluateNLURequest, String skillId) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String path = "/v1/skills/{skillId}/nluEvaluations";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.EvaluateResponse.class, 200, "Evaluation has successfully begun."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse400.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse400.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 500, "Internal Server Error."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, evaluateNLURequest, com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.EvaluateResponse.class, false);
+  }
+
+  /**
+   * Start an evaluation against the NLU model built by the skill&#39;s interaction model.
+   * This is an asynchronous API that starts an evaluation against the NLU model built by the skill&#39;s interaction model. The operation outputs an evaluationId which allows the retrieval of the current status of the operation and the results upon completion. This operation is unified, meaning both internal and external skill developers may use it evaluate NLU models. 
+   * @param evaluateNLURequest Payload sent to the evaluate NLU API. (required)
+   * @param skillId The skill ID. (required)
+   * @return com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.EvaluateResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.EvaluateResponse createNLUEvaluationsV1(com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.EvaluateNLURequest evaluateNLURequest, String skillId) throws ServiceException {
+    return this.callCreateNLUEvaluationsV1(evaluateNLURequest, skillId).getResponse();
   }
 
   /**
@@ -4538,6 +5195,128 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    */
   public com.amazon.ask.smapi.model.v1.skill.evaluations.ProfileNluResponse profileNluV1(com.amazon.ask.smapi.model.v1.skill.evaluations.ProfileNluRequest profileNluRequest, String skillId, String stage, String locale) throws ServiceException {
     return this.callProfileNluV1(profileNluRequest, skillId, stage, locale).getResponse();
+  }
+
+  /**
+   * Retrieve conflict detection job status for skill.
+   * This API returns the job status of conflict detection job for a specified interaction model.
+   * @param skillId The skill ID. (required)
+   * @param locale The locale for the model requested e.g. en-GB, en-US, de-DE. (required)
+   * @param stage Stage of the interaction model. (required)
+   * @param version Version of interaction model. Use \&quot;~current\&quot; to get the model of the current version. (required)
+   * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.GetConflictDetectionJobStatusResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.GetConflictDetectionJobStatusResponse> callGetConflictDetectionJobStatusForInteractionModelV1(String skillId, String locale, String stage, String version) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    pathParams.put("locale", locale);
+    pathParams.put("stage", stage);
+    pathParams.put("version", version);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String path = "/v1/skills/{skillId}/stages/{stage}/interactionModel/locales/{locale}/versions/{version}/conflictDetectionJobStatus";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.GetConflictDetectionJobStatusResponse.class, 200, "Get conflict detection results sucessfully."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 404, "There is no catalog defined for the catalogId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 500, "Internal Server Error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 503, "Service Unavailable."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.GetConflictDetectionJobStatusResponse.class, false);
+  }
+
+  /**
+   * Retrieve conflict detection job status for skill.
+   * This API returns the job status of conflict detection job for a specified interaction model.
+   * @param skillId The skill ID. (required)
+   * @param locale The locale for the model requested e.g. en-GB, en-US, de-DE. (required)
+   * @param stage Stage of the interaction model. (required)
+   * @param version Version of interaction model. Use \&quot;~current\&quot; to get the model of the current version. (required)
+   * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.GetConflictDetectionJobStatusResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.GetConflictDetectionJobStatusResponse getConflictDetectionJobStatusForInteractionModelV1(String skillId, String locale, String stage, String version) throws ServiceException {
+    return this.callGetConflictDetectionJobStatusForInteractionModelV1(skillId, locale, stage, version).getResponse();
+  }
+
+  /**
+   * Retrieve conflict detection results for a specified interaction model.
+   * This is a paginated API that retrieves results of conflict detection job for a specified interaction model.
+   * @param skillId The skill ID. (required)
+   * @param locale The locale for the model requested e.g. en-GB, en-US, de-DE. (required)
+   * @param stage Stage of the interaction model. (required)
+   * @param version Version of interaction model. Use \&quot;~current\&quot; to get the model of the current version. (required)
+   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param maxResults Sets the maximum number of results returned in the response body. Defaults to 100. If more results are present, the response will contain a nextToken and a _link.next href. (optional, default to 100)
+   * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.GetConflictsResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.GetConflictsResponse> callGetConflictsForInteractionModelV1(String skillId, String locale, String stage, String version, String nextToken, BigDecimal maxResults) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+
+    if(nextToken != null) {
+    queryParams.add(new Pair<String, String>("nextToken", nextToken));
+  }
+
+    if(maxResults != null) {
+    queryParams.add(new Pair<String, String>("maxResults", maxResults.toString()));
+  }
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    pathParams.put("locale", locale);
+    pathParams.put("stage", stage);
+    pathParams.put("version", version);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String path = "/v1/skills/{skillId}/stages/{stage}/interactionModel/locales/{locale}/versions/{version}/conflicts";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.GetConflictsResponse.class, 200, "Get conflict detection results sucessfully."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 404, "There is no catalog defined for the catalogId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 500, "Internal Server Error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 503, "Service Unavailable."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.GetConflictsResponse.class, false);
+  }
+
+  /**
+   * Retrieve conflict detection results for a specified interaction model.
+   * This is a paginated API that retrieves results of conflict detection job for a specified interaction model.
+   * @param skillId The skill ID. (required)
+   * @param locale The locale for the model requested e.g. en-GB, en-US, de-DE. (required)
+   * @param stage Stage of the interaction model. (required)
+   * @param version Version of interaction model. Use \&quot;~current\&quot; to get the model of the current version. (required)
+   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param maxResults Sets the maximum number of results returned in the response body. Defaults to 100. If more results are present, the response will contain a nextToken and a _link.next href. (optional, default to 100)
+   * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.GetConflictsResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.GetConflictsResponse getConflictsForInteractionModelV1(String skillId, String locale, String stage, String version, String nextToken, BigDecimal maxResults) throws ServiceException {
+    return this.callGetConflictsForInteractionModelV1(skillId, locale, stage, version, nextToken, maxResults).getResponse();
   }
 
   /**

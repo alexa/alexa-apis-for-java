@@ -393,6 +393,11 @@ public interface SkillManagementService {
     ApiResponse<com.amazon.ask.smapi.model.v1.skill.certification.ListCertificationsResponse> callGetCertificationsListV1(String skillId, String nextToken, BigDecimal maxResults) throws ServiceException;
 
 
+    com.amazon.ask.smapi.model.v1.skill.SkillCredentials getSkillCredentialsV1(String skillId) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.SkillCredentials> callGetSkillCredentialsV1(String skillId) throws ServiceException;
+
+
     void deleteSkillV1(String skillId) throws ServiceException;
 
     ApiResponse<Void> callDeleteSkillV1(String skillId) throws ServiceException;
@@ -411,6 +416,61 @@ public interface SkillManagementService {
     com.amazon.ask.smapi.model.v1.skill.metrics.GetMetricDataResponse getSkillMetricsV1(String skillId, OffsetDateTime startTime, OffsetDateTime endTime, String period, String metric, String stage, String skillType, String intent, String locale, BigDecimal maxResults, String nextToken) throws ServiceException;
 
     ApiResponse<com.amazon.ask.smapi.model.v1.skill.metrics.GetMetricDataResponse> callGetSkillMetricsV1(String skillId, OffsetDateTime startTime, OffsetDateTime endTime, String period, String metric, String stage, String skillType, String intent, String locale, BigDecimal maxResults, String nextToken) throws ServiceException;
+
+
+    void getAnnotationsForNLUAnnotationSetsV1(String skillId, String annotationId, String accept) throws ServiceException;
+
+    ApiResponse<Void> callGetAnnotationsForNLUAnnotationSetsV1(String skillId, String annotationId, String accept) throws ServiceException;
+
+
+    void updateAnnotationsForNLUAnnotationSetsV1(String skillId, String annotationId, String contentType, com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.UpdateNLUAnnotationSetAnnotationsRequest updateNLUAnnotationSetAnnotationsRequest) throws ServiceException;
+
+    ApiResponse<Void> callUpdateAnnotationsForNLUAnnotationSetsV1(String skillId, String annotationId, String contentType, com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.UpdateNLUAnnotationSetAnnotationsRequest updateNLUAnnotationSetAnnotationsRequest) throws ServiceException;
+
+
+    void deletePropertiesForNLUAnnotationSetsV1(String skillId, String annotationId) throws ServiceException;
+
+    ApiResponse<Void> callDeletePropertiesForNLUAnnotationSetsV1(String skillId, String annotationId) throws ServiceException;
+
+
+    com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.GetNLUAnnotationSetPropertiesResponse getPropertiesForNLUAnnotationSetsV1(String skillId, String annotationId) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.GetNLUAnnotationSetPropertiesResponse> callGetPropertiesForNLUAnnotationSetsV1(String skillId, String annotationId) throws ServiceException;
+
+
+    void updatePropertiesForNLUAnnotationSetsV1(String skillId, String annotationId, com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.UpdateNLUAnnotationSetPropertiesRequest updateNLUAnnotationSetPropertiesRequest) throws ServiceException;
+
+    ApiResponse<Void> callUpdatePropertiesForNLUAnnotationSetsV1(String skillId, String annotationId, com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.UpdateNLUAnnotationSetPropertiesRequest updateNLUAnnotationSetPropertiesRequest) throws ServiceException;
+
+
+    com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.ListNLUAnnotationSetsResponse listNLUAnnotationSetsV1(String skillId, String locale, String nextToken, BigDecimal maxResults) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.ListNLUAnnotationSetsResponse> callListNLUAnnotationSetsV1(String skillId, String locale, String nextToken, BigDecimal maxResults) throws ServiceException;
+
+
+    com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.CreateNLUAnnotationSetResponse createNLUAnnotationSetV1(String skillId, com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.CreateNLUAnnotationSetRequest createNLUAnnotationSetRequest) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.CreateNLUAnnotationSetResponse> callCreateNLUAnnotationSetV1(String skillId, com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.CreateNLUAnnotationSetRequest createNLUAnnotationSetRequest) throws ServiceException;
+
+
+    com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.GetNLUEvaluationResponse getNLUEvaluationV1(String skillId, String evaluationId) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.GetNLUEvaluationResponse> callGetNLUEvaluationV1(String skillId, String evaluationId) throws ServiceException;
+
+
+    com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.GetNLUEvaluationResultsResponse getResultForNLUEvaluationsV1(String skillId, String evaluationId, String sortField, String testCaseStatus, String actualIntentName, String expectedIntentName, String nextToken, BigDecimal maxResults) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.GetNLUEvaluationResultsResponse> callGetResultForNLUEvaluationsV1(String skillId, String evaluationId, String sortField, String testCaseStatus, String actualIntentName, String expectedIntentName, String nextToken, BigDecimal maxResults) throws ServiceException;
+
+
+    com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.ListNLUEvaluationsResponse listNLUEvaluationsV1(String skillId, String locale, String stage, String annotationId, String nextToken, BigDecimal maxResults) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.ListNLUEvaluationsResponse> callListNLUEvaluationsV1(String skillId, String locale, String stage, String annotationId, String nextToken, BigDecimal maxResults) throws ServiceException;
+
+
+    com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.EvaluateResponse createNLUEvaluationsV1(com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.EvaluateNLURequest evaluateNLURequest, String skillId) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.EvaluateResponse> callCreateNLUEvaluationsV1(com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.EvaluateNLURequest evaluateNLURequest, String skillId) throws ServiceException;
 
 
     com.amazon.ask.smapi.model.v1.skill.simulations.SimulationsApiResponse simulateSkillV1(String skillId, com.amazon.ask.smapi.model.v1.skill.simulations.SimulationsApiRequest simulationsApiRequest) throws ServiceException;
@@ -461,6 +521,16 @@ public interface SkillManagementService {
     com.amazon.ask.smapi.model.v1.skill.evaluations.ProfileNluResponse profileNluV1(com.amazon.ask.smapi.model.v1.skill.evaluations.ProfileNluRequest profileNluRequest, String skillId, String stage, String locale) throws ServiceException;
 
     ApiResponse<com.amazon.ask.smapi.model.v1.skill.evaluations.ProfileNluResponse> callProfileNluV1(com.amazon.ask.smapi.model.v1.skill.evaluations.ProfileNluRequest profileNluRequest, String skillId, String stage, String locale) throws ServiceException;
+
+
+    com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.GetConflictDetectionJobStatusResponse getConflictDetectionJobStatusForInteractionModelV1(String skillId, String locale, String stage, String version) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.GetConflictDetectionJobStatusResponse> callGetConflictDetectionJobStatusForInteractionModelV1(String skillId, String locale, String stage, String version) throws ServiceException;
+
+
+    com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.GetConflictsResponse getConflictsForInteractionModelV1(String skillId, String locale, String stage, String version, String nextToken, BigDecimal maxResults) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.GetConflictsResponse> callGetConflictsForInteractionModelV1(String skillId, String locale, String stage, String version, String nextToken, BigDecimal maxResults) throws ServiceException;
 
 
     com.amazon.ask.smapi.model.v1.skill.Private.ListPrivateDistributionAccountsResponse listPrivateDistributionAccountsV1(String skillId, String stage, String nextToken, BigDecimal maxResults) throws ServiceException;

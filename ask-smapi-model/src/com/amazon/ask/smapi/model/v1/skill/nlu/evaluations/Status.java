@@ -12,7 +12,7 @@
 */
 
 
-package com.amazon.ask.smapi.model.v1.skill.AlexaHosted;
+package com.amazon.ask.smapi.model.v1.skill.nlu.evaluations;
 
 import java.util.Objects;
 
@@ -20,19 +20,23 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Hosted skill lambda runtime
+ * Gets or Sets v1.skill.nlu.evaluations.Status
  */
-public enum HostedSkillRuntime {
+public enum Status {
   
-  NODE_10_X("NODE_10_X"),
+  PASSED("PASSED"),
   
-  PYTHON_3_7("PYTHON_3_7"),
+  FAILED("FAILED"),
+  
+  IN_PROGRESS("IN_PROGRESS"),
+  
+  ERROR("ERROR"),
   
   UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
-  HostedSkillRuntime(String value) {
+  Status(String value) {
     this.value = value;
   }
 
@@ -47,13 +51,13 @@ public enum HostedSkillRuntime {
   }
 
   @JsonCreator
-  public static HostedSkillRuntime fromValue(String text) {
-    for (HostedSkillRuntime b : HostedSkillRuntime.values()) {
+  public static Status fromValue(String text) {
+    for (Status b : Status.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }
     }
-    return HostedSkillRuntime.UNKNOWN_TO_SDK_VERSION;
+    return Status.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

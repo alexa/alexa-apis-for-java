@@ -12,39 +12,39 @@
 */
 
 
-package com.amazon.ask.smapi.model.v1.skill.AlexaHosted;
+package com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets;
 
 import java.util.Objects;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Configurations for creating new hosted skill
+ * PaginationContext
  */
 
-@JsonDeserialize(builder = HostingConfiguration.Builder.class)
-public final class HostingConfiguration {
+@JsonDeserialize(builder = PaginationContext.Builder.class)
+public final class PaginationContext {
 
-    @JsonProperty("alexaHosted")
-    private com.amazon.ask.smapi.model.v1.skill.AlexaHosted.AlexaHostedConfig alexaHosted = null;
+    @JsonProperty("nextToken")
+    private String nextToken = null;
 
     public static Builder builder() {
         return new Builder();
     }
 
-    private HostingConfiguration(Builder builder) {
-        if (builder.alexaHosted != null) {
-            this.alexaHosted = builder.alexaHosted;
+    private PaginationContext(Builder builder) {
+        if (builder.nextToken != null) {
+            this.nextToken = builder.nextToken;
         }
     }
 
     /**
-     * Get alexaHosted
-     * @return alexaHosted
+     * Opaque token returned if there are more results for the given inputs than `maxResults` from the request.
+     * @return nextToken
     **/
-    @JsonProperty("alexaHosted")
-    public com.amazon.ask.smapi.model.v1.skill.AlexaHosted.AlexaHostedConfig getAlexaHosted() {
-        return alexaHosted;
+    @JsonProperty("nextToken")
+    public String getNextToken() {
+        return nextToken;
     }
 
 
@@ -56,21 +56,21 @@ public final class HostingConfiguration {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        HostingConfiguration v1SkillAlexaHostedHostingConfiguration = (HostingConfiguration) o;
-        return Objects.equals(this.alexaHosted, v1SkillAlexaHostedHostingConfiguration.alexaHosted);
+        PaginationContext v1SkillNluAnnotationSetsPaginationContext = (PaginationContext) o;
+        return Objects.equals(this.nextToken, v1SkillNluAnnotationSetsPaginationContext.nextToken);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(alexaHosted);
+        return Objects.hash(nextToken);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class HostingConfiguration {\n");
+        sb.append("class PaginationContext {\n");
         
-        sb.append("    alexaHosted: ").append(toIndentedString(alexaHosted)).append("\n");
+        sb.append("    nextToken: ").append(toIndentedString(nextToken)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -87,20 +87,20 @@ public final class HostingConfiguration {
     }
   
     public static class Builder {
-        private com.amazon.ask.smapi.model.v1.skill.AlexaHosted.AlexaHostedConfig alexaHosted;
+        private String nextToken;
 
         private Builder() {}
 
-        @JsonProperty("alexaHosted")
+        @JsonProperty("nextToken")
 
-        public Builder withAlexaHosted(com.amazon.ask.smapi.model.v1.skill.AlexaHosted.AlexaHostedConfig alexaHosted) {
-            this.alexaHosted = alexaHosted;
+        public Builder withNextToken(String nextToken) {
+            this.nextToken = nextToken;
             return this;
         }
 
 
-        public HostingConfiguration build() {
-            return new HostingConfiguration(this);
+        public PaginationContext build() {
+            return new PaginationContext(this);
         }
     }
 }

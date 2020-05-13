@@ -12,7 +12,7 @@
 */
 
 
-package com.amazon.ask.smapi.model.v1.skill.AlexaHosted;
+package com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection;
 
 import java.util.Objects;
 
@@ -20,19 +20,21 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Hosted skill lambda runtime
+ * The status of conflict detection job.
  */
-public enum HostedSkillRuntime {
+public enum ConflictDetectionJobStatus {
   
-  NODE_10_X("NODE_10_X"),
+  IN_PROGRESS("IN_PROGRESS"),
   
-  PYTHON_3_7("PYTHON_3_7"),
+  COMPLETED("COMPLETED"),
+  
+  FAILED("FAILED"),
   
   UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
-  HostedSkillRuntime(String value) {
+  ConflictDetectionJobStatus(String value) {
     this.value = value;
   }
 
@@ -47,13 +49,13 @@ public enum HostedSkillRuntime {
   }
 
   @JsonCreator
-  public static HostedSkillRuntime fromValue(String text) {
-    for (HostedSkillRuntime b : HostedSkillRuntime.values()) {
+  public static ConflictDetectionJobStatus fromValue(String text) {
+    for (ConflictDetectionJobStatus b : ConflictDetectionJobStatus.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }
     }
-    return HostedSkillRuntime.UNKNOWN_TO_SDK_VERSION;
+    return ConflictDetectionJobStatus.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

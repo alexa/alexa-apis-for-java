@@ -12,39 +12,39 @@
 */
 
 
-package com.amazon.ask.smapi.model.v1.skill.AlexaHosted;
+package com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets;
 
 import java.util.Objects;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Configurations for creating new hosted skill
+ * UpdateNLUAnnotationSetPropertiesRequest
  */
 
-@JsonDeserialize(builder = HostingConfiguration.Builder.class)
-public final class HostingConfiguration {
+@JsonDeserialize(builder = UpdateNLUAnnotationSetPropertiesRequest.Builder.class)
+public final class UpdateNLUAnnotationSetPropertiesRequest {
 
-    @JsonProperty("alexaHosted")
-    private com.amazon.ask.smapi.model.v1.skill.AlexaHosted.AlexaHostedConfig alexaHosted = null;
+    @JsonProperty("name")
+    private String name = null;
 
     public static Builder builder() {
         return new Builder();
     }
 
-    private HostingConfiguration(Builder builder) {
-        if (builder.alexaHosted != null) {
-            this.alexaHosted = builder.alexaHosted;
+    private UpdateNLUAnnotationSetPropertiesRequest(Builder builder) {
+        if (builder.name != null) {
+            this.name = builder.name;
         }
     }
 
     /**
-     * Get alexaHosted
-     * @return alexaHosted
+     * The name of NLU annotation set provided by customer
+     * @return name
     **/
-    @JsonProperty("alexaHosted")
-    public com.amazon.ask.smapi.model.v1.skill.AlexaHosted.AlexaHostedConfig getAlexaHosted() {
-        return alexaHosted;
+    @JsonProperty("name")
+    public String getName() {
+        return name;
     }
 
 
@@ -56,21 +56,21 @@ public final class HostingConfiguration {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        HostingConfiguration v1SkillAlexaHostedHostingConfiguration = (HostingConfiguration) o;
-        return Objects.equals(this.alexaHosted, v1SkillAlexaHostedHostingConfiguration.alexaHosted);
+        UpdateNLUAnnotationSetPropertiesRequest v1SkillNluAnnotationSetsUpdateNLUAnnotationSetPropertiesRequest = (UpdateNLUAnnotationSetPropertiesRequest) o;
+        return Objects.equals(this.name, v1SkillNluAnnotationSetsUpdateNLUAnnotationSetPropertiesRequest.name);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(alexaHosted);
+        return Objects.hash(name);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class HostingConfiguration {\n");
+        sb.append("class UpdateNLUAnnotationSetPropertiesRequest {\n");
         
-        sb.append("    alexaHosted: ").append(toIndentedString(alexaHosted)).append("\n");
+        sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -87,20 +87,20 @@ public final class HostingConfiguration {
     }
   
     public static class Builder {
-        private com.amazon.ask.smapi.model.v1.skill.AlexaHosted.AlexaHostedConfig alexaHosted;
+        private String name;
 
         private Builder() {}
 
-        @JsonProperty("alexaHosted")
+        @JsonProperty("name")
 
-        public Builder withAlexaHosted(com.amazon.ask.smapi.model.v1.skill.AlexaHosted.AlexaHostedConfig alexaHosted) {
-            this.alexaHosted = alexaHosted;
+        public Builder withName(String name) {
+            this.name = name;
             return this;
         }
 
 
-        public HostingConfiguration build() {
-            return new HostingConfiguration(this);
+        public UpdateNLUAnnotationSetPropertiesRequest build() {
+            return new UpdateNLUAnnotationSetPropertiesRequest(this);
         }
     }
 }
