@@ -14,6 +14,9 @@
 package com.amazon.ask.model.services.util;
 
 import com.amazon.ask.model.services.SerializerException;
+import com.fasterxml.jackson.core.JsonFactory;
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Before;
@@ -117,14 +120,18 @@ public class JacksonSerializerTest {
 
     @Test(expected = SerializerException.class)
     public void deserialize_from_string_ioexception_throws_sdk_exception() throws Exception {
-        when(mockMapper.readValue("foo", TestRequest.class)).thenThrow(new IOException());
+        JsonFactory factory = new JsonFactory();
+        JsonParser jp = factory.createParser("foo");
+        when(mockMapper.readValue("foo", TestRequest.class)).thenThrow(new JsonParseException(jp, ""));
         serializer.deserialize("foo", TestRequest.class);
     }
 
     @Test(expected = SerializerException.class)
     public void deserialize_from_stream_ioexception_throws_sdk_exception() throws Exception {
         InputStream is = mock(InputStream.class);
-        when(mockMapper.readValue(is, TestRequest.class)).thenThrow(new IOException());
+        JsonFactory factory = new JsonFactory();
+        JsonParser jp = factory.createParser(is);
+        when(mockMapper.readValue(is, TestRequest.class)).thenThrow(new JsonParseException(jp, ""));
         serializer.deserialize(is, TestRequest.class);
     }
 
