@@ -12,50 +12,55 @@
 */
 
 
-package com.amazon.ask.smapi.model.v1;
+package com.amazon.ask.smapi.model.v1.skill.asr.evaluations;
 
 import java.util.Objects;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Error
+ * Object containing information about the error occurred during an evaluation run. This filed would present if an unexpected error occurred during an evaluatin run. 
  */
 
-public class Error {
-
-    @JsonProperty("code")
-    private String code = null;
+@JsonDeserialize(builder = ErrorObject.Builder.class)
+public final class ErrorObject {
 
     @JsonProperty("message")
     private String message = null;
 
-    protected Error(Builder builder) {
-        if (builder.code != null) {
-            this.code = builder.code;
-        }
+    @JsonProperty("code")
+    private String code = null;
+
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    private ErrorObject(Builder builder) {
         if (builder.message != null) {
             this.message = builder.message;
         }
+        if (builder.code != null) {
+            this.code = builder.code;
+        }
     }
 
     /**
-     * Error code that maps to an error message. Developers with different locales should be able to lookup the error description based on this code. 
-     * @return code
-    **/
-    @JsonProperty("code")
-    public String getCode() {
-        return code;
-    }
-
-
-    /**
-     * Readable description of error. If standardized, this is generated from the error code and validation details.
+     * human-readable error message
      * @return message
     **/
     @JsonProperty("message")
     public String getMessage() {
         return message;
+    }
+
+
+    /**
+     * machine-readable error code
+     * @return code
+    **/
+    @JsonProperty("code")
+    public String getCode() {
+        return code;
     }
 
 
@@ -67,23 +72,23 @@ public class Error {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        Error v1Error = (Error) o;
-        return Objects.equals(this.code, v1Error.code) &&
-            Objects.equals(this.message, v1Error.message);
+        ErrorObject v1SkillAsrEvaluationsErrorObject = (ErrorObject) o;
+        return Objects.equals(this.message, v1SkillAsrEvaluationsErrorObject.message) &&
+            Objects.equals(this.code, v1SkillAsrEvaluationsErrorObject.code);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(code, message);
+        return Objects.hash(message, code);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class Error {\n");
+        sb.append("class ErrorObject {\n");
         
-        sb.append("    code: ").append(toIndentedString(code)).append("\n");
         sb.append("    message: ").append(toIndentedString(message)).append("\n");
+        sb.append("    code: ").append(toIndentedString(code)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -99,27 +104,31 @@ public class Error {
         return o.toString().replace("\n", "\n    ");
     }
   
-    public static class Builder<T extends Builder<T>> {
-        private String code;
+    public static class Builder {
         private String message;
+        private String code;
 
-        protected Builder() {}
+        private Builder() {}
+
+        @JsonProperty("message")
+
+        public Builder withMessage(String message) {
+            this.message = message;
+            return this;
+        }
 
 
         @JsonProperty("code")
-        public T withCode(String code) {
+
+        public Builder withCode(String code) {
             this.code = code;
-            return (T)this;
+            return this;
         }
 
 
-
-        @JsonProperty("message")
-        public T withMessage(String message) {
-            this.message = message;
-            return (T)this;
+        public ErrorObject build() {
+            return new ErrorObject(this);
         }
-
     }
 }
 

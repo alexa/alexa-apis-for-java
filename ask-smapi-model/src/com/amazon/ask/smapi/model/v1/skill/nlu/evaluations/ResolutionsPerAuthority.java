@@ -15,24 +15,73 @@
 package com.amazon.ask.smapi.model.v1.skill.nlu.evaluations;
 
 import java.util.Objects;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.ArrayList;
 
 /**
  * ResolutionsPerAuthority
  */
 
 @JsonDeserialize(builder = ResolutionsPerAuthority.Builder.class)
-public final class ResolutionsPerAuthority extends HashMap<String, Object>  {
+public final class ResolutionsPerAuthority {
+
+    @JsonProperty("authority")
+    private String authority = null;
+
+    @JsonProperty("status")
+    private com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.ResolutionsPerAuthorityStatus status = null;
+
+    @JsonProperty("values")
+    private List<com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.ResolutionsPerAuthorityValue> values = new ArrayList<com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.ResolutionsPerAuthorityValue>();
 
     public static Builder builder() {
         return new Builder();
     }
 
     private ResolutionsPerAuthority(Builder builder) {
+        if (builder.authority != null) {
+            this.authority = builder.authority;
+        }
+        if (builder.status != null) {
+            this.status = builder.status;
+        }
+        if (builder.values != null) {
+            this.values = builder.values;
+        }
     }
+
+    /**
+     * The name of the authority for the slot values. For custom slot types, this authority label incorporates your skill ID and the slot type name. 
+     * @return authority
+    **/
+    @JsonProperty("authority")
+    public String getAuthority() {
+        return authority;
+    }
+
+
+    /**
+     * Get status
+     * @return status
+    **/
+    @JsonProperty("status")
+    public com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.ResolutionsPerAuthorityStatus getStatus() {
+        return status;
+    }
+
+
+    /**
+     * An array of resolved values for the slot.
+     * @return values
+    **/
+    @JsonProperty("values")
+    public List<com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.ResolutionsPerAuthorityValue> getValues() {
+        return values;
+    }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -42,19 +91,25 @@ public final class ResolutionsPerAuthority extends HashMap<String, Object>  {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        return super.equals(o);
+        ResolutionsPerAuthority v1SkillNluEvaluationsResolutionsPerAuthority = (ResolutionsPerAuthority) o;
+        return Objects.equals(this.authority, v1SkillNluEvaluationsResolutionsPerAuthority.authority) &&
+            Objects.equals(this.status, v1SkillNluEvaluationsResolutionsPerAuthority.status) &&
+            Objects.equals(this.values, v1SkillNluEvaluationsResolutionsPerAuthority.values);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode());
+        return Objects.hash(authority, status, values);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("class ResolutionsPerAuthority {\n");
-        sb.append("    ").append(toIndentedString(super.toString())).append("\n");
+        
+        sb.append("    authority: ").append(toIndentedString(authority)).append("\n");
+        sb.append("    status: ").append(toIndentedString(status)).append("\n");
+        sb.append("    values: ").append(toIndentedString(values)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -71,8 +126,42 @@ public final class ResolutionsPerAuthority extends HashMap<String, Object>  {
     }
   
     public static class Builder {
+        private String authority;
+        private com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.ResolutionsPerAuthorityStatus status;
+        private List<com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.ResolutionsPerAuthorityValue> values;
 
         private Builder() {}
+
+        @JsonProperty("authority")
+
+        public Builder withAuthority(String authority) {
+            this.authority = authority;
+            return this;
+        }
+
+
+        @JsonProperty("status")
+
+        public Builder withStatus(com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.ResolutionsPerAuthorityStatus status) {
+            this.status = status;
+            return this;
+        }
+
+
+        @JsonProperty("values")
+
+        public Builder withValues(List<com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.ResolutionsPerAuthorityValue> values) {
+            this.values = values;
+            return this;
+        }
+
+        public Builder addValuesItem(com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.ResolutionsPerAuthorityValue valuesItem) {
+            if (this.values == null) {
+                this.values = new ArrayList<com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.ResolutionsPerAuthorityValue>();
+            }
+            this.values.add(valuesItem);
+            return this;
+        }
 
         public ResolutionsPerAuthority build() {
             return new ResolutionsPerAuthority(this);

@@ -43,13 +43,13 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
                                     .withSerializer(apiConfiguration.getSerializer())
                                     .build())
           .build();
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.4.1").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.5.0").build();
   }
 
   public SkillManagementServiceClient(ApiConfiguration apiConfiguration, LwaClient lwaClient) {
       super(apiConfiguration);
       this.lwaClient = lwaClient;
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.4.1").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.5.0").build();
   }
 
   /**
@@ -102,7 +102,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * 
    * Lists all the uploads for a particular catalog.
    * @param catalogId Provides a unique identifier of the catalog (required)
-   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
    * @return com.amazon.ask.smapi.model.v0.catalog.upload.ListUploadsResponse
    * @throws ServiceException if fails to make API call
@@ -147,7 +147,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * 
    * Lists all the uploads for a particular catalog.
    * @param catalogId Provides a unique identifier of the catalog (required)
-   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
    * @return com.amazon.ask.smapi.model.v0.catalog.upload.ListUploadsResponse
    * @throws ServiceException if fails to make API call
@@ -306,7 +306,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * 
    * Lists catalogs associated with a vendor.
    * @param vendorId The vendor ID. (required)
-   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
    * @return com.amazon.ask.smapi.model.v0.catalog.ListCatalogsResponse
    * @throws ServiceException if fails to make API call
@@ -354,7 +354,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * 
    * Lists catalogs associated with a vendor.
    * @param vendorId The vendor ID. (required)
-   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
    * @return com.amazon.ask.smapi.model.v0.catalog.ListCatalogsResponse
    * @throws ServiceException if fails to make API call
@@ -412,7 +412,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * 
    * Lists the subscribers for a particular vendor.
    * @param vendorId The vendor ID. (required)
-   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
    * @return com.amazon.ask.smapi.model.v0.developmentEvents.subscriber.ListSubscribersResponse
    * @throws ServiceException if fails to make API call
@@ -460,7 +460,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * 
    * Lists the subscribers for a particular vendor.
    * @param vendorId The vendor ID. (required)
-   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
    * @return com.amazon.ask.smapi.model.v0.developmentEvents.subscriber.ListSubscribersResponse
    * @throws ServiceException if fails to make API call
@@ -650,7 +650,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * 
    * Lists all the subscriptions for a vendor/subscriber depending on the query parameter.
    * @param vendorId The vendor ID. (required)
-   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
    * @param subscriberId Unique identifier of the subscriber. If this query parameter is provided, the list would be filtered by the owning subscriberId. (optional)
    * @return com.amazon.ask.smapi.model.v0.developmentEvents.subscription.ListSubscriptionsResponse
@@ -703,7 +703,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * 
    * Lists all the subscriptions for a vendor/subscriber depending on the query parameter.
    * @param vendorId The vendor ID. (required)
-   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
    * @param subscriberId Unique identifier of the subscriber. If this query parameter is provided, the list would be filtered by the owning subscriberId. (optional)
    * @return com.amazon.ask.smapi.model.v0.developmentEvents.subscription.ListSubscriptionsResponse
@@ -943,7 +943,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * 
    * Lists all the catalogs associated with a skill.
    * @param skillId The skill ID. (required)
-   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
    * @return com.amazon.ask.smapi.model.v0.catalog.ListCatalogsResponse
    * @throws ServiceException if fails to make API call
@@ -988,7 +988,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * 
    * Lists all the catalogs associated with a skill.
    * @param skillId The skill ID. (required)
-   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
    * @return com.amazon.ask.smapi.model.v0.catalog.ListCatalogsResponse
    * @throws ServiceException if fails to make API call
@@ -1188,7 +1188,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * 
    * Get the list of in-skill products for the vendor.
    * @param vendorId The vendor ID. (required)
-   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
    * @param productId The list of in-skill product IDs that you wish to get the summary for. A maximum of 50 in-skill product IDs can be specified in a single listInSkillProducts call. Please note that this parameter must not be used with &#39;nextToken&#39; and/or &#39;maxResults&#39; parameter. (optional)
    * @param stage Filter in-skill products by specified stage. (optional)
@@ -1265,7 +1265,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * 
    * Get the list of in-skill products for the vendor.
    * @param vendorId The vendor ID. (required)
-   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
    * @param productId The list of in-skill product IDs that you wish to get the summary for. A maximum of 50 in-skill product IDs can be specified in a single listInSkillProducts call. Please note that this parameter must not be used with &#39;nextToken&#39; and/or &#39;maxResults&#39; parameter. (optional)
    * @param stage Filter in-skill products by specified stage. (optional)
@@ -1621,7 +1621,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * Get the associated skills for the in-skill product.
    * @param productId The in-skill product ID. (required)
    * @param stage Stage for skill. (required)
-   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
    * @return com.amazon.ask.smapi.model.v1.isp.AssociatedSkillResponse
    * @throws ServiceException if fails to make API call
@@ -1665,7 +1665,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * Get the associated skills for the in-skill product.
    * @param productId The in-skill product ID. (required)
    * @param stage Stage for skill. (required)
-   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
    * @return com.amazon.ask.smapi.model.v1.isp.AssociatedSkillResponse
    * @throws ServiceException if fails to make API call
@@ -1817,7 +1817,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @param updateRequest  (required)
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<Void> callUpdateInteractionModelCatalogV1(String catalogId, com.amazon.ask.smapi.model.v1.skill.interactionModel.type.UpdateRequest updateRequest) throws ServiceException {
+  public ApiResponse<Void> callUpdateInteractionModelCatalogV1(String catalogId, com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.UpdateRequest updateRequest) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
     pathParams.put("catalogId", catalogId);
@@ -1852,7 +1852,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @param updateRequest  (required)
    * @throws ServiceException if fails to make API call
    */
-  public void updateInteractionModelCatalogV1(String catalogId, com.amazon.ask.smapi.model.v1.skill.interactionModel.type.UpdateRequest updateRequest) throws ServiceException {
+  public void updateInteractionModelCatalogV1(String catalogId, com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.UpdateRequest updateRequest) throws ServiceException {
     this.callUpdateInteractionModelCatalogV1(catalogId, updateRequest).getResponse();
   }
 
@@ -1903,6 +1903,76 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    */
   public com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.CatalogStatus getInteractionModelCatalogUpdateStatusV1(String catalogId, String updateRequestId) throws ServiceException {
     return this.callGetInteractionModelCatalogUpdateStatusV1(catalogId, updateRequestId).getResponse();
+  }
+
+  /**
+   * 
+   * List all the historical versions of the given catalogId.
+   * @param catalogId Provides a unique identifier of the catalog (required)
+   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
+   * @param sortDirection Sets the sorting direction of the result items. When set to &#39;asc&#39; these items are returned in ascending order of sortField value and when set to &#39;desc&#39; these items are returned in descending order of sortField value. (optional)
+   * @param sortField Sets the field on which the sorting would be applied. (optional)
+   * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.version.ListCatalogEntityVersionsResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.version.ListCatalogEntityVersionsResponse> callListInteractionModelCatalogVersionsV1(String catalogId, BigDecimal maxResults, String nextToken, String sortDirection, String sortField) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+
+    if(maxResults != null) {
+    queryParams.add(new Pair<String, String>("maxResults", maxResults.toString()));
+  }
+
+    if(nextToken != null) {
+    queryParams.add(new Pair<String, String>("nextToken", nextToken));
+  }
+
+    if(sortDirection != null) {
+    queryParams.add(new Pair<String, String>("sortDirection", sortDirection));
+  }
+
+    if(sortField != null) {
+    queryParams.add(new Pair<String, String>("sortField", sortField));
+  }
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("catalogId", catalogId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String path = "/v1/skills/api/custom/interactionModel/catalogs/{catalogId}/versions";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.version.ListCatalogEntityVersionsResponse.class, 200, "Returns list of catalogs for the vendor."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error e.g. the catalog definition is invalid."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 404, "The specified catalog does not exist."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 500, "Internal Server Error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 503, "Service Unavailable."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.interactionModel.version.ListCatalogEntityVersionsResponse.class, false);
+  }
+
+  /**
+   * 
+   * List all the historical versions of the given catalogId.
+   * @param catalogId Provides a unique identifier of the catalog (required)
+   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
+   * @param sortDirection Sets the sorting direction of the result items. When set to &#39;asc&#39; these items are returned in ascending order of sortField value and when set to &#39;desc&#39; these items are returned in descending order of sortField value. (optional)
+   * @param sortField Sets the field on which the sorting would be applied. (optional)
+   * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.version.ListCatalogEntityVersionsResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.smapi.model.v1.skill.interactionModel.version.ListCatalogEntityVersionsResponse listInteractionModelCatalogVersionsV1(String catalogId, BigDecimal maxResults, String nextToken, String sortDirection, String sortField) throws ServiceException {
+    return this.callListInteractionModelCatalogVersionsV1(catalogId, maxResults, nextToken, sortDirection, sortField).getResponse();
   }
 
   /**
@@ -2102,7 +2172,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @param catalogId Provides a unique identifier of the catalog (required)
    * @param version Version for interaction model. (required)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
-   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.version.CatalogValues
    * @throws ServiceException if fails to make API call
    */
@@ -2149,7 +2219,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @param catalogId Provides a unique identifier of the catalog (required)
    * @param version Version for interaction model. (required)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
-   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.version.CatalogValues
    * @throws ServiceException if fails to make API call
    */
@@ -2162,7 +2232,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * List all catalogs for the vendor. 
    * @param vendorId The vendor ID. (required)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
-   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
    * @param sortDirection Sets the sorting direction of the result items. When set to &#39;asc&#39; these items are returned in ascending order of sortField value and when set to &#39;desc&#39; these items are returned in descending order of sortField value. (optional)
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.ListCatalogResponse
    * @throws ServiceException if fails to make API call
@@ -2215,7 +2285,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * List all catalogs for the vendor. 
    * @param vendorId The vendor ID. (required)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
-   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
    * @param sortDirection Sets the sorting direction of the result items. When set to &#39;asc&#39; these items are returned in ascending order of sortField value and when set to &#39;desc&#39; these items are returned in descending order of sortField value. (optional)
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.ListCatalogResponse
    * @throws ServiceException if fails to make API call
@@ -2274,7 +2344,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * List all slot types for the vendor. 
    * @param vendorId The vendor ID. (required)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
-   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
    * @param sortDirection Sets the sorting direction of the result items. When set to &#39;asc&#39; these items are returned in ascending order of sortField value and when set to &#39;desc&#39; these items are returned in descending order of sortField value. (optional)
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.type.ListSlotTypeResponse
    * @throws ServiceException if fails to make API call
@@ -2308,9 +2378,9 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.type.ListSlotTypeResponse.class, 200, "Returns list of slot types for the vendor."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.type.BadRequest.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 500, "Internal Server Error."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 503, "Service Unavailable."));
@@ -2326,7 +2396,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * List all slot types for the vendor. 
    * @param vendorId The vendor ID. (required)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
-   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
    * @param sortDirection Sets the sorting direction of the result items. When set to &#39;asc&#39; these items are returned in ascending order of sortField value and when set to &#39;desc&#39; these items are returned in descending order of sortField value. (optional)
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.type.ListSlotTypeResponse
    * @throws ServiceException if fails to make API call
@@ -2355,7 +2425,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.type.SlotTypeResponse.class, 200, "Returns the generated slotTypeId."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.type.BadRequest.class, 400, "Server cannot process the request due to a client error e.g. the slot type definition is invalid."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error e.g. the slot type definition is invalid."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 500, "Internal Server Error."));
@@ -2398,9 +2468,9 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "No content; just confirm the slot type is deleted."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.type.BadRequest.class, 400, "The slot type cannot be deleted from reasons due to in-use by other entities."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "The slot type cannot be deleted from reasons due to in-use by other entities."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 404, "There is no slot type defined for the slotTypeId."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 500, "Internal Server Error."));
@@ -2443,9 +2513,9 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.type.SlotTypeDefinitionOutput.class, 200, "The slot type definition."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.type.BadRequest.class, 400, "The slot type cannot be retrieved due to errors listed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "The slot type cannot be retrieved due to errors listed."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 404, "There is no slot type defined for the slotTypeId."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 500, "Internal Server Error."));
@@ -2489,9 +2559,9 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "No content, indicates the fields were successfully updated."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.type.BadRequest.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 404, "There is no slot type defined for the slotTypeId."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 500, "Internal Server Error."));
@@ -2537,9 +2607,9 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.type.SlotTypeStatus.class, 200, "Returns the build status and error codes for the given slotTypeId."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.type.BadRequest.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 404, "There is no slot type defined for the slotTypeId."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 500, "Internal Server Error."));
@@ -2568,7 +2638,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * List all slot type versions for the slot type id. 
    * @param slotTypeId The identifier for a slot type. (required)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
-   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
    * @param sortDirection Sets the sorting direction of the result items. When set to &#39;asc&#39; these items are returned in ascending order of sortField value and when set to &#39;desc&#39; these items are returned in descending order of sortField value. (optional)
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.typeVersion.ListSlotTypeVersionResponse
    * @throws ServiceException if fails to make API call
@@ -2599,9 +2669,9 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.typeVersion.ListSlotTypeVersionResponse.class, 200, "Returns list of slot type version for the slot type id."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.type.BadRequest.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 500, "Internal Server Error."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 503, "Service Unavailable."));
@@ -2617,7 +2687,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * List all slot type versions for the slot type id. 
    * @param slotTypeId The identifier for a slot type. (required)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
-   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
    * @param sortDirection Sets the sorting direction of the result items. When set to &#39;asc&#39; these items are returned in ascending order of sortField value and when set to &#39;desc&#39; these items are returned in descending order of sortField value. (optional)
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.typeVersion.ListSlotTypeVersionResponse
    * @throws ServiceException if fails to make API call
@@ -2647,9 +2717,9 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 202, "Returns update status location link on success."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.type.BadRequest.class, 400, "Server cannot process the request due to a client error e.g. the slot type definition is invalid."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error e.g. the slot type definition is invalid."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 404, "The specified slot type does not exist."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 500, "Internal Server Error."));
@@ -2694,9 +2764,9 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "No Content; Confirms that version is successfully deleted."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.type.BadRequest.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 404, "There is no slot type version for this slotTypeId."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 500, "Internal Server Error."));
@@ -2742,9 +2812,9 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.typeVersion.SlotTypeVersionData.class, 200, "Returns the slot type version metadata for the given slotTypeId and version."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.type.BadRequest.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 404, "There is no slot type defined for the slotTypeId."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 500, "Internal Server Error."));
@@ -2791,9 +2861,9 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "No Content; Confirms that version is successfully updated."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.type.BadRequest.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 404, "There is no slot type defined for the slotTypeId."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 500, "Internal Server Error."));
@@ -2865,9 +2935,9 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * 
    * Get the list of skills for the vendor.
    * @param vendorId The vendor ID. (required)
-   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
-   * @param skillId the list of skillIds that you wish to get the summary for. A maximum of 10 skillIds can be specified to get the skill summary in single listSkills call. Please note that this parameter must not be used with &#39;nextToken&#39; or/and &#39;maxResults&#39; parameter. (optional)
+   * @param skillId The list of skillIds that you wish to get the summary for. A maximum of 10 skillIds can be specified to get the skill summary in single listSkills call. Please note that this parameter must not be used with &#39;nextToken&#39; or/and &#39;maxResults&#39; parameter. (optional)
    * @return com.amazon.ask.smapi.model.v1.skill.ListSkillResponse
    * @throws ServiceException if fails to make API call
    */
@@ -2918,9 +2988,9 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * 
    * Get the list of skills for the vendor.
    * @param vendorId The vendor ID. (required)
-   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
-   * @param skillId the list of skillIds that you wish to get the summary for. A maximum of 10 skillIds can be specified to get the skill summary in single listSkills call. Please note that this parameter must not be used with &#39;nextToken&#39; or/and &#39;maxResults&#39; parameter. (optional)
+   * @param skillId The list of skillIds that you wish to get the summary for. A maximum of 10 skillIds can be specified to get the skill summary in single listSkills call. Please note that this parameter must not be used with &#39;nextToken&#39; or/and &#39;maxResults&#39; parameter. (optional)
    * @return com.amazon.ask.smapi.model.v1.skill.ListSkillResponse
    * @throws ServiceException if fails to make API call
    */
@@ -3151,6 +3221,662 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   }
 
   /**
+   * Download the annotation set contents.
+   * 
+   * @param skillId The skill ID. (required)
+   * @param annotationSetId Identifier of the ASR annotation set. (required)
+   * @param accept - &#x60;application/json&#x60;: indicate to download annotation set contents in JSON format - &#x60;text/csv&#x60;: indicate to download annotation set contents in CSV format  (required)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
+   * @param maxResults Sets the maximum number of results returned in the response body. Defaults to 1000. If more results are present, the response will contain a paginationContext.  (optional, default to 1000)
+   * @return com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.GetAsrAnnotationSetAnnotationsResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.GetAsrAnnotationSetAnnotationsResponse> callGetAnnotationsForASRAnnotationSetV1(String skillId, String annotationSetId, String accept, String nextToken, BigDecimal maxResults) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+
+    if(nextToken != null) {
+    queryParams.add(new Pair<String, String>("nextToken", nextToken));
+  }
+
+    if(maxResults != null) {
+    queryParams.add(new Pair<String, String>("maxResults", maxResults.toString()));
+  }
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    pathParams.put("annotationSetId", annotationSetId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    if (accept != null) {
+      headerParams.add(new Pair<String, String>("Accept", accept));
+    }
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String path = "/v1/skills/{skillId}/asrAnnotationSets/{annotationSetId}/annotations";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.GetAsrAnnotationSetAnnotationsResponse.class, 200, "The annotation set contents payload in specified format.  This API also supports pagination for annotation set contents requested in  `application/json` content type. Paginaiton for requested content  type `text/csv` is not supported. In this case, the nextToken and  maxResults query parameters would be ignored even if they are  specified as query parameters. "));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 503, "Service Unavailable."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 0, "Internal Server Error."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.GetAsrAnnotationSetAnnotationsResponse.class, false);
+  }
+
+  /**
+   * Download the annotation set contents.
+   * 
+   * @param skillId The skill ID. (required)
+   * @param annotationSetId Identifier of the ASR annotation set. (required)
+   * @param accept - &#x60;application/json&#x60;: indicate to download annotation set contents in JSON format - &#x60;text/csv&#x60;: indicate to download annotation set contents in CSV format  (required)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
+   * @param maxResults Sets the maximum number of results returned in the response body. Defaults to 1000. If more results are present, the response will contain a paginationContext.  (optional, default to 1000)
+   * @return com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.GetAsrAnnotationSetAnnotationsResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.GetAsrAnnotationSetAnnotationsResponse getAnnotationsForASRAnnotationSetV1(String skillId, String annotationSetId, String accept, String nextToken, BigDecimal maxResults) throws ServiceException {
+    return this.callGetAnnotationsForASRAnnotationSetV1(skillId, annotationSetId, accept, nextToken, maxResults).getResponse();
+  }
+
+  /**
+   * Update the annotations in the annotation set
+   * API that updates the annotaions in the annotation set 
+   * @param skillId The skill ID. (required)
+   * @param annotationSetId Identifier of the ASR annotation set. (required)
+   * @param updateAsrAnnotationSetContentsRequest Payload containing annotation set contents. Two formats are accepted here: - &#x60;application/json&#x60;: Annotation set payload in JSON format. - &#x60;text/csv&#x60;: Annotation set payload in CSV format. Note that for CSV format, the first row should describe the column attributes. Columns should be delimited by comma.  The subsequent rows should describe annotation data and each annotation attributes has to follow the strict ordering defined in the first row. Each annotation fields should be delimited by comma.  (required)
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<Void> callSetAnnotationsForASRAnnotationSetV1(String skillId, String annotationSetId, com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.UpdateAsrAnnotationSetContentsPayload updateAsrAnnotationSetContentsRequest) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    pathParams.put("annotationSetId", annotationSetId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String path = "/v1/skills/{skillId}/asrAnnotationSets/{annotationSetId}/annotations";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "ASR annotation set contents have been updated successfully."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 503, "Service Unavailable."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 0, "Internal Server Error."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("PUT", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, updateAsrAnnotationSetContentsRequest, null, false);
+  }
+
+  /**
+   * Update the annotations in the annotation set
+   * API that updates the annotaions in the annotation set 
+   * @param skillId The skill ID. (required)
+   * @param annotationSetId Identifier of the ASR annotation set. (required)
+   * @param updateAsrAnnotationSetContentsRequest Payload containing annotation set contents. Two formats are accepted here: - &#x60;application/json&#x60;: Annotation set payload in JSON format. - &#x60;text/csv&#x60;: Annotation set payload in CSV format. Note that for CSV format, the first row should describe the column attributes. Columns should be delimited by comma.  The subsequent rows should describe annotation data and each annotation attributes has to follow the strict ordering defined in the first row. Each annotation fields should be delimited by comma.  (required)
+   * @throws ServiceException if fails to make API call
+   */
+  public void setAnnotationsForASRAnnotationSetV1(String skillId, String annotationSetId, com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.UpdateAsrAnnotationSetContentsPayload updateAsrAnnotationSetContentsRequest) throws ServiceException {
+    this.callSetAnnotationsForASRAnnotationSetV1(skillId, annotationSetId, updateAsrAnnotationSetContentsRequest).getResponse();
+  }
+
+  /**
+   * Delete the ASR annotation set
+   * API which deletes the ASR annotation set. Developers cannot get/list the deleted annotation set. 
+   * @param skillId The skill ID. (required)
+   * @param annotationSetId Identifier of the ASR annotation set. (required)
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<Void> callDeleteASRAnnotationSetV1(String skillId, String annotationSetId) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    pathParams.put("annotationSetId", annotationSetId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String path = "/v1/skills/{skillId}/asrAnnotationSets/{annotationSetId}";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "ASR annotation set exists and is deleted successfully."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 409, "The request could not be completed due to a conflict with the current state of the target resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 503, "Service Unavailable."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 0, "Internal Server Error."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("DELETE", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null, null, false);
+  }
+
+  /**
+   * Delete the ASR annotation set
+   * API which deletes the ASR annotation set. Developers cannot get/list the deleted annotation set. 
+   * @param skillId The skill ID. (required)
+   * @param annotationSetId Identifier of the ASR annotation set. (required)
+   * @throws ServiceException if fails to make API call
+   */
+  public void deleteASRAnnotationSetV1(String skillId, String annotationSetId) throws ServiceException {
+    this.callDeleteASRAnnotationSetV1(skillId, annotationSetId).getResponse();
+  }
+
+  /**
+   * Get the metadata of an ASR annotation set
+   * Return the metadata for an ASR annotation set. 
+   * @param skillId The skill ID. (required)
+   * @param annotationSetId Identifier of the ASR annotation set. (required)
+   * @return com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.GetASRAnnotationSetsPropertiesResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.GetASRAnnotationSetsPropertiesResponse> callGetASRAnnotationSetV1(String skillId, String annotationSetId) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    pathParams.put("annotationSetId", annotationSetId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String path = "/v1/skills/{skillId}/asrAnnotationSets/{annotationSetId}";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.GetASRAnnotationSetsPropertiesResponse.class, 200, "The ASR annotation set exists."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 503, "Service Unavailable."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 0, "Internal Server Error."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.GetASRAnnotationSetsPropertiesResponse.class, false);
+  }
+
+  /**
+   * Get the metadata of an ASR annotation set
+   * Return the metadata for an ASR annotation set. 
+   * @param skillId The skill ID. (required)
+   * @param annotationSetId Identifier of the ASR annotation set. (required)
+   * @return com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.GetASRAnnotationSetsPropertiesResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.GetASRAnnotationSetsPropertiesResponse getASRAnnotationSetV1(String skillId, String annotationSetId) throws ServiceException {
+    return this.callGetASRAnnotationSetV1(skillId, annotationSetId).getResponse();
+  }
+
+  /**
+   * update the ASR annotation set properties.
+   * API which updates the ASR annotation set properties. Currently, the only data can be updated is annotation set name. 
+   * @param skillId The skill ID. (required)
+   * @param annotationSetId Identifier of the ASR annotation set. (required)
+   * @param updateAsrAnnotationSetPropertiesRequestV1 Payload sent to the update ASR annotation set properties API. (required)
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<Void> callSetASRAnnotationSetV1(String skillId, String annotationSetId, com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.UpdateAsrAnnotationSetPropertiesRequestObject updateAsrAnnotationSetPropertiesRequestV1) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    pathParams.put("annotationSetId", annotationSetId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String path = "/v1/skills/{skillId}/asrAnnotationSets/{annotationSetId}";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "ASR annotation set exists and properties are updated successfully."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 503, "Service Unavailable."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 0, "Internal Server Error."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("PUT", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, updateAsrAnnotationSetPropertiesRequestV1, null, false);
+  }
+
+  /**
+   * update the ASR annotation set properties.
+   * API which updates the ASR annotation set properties. Currently, the only data can be updated is annotation set name. 
+   * @param skillId The skill ID. (required)
+   * @param annotationSetId Identifier of the ASR annotation set. (required)
+   * @param updateAsrAnnotationSetPropertiesRequestV1 Payload sent to the update ASR annotation set properties API. (required)
+   * @throws ServiceException if fails to make API call
+   */
+  public void setASRAnnotationSetV1(String skillId, String annotationSetId, com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.UpdateAsrAnnotationSetPropertiesRequestObject updateAsrAnnotationSetPropertiesRequestV1) throws ServiceException {
+    this.callSetASRAnnotationSetV1(skillId, annotationSetId, updateAsrAnnotationSetPropertiesRequestV1).getResponse();
+  }
+
+  /**
+   * List ASR annotation sets metadata for a given skill.
+   * API which requests all the ASR annotation sets for a skill. Returns the annotation set id and properties for each ASR annotation set. Supports paging of results. 
+   * @param skillId The skill ID. (required)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
+   * @param maxResults Sets the maximum number of results returned in the response body. Defaults to 1000. If more results are present, the response will contain a paginationContext.  (optional, default to 1000)
+   * @return com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.ListASRAnnotationSetsResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.ListASRAnnotationSetsResponse> callListASRAnnotationSetsV1(String skillId, String nextToken, BigDecimal maxResults) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+
+    if(nextToken != null) {
+    queryParams.add(new Pair<String, String>("nextToken", nextToken));
+  }
+
+    if(maxResults != null) {
+    queryParams.add(new Pair<String, String>("maxResults", maxResults.toString()));
+  }
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String path = "/v1/skills/{skillId}/asrAnnotationSets";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.ListASRAnnotationSetsResponse.class, 200, "ASR annotation sets metadata are returned."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 503, "Service Unavailable."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 0, "Internal Server Error."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.ListASRAnnotationSetsResponse.class, false);
+  }
+
+  /**
+   * List ASR annotation sets metadata for a given skill.
+   * API which requests all the ASR annotation sets for a skill. Returns the annotation set id and properties for each ASR annotation set. Supports paging of results. 
+   * @param skillId The skill ID. (required)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
+   * @param maxResults Sets the maximum number of results returned in the response body. Defaults to 1000. If more results are present, the response will contain a paginationContext.  (optional, default to 1000)
+   * @return com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.ListASRAnnotationSetsResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.ListASRAnnotationSetsResponse listASRAnnotationSetsV1(String skillId, String nextToken, BigDecimal maxResults) throws ServiceException {
+    return this.callListASRAnnotationSetsV1(skillId, nextToken, maxResults).getResponse();
+  }
+
+  /**
+   * Create a new ASR annotation set for a skill
+   * This is an API that creates a new ASR annotation set with a name and returns the annotationSetId which can later be used to retrieve or reference the annotation set 
+   * @param skillId The skill ID. (required)
+   * @param createAsrAnnotationSetRequest Payload sent to the create ASR annotation set API. (required)
+   * @return com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.CreateAsrAnnotationSetResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.CreateAsrAnnotationSetResponse> callCreateASRAnnotationSetV1(String skillId, com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.CreateAsrAnnotationSetRequestObject createAsrAnnotationSetRequest) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String path = "/v1/skills/{skillId}/asrAnnotationSets";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.CreateAsrAnnotationSetResponse.class, 200, "ASR annotation set created successfully."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 503, "Service Unavailable."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 0, "Internal Server Error."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, createAsrAnnotationSetRequest, com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.CreateAsrAnnotationSetResponse.class, false);
+  }
+
+  /**
+   * Create a new ASR annotation set for a skill
+   * This is an API that creates a new ASR annotation set with a name and returns the annotationSetId which can later be used to retrieve or reference the annotation set 
+   * @param skillId The skill ID. (required)
+   * @param createAsrAnnotationSetRequest Payload sent to the create ASR annotation set API. (required)
+   * @return com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.CreateAsrAnnotationSetResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.CreateAsrAnnotationSetResponse createASRAnnotationSetV1(String skillId, com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.CreateAsrAnnotationSetRequestObject createAsrAnnotationSetRequest) throws ServiceException {
+    return this.callCreateASRAnnotationSetV1(skillId, createAsrAnnotationSetRequest).getResponse();
+  }
+
+  /**
+   * Delete an evaluation.
+   * API which enables the deletion of an evaluation.  
+   * @param skillId The skill ID. (required)
+   * @param evaluationId Identifier of the evaluation. (required)
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<Void> callDeleteASREvaluationV1(String skillId, String evaluationId) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    pathParams.put("evaluationId", evaluationId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String path = "/v1/skills/{skillId}/asrEvaluations/{evaluationId}";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "ASR evaluation exists and is deleted successfully."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 503, "Service Unavailable."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 0, "Internal Server Error."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("DELETE", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null, null, false);
+  }
+
+  /**
+   * Delete an evaluation.
+   * API which enables the deletion of an evaluation.  
+   * @param skillId The skill ID. (required)
+   * @param evaluationId Identifier of the evaluation. (required)
+   * @throws ServiceException if fails to make API call
+   */
+  public void deleteASREvaluationV1(String skillId, String evaluationId) throws ServiceException {
+    this.callDeleteASREvaluationV1(skillId, evaluationId).getResponse();
+  }
+
+  /**
+   * List results for a completed Evaluation.
+   * Paginated API which returns the test case results of an evaluation. This should be considered the \&quot;expensive\&quot; operation while GetAsrEvaluationsStatus is \&quot;cheap\&quot;. 
+   * @param skillId The skill ID. (required)
+   * @param evaluationId Identifier of the evaluation. (required)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
+   * @param maxResults Sets the maximum number of results returned in the response body. Defaults to 1000. If more results are present, the response will contain a nextToken.  (optional, default to 1000)
+   * @param status query parameter used to filter evaluation result status.   * &#x60;PASSED&#x60; - filter evaluation result status of &#x60;PASSED&#x60;   * &#x60;FAILED&#x60; - filter evaluation result status of &#x60;FAILED&#x60;  (optional)
+   * @return com.amazon.ask.smapi.model.v1.skill.asr.evaluations.GetAsrEvaluationsResultsResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.asr.evaluations.GetAsrEvaluationsResultsResponse> callListASREvaluationsResultsV1(String skillId, String evaluationId, String nextToken, BigDecimal maxResults, String status) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+
+    if(nextToken != null) {
+    queryParams.add(new Pair<String, String>("nextToken", nextToken));
+  }
+
+    if(maxResults != null) {
+    queryParams.add(new Pair<String, String>("maxResults", maxResults.toString()));
+  }
+
+    if(status != null) {
+    queryParams.add(new Pair<String, String>("status", status));
+  }
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    pathParams.put("evaluationId", evaluationId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String path = "/v1/skills/{skillId}/asrEvaluations/{evaluationId}/results";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.asr.evaluations.GetAsrEvaluationsResultsResponse.class, 200, "Evaluation exists and its status is queryable."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 503, "Service Unavailable."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 0, "Internal Server Error."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.asr.evaluations.GetAsrEvaluationsResultsResponse.class, false);
+  }
+
+  /**
+   * List results for a completed Evaluation.
+   * Paginated API which returns the test case results of an evaluation. This should be considered the \&quot;expensive\&quot; operation while GetAsrEvaluationsStatus is \&quot;cheap\&quot;. 
+   * @param skillId The skill ID. (required)
+   * @param evaluationId Identifier of the evaluation. (required)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
+   * @param maxResults Sets the maximum number of results returned in the response body. Defaults to 1000. If more results are present, the response will contain a nextToken.  (optional, default to 1000)
+   * @param status query parameter used to filter evaluation result status.   * &#x60;PASSED&#x60; - filter evaluation result status of &#x60;PASSED&#x60;   * &#x60;FAILED&#x60; - filter evaluation result status of &#x60;FAILED&#x60;  (optional)
+   * @return com.amazon.ask.smapi.model.v1.skill.asr.evaluations.GetAsrEvaluationsResultsResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.smapi.model.v1.skill.asr.evaluations.GetAsrEvaluationsResultsResponse listASREvaluationsResultsV1(String skillId, String evaluationId, String nextToken, BigDecimal maxResults, String status) throws ServiceException {
+    return this.callListASREvaluationsResultsV1(skillId, evaluationId, nextToken, maxResults, status).getResponse();
+  }
+
+  /**
+   * Get high level information and status of a asr evaluation.
+   * API which requests high level information about the evaluation like the current state of the job, status of the evaluation (if complete). Also returns the request used to start the job, like the number of total evaluations, number of completed evaluations, and start time. This should be considered the \&quot;cheap\&quot; operation while GetAsrEvaluationsResults is \&quot;expensive\&quot;. 
+   * @param skillId The skill ID. (required)
+   * @param evaluationId Identifier of the evaluation. (required)
+   * @return com.amazon.ask.smapi.model.v1.skill.asr.evaluations.GetAsrEvaluationStatusResponseObject
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.asr.evaluations.GetAsrEvaluationStatusResponseObject> callGetASREvaluationStatusV1(String skillId, String evaluationId) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    pathParams.put("evaluationId", evaluationId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String path = "/v1/skills/{skillId}/asrEvaluations/{evaluationId}/status";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.asr.evaluations.GetAsrEvaluationStatusResponseObject.class, 200, "Evaluation exists and its status is queryable."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 503, "Service Unavailable."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 0, "Internal Server Error."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.asr.evaluations.GetAsrEvaluationStatusResponseObject.class, false);
+  }
+
+  /**
+   * Get high level information and status of a asr evaluation.
+   * API which requests high level information about the evaluation like the current state of the job, status of the evaluation (if complete). Also returns the request used to start the job, like the number of total evaluations, number of completed evaluations, and start time. This should be considered the \&quot;cheap\&quot; operation while GetAsrEvaluationsResults is \&quot;expensive\&quot;. 
+   * @param skillId The skill ID. (required)
+   * @param evaluationId Identifier of the evaluation. (required)
+   * @return com.amazon.ask.smapi.model.v1.skill.asr.evaluations.GetAsrEvaluationStatusResponseObject
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.smapi.model.v1.skill.asr.evaluations.GetAsrEvaluationStatusResponseObject getASREvaluationStatusV1(String skillId, String evaluationId) throws ServiceException {
+    return this.callGetASREvaluationStatusV1(skillId, evaluationId).getResponse();
+  }
+
+  /**
+   * List asr evaluations run for a skill.
+   * API that allows developers to get historical ASR evaluations they run before. 
+   * @param skillId The skill ID. (required)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
+   * @param locale locale in bcp 47 format. Used to filter results with the specified locale. If omitted, the response would include all evaluations regardless of what locale was used in the evaluation (optional)
+   * @param stage Query parameter used to filter evaluations with specified skill stage.   * &#x60;development&#x60; - skill in &#x60;development&#x60; stage   * &#x60;live&#x60; - skill in &#x60;live&#x60; stage  (optional)
+   * @param annotationSetId filter to evaluations started using this annotationSetId (optional)
+   * @param maxResults Sets the maximum number of results returned in the response body. Defaults to 1000. If more results are present, the response will contain a nextToken.  (optional, default to 1000)
+   * @return com.amazon.ask.smapi.model.v1.skill.asr.evaluations.ListAsrEvaluationsResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.asr.evaluations.ListAsrEvaluationsResponse> callListASREvaluationsV1(String skillId, String nextToken, String locale, String stage, String annotationSetId, BigDecimal maxResults) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+
+    if(nextToken != null) {
+    queryParams.add(new Pair<String, String>("nextToken", nextToken));
+  }
+
+    if(locale != null) {
+    queryParams.add(new Pair<String, String>("locale", locale));
+  }
+
+    if(stage != null) {
+    queryParams.add(new Pair<String, String>("stage", stage));
+  }
+
+    if(annotationSetId != null) {
+    queryParams.add(new Pair<String, String>("annotationSetId", annotationSetId));
+  }
+
+    if(maxResults != null) {
+    queryParams.add(new Pair<String, String>("maxResults", maxResults.toString()));
+  }
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String path = "/v1/skills/{skillId}/asrEvaluations";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.asr.evaluations.ListAsrEvaluationsResponse.class, 200, "Evaluations are returned."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 503, "Service Unavailable."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 0, "Internal Server Error."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.asr.evaluations.ListAsrEvaluationsResponse.class, false);
+  }
+
+  /**
+   * List asr evaluations run for a skill.
+   * API that allows developers to get historical ASR evaluations they run before. 
+   * @param skillId The skill ID. (required)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
+   * @param locale locale in bcp 47 format. Used to filter results with the specified locale. If omitted, the response would include all evaluations regardless of what locale was used in the evaluation (optional)
+   * @param stage Query parameter used to filter evaluations with specified skill stage.   * &#x60;development&#x60; - skill in &#x60;development&#x60; stage   * &#x60;live&#x60; - skill in &#x60;live&#x60; stage  (optional)
+   * @param annotationSetId filter to evaluations started using this annotationSetId (optional)
+   * @param maxResults Sets the maximum number of results returned in the response body. Defaults to 1000. If more results are present, the response will contain a nextToken.  (optional, default to 1000)
+   * @return com.amazon.ask.smapi.model.v1.skill.asr.evaluations.ListAsrEvaluationsResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.smapi.model.v1.skill.asr.evaluations.ListAsrEvaluationsResponse listASREvaluationsV1(String skillId, String nextToken, String locale, String stage, String annotationSetId, BigDecimal maxResults) throws ServiceException {
+    return this.callListASREvaluationsV1(skillId, nextToken, locale, stage, annotationSetId, maxResults).getResponse();
+  }
+
+  /**
+   * Start an evaluation against the ASR model built by the skill&#39;s interaction model.
+   * This is an asynchronous API that starts an evaluation against the ASR model built by the skill&#39;s interaction model. The operation outputs an evaluationId which allows the retrieval of the current status of the operation and the results upon completion. This operation is unified, meaning both internal and external skill developers may use it to evaluate ASR models. 
+   * @param postAsrEvaluationsRequest Payload sent to trigger evaluation run. (required)
+   * @param skillId The skill ID. (required)
+   * @return com.amazon.ask.smapi.model.v1.skill.asr.evaluations.PostAsrEvaluationsResponseObject
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.asr.evaluations.PostAsrEvaluationsResponseObject> callCreateASREvaluationV1(com.amazon.ask.smapi.model.v1.skill.asr.evaluations.PostAsrEvaluationsRequestObject postAsrEvaluationsRequest, String skillId) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String path = "/v1/skills/{skillId}/asrEvaluations";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.asr.evaluations.PostAsrEvaluationsResponseObject.class, 200, "Evaluation has successfully begun."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 409, "The request could not be completed due to a conflict with the current state of the target resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 503, "Service Unavailable."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 0, "Internal Server Error."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, postAsrEvaluationsRequest, com.amazon.ask.smapi.model.v1.skill.asr.evaluations.PostAsrEvaluationsResponseObject.class, false);
+  }
+
+  /**
+   * Start an evaluation against the ASR model built by the skill&#39;s interaction model.
+   * This is an asynchronous API that starts an evaluation against the ASR model built by the skill&#39;s interaction model. The operation outputs an evaluationId which allows the retrieval of the current status of the operation and the results upon completion. This operation is unified, meaning both internal and external skill developers may use it to evaluate ASR models. 
+   * @param postAsrEvaluationsRequest Payload sent to trigger evaluation run. (required)
+   * @param skillId The skill ID. (required)
+   * @return com.amazon.ask.smapi.model.v1.skill.asr.evaluations.PostAsrEvaluationsResponseObject
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.smapi.model.v1.skill.asr.evaluations.PostAsrEvaluationsResponseObject createASREvaluationV1(com.amazon.ask.smapi.model.v1.skill.asr.evaluations.PostAsrEvaluationsRequestObject postAsrEvaluationsRequest, String skillId) throws ServiceException {
+    return this.callCreateASREvaluationV1(postAsrEvaluationsRequest, skillId).getResponse();
+  }
+
+  /**
    * End beta test.
    * End a beta test for a given Alexa skill. System will revoke the entitlement of each tester and send access-end notification email to them. 
    * @param skillId The skill ID. (required)
@@ -3258,7 +3984,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "Success. Return a URL to track the resource in 'Location' header."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 404, "The resource being requested is not found."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 409, "The request could not be completed due to a conflict with the current state of the target resource."));
@@ -3417,7 +4143,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * List testers.
    * List all testers in a beta test for the given Alexa skill.
    * @param skillId The skill ID. (required)
-   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
    * @return com.amazon.ask.smapi.model.v1.skill.betaTest.testers.ListTestersResponse
    * @throws ServiceException if fails to make API call
@@ -3460,7 +4186,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * List testers.
    * List all testers in a beta test for the given Alexa skill.
    * @param skillId The skill ID. (required)
-   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
    * @return com.amazon.ask.smapi.model.v1.skill.betaTest.testers.ListTestersResponse
    * @throws ServiceException if fails to make API call
@@ -3659,7 +4385,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * 
    * Get list of all certifications available for a skill, including information about past certifications and any ongoing certification. The default sort order is descending on skillSubmissionTimestamp for Certifications. 
    * @param skillId The skill ID. (required)
-   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
    * @return com.amazon.ask.smapi.model.v1.skill.certification.ListCertificationsResponse
    * @throws ServiceException if fails to make API call
@@ -3686,7 +4412,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.certification.ListCertificationsResponse.class, 200, "Returns list of certifications for the skillId."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 400, "Server cannot process the request due to a client error e.g. if any request parameter is invalid like certification Id or pagination token etc. If the maxResults is not in the range of 1 to 50, it also qualifies for this error. "));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error e.g. if any request parameter is invalid like certification Id or pagination token etc. If the maxResults is not in the range of 1 to 50, it also qualifies for this error. "));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 404, "The resource being requested is not found."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 429, "Exceeded the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId. "));
@@ -3702,7 +4428,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * 
    * Get list of all certifications available for a skill, including information about past certifications and any ongoing certification. The default sort order is descending on skillSubmissionTimestamp for Certifications. 
    * @param skillId The skill ID. (required)
-   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
    * @return com.amazon.ask.smapi.model.v1.skill.certification.ListCertificationsResponse
    * @throws ServiceException if fails to make API call
@@ -3802,7 +4528,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * The Intent Request History API provides customers with the aggregated and anonymized transcription of user speech data and intent request details for their skills.
    * 
    * @param skillId The skill ID. (required)
-   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
    * @param sortDirection Sets the sorting direction of the result items. When set to &#39;asc&#39; these items are returned in ascending order of sortField value and when set to &#39;desc&#39; these items are returned in descending order of sortField value. (optional)
    * @param sortField Sets the field on which the sorting would be applied. (optional)
@@ -3919,7 +4645,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * The Intent Request History API provides customers with the aggregated and anonymized transcription of user speech data and intent request details for their skills.
    * 
    * @param skillId The skill ID. (required)
-   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
    * @param sortDirection Sets the sorting direction of the result items. When set to &#39;asc&#39; these items are returned in ascending order of sortField value and when set to &#39;desc&#39; these items are returned in descending order of sortField value. (optional)
    * @param sortField Sets the field on which the sorting would be applied. (optional)
@@ -3994,6 +4720,53 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
 
   /**
    * 
+   * This is a synchronous API that invokes the Lambda or third party HTTPS endpoint for a given skill. A successful response will contain information related to what endpoint was called, payload sent to and received from the endpoint. In cases where requests to this API results in an error, the response will contain an error code and a description of the problem. In cases where invoking the skill endpoint specifically fails, the response will contain a status attribute indicating that a failure occurred and details about what was sent to the endpoint. The skill must belong to and be enabled by the user of this API. Also, note that calls to the skill endpoint will timeout after 10 seconds. 
+   * @param skillId The skill ID. (required)
+   * @param invokeSkillRequest Payload sent to the skill invocation API. (required)
+   * @return com.amazon.ask.smapi.model.v1.skill.invocations.InvokeSkillResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.invocations.InvokeSkillResponse> callInvokeSkillV1(String skillId, com.amazon.ask.smapi.model.v1.skill.invocations.InvokeSkillRequest invokeSkillRequest) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String path = "/v1/skills/{skillId}/invocations";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.invocations.InvokeSkillResponse.class, 200, "Skill was invoked."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Bad request due to invalid or missing data."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "API user does not have permission to call this API or is currently in a state that does not allow invocation of this skill. "));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 404, "The specified skill does not exist."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "API user has exceeded the permitted request rate."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 503, "Service Unavailable."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, invokeSkillRequest, com.amazon.ask.smapi.model.v1.skill.invocations.InvokeSkillResponse.class, false);
+  }
+
+  /**
+   * 
+   * This is a synchronous API that invokes the Lambda or third party HTTPS endpoint for a given skill. A successful response will contain information related to what endpoint was called, payload sent to and received from the endpoint. In cases where requests to this API results in an error, the response will contain an error code and a description of the problem. In cases where invoking the skill endpoint specifically fails, the response will contain a status attribute indicating that a failure occurred and details about what was sent to the endpoint. The skill must belong to and be enabled by the user of this API. Also, note that calls to the skill endpoint will timeout after 10 seconds. 
+   * @param skillId The skill ID. (required)
+   * @param invokeSkillRequest Payload sent to the skill invocation API. (required)
+   * @return com.amazon.ask.smapi.model.v1.skill.invocations.InvokeSkillResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.smapi.model.v1.skill.invocations.InvokeSkillResponse invokeSkillV1(String skillId, com.amazon.ask.smapi.model.v1.skill.invocations.InvokeSkillRequest invokeSkillRequest) throws ServiceException {
+    return this.callInvokeSkillV1(skillId, invokeSkillRequest).getResponse();
+  }
+
+  /**
+   * 
    * Get analytic metrics report of skill usage.
    * @param skillId The skill ID. (required)
    * @param startTime The start time of query. (required)
@@ -4005,7 +4778,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @param intent The intent of the skill. (optional)
    * @param locale The locale for the skill. e.g. en-GB, en-US, de-DE and etc. (optional)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
-   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
    * @return com.amazon.ask.smapi.model.v1.skill.metrics.GetMetricDataResponse
    * @throws ServiceException if fails to make API call
    */
@@ -4090,7 +4863,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @param intent The intent of the skill. (optional)
    * @param locale The locale for the skill. e.g. en-GB, en-US, de-DE and etc. (optional)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
-   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
    * @return com.amazon.ask.smapi.model.v1.skill.metrics.GetMetricDataResponse
    * @throws ServiceException if fails to make API call
    */
@@ -4125,12 +4898,12 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 200, "The specific version of a NLU annotation set has the content."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse400.class, 400, "Server cannot process the request due to a client error."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse400.class, 403, "The operation being requested is not allowed."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 404, "The resource being requested is not found."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 500, "Internal Server Error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 500, "Internal Server Error."));
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
@@ -4178,12 +4951,12 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 200, "NLU annotation set exists and starts the update."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse400.class, 400, "Server cannot process the request due to a client error."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse400.class, 403, "The operation being requested is not allowed."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 404, "The resource being requested is not found."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 500, "Internal Server Error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 500, "Internal Server Error."));
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
@@ -4226,12 +4999,12 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "NLU annotation set exists and is deleted successfully."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse400.class, 400, "Server cannot process the request due to a client error."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse400.class, 403, "The operation being requested is not allowed."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 404, "The resource being requested is not found."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 500, "Internal Server Error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 500, "Internal Server Error."));
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
@@ -4273,12 +5046,12 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.GetNLUAnnotationSetPropertiesResponse.class, 200, "The NLU annotation set exists."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse400.class, 400, "Server cannot process the request due to a client error."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse400.class, 403, "The operation being requested is not allowed."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 404, "The resource being requested is not found."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 500, "Internal Server Error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 500, "Internal Server Error."));
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
@@ -4321,12 +5094,12 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 201, "NLU annotation set exists and properties are updated successfully."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse400.class, 400, "Server cannot process the request due to a client error."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse400.class, 403, "The operation being requested is not allowed."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 404, "The resource being requested is not found."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 500, "Internal Server Error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 500, "Internal Server Error."));
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
@@ -4382,12 +5155,12 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.ListNLUAnnotationSetsResponse.class, 200, "NLU annotation sets are returned."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse400.class, 400, "Server cannot process the request due to a client error."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse400.class, 403, "The operation being requested is not allowed."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 404, "The resource being requested is not found."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 500, "Internal Server Error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 500, "Internal Server Error."));
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
@@ -4431,13 +5204,13 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.CreateNLUAnnotationSetResponse.class, 201, "NLU annotation set created successfully."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse400.class, 400, "Server cannot process the request due to a client error."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse400.class, 403, "The operation being requested is not allowed."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 404, "The resource being requested is not found."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 500, "Internal Server Error."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 503, "Service Unavailable."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 500, "Internal Server Error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 503, "Service Unavailable."));
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
@@ -4480,12 +5253,12 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.GetNLUEvaluationResponse.class, 200, "Evaluation exists and its status is queryable."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse400.class, 400, "Server cannot process the request due to a client error."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse400.class, 403, "The operation being requested is not allowed."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 404, "The resource being requested is not found."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 500, "Internal Server Error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 500, "Internal Server Error."));
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
@@ -4558,12 +5331,12 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.GetNLUEvaluationResultsResponse.class, 200, "Evaluation exists and its status is queryable."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse400.class, 400, "Server cannot process the request due to a client error."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse400.class, 403, "The operation being requested is not allowed."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 404, "The resource being requested is not found."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 500, "Internal Server Error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 500, "Internal Server Error."));
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
@@ -4635,12 +5408,12 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.ListNLUEvaluationsResponse.class, 200, "Evaluations are returned."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse400.class, 400, "Server cannot process the request due to a client error."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse400.class, 403, "The operation being requested is not allowed."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 404, "The resource being requested is not found."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 500, "Internal Server Error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 500, "Internal Server Error."));
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
@@ -4686,12 +5459,12 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.EvaluateResponse.class, 200, "Evaluation has successfully begun."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse400.class, 400, "Server cannot process the request due to a client error."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse400.class, 403, "The operation being requested is not allowed."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 404, "The resource being requested is not found."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.InlineResponse401.class, 500, "Internal Server Error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 500, "Internal Server Error."));
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
@@ -4921,7 +5694,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "No Content; Confirms that enablement is successfully deleted."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 404, "The resource being requested is not found."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 500, "Internal Server Error."));
@@ -4968,7 +5741,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "No Content; Confirms that enablement resource exists for given skillId &amp; stage."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 404, "The resource being requested is not found."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 500, "Internal Server Error."));
@@ -5015,7 +5788,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "No Content; Confirms that enablement is successfully created/updated."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 404, "The resource being requested is not found."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 409, "The request could not be completed due to a conflict with the current state of the target resource."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
@@ -5090,7 +5863,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * Get the list of in-skill products for the skillId.
    * @param skillId The skill ID. (required)
    * @param stage Stage for skill. (required)
-   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
    * @return com.amazon.ask.smapi.model.v1.isp.ListInSkillProductResponse
    * @throws ServiceException if fails to make API call
@@ -5135,7 +5908,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * Get the list of in-skill products for the skillId.
    * @param skillId The skill ID. (required)
    * @param stage Stage for skill. (required)
-   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
    * @return com.amazon.ask.smapi.model.v1.isp.ListInSkillProductResponse
    * @throws ServiceException if fails to make API call
@@ -5259,7 +6032,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @param locale The locale for the model requested e.g. en-GB, en-US, de-DE. (required)
    * @param stage Stage of the interaction model. (required)
    * @param version Version of interaction model. Use \&quot;~current\&quot; to get the model of the current version. (required)
-   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
    * @param maxResults Sets the maximum number of results returned in the response body. Defaults to 100. If more results are present, the response will contain a nextToken and a _link.next href. (optional, default to 100)
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.GetConflictsResponse
    * @throws ServiceException if fails to make API call
@@ -5310,7 +6083,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @param locale The locale for the model requested e.g. en-GB, en-US, de-DE. (required)
    * @param stage Stage of the interaction model. (required)
    * @param version Version of interaction model. Use \&quot;~current\&quot; to get the model of the current version. (required)
-   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
    * @param maxResults Sets the maximum number of results returned in the response body. Defaults to 100. If more results are present, the response will contain a nextToken and a _link.next href. (optional, default to 100)
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.GetConflictsResponse
    * @throws ServiceException if fails to make API call
@@ -5324,7 +6097,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * List private distribution accounts. 
    * @param skillId The skill ID. (required)
    * @param stage Stage for skill. (required)
-   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
    * @return com.amazon.ask.smapi.model.v1.skill.Private.ListPrivateDistributionAccountsResponse
    * @throws ServiceException if fails to make API call
@@ -5371,7 +6144,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * List private distribution accounts. 
    * @param skillId The skill ID. (required)
    * @param stage Stage for skill. (required)
-   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
    * @return com.amazon.ask.smapi.model.v1.skill.Private.ListPrivateDistributionAccountsResponse
    * @throws ServiceException if fails to make API call
@@ -5797,7 +6570,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @param skillId The skill ID. (required)
    * @param stageV2 Stages of a skill including the new certified stage. * &#x60;development&#x60; - skills which are currently in development corresponds to this stage. * &#x60;certified&#x60; -  skills which have completed certification and ready for publishing corresponds to this stage. * &#x60;live&#x60; - skills which are currently live corresponds to this stage.  (required)
    * @param locale The locale for the model requested e.g. en-GB, en-US, de-DE. (required)
-   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
    * @param sortDirection Sets the sorting direction of the result items. When set to &#39;asc&#39; these items are returned in ascending order of sortField value and when set to &#39;desc&#39; these items are returned in descending order of sortField value. (optional)
    * @param sortField Sets the field on which the sorting would be applied. (optional)
@@ -5856,7 +6629,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @param skillId The skill ID. (required)
    * @param stageV2 Stages of a skill including the new certified stage. * &#x60;development&#x60; - skills which are currently in development corresponds to this stage. * &#x60;certified&#x60; -  skills which have completed certification and ready for publishing corresponds to this stage. * &#x60;live&#x60; - skills which are currently live corresponds to this stage.  (required)
    * @param locale The locale for the model requested e.g. en-GB, en-US, de-DE. (required)
-   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param nextToken A token provided to continue returning results from a previous request which was partial.  (optional)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
    * @param sortDirection Sets the sorting direction of the result items. When set to &#39;asc&#39; these items are returned in ascending order of sortField value and when set to &#39;desc&#39; these items are returned in descending order of sortField value. (optional)
    * @param sortField Sets the field on which the sorting would be applied. (optional)

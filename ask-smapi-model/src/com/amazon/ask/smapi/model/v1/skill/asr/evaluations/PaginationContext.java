@@ -12,39 +12,39 @@
 */
 
 
-package com.amazon.ask.smapi.model.v1.skill;
+package com.amazon.ask.smapi.model.v1.skill.asr.evaluations;
 
 import java.util.Objects;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Structure for skill credentials response.
+ * This holds all data needed to control pagination from the user. 
  */
 
-@JsonDeserialize(builder = SkillCredentials.Builder.class)
-public final class SkillCredentials {
+@JsonDeserialize(builder = PaginationContext.Builder.class)
+public final class PaginationContext {
 
-    @JsonProperty("skillMessagingCredentials")
-    private com.amazon.ask.smapi.model.v1.skill.SkillMessagingCredentials skillMessagingCredentials = null;
+    @JsonProperty("nextToken")
+    private String nextToken = null;
 
     public static Builder builder() {
         return new Builder();
     }
 
-    private SkillCredentials(Builder builder) {
-        if (builder.skillMessagingCredentials != null) {
-            this.skillMessagingCredentials = builder.skillMessagingCredentials;
+    private PaginationContext(Builder builder) {
+        if (builder.nextToken != null) {
+            this.nextToken = builder.nextToken;
         }
     }
 
     /**
-     * Get skillMessagingCredentials
-     * @return skillMessagingCredentials
+     * The page token, this should be passed as a `nextToken` query parameter to the API to retrieve more items. If this field is not present the end of all of the items was reached. If a `maxResults` query parameter was specified then no more than `maxResults` items are returned. 
+     * @return nextToken
     **/
-    @JsonProperty("skillMessagingCredentials")
-    public com.amazon.ask.smapi.model.v1.skill.SkillMessagingCredentials getSkillMessagingCredentials() {
-        return skillMessagingCredentials;
+    @JsonProperty("nextToken")
+    public String getNextToken() {
+        return nextToken;
     }
 
 
@@ -56,21 +56,21 @@ public final class SkillCredentials {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        SkillCredentials v1SkillSkillCredentials = (SkillCredentials) o;
-        return Objects.equals(this.skillMessagingCredentials, v1SkillSkillCredentials.skillMessagingCredentials);
+        PaginationContext v1SkillAsrEvaluationsPaginationContext = (PaginationContext) o;
+        return Objects.equals(this.nextToken, v1SkillAsrEvaluationsPaginationContext.nextToken);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(skillMessagingCredentials);
+        return Objects.hash(nextToken);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class SkillCredentials {\n");
+        sb.append("class PaginationContext {\n");
         
-        sb.append("    skillMessagingCredentials: ").append(toIndentedString(skillMessagingCredentials)).append("\n");
+        sb.append("    nextToken: ").append(toIndentedString(nextToken)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -87,20 +87,20 @@ public final class SkillCredentials {
     }
   
     public static class Builder {
-        private com.amazon.ask.smapi.model.v1.skill.SkillMessagingCredentials skillMessagingCredentials;
+        private String nextToken;
 
         private Builder() {}
 
-        @JsonProperty("skillMessagingCredentials")
+        @JsonProperty("nextToken")
 
-        public Builder withSkillMessagingCredentials(com.amazon.ask.smapi.model.v1.skill.SkillMessagingCredentials skillMessagingCredentials) {
-            this.skillMessagingCredentials = skillMessagingCredentials;
+        public Builder withNextToken(String nextToken) {
+            this.nextToken = nextToken;
             return this;
         }
 
 
-        public SkillCredentials build() {
-            return new SkillCredentials(this);
+        public PaginationContext build() {
+            return new PaginationContext(this);
         }
     }
 }

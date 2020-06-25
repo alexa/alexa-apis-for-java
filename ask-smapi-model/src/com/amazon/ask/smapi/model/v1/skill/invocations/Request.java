@@ -12,39 +12,55 @@
 */
 
 
-package com.amazon.ask.smapi.model.v1.skill;
+package com.amazon.ask.smapi.model.v1.skill.invocations;
 
 import java.util.Objects;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Structure for skill credentials response.
+ * Request
  */
 
-@JsonDeserialize(builder = SkillCredentials.Builder.class)
-public final class SkillCredentials {
+@JsonDeserialize(builder = Request.Builder.class)
+public final class Request {
 
-    @JsonProperty("skillMessagingCredentials")
-    private com.amazon.ask.smapi.model.v1.skill.SkillMessagingCredentials skillMessagingCredentials = null;
+    @JsonProperty("endpoint")
+    private String endpoint = null;
+
+    @JsonProperty("body")
+    private Object body = null;
 
     public static Builder builder() {
         return new Builder();
     }
 
-    private SkillCredentials(Builder builder) {
-        if (builder.skillMessagingCredentials != null) {
-            this.skillMessagingCredentials = builder.skillMessagingCredentials;
+    private Request(Builder builder) {
+        if (builder.endpoint != null) {
+            this.endpoint = builder.endpoint;
+        }
+        if (builder.body != null) {
+            this.body = builder.body;
         }
     }
 
     /**
-     * Get skillMessagingCredentials
-     * @return skillMessagingCredentials
+     * Skill's Lambda or HTTPS endpoint.
+     * @return endpoint
     **/
-    @JsonProperty("skillMessagingCredentials")
-    public com.amazon.ask.smapi.model.v1.skill.SkillMessagingCredentials getSkillMessagingCredentials() {
-        return skillMessagingCredentials;
+    @JsonProperty("endpoint")
+    public String getEndpoint() {
+        return endpoint;
+    }
+
+
+    /**
+     * JSON payload that was sent to the skill's Lambda or HTTPS endpoint. 
+     * @return body
+    **/
+    @JsonProperty("body")
+    public Object getBody() {
+        return body;
     }
 
 
@@ -56,21 +72,23 @@ public final class SkillCredentials {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        SkillCredentials v1SkillSkillCredentials = (SkillCredentials) o;
-        return Objects.equals(this.skillMessagingCredentials, v1SkillSkillCredentials.skillMessagingCredentials);
+        Request v1SkillInvocationsRequest = (Request) o;
+        return Objects.equals(this.endpoint, v1SkillInvocationsRequest.endpoint) &&
+            Objects.equals(this.body, v1SkillInvocationsRequest.body);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(skillMessagingCredentials);
+        return Objects.hash(endpoint, body);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class SkillCredentials {\n");
+        sb.append("class Request {\n");
         
-        sb.append("    skillMessagingCredentials: ").append(toIndentedString(skillMessagingCredentials)).append("\n");
+        sb.append("    endpoint: ").append(toIndentedString(endpoint)).append("\n");
+        sb.append("    body: ").append(toIndentedString(body)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -87,20 +105,29 @@ public final class SkillCredentials {
     }
   
     public static class Builder {
-        private com.amazon.ask.smapi.model.v1.skill.SkillMessagingCredentials skillMessagingCredentials;
+        private String endpoint;
+        private Object body;
 
         private Builder() {}
 
-        @JsonProperty("skillMessagingCredentials")
+        @JsonProperty("endpoint")
 
-        public Builder withSkillMessagingCredentials(com.amazon.ask.smapi.model.v1.skill.SkillMessagingCredentials skillMessagingCredentials) {
-            this.skillMessagingCredentials = skillMessagingCredentials;
+        public Builder withEndpoint(String endpoint) {
+            this.endpoint = endpoint;
             return this;
         }
 
 
-        public SkillCredentials build() {
-            return new SkillCredentials(this);
+        @JsonProperty("body")
+
+        public Builder withBody(Object body) {
+            this.body = body;
+            return this;
+        }
+
+
+        public Request build() {
+            return new Request(this);
         }
     }
 }

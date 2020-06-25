@@ -12,39 +12,40 @@
 */
 
 
-package com.amazon.ask.smapi.model.v1.skill;
+package com.amazon.ask.smapi.model.v1.skill.asr.evaluations;
 
 import java.util.Objects;
+import java.math.BigDecimal;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Structure for skill credentials response.
+ * Metrics
  */
 
-@JsonDeserialize(builder = SkillCredentials.Builder.class)
-public final class SkillCredentials {
+@JsonDeserialize(builder = Metrics.Builder.class)
+public final class Metrics {
 
-    @JsonProperty("skillMessagingCredentials")
-    private com.amazon.ask.smapi.model.v1.skill.SkillMessagingCredentials skillMessagingCredentials = null;
+    @JsonProperty("overallErrorRate")
+    private BigDecimal overallErrorRate = null;
 
     public static Builder builder() {
         return new Builder();
     }
 
-    private SkillCredentials(Builder builder) {
-        if (builder.skillMessagingCredentials != null) {
-            this.skillMessagingCredentials = builder.skillMessagingCredentials;
+    private Metrics(Builder builder) {
+        if (builder.overallErrorRate != null) {
+            this.overallErrorRate = builder.overallErrorRate;
         }
     }
 
     /**
-     * Get skillMessagingCredentials
-     * @return skillMessagingCredentials
+     * overall error rate for the ASR evaluation run
+     * @return overallErrorRate
     **/
-    @JsonProperty("skillMessagingCredentials")
-    public com.amazon.ask.smapi.model.v1.skill.SkillMessagingCredentials getSkillMessagingCredentials() {
-        return skillMessagingCredentials;
+    @JsonProperty("overallErrorRate")
+    public BigDecimal getOverallErrorRate() {
+        return overallErrorRate;
     }
 
 
@@ -56,21 +57,21 @@ public final class SkillCredentials {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        SkillCredentials v1SkillSkillCredentials = (SkillCredentials) o;
-        return Objects.equals(this.skillMessagingCredentials, v1SkillSkillCredentials.skillMessagingCredentials);
+        Metrics v1SkillAsrEvaluationsMetrics = (Metrics) o;
+        return Objects.equals(this.overallErrorRate, v1SkillAsrEvaluationsMetrics.overallErrorRate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(skillMessagingCredentials);
+        return Objects.hash(overallErrorRate);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class SkillCredentials {\n");
+        sb.append("class Metrics {\n");
         
-        sb.append("    skillMessagingCredentials: ").append(toIndentedString(skillMessagingCredentials)).append("\n");
+        sb.append("    overallErrorRate: ").append(toIndentedString(overallErrorRate)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -87,20 +88,20 @@ public final class SkillCredentials {
     }
   
     public static class Builder {
-        private com.amazon.ask.smapi.model.v1.skill.SkillMessagingCredentials skillMessagingCredentials;
+        private BigDecimal overallErrorRate;
 
         private Builder() {}
 
-        @JsonProperty("skillMessagingCredentials")
+        @JsonProperty("overallErrorRate")
 
-        public Builder withSkillMessagingCredentials(com.amazon.ask.smapi.model.v1.skill.SkillMessagingCredentials skillMessagingCredentials) {
-            this.skillMessagingCredentials = skillMessagingCredentials;
+        public Builder withOverallErrorRate(BigDecimal overallErrorRate) {
+            this.overallErrorRate = overallErrorRate;
             return this;
         }
 
 
-        public SkillCredentials build() {
-            return new SkillCredentials(this);
+        public Metrics build() {
+            return new Metrics(this);
         }
     }
 }

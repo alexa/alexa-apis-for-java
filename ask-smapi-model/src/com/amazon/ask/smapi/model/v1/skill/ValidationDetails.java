@@ -49,6 +49,9 @@ public final class ValidationDetails {
     @JsonProperty("conflictingInstance")
     private com.amazon.ask.smapi.model.v1.skill.Instance conflictingInstance = null;
 
+    @JsonProperty("expectedFormat")
+    private String expectedFormat = null;
+
     @JsonProperty("expectedInstance")
     private com.amazon.ask.smapi.model.v1.skill.Instance expectedInstance = null;
 
@@ -88,6 +91,9 @@ public final class ValidationDetails {
     @JsonProperty("originalInstance")
     private com.amazon.ask.smapi.model.v1.skill.Instance originalInstance = null;
 
+    @JsonProperty("reason")
+    private com.amazon.ask.smapi.model.v1.skill.ValidationFailureReason reason = null;
+
     @JsonProperty("requiredProperty")
     private String requiredProperty = null;
 
@@ -119,6 +125,9 @@ public final class ValidationDetails {
         }
         if (builder.conflictingInstance != null) {
             this.conflictingInstance = builder.conflictingInstance;
+        }
+        if (builder.expectedFormat != null) {
+            this.expectedFormat = builder.expectedFormat;
         }
         if (builder.expectedInstance != null) {
             this.expectedInstance = builder.expectedInstance;
@@ -158,6 +167,9 @@ public final class ValidationDetails {
         }
         if (builder.originalInstance != null) {
             this.originalInstance = builder.originalInstance;
+        }
+        if (builder.reason != null) {
+            this.reason = builder.reason;
         }
         if (builder.requiredProperty != null) {
             this.requiredProperty = builder.requiredProperty;
@@ -236,6 +248,33 @@ public final class ValidationDetails {
         return conflictingInstance;
     }
 
+
+    /**
+     * Format in which instance value is expected in.
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getExpectedFormatAsString().
+     *
+     * @return expectedFormat
+    **/
+    
+    public com.amazon.ask.smapi.model.v1.skill.Format getExpectedFormat() {
+        return com.amazon.ask.smapi.model.v1.skill.Format.fromValue(expectedFormat);
+    }
+
+    /**
+     * Get the underlying String value for expectedFormat.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return expectedFormat as a String value
+    **/
+    @JsonProperty("expectedFormat")
+    public String getExpectedFormatAsString() {
+      return expectedFormat;
+    }
 
     /**
      * Instance that is expected by a related instance.
@@ -385,6 +424,16 @@ public final class ValidationDetails {
 
 
     /**
+     * Represents what is wrong in the request.
+     * @return reason
+    **/
+    @JsonProperty("reason")
+    public com.amazon.ask.smapi.model.v1.skill.ValidationFailureReason getReason() {
+        return reason;
+    }
+
+
+    /**
      * Property required but missing in the object.
      * @return requiredProperty
     **/
@@ -420,6 +469,7 @@ public final class ValidationDetails {
             Objects.equals(this.allowedDataTypes, v1SkillValidationDetails.allowedDataTypes) &&
             Objects.equals(this.allowedImageAttributes, v1SkillValidationDetails.allowedImageAttributes) &&
             Objects.equals(this.conflictingInstance, v1SkillValidationDetails.conflictingInstance) &&
+            Objects.equals(this.expectedFormat, v1SkillValidationDetails.expectedFormat) &&
             Objects.equals(this.expectedInstance, v1SkillValidationDetails.expectedInstance) &&
             Objects.equals(this.expectedRegexPattern, v1SkillValidationDetails.expectedRegexPattern) &&
             Objects.equals(this.agreementType, v1SkillValidationDetails.agreementType) &&
@@ -433,13 +483,14 @@ public final class ValidationDetails {
             Objects.equals(this.maximumStringLength, v1SkillValidationDetails.maximumStringLength) &&
             Objects.equals(this.originalEndpoint, v1SkillValidationDetails.originalEndpoint) &&
             Objects.equals(this.originalInstance, v1SkillValidationDetails.originalInstance) &&
+            Objects.equals(this.reason, v1SkillValidationDetails.reason) &&
             Objects.equals(this.requiredProperty, v1SkillValidationDetails.requiredProperty) &&
             Objects.equals(this.unexpectedProperty, v1SkillValidationDetails.unexpectedProperty);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(actualImageAttributes, actualNumberOfItems, actualStringLength, allowedContentTypes, allowedDataTypes, allowedImageAttributes, conflictingInstance, expectedInstance, expectedRegexPattern, agreementType, feature, inconsistentEndpoint, minimumIntegerValue, minimumNumberOfItems, minimumStringLength, maximumIntegerValue, maximumNumberOfItems, maximumStringLength, originalEndpoint, originalInstance, requiredProperty, unexpectedProperty);
+        return Objects.hash(actualImageAttributes, actualNumberOfItems, actualStringLength, allowedContentTypes, allowedDataTypes, allowedImageAttributes, conflictingInstance, expectedFormat, expectedInstance, expectedRegexPattern, agreementType, feature, inconsistentEndpoint, minimumIntegerValue, minimumNumberOfItems, minimumStringLength, maximumIntegerValue, maximumNumberOfItems, maximumStringLength, originalEndpoint, originalInstance, reason, requiredProperty, unexpectedProperty);
     }
 
     @Override
@@ -454,6 +505,7 @@ public final class ValidationDetails {
         sb.append("    allowedDataTypes: ").append(toIndentedString(allowedDataTypes)).append("\n");
         sb.append("    allowedImageAttributes: ").append(toIndentedString(allowedImageAttributes)).append("\n");
         sb.append("    conflictingInstance: ").append(toIndentedString(conflictingInstance)).append("\n");
+        sb.append("    expectedFormat: ").append(toIndentedString(expectedFormat)).append("\n");
         sb.append("    expectedInstance: ").append(toIndentedString(expectedInstance)).append("\n");
         sb.append("    expectedRegexPattern: ").append(toIndentedString(expectedRegexPattern)).append("\n");
         sb.append("    agreementType: ").append(toIndentedString(agreementType)).append("\n");
@@ -467,6 +519,7 @@ public final class ValidationDetails {
         sb.append("    maximumStringLength: ").append(toIndentedString(maximumStringLength)).append("\n");
         sb.append("    originalEndpoint: ").append(toIndentedString(originalEndpoint)).append("\n");
         sb.append("    originalInstance: ").append(toIndentedString(originalInstance)).append("\n");
+        sb.append("    reason: ").append(toIndentedString(reason)).append("\n");
         sb.append("    requiredProperty: ").append(toIndentedString(requiredProperty)).append("\n");
         sb.append("    unexpectedProperty: ").append(toIndentedString(unexpectedProperty)).append("\n");
         sb.append("}");
@@ -492,6 +545,7 @@ public final class ValidationDetails {
         private List<com.amazon.ask.smapi.model.v1.skill.ValidationDataTypes> allowedDataTypes;
         private List<com.amazon.ask.smapi.model.v1.skill.ImageAttributes> allowedImageAttributes;
         private com.amazon.ask.smapi.model.v1.skill.Instance conflictingInstance;
+        private String expectedFormat;
         private com.amazon.ask.smapi.model.v1.skill.Instance expectedInstance;
         private String expectedRegexPattern;
         private String agreementType;
@@ -505,6 +559,7 @@ public final class ValidationDetails {
         private Integer maximumStringLength;
         private com.amazon.ask.smapi.model.v1.skill.ValidationEndpoint originalEndpoint;
         private com.amazon.ask.smapi.model.v1.skill.Instance originalInstance;
+        private com.amazon.ask.smapi.model.v1.skill.ValidationFailureReason reason;
         private String requiredProperty;
         private String unexpectedProperty;
 
@@ -583,6 +638,18 @@ public final class ValidationDetails {
 
         public Builder withConflictingInstance(com.amazon.ask.smapi.model.v1.skill.Instance conflictingInstance) {
             this.conflictingInstance = conflictingInstance;
+            return this;
+        }
+
+
+        @JsonProperty("expectedFormat")
+        public Builder withExpectedFormat(String expectedFormat) {
+          this.expectedFormat = expectedFormat;
+          return this;
+        }
+
+        public Builder withExpectedFormat(com.amazon.ask.smapi.model.v1.skill.Format expectedFormat) {
+            this.expectedFormat = expectedFormat != null ? expectedFormat.toString() : null;
             return this;
         }
 
@@ -691,6 +758,14 @@ public final class ValidationDetails {
 
         public Builder withOriginalInstance(com.amazon.ask.smapi.model.v1.skill.Instance originalInstance) {
             this.originalInstance = originalInstance;
+            return this;
+        }
+
+
+        @JsonProperty("reason")
+
+        public Builder withReason(com.amazon.ask.smapi.model.v1.skill.ValidationFailureReason reason) {
+            this.reason = reason;
             return this;
         }
 

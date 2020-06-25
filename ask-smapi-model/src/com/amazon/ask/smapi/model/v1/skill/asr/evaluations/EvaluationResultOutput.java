@@ -12,39 +12,39 @@
 */
 
 
-package com.amazon.ask.smapi.model.v1.skill;
+package com.amazon.ask.smapi.model.v1.skill.asr.evaluations;
 
 import java.util.Objects;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Structure for skill credentials response.
+ * EvaluationResultOutput
  */
 
-@JsonDeserialize(builder = SkillCredentials.Builder.class)
-public final class SkillCredentials {
+@JsonDeserialize(builder = EvaluationResultOutput.Builder.class)
+public final class EvaluationResultOutput {
 
-    @JsonProperty("skillMessagingCredentials")
-    private com.amazon.ask.smapi.model.v1.skill.SkillMessagingCredentials skillMessagingCredentials = null;
+    @JsonProperty("transcription")
+    private String transcription = null;
 
     public static Builder builder() {
         return new Builder();
     }
 
-    private SkillCredentials(Builder builder) {
-        if (builder.skillMessagingCredentials != null) {
-            this.skillMessagingCredentials = builder.skillMessagingCredentials;
+    private EvaluationResultOutput(Builder builder) {
+        if (builder.transcription != null) {
+            this.transcription = builder.transcription;
         }
     }
 
     /**
-     * Get skillMessagingCredentials
-     * @return skillMessagingCredentials
+     * actual transcription returned from ASR for the audio
+     * @return transcription
     **/
-    @JsonProperty("skillMessagingCredentials")
-    public com.amazon.ask.smapi.model.v1.skill.SkillMessagingCredentials getSkillMessagingCredentials() {
-        return skillMessagingCredentials;
+    @JsonProperty("transcription")
+    public String getTranscription() {
+        return transcription;
     }
 
 
@@ -56,21 +56,21 @@ public final class SkillCredentials {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        SkillCredentials v1SkillSkillCredentials = (SkillCredentials) o;
-        return Objects.equals(this.skillMessagingCredentials, v1SkillSkillCredentials.skillMessagingCredentials);
+        EvaluationResultOutput v1SkillAsrEvaluationsEvaluationResultOutput = (EvaluationResultOutput) o;
+        return Objects.equals(this.transcription, v1SkillAsrEvaluationsEvaluationResultOutput.transcription);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(skillMessagingCredentials);
+        return Objects.hash(transcription);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class SkillCredentials {\n");
+        sb.append("class EvaluationResultOutput {\n");
         
-        sb.append("    skillMessagingCredentials: ").append(toIndentedString(skillMessagingCredentials)).append("\n");
+        sb.append("    transcription: ").append(toIndentedString(transcription)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -87,20 +87,20 @@ public final class SkillCredentials {
     }
   
     public static class Builder {
-        private com.amazon.ask.smapi.model.v1.skill.SkillMessagingCredentials skillMessagingCredentials;
+        private String transcription;
 
         private Builder() {}
 
-        @JsonProperty("skillMessagingCredentials")
+        @JsonProperty("transcription")
 
-        public Builder withSkillMessagingCredentials(com.amazon.ask.smapi.model.v1.skill.SkillMessagingCredentials skillMessagingCredentials) {
-            this.skillMessagingCredentials = skillMessagingCredentials;
+        public Builder withTranscription(String transcription) {
+            this.transcription = transcription;
             return this;
         }
 
 
-        public SkillCredentials build() {
-            return new SkillCredentials(this);
+        public EvaluationResultOutput build() {
+            return new EvaluationResultOutput(this);
         }
     }
 }

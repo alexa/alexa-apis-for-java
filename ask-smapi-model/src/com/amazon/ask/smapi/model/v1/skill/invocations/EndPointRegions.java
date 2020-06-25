@@ -12,7 +12,7 @@
 */
 
 
-package com.amazon.ask.smapi.model.v1.skill;
+package com.amazon.ask.smapi.model.v1.skill.invocations;
 
 import java.util.Objects;
 
@@ -20,27 +20,21 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Status for a Response resource.
+ * Region of endpoint to be called.
  */
-public enum ResponseStatus {
+public enum EndPointRegions {
   
-  FAILED("FAILED"),
+  NA("NA"),
   
-  IN_PROGRESS("IN_PROGRESS"),
+  EU("EU"),
   
-  SUCCEEDED("SUCCEEDED"),
-  
-  ROLLBACK_SUCCEEDED("ROLLBACK_SUCCEEDED"),
-  
-  ROLLBACK_FAILED("ROLLBACK_FAILED"),
-  
-  SKIPPED("SKIPPED"),
+  FE("FE"),
   
   UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
-  ResponseStatus(String value) {
+  EndPointRegions(String value) {
     this.value = value;
   }
 
@@ -55,13 +49,13 @@ public enum ResponseStatus {
   }
 
   @JsonCreator
-  public static ResponseStatus fromValue(String text) {
-    for (ResponseStatus b : ResponseStatus.values()) {
+  public static EndPointRegions fromValue(String text) {
+    for (EndPointRegions b : EndPointRegions.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }
     }
-    return ResponseStatus.UNKNOWN_TO_SDK_VERSION;
+    return EndPointRegions.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

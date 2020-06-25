@@ -476,6 +476,10 @@ public enum EventNameType {
   
   EFFECTSCONTROLLER_STATERECEIPTCHANGEREQUEST("EffectsController.StateReceiptChangeRequest"),
   
+  ALEXA_VIDEO_XRAY_SHOWDETAILSSUCCESSFUL("Alexa.Video.Xray.ShowDetailsSuccessful"),
+  
+  ALEXA_VIDEO_XRAY_SHOWDETAILSFAILED("Alexa.Video.Xray.ShowDetailsFailed"),
+  
   UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;

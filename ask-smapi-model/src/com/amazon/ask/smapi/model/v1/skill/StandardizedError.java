@@ -23,13 +23,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 
 @JsonDeserialize(builder = StandardizedError.Builder.class)
-public final class StandardizedError {
-
-    @JsonProperty("code")
-    private String code = null;
-
-    @JsonProperty("message")
-    private String message = null;
+public final class StandardizedError extends com.amazon.ask.smapi.model.v1.Error {
 
     @JsonProperty("validationDetails")
     private com.amazon.ask.smapi.model.v1.skill.ValidationDetails validationDetails = null;
@@ -39,56 +33,14 @@ public final class StandardizedError {
     }
 
     private StandardizedError(Builder builder) {
-        if (builder.code != null) {
-            this.code = builder.code;
-        }
-        if (builder.message != null) {
-            this.message = builder.message;
-        }
+        super(builder);
         if (builder.validationDetails != null) {
             this.validationDetails = builder.validationDetails;
         }
     }
 
     /**
-     * Standardized structure which wraps machine parsable and human readable information about an error.
-     *
-     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
-     * enumeration value will be returned. To directly return the raw String value, use getCodeAsString().
-     *
-     * @return code
-    **/
-    
-    public com.amazon.ask.smapi.model.v1.skill.StandardizedErrorCode getCode() {
-        return com.amazon.ask.smapi.model.v1.skill.StandardizedErrorCode.fromValue(code);
-    }
-
-    /**
-     * Get the underlying String value for code.
-     *
-     * Using this accessor will retrieve the raw underlying value, even if it is not
-     * present in the corresponding enumeration. For forward compatibility, it is recommended
-     * to use this approach over the enumeration.
-     *
-     * @return code as a String value
-    **/
-    @JsonProperty("code")
-    public String getCodeAsString() {
-      return code;
-    }
-
-    /**
-     * A standardized, human readable message generated from the error code and validation details in ViolationStructure by the AskStandardizedErrorUtil library.
-     * @return message
-    **/
-    @JsonProperty("message")
-    public String getMessage() {
-        return message;
-    }
-
-
-    /**
-     * Get validationDetails
+     * Standardized, machine readable structure that wraps all the information about a specific occurrence of an error of the type specified by the code.
      * @return validationDetails
     **/
     @JsonProperty("validationDetails")
@@ -106,14 +58,12 @@ public final class StandardizedError {
             return false;
         }
         StandardizedError v1SkillStandardizedError = (StandardizedError) o;
-        return Objects.equals(this.code, v1SkillStandardizedError.code) &&
-            Objects.equals(this.message, v1SkillStandardizedError.message) &&
-            Objects.equals(this.validationDetails, v1SkillStandardizedError.validationDetails);
+        return Objects.equals(this.validationDetails, v1SkillStandardizedError.validationDetails);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(code, message, validationDetails);
+        return Objects.hash(validationDetails);
     }
 
     @Override
@@ -121,8 +71,6 @@ public final class StandardizedError {
         StringBuilder sb = new StringBuilder();
         sb.append("class StandardizedError {\n");
         
-        sb.append("    code: ").append(toIndentedString(code)).append("\n");
-        sb.append("    message: ").append(toIndentedString(message)).append("\n");
         sb.append("    validationDetails: ").append(toIndentedString(validationDetails)).append("\n");
         sb.append("}");
         return sb.toString();
@@ -139,32 +87,10 @@ public final class StandardizedError {
         return o.toString().replace("\n", "\n    ");
     }
   
-    public static class Builder {
-        private String code;
-        private String message;
+    public static class Builder extends com.amazon.ask.smapi.model.v1.Error.Builder<Builder> {
         private com.amazon.ask.smapi.model.v1.skill.ValidationDetails validationDetails;
 
         private Builder() {}
-
-        @JsonProperty("code")
-        public Builder withCode(String code) {
-          this.code = code;
-          return this;
-        }
-
-        public Builder withCode(com.amazon.ask.smapi.model.v1.skill.StandardizedErrorCode code) {
-            this.code = code != null ? code.toString() : null;
-            return this;
-        }
-
-
-        @JsonProperty("message")
-
-        public Builder withMessage(String message) {
-            this.message = message;
-            return this;
-        }
-
 
         @JsonProperty("validationDetails")
 

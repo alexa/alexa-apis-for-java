@@ -60,6 +60,8 @@ public enum PermissionName {
   
   ALEXA_RAW_PERSON_ID_READ("alexa::raw_person_id:read"),
   
+  ALEXA_UTTERANCE_ID_READ("alexa::utterance_id:read"),
+  
   ALEXA_DEVICES_ALL_NOTIFICATIONS_WRITE("alexa::devices:all:notifications:write"),
   
   ALEXA_DEVICES_ALL_NOTIFICATIONS_URGENT_WRITE("alexa::devices:all:notifications:urgent:write"),

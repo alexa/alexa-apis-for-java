@@ -12,39 +12,39 @@
 */
 
 
-package com.amazon.ask.smapi.model.v1.skill;
+package com.amazon.ask.smapi.model.v1.skill.asr.evaluations;
 
 import java.util.Objects;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Structure for skill credentials response.
+ * PostAsrEvaluationsResponseObject
  */
 
-@JsonDeserialize(builder = SkillCredentials.Builder.class)
-public final class SkillCredentials {
+@JsonDeserialize(builder = PostAsrEvaluationsResponseObject.Builder.class)
+public final class PostAsrEvaluationsResponseObject {
 
-    @JsonProperty("skillMessagingCredentials")
-    private com.amazon.ask.smapi.model.v1.skill.SkillMessagingCredentials skillMessagingCredentials = null;
+    @JsonProperty("id")
+    private String id = null;
 
     public static Builder builder() {
         return new Builder();
     }
 
-    private SkillCredentials(Builder builder) {
-        if (builder.skillMessagingCredentials != null) {
-            this.skillMessagingCredentials = builder.skillMessagingCredentials;
+    private PostAsrEvaluationsResponseObject(Builder builder) {
+        if (builder.id != null) {
+            this.id = builder.id;
         }
     }
 
     /**
-     * Get skillMessagingCredentials
-     * @return skillMessagingCredentials
+     * ID used to retrieve the evaluation status/results later.
+     * @return id
     **/
-    @JsonProperty("skillMessagingCredentials")
-    public com.amazon.ask.smapi.model.v1.skill.SkillMessagingCredentials getSkillMessagingCredentials() {
-        return skillMessagingCredentials;
+    @JsonProperty("id")
+    public String getId() {
+        return id;
     }
 
 
@@ -56,21 +56,21 @@ public final class SkillCredentials {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        SkillCredentials v1SkillSkillCredentials = (SkillCredentials) o;
-        return Objects.equals(this.skillMessagingCredentials, v1SkillSkillCredentials.skillMessagingCredentials);
+        PostAsrEvaluationsResponseObject v1SkillAsrEvaluationsPostAsrEvaluationsResponseObject = (PostAsrEvaluationsResponseObject) o;
+        return Objects.equals(this.id, v1SkillAsrEvaluationsPostAsrEvaluationsResponseObject.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(skillMessagingCredentials);
+        return Objects.hash(id);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class SkillCredentials {\n");
+        sb.append("class PostAsrEvaluationsResponseObject {\n");
         
-        sb.append("    skillMessagingCredentials: ").append(toIndentedString(skillMessagingCredentials)).append("\n");
+        sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -87,20 +87,20 @@ public final class SkillCredentials {
     }
   
     public static class Builder {
-        private com.amazon.ask.smapi.model.v1.skill.SkillMessagingCredentials skillMessagingCredentials;
+        private String id;
 
         private Builder() {}
 
-        @JsonProperty("skillMessagingCredentials")
+        @JsonProperty("id")
 
-        public Builder withSkillMessagingCredentials(com.amazon.ask.smapi.model.v1.skill.SkillMessagingCredentials skillMessagingCredentials) {
-            this.skillMessagingCredentials = skillMessagingCredentials;
+        public Builder withId(String id) {
+            this.id = id;
             return this;
         }
 
 
-        public SkillCredentials build() {
-            return new SkillCredentials(this);
+        public PostAsrEvaluationsResponseObject build() {
+            return new PostAsrEvaluationsResponseObject(this);
         }
     }
 }

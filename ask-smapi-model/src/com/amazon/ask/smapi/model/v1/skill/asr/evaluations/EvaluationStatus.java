@@ -12,7 +12,7 @@
 */
 
 
-package com.amazon.ask.smapi.model.v1.skill;
+package com.amazon.ask.smapi.model.v1.skill.asr.evaluations;
 
 import java.util.Objects;
 
@@ -20,27 +20,21 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Status for a Response resource.
+ * Evaluation status:   * `IN_PROGRESS` - indicate the evaluation is in progress.   * `COMPLETED` - indicate the evaluation has been completed.   * `FAILED` - indicate the evaluation has run into an error. 
  */
-public enum ResponseStatus {
-  
-  FAILED("FAILED"),
+public enum EvaluationStatus {
   
   IN_PROGRESS("IN_PROGRESS"),
   
-  SUCCEEDED("SUCCEEDED"),
+  COMPLETED("COMPLETED"),
   
-  ROLLBACK_SUCCEEDED("ROLLBACK_SUCCEEDED"),
-  
-  ROLLBACK_FAILED("ROLLBACK_FAILED"),
-  
-  SKIPPED("SKIPPED"),
+  FAILED("FAILED"),
   
   UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
-  ResponseStatus(String value) {
+  EvaluationStatus(String value) {
     this.value = value;
   }
 
@@ -55,13 +49,13 @@ public enum ResponseStatus {
   }
 
   @JsonCreator
-  public static ResponseStatus fromValue(String text) {
-    for (ResponseStatus b : ResponseStatus.values()) {
+  public static EvaluationStatus fromValue(String text) {
+    for (EvaluationStatus b : EvaluationStatus.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }
     }
-    return ResponseStatus.UNKNOWN_TO_SDK_VERSION;
+    return EvaluationStatus.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

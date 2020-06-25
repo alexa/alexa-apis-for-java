@@ -12,39 +12,39 @@
 */
 
 
-package com.amazon.ask.smapi.model.v1.skill;
+package com.amazon.ask.smapi.model.v1.skill.invocations;
 
 import java.util.Objects;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Structure for skill credentials response.
+ * Metrics
  */
 
-@JsonDeserialize(builder = SkillCredentials.Builder.class)
-public final class SkillCredentials {
+@JsonDeserialize(builder = Metrics.Builder.class)
+public final class Metrics {
 
-    @JsonProperty("skillMessagingCredentials")
-    private com.amazon.ask.smapi.model.v1.skill.SkillMessagingCredentials skillMessagingCredentials = null;
+    @JsonProperty("skillExecutionTimeInMilliseconds")
+    private Integer skillExecutionTimeInMilliseconds = null;
 
     public static Builder builder() {
         return new Builder();
     }
 
-    private SkillCredentials(Builder builder) {
-        if (builder.skillMessagingCredentials != null) {
-            this.skillMessagingCredentials = builder.skillMessagingCredentials;
+    private Metrics(Builder builder) {
+        if (builder.skillExecutionTimeInMilliseconds != null) {
+            this.skillExecutionTimeInMilliseconds = builder.skillExecutionTimeInMilliseconds;
         }
     }
 
     /**
-     * Get skillMessagingCredentials
-     * @return skillMessagingCredentials
+     * How long, in milliseconds, it took the skill's Lambda or HTTPS endpoint to process the request. 
+     * @return skillExecutionTimeInMilliseconds
     **/
-    @JsonProperty("skillMessagingCredentials")
-    public com.amazon.ask.smapi.model.v1.skill.SkillMessagingCredentials getSkillMessagingCredentials() {
-        return skillMessagingCredentials;
+    @JsonProperty("skillExecutionTimeInMilliseconds")
+    public Integer getSkillExecutionTimeInMilliseconds() {
+        return skillExecutionTimeInMilliseconds;
     }
 
 
@@ -56,21 +56,21 @@ public final class SkillCredentials {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        SkillCredentials v1SkillSkillCredentials = (SkillCredentials) o;
-        return Objects.equals(this.skillMessagingCredentials, v1SkillSkillCredentials.skillMessagingCredentials);
+        Metrics v1SkillInvocationsMetrics = (Metrics) o;
+        return Objects.equals(this.skillExecutionTimeInMilliseconds, v1SkillInvocationsMetrics.skillExecutionTimeInMilliseconds);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(skillMessagingCredentials);
+        return Objects.hash(skillExecutionTimeInMilliseconds);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class SkillCredentials {\n");
+        sb.append("class Metrics {\n");
         
-        sb.append("    skillMessagingCredentials: ").append(toIndentedString(skillMessagingCredentials)).append("\n");
+        sb.append("    skillExecutionTimeInMilliseconds: ").append(toIndentedString(skillExecutionTimeInMilliseconds)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -87,20 +87,20 @@ public final class SkillCredentials {
     }
   
     public static class Builder {
-        private com.amazon.ask.smapi.model.v1.skill.SkillMessagingCredentials skillMessagingCredentials;
+        private Integer skillExecutionTimeInMilliseconds;
 
         private Builder() {}
 
-        @JsonProperty("skillMessagingCredentials")
+        @JsonProperty("skillExecutionTimeInMilliseconds")
 
-        public Builder withSkillMessagingCredentials(com.amazon.ask.smapi.model.v1.skill.SkillMessagingCredentials skillMessagingCredentials) {
-            this.skillMessagingCredentials = skillMessagingCredentials;
+        public Builder withSkillExecutionTimeInMilliseconds(Integer skillExecutionTimeInMilliseconds) {
+            this.skillExecutionTimeInMilliseconds = skillExecutionTimeInMilliseconds;
             return this;
         }
 
 
-        public SkillCredentials build() {
-            return new SkillCredentials(this);
+        public Metrics build() {
+            return new Metrics(this);
         }
     }
 }

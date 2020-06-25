@@ -20,27 +20,17 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Status for a Response resource.
+ * Format in which instance value is expected in.
  */
-public enum ResponseStatus {
+public enum Format {
   
-  FAILED("FAILED"),
-  
-  IN_PROGRESS("IN_PROGRESS"),
-  
-  SUCCEEDED("SUCCEEDED"),
-  
-  ROLLBACK_SUCCEEDED("ROLLBACK_SUCCEEDED"),
-  
-  ROLLBACK_FAILED("ROLLBACK_FAILED"),
-  
-  SKIPPED("SKIPPED"),
+  URI("URI"),
   
   UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
-  ResponseStatus(String value) {
+  Format(String value) {
     this.value = value;
   }
 
@@ -55,13 +45,13 @@ public enum ResponseStatus {
   }
 
   @JsonCreator
-  public static ResponseStatus fromValue(String text) {
-    for (ResponseStatus b : ResponseStatus.values()) {
+  public static Format fromValue(String text) {
+    for (Format b : Format.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }
     }
-    return ResponseStatus.UNKNOWN_TO_SDK_VERSION;
+    return Format.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

@@ -12,7 +12,7 @@
 */
 
 
-package com.amazon.ask.smapi.model.v1.skill;
+package com.amazon.ask.smapi.model.v1.skill.invocations;
 
 import java.util.Objects;
 
@@ -20,27 +20,19 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Status for a Response resource.
+ * String that specifies the status of skill invocation. Possible values are \"SUCCEEDED\", and \"FAILED\". 
  */
-public enum ResponseStatus {
-  
-  FAILED("FAILED"),
-  
-  IN_PROGRESS("IN_PROGRESS"),
+public enum InvocationResponseStatus {
   
   SUCCEEDED("SUCCEEDED"),
   
-  ROLLBACK_SUCCEEDED("ROLLBACK_SUCCEEDED"),
-  
-  ROLLBACK_FAILED("ROLLBACK_FAILED"),
-  
-  SKIPPED("SKIPPED"),
+  FAILED("FAILED"),
   
   UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
-  ResponseStatus(String value) {
+  InvocationResponseStatus(String value) {
     this.value = value;
   }
 
@@ -55,13 +47,13 @@ public enum ResponseStatus {
   }
 
   @JsonCreator
-  public static ResponseStatus fromValue(String text) {
-    for (ResponseStatus b : ResponseStatus.values()) {
+  public static InvocationResponseStatus fromValue(String text) {
+    for (InvocationResponseStatus b : InvocationResponseStatus.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }
     }
-    return ResponseStatus.UNKNOWN_TO_SDK_VERSION;
+    return InvocationResponseStatus.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

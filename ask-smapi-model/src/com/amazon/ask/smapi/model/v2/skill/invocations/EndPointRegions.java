@@ -30,6 +30,8 @@ public enum EndPointRegions {
   
   FE("FE"),
   
+  DEFAULT("default"),
+  
   UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;

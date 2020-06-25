@@ -20,27 +20,39 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Status for a Response resource.
+ * Enum for type of validation failure in the request.
  */
-public enum ResponseStatus {
+public enum ValidationFailureType {
   
-  FAILED("FAILED"),
+  RESOURCE_DOES_NOT_EXIST("RESOURCE_DOES_NOT_EXIST"),
   
-  IN_PROGRESS("IN_PROGRESS"),
+  RESOURCE_VERSION_DOES_NOT_MATCH("RESOURCE_VERSION_DOES_NOT_MATCH"),
   
-  SUCCEEDED("SUCCEEDED"),
+  MALFORMED_INPUT("MALFORMED_INPUT"),
   
-  ROLLBACK_SUCCEEDED("ROLLBACK_SUCCEEDED"),
+  EXPECTED_NOT_EMPTY_VALUE("EXPECTED_NOT_EMPTY_VALUE"),
   
-  ROLLBACK_FAILED("ROLLBACK_FAILED"),
+  INVALID_NUMBER_OF_OCCURENCES("INVALID_NUMBER_OF_OCCURENCES"),
   
-  SKIPPED("SKIPPED"),
+  INVALID_NUMBER_OF_PROPERTIES("INVALID_NUMBER_OF_PROPERTIES"),
+  
+  EXPECTED_ATLEAST_ONE_RELATED_INSTANCE("EXPECTED_ATLEAST_ONE_RELATED_INSTANCE"),
+  
+  EXPECTED_EXACTLY_ONE_RELATED_INSTANCE("EXPECTED_EXACTLY_ONE_RELATED_INSTANCE"),
+  
+  RESOURCE_LOCKED("RESOURCE_LOCKED"),
+  
+  UNEXPECTED_RESOURCE_STAGE("UNEXPECTED_RESOURCE_STAGE"),
+  
+  UNEXPECTED_RESOURCE_PROPERTY("UNEXPECTED_RESOURCE_PROPERTY"),
+  
+  MISSING_RESOURCE_PROPERTY("MISSING_RESOURCE_PROPERTY"),
   
   UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
-  ResponseStatus(String value) {
+  ValidationFailureType(String value) {
     this.value = value;
   }
 
@@ -55,13 +67,13 @@ public enum ResponseStatus {
   }
 
   @JsonCreator
-  public static ResponseStatus fromValue(String text) {
-    for (ResponseStatus b : ResponseStatus.values()) {
+  public static ValidationFailureType fromValue(String text) {
+    for (ValidationFailureType b : ValidationFailureType.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }
     }
-    return ResponseStatus.UNKNOWN_TO_SDK_VERSION;
+    return ValidationFailureType.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

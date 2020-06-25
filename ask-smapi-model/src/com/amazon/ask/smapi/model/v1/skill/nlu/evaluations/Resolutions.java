@@ -17,6 +17,7 @@ package com.amazon.ask.smapi.model.v1.skill.nlu.evaluations;
 import java.util.Objects;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;
@@ -29,7 +30,7 @@ import java.util.ArrayList;
 public final class Resolutions {
 
     @JsonProperty("resolutionsPerAuthority")
-    private List<com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.ResolutionsPerAuthority> resolutionsPerAuthority = new ArrayList<com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.ResolutionsPerAuthority>();
+    private List<Map<String, com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.ResolutionsPerAuthority>> resolutionsPerAuthority = new ArrayList<Map<String, com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.ResolutionsPerAuthority>>();
 
     public static Builder builder() {
         return new Builder();
@@ -46,7 +47,7 @@ public final class Resolutions {
      * @return resolutionsPerAuthority
     **/
     @JsonProperty("resolutionsPerAuthority")
-    public List<com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.ResolutionsPerAuthority> getResolutionsPerAuthority() {
+    public List<Map<String, com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.ResolutionsPerAuthority>> getResolutionsPerAuthority() {
         return resolutionsPerAuthority;
     }
 
@@ -90,20 +91,20 @@ public final class Resolutions {
     }
   
     public static class Builder {
-        private List<com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.ResolutionsPerAuthority> resolutionsPerAuthority;
+        private List<Map<String, com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.ResolutionsPerAuthority>> resolutionsPerAuthority;
 
         private Builder() {}
 
         @JsonProperty("resolutionsPerAuthority")
 
-        public Builder withResolutionsPerAuthority(List<com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.ResolutionsPerAuthority> resolutionsPerAuthority) {
+        public Builder withResolutionsPerAuthority(List<Map<String, com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.ResolutionsPerAuthority>> resolutionsPerAuthority) {
             this.resolutionsPerAuthority = resolutionsPerAuthority;
             return this;
         }
 
-        public Builder addResolutionsPerAuthorityItem(com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.ResolutionsPerAuthority resolutionsPerAuthorityItem) {
+        public Builder addResolutionsPerAuthorityItem(Map<String, com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.ResolutionsPerAuthority> resolutionsPerAuthorityItem) {
             if (this.resolutionsPerAuthority == null) {
-                this.resolutionsPerAuthority = new ArrayList<com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.ResolutionsPerAuthority>();
+                this.resolutionsPerAuthority = new ArrayList<Map<String, com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.ResolutionsPerAuthority>>();
             }
             this.resolutionsPerAuthority.add(resolutionsPerAuthorityItem);
             return this;
