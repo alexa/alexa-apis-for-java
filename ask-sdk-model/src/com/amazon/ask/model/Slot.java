@@ -104,7 +104,7 @@ public final class Slot {
     }
 
     /**
-     * Contains the results of entity resolution. These are organized by authority. An authority represents the source for the data provided for the slot. For a custom slot type, the authority is the slot type you defined.
+     * Contains the resultsof entity resolution. These are organized by authority. An authority represents the source for the data provided for the slot. For a custom slot type, the authority is the slot type you defined.
      * @return resolutions
     **/
     @JsonProperty("resolutions")
