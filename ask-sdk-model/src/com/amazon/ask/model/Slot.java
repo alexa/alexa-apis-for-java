@@ -37,6 +37,9 @@ public final class Slot {
     @JsonProperty("resolutions")
     private com.amazon.ask.model.slu.entityresolution.Resolutions resolutions = null;
 
+    @JsonProperty("slotValue")
+    private com.amazon.ask.model.SlotValue slotValue = null;
+
     public static Builder builder() {
         return new Builder();
     }
@@ -53,6 +56,9 @@ public final class Slot {
         }
         if (builder.resolutions != null) {
             this.resolutions = builder.resolutions;
+        }
+        if (builder.slotValue != null) {
+            this.slotValue = builder.slotValue;
         }
     }
 
@@ -113,6 +119,16 @@ public final class Slot {
     }
 
 
+    /**
+     * Object representing the value of the slot.
+     * @return slotValue
+    **/
+    @JsonProperty("slotValue")
+    public com.amazon.ask.model.SlotValue getSlotValue() {
+        return slotValue;
+    }
+
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -125,12 +141,13 @@ public final class Slot {
         return Objects.equals(this.name, slot.name) &&
             Objects.equals(this.value, slot.value) &&
             Objects.equals(this.confirmationStatus, slot.confirmationStatus) &&
-            Objects.equals(this.resolutions, slot.resolutions);
+            Objects.equals(this.resolutions, slot.resolutions) &&
+            Objects.equals(this.slotValue, slot.slotValue);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, value, confirmationStatus, resolutions);
+        return Objects.hash(name, value, confirmationStatus, resolutions, slotValue);
     }
 
     @Override
@@ -142,6 +159,7 @@ public final class Slot {
         sb.append("    value: ").append(toIndentedString(value)).append("\n");
         sb.append("    confirmationStatus: ").append(toIndentedString(confirmationStatus)).append("\n");
         sb.append("    resolutions: ").append(toIndentedString(resolutions)).append("\n");
+        sb.append("    slotValue: ").append(toIndentedString(slotValue)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -162,6 +180,7 @@ public final class Slot {
         private String value;
         private String confirmationStatus;
         private com.amazon.ask.model.slu.entityresolution.Resolutions resolutions;
+        private com.amazon.ask.model.SlotValue slotValue;
 
         private Builder() {}
 
@@ -197,6 +216,14 @@ public final class Slot {
 
         public Builder withResolutions(com.amazon.ask.model.slu.entityresolution.Resolutions resolutions) {
             this.resolutions = resolutions;
+            return this;
+        }
+
+
+        @JsonProperty("slotValue")
+
+        public Builder withSlotValue(com.amazon.ask.model.SlotValue slotValue) {
+            this.slotValue = slotValue;
             return this;
         }
 

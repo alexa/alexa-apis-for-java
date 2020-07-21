@@ -57,4 +57,19 @@ public interface UpsService {
 
     ApiResponse<String> callGetSystemTimeZone(String deviceId) throws ServiceException;
 
+
+    String getPersonsProfileGivenName() throws ServiceException;
+
+    ApiResponse<String> callGetPersonsProfileGivenName() throws ServiceException;
+
+
+    com.amazon.ask.model.services.ups.PhoneNumber getPersonsProfileMobileNumber() throws ServiceException;
+
+    ApiResponse<com.amazon.ask.model.services.ups.PhoneNumber> callGetPersonsProfileMobileNumber() throws ServiceException;
+
+
+    String getPersonsProfileName() throws ServiceException;
+
+    ApiResponse<String> callGetPersonsProfileName() throws ServiceException;
+
 }

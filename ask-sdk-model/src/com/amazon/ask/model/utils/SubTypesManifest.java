@@ -111,6 +111,16 @@ public class SubTypesManifest {
     requestSubTypes.put("PlaybackController.NextCommandIssued", com.amazon.ask.model.interfaces.playbackcontroller.NextCommandIssuedRequest.class);
     baseTypes.put(com.amazon.ask.model.Request.class, requestSubTypes);
 
+    Map<String, Class> slotValueSubTypes = new HashMap<>();
+    slotValueSubTypes.put("List", com.amazon.ask.model.ListSlotValue.class);
+    slotValueSubTypes.put("Simple", com.amazon.ask.model.SimpleSlotValue.class);
+    baseTypes.put(com.amazon.ask.model.SlotValue.class, slotValueSubTypes);
+
+    Map<String, Class> dynamicEndpointsBaseResponseSubTypes = new HashMap<>();
+    dynamicEndpointsBaseResponseSubTypes.put("SkillResponseFailureMessage", com.amazon.ask.model.dynamicEndpoints.FailureResponse.class);
+    dynamicEndpointsBaseResponseSubTypes.put("SkillResponseSuccessMessage", com.amazon.ask.model.dynamicEndpoints.SuccessResponse.class);
+    baseTypes.put(com.amazon.ask.model.dynamicEndpoints.BaseResponse.class, dynamicEndpointsBaseResponseSubTypes);
+
     Map<String, Class> interfacesAlexaPresentationAplAnimatedPropertySubTypes = new HashMap<>();
     interfacesAlexaPresentationAplAnimatedPropertySubTypes.put("opacity", com.amazon.ask.model.interfaces.alexa.presentation.apl.AnimatedOpacityProperty.class);
     interfacesAlexaPresentationAplAnimatedPropertySubTypes.put("transform", com.amazon.ask.model.interfaces.alexa.presentation.apl.AnimatedTransformProperty.class);

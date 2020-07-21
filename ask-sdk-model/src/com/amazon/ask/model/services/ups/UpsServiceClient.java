@@ -31,7 +31,7 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
   private final UserAgentHelper userAgentHelper;
   public UpsServiceClient(ApiConfiguration apiConfiguration) {
       super(apiConfiguration);
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.28.1").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.28.2").build();
   }
 
   /**
@@ -328,6 +328,129 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
    */
   public String getSystemTimeZone(String deviceId) throws ServiceException {
     return this.callGetSystemTimeZone(deviceId).getResponse();
+  }
+
+  /**
+   * 
+   * Gets the given name (first name) of the recognized speaker at person-level. Requires speaker consent at person-level for scopes: [alexa::profile:given_name:read] 
+   * @return String
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<String> callGetPersonsProfileGivenName() throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+    Map<String, String> pathParams = new HashMap<String, String>();
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
+    headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
+
+    String path = "/v2/persons/~current/profile/givenName";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(String.class, 200, "Successfully retrieved the requested information."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 204, "The query did not return any results."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 401, "The authentication token is malformed or invalid."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 403, "The authentication token does not have access to resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 429, "The skill has been throttled due to an excessive number of requests."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 0, "An unexpected error occurred."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null, String.class, false);
+  }
+
+  /**
+   * 
+   * Gets the given name (first name) of the recognized speaker at person-level. Requires speaker consent at person-level for scopes: [alexa::profile:given_name:read] 
+   * @return String
+   * @throws ServiceException if fails to make API call
+   */
+  public String getPersonsProfileGivenName() throws ServiceException {
+    return this.callGetPersonsProfileGivenName().getResponse();
+  }
+
+  /**
+   * 
+   * Gets the mobile phone number of the recognized speaker at person-level. Requires speaker consent at person-level for scopes: [alexa::profile:mobile_number:read] 
+   * @return com.amazon.ask.model.services.ups.PhoneNumber
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<com.amazon.ask.model.services.ups.PhoneNumber> callGetPersonsProfileMobileNumber() throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+    Map<String, String> pathParams = new HashMap<String, String>();
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
+    headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
+
+    String path = "/v2/persons/~current/profile/mobileNumber";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.PhoneNumber.class, 200, "Successfully retrieved the requested information."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 204, "The query did not return any results."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 401, "The authentication token is malformed or invalid."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 403, "The authentication token does not have access to resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 429, "The skill has been throttled due to an excessive number of requests."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 0, "An unexpected error occurred."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null, com.amazon.ask.model.services.ups.PhoneNumber.class, false);
+  }
+
+  /**
+   * 
+   * Gets the mobile phone number of the recognized speaker at person-level. Requires speaker consent at person-level for scopes: [alexa::profile:mobile_number:read] 
+   * @return com.amazon.ask.model.services.ups.PhoneNumber
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.model.services.ups.PhoneNumber getPersonsProfileMobileNumber() throws ServiceException {
+    return this.callGetPersonsProfileMobileNumber().getResponse();
+  }
+
+  /**
+   * 
+   * Gets the full name of the recognized speaker at person-level. Requires speaker consent at person-level for scopes: [alexa::profile:name:read] 
+   * @return String
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<String> callGetPersonsProfileName() throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+    Map<String, String> pathParams = new HashMap<String, String>();
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
+    headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
+
+    String path = "/v2/persons/~current/profile/name";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(String.class, 200, "Successfully retrieved the requested information."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 204, "The query did not return any results."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 401, "The authentication token is malformed or invalid."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 403, "The authentication token does not have access to resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 429, "The skill has been throttled due to an excessive number of requests."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.Error.class, 0, "An unexpected error occurred."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null, String.class, false);
+  }
+
+  /**
+   * 
+   * Gets the full name of the recognized speaker at person-level. Requires speaker consent at person-level for scopes: [alexa::profile:name:read] 
+   * @return String
+   * @throws ServiceException if fails to make API call
+   */
+  public String getPersonsProfileName() throws ServiceException {
+    return this.callGetPersonsProfileName().getResponse();
   }
 
 }
