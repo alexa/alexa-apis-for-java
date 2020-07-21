@@ -543,6 +543,16 @@ public interface SkillManagementService {
     ApiResponse<com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.EvaluateResponse> callCreateNLUEvaluationsV1(com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.EvaluateNLURequest evaluateNLURequest, String skillId) throws ServiceException;
 
 
+    com.amazon.ask.smapi.model.v1.skill.CreateRollbackResponse rollbackSkillV1(String skillId, com.amazon.ask.smapi.model.v1.skill.CreateRollbackRequest createRollbackRequest) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.CreateRollbackResponse> callRollbackSkillV1(String skillId, com.amazon.ask.smapi.model.v1.skill.CreateRollbackRequest createRollbackRequest) throws ServiceException;
+
+
+    com.amazon.ask.smapi.model.v1.skill.RollbackRequestStatus getRollbackForSkillV1(String skillId, String rollbackRequestId) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.RollbackRequestStatus> callGetRollbackForSkillV1(String skillId, String rollbackRequestId) throws ServiceException;
+
+
     com.amazon.ask.smapi.model.v1.skill.simulations.SimulationsApiResponse simulateSkillV1(String skillId, com.amazon.ask.smapi.model.v1.skill.simulations.SimulationsApiRequest simulationsApiRequest) throws ServiceException;
 
     ApiResponse<com.amazon.ask.smapi.model.v1.skill.simulations.SimulationsApiResponse> callSimulateSkillV1(String skillId, com.amazon.ask.smapi.model.v1.skill.simulations.SimulationsApiRequest simulationsApiRequest) throws ServiceException;
@@ -633,6 +643,16 @@ public interface SkillManagementService {
     ApiResponse<Void> callUpdateAccountLinkingInfoV1(String skillId, String stageV2, com.amazon.ask.smapi.model.v1.skill.accountLinking.AccountLinkingRequest accountLinkingRequest, String ifMatch) throws ServiceException;
 
 
+    void cloneLocaleV1(String skillId, String stageV2, com.amazon.ask.smapi.model.v1.skill.CloneLocaleRequest cloneLocaleRequest) throws ServiceException;
+
+    ApiResponse<Void> callCloneLocaleV1(String skillId, String stageV2, com.amazon.ask.smapi.model.v1.skill.CloneLocaleRequest cloneLocaleRequest) throws ServiceException;
+
+
+    com.amazon.ask.smapi.model.v1.skill.CloneLocaleStatusResponse getCloneLocaleStatusV1(String skillId, String stageV2, String cloneLocaleRequestId) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.CloneLocaleStatusResponse> callGetCloneLocaleStatusV1(String skillId, String stageV2, String cloneLocaleRequestId) throws ServiceException;
+
+
     com.amazon.ask.smapi.model.v1.skill.interactionModel.InteractionModelData getInteractionModelV1(String skillId, String stageV2, String locale) throws ServiceException;
 
     ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.InteractionModelData> callGetInteractionModelV1(String skillId, String stageV2, String locale) throws ServiceException;
@@ -686,6 +706,11 @@ public interface SkillManagementService {
     void submitSkillForCertificationV1(String skillId, com.amazon.ask.smapi.model.v1.skill.SubmitSkillForCertificationRequest submitSkillForCertificationRequest) throws ServiceException;
 
     ApiResponse<Void> callSubmitSkillForCertificationV1(String skillId, com.amazon.ask.smapi.model.v1.skill.SubmitSkillForCertificationRequest submitSkillForCertificationRequest) throws ServiceException;
+
+
+    com.amazon.ask.smapi.model.v1.skill.ListSkillVersionsResponse listVersionsForSkillV1(String skillId, String nextToken, BigDecimal maxResults) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.ListSkillVersionsResponse> callListVersionsForSkillV1(String skillId, String nextToken, BigDecimal maxResults) throws ServiceException;
 
 
     void withdrawSkillFromCertificationV1(String skillId, com.amazon.ask.smapi.model.v1.skill.WithdrawRequest withdrawRequest) throws ServiceException;

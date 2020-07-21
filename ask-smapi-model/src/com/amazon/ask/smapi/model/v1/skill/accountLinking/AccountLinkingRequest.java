@@ -61,6 +61,9 @@ public final class AccountLinkingRequest {
     @JsonProperty("redirectUrls")
     private List<String> redirectUrls = new ArrayList<String>();
 
+    @JsonProperty("authorizationUrlsByPlatform")
+    private List<com.amazon.ask.smapi.model.v1.skill.accountLinking.AccountLinkingPlatformAuthorizationUrl> authorizationUrlsByPlatform = new ArrayList<com.amazon.ask.smapi.model.v1.skill.accountLinking.AccountLinkingPlatformAuthorizationUrl>();
+
     public static Builder builder() {
         return new Builder();
     }
@@ -98,6 +101,9 @@ public final class AccountLinkingRequest {
         }
         if (builder.redirectUrls != null) {
             this.redirectUrls = builder.redirectUrls;
+        }
+        if (builder.authorizationUrlsByPlatform != null) {
+            this.authorizationUrlsByPlatform = builder.authorizationUrlsByPlatform;
         }
     }
 
@@ -245,6 +251,16 @@ public final class AccountLinkingRequest {
     }
 
 
+    /**
+     * The list of valid authorization urls for allowed platforms to initiate account linking.
+     * @return authorizationUrlsByPlatform
+    **/
+    @JsonProperty("authorizationUrlsByPlatform")
+    public List<com.amazon.ask.smapi.model.v1.skill.accountLinking.AccountLinkingPlatformAuthorizationUrl> getAuthorizationUrlsByPlatform() {
+        return authorizationUrlsByPlatform;
+    }
+
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -264,12 +280,13 @@ public final class AccountLinkingRequest {
             Objects.equals(this.accessTokenScheme, v1SkillAccountLinkingAccountLinkingRequest.accessTokenScheme) &&
             Objects.equals(this.defaultTokenExpirationInSeconds, v1SkillAccountLinkingAccountLinkingRequest.defaultTokenExpirationInSeconds) &&
             Objects.equals(this.reciprocalAccessTokenUrl, v1SkillAccountLinkingAccountLinkingRequest.reciprocalAccessTokenUrl) &&
-            Objects.equals(this.redirectUrls, v1SkillAccountLinkingAccountLinkingRequest.redirectUrls);
+            Objects.equals(this.redirectUrls, v1SkillAccountLinkingAccountLinkingRequest.redirectUrls) &&
+            Objects.equals(this.authorizationUrlsByPlatform, v1SkillAccountLinkingAccountLinkingRequest.authorizationUrlsByPlatform);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, authorizationUrl, domains, clientId, scopes, accessTokenUrl, clientSecret, accessTokenScheme, defaultTokenExpirationInSeconds, reciprocalAccessTokenUrl, redirectUrls);
+        return Objects.hash(type, authorizationUrl, domains, clientId, scopes, accessTokenUrl, clientSecret, accessTokenScheme, defaultTokenExpirationInSeconds, reciprocalAccessTokenUrl, redirectUrls, authorizationUrlsByPlatform);
     }
 
     @Override
@@ -288,6 +305,7 @@ public final class AccountLinkingRequest {
         sb.append("    defaultTokenExpirationInSeconds: ").append(toIndentedString(defaultTokenExpirationInSeconds)).append("\n");
         sb.append("    reciprocalAccessTokenUrl: ").append(toIndentedString(reciprocalAccessTokenUrl)).append("\n");
         sb.append("    redirectUrls: ").append(toIndentedString(redirectUrls)).append("\n");
+        sb.append("    authorizationUrlsByPlatform: ").append(toIndentedString(authorizationUrlsByPlatform)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -315,6 +333,7 @@ public final class AccountLinkingRequest {
         private Integer defaultTokenExpirationInSeconds;
         private String reciprocalAccessTokenUrl;
         private List<String> redirectUrls;
+        private List<com.amazon.ask.smapi.model.v1.skill.accountLinking.AccountLinkingPlatformAuthorizationUrl> authorizationUrlsByPlatform;
 
         private Builder() {}
 
@@ -432,6 +451,21 @@ public final class AccountLinkingRequest {
                 this.redirectUrls = new ArrayList<String>();
             }
             this.redirectUrls.add(redirectUrlsItem);
+            return this;
+        }
+
+        @JsonProperty("authorizationUrlsByPlatform")
+
+        public Builder withAuthorizationUrlsByPlatform(List<com.amazon.ask.smapi.model.v1.skill.accountLinking.AccountLinkingPlatformAuthorizationUrl> authorizationUrlsByPlatform) {
+            this.authorizationUrlsByPlatform = authorizationUrlsByPlatform;
+            return this;
+        }
+
+        public Builder addAuthorizationUrlsByPlatformItem(com.amazon.ask.smapi.model.v1.skill.accountLinking.AccountLinkingPlatformAuthorizationUrl authorizationUrlsByPlatformItem) {
+            if (this.authorizationUrlsByPlatform == null) {
+                this.authorizationUrlsByPlatform = new ArrayList<com.amazon.ask.smapi.model.v1.skill.accountLinking.AccountLinkingPlatformAuthorizationUrl>();
+            }
+            this.authorizationUrlsByPlatform.add(authorizationUrlsByPlatformItem);
             return this;
         }
 

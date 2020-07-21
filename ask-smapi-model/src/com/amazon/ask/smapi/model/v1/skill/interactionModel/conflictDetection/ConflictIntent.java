@@ -15,6 +15,9 @@
 package com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection;
 
 import java.util.Objects;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -29,7 +32,7 @@ public final class ConflictIntent {
     private String name = null;
 
     @JsonProperty("slots")
-    private com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.ConflictIntentSlots slots = null;
+    private Map<String, com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.ConflictIntentSlot> slots = new HashMap<String, com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.ConflictIntentSlot>();
 
     public static Builder builder() {
         return new Builder();
@@ -55,11 +58,11 @@ public final class ConflictIntent {
 
 
     /**
-     * Get slots
+     * List of conflict intent slots
      * @return slots
     **/
     @JsonProperty("slots")
-    public com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.ConflictIntentSlots getSlots() {
+    public Map<String, com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.ConflictIntentSlot> getSlots() {
         return slots;
     }
 
@@ -106,7 +109,7 @@ public final class ConflictIntent {
   
     public static class Builder {
         private String name;
-        private com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.ConflictIntentSlots slots;
+        private Map<String, com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.ConflictIntentSlot> slots;
 
         private Builder() {}
 
@@ -120,11 +123,18 @@ public final class ConflictIntent {
 
         @JsonProperty("slots")
 
-        public Builder withSlots(com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.ConflictIntentSlots slots) {
+        public Builder withSlots(Map<String, com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.ConflictIntentSlot> slots) {
             this.slots = slots;
             return this;
         }
 
+        public Builder putSlotsItem(String key, com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.ConflictIntentSlot slotsItem) {
+            if (this.slots == null) {
+                this.slots = new HashMap<String, com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.ConflictIntentSlot>();
+            }
+            this.slots.put(key, slotsItem);
+            return this;
+        }
 
         public ConflictIntent build() {
             return new ConflictIntent(this);

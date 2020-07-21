@@ -28,6 +28,9 @@ public final class SubmitSkillForCertificationRequest {
     @JsonProperty("publicationMethod")
     private String publicationMethod = null;
 
+    @JsonProperty("versionMessage")
+    private String versionMessage = null;
+
     public static Builder builder() {
         return new Builder();
     }
@@ -35,6 +38,9 @@ public final class SubmitSkillForCertificationRequest {
     private SubmitSkillForCertificationRequest(Builder builder) {
         if (builder.publicationMethod != null) {
             this.publicationMethod = builder.publicationMethod;
+        }
+        if (builder.versionMessage != null) {
+            this.versionMessage = builder.versionMessage;
         }
     }
 
@@ -65,6 +71,16 @@ public final class SubmitSkillForCertificationRequest {
       return publicationMethod;
     }
 
+    /**
+     * Description of the version (limited to 300 characters).
+     * @return versionMessage
+    **/
+    @JsonProperty("versionMessage")
+    public String getVersionMessage() {
+        return versionMessage;
+    }
+
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -74,12 +90,13 @@ public final class SubmitSkillForCertificationRequest {
             return false;
         }
         SubmitSkillForCertificationRequest v1SkillSubmitSkillForCertificationRequest = (SubmitSkillForCertificationRequest) o;
-        return Objects.equals(this.publicationMethod, v1SkillSubmitSkillForCertificationRequest.publicationMethod);
+        return Objects.equals(this.publicationMethod, v1SkillSubmitSkillForCertificationRequest.publicationMethod) &&
+            Objects.equals(this.versionMessage, v1SkillSubmitSkillForCertificationRequest.versionMessage);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(publicationMethod);
+        return Objects.hash(publicationMethod, versionMessage);
     }
 
     @Override
@@ -88,6 +105,7 @@ public final class SubmitSkillForCertificationRequest {
         sb.append("class SubmitSkillForCertificationRequest {\n");
         
         sb.append("    publicationMethod: ").append(toIndentedString(publicationMethod)).append("\n");
+        sb.append("    versionMessage: ").append(toIndentedString(versionMessage)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -105,6 +123,7 @@ public final class SubmitSkillForCertificationRequest {
   
     public static class Builder {
         private String publicationMethod;
+        private String versionMessage;
 
         private Builder() {}
 
@@ -116,6 +135,14 @@ public final class SubmitSkillForCertificationRequest {
 
         public Builder withPublicationMethod(com.amazon.ask.smapi.model.v1.skill.PublicationMethod publicationMethod) {
             this.publicationMethod = publicationMethod != null ? publicationMethod.toString() : null;
+            return this;
+        }
+
+
+        @JsonProperty("versionMessage")
+
+        public Builder withVersionMessage(String versionMessage) {
+            this.versionMessage = versionMessage;
             return this;
         }
 

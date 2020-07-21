@@ -34,6 +34,9 @@ public final class SlotDefinition {
     @JsonProperty("type")
     private String type = null;
 
+    @JsonProperty("multipleValues")
+    private com.amazon.ask.smapi.model.v1.skill.interactionModel.MultipleValuesConfig multipleValues = null;
+
     @JsonProperty("samples")
     private List<String> samples = new ArrayList<String>();
 
@@ -47,6 +50,9 @@ public final class SlotDefinition {
         }
         if (builder.type != null) {
             this.type = builder.type;
+        }
+        if (builder.multipleValues != null) {
+            this.multipleValues = builder.multipleValues;
         }
         if (builder.samples != null) {
             this.samples = builder.samples;
@@ -74,6 +80,16 @@ public final class SlotDefinition {
 
 
     /**
+     * Configuration object for multiple values capturing behavior for this slot.
+     * @return multipleValues
+    **/
+    @JsonProperty("multipleValues")
+    public com.amazon.ask.smapi.model.v1.skill.interactionModel.MultipleValuesConfig getMultipleValues() {
+        return multipleValues;
+    }
+
+
+    /**
      * Phrases the user can speak e.g. to trigger an intent or provide value for a slot elicitation.
      * @return samples
     **/
@@ -94,12 +110,13 @@ public final class SlotDefinition {
         SlotDefinition v1SkillInteractionModelSlotDefinition = (SlotDefinition) o;
         return Objects.equals(this.name, v1SkillInteractionModelSlotDefinition.name) &&
             Objects.equals(this.type, v1SkillInteractionModelSlotDefinition.type) &&
+            Objects.equals(this.multipleValues, v1SkillInteractionModelSlotDefinition.multipleValues) &&
             Objects.equals(this.samples, v1SkillInteractionModelSlotDefinition.samples);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, type, samples);
+        return Objects.hash(name, type, multipleValues, samples);
     }
 
     @Override
@@ -109,6 +126,7 @@ public final class SlotDefinition {
         
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    multipleValues: ").append(toIndentedString(multipleValues)).append("\n");
         sb.append("    samples: ").append(toIndentedString(samples)).append("\n");
         sb.append("}");
         return sb.toString();
@@ -128,6 +146,7 @@ public final class SlotDefinition {
     public static class Builder {
         private String name;
         private String type;
+        private com.amazon.ask.smapi.model.v1.skill.interactionModel.MultipleValuesConfig multipleValues;
         private List<String> samples;
 
         private Builder() {}
@@ -144,6 +163,14 @@ public final class SlotDefinition {
 
         public Builder withType(String type) {
             this.type = type;
+            return this;
+        }
+
+
+        @JsonProperty("multipleValues")
+
+        public Builder withMultipleValues(com.amazon.ask.smapi.model.v1.skill.interactionModel.MultipleValuesConfig multipleValues) {
+            this.multipleValues = multipleValues;
             return this;
         }
 
