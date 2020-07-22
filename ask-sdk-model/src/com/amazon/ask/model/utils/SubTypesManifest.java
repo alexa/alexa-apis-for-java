@@ -42,6 +42,7 @@ public class SubTypesManifest {
     directiveSubTypes.put("Dialog.ConfirmIntent", com.amazon.ask.model.dialog.ConfirmIntentDirective.class);
     directiveSubTypes.put("CustomInterfaceController.SendDirective", com.amazon.ask.model.interfaces.customInterfaceController.SendDirectiveDirective.class);
     directiveSubTypes.put("Alexa.Presentation.HTML.HandleMessage", com.amazon.ask.model.interfaces.alexa.presentation.html.HandleMessageDirective.class);
+    directiveSubTypes.put("Alexa.Presentation.APLA.RenderDocument", com.amazon.ask.model.interfaces.alexa.presentation.apla.RenderDocumentDirective.class);
     directiveSubTypes.put("Dialog.ElicitSlot", com.amazon.ask.model.dialog.ElicitSlotDirective.class);
     directiveSubTypes.put("Alexa.Presentation.HTML.Start", com.amazon.ask.model.interfaces.alexa.presentation.html.StartDirective.class);
     directiveSubTypes.put("AudioPlayer.Stop", com.amazon.ask.model.interfaces.audioplayer.StopDirective.class);
@@ -49,6 +50,7 @@ public class SubTypesManifest {
     directiveSubTypes.put("AudioPlayer.Play", com.amazon.ask.model.interfaces.audioplayer.PlayDirective.class);
     directiveSubTypes.put("Alexa.Presentation.APL.ExecuteCommands", com.amazon.ask.model.interfaces.alexa.presentation.apl.ExecuteCommandsDirective.class);
     directiveSubTypes.put("Display.RenderTemplate", com.amazon.ask.model.interfaces.display.RenderTemplateDirective.class);
+    directiveSubTypes.put("Dialog.DelegateRequest", com.amazon.ask.model.dialog.DelegateRequestDirective.class);
     directiveSubTypes.put("Hint", com.amazon.ask.model.interfaces.display.HintDirective.class);
     directiveSubTypes.put("Connections.StartConnection", com.amazon.ask.model.interfaces.connections.V1.StartConnectionDirective.class);
     directiveSubTypes.put("Alexa.Presentation.APLT.RenderDocument", com.amazon.ask.model.interfaces.alexa.presentation.aplt.RenderDocumentDirective.class);
@@ -99,7 +101,9 @@ public class SubTypesManifest {
     requestSubTypes.put("Reminders.ReminderUpdated", com.amazon.ask.model.services.reminderManagement.ReminderUpdatedEventRequest.class);
     requestSubTypes.put("Alexa.Presentation.APL.RuntimeError", com.amazon.ask.model.interfaces.alexa.presentation.apl.RuntimeErrorEvent.class);
     requestSubTypes.put("Alexa.Presentation.HTML.RuntimeError", com.amazon.ask.model.interfaces.alexa.presentation.html.RuntimeErrorRequest.class);
+    requestSubTypes.put("Dialog.InputRequest", com.amazon.ask.model.dialog.InputRequest.class);
     requestSubTypes.put("IntentRequest", com.amazon.ask.model.IntentRequest.class);
+    requestSubTypes.put("Dialog.API.Invoked", com.amazon.ask.model.interfaces.conversations.APIInvocationRequest.class);
     requestSubTypes.put("Reminders.ReminderStarted", com.amazon.ask.model.services.reminderManagement.ReminderStartedEventRequest.class);
     requestSubTypes.put("AudioPlayer.PlaybackStopped", com.amazon.ask.model.interfaces.audioplayer.PlaybackStoppedRequest.class);
     requestSubTypes.put("PlaybackController.PreviousCommandIssued", com.amazon.ask.model.interfaces.playbackcontroller.PreviousCommandIssuedRequest.class);
@@ -115,6 +119,11 @@ public class SubTypesManifest {
     slotValueSubTypes.put("List", com.amazon.ask.model.ListSlotValue.class);
     slotValueSubTypes.put("Simple", com.amazon.ask.model.SimpleSlotValue.class);
     baseTypes.put(com.amazon.ask.model.SlotValue.class, slotValueSubTypes);
+
+    Map<String, Class> dialogUpdatedRequestSubTypes = new HashMap<>();
+    dialogUpdatedRequestSubTypes.put("Dialog.InputRequest", com.amazon.ask.model.dialog.UpdatedInputRequest.class);
+    dialogUpdatedRequestSubTypes.put("IntentRequest", com.amazon.ask.model.dialog.UpdatedIntentRequest.class);
+    baseTypes.put(com.amazon.ask.model.dialog.UpdatedRequest.class, dialogUpdatedRequestSubTypes);
 
     Map<String, Class> dynamicEndpointsBaseResponseSubTypes = new HashMap<>();
     dynamicEndpointsBaseResponseSubTypes.put("SkillResponseFailureMessage", com.amazon.ask.model.dynamicEndpoints.FailureResponse.class);

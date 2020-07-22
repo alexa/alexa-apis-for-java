@@ -40,6 +40,9 @@ public final class Response {
     @JsonProperty("directives")
     private List<com.amazon.ask.model.Directive> directives = new ArrayList<com.amazon.ask.model.Directive>();
 
+    @JsonProperty("apiResponse")
+    private Object apiResponse = null;
+
     @JsonProperty("shouldEndSession")
     private Boolean shouldEndSession = null;
 
@@ -62,6 +65,9 @@ public final class Response {
         }
         if (builder.directives != null) {
             this.directives = builder.directives;
+        }
+        if (builder.apiResponse != null) {
+            this.apiResponse = builder.apiResponse;
         }
         if (builder.shouldEndSession != null) {
             this.shouldEndSession = builder.shouldEndSession;
@@ -112,6 +118,16 @@ public final class Response {
 
 
     /**
+     * API response object containing API response value(s)
+     * @return apiResponse
+    **/
+    @JsonProperty("apiResponse")
+    public Object getApiResponse() {
+        return apiResponse;
+    }
+
+
+    /**
      * Get shouldEndSession
      * @return shouldEndSession
     **/
@@ -144,13 +160,14 @@ public final class Response {
             Objects.equals(this.card, response.card) &&
             Objects.equals(this.reprompt, response.reprompt) &&
             Objects.equals(this.directives, response.directives) &&
+            Objects.equals(this.apiResponse, response.apiResponse) &&
             Objects.equals(this.shouldEndSession, response.shouldEndSession) &&
             Objects.equals(this.canFulfillIntent, response.canFulfillIntent);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(outputSpeech, card, reprompt, directives, shouldEndSession, canFulfillIntent);
+        return Objects.hash(outputSpeech, card, reprompt, directives, apiResponse, shouldEndSession, canFulfillIntent);
     }
 
     @Override
@@ -162,6 +179,7 @@ public final class Response {
         sb.append("    card: ").append(toIndentedString(card)).append("\n");
         sb.append("    reprompt: ").append(toIndentedString(reprompt)).append("\n");
         sb.append("    directives: ").append(toIndentedString(directives)).append("\n");
+        sb.append("    apiResponse: ").append(toIndentedString(apiResponse)).append("\n");
         sb.append("    shouldEndSession: ").append(toIndentedString(shouldEndSession)).append("\n");
         sb.append("    canFulfillIntent: ").append(toIndentedString(canFulfillIntent)).append("\n");
         sb.append("}");
@@ -184,6 +202,7 @@ public final class Response {
         private com.amazon.ask.model.ui.Card card;
         private com.amazon.ask.model.ui.Reprompt reprompt;
         private List<com.amazon.ask.model.Directive> directives;
+        private Object apiResponse;
         private Boolean shouldEndSession;
         private com.amazon.ask.model.canfulfill.CanFulfillIntent canFulfillIntent;
 
@@ -227,6 +246,14 @@ public final class Response {
             this.directives.add(directivesItem);
             return this;
         }
+
+        @JsonProperty("apiResponse")
+
+        public Builder withApiResponse(Object apiResponse) {
+            this.apiResponse = apiResponse;
+            return this;
+        }
+
 
         @JsonProperty("shouldEndSession")
 
