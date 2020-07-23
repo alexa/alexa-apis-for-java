@@ -29,7 +29,7 @@ public final class SimulationResult {
     private com.amazon.ask.smapi.model.v2.skill.simulations.AlexaExecutionInfo alexaExecutionInfo = null;
 
     @JsonProperty("skillExecutionInfo")
-    private com.amazon.ask.smapi.model.v2.skill.Invocation skillExecutionInfo = null;
+    private com.amazon.ask.smapi.model.v2.skill.simulations.SkillExecutionInfo skillExecutionInfo = null;
 
     @JsonProperty("error")
     private com.amazon.ask.smapi.model.v2.Error error = null;
@@ -65,7 +65,7 @@ public final class SimulationResult {
      * @return skillExecutionInfo
     **/
     @JsonProperty("skillExecutionInfo")
-    public com.amazon.ask.smapi.model.v2.skill.Invocation getSkillExecutionInfo() {
+    public com.amazon.ask.smapi.model.v2.skill.simulations.SkillExecutionInfo getSkillExecutionInfo() {
         return skillExecutionInfo;
     }
 
@@ -124,7 +124,7 @@ public final class SimulationResult {
   
     public static class Builder {
         private com.amazon.ask.smapi.model.v2.skill.simulations.AlexaExecutionInfo alexaExecutionInfo;
-        private com.amazon.ask.smapi.model.v2.skill.Invocation skillExecutionInfo;
+        private com.amazon.ask.smapi.model.v2.skill.simulations.SkillExecutionInfo skillExecutionInfo;
         private com.amazon.ask.smapi.model.v2.Error error;
 
         private Builder() {}
@@ -139,7 +139,7 @@ public final class SimulationResult {
 
         @JsonProperty("skillExecutionInfo")
 
-        public Builder withSkillExecutionInfo(com.amazon.ask.smapi.model.v2.skill.Invocation skillExecutionInfo) {
+        public Builder withSkillExecutionInfo(com.amazon.ask.smapi.model.v2.skill.simulations.SkillExecutionInfo skillExecutionInfo) {
             this.skillExecutionInfo = skillExecutionInfo;
             return this;
         }

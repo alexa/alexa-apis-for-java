@@ -20,17 +20,15 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Status for a locale clone request CloneLocale API initiates cloning from a source locale to all target locales.   * `IN_PROGRESS` status would indicate the clone is still in progress.   * `SUCCEEDED` status would indicate the source locale was cloned successfully to all target locales.   * `INELIGIBLE` status would indicate the source locale was ineligible to be cloned to all target locales.   * `MIXED` status would indicate the different status of clone on different locales, and individual target locale statues should be checked.   * `FAILED` status would indicate the source locale was not cloned all target locales successfully despite the request being eligible due to internal service issues.   * `ROLLBACK_SUCCEEDED` status would indicate the skill was rolled back to the previous state in case any failure.   * `ROLLBACK_FAILED` status would indicate that in case of failure, the rollback to the previous state of the skill was attempted, but it failed. 
+ * Status for a locale clone on a particular target locale   * `IN_PROGRESS` status would indicate the clone is still in progress to the target locale.   * `SUCCEEDED` status would indicate the source locale was cloned successfully to the target locale.   * `INELIGIBLE` status would indicate the source locale was ineligible to be cloned the target locale.   * `FAILED` status would indicate the source locale was not cloned the target locale successfully.   * `ROLLBACK_SUCCEEDED` status would indicate the locale was rolled back to the previous state in case any failure.   * `ROLLBACK_FAILED` status would indicate that in case of failure, the rollback to the previous state of the locale was attempted, but it failed. 
  */
-public enum CloneLocaleRequestStatus {
+public enum CloneLocaleStatus {
   
   FAILED("FAILED"),
   
   INELIGIBLE("INELIGIBLE"),
   
   IN_PROGRESS("IN_PROGRESS"),
-  
-  MIXED("MIXED"),
   
   ROLLBACK_FAILED("ROLLBACK_FAILED"),
   
@@ -42,7 +40,7 @@ public enum CloneLocaleRequestStatus {
 
   private String value;
 
-  CloneLocaleRequestStatus(String value) {
+  CloneLocaleStatus(String value) {
     this.value = value;
   }
 
@@ -57,13 +55,13 @@ public enum CloneLocaleRequestStatus {
   }
 
   @JsonCreator
-  public static CloneLocaleRequestStatus fromValue(String text) {
-    for (CloneLocaleRequestStatus b : CloneLocaleRequestStatus.values()) {
+  public static CloneLocaleStatus fromValue(String text) {
+    for (CloneLocaleStatus b : CloneLocaleStatus.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }
     }
-    return CloneLocaleRequestStatus.UNKNOWN_TO_SDK_VERSION;
+    return CloneLocaleStatus.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

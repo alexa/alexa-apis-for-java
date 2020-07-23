@@ -16,19 +16,17 @@ package com.amazon.ask.smapi.model.v1.skill;
 
 import java.util.Objects;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;
 
 /**
- * A mapping of statuses per locale detailing progress of resource or error if encountered.
+ * an object detailing the status of a locale clone request and if applicable the errors occurred when saving/building resources during clone process.
  */
 
-@JsonDeserialize(builder = CloneLocaleStatusResponse.Builder.class)
-public final class CloneLocaleStatusResponse {
+@JsonDeserialize(builder = CloneLocaleResourceStatus.Builder.class)
+public final class CloneLocaleResourceStatus {
 
     @JsonProperty("status")
     private String status = null;
@@ -36,28 +34,16 @@ public final class CloneLocaleStatusResponse {
     @JsonProperty("errors")
     private List<com.amazon.ask.smapi.model.v1.skill.StandardizedError> errors = new ArrayList<com.amazon.ask.smapi.model.v1.skill.StandardizedError>();
 
-    @JsonProperty("sourceLocale")
-    private String sourceLocale = null;
-
-    @JsonProperty("targetLocales")
-    private Map<String, com.amazon.ask.smapi.model.v1.skill.CloneLocaleResourceStatus> targetLocales = new HashMap<String, com.amazon.ask.smapi.model.v1.skill.CloneLocaleResourceStatus>();
-
     public static Builder builder() {
         return new Builder();
     }
 
-    private CloneLocaleStatusResponse(Builder builder) {
+    private CloneLocaleResourceStatus(Builder builder) {
         if (builder.status != null) {
             this.status = builder.status;
         }
         if (builder.errors != null) {
             this.errors = builder.errors;
-        }
-        if (builder.sourceLocale != null) {
-            this.sourceLocale = builder.sourceLocale;
-        }
-        if (builder.targetLocales != null) {
-            this.targetLocales = builder.targetLocales;
         }
     }
 
@@ -70,8 +56,8 @@ public final class CloneLocaleStatusResponse {
      * @return status
     **/
     
-    public com.amazon.ask.smapi.model.v1.skill.CloneLocaleRequestStatus getStatus() {
-        return com.amazon.ask.smapi.model.v1.skill.CloneLocaleRequestStatus.fromValue(status);
+    public com.amazon.ask.smapi.model.v1.skill.CloneLocaleStatus getStatus() {
+        return com.amazon.ask.smapi.model.v1.skill.CloneLocaleStatus.fromValue(status);
     }
 
     /**
@@ -98,26 +84,6 @@ public final class CloneLocaleStatusResponse {
     }
 
 
-    /**
-     * Source locale which is cloned to target locales.
-     * @return sourceLocale
-    **/
-    @JsonProperty("sourceLocale")
-    public String getSourceLocale() {
-        return sourceLocale;
-    }
-
-
-    /**
-     * Mapping of statuses per locale.
-     * @return targetLocales
-    **/
-    @JsonProperty("targetLocales")
-    public Map<String, com.amazon.ask.smapi.model.v1.skill.CloneLocaleResourceStatus> getTargetLocales() {
-        return targetLocales;
-    }
-
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -126,27 +92,23 @@ public final class CloneLocaleStatusResponse {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        CloneLocaleStatusResponse v1SkillCloneLocaleStatusResponse = (CloneLocaleStatusResponse) o;
-        return Objects.equals(this.status, v1SkillCloneLocaleStatusResponse.status) &&
-            Objects.equals(this.errors, v1SkillCloneLocaleStatusResponse.errors) &&
-            Objects.equals(this.sourceLocale, v1SkillCloneLocaleStatusResponse.sourceLocale) &&
-            Objects.equals(this.targetLocales, v1SkillCloneLocaleStatusResponse.targetLocales);
+        CloneLocaleResourceStatus v1SkillCloneLocaleResourceStatus = (CloneLocaleResourceStatus) o;
+        return Objects.equals(this.status, v1SkillCloneLocaleResourceStatus.status) &&
+            Objects.equals(this.errors, v1SkillCloneLocaleResourceStatus.errors);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(status, errors, sourceLocale, targetLocales);
+        return Objects.hash(status, errors);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class CloneLocaleStatusResponse {\n");
+        sb.append("class CloneLocaleResourceStatus {\n");
         
         sb.append("    status: ").append(toIndentedString(status)).append("\n");
         sb.append("    errors: ").append(toIndentedString(errors)).append("\n");
-        sb.append("    sourceLocale: ").append(toIndentedString(sourceLocale)).append("\n");
-        sb.append("    targetLocales: ").append(toIndentedString(targetLocales)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -165,8 +127,6 @@ public final class CloneLocaleStatusResponse {
     public static class Builder {
         private String status;
         private List<com.amazon.ask.smapi.model.v1.skill.StandardizedError> errors;
-        private String sourceLocale;
-        private Map<String, com.amazon.ask.smapi.model.v1.skill.CloneLocaleResourceStatus> targetLocales;
 
         private Builder() {}
 
@@ -176,7 +136,7 @@ public final class CloneLocaleStatusResponse {
           return this;
         }
 
-        public Builder withStatus(com.amazon.ask.smapi.model.v1.skill.CloneLocaleRequestStatus status) {
+        public Builder withStatus(com.amazon.ask.smapi.model.v1.skill.CloneLocaleStatus status) {
             this.status = status != null ? status.toString() : null;
             return this;
         }
@@ -197,31 +157,8 @@ public final class CloneLocaleStatusResponse {
             return this;
         }
 
-        @JsonProperty("sourceLocale")
-
-        public Builder withSourceLocale(String sourceLocale) {
-            this.sourceLocale = sourceLocale;
-            return this;
-        }
-
-
-        @JsonProperty("targetLocales")
-
-        public Builder withTargetLocales(Map<String, com.amazon.ask.smapi.model.v1.skill.CloneLocaleResourceStatus> targetLocales) {
-            this.targetLocales = targetLocales;
-            return this;
-        }
-
-        public Builder putTargetLocalesItem(String key, com.amazon.ask.smapi.model.v1.skill.CloneLocaleResourceStatus targetLocalesItem) {
-            if (this.targetLocales == null) {
-                this.targetLocales = new HashMap<String, com.amazon.ask.smapi.model.v1.skill.CloneLocaleResourceStatus>();
-            }
-            this.targetLocales.put(key, targetLocalesItem);
-            return this;
-        }
-
-        public CloneLocaleStatusResponse build() {
-            return new CloneLocaleStatusResponse(this);
+        public CloneLocaleResourceStatus build() {
+            return new CloneLocaleResourceStatus(this);
         }
     }
 }

@@ -19,7 +19,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * defines the response body when a rollback request is created
+ * Defines the response body when a rollback request is created
  */
 
 @JsonDeserialize(builder = CreateRollbackResponse.Builder.class)
@@ -39,7 +39,7 @@ public final class CreateRollbackResponse {
     }
 
     /**
-     * defines the identifier for a rollback request.
+     * Defines the identifier for a rollback request.
      * @return rollbackRequestId
     **/
     @JsonProperty("rollbackRequestId")
