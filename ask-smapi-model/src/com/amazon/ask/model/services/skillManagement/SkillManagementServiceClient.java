@@ -43,13 +43,13 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
                                     .withSerializer(apiConfiguration.getSerializer())
                                     .build())
           .build();
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.6.0").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.6.1").build();
   }
 
   public SkillManagementServiceClient(ApiConfiguration apiConfiguration, LwaClient lwaClient) {
       super(apiConfiguration);
       this.lwaClient = lwaClient;
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.6.0").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.6.1").build();
   }
 
   /**
@@ -5482,6 +5482,110 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    */
   public com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.EvaluateResponse createNLUEvaluationsV1(com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.EvaluateNLURequest evaluateNLURequest, String skillId) throws ServiceException {
     return this.callCreateNLUEvaluationsV1(evaluateNLURequest, skillId).getResponse();
+  }
+
+  /**
+   * 
+   * If the skill is in certified stage, initiate publishing immediately or set a date at which the skill can publish at. 
+   * @param skillId The skill ID. (required)
+   * @param acceptLanguage User&#39;s locale/language in context. (required)
+   * @param publishSkillRequest Defines the request body for publish skill API. (optional)
+   * @return com.amazon.ask.smapi.model.v1.skill.publication.SkillPublicationResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.publication.SkillPublicationResponse> callPublishSkillV1(String skillId, String acceptLanguage, com.amazon.ask.smapi.model.v1.skill.publication.PublishSkillRequest publishSkillRequest) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    if (acceptLanguage != null) {
+      headerParams.add(new Pair<String, String>("Accept-Language", acceptLanguage));
+    }
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String path = "/v1/skills/{skillId}/publications";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.publication.SkillPublicationResponse.class, 202, "Successfully processed skill publication request."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 500, "Internal Server Error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 503, "Service Unavailable."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, publishSkillRequest, com.amazon.ask.smapi.model.v1.skill.publication.SkillPublicationResponse.class, false);
+  }
+
+  /**
+   * 
+   * If the skill is in certified stage, initiate publishing immediately or set a date at which the skill can publish at. 
+   * @param skillId The skill ID. (required)
+   * @param acceptLanguage User&#39;s locale/language in context. (required)
+   * @param publishSkillRequest Defines the request body for publish skill API. (optional)
+   * @return com.amazon.ask.smapi.model.v1.skill.publication.SkillPublicationResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.smapi.model.v1.skill.publication.SkillPublicationResponse publishSkillV1(String skillId, String acceptLanguage, com.amazon.ask.smapi.model.v1.skill.publication.PublishSkillRequest publishSkillRequest) throws ServiceException {
+    return this.callPublishSkillV1(skillId, acceptLanguage, publishSkillRequest).getResponse();
+  }
+
+  /**
+   * 
+   * Retrieves the latest skill publishing details of the certified stage of the skill. The publishesAtDate and status of skill publishing. 
+   * @param skillId The skill ID. (required)
+   * @param acceptLanguage User&#39;s locale/language in context. (required)
+   * @return com.amazon.ask.smapi.model.v1.skill.publication.SkillPublicationResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.publication.SkillPublicationResponse> callGetSkillPublicationsV1(String skillId, String acceptLanguage) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    if (acceptLanguage != null) {
+      headerParams.add(new Pair<String, String>("Accept-Language", acceptLanguage));
+    }
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String path = "/v1/skills/{skillId}/publications/~latest";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.publication.SkillPublicationResponse.class, 200, "Successfully retrieved latest skill publication information."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 500, "Internal Server Error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 503, "Service Unavailable."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.publication.SkillPublicationResponse.class, false);
+  }
+
+  /**
+   * 
+   * Retrieves the latest skill publishing details of the certified stage of the skill. The publishesAtDate and status of skill publishing. 
+   * @param skillId The skill ID. (required)
+   * @param acceptLanguage User&#39;s locale/language in context. (required)
+   * @return com.amazon.ask.smapi.model.v1.skill.publication.SkillPublicationResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.smapi.model.v1.skill.publication.SkillPublicationResponse getSkillPublicationsV1(String skillId, String acceptLanguage) throws ServiceException {
+    return this.callGetSkillPublicationsV1(skillId, acceptLanguage).getResponse();
   }
 
   /**

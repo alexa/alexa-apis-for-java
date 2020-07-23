@@ -543,6 +543,16 @@ public interface SkillManagementService {
     ApiResponse<com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.EvaluateResponse> callCreateNLUEvaluationsV1(com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.EvaluateNLURequest evaluateNLURequest, String skillId) throws ServiceException;
 
 
+    com.amazon.ask.smapi.model.v1.skill.publication.SkillPublicationResponse publishSkillV1(String skillId, String acceptLanguage, com.amazon.ask.smapi.model.v1.skill.publication.PublishSkillRequest publishSkillRequest) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.publication.SkillPublicationResponse> callPublishSkillV1(String skillId, String acceptLanguage, com.amazon.ask.smapi.model.v1.skill.publication.PublishSkillRequest publishSkillRequest) throws ServiceException;
+
+
+    com.amazon.ask.smapi.model.v1.skill.publication.SkillPublicationResponse getSkillPublicationsV1(String skillId, String acceptLanguage) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.publication.SkillPublicationResponse> callGetSkillPublicationsV1(String skillId, String acceptLanguage) throws ServiceException;
+
+
     com.amazon.ask.smapi.model.v1.skill.CreateRollbackResponse rollbackSkillV1(String skillId, com.amazon.ask.smapi.model.v1.skill.CreateRollbackRequest createRollbackRequest) throws ServiceException;
 
     ApiResponse<com.amazon.ask.smapi.model.v1.skill.CreateRollbackResponse> callRollbackSkillV1(String skillId, com.amazon.ask.smapi.model.v1.skill.CreateRollbackRequest createRollbackRequest) throws ServiceException;
