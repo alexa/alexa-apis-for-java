@@ -19,7 +19,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * timestamp when the audio download url expire in ISO 8601 format
+ * Timestamp when the audio download url expire in ISO 8601 format
  */
 
 @JsonDeserialize(builder = AudioAssetDownloadUrlExpiryTime.Builder.class)

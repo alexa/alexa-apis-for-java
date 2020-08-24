@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;
 
 /**
- * This the payload schema for annotation set contents. Note that &#39;audioAsset&#39; is always included in the returned annotation set content payload in case the payload content type is &#39;application/json&#39;. For &#39;text/csv&#39; annotation set content type, &#39;audioAssetDownloadUrl&#39; and &#39;audioAssetDownloadUrlExpiryTime&#39; are included in the csv headers for representing the audio download url and the expiry time of the  presigned audio download url. 
+ * This is the payload schema for annotation set contents. Note that when uploadId and filePathInUpload is present, and the payload content type is &#39;application/json&#39;, audioAsset is included in the returned annotation set content payload. For &#39;text/csv&#39; annotation set content type, audioAssetDownloadUrl and audioAssetDownloadUrlExpiryTime are included in the csv headers for representing the audio download url and the expiry time of the presigned audio download. 
  */
 
 @JsonDeserialize(builder = GetAsrAnnotationSetAnnotationsResponse.Builder.class)

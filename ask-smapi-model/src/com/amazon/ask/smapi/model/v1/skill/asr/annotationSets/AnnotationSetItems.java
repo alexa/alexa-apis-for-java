@@ -35,6 +35,9 @@ public final class AnnotationSetItems {
     @JsonProperty("lastUpdatedTimestamp")
     private OffsetDateTime lastUpdatedTimestamp = null;
 
+    @JsonProperty("eligibleForEvaluation")
+    private Boolean eligibleForEvaluation = null;
+
     @JsonProperty("id")
     private String id = null;
 
@@ -51,6 +54,9 @@ public final class AnnotationSetItems {
         }
         if (builder.lastUpdatedTimestamp != null) {
             this.lastUpdatedTimestamp = builder.lastUpdatedTimestamp;
+        }
+        if (builder.eligibleForEvaluation != null) {
+            this.eligibleForEvaluation = builder.eligibleForEvaluation;
         }
         if (builder.id != null) {
             this.id = builder.id;
@@ -88,7 +94,17 @@ public final class AnnotationSetItems {
 
 
     /**
-     * annotation set id
+     * Indicates if the annotation set is eligible for evaluation. A set is not eligible for evaluation if any annotation within the set has a missing uploadId, filePathInUpload, expectedTranscription, or evaluationWeight.
+     * @return eligibleForEvaluation
+    **/
+    @JsonProperty("eligibleForEvaluation")
+    public Boolean getEligibleForEvaluation() {
+        return eligibleForEvaluation;
+    }
+
+
+    /**
+     * The Annotation set id
      * @return id
     **/
     @JsonProperty("id")
@@ -109,12 +125,13 @@ public final class AnnotationSetItems {
         return Objects.equals(this.name, v1SkillAsrAnnotationSetsAnnotationSetItems.name) &&
             Objects.equals(this.annotationCount, v1SkillAsrAnnotationSetsAnnotationSetItems.annotationCount) &&
             Objects.equals(this.lastUpdatedTimestamp, v1SkillAsrAnnotationSetsAnnotationSetItems.lastUpdatedTimestamp) &&
+            Objects.equals(this.eligibleForEvaluation, v1SkillAsrAnnotationSetsAnnotationSetItems.eligibleForEvaluation) &&
             Objects.equals(this.id, v1SkillAsrAnnotationSetsAnnotationSetItems.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, annotationCount, lastUpdatedTimestamp, id);
+        return Objects.hash(name, annotationCount, lastUpdatedTimestamp, eligibleForEvaluation, id);
     }
 
     @Override
@@ -125,6 +142,7 @@ public final class AnnotationSetItems {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    annotationCount: ").append(toIndentedString(annotationCount)).append("\n");
         sb.append("    lastUpdatedTimestamp: ").append(toIndentedString(lastUpdatedTimestamp)).append("\n");
+        sb.append("    eligibleForEvaluation: ").append(toIndentedString(eligibleForEvaluation)).append("\n");
         sb.append("    id: ").append(toIndentedString(id)).append("\n");
         sb.append("}");
         return sb.toString();
@@ -145,6 +163,7 @@ public final class AnnotationSetItems {
         private String name;
         private Integer annotationCount;
         private OffsetDateTime lastUpdatedTimestamp;
+        private Boolean eligibleForEvaluation;
         private String id;
 
         private Builder() {}
@@ -169,6 +188,14 @@ public final class AnnotationSetItems {
 
         public Builder withLastUpdatedTimestamp(OffsetDateTime lastUpdatedTimestamp) {
             this.lastUpdatedTimestamp = lastUpdatedTimestamp;
+            return this;
+        }
+
+
+        @JsonProperty("eligibleForEvaluation")
+
+        public Builder withEligibleForEvaluation(Boolean eligibleForEvaluation) {
+            this.eligibleForEvaluation = eligibleForEvaluation;
             return this;
         }
 

@@ -35,6 +35,9 @@ public final class GetASRAnnotationSetsPropertiesResponse {
     @JsonProperty("lastUpdatedTimestamp")
     private OffsetDateTime lastUpdatedTimestamp = null;
 
+    @JsonProperty("eligibleForEvaluation")
+    private Boolean eligibleForEvaluation = null;
+
     public static Builder builder() {
         return new Builder();
     }
@@ -48,6 +51,9 @@ public final class GetASRAnnotationSetsPropertiesResponse {
         }
         if (builder.lastUpdatedTimestamp != null) {
             this.lastUpdatedTimestamp = builder.lastUpdatedTimestamp;
+        }
+        if (builder.eligibleForEvaluation != null) {
+            this.eligibleForEvaluation = builder.eligibleForEvaluation;
         }
     }
 
@@ -81,6 +87,16 @@ public final class GetASRAnnotationSetsPropertiesResponse {
     }
 
 
+    /**
+     * Indicates if the annotation set is eligible for evaluation. A set is not eligible for evaluation if any annotation within the set has a missing uploadId, filePathInUpload, expectedTranscription, or evaluationWeight.
+     * @return eligibleForEvaluation
+    **/
+    @JsonProperty("eligibleForEvaluation")
+    public Boolean getEligibleForEvaluation() {
+        return eligibleForEvaluation;
+    }
+
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -92,12 +108,13 @@ public final class GetASRAnnotationSetsPropertiesResponse {
         GetASRAnnotationSetsPropertiesResponse v1SkillAsrAnnotationSetsGetASRAnnotationSetsPropertiesResponse = (GetASRAnnotationSetsPropertiesResponse) o;
         return Objects.equals(this.name, v1SkillAsrAnnotationSetsGetASRAnnotationSetsPropertiesResponse.name) &&
             Objects.equals(this.annotationCount, v1SkillAsrAnnotationSetsGetASRAnnotationSetsPropertiesResponse.annotationCount) &&
-            Objects.equals(this.lastUpdatedTimestamp, v1SkillAsrAnnotationSetsGetASRAnnotationSetsPropertiesResponse.lastUpdatedTimestamp);
+            Objects.equals(this.lastUpdatedTimestamp, v1SkillAsrAnnotationSetsGetASRAnnotationSetsPropertiesResponse.lastUpdatedTimestamp) &&
+            Objects.equals(this.eligibleForEvaluation, v1SkillAsrAnnotationSetsGetASRAnnotationSetsPropertiesResponse.eligibleForEvaluation);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, annotationCount, lastUpdatedTimestamp);
+        return Objects.hash(name, annotationCount, lastUpdatedTimestamp, eligibleForEvaluation);
     }
 
     @Override
@@ -108,6 +125,7 @@ public final class GetASRAnnotationSetsPropertiesResponse {
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    annotationCount: ").append(toIndentedString(annotationCount)).append("\n");
         sb.append("    lastUpdatedTimestamp: ").append(toIndentedString(lastUpdatedTimestamp)).append("\n");
+        sb.append("    eligibleForEvaluation: ").append(toIndentedString(eligibleForEvaluation)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -127,6 +145,7 @@ public final class GetASRAnnotationSetsPropertiesResponse {
         private String name;
         private Integer annotationCount;
         private OffsetDateTime lastUpdatedTimestamp;
+        private Boolean eligibleForEvaluation;
 
         private Builder() {}
 
@@ -150,6 +169,14 @@ public final class GetASRAnnotationSetsPropertiesResponse {
 
         public Builder withLastUpdatedTimestamp(OffsetDateTime lastUpdatedTimestamp) {
             this.lastUpdatedTimestamp = lastUpdatedTimestamp;
+            return this;
+        }
+
+
+        @JsonProperty("eligibleForEvaluation")
+
+        public Builder withEligibleForEvaluation(Boolean eligibleForEvaluation) {
+            this.eligibleForEvaluation = eligibleForEvaluation;
             return this;
         }
 
