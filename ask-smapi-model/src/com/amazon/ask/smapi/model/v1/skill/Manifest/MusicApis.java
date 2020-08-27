@@ -40,7 +40,7 @@ public final class MusicApis {
     private List<com.amazon.ask.smapi.model.v1.skill.Manifest.MusicCapability> capabilities = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.MusicCapability>();
 
     @JsonProperty("interfaces")
-    private com.amazon.ask.smapi.model.v1.skill.Manifest.MusicInterfaces interfaces = null;
+    private List<com.amazon.ask.smapi.model.v1.skill.Manifest.MusicInterfaces> interfaces = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.MusicInterfaces>();
 
     @JsonProperty("locales")
     private Map<String, com.amazon.ask.smapi.model.v1.skill.Manifest.LocalizedMusicInfo> locales = new HashMap<String, com.amazon.ask.smapi.model.v1.skill.Manifest.LocalizedMusicInfo>();
@@ -104,11 +104,11 @@ public final class MusicApis {
 
 
     /**
-     * Get interfaces
+     * A list of music skill interfaces that your skill supports.
      * @return interfaces
     **/
     @JsonProperty("interfaces")
-    public com.amazon.ask.smapi.model.v1.skill.Manifest.MusicInterfaces getInterfaces() {
+    public List<com.amazon.ask.smapi.model.v1.skill.Manifest.MusicInterfaces> getInterfaces() {
         return interfaces;
     }
 
@@ -185,7 +185,7 @@ public final class MusicApis {
         private Map<String, com.amazon.ask.smapi.model.v1.skill.Manifest.LambdaRegion> regions;
         private com.amazon.ask.smapi.model.v1.skill.Manifest.LambdaEndpoint endpoint;
         private List<com.amazon.ask.smapi.model.v1.skill.Manifest.MusicCapability> capabilities;
-        private com.amazon.ask.smapi.model.v1.skill.Manifest.MusicInterfaces interfaces;
+        private List<com.amazon.ask.smapi.model.v1.skill.Manifest.MusicInterfaces> interfaces;
         private Map<String, com.amazon.ask.smapi.model.v1.skill.Manifest.LocalizedMusicInfo> locales;
         private List<com.amazon.ask.smapi.model.v1.skill.Manifest.MusicContentType> contentTypes;
 
@@ -231,11 +231,18 @@ public final class MusicApis {
 
         @JsonProperty("interfaces")
 
-        public Builder withInterfaces(com.amazon.ask.smapi.model.v1.skill.Manifest.MusicInterfaces interfaces) {
+        public Builder withInterfaces(List<com.amazon.ask.smapi.model.v1.skill.Manifest.MusicInterfaces> interfaces) {
             this.interfaces = interfaces;
             return this;
         }
 
+        public Builder addInterfacesItem(com.amazon.ask.smapi.model.v1.skill.Manifest.MusicInterfaces interfacesItem) {
+            if (this.interfaces == null) {
+                this.interfaces = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.MusicInterfaces>();
+            }
+            this.interfaces.add(interfacesItem);
+            return this;
+        }
 
         @JsonProperty("locales")
 

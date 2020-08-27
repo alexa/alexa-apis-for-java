@@ -22,6 +22,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * Error
  */
 
+@JsonDeserialize(builder = Error.Builder.class)
 public class Error {
 
     @JsonProperty("code")
