@@ -20,7 +20,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * The RuntimeError request occurs when the device software encounters an error with loading a skill&#39;s web application. To use this request, [apply to participate](https://build.amazonalexadev.com/AlexaWebAPIforGamesDeveloperPreview_AlexaWebAPIforGames.html) in the Alexa Web API for Games developer preview. 
+ * The RuntimeError request occurs when the device software encounters an error with loading a skill&#39;s web application. 
  */
 
 @JsonDeserialize(builder = RuntimeErrorRequest.Builder.class)

@@ -39,7 +39,7 @@ public final class Permission {
     }
 
     /**
-     * Get scope
+     * The value representing the permission scope. 
      * @return scope
     **/
     @JsonProperty("scope")

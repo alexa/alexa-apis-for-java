@@ -31,6 +31,9 @@ public final class PermissionBody {
     @JsonProperty("acceptedPermissions")
     private List<com.amazon.ask.model.events.skillevents.Permission> acceptedPermissions = new ArrayList<com.amazon.ask.model.events.skillevents.Permission>();
 
+    @JsonProperty("acceptedPersonPermissions")
+    private List<com.amazon.ask.model.events.skillevents.Permission> acceptedPersonPermissions = new ArrayList<com.amazon.ask.model.events.skillevents.Permission>();
+
     public static Builder builder() {
         return new Builder();
     }
@@ -39,15 +42,28 @@ public final class PermissionBody {
         if (builder.acceptedPermissions != null) {
             this.acceptedPermissions = builder.acceptedPermissions;
         }
+        if (builder.acceptedPersonPermissions != null) {
+            this.acceptedPersonPermissions = builder.acceptedPersonPermissions;
+        }
     }
 
     /**
-     * Get acceptedPermissions
+     * The current list of permissions consented to on the account level. It can be an empty list if there are no account level permissions consented to. 
      * @return acceptedPermissions
     **/
     @JsonProperty("acceptedPermissions")
     public List<com.amazon.ask.model.events.skillevents.Permission> getAcceptedPermissions() {
         return acceptedPermissions;
+    }
+
+
+    /**
+     * The current list of permissions consented to on the person level. This is only present if the request contains the ```person``` object. It can be an empty list if there are no person level permissions consented to. 
+     * @return acceptedPersonPermissions
+    **/
+    @JsonProperty("acceptedPersonPermissions")
+    public List<com.amazon.ask.model.events.skillevents.Permission> getAcceptedPersonPermissions() {
+        return acceptedPersonPermissions;
     }
 
 
@@ -60,12 +76,13 @@ public final class PermissionBody {
             return false;
         }
         PermissionBody eventsSkilleventsPermissionBody = (PermissionBody) o;
-        return Objects.equals(this.acceptedPermissions, eventsSkilleventsPermissionBody.acceptedPermissions);
+        return Objects.equals(this.acceptedPermissions, eventsSkilleventsPermissionBody.acceptedPermissions) &&
+            Objects.equals(this.acceptedPersonPermissions, eventsSkilleventsPermissionBody.acceptedPersonPermissions);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(acceptedPermissions);
+        return Objects.hash(acceptedPermissions, acceptedPersonPermissions);
     }
 
     @Override
@@ -74,6 +91,7 @@ public final class PermissionBody {
         sb.append("class PermissionBody {\n");
         
         sb.append("    acceptedPermissions: ").append(toIndentedString(acceptedPermissions)).append("\n");
+        sb.append("    acceptedPersonPermissions: ").append(toIndentedString(acceptedPersonPermissions)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -91,6 +109,7 @@ public final class PermissionBody {
   
     public static class Builder {
         private List<com.amazon.ask.model.events.skillevents.Permission> acceptedPermissions;
+        private List<com.amazon.ask.model.events.skillevents.Permission> acceptedPersonPermissions;
 
         private Builder() {}
 
@@ -106,6 +125,21 @@ public final class PermissionBody {
                 this.acceptedPermissions = new ArrayList<com.amazon.ask.model.events.skillevents.Permission>();
             }
             this.acceptedPermissions.add(acceptedPermissionsItem);
+            return this;
+        }
+
+        @JsonProperty("acceptedPersonPermissions")
+
+        public Builder withAcceptedPersonPermissions(List<com.amazon.ask.model.events.skillevents.Permission> acceptedPersonPermissions) {
+            this.acceptedPersonPermissions = acceptedPersonPermissions;
+            return this;
+        }
+
+        public Builder addAcceptedPersonPermissionsItem(com.amazon.ask.model.events.skillevents.Permission acceptedPersonPermissionsItem) {
+            if (this.acceptedPersonPermissions == null) {
+                this.acceptedPersonPermissions = new ArrayList<com.amazon.ask.model.events.skillevents.Permission>();
+            }
+            this.acceptedPersonPermissions.add(acceptedPersonPermissionsItem);
             return this;
         }
 

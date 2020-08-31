@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;
 
 /**
- * The HandleMessage directive sends a message to a skill&#39;s web application that runs on the device browser. To use this directive, [apply to participate](https://build.amazonalexadev.com/AlexaWebAPIforGamesDeveloperPreview_AlexaWebAPIforGames.html) in the Alexa Web API for Games developer preview. 
+ * The HandleMessage directive sends a message to a skill&#39;s web application that runs on the device browser. 
  */
 
 @JsonDeserialize(builder = HandleMessageDirective.Builder.class)

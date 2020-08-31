@@ -20,7 +20,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * This event indicates a customer subscription to receive events from your skill and contains information for that user. You need this information to know the userId in order to send events to individual users. Note that these events can arrive out of order, so ensure that your skill service uses the timestamp in the event to correctly record the latest subscription state for a customer. 
+ * This event indicates a customer subscription to receive events from your skill and contains information for that user and person, if recognized. You need this information to know the userId and personId in order to send events to individual users. Note that these events can arrive out of order, so ensure that your skill service uses the timestamp in the event to correctly record the latest subscription state for a customer. 
  */
 
 @JsonDeserialize(builder = ProactiveSubscriptionChangedRequest.Builder.class)

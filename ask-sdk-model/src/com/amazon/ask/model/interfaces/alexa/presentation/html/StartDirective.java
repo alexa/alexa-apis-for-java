@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;
 
 /**
- * The Start directive provides the data necessary to load an HTML page on the target device. To use this directive, [apply to participate](https://build.amazonalexadev.com/AlexaWebAPIforGamesDeveloperPreview_AlexaWebAPIforGames.html) in the Alexa Web API for Games developer preview. 
+ * The Start directive provides the data necessary to load an HTML page on the target device. 
  */
 
 @JsonDeserialize(builder = StartDirective.Builder.class)
