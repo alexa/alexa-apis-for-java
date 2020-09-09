@@ -33,7 +33,7 @@ public class MonetizationServiceClient extends BaseServiceClient implements Mone
   private final UserAgentHelper userAgentHelper;
   public MonetizationServiceClient(ApiConfiguration apiConfiguration) {
       super(apiConfiguration);
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.31.0").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.32.0").build();
   }
 
   /**

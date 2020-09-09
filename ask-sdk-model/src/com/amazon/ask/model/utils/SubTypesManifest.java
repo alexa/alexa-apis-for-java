@@ -79,6 +79,7 @@ public class SubTypesManifest {
     requestSubTypes.put("CustomInterfaceController.Expired", com.amazon.ask.model.interfaces.customInterfaceController.ExpiredRequest.class);
     requestSubTypes.put("Alexa.Presentation.HTML.Message", com.amazon.ask.model.interfaces.alexa.presentation.html.MessageRequest.class);
     requestSubTypes.put("LaunchRequest", com.amazon.ask.model.LaunchRequest.class);
+    requestSubTypes.put("Alexa.Authorization.Grant", com.amazon.ask.model.authorization.AuthorizationGrantRequest.class);
     requestSubTypes.put("Reminders.ReminderCreated", com.amazon.ask.model.services.reminderManagement.ReminderCreatedEventRequest.class);
     requestSubTypes.put("Alexa.Presentation.APLT.UserEvent", com.amazon.ask.model.interfaces.alexa.presentation.aplt.UserEvent.class);
     requestSubTypes.put("AlexaHouseholdListEvent.ItemsUpdated", com.amazon.ask.model.services.listManagement.ListItemsUpdatedEventRequest.class);

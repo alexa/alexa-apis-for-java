@@ -31,6 +31,9 @@ public final class StartConnectionDirective extends com.amazon.ask.model.Directi
     @JsonProperty("uri")
     private String uri = null;
 
+    @JsonProperty("onCompletion")
+    private com.amazon.ask.model.interfaces.connections.OnCompletion onCompletion = null;
+
     @JsonProperty("input")
     private Map<String, Object> input = new HashMap<String, Object>();
 
@@ -48,6 +51,9 @@ public final class StartConnectionDirective extends com.amazon.ask.model.Directi
         if (builder.uri != null) {
             this.uri = builder.uri;
         }
+        if (builder.onCompletion != null) {
+            this.onCompletion = builder.onCompletion;
+        }
         if (builder.input != null) {
             this.input = builder.input;
         }
@@ -63,6 +69,16 @@ public final class StartConnectionDirective extends com.amazon.ask.model.Directi
     @JsonProperty("uri")
     public String getUri() {
         return uri;
+    }
+
+
+    /**
+     * Get onCompletion
+     * @return onCompletion
+    **/
+    @JsonProperty("onCompletion")
+    public com.amazon.ask.model.interfaces.connections.OnCompletion getOnCompletion() {
+        return onCompletion;
     }
 
 
@@ -96,6 +112,7 @@ public final class StartConnectionDirective extends com.amazon.ask.model.Directi
         }
         StartConnectionDirective interfacesConnectionsV1StartConnectionDirective = (StartConnectionDirective) o;
         return Objects.equals(this.uri, interfacesConnectionsV1StartConnectionDirective.uri) &&
+            Objects.equals(this.onCompletion, interfacesConnectionsV1StartConnectionDirective.onCompletion) &&
             Objects.equals(this.input, interfacesConnectionsV1StartConnectionDirective.input) &&
             Objects.equals(this.token, interfacesConnectionsV1StartConnectionDirective.token) &&
             super.equals(o);
@@ -103,7 +120,7 @@ public final class StartConnectionDirective extends com.amazon.ask.model.Directi
 
     @Override
     public int hashCode() {
-        return Objects.hash(uri, input, token, super.hashCode());
+        return Objects.hash(uri, onCompletion, input, token, super.hashCode());
     }
 
     @Override
@@ -112,6 +129,7 @@ public final class StartConnectionDirective extends com.amazon.ask.model.Directi
         sb.append("class StartConnectionDirective {\n");
         sb.append("    ").append(toIndentedString(super.toString())).append("\n");
         sb.append("    uri: ").append(toIndentedString(uri)).append("\n");
+        sb.append("    onCompletion: ").append(toIndentedString(onCompletion)).append("\n");
         sb.append("    input: ").append(toIndentedString(input)).append("\n");
         sb.append("    token: ").append(toIndentedString(token)).append("\n");
         sb.append("}");
@@ -131,6 +149,7 @@ public final class StartConnectionDirective extends com.amazon.ask.model.Directi
   
     public static class Builder {
         private String uri;
+        private com.amazon.ask.model.interfaces.connections.OnCompletion onCompletion;
         private Map<String, Object> input;
         private String token;
 
@@ -140,6 +159,14 @@ public final class StartConnectionDirective extends com.amazon.ask.model.Directi
 
         public Builder withUri(String uri) {
             this.uri = uri;
+            return this;
+        }
+
+
+        @JsonProperty("onCompletion")
+
+        public Builder withOnCompletion(com.amazon.ask.model.interfaces.connections.OnCompletion onCompletion) {
+            this.onCompletion = onCompletion;
             return this;
         }
 
