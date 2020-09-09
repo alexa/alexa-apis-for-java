@@ -121,6 +121,9 @@ public class Error {
             return (T)this;
         }
 
+        public Error build() {
+            return new Error(this);
+        }
     }
 }
 
