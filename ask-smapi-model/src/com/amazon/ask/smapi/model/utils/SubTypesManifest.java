@@ -64,6 +64,22 @@ public class SubTypesManifest {
     v1SkillInteractionModelValueSupplierSubTypes.put("CatalogValueSupplier", com.amazon.ask.smapi.model.v1.skill.interactionModel.CatalogValueSupplier.class);
     v1SkillInteractionModelValueSupplierSubTypes.put("InlineValueSupplier", com.amazon.ask.smapi.model.v1.skill.interactionModel.InlineValueSupplier.class);
     baseTypes.put(com.amazon.ask.smapi.model.v1.skill.interactionModel.ValueSupplier.class, v1SkillInteractionModelValueSupplierSubTypes);
+
+    Map<String, Class> v1SkillInteractionModelJobsJobDefinitionSubTypes = new HashMap<>();
+    v1SkillInteractionModelJobsJobDefinitionSubTypes.put("ReferenceVersionUpdate", com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.ReferenceVersionUpdate.class);
+    v1SkillInteractionModelJobsJobDefinitionSubTypes.put("CatalogAutoRefresh", com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.CatalogAutoRefresh.class);
+    baseTypes.put(com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.JobDefinition.class, v1SkillInteractionModelJobsJobDefinitionSubTypes);
+
+    Map<String, Class> v1SkillInteractionModelJobsResourceObjectSubTypes = new HashMap<>();
+    v1SkillInteractionModelJobsResourceObjectSubTypes.put("InteractionModel", com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.InteractionModel.class);
+    v1SkillInteractionModelJobsResourceObjectSubTypes.put("Catalog", com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.Catalog.class);
+    v1SkillInteractionModelJobsResourceObjectSubTypes.put("SlotTypeReference", com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.SlotTypeReference.class);
+    baseTypes.put(com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.ResourceObject.class, v1SkillInteractionModelJobsResourceObjectSubTypes);
+
+    Map<String, Class> v1SkillInteractionModelJobsTriggerSubTypes = new HashMap<>();
+    v1SkillInteractionModelJobsTriggerSubTypes.put("ReferencedResourceJobsComplete", com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.ReferencedResourceJobsComplete.class);
+    v1SkillInteractionModelJobsTriggerSubTypes.put("Scheduled", com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.Scheduled.class);
+    baseTypes.put(com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.Trigger.class, v1SkillInteractionModelJobsTriggerSubTypes);
   }
 
   /**

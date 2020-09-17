@@ -248,6 +248,41 @@ public interface SkillManagementService {
     ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.CatalogResponse> callCreateInteractionModelCatalogV1(com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.DefinitionData catalog) throws ServiceException;
 
 
+    com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.ListJobDefinitionsResponse listJobDefinitionsForInteractionModelV1(String vendorId, BigDecimal maxResults, String nextToken) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.ListJobDefinitionsResponse> callListJobDefinitionsForInteractionModelV1(String vendorId, BigDecimal maxResults, String nextToken) throws ServiceException;
+
+
+    void deleteJobDefinitionForInteractionModelV1(String jobId) throws ServiceException;
+
+    ApiResponse<Void> callDeleteJobDefinitionForInteractionModelV1(String jobId) throws ServiceException;
+
+
+    void cancelNextJobExecutionForInteractionModelV1(String jobId, String executionId) throws ServiceException;
+
+    ApiResponse<Void> callCancelNextJobExecutionForInteractionModelV1(String jobId, String executionId) throws ServiceException;
+
+
+    com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.GetExecutionsResponse listJobExecutionsForInteractionModelV1(String jobId, BigDecimal maxResults, String nextToken, String sortDirection) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.GetExecutionsResponse> callListJobExecutionsForInteractionModelV1(String jobId, BigDecimal maxResults, String nextToken, String sortDirection) throws ServiceException;
+
+
+    void getJobDefinitionForInteractionModelV1(String jobId) throws ServiceException;
+
+    ApiResponse<Void> callGetJobDefinitionForInteractionModelV1(String jobId) throws ServiceException;
+
+
+    void setJobStatusForInteractionModelV1(String jobId, com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.UpdateJobStatusRequest updateJobStatusRequest) throws ServiceException;
+
+    ApiResponse<Void> callSetJobStatusForInteractionModelV1(String jobId, com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.UpdateJobStatusRequest updateJobStatusRequest) throws ServiceException;
+
+
+    com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.CreateJobDefinitionResponse createJobDefinitionForInteractionModelV1(com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.CreateJobDefinitionRequest createJobDefinitionRequest) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.CreateJobDefinitionResponse> callCreateJobDefinitionForInteractionModelV1(com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.CreateJobDefinitionRequest createJobDefinitionRequest) throws ServiceException;
+
+
     com.amazon.ask.smapi.model.v1.skill.interactionModel.type.ListSlotTypeResponse listInteractionModelSlotTypesV1(String vendorId, BigDecimal maxResults, String nextToken, String sortDirection) throws ServiceException;
 
     ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.type.ListSlotTypeResponse> callListInteractionModelSlotTypesV1(String vendorId, BigDecimal maxResults, String nextToken, String sortDirection) throws ServiceException;
