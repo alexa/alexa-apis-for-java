@@ -15,8 +15,11 @@
 package com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection;
 
 import java.util.Objects;
+import java.util.ArrayList;
+import java.util.List;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.ArrayList;
 
 /**
  * GetConflictsResponse
@@ -31,6 +34,9 @@ public final class GetConflictsResponse {
     @JsonProperty("_links")
     private com.amazon.ask.smapi.model.v1.Links links = null;
 
+    @JsonProperty("results")
+    private List<com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.GetConflictsResponseResult> results = new ArrayList<com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.GetConflictsResponseResult>();
+
     public static Builder builder() {
         return new Builder();
     }
@@ -41,6 +47,9 @@ public final class GetConflictsResponse {
         }
         if (builder.links != null) {
             this.links = builder.links;
+        }
+        if (builder.results != null) {
+            this.results = builder.results;
         }
     }
 
@@ -64,6 +73,16 @@ public final class GetConflictsResponse {
     }
 
 
+    /**
+     * Get results
+     * @return results
+    **/
+    @JsonProperty("results")
+    public List<com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.GetConflictsResponseResult> getResults() {
+        return results;
+    }
+
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -74,12 +93,13 @@ public final class GetConflictsResponse {
         }
         GetConflictsResponse v1SkillInteractionModelConflictDetectionGetConflictsResponse = (GetConflictsResponse) o;
         return Objects.equals(this.paginationContext, v1SkillInteractionModelConflictDetectionGetConflictsResponse.paginationContext) &&
-            Objects.equals(this.links, v1SkillInteractionModelConflictDetectionGetConflictsResponse.links);
+            Objects.equals(this.links, v1SkillInteractionModelConflictDetectionGetConflictsResponse.links) &&
+            Objects.equals(this.results, v1SkillInteractionModelConflictDetectionGetConflictsResponse.results);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(paginationContext, links);
+        return Objects.hash(paginationContext, links, results);
     }
 
     @Override
@@ -89,6 +109,7 @@ public final class GetConflictsResponse {
         
         sb.append("    paginationContext: ").append(toIndentedString(paginationContext)).append("\n");
         sb.append("    links: ").append(toIndentedString(links)).append("\n");
+        sb.append("    results: ").append(toIndentedString(results)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +128,7 @@ public final class GetConflictsResponse {
     public static class Builder {
         private com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.PaginationContext paginationContext;
         private com.amazon.ask.smapi.model.v1.Links links;
+        private List<com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.GetConflictsResponseResult> results;
 
         private Builder() {}
 
@@ -125,6 +147,21 @@ public final class GetConflictsResponse {
             return this;
         }
 
+
+        @JsonProperty("results")
+
+        public Builder withResults(List<com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.GetConflictsResponseResult> results) {
+            this.results = results;
+            return this;
+        }
+
+        public Builder addResultsItem(com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.GetConflictsResponseResult resultsItem) {
+            if (this.results == null) {
+                this.results = new ArrayList<com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.GetConflictsResponseResult>();
+            }
+            this.results.add(resultsItem);
+            return this;
+        }
 
         public GetConflictsResponse build() {
             return new GetConflictsResponse(this);
