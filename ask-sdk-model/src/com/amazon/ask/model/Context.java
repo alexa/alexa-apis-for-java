@@ -52,6 +52,9 @@ public final class Context {
     @JsonProperty("Viewports")
     private List<com.amazon.ask.model.interfaces.viewport.TypedViewportState> viewports = new ArrayList<com.amazon.ask.model.interfaces.viewport.TypedViewportState>();
 
+    @JsonProperty("Extensions")
+    private com.amazon.ask.model.interfaces.alexa.extension.ExtensionsState extensions = null;
+
     public static Builder builder() {
         return new Builder();
     }
@@ -80,6 +83,9 @@ public final class Context {
         }
         if (builder.viewports != null) {
             this.viewports = builder.viewports;
+        }
+        if (builder.extensions != null) {
+            this.extensions = builder.extensions;
         }
     }
 
@@ -163,6 +169,16 @@ public final class Context {
     }
 
 
+    /**
+     * Provides the current state for Extensions interface
+     * @return extensions
+    **/
+    @JsonProperty("Extensions")
+    public com.amazon.ask.model.interfaces.alexa.extension.ExtensionsState getExtensions() {
+        return extensions;
+    }
+
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -179,12 +195,13 @@ public final class Context {
             Objects.equals(this.display, context.display) &&
             Objects.equals(this.geolocation, context.geolocation) &&
             Objects.equals(this.viewport, context.viewport) &&
-            Objects.equals(this.viewports, context.viewports);
+            Objects.equals(this.viewports, context.viewports) &&
+            Objects.equals(this.extensions, context.extensions);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(system, alexaPresentationAPL, audioPlayer, automotive, display, geolocation, viewport, viewports);
+        return Objects.hash(system, alexaPresentationAPL, audioPlayer, automotive, display, geolocation, viewport, viewports, extensions);
     }
 
     @Override
@@ -200,6 +217,7 @@ public final class Context {
         sb.append("    geolocation: ").append(toIndentedString(geolocation)).append("\n");
         sb.append("    viewport: ").append(toIndentedString(viewport)).append("\n");
         sb.append("    viewports: ").append(toIndentedString(viewports)).append("\n");
+        sb.append("    extensions: ").append(toIndentedString(extensions)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -224,6 +242,7 @@ public final class Context {
         private com.amazon.ask.model.interfaces.geolocation.GeolocationState geolocation;
         private com.amazon.ask.model.interfaces.viewport.ViewportState viewport;
         private List<com.amazon.ask.model.interfaces.viewport.TypedViewportState> viewports;
+        private com.amazon.ask.model.interfaces.alexa.extension.ExtensionsState extensions;
 
         private Builder() {}
 
@@ -297,6 +316,14 @@ public final class Context {
             this.viewports.add(viewportsItem);
             return this;
         }
+
+        @JsonProperty("Extensions")
+
+        public Builder withExtensions(com.amazon.ask.model.interfaces.alexa.extension.ExtensionsState extensions) {
+            this.extensions = extensions;
+            return this;
+        }
+
 
         public Context build() {
             return new Context(this);

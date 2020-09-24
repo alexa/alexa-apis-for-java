@@ -31,7 +31,7 @@ public class DirectiveServiceClient extends BaseServiceClient implements Directi
   private final UserAgentHelper userAgentHelper;
   public DirectiveServiceClient(ApiConfiguration apiConfiguration) {
       super(apiConfiguration);
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.32.0").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.33.0").build();
   }
 
   /**
