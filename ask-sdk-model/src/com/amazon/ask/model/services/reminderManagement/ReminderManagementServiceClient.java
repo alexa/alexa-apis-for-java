@@ -31,7 +31,7 @@ public class ReminderManagementServiceClient extends BaseServiceClient implement
   private final UserAgentHelper userAgentHelper;
   public ReminderManagementServiceClient(ApiConfiguration apiConfiguration) {
       super(apiConfiguration);
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.33.0").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.33.1").build();
   }
 
   /**
@@ -177,7 +177,7 @@ public class ReminderManagementServiceClient extends BaseServiceClient implement
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v1/alerts/reminders/";
+    String path = "/v1/alerts/reminders";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.reminderManagement.GetRemindersResponse.class, 200, "Success"));
@@ -217,7 +217,7 @@ public class ReminderManagementServiceClient extends BaseServiceClient implement
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v1/alerts/reminders/";
+    String path = "/v1/alerts/reminders";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.reminderManagement.ReminderResponse.class, 200, "Success"));

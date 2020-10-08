@@ -31,7 +31,7 @@ public class EndpointEnumerationServiceClient extends BaseServiceClient implemen
   private final UserAgentHelper userAgentHelper;
   public EndpointEnumerationServiceClient(ApiConfiguration apiConfiguration) {
       super(apiConfiguration);
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.33.0").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.33.1").build();
   }
 
   /**
@@ -49,7 +49,7 @@ public class EndpointEnumerationServiceClient extends BaseServiceClient implemen
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v1/endpoints/";
+    String path = "/v1/endpoints";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.endpointEnumeration.EndpointEnumerationResponse.class, 200, "Successfully retrieved the list of connected endpoints."));

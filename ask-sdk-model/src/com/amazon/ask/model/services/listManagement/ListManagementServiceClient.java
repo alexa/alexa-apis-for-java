@@ -31,7 +31,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
   private final UserAgentHelper userAgentHelper;
   public ListManagementServiceClient(ApiConfiguration apiConfiguration) {
       super(apiConfiguration);
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.33.0").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.33.1").build();
   }
 
   /**
@@ -49,7 +49,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v2/householdlists/";
+    String path = "/v2/householdlists";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.AlexaListsMetadata.class, 200, "Success"));
@@ -88,7 +88,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v2/householdlists/{listId}/";
+    String path = "/v2/householdlists/{listId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 200, "Success"));
@@ -131,7 +131,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v2/householdlists/{listId}/items/{itemId}/";
+    String path = "/v2/householdlists/{listId}/items/{itemId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 200, "Success"));
@@ -176,7 +176,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v2/householdlists/{listId}/items/{itemId}/";
+    String path = "/v2/householdlists/{listId}/items/{itemId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.AlexaListItem.class, 200, "Success"));
@@ -223,7 +223,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v2/householdlists/{listId}/items/{itemId}/";
+    String path = "/v2/householdlists/{listId}/items/{itemId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.AlexaListItem.class, 200, "Success"));
@@ -270,7 +270,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v2/householdlists/{listId}/items/";
+    String path = "/v2/householdlists/{listId}/items";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.AlexaListItem.class, 201, "Success"));
@@ -316,7 +316,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v2/householdlists/{listId}/";
+    String path = "/v2/householdlists/{listId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.AlexaListMetadata.class, 200, "Success"));
@@ -364,7 +364,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v2/householdlists/{listId}/{status}/";
+    String path = "/v2/householdlists/{listId}/{status}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.AlexaList.class, 200, "Success"));
@@ -408,7 +408,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v2/householdlists/";
+    String path = "/v2/householdlists";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.AlexaListMetadata.class, 201, "Success"));

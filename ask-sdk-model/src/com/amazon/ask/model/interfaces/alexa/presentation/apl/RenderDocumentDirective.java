@@ -39,6 +39,9 @@ public final class RenderDocumentDirective extends com.amazon.ask.model.Directiv
     @JsonProperty("datasources")
     private Map<String, Object> datasources = new HashMap<String, Object>();
 
+    @JsonProperty("sources")
+    private Map<String, Object> sources = new HashMap<String, Object>();
+
     @JsonProperty("packages")
     private List<Object> packages = new ArrayList<Object>();
 
@@ -58,6 +61,9 @@ public final class RenderDocumentDirective extends com.amazon.ask.model.Directiv
         }
         if (builder.datasources != null) {
             this.datasources = builder.datasources;
+        }
+        if (builder.sources != null) {
+            this.sources = builder.sources;
         }
         if (builder.packages != null) {
             this.packages = builder.packages;
@@ -95,6 +101,16 @@ public final class RenderDocumentDirective extends com.amazon.ask.model.Directiv
 
 
     /**
+     * An object containing named documents or links. These documents can be referenced by the “template” parameter in the transformer.
+     * @return sources
+    **/
+    @JsonProperty("sources")
+    public Map<String, Object> getSources() {
+        return sources;
+    }
+
+
+    /**
      * A list of packages including layouts, styles, and images etc.
      * @return packages
     **/
@@ -116,13 +132,14 @@ public final class RenderDocumentDirective extends com.amazon.ask.model.Directiv
         return Objects.equals(this.token, interfacesAlexaPresentationAplRenderDocumentDirective.token) &&
             Objects.equals(this.document, interfacesAlexaPresentationAplRenderDocumentDirective.document) &&
             Objects.equals(this.datasources, interfacesAlexaPresentationAplRenderDocumentDirective.datasources) &&
+            Objects.equals(this.sources, interfacesAlexaPresentationAplRenderDocumentDirective.sources) &&
             Objects.equals(this.packages, interfacesAlexaPresentationAplRenderDocumentDirective.packages) &&
             super.equals(o);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(token, document, datasources, packages, super.hashCode());
+        return Objects.hash(token, document, datasources, sources, packages, super.hashCode());
     }
 
     @Override
@@ -133,6 +150,7 @@ public final class RenderDocumentDirective extends com.amazon.ask.model.Directiv
         sb.append("    token: ").append(toIndentedString(token)).append("\n");
         sb.append("    document: ").append(toIndentedString(document)).append("\n");
         sb.append("    datasources: ").append(toIndentedString(datasources)).append("\n");
+        sb.append("    sources: ").append(toIndentedString(sources)).append("\n");
         sb.append("    packages: ").append(toIndentedString(packages)).append("\n");
         sb.append("}");
         return sb.toString();
@@ -153,6 +171,7 @@ public final class RenderDocumentDirective extends com.amazon.ask.model.Directiv
         private String token;
         private Map<String, Object> document;
         private Map<String, Object> datasources;
+        private Map<String, Object> sources;
         private List<Object> packages;
 
         private Builder() {}
@@ -192,6 +211,21 @@ public final class RenderDocumentDirective extends com.amazon.ask.model.Directiv
                 this.datasources = new HashMap<String, Object>();
             }
             this.datasources.put(key, datasourcesItem);
+            return this;
+        }
+
+        @JsonProperty("sources")
+
+        public Builder withSources(Map<String, Object> sources) {
+            this.sources = sources;
+            return this;
+        }
+
+        public Builder putSourcesItem(String key, Object sourcesItem) {
+            if (this.sources == null) {
+                this.sources = new HashMap<String, Object>();
+            }
+            this.sources.put(key, sourcesItem);
             return this;
         }
 

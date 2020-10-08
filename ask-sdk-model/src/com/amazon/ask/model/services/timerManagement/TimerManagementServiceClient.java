@@ -31,7 +31,7 @@ public class TimerManagementServiceClient extends BaseServiceClient implements T
   private final UserAgentHelper userAgentHelper;
   public TimerManagementServiceClient(ApiConfiguration apiConfiguration) {
       super(apiConfiguration);
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.33.0").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.33.1").build();
   }
 
   /**
@@ -48,7 +48,7 @@ public class TimerManagementServiceClient extends BaseServiceClient implements T
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v1/alerts/timers/";
+    String path = "/v1/alerts/timers";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 200, "Success"));
@@ -86,7 +86,7 @@ public class TimerManagementServiceClient extends BaseServiceClient implements T
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v1/alerts/timers/";
+    String path = "/v1/alerts/timers";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.timerManagement.TimersResponse.class, 200, "Success"));
@@ -294,7 +294,7 @@ public class TimerManagementServiceClient extends BaseServiceClient implements T
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v1/alerts/timers/";
+    String path = "/v1/alerts/timers";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.timerManagement.TimerResponse.class, 200, "Success"));

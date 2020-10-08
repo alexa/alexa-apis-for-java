@@ -15,6 +15,7 @@
 package com.amazon.ask.model;
 
 import java.util.Objects;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -32,6 +33,7 @@ public final class ResponseEnvelope {
     private String version = null;
 
     @JsonProperty("sessionAttributes")
+    @JsonInclude(JsonInclude.Include.ALWAYS)
     private Map<String, Object> sessionAttributes = new HashMap<String, Object>();
 
     @JsonProperty("userAgent")
