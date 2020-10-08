@@ -29,7 +29,7 @@ public final class EvaluationInputs {
     private String locale = null;
 
     @JsonProperty("stage")
-    private String stage = null;
+    private Object stage = null;
 
     @JsonProperty("source")
     private com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.Source source = null;
@@ -65,7 +65,7 @@ public final class EvaluationInputs {
      * @return stage
     **/
     @JsonProperty("stage")
-    public String getStage() {
+    public Object getStage() {
         return stage;
     }
 
@@ -124,7 +124,7 @@ public final class EvaluationInputs {
   
     public static class Builder {
         private String locale;
-        private String stage;
+        private Object stage;
         private com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.Source source;
 
         private Builder() {}
@@ -139,7 +139,7 @@ public final class EvaluationInputs {
 
         @JsonProperty("stage")
 
-        public Builder withStage(String stage) {
+        public Builder withStage(Object stage) {
             this.stage = stage;
             return this;
         }

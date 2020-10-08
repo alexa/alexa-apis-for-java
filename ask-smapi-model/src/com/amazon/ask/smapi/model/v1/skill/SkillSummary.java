@@ -34,6 +34,9 @@ public final class SkillSummary {
     @JsonProperty("skillId")
     private String skillId = null;
 
+    @JsonProperty("stage")
+    private String stage = null;
+
     @JsonProperty("apis")
     private List<com.amazon.ask.smapi.model.v1.skill.SkillSummaryApis> apis = new ArrayList<com.amazon.ask.smapi.model.v1.skill.SkillSummaryApis>();
 
@@ -59,6 +62,9 @@ public final class SkillSummary {
     private SkillSummary(Builder builder) {
         if (builder.skillId != null) {
             this.skillId = builder.skillId;
+        }
+        if (builder.stage != null) {
+            this.stage = builder.stage;
         }
         if (builder.apis != null) {
             this.apis = builder.apis;
@@ -89,6 +95,33 @@ public final class SkillSummary {
         return skillId;
     }
 
+
+    /**
+     * Get stage
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getStageAsString().
+     *
+     * @return stage
+    **/
+    
+    public com.amazon.ask.smapi.model.v1.StageV2Type getStage() {
+        return com.amazon.ask.smapi.model.v1.StageV2Type.fromValue(stage);
+    }
+
+    /**
+     * Get the underlying String value for stage.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return stage as a String value
+    **/
+    @JsonProperty("stage")
+    public String getStageAsString() {
+      return stage;
+    }
 
     /**
      * List of APIs currently implemented by the skill.
@@ -177,6 +210,7 @@ public final class SkillSummary {
         }
         SkillSummary v1SkillSkillSummary = (SkillSummary) o;
         return Objects.equals(this.skillId, v1SkillSkillSummary.skillId) &&
+            Objects.equals(this.stage, v1SkillSkillSummary.stage) &&
             Objects.equals(this.apis, v1SkillSkillSummary.apis) &&
             Objects.equals(this.publicationStatus, v1SkillSkillSummary.publicationStatus) &&
             Objects.equals(this.lastUpdated, v1SkillSkillSummary.lastUpdated) &&
@@ -187,7 +221,7 @@ public final class SkillSummary {
 
     @Override
     public int hashCode() {
-        return Objects.hash(skillId, apis, publicationStatus, lastUpdated, nameByLocale, asin, links);
+        return Objects.hash(skillId, stage, apis, publicationStatus, lastUpdated, nameByLocale, asin, links);
     }
 
     @Override
@@ -196,6 +230,7 @@ public final class SkillSummary {
         sb.append("class SkillSummary {\n");
         
         sb.append("    skillId: ").append(toIndentedString(skillId)).append("\n");
+        sb.append("    stage: ").append(toIndentedString(stage)).append("\n");
         sb.append("    apis: ").append(toIndentedString(apis)).append("\n");
         sb.append("    publicationStatus: ").append(toIndentedString(publicationStatus)).append("\n");
         sb.append("    lastUpdated: ").append(toIndentedString(lastUpdated)).append("\n");
@@ -219,6 +254,7 @@ public final class SkillSummary {
   
     public static class Builder {
         private String skillId;
+        private String stage;
         private List<com.amazon.ask.smapi.model.v1.skill.SkillSummaryApis> apis;
         private String publicationStatus;
         private OffsetDateTime lastUpdated;
@@ -232,6 +268,18 @@ public final class SkillSummary {
 
         public Builder withSkillId(String skillId) {
             this.skillId = skillId;
+            return this;
+        }
+
+
+        @JsonProperty("stage")
+        public Builder withStage(String stage) {
+          this.stage = stage;
+          return this;
+        }
+
+        public Builder withStage(com.amazon.ask.smapi.model.v1.StageV2Type stage) {
+            this.stage = stage != null ? stage.toString() : null;
             return this;
         }
 

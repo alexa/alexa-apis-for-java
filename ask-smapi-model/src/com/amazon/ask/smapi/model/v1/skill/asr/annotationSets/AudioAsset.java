@@ -26,10 +26,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public final class AudioAsset {
 
     @JsonProperty("downloadUrl")
-    private com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.AudioAssetDownloadUrl downloadUrl = null;
+    private String downloadUrl = null;
 
     @JsonProperty("expiryTime")
-    private com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.AudioAssetDownloadUrlExpiryTime expiryTime = null;
+    private String expiryTime = null;
 
     public static Builder builder() {
         return new Builder();
@@ -45,21 +45,21 @@ public final class AudioAsset {
     }
 
     /**
-     * Get downloadUrl
+     * S3 presigned download url for downloading the audio file
      * @return downloadUrl
     **/
     @JsonProperty("downloadUrl")
-    public com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.AudioAssetDownloadUrl getDownloadUrl() {
+    public String getDownloadUrl() {
         return downloadUrl;
     }
 
 
     /**
-     * Get expiryTime
+     * Timestamp when the audio download url expire in ISO 8601 format
      * @return expiryTime
     **/
     @JsonProperty("expiryTime")
-    public com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.AudioAssetDownloadUrlExpiryTime getExpiryTime() {
+    public String getExpiryTime() {
         return expiryTime;
     }
 
@@ -105,14 +105,14 @@ public final class AudioAsset {
     }
   
     public static class Builder {
-        private com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.AudioAssetDownloadUrl downloadUrl;
-        private com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.AudioAssetDownloadUrlExpiryTime expiryTime;
+        private String downloadUrl;
+        private String expiryTime;
 
         private Builder() {}
 
         @JsonProperty("downloadUrl")
 
-        public Builder withDownloadUrl(com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.AudioAssetDownloadUrl downloadUrl) {
+        public Builder withDownloadUrl(String downloadUrl) {
             this.downloadUrl = downloadUrl;
             return this;
         }
@@ -120,7 +120,7 @@ public final class AudioAsset {
 
         @JsonProperty("expiryTime")
 
-        public Builder withExpiryTime(com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.AudioAssetDownloadUrlExpiryTime expiryTime) {
+        public Builder withExpiryTime(String expiryTime) {
             this.expiryTime = expiryTime;
             return this;
         }

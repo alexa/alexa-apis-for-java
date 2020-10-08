@@ -43,13 +43,13 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
                                     .withSerializer(apiConfiguration.getSerializer())
                                     .build())
           .build();
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.8.1").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.8.2").build();
   }
 
   public SkillManagementServiceClient(ApiConfiguration apiConfiguration, LwaClient lwaClient) {
       super(apiConfiguration);
       this.lwaClient = lwaClient;
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.8.1").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.8.2").build();
   }
 
   /**
@@ -2557,9 +2557,10 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * 
    * Get the job definition for a given jobId. 
    * @param jobId The identifier for dynamic jobs. (required)
+   * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.JobDefinition
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<Void> callGetJobDefinitionForInteractionModelV1(String jobId) throws ServiceException {
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.JobDefinition> callGetJobDefinitionForInteractionModelV1(String jobId) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
     pathParams.put("jobId", jobId);
@@ -2572,7 +2573,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String path = "/v1/skills/api/custom/interactionModel/jobs/{jobId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
-    serviceResponseDefinitions.add(new ServiceClientResponse(null, 200, "The job definition for a given jobId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.JobDefinition.class, 200, "The job definition for a given jobId."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 404, "The resource being requested is not found."));
@@ -2583,17 +2584,18 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
 
 
     return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, null, null, false);
+      pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.JobDefinition.class, false);
   }
 
   /**
    * 
    * Get the job definition for a given jobId. 
    * @param jobId The identifier for dynamic jobs. (required)
+   * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.JobDefinition
    * @throws ServiceException if fails to make API call
    */
-  public void getJobDefinitionForInteractionModelV1(String jobId) throws ServiceException {
-    this.callGetJobDefinitionForInteractionModelV1(jobId).getResponse();
+  public com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.JobDefinition getJobDefinitionForInteractionModelV1(String jobId) throws ServiceException {
+    return this.callGetJobDefinitionForInteractionModelV1(jobId).getResponse();
   }
 
   /**

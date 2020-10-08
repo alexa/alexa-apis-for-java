@@ -404,6 +404,10 @@ public enum EventNameType {
   
   ALEXA_FILEMANAGER_UPLOADCONTROLLER_UPLOADSTARTED("Alexa.FileManager.UploadController.UploadStarted"),
   
+  ALEXA_PRESENTATION_APL_LOADINDEXLISTDATA("Alexa.Presentation.APL.LoadIndexListData"),
+  
+  ALEXA_PRESENTATION_APL_RUNTIMEERROR("Alexa.Presentation.APL.RuntimeError"),
+  
   ALEXA_PRESENTATION_APL_USEREVENT("Alexa.Presentation.APL.UserEvent"),
   
   ALEXA_PRESENTATION_HTML_EVENT("Alexa.Presentation.HTML.Event"),

@@ -28,8 +28,8 @@ public final class CustomProductPrompts {
     @JsonProperty("purchasePromptDescription")
     private String purchasePromptDescription = null;
 
-    @JsonProperty("boughtConfirmationPrompt")
-    private String boughtConfirmationPrompt = null;
+    @JsonProperty("boughtCardDescription")
+    private String boughtCardDescription = null;
 
     public static Builder builder() {
         return new Builder();
@@ -39,8 +39,8 @@ public final class CustomProductPrompts {
         if (builder.purchasePromptDescription != null) {
             this.purchasePromptDescription = builder.purchasePromptDescription;
         }
-        if (builder.boughtConfirmationPrompt != null) {
-            this.boughtConfirmationPrompt = builder.boughtConfirmationPrompt;
+        if (builder.boughtCardDescription != null) {
+            this.boughtCardDescription = builder.boughtCardDescription;
         }
     }
 
@@ -55,12 +55,12 @@ public final class CustomProductPrompts {
 
 
     /**
-     * Confirmation of in-skill product purchase.
-     * @return boughtConfirmationPrompt
+     * A description of the product that displays on the skill card in the Alexa app.
+     * @return boughtCardDescription
     **/
-    @JsonProperty("boughtConfirmationPrompt")
-    public String getBoughtConfirmationPrompt() {
-        return boughtConfirmationPrompt;
+    @JsonProperty("boughtCardDescription")
+    public String getBoughtCardDescription() {
+        return boughtCardDescription;
     }
 
 
@@ -74,12 +74,12 @@ public final class CustomProductPrompts {
         }
         CustomProductPrompts v1IspCustomProductPrompts = (CustomProductPrompts) o;
         return Objects.equals(this.purchasePromptDescription, v1IspCustomProductPrompts.purchasePromptDescription) &&
-            Objects.equals(this.boughtConfirmationPrompt, v1IspCustomProductPrompts.boughtConfirmationPrompt);
+            Objects.equals(this.boughtCardDescription, v1IspCustomProductPrompts.boughtCardDescription);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(purchasePromptDescription, boughtConfirmationPrompt);
+        return Objects.hash(purchasePromptDescription, boughtCardDescription);
     }
 
     @Override
@@ -88,7 +88,7 @@ public final class CustomProductPrompts {
         sb.append("class CustomProductPrompts {\n");
         
         sb.append("    purchasePromptDescription: ").append(toIndentedString(purchasePromptDescription)).append("\n");
-        sb.append("    boughtConfirmationPrompt: ").append(toIndentedString(boughtConfirmationPrompt)).append("\n");
+        sb.append("    boughtCardDescription: ").append(toIndentedString(boughtCardDescription)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -106,7 +106,7 @@ public final class CustomProductPrompts {
   
     public static class Builder {
         private String purchasePromptDescription;
-        private String boughtConfirmationPrompt;
+        private String boughtCardDescription;
 
         private Builder() {}
 
@@ -118,10 +118,10 @@ public final class CustomProductPrompts {
         }
 
 
-        @JsonProperty("boughtConfirmationPrompt")
+        @JsonProperty("boughtCardDescription")
 
-        public Builder withBoughtConfirmationPrompt(String boughtConfirmationPrompt) {
-            this.boughtConfirmationPrompt = boughtConfirmationPrompt;
+        public Builder withBoughtCardDescription(String boughtCardDescription) {
+            this.boughtCardDescription = boughtCardDescription;
             return this;
         }
 

@@ -25,12 +25,28 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = JobAPIPaginationContext.Builder.class)
 public final class JobAPIPaginationContext {
 
+    @JsonProperty("nextToken")
+    private String nextToken = null;
+
     public static Builder builder() {
         return new Builder();
     }
 
     private JobAPIPaginationContext(Builder builder) {
+        if (builder.nextToken != null) {
+            this.nextToken = builder.nextToken;
+        }
     }
+
+    /**
+     * Get nextToken
+     * @return nextToken
+    **/
+    @JsonProperty("nextToken")
+    public String getNextToken() {
+        return nextToken;
+    }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -40,12 +56,13 @@ public final class JobAPIPaginationContext {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        return true;
+        JobAPIPaginationContext v1SkillInteractionModelJobsJobAPIPaginationContext = (JobAPIPaginationContext) o;
+        return Objects.equals(this.nextToken, v1SkillInteractionModelJobsJobAPIPaginationContext.nextToken);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash();
+        return Objects.hash(nextToken);
     }
 
     @Override
@@ -53,6 +70,7 @@ public final class JobAPIPaginationContext {
         StringBuilder sb = new StringBuilder();
         sb.append("class JobAPIPaginationContext {\n");
         
+        sb.append("    nextToken: ").append(toIndentedString(nextToken)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -69,8 +87,17 @@ public final class JobAPIPaginationContext {
     }
   
     public static class Builder {
+        private String nextToken;
 
         private Builder() {}
+
+        @JsonProperty("nextToken")
+
+        public Builder withNextToken(String nextToken) {
+            this.nextToken = nextToken;
+            return this;
+        }
+
 
         public JobAPIPaginationContext build() {
             return new JobAPIPaginationContext(this);

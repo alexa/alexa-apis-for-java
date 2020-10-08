@@ -268,9 +268,9 @@ public interface SkillManagementService {
     ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.GetExecutionsResponse> callListJobExecutionsForInteractionModelV1(String jobId, BigDecimal maxResults, String nextToken, String sortDirection) throws ServiceException;
 
 
-    void getJobDefinitionForInteractionModelV1(String jobId) throws ServiceException;
+    com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.JobDefinition getJobDefinitionForInteractionModelV1(String jobId) throws ServiceException;
 
-    ApiResponse<Void> callGetJobDefinitionForInteractionModelV1(String jobId) throws ServiceException;
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.JobDefinition> callGetJobDefinitionForInteractionModelV1(String jobId) throws ServiceException;
 
 
     void setJobStatusForInteractionModelV1(String jobId, com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.UpdateJobStatusRequest updateJobStatusRequest) throws ServiceException;

@@ -26,7 +26,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public final class EvaluateNLURequest {
 
     @JsonProperty("stage")
-    private String stage = "development";
+    private Object stage = null;
 
     @JsonProperty("locale")
     private String locale = null;
@@ -55,7 +55,7 @@ public final class EvaluateNLURequest {
      * @return stage
     **/
     @JsonProperty("stage")
-    public String getStage() {
+    public Object getStage() {
         return stage;
     }
 
@@ -123,7 +123,7 @@ public final class EvaluateNLURequest {
     }
   
     public static class Builder {
-        private String stage;
+        private Object stage;
         private String locale;
         private com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.Source source;
 
@@ -131,7 +131,7 @@ public final class EvaluateNLURequest {
 
         @JsonProperty("stage")
 
-        public Builder withStage(String stage) {
+        public Builder withStage(Object stage) {
             this.stage = stage;
             return this;
         }
