@@ -114,6 +114,7 @@ public class SubTypesManifest {
     requestSubTypes.put("System.ExceptionEncountered", com.amazon.ask.model.interfaces.system.ExceptionEncounteredRequest.class);
     requestSubTypes.put("AlexaSkillEvent.SkillPermissionAccepted", com.amazon.ask.model.events.skillevents.PermissionAcceptedRequest.class);
     requestSubTypes.put("PlaybackController.NextCommandIssued", com.amazon.ask.model.interfaces.playbackcontroller.NextCommandIssuedRequest.class);
+    requestSubTypes.put("Alexa.Presentation.APLA.RuntimeError", com.amazon.ask.model.interfaces.alexa.presentation.apla.RuntimeErrorEvent.class);
     baseTypes.put(com.amazon.ask.model.Request.class, requestSubTypes);
 
     Map<String, Class> slotValueSubTypes = new HashMap<>();
@@ -168,6 +169,13 @@ public class SubTypesManifest {
     interfacesAlexaPresentationAplListoperationsOperationSubTypes.put("InsertItem", com.amazon.ask.model.interfaces.alexa.presentation.apl.listoperations.InsertItemOperation.class);
     interfacesAlexaPresentationAplListoperationsOperationSubTypes.put("DeleteItem", com.amazon.ask.model.interfaces.alexa.presentation.apl.listoperations.DeleteItemOperation.class);
     baseTypes.put(com.amazon.ask.model.interfaces.alexa.presentation.apl.listoperations.Operation.class, interfacesAlexaPresentationAplListoperationsOperationSubTypes);
+
+    Map<String, Class> interfacesAlexaPresentationAplaRuntimeErrorSubTypes = new HashMap<>();
+    interfacesAlexaPresentationAplaRuntimeErrorSubTypes.put("AUDIO_SOURCE_ERROR", com.amazon.ask.model.interfaces.alexa.presentation.apla.AudioSourceRuntimeError.class);
+    interfacesAlexaPresentationAplaRuntimeErrorSubTypes.put("RENDER_ERROR", com.amazon.ask.model.interfaces.alexa.presentation.apla.RenderRuntimeError.class);
+    interfacesAlexaPresentationAplaRuntimeErrorSubTypes.put("DOCUMENT_ERROR", com.amazon.ask.model.interfaces.alexa.presentation.apla.DocumentRuntimeError.class);
+    interfacesAlexaPresentationAplaRuntimeErrorSubTypes.put("LINK_ERROR", com.amazon.ask.model.interfaces.alexa.presentation.apla.LinkRuntimeError.class);
+    baseTypes.put(com.amazon.ask.model.interfaces.alexa.presentation.apla.RuntimeError.class, interfacesAlexaPresentationAplaRuntimeErrorSubTypes);
 
     Map<String, Class> interfacesAlexaPresentationApltCommandSubTypes = new HashMap<>();
     interfacesAlexaPresentationApltCommandSubTypes.put("SetValue", com.amazon.ask.model.interfaces.alexa.presentation.aplt.SetValueCommand.class);

@@ -75,6 +75,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.system.ExceptionEncounteredRequest.class, name = "System.ExceptionEncountered"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.events.skillevents.PermissionAcceptedRequest.class, name = "AlexaSkillEvent.SkillPermissionAccepted"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.playbackcontroller.NextCommandIssuedRequest.class, name = "PlaybackController.NextCommandIssued"),
+  @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apla.RuntimeErrorEvent.class, name = "Alexa.Presentation.APLA.RuntimeError"),
 })
 public abstract class Request {
 
