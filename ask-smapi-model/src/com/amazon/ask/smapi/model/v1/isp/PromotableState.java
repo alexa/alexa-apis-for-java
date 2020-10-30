@@ -12,7 +12,7 @@
 */
 
 
-package com.amazon.ask.smapi.model.v1.skill.Manifest;
+package com.amazon.ask.smapi.model.v1.isp;
 
 import java.util.Objects;
 
@@ -20,25 +20,19 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Defines the mode of viewport that comply with this specification. E.g. HUB TV.
+ * Promote this ISP on Amazon channels such as Amazon.com. Enabling this setting will allow customers to view ISP detail pages and purchase the ISP on Amazon.com.
  */
-public enum ViewportMode {
+public enum PromotableState {
   
-  HUB("HUB"),
+  IN_SKILL_ONLY("IN_SKILL_ONLY"),
   
-  TV("TV"),
-  
-  MOBILE("MOBILE"),
-  
-  PC("PC"),
-  
-  AUTO("AUTO"),
+  ALL_AMAZON_CHANNELS("ALL_AMAZON_CHANNELS"),
   
   UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
-  ViewportMode(String value) {
+  PromotableState(String value) {
     this.value = value;
   }
 
@@ -53,13 +47,13 @@ public enum ViewportMode {
   }
 
   @JsonCreator
-  public static ViewportMode fromValue(String text) {
-    for (ViewportMode b : ViewportMode.values()) {
+  public static PromotableState fromValue(String text) {
+    for (PromotableState b : PromotableState.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }
     }
-    return ViewportMode.UNKNOWN_TO_SDK_VERSION;
+    return PromotableState.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

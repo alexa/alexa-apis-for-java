@@ -56,6 +56,9 @@ public final class InSkillProductSummary {
     @JsonProperty("purchasableState")
     private String purchasableState = null;
 
+    @JsonProperty("promotableState")
+    private String promotableState = null;
+
     @JsonProperty("_links")
     private com.amazon.ask.smapi.model.v1.isp.IspSummaryLinks links = null;
 
@@ -93,6 +96,9 @@ public final class InSkillProductSummary {
         }
         if (builder.purchasableState != null) {
             this.purchasableState = builder.purchasableState;
+        }
+        if (builder.promotableState != null) {
+            this.promotableState = builder.promotableState;
         }
         if (builder.links != null) {
             this.links = builder.links;
@@ -278,6 +284,33 @@ public final class InSkillProductSummary {
     }
 
     /**
+     * Get promotableState
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getPromotableStateAsString().
+     *
+     * @return promotableState
+    **/
+    
+    public com.amazon.ask.smapi.model.v1.isp.PromotableState getPromotableState() {
+        return com.amazon.ask.smapi.model.v1.isp.PromotableState.fromValue(promotableState);
+    }
+
+    /**
+     * Get the underlying String value for promotableState.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return promotableState as a String value
+    **/
+    @JsonProperty("promotableState")
+    public String getPromotableStateAsString() {
+      return promotableState;
+    }
+
+    /**
      * Get links
      * @return links
     **/
@@ -315,13 +348,14 @@ public final class InSkillProductSummary {
             Objects.equals(this.stage, v1IspInSkillProductSummary.stage) &&
             Objects.equals(this.editableState, v1IspInSkillProductSummary.editableState) &&
             Objects.equals(this.purchasableState, v1IspInSkillProductSummary.purchasableState) &&
+            Objects.equals(this.promotableState, v1IspInSkillProductSummary.promotableState) &&
             Objects.equals(this.links, v1IspInSkillProductSummary.links) &&
             Objects.equals(this.pricing, v1IspInSkillProductSummary.pricing);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, productId, referenceName, lastUpdated, nameByLocale, status, stage, editableState, purchasableState, links, pricing);
+        return Objects.hash(type, productId, referenceName, lastUpdated, nameByLocale, status, stage, editableState, purchasableState, promotableState, links, pricing);
     }
 
     @Override
@@ -338,6 +372,7 @@ public final class InSkillProductSummary {
         sb.append("    stage: ").append(toIndentedString(stage)).append("\n");
         sb.append("    editableState: ").append(toIndentedString(editableState)).append("\n");
         sb.append("    purchasableState: ").append(toIndentedString(purchasableState)).append("\n");
+        sb.append("    promotableState: ").append(toIndentedString(promotableState)).append("\n");
         sb.append("    links: ").append(toIndentedString(links)).append("\n");
         sb.append("    pricing: ").append(toIndentedString(pricing)).append("\n");
         sb.append("}");
@@ -365,6 +400,7 @@ public final class InSkillProductSummary {
         private String stage;
         private String editableState;
         private String purchasableState;
+        private String promotableState;
         private com.amazon.ask.smapi.model.v1.isp.IspSummaryLinks links;
         private Map<String, com.amazon.ask.smapi.model.v1.isp.SummaryMarketplacePricing> pricing;
 
@@ -465,6 +501,18 @@ public final class InSkillProductSummary {
 
         public Builder withPurchasableState(com.amazon.ask.smapi.model.v1.isp.PurchasableState purchasableState) {
             this.purchasableState = purchasableState != null ? purchasableState.toString() : null;
+            return this;
+        }
+
+
+        @JsonProperty("promotableState")
+        public Builder withPromotableState(String promotableState) {
+          this.promotableState = promotableState;
+          return this;
+        }
+
+        public Builder withPromotableState(com.amazon.ask.smapi.model.v1.isp.PromotableState promotableState) {
+            this.promotableState = promotableState != null ? promotableState.toString() : null;
             return this;
         }
 

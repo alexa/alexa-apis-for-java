@@ -12,7 +12,7 @@
 */
 
 
-package com.amazon.ask.smapi.model.v1.skill.Manifest;
+package com.amazon.ask.smapi.model.v1.smartHomeEvaluation;
 
 import java.util.Objects;
 
@@ -20,25 +20,19 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Defines the mode of viewport that comply with this specification. E.g. HUB TV.
+ * Gets or Sets v1.smartHomeEvaluation.Stage
  */
-public enum ViewportMode {
+public enum Stage {
   
-  HUB("HUB"),
+  DEVELOPMENT("development"),
   
-  TV("TV"),
-  
-  MOBILE("MOBILE"),
-  
-  PC("PC"),
-  
-  AUTO("AUTO"),
+  LIVE("live"),
   
   UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
-  ViewportMode(String value) {
+  Stage(String value) {
     this.value = value;
   }
 
@@ -53,13 +47,13 @@ public enum ViewportMode {
   }
 
   @JsonCreator
-  public static ViewportMode fromValue(String text) {
-    for (ViewportMode b : ViewportMode.values()) {
+  public static Stage fromValue(String text) {
+    for (Stage b : Stage.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }
     }
-    return ViewportMode.UNKNOWN_TO_SDK_VERSION;
+    return Stage.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

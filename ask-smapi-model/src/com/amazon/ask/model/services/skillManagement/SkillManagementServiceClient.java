@@ -43,13 +43,13 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
                                     .withSerializer(apiConfiguration.getSerializer())
                                     .build())
           .build();
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.8.2").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.9.0").build();
   }
 
   public SkillManagementServiceClient(ApiConfiguration apiConfiguration, LwaClient lwaClient) {
       super(apiConfiguration);
       this.lwaClient = lwaClient;
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.8.2").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.9.0").build();
   }
 
   /**
@@ -3479,6 +3479,63 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
 
   /**
    * 
+   * GetResourceSchema API provides schema for skill related resources. The schema returned by this API will be specific to vendor because it considers public beta features allowed for the vendor.
+   * @param resource Name of the ASK resource for which schema is requested. (required)
+   * @param vendorId The vendor ID. (required)
+   * @param operation This parameter is required when resource is manifest because skill manifest schema differs based on operation. For example, submit for certification schema has more validations than create skill schema. (optional)
+   * @return com.amazon.ask.smapi.model.v1.skill.resourceSchema.GetResourceSchemaResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.resourceSchema.GetResourceSchemaResponse> callGetResourceSchemaV1(String resource, String vendorId, String operation) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+
+    if(vendorId != null) {
+    queryParams.add(new Pair<String, String>("vendorId", vendorId));
+  }
+
+    if(operation != null) {
+    queryParams.add(new Pair<String, String>("operation", operation));
+  }
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("resource", resource);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String path = "/v1/skills/resourceSchema/{resource}";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.resourceSchema.GetResourceSchemaResponse.class, 200, "Returns a S3 presigned URL to location of schema"));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Invalid request"));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 401, "Unauthorized"));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 403, "Forbidden"));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 429, "Too Many Requests"));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 500, "Internal Server Error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 503, "Service Unavailable."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.resourceSchema.GetResourceSchemaResponse.class, false);
+  }
+
+  /**
+   * 
+   * GetResourceSchema API provides schema for skill related resources. The schema returned by this API will be specific to vendor because it considers public beta features allowed for the vendor.
+   * @param resource Name of the ASK resource for which schema is requested. (required)
+   * @param vendorId The vendor ID. (required)
+   * @param operation This parameter is required when resource is manifest because skill manifest schema differs based on operation. For example, submit for certification schema has more validations than create skill schema. (optional)
+   * @return com.amazon.ask.smapi.model.v1.skill.resourceSchema.GetResourceSchemaResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.smapi.model.v1.skill.resourceSchema.GetResourceSchemaResponse getResourceSchemaV1(String resource, String vendorId, String operation) throws ServiceException {
+    return this.callGetResourceSchemaV1(resource, vendorId, operation).getResponse();
+  }
+
+  /**
+   * 
    * Get Alexa hosted skill&#39;s metadata
    * @param skillId The skill ID. (required)
    * @return com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillMetadata
@@ -4877,11 +4934,11 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * The Intent Request History API provides customers with the aggregated and anonymized transcription of user speech data and intent request details for their skills.
    * 
    * @param skillId The skill ID. (required)
+   * @param stage The stage of the skill to be used for evaluation. An error will be returned if this skill stage is not enabled on the account used for evaluation. (required)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
    * @param sortDirection Sets the sorting direction of the result items. When set to &#39;asc&#39; these items are returned in ascending order of sortField value and when set to &#39;desc&#39; these items are returned in descending order of sortField value. (optional)
    * @param sortField Sets the field on which the sorting would be applied. (optional)
-   * @param stage A filter used to retrieve items where the stage is equal to the given value. (optional)
    * @param locale  (optional)
    * @param dialogActName A filter used to retrieve items where the dialogAct name is equal to the given value. * &#x60;Dialog.ElicitSlot&#x60;: Alexa asked the user for the value of a specific slot. (https://developer.amazon.com/docs/custom-skills/dialog-interface-reference.html#elicitslot) * &#x60;Dialog.ConfirmSlot&#x60;: Alexa confirmed the value of a specific slot before continuing with the dialog. (https://developer.amazon.com/docs/custom-skills/dialog-interface-reference.html#confirmslot) * &#x60;Dialog.ConfirmIntent&#x60;: Alexa confirmed the all the information the user has provided for the intent before the skill took action. (https://developer.amazon.com/docs/custom-skills/dialog-interface-reference.html#confirmintent)  (optional)
    * @param intentConfidenceBin  (optional)
@@ -4893,7 +4950,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @return com.amazon.ask.smapi.model.v1.skill.history.IntentRequests
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.history.IntentRequests> callGetUtteranceDataV1(String skillId, String nextToken, BigDecimal maxResults, String sortDirection, String sortField, List<com.amazon.ask.smapi.model.v1.StageType> stage, List<com.amazon.ask.smapi.model.v1.skill.history.LocaleInQuery> locale, List<com.amazon.ask.smapi.model.v1.skill.history.DialogActName> dialogActName, List<com.amazon.ask.smapi.model.v1.skill.history.IntentConfidenceBin> intentConfidenceBin, List<String> intentName, List<String> intentSlotsName, List<com.amazon.ask.smapi.model.v1.skill.history.InteractionType> interactionType, List<com.amazon.ask.smapi.model.v1.skill.history.PublicationStatus> publicationStatus, List<String> utteranceText) throws ServiceException {
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.history.IntentRequests> callGetUtteranceDataV1(String skillId, String stage, String nextToken, BigDecimal maxResults, String sortDirection, String sortField, List<com.amazon.ask.smapi.model.v1.skill.history.LocaleInQuery> locale, List<com.amazon.ask.smapi.model.v1.skill.history.DialogActName> dialogActName, List<com.amazon.ask.smapi.model.v1.skill.history.IntentConfidenceBin> intentConfidenceBin, List<String> intentName, List<String> intentSlotsName, List<com.amazon.ask.smapi.model.v1.skill.history.InteractionType> interactionType, List<com.amazon.ask.smapi.model.v1.skill.history.PublicationStatus> publicationStatus, List<String> utteranceText) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
 
     if(nextToken != null) {
@@ -4913,9 +4970,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   }
 
     if(stage != null) {
-    for (Object param : stage) {
-      queryParams.add(new Pair<String, String>("stage", param.toString()));
-    }
+    queryParams.add(new Pair<String, String>("stage", stage));
   }
 
     if(locale != null) {
@@ -4994,11 +5049,11 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * The Intent Request History API provides customers with the aggregated and anonymized transcription of user speech data and intent request details for their skills.
    * 
    * @param skillId The skill ID. (required)
+   * @param stage The stage of the skill to be used for evaluation. An error will be returned if this skill stage is not enabled on the account used for evaluation. (required)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
    * @param sortDirection Sets the sorting direction of the result items. When set to &#39;asc&#39; these items are returned in ascending order of sortField value and when set to &#39;desc&#39; these items are returned in descending order of sortField value. (optional)
    * @param sortField Sets the field on which the sorting would be applied. (optional)
-   * @param stage A filter used to retrieve items where the stage is equal to the given value. (optional)
    * @param locale  (optional)
    * @param dialogActName A filter used to retrieve items where the dialogAct name is equal to the given value. * &#x60;Dialog.ElicitSlot&#x60;: Alexa asked the user for the value of a specific slot. (https://developer.amazon.com/docs/custom-skills/dialog-interface-reference.html#elicitslot) * &#x60;Dialog.ConfirmSlot&#x60;: Alexa confirmed the value of a specific slot before continuing with the dialog. (https://developer.amazon.com/docs/custom-skills/dialog-interface-reference.html#confirmslot) * &#x60;Dialog.ConfirmIntent&#x60;: Alexa confirmed the all the information the user has provided for the intent before the skill took action. (https://developer.amazon.com/docs/custom-skills/dialog-interface-reference.html#confirmintent)  (optional)
    * @param intentConfidenceBin  (optional)
@@ -5010,8 +5065,8 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @return com.amazon.ask.smapi.model.v1.skill.history.IntentRequests
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.smapi.model.v1.skill.history.IntentRequests getUtteranceDataV1(String skillId, String nextToken, BigDecimal maxResults, String sortDirection, String sortField, List<com.amazon.ask.smapi.model.v1.StageType> stage, List<com.amazon.ask.smapi.model.v1.skill.history.LocaleInQuery> locale, List<com.amazon.ask.smapi.model.v1.skill.history.DialogActName> dialogActName, List<com.amazon.ask.smapi.model.v1.skill.history.IntentConfidenceBin> intentConfidenceBin, List<String> intentName, List<String> intentSlotsName, List<com.amazon.ask.smapi.model.v1.skill.history.InteractionType> interactionType, List<com.amazon.ask.smapi.model.v1.skill.history.PublicationStatus> publicationStatus, List<String> utteranceText) throws ServiceException {
-    return this.callGetUtteranceDataV1(skillId, nextToken, maxResults, sortDirection, sortField, stage, locale, dialogActName, intentConfidenceBin, intentName, intentSlotsName, interactionType, publicationStatus, utteranceText).getResponse();
+  public com.amazon.ask.smapi.model.v1.skill.history.IntentRequests getUtteranceDataV1(String skillId, String stage, String nextToken, BigDecimal maxResults, String sortDirection, String sortField, List<com.amazon.ask.smapi.model.v1.skill.history.LocaleInQuery> locale, List<com.amazon.ask.smapi.model.v1.skill.history.DialogActName> dialogActName, List<com.amazon.ask.smapi.model.v1.skill.history.IntentConfidenceBin> intentConfidenceBin, List<String> intentName, List<String> intentSlotsName, List<com.amazon.ask.smapi.model.v1.skill.history.InteractionType> interactionType, List<com.amazon.ask.smapi.model.v1.skill.history.PublicationStatus> publicationStatus, List<String> utteranceText) throws ServiceException {
+    return this.callGetUtteranceDataV1(skillId, stage, nextToken, maxResults, sortDirection, sortField, locale, dialogActName, intentConfidenceBin, intentName, intentSlotsName, interactionType, publicationStatus, utteranceText).getResponse();
   }
 
   /**
@@ -6130,6 +6185,294 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    */
   public com.amazon.ask.smapi.model.v1.skill.simulations.SimulationsApiResponse getSkillSimulationV1(String skillId, String simulationId) throws ServiceException {
     return this.callGetSkillSimulationV1(skillId, simulationId).getResponse();
+  }
+
+  /**
+   * Get top level information and status of a Smart Home capability evaluation.
+   * Get top level information and status of a Smart Home capability evaluation.
+   * @param skillId The skill ID. (required)
+   * @param evaluationId A unique ID to identify each Smart Home capability evaluation. (required)
+   * @return com.amazon.ask.smapi.model.v1.smartHomeEvaluation.GetSHCapabilityEvaluationResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<com.amazon.ask.smapi.model.v1.smartHomeEvaluation.GetSHCapabilityEvaluationResponse> callGetSmartHomeCapabilityEvaluationV1(String skillId, String evaluationId) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    pathParams.put("evaluationId", evaluationId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String path = "/v1/skills/{skillId}/smartHome/testing/capabilityEvaluations/{evaluationId}";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.smartHomeEvaluation.GetSHCapabilityEvaluationResponse.class, 200, "Successfully retrieved the evaluation status."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Bad Request. Returned when the request payload is malformed or when, at least, one required property is missing or invalid. "));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource. "));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "API user does not have permission or is currently in a state that does not allow calls to this API. "));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 404, "The specified skill, test plan, or evaluation does not exist. The error response will contain a description that indicates the specific resource type that was not found. "));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 429, "Exceeded the permitted request limit. Throttling criteria includes total requests, per API and CustomerId. "));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 0, "Internal server error. "));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.smartHomeEvaluation.GetSHCapabilityEvaluationResponse.class, false);
+  }
+
+  /**
+   * Get top level information and status of a Smart Home capability evaluation.
+   * Get top level information and status of a Smart Home capability evaluation.
+   * @param skillId The skill ID. (required)
+   * @param evaluationId A unique ID to identify each Smart Home capability evaluation. (required)
+   * @return com.amazon.ask.smapi.model.v1.smartHomeEvaluation.GetSHCapabilityEvaluationResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.smapi.model.v1.smartHomeEvaluation.GetSHCapabilityEvaluationResponse getSmartHomeCapabilityEvaluationV1(String skillId, String evaluationId) throws ServiceException {
+    return this.callGetSmartHomeCapabilityEvaluationV1(skillId, evaluationId).getResponse();
+  }
+
+  /**
+   * Get test case results for an evaluation run.
+   * Get test case results for an evaluation run.
+   * @param skillId The skill ID. (required)
+   * @param evaluationId A unique ID to identify each Smart Home capability evaluation. (required)
+   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @return com.amazon.ask.smapi.model.v1.smartHomeEvaluation.GetSHCapabilityEvaluationResultsResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<com.amazon.ask.smapi.model.v1.smartHomeEvaluation.GetSHCapabilityEvaluationResultsResponse> callGetSmarthomeCapablityEvaluationResultsV1(String skillId, String evaluationId, BigDecimal maxResults, String nextToken) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+
+    if(maxResults != null) {
+    queryParams.add(new Pair<String, String>("maxResults", maxResults.toString()));
+  }
+
+    if(nextToken != null) {
+    queryParams.add(new Pair<String, String>("nextToken", nextToken));
+  }
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    pathParams.put("evaluationId", evaluationId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String path = "/v1/skills/{skillId}/smartHome/testing/capabilityEvaluations/{evaluationId}/results";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.smartHomeEvaluation.GetSHCapabilityEvaluationResultsResponse.class, 200, "Successfully retrieved the evaluation result content."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Bad Request. Returned when the request payload is malformed or when, at least, one required property is missing or invalid. "));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource. "));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "API user does not have permission or is currently in a state that does not allow calls to this API. "));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 404, "The specified skill, test plan, or evaluation does not exist. The error response will contain a description that indicates the specific resource type that was not found. "));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 429, "Exceeded the permitted request limit. Throttling criteria includes total requests, per API and CustomerId. "));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 0, "Internal server error. "));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.smartHomeEvaluation.GetSHCapabilityEvaluationResultsResponse.class, false);
+  }
+
+  /**
+   * Get test case results for an evaluation run.
+   * Get test case results for an evaluation run.
+   * @param skillId The skill ID. (required)
+   * @param evaluationId A unique ID to identify each Smart Home capability evaluation. (required)
+   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @return com.amazon.ask.smapi.model.v1.smartHomeEvaluation.GetSHCapabilityEvaluationResultsResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.smapi.model.v1.smartHomeEvaluation.GetSHCapabilityEvaluationResultsResponse getSmarthomeCapablityEvaluationResultsV1(String skillId, String evaluationId, BigDecimal maxResults, String nextToken) throws ServiceException {
+    return this.callGetSmarthomeCapablityEvaluationResultsV1(skillId, evaluationId, maxResults, nextToken).getResponse();
+  }
+
+  /**
+   * List Smart Home capability evaluation runs for a skill.
+   * List Smart Home capability evaluation runs for a skill.
+   * @param skillId The skill ID. (required)
+   * @param stage The stage of the skill to be used for evaluation. An error will be returned if this skill stage is not enabled on the account used for evaluation. (required)
+   * @param startTimestampFrom The begnning of the start time to query evaluation result. (optional)
+   * @param startTimestampTo The end of the start time to query evaluation result. (optional)
+   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @return com.amazon.ask.smapi.model.v1.smartHomeEvaluation.ListSHCapabilityEvaluationsResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<com.amazon.ask.smapi.model.v1.smartHomeEvaluation.ListSHCapabilityEvaluationsResponse> callListSmarthomeCapabilityEvaluationsV1(String skillId, String stage, OffsetDateTime startTimestampFrom, OffsetDateTime startTimestampTo, BigDecimal maxResults, String nextToken) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+
+    if(stage != null) {
+    queryParams.add(new Pair<String, String>("stage", stage));
+  }
+
+    if(startTimestampFrom != null) {
+    queryParams.add(new Pair<String, String>("startTimestampFrom", startTimestampFrom.toString()));
+  }
+
+    if(startTimestampTo != null) {
+    queryParams.add(new Pair<String, String>("startTimestampTo", startTimestampTo.toString()));
+  }
+
+    if(maxResults != null) {
+    queryParams.add(new Pair<String, String>("maxResults", maxResults.toString()));
+  }
+
+    if(nextToken != null) {
+    queryParams.add(new Pair<String, String>("nextToken", nextToken));
+  }
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String path = "/v1/skills/{skillId}/smartHome/testing/capabilityEvaluations";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.smartHomeEvaluation.ListSHCapabilityEvaluationsResponse.class, 200, "Successfully retrieved the evaluation infomation."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Bad Request. Returned when the request payload is malformed or when, at least, one required property is missing or invalid. "));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource. "));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "API user does not have permission or is currently in a state that does not allow calls to this API. "));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 404, "The specified skill, test plan, or evaluation does not exist. The error response will contain a description that indicates the specific resource type that was not found. "));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 429, "Exceeded the permitted request limit. Throttling criteria includes total requests, per API and CustomerId. "));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 0, "Internal server error. "));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.smartHomeEvaluation.ListSHCapabilityEvaluationsResponse.class, false);
+  }
+
+  /**
+   * List Smart Home capability evaluation runs for a skill.
+   * List Smart Home capability evaluation runs for a skill.
+   * @param skillId The skill ID. (required)
+   * @param stage The stage of the skill to be used for evaluation. An error will be returned if this skill stage is not enabled on the account used for evaluation. (required)
+   * @param startTimestampFrom The begnning of the start time to query evaluation result. (optional)
+   * @param startTimestampTo The end of the start time to query evaluation result. (optional)
+   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @return com.amazon.ask.smapi.model.v1.smartHomeEvaluation.ListSHCapabilityEvaluationsResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.smapi.model.v1.smartHomeEvaluation.ListSHCapabilityEvaluationsResponse listSmarthomeCapabilityEvaluationsV1(String skillId, String stage, OffsetDateTime startTimestampFrom, OffsetDateTime startTimestampTo, BigDecimal maxResults, String nextToken) throws ServiceException {
+    return this.callListSmarthomeCapabilityEvaluationsV1(skillId, stage, startTimestampFrom, startTimestampTo, maxResults, nextToken).getResponse();
+  }
+
+  /**
+   * Start a capability evaluation against a Smart Home skill.
+   * Start a capability evaluation against a Smart Home skill.
+   * @param skillId The skill ID. (required)
+   * @param evaluateSHCapabilityPayload Payload sent to start a capability evaluation against a Smart Home skill. (optional)
+   * @return com.amazon.ask.smapi.model.v1.smartHomeEvaluation.EvaluateSHCapabilityResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<com.amazon.ask.smapi.model.v1.smartHomeEvaluation.EvaluateSHCapabilityResponse> callCreateSmarthomeCapabilityEvaluationV1(String skillId, com.amazon.ask.smapi.model.v1.smartHomeEvaluation.EvaluateSHCapabilityRequest evaluateSHCapabilityPayload) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String path = "/v1/skills/{skillId}/smartHome/testing/capabilityEvaluations";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.smartHomeEvaluation.EvaluateSHCapabilityResponse.class, 200, "Evaluation has successfully begun."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Bad Request. Returned when the request payload is malformed or when, at least, one required property is missing or invalid. "));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource. "));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "API user does not have permission or is currently in a state that does not allow calls to this API. "));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 404, "The specified skill, test plan, or evaluation does not exist. The error response will contain a description that indicates the specific resource type that was not found. "));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 409, "A test run is already in progress for the specified endpoint. Please retry after some time. "));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 429, "Exceeded the permitted request limit. Throttling criteria includes total requests, per API and CustomerId. "));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 0, "Internal server error. "));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, evaluateSHCapabilityPayload, com.amazon.ask.smapi.model.v1.smartHomeEvaluation.EvaluateSHCapabilityResponse.class, false);
+  }
+
+  /**
+   * Start a capability evaluation against a Smart Home skill.
+   * Start a capability evaluation against a Smart Home skill.
+   * @param skillId The skill ID. (required)
+   * @param evaluateSHCapabilityPayload Payload sent to start a capability evaluation against a Smart Home skill. (optional)
+   * @return com.amazon.ask.smapi.model.v1.smartHomeEvaluation.EvaluateSHCapabilityResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.smapi.model.v1.smartHomeEvaluation.EvaluateSHCapabilityResponse createSmarthomeCapabilityEvaluationV1(String skillId, com.amazon.ask.smapi.model.v1.smartHomeEvaluation.EvaluateSHCapabilityRequest evaluateSHCapabilityPayload) throws ServiceException {
+    return this.callCreateSmarthomeCapabilityEvaluationV1(skillId, evaluateSHCapabilityPayload).getResponse();
+  }
+
+  /**
+   * List all the test plan names and ids for a given skill ID.
+   * List all the test plan names and ids for a given skill ID.
+   * @param skillId The skill ID. (required)
+   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @return com.amazon.ask.smapi.model.v1.smartHomeEvaluation.ListSHCapabilityTestPlansResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<com.amazon.ask.smapi.model.v1.smartHomeEvaluation.ListSHCapabilityTestPlansResponse> callListSmarthomeCapabilityTestPlansV1(String skillId, BigDecimal maxResults, String nextToken) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+
+    if(maxResults != null) {
+    queryParams.add(new Pair<String, String>("maxResults", maxResults.toString()));
+  }
+
+    if(nextToken != null) {
+    queryParams.add(new Pair<String, String>("nextToken", nextToken));
+  }
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String path = "/v1/skills/{skillId}/smartHome/testing/capabilityTestPlans";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.smartHomeEvaluation.ListSHCapabilityTestPlansResponse.class, 200, "Successfully got the list of test plans."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Bad Request. Returned when the request payload is malformed or when, at least, one required property is missing or invalid. "));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource. "));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "API user does not have permission or is currently in a state that does not allow calls to this API. "));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 404, "The specified skill, test plan, or evaluation does not exist. The error response will contain a description that indicates the specific resource type that was not found. "));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 429, "Exceeded the permitted request limit. Throttling criteria includes total requests, per API and CustomerId. "));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 0, "Internal server error. "));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.smartHomeEvaluation.ListSHCapabilityTestPlansResponse.class, false);
+  }
+
+  /**
+   * List all the test plan names and ids for a given skill ID.
+   * List all the test plan names and ids for a given skill ID.
+   * @param skillId The skill ID. (required)
+   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @return com.amazon.ask.smapi.model.v1.smartHomeEvaluation.ListSHCapabilityTestPlansResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.smapi.model.v1.smartHomeEvaluation.ListSHCapabilityTestPlansResponse listSmarthomeCapabilityTestPlansV1(String skillId, BigDecimal maxResults, String nextToken) throws ServiceException {
+    return this.callListSmarthomeCapabilityTestPlansV1(skillId, maxResults, nextToken).getResponse();
   }
 
   /**

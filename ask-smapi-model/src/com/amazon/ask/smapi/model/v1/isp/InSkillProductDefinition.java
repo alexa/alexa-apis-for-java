@@ -37,6 +37,9 @@ public final class InSkillProductDefinition {
     @JsonProperty("purchasableState")
     private String purchasableState = null;
 
+    @JsonProperty("promotableState")
+    private String promotableState = null;
+
     @JsonProperty("subscriptionInformation")
     private com.amazon.ask.smapi.model.v1.isp.SubscriptionInformation subscriptionInformation = null;
 
@@ -65,6 +68,9 @@ public final class InSkillProductDefinition {
         }
         if (builder.purchasableState != null) {
             this.purchasableState = builder.purchasableState;
+        }
+        if (builder.promotableState != null) {
+            this.promotableState = builder.promotableState;
         }
         if (builder.subscriptionInformation != null) {
             this.subscriptionInformation = builder.subscriptionInformation;
@@ -155,6 +161,33 @@ public final class InSkillProductDefinition {
     }
 
     /**
+     * Get promotableState
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getPromotableStateAsString().
+     *
+     * @return promotableState
+    **/
+    
+    public com.amazon.ask.smapi.model.v1.isp.PromotableState getPromotableState() {
+        return com.amazon.ask.smapi.model.v1.isp.PromotableState.fromValue(promotableState);
+    }
+
+    /**
+     * Get the underlying String value for promotableState.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return promotableState as a String value
+    **/
+    @JsonProperty("promotableState")
+    public String getPromotableStateAsString() {
+      return promotableState;
+    }
+
+    /**
      * Get subscriptionInformation
      * @return subscriptionInformation
     **/
@@ -207,6 +240,7 @@ public final class InSkillProductDefinition {
             Objects.equals(this.type, v1IspInSkillProductDefinition.type) &&
             Objects.equals(this.referenceName, v1IspInSkillProductDefinition.referenceName) &&
             Objects.equals(this.purchasableState, v1IspInSkillProductDefinition.purchasableState) &&
+            Objects.equals(this.promotableState, v1IspInSkillProductDefinition.promotableState) &&
             Objects.equals(this.subscriptionInformation, v1IspInSkillProductDefinition.subscriptionInformation) &&
             Objects.equals(this.publishingInformation, v1IspInSkillProductDefinition.publishingInformation) &&
             Objects.equals(this.privacyAndCompliance, v1IspInSkillProductDefinition.privacyAndCompliance) &&
@@ -215,7 +249,7 @@ public final class InSkillProductDefinition {
 
     @Override
     public int hashCode() {
-        return Objects.hash(version, type, referenceName, purchasableState, subscriptionInformation, publishingInformation, privacyAndCompliance, testingInstructions);
+        return Objects.hash(version, type, referenceName, purchasableState, promotableState, subscriptionInformation, publishingInformation, privacyAndCompliance, testingInstructions);
     }
 
     @Override
@@ -227,6 +261,7 @@ public final class InSkillProductDefinition {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    referenceName: ").append(toIndentedString(referenceName)).append("\n");
         sb.append("    purchasableState: ").append(toIndentedString(purchasableState)).append("\n");
+        sb.append("    promotableState: ").append(toIndentedString(promotableState)).append("\n");
         sb.append("    subscriptionInformation: ").append(toIndentedString(subscriptionInformation)).append("\n");
         sb.append("    publishingInformation: ").append(toIndentedString(publishingInformation)).append("\n");
         sb.append("    privacyAndCompliance: ").append(toIndentedString(privacyAndCompliance)).append("\n");
@@ -251,6 +286,7 @@ public final class InSkillProductDefinition {
         private String type;
         private String referenceName;
         private String purchasableState;
+        private String promotableState;
         private com.amazon.ask.smapi.model.v1.isp.SubscriptionInformation subscriptionInformation;
         private com.amazon.ask.smapi.model.v1.isp.PublishingInformation publishingInformation;
         private com.amazon.ask.smapi.model.v1.isp.PrivacyAndCompliance privacyAndCompliance;
@@ -294,6 +330,18 @@ public final class InSkillProductDefinition {
 
         public Builder withPurchasableState(com.amazon.ask.smapi.model.v1.isp.PurchasableState purchasableState) {
             this.purchasableState = purchasableState != null ? purchasableState.toString() : null;
+            return this;
+        }
+
+
+        @JsonProperty("promotableState")
+        public Builder withPromotableState(String promotableState) {
+          this.promotableState = promotableState;
+          return this;
+        }
+
+        public Builder withPromotableState(com.amazon.ask.smapi.model.v1.isp.PromotableState promotableState) {
+            this.promotableState = promotableState != null ? promotableState.toString() : null;
             return this;
         }
 

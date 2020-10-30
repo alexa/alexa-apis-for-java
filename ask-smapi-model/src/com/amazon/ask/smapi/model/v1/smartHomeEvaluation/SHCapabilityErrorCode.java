@@ -12,7 +12,7 @@
 */
 
 
-package com.amazon.ask.smapi.model.v1.skill.Manifest;
+package com.amazon.ask.smapi.model.v1.smartHomeEvaluation;
 
 import java.util.Objects;
 
@@ -20,25 +20,31 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Defines the mode of viewport that comply with this specification. E.g. HUB TV.
+ * Gets or Sets v1.smartHomeEvaluation.SHCapabilityErrorCode
  */
-public enum ViewportMode {
+public enum SHCapabilityErrorCode {
   
-  HUB("HUB"),
+  NO_SUCH_ENDPOINT("NO_SUCH_ENDPOINT"),
   
-  TV("TV"),
+  NO_SUCH_SKILL_STAGE("NO_SUCH_SKILL_STAGE"),
   
-  MOBILE("MOBILE"),
+  NO_SUCH_TEST_PLAN("NO_SUCH_TEST_PLAN"),
   
-  PC("PC"),
+  MULTIPLE_MATCHED_ENDPOINTS("MULTIPLE_MATCHED_ENDPOINTS"),
   
-  AUTO("AUTO"),
+  MULTIPLE_MATCHED_TEST_PLANS("MULTIPLE_MATCHED_TEST_PLANS"),
+  
+  CAPABILITY_NOT_SUPPORTED("CAPABILITY_NOT_SUPPORTED"),
+  
+  DISCOVERY_FAILED("DISCOVERY_FAILED"),
+  
+  TEST_CASE_TIME_OUT("TEST_CASE_TIME_OUT"),
   
   UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
-  ViewportMode(String value) {
+  SHCapabilityErrorCode(String value) {
     this.value = value;
   }
 
@@ -53,13 +59,13 @@ public enum ViewportMode {
   }
 
   @JsonCreator
-  public static ViewportMode fromValue(String text) {
-    for (ViewportMode b : ViewportMode.values()) {
+  public static SHCapabilityErrorCode fromValue(String text) {
+    for (SHCapabilityErrorCode b : SHCapabilityErrorCode.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }
     }
-    return ViewportMode.UNKNOWN_TO_SDK_VERSION;
+    return SHCapabilityErrorCode.UNKNOWN_TO_SDK_VERSION;
   }
 }
 
