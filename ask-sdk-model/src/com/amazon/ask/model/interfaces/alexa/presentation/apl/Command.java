@@ -28,6 +28,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonSubTypes({
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.SetPageCommand.class, name = "SetPage"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.ControlMediaCommand.class, name = "ControlMedia"),
+  @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.FinishCommand.class, name = "Finish"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.AutoPageCommand.class, name = "AutoPage"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.PlayMediaCommand.class, name = "PlayMedia"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.ScrollCommand.class, name = "Scroll"),
@@ -35,6 +36,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.AnimateItemCommand.class, name = "AnimateItem"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.SendEventCommand.class, name = "SendEvent"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.SpeakListCommand.class, name = "SpeakList"),
+  @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.SelectCommand.class, name = "Select"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.SequentialCommand.class, name = "Sequential"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.SetStateCommand.class, name = "SetState"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.SpeakItemCommand.class, name = "SpeakItem"),
@@ -44,6 +46,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.ScrollToIndexCommand.class, name = "ScrollToIndex"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.SetValueCommand.class, name = "SetValue"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.SetFocusCommand.class, name = "SetFocus"),
+  @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.ScrollToComponentCommand.class, name = "ScrollToComponent"),
 })
 public abstract class Command {
 
