@@ -45,6 +45,12 @@ public final class ScrollCommand extends com.amazon.ask.model.interfaces.alexa.p
         if (builder.description != null) {
             this.description = builder.description;
         }
+        if (builder.screenLock != null) {
+            this.screenLock = builder.screenLock;
+        }
+        if (builder.sequencer != null) {
+            this.sequencer = builder.sequencer;
+        }
         if (builder.when != null) {
             this.when = builder.when;
         }
@@ -120,6 +126,8 @@ public final class ScrollCommand extends com.amazon.ask.model.interfaces.alexa.p
     public static class Builder {
         private String delay;
         private String description;
+        private Boolean screenLock;
+        private String sequencer;
         private Boolean when;
         private String distance;
         private String componentId;
@@ -142,6 +150,22 @@ public final class ScrollCommand extends com.amazon.ask.model.interfaces.alexa.p
 
         public Builder withDescription(String description) {
             this.description = description;
+            return this;
+        }
+
+
+        @JsonProperty("screenLock")
+
+        public Builder withScreenLock(Boolean screenLock) {
+            this.screenLock = screenLock;
+            return this;
+        }
+
+
+        @JsonProperty("sequencer")
+
+        public Builder withSequencer(String sequencer) {
+            this.sequencer = sequencer;
             return this;
         }
 

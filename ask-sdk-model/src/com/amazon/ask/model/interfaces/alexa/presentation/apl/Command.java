@@ -42,6 +42,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.SpeakItemCommand.class, name = "SpeakItem"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.ParallelCommand.class, name = "Parallel"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.OpenUrlCommand.class, name = "OpenURL"),
+  @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.ReinflateCommand.class, name = "Reinflate"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.ClearFocusCommand.class, name = "ClearFocus"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.ScrollToIndexCommand.class, name = "ScrollToIndex"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.SetValueCommand.class, name = "SetValue"),
@@ -57,6 +58,12 @@ public abstract class Command {
 
     @JsonProperty("description")
     protected String description = null;
+
+    @JsonProperty("screenLock")
+    protected Boolean screenLock = null;
+
+    @JsonProperty("sequencer")
+    protected String sequencer = null;
 
     @JsonProperty("when")
     protected Boolean when = null;
@@ -95,6 +102,26 @@ public abstract class Command {
 
 
     /**
+     * If true, disable the Interaction Timer.
+     * @return screenLock
+    **/
+    @JsonProperty("screenLock")
+    public Boolean getScreenLock() {
+        return screenLock;
+    }
+
+
+    /**
+     * Specify the sequencer that should execute this command.
+     * @return sequencer
+    **/
+    @JsonProperty("sequencer")
+    public String getSequencer() {
+        return sequencer;
+    }
+
+
+    /**
      * If false, the execution of the command is skipped. Defaults to true.
      * @return when
     **/
@@ -116,12 +143,14 @@ public abstract class Command {
         return Objects.equals(this.type, interfacesAlexaPresentationAplCommand.type) &&
             Objects.equals(this.delay, interfacesAlexaPresentationAplCommand.delay) &&
             Objects.equals(this.description, interfacesAlexaPresentationAplCommand.description) &&
+            Objects.equals(this.screenLock, interfacesAlexaPresentationAplCommand.screenLock) &&
+            Objects.equals(this.sequencer, interfacesAlexaPresentationAplCommand.sequencer) &&
             Objects.equals(this.when, interfacesAlexaPresentationAplCommand.when);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, delay, description, when);
+        return Objects.hash(type, delay, description, screenLock, sequencer, when);
     }
 
     @Override
@@ -132,6 +161,8 @@ public abstract class Command {
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    delay: ").append(toIndentedString(delay)).append("\n");
         sb.append("    description: ").append(toIndentedString(description)).append("\n");
+        sb.append("    screenLock: ").append(toIndentedString(screenLock)).append("\n");
+        sb.append("    sequencer: ").append(toIndentedString(sequencer)).append("\n");
         sb.append("    when: ").append(toIndentedString(when)).append("\n");
         sb.append("}");
         return sb.toString();

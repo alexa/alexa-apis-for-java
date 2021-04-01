@@ -154,6 +154,7 @@ public class SubTypesManifest {
     interfacesAlexaPresentationAplCommandSubTypes.put("SpeakItem", com.amazon.ask.model.interfaces.alexa.presentation.apl.SpeakItemCommand.class);
     interfacesAlexaPresentationAplCommandSubTypes.put("Parallel", com.amazon.ask.model.interfaces.alexa.presentation.apl.ParallelCommand.class);
     interfacesAlexaPresentationAplCommandSubTypes.put("OpenURL", com.amazon.ask.model.interfaces.alexa.presentation.apl.OpenUrlCommand.class);
+    interfacesAlexaPresentationAplCommandSubTypes.put("Reinflate", com.amazon.ask.model.interfaces.alexa.presentation.apl.ReinflateCommand.class);
     interfacesAlexaPresentationAplCommandSubTypes.put("ClearFocus", com.amazon.ask.model.interfaces.alexa.presentation.apl.ClearFocusCommand.class);
     interfacesAlexaPresentationAplCommandSubTypes.put("ScrollToIndex", com.amazon.ask.model.interfaces.alexa.presentation.apl.ScrollToIndexCommand.class);
     interfacesAlexaPresentationAplCommandSubTypes.put("SetValue", com.amazon.ask.model.interfaces.alexa.presentation.apl.SetValueCommand.class);

@@ -19,18 +19,18 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * The finish command closes the current APL document and exits.
+ * The reinflate command reinflates the current document with updated configuration properties.
  */
 
-@JsonDeserialize(builder = FinishCommand.Builder.class)
-public final class FinishCommand extends com.amazon.ask.model.interfaces.alexa.presentation.apl.Command  {
+@JsonDeserialize(builder = ReinflateCommand.Builder.class)
+public final class ReinflateCommand extends com.amazon.ask.model.interfaces.alexa.presentation.apl.Command  {
 
     public static Builder builder() {
         return new Builder();
     }
 
-    private FinishCommand(Builder builder) {
-        String discriminatorValue = "Finish";
+    private ReinflateCommand(Builder builder) {
+        String discriminatorValue = "Reinflate";
 
         this.type = discriminatorValue;
         if (builder.delay != null) {
@@ -69,7 +69,7 @@ public final class FinishCommand extends com.amazon.ask.model.interfaces.alexa.p
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class FinishCommand {\n");
+        sb.append("class ReinflateCommand {\n");
         sb.append("    ").append(toIndentedString(super.toString())).append("\n");
         sb.append("}");
         return sb.toString();
@@ -139,8 +139,8 @@ public final class FinishCommand extends com.amazon.ask.model.interfaces.alexa.p
         }
 
 
-        public FinishCommand build() {
-            return new FinishCommand(this);
+        public ReinflateCommand build() {
+            return new ReinflateCommand(this);
         }
     }
 }
