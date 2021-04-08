@@ -61,6 +61,7 @@ public class SubTypesManifest {
     directiveSubTypes.put("Tasks.CompleteTask", com.amazon.ask.model.interfaces.tasks.CompleteTaskDirective.class);
     directiveSubTypes.put("Alexa.Presentation.APL.RenderDocument", com.amazon.ask.model.interfaces.alexa.presentation.apl.RenderDocumentDirective.class);
     directiveSubTypes.put("Connections.SendResponse", com.amazon.ask.model.interfaces.connections.SendResponseDirective.class);
+    directiveSubTypes.put("Alexa.Presentation.APL.SendTokenListData", com.amazon.ask.model.interfaces.alexa.presentation.apl.SendTokenListDataDirective.class);
     directiveSubTypes.put("AudioPlayer.ClearQueue", com.amazon.ask.model.interfaces.audioplayer.ClearQueueDirective.class);
     directiveSubTypes.put("Alexa.Presentation.APL.UpdateIndexListData", com.amazon.ask.model.interfaces.alexa.presentation.apl.UpdateIndexListDataDirective.class);
     baseTypes.put(com.amazon.ask.model.Directive.class, directiveSubTypes);
@@ -74,6 +75,7 @@ public class SubTypesManifest {
     requestSubTypes.put("SessionResumedRequest", com.amazon.ask.model.SessionResumedRequest.class);
     requestSubTypes.put("SessionEndedRequest", com.amazon.ask.model.SessionEndedRequest.class);
     requestSubTypes.put("Alexa.Presentation.APL.LoadIndexListData", com.amazon.ask.model.interfaces.alexa.presentation.apl.LoadIndexListDataEvent.class);
+    requestSubTypes.put("Alexa.Presentation.APL.LoadTokenListData", com.amazon.ask.model.interfaces.alexa.presentation.apl.LoadTokenListDataEvent.class);
     requestSubTypes.put("AudioPlayer.PlaybackFailed", com.amazon.ask.model.interfaces.audioplayer.PlaybackFailedRequest.class);
     requestSubTypes.put("CanFulfillIntentRequest", com.amazon.ask.model.canfulfill.CanFulfillIntentRequest.class);
     requestSubTypes.put("CustomInterfaceController.Expired", com.amazon.ask.model.interfaces.customInterfaceController.ExpiredRequest.class);

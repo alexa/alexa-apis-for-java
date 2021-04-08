@@ -35,6 +35,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
   @JsonSubTypes.Type(value = com.amazon.ask.model.SessionResumedRequest.class, name = "SessionResumedRequest"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.SessionEndedRequest.class, name = "SessionEndedRequest"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.LoadIndexListDataEvent.class, name = "Alexa.Presentation.APL.LoadIndexListData"),
+  @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.LoadTokenListDataEvent.class, name = "Alexa.Presentation.APL.LoadTokenListData"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.audioplayer.PlaybackFailedRequest.class, name = "AudioPlayer.PlaybackFailed"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.canfulfill.CanFulfillIntentRequest.class, name = "CanFulfillIntentRequest"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.customInterfaceController.ExpiredRequest.class, name = "CustomInterfaceController.Expired"),
