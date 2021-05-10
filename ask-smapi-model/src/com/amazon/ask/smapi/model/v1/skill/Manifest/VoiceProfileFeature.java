@@ -19,20 +19,23 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Skills using Custom Interfaces can send custom directives and receive custom events from custom endpoints such as Alexa gadgets.
+ * Feature for allowing for querying for available partner voice profiles, linking Alexa Speaker ID profiles to partner speaker profiles, and sending partner speaker profiles in directives.
  */
 
-@JsonDeserialize(builder = CustomInterface.Builder.class)
-public final class CustomInterface extends com.amazon.ask.smapi.model.v1.skill.Manifest.ModelInterface  {
+@JsonDeserialize(builder = VoiceProfileFeature.Builder.class)
+public final class VoiceProfileFeature extends com.amazon.ask.smapi.model.v1.skill.Manifest.VideoFeature  {
 
     public static Builder builder() {
         return new Builder();
     }
 
-    private CustomInterface(Builder builder) {
-        String discriminatorValue = "CUSTOM_INTERFACE";
+    private VoiceProfileFeature(Builder builder) {
+        String discriminatorValue = "VIDEO_VOICE_PROFILE";
 
-        this.type = discriminatorValue;
+        if (builder.version != null) {
+            this.version = builder.version;
+        }
+        this.name = discriminatorValue;
     }
 
     @Override
@@ -54,7 +57,7 @@ public final class CustomInterface extends com.amazon.ask.smapi.model.v1.skill.M
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class CustomInterface {\n");
+        sb.append("class VoiceProfileFeature {\n");
         sb.append("    ").append(toIndentedString(super.toString())).append("\n");
         sb.append("}");
         return sb.toString();
@@ -72,11 +75,20 @@ public final class CustomInterface extends com.amazon.ask.smapi.model.v1.skill.M
     }
   
     public static class Builder {
+        private String version;
 
         private Builder() {}
 
-        public CustomInterface build() {
-            return new CustomInterface(this);
+        @JsonProperty("version")
+
+        public Builder withVersion(String version) {
+            this.version = version;
+            return this;
+        }
+
+
+        public VoiceProfileFeature build() {
+            return new VoiceProfileFeature(this);
         }
     }
 }

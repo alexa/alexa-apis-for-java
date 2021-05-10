@@ -12,7 +12,7 @@
 */
 
 
-package com.amazon.ask.smapi.model.v1.isp;
+package com.amazon.ask.smapi.model.v1.skill.AlexaHosted;
 
 import java.util.Objects;
 
@@ -20,19 +20,21 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Stage of in-skill product.
+ * Hosted skill AWS region
  */
-public enum Stage {
+public enum HostedSkillRegion {
   
-  DEVELOPMENT("development"),
+  US_EAST_1("US_EAST_1"),
   
-  LIVE("live"),
+  US_WEST_2("US_WEST_2"),
+  
+  EU_WEST_1("EU_WEST_1"),
   
   UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
-  Stage(String value) {
+  HostedSkillRegion(String value) {
     this.value = value;
   }
 
@@ -47,13 +49,13 @@ public enum Stage {
   }
 
   @JsonCreator
-  public static Stage fromValue(String text) {
-    for (Stage b : Stage.values()) {
+  public static HostedSkillRegion fromValue(String text) {
+    for (HostedSkillRegion b : HostedSkillRegion.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }
     }
-    return Stage.UNKNOWN_TO_SDK_VERSION;
+    return HostedSkillRegion.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

@@ -28,8 +28,6 @@ public enum DistributionMode {
   
   PUBLIC("PUBLIC"),
   
-  INTERNAL("INTERNAL"),
-  
   UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;

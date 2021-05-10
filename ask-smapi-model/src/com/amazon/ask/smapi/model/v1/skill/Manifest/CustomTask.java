@@ -19,33 +19,33 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Skill connection object.
+ * Defines the name and version of the task that the skill wants to handle.
  */
 
-@JsonDeserialize(builder = Connections.Builder.class)
-public final class Connections {
+@JsonDeserialize(builder = CustomTask.Builder.class)
+public final class CustomTask {
 
     @JsonProperty("name")
     private String name = null;
 
-    @JsonProperty("payload")
-    private com.amazon.ask.smapi.model.v1.skill.Manifest.ConnectionsPayload payload = null;
+    @JsonProperty("version")
+    private String version = null;
 
     public static Builder builder() {
         return new Builder();
     }
 
-    private Connections(Builder builder) {
+    private CustomTask(Builder builder) {
         if (builder.name != null) {
             this.name = builder.name;
         }
-        if (builder.payload != null) {
-            this.payload = builder.payload;
+        if (builder.version != null) {
+            this.version = builder.version;
         }
     }
 
     /**
-     * Name of the connection.
+     * Name of the task.
      * @return name
     **/
     @JsonProperty("name")
@@ -55,12 +55,12 @@ public final class Connections {
 
 
     /**
-     * Get payload
-     * @return payload
+     * Version of the task.
+     * @return version
     **/
-    @JsonProperty("payload")
-    public com.amazon.ask.smapi.model.v1.skill.Manifest.ConnectionsPayload getPayload() {
-        return payload;
+    @JsonProperty("version")
+    public String getVersion() {
+        return version;
     }
 
 
@@ -72,23 +72,23 @@ public final class Connections {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        Connections v1SkillManifestConnections = (Connections) o;
-        return Objects.equals(this.name, v1SkillManifestConnections.name) &&
-            Objects.equals(this.payload, v1SkillManifestConnections.payload);
+        CustomTask v1SkillManifestCustomTask = (CustomTask) o;
+        return Objects.equals(this.name, v1SkillManifestCustomTask.name) &&
+            Objects.equals(this.version, v1SkillManifestCustomTask.version);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, payload);
+        return Objects.hash(name, version);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class Connections {\n");
+        sb.append("class CustomTask {\n");
         
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
-        sb.append("    payload: ").append(toIndentedString(payload)).append("\n");
+        sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -106,7 +106,7 @@ public final class Connections {
   
     public static class Builder {
         private String name;
-        private com.amazon.ask.smapi.model.v1.skill.Manifest.ConnectionsPayload payload;
+        private String version;
 
         private Builder() {}
 
@@ -118,16 +118,16 @@ public final class Connections {
         }
 
 
-        @JsonProperty("payload")
+        @JsonProperty("version")
 
-        public Builder withPayload(com.amazon.ask.smapi.model.v1.skill.Manifest.ConnectionsPayload payload) {
-            this.payload = payload;
+        public Builder withVersion(String version) {
+            this.version = version;
             return this;
         }
 
 
-        public Connections build() {
-            return new Connections(this);
+        public CustomTask build() {
+            return new CustomTask(this);
         }
     }
 }

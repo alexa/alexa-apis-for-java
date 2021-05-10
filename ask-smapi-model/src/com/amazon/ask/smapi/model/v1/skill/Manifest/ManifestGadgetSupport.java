@@ -71,8 +71,8 @@ public final class ManifestGadgetSupport {
      * @return requirement
     **/
     
-    public com.amazon.ask.smapi.model.v1.skill.Manifest.GadgetSupport getRequirement() {
-        return com.amazon.ask.smapi.model.v1.skill.Manifest.GadgetSupport.fromValue(requirement);
+    public com.amazon.ask.smapi.model.v1.skill.Manifest.GadgetSupportRequirement getRequirement() {
+        return com.amazon.ask.smapi.model.v1.skill.Manifest.GadgetSupportRequirement.fromValue(requirement);
     }
 
     /**
@@ -116,7 +116,6 @@ public final class ManifestGadgetSupport {
     /**
      * Maximum number of players in the game.
      * minimum: 1
-     * maximum: 16
      * @return numPlayersMax
     **/
     @JsonProperty("numPlayersMax")
@@ -198,7 +197,7 @@ public final class ManifestGadgetSupport {
           return this;
         }
 
-        public Builder withRequirement(com.amazon.ask.smapi.model.v1.skill.Manifest.GadgetSupport requirement) {
+        public Builder withRequirement(com.amazon.ask.smapi.model.v1.skill.Manifest.GadgetSupportRequirement requirement) {
             this.requirement = requirement != null ? requirement.toString() : null;
             return this;
         }

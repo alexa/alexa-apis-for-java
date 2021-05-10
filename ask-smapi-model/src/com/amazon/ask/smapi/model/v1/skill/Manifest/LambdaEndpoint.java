@@ -39,7 +39,7 @@ public final class LambdaEndpoint {
     }
 
     /**
-     * Amazon Resource Name (ARN) of the skill's Lambda function or HTTPS URL.
+     * Amazon Resource Name (ARN) of the Lambda function.
      * @return uri
     **/
     @JsonProperty("uri")

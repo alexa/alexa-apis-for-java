@@ -24,15 +24,13 @@ import com.fasterxml.jackson.annotation.JsonValue;
  */
 public enum SmartHomeProtocol {
   
-  _1("1"),
-  
   _2("2"),
   
-  _2_5("2.5"),
-  
-  _2_9("2.9"),
+  _2_0("2.0"),
   
   _3("3"),
+  
+  _3_0("3.0"),
   
   UNKNOWN_TO_SDK_VERSION(null);
 

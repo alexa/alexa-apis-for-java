@@ -34,8 +34,14 @@ public final class VideoApisLocale {
     @JsonProperty("videoProviderLogoUri")
     private String videoProviderLogoUri = null;
 
-    @JsonProperty("catalogInformation")
-    private List<com.amazon.ask.smapi.model.v1.skill.Manifest.VideoCatalogInfo> catalogInformation = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.VideoCatalogInfo>();
+    @JsonProperty("fireTvCatalogIngestion")
+    private com.amazon.ask.smapi.model.v1.skill.Manifest.VideoFireTvCatalogIngestion fireTvCatalogIngestion = null;
+
+    @JsonProperty("features")
+    private List<com.amazon.ask.smapi.model.v1.skill.Manifest.VideoFeature> features = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.VideoFeature>();
+
+    @JsonProperty("promptNames")
+    private List<com.amazon.ask.smapi.model.v1.skill.Manifest.VideoPromptName> promptNames = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.VideoPromptName>();
 
     public static Builder builder() {
         return new Builder();
@@ -48,8 +54,14 @@ public final class VideoApisLocale {
         if (builder.videoProviderLogoUri != null) {
             this.videoProviderLogoUri = builder.videoProviderLogoUri;
         }
-        if (builder.catalogInformation != null) {
-            this.catalogInformation = builder.catalogInformation;
+        if (builder.fireTvCatalogIngestion != null) {
+            this.fireTvCatalogIngestion = builder.fireTvCatalogIngestion;
+        }
+        if (builder.features != null) {
+            this.features = builder.features;
+        }
+        if (builder.promptNames != null) {
+            this.promptNames = builder.promptNames;
         }
     }
 
@@ -74,12 +86,32 @@ public final class VideoApisLocale {
 
 
     /**
-     * Get catalogInformation
-     * @return catalogInformation
+     * Get fireTvCatalogIngestion
+     * @return fireTvCatalogIngestion
     **/
-    @JsonProperty("catalogInformation")
-    public List<com.amazon.ask.smapi.model.v1.skill.Manifest.VideoCatalogInfo> getCatalogInformation() {
-        return catalogInformation;
+    @JsonProperty("fireTvCatalogIngestion")
+    public com.amazon.ask.smapi.model.v1.skill.Manifest.VideoFireTvCatalogIngestion getFireTvCatalogIngestion() {
+        return fireTvCatalogIngestion;
+    }
+
+
+    /**
+     * Defines the array of video features for this skill.
+     * @return features
+    **/
+    @JsonProperty("features")
+    public List<com.amazon.ask.smapi.model.v1.skill.Manifest.VideoFeature> getFeatures() {
+        return features;
+    }
+
+
+    /**
+     * Name to use when Alexa renders the video skill name in a prompt to the user
+     * @return promptNames
+    **/
+    @JsonProperty("promptNames")
+    public List<com.amazon.ask.smapi.model.v1.skill.Manifest.VideoPromptName> getPromptNames() {
+        return promptNames;
     }
 
 
@@ -94,12 +126,14 @@ public final class VideoApisLocale {
         VideoApisLocale v1SkillManifestVideoApisLocale = (VideoApisLocale) o;
         return Objects.equals(this.videoProviderTargetingNames, v1SkillManifestVideoApisLocale.videoProviderTargetingNames) &&
             Objects.equals(this.videoProviderLogoUri, v1SkillManifestVideoApisLocale.videoProviderLogoUri) &&
-            Objects.equals(this.catalogInformation, v1SkillManifestVideoApisLocale.catalogInformation);
+            Objects.equals(this.fireTvCatalogIngestion, v1SkillManifestVideoApisLocale.fireTvCatalogIngestion) &&
+            Objects.equals(this.features, v1SkillManifestVideoApisLocale.features) &&
+            Objects.equals(this.promptNames, v1SkillManifestVideoApisLocale.promptNames);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(videoProviderTargetingNames, videoProviderLogoUri, catalogInformation);
+        return Objects.hash(videoProviderTargetingNames, videoProviderLogoUri, fireTvCatalogIngestion, features, promptNames);
     }
 
     @Override
@@ -109,7 +143,9 @@ public final class VideoApisLocale {
         
         sb.append("    videoProviderTargetingNames: ").append(toIndentedString(videoProviderTargetingNames)).append("\n");
         sb.append("    videoProviderLogoUri: ").append(toIndentedString(videoProviderLogoUri)).append("\n");
-        sb.append("    catalogInformation: ").append(toIndentedString(catalogInformation)).append("\n");
+        sb.append("    fireTvCatalogIngestion: ").append(toIndentedString(fireTvCatalogIngestion)).append("\n");
+        sb.append("    features: ").append(toIndentedString(features)).append("\n");
+        sb.append("    promptNames: ").append(toIndentedString(promptNames)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -128,7 +164,9 @@ public final class VideoApisLocale {
     public static class Builder {
         private List<String> videoProviderTargetingNames;
         private String videoProviderLogoUri;
-        private List<com.amazon.ask.smapi.model.v1.skill.Manifest.VideoCatalogInfo> catalogInformation;
+        private com.amazon.ask.smapi.model.v1.skill.Manifest.VideoFireTvCatalogIngestion fireTvCatalogIngestion;
+        private List<com.amazon.ask.smapi.model.v1.skill.Manifest.VideoFeature> features;
+        private List<com.amazon.ask.smapi.model.v1.skill.Manifest.VideoPromptName> promptNames;
 
         private Builder() {}
 
@@ -155,18 +193,41 @@ public final class VideoApisLocale {
         }
 
 
-        @JsonProperty("catalogInformation")
+        @JsonProperty("fireTvCatalogIngestion")
 
-        public Builder withCatalogInformation(List<com.amazon.ask.smapi.model.v1.skill.Manifest.VideoCatalogInfo> catalogInformation) {
-            this.catalogInformation = catalogInformation;
+        public Builder withFireTvCatalogIngestion(com.amazon.ask.smapi.model.v1.skill.Manifest.VideoFireTvCatalogIngestion fireTvCatalogIngestion) {
+            this.fireTvCatalogIngestion = fireTvCatalogIngestion;
             return this;
         }
 
-        public Builder addCatalogInformationItem(com.amazon.ask.smapi.model.v1.skill.Manifest.VideoCatalogInfo catalogInformationItem) {
-            if (this.catalogInformation == null) {
-                this.catalogInformation = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.VideoCatalogInfo>();
+
+        @JsonProperty("features")
+
+        public Builder withFeatures(List<com.amazon.ask.smapi.model.v1.skill.Manifest.VideoFeature> features) {
+            this.features = features;
+            return this;
+        }
+
+        public Builder addFeaturesItem(com.amazon.ask.smapi.model.v1.skill.Manifest.VideoFeature featuresItem) {
+            if (this.features == null) {
+                this.features = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.VideoFeature>();
             }
-            this.catalogInformation.add(catalogInformationItem);
+            this.features.add(featuresItem);
+            return this;
+        }
+
+        @JsonProperty("promptNames")
+
+        public Builder withPromptNames(List<com.amazon.ask.smapi.model.v1.skill.Manifest.VideoPromptName> promptNames) {
+            this.promptNames = promptNames;
+            return this;
+        }
+
+        public Builder addPromptNamesItem(com.amazon.ask.smapi.model.v1.skill.Manifest.VideoPromptName promptNamesItem) {
+            if (this.promptNames == null) {
+                this.promptNames = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.VideoPromptName>();
+            }
+            this.promptNames.add(promptNamesItem);
             return this;
         }
 

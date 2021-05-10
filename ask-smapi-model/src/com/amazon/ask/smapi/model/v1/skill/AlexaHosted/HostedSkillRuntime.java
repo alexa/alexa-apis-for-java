@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Hosted skill lambda runtime
+ * Hosted skill lambda runtime; Node.js 10.x is deprecated by Hosted Skill service as of April 30, 2021.
  */
 public enum HostedSkillRuntime {
   

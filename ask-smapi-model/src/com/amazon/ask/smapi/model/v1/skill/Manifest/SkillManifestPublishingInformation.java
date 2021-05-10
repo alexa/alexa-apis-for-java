@@ -57,6 +57,9 @@ public final class SkillManifestPublishingInformation {
     @JsonProperty("distributionCountries")
     private List<com.amazon.ask.smapi.model.v1.skill.Manifest.DistributionCountries> distributionCountries = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.DistributionCountries>();
 
+    @JsonProperty("automaticDistribution")
+    private com.amazon.ask.smapi.model.v1.skill.Manifest.AutomaticDistribution automaticDistribution = null;
+
     public static Builder builder() {
         return new Builder();
     }
@@ -88,6 +91,9 @@ public final class SkillManifestPublishingInformation {
         }
         if (builder.distributionCountries != null) {
             this.distributionCountries = builder.distributionCountries;
+        }
+        if (builder.automaticDistribution != null) {
+            this.automaticDistribution = builder.automaticDistribution;
         }
     }
 
@@ -198,6 +204,16 @@ public final class SkillManifestPublishingInformation {
     }
 
 
+    /**
+     * Get automaticDistribution
+     * @return automaticDistribution
+    **/
+    @JsonProperty("automaticDistribution")
+    public com.amazon.ask.smapi.model.v1.skill.Manifest.AutomaticDistribution getAutomaticDistribution() {
+        return automaticDistribution;
+    }
+
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -215,12 +231,13 @@ public final class SkillManifestPublishingInformation {
             Objects.equals(this.gadgetSupport, v1SkillManifestSkillManifestPublishingInformation.gadgetSupport) &&
             Objects.equals(this.testingInstructions, v1SkillManifestSkillManifestPublishingInformation.testingInstructions) &&
             Objects.equals(this.category, v1SkillManifestSkillManifestPublishingInformation.category) &&
-            Objects.equals(this.distributionCountries, v1SkillManifestSkillManifestPublishingInformation.distributionCountries);
+            Objects.equals(this.distributionCountries, v1SkillManifestSkillManifestPublishingInformation.distributionCountries) &&
+            Objects.equals(this.automaticDistribution, v1SkillManifestSkillManifestPublishingInformation.automaticDistribution);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, locales, isAvailableWorldwide, distributionMode, gadgetSupport, testingInstructions, category, distributionCountries);
+        return Objects.hash(name, description, locales, isAvailableWorldwide, distributionMode, gadgetSupport, testingInstructions, category, distributionCountries, automaticDistribution);
     }
 
     @Override
@@ -237,6 +254,7 @@ public final class SkillManifestPublishingInformation {
         sb.append("    testingInstructions: ").append(toIndentedString(testingInstructions)).append("\n");
         sb.append("    category: ").append(toIndentedString(category)).append("\n");
         sb.append("    distributionCountries: ").append(toIndentedString(distributionCountries)).append("\n");
+        sb.append("    automaticDistribution: ").append(toIndentedString(automaticDistribution)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -262,6 +280,7 @@ public final class SkillManifestPublishingInformation {
         private String testingInstructions;
         private String category;
         private List<com.amazon.ask.smapi.model.v1.skill.Manifest.DistributionCountries> distributionCountries;
+        private com.amazon.ask.smapi.model.v1.skill.Manifest.AutomaticDistribution automaticDistribution;
 
         private Builder() {}
 
@@ -354,6 +373,14 @@ public final class SkillManifestPublishingInformation {
             this.distributionCountries.add(distributionCountriesItem);
             return this;
         }
+
+        @JsonProperty("automaticDistribution")
+
+        public Builder withAutomaticDistribution(com.amazon.ask.smapi.model.v1.skill.Manifest.AutomaticDistribution automaticDistribution) {
+            this.automaticDistribution = automaticDistribution;
+            return this;
+        }
+
 
         public SkillManifestPublishingInformation build() {
             return new SkillManifestPublishingInformation(this);

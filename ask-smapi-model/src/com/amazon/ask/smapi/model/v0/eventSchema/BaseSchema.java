@@ -28,6 +28,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "eventName", visible = true )
 @JsonSubTypes({
   @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v0.eventSchema.AlexaDevelopmentEvent.InteractionModelUpdate.class, name = "AlexaDevelopmentEvent.InteractionModelUpdate"),
+  @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v0.eventSchema.AlexaCustomerFeedbackEvent.SkillReviewPublish.class, name = "AlexaCustomerFeedbackEvent.SkillReviewPublish"),
   @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v0.eventSchema.AlexaDevelopmentEvent.SkillPublish.class, name = "AlexaDevelopmentEvent.SkillPublish"),
   @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v0.eventSchema.AlexaDevelopmentEvent.ManifestUpdate.class, name = "AlexaDevelopmentEvent.ManifestUpdate"),
   @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v0.eventSchema.AlexaDevelopmentEvent.SkillCertification.class, name = "AlexaDevelopmentEvent.SkillCertification"),

@@ -31,6 +31,9 @@ public final class SkillManifestApis {
     @JsonProperty("custom")
     private com.amazon.ask.smapi.model.v1.skill.Manifest.CustomApis custom = null;
 
+    @JsonProperty("knowledge")
+    private com.amazon.ask.smapi.model.v1.skill.Manifest.KnowledgeApis knowledge = null;
+
     @JsonProperty("smartHome")
     private com.amazon.ask.smapi.model.v1.skill.Manifest.SmartHomeApis smartHome = null;
 
@@ -40,14 +43,14 @@ public final class SkillManifestApis {
     @JsonProperty("alexaForBusiness")
     private com.amazon.ask.smapi.model.v1.skill.Manifest.AlexaForBusinessApis alexaForBusiness = null;
 
-    @JsonProperty("health")
-    private com.amazon.ask.smapi.model.v1.skill.Manifest.HealthApis health = null;
-
     @JsonProperty("householdList")
     private com.amazon.ask.smapi.model.v1.skill.Manifest.HouseHoldList householdList = null;
 
     @JsonProperty("music")
     private com.amazon.ask.smapi.model.v1.skill.Manifest.MusicApis music = null;
+
+    @JsonProperty("demandResponse")
+    private com.amazon.ask.smapi.model.v1.skill.Manifest.DemandResponseApis demandResponse = null;
 
     public static Builder builder() {
         return new Builder();
@@ -60,6 +63,9 @@ public final class SkillManifestApis {
         if (builder.custom != null) {
             this.custom = builder.custom;
         }
+        if (builder.knowledge != null) {
+            this.knowledge = builder.knowledge;
+        }
         if (builder.smartHome != null) {
             this.smartHome = builder.smartHome;
         }
@@ -69,14 +75,14 @@ public final class SkillManifestApis {
         if (builder.alexaForBusiness != null) {
             this.alexaForBusiness = builder.alexaForBusiness;
         }
-        if (builder.health != null) {
-            this.health = builder.health;
-        }
         if (builder.householdList != null) {
             this.householdList = builder.householdList;
         }
         if (builder.music != null) {
             this.music = builder.music;
+        }
+        if (builder.demandResponse != null) {
+            this.demandResponse = builder.demandResponse;
         }
     }
 
@@ -97,6 +103,16 @@ public final class SkillManifestApis {
     @JsonProperty("custom")
     public com.amazon.ask.smapi.model.v1.skill.Manifest.CustomApis getCustom() {
         return custom;
+    }
+
+
+    /**
+     * Get knowledge
+     * @return knowledge
+    **/
+    @JsonProperty("knowledge")
+    public com.amazon.ask.smapi.model.v1.skill.Manifest.KnowledgeApis getKnowledge() {
+        return knowledge;
     }
 
 
@@ -131,16 +147,6 @@ public final class SkillManifestApis {
 
 
     /**
-     * Get health
-     * @return health
-    **/
-    @JsonProperty("health")
-    public com.amazon.ask.smapi.model.v1.skill.Manifest.HealthApis getHealth() {
-        return health;
-    }
-
-
-    /**
      * Get householdList
      * @return householdList
     **/
@@ -160,6 +166,16 @@ public final class SkillManifestApis {
     }
 
 
+    /**
+     * Get demandResponse
+     * @return demandResponse
+    **/
+    @JsonProperty("demandResponse")
+    public com.amazon.ask.smapi.model.v1.skill.Manifest.DemandResponseApis getDemandResponse() {
+        return demandResponse;
+    }
+
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -171,17 +187,18 @@ public final class SkillManifestApis {
         SkillManifestApis v1SkillManifestSkillManifestApis = (SkillManifestApis) o;
         return Objects.equals(this.flashBriefing, v1SkillManifestSkillManifestApis.flashBriefing) &&
             Objects.equals(this.custom, v1SkillManifestSkillManifestApis.custom) &&
+            Objects.equals(this.knowledge, v1SkillManifestSkillManifestApis.knowledge) &&
             Objects.equals(this.smartHome, v1SkillManifestSkillManifestApis.smartHome) &&
             Objects.equals(this.video, v1SkillManifestSkillManifestApis.video) &&
             Objects.equals(this.alexaForBusiness, v1SkillManifestSkillManifestApis.alexaForBusiness) &&
-            Objects.equals(this.health, v1SkillManifestSkillManifestApis.health) &&
             Objects.equals(this.householdList, v1SkillManifestSkillManifestApis.householdList) &&
-            Objects.equals(this.music, v1SkillManifestSkillManifestApis.music);
+            Objects.equals(this.music, v1SkillManifestSkillManifestApis.music) &&
+            Objects.equals(this.demandResponse, v1SkillManifestSkillManifestApis.demandResponse);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(flashBriefing, custom, smartHome, video, alexaForBusiness, health, householdList, music);
+        return Objects.hash(flashBriefing, custom, knowledge, smartHome, video, alexaForBusiness, householdList, music, demandResponse);
     }
 
     @Override
@@ -191,12 +208,13 @@ public final class SkillManifestApis {
         
         sb.append("    flashBriefing: ").append(toIndentedString(flashBriefing)).append("\n");
         sb.append("    custom: ").append(toIndentedString(custom)).append("\n");
+        sb.append("    knowledge: ").append(toIndentedString(knowledge)).append("\n");
         sb.append("    smartHome: ").append(toIndentedString(smartHome)).append("\n");
         sb.append("    video: ").append(toIndentedString(video)).append("\n");
         sb.append("    alexaForBusiness: ").append(toIndentedString(alexaForBusiness)).append("\n");
-        sb.append("    health: ").append(toIndentedString(health)).append("\n");
         sb.append("    householdList: ").append(toIndentedString(householdList)).append("\n");
         sb.append("    music: ").append(toIndentedString(music)).append("\n");
+        sb.append("    demandResponse: ").append(toIndentedString(demandResponse)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -215,12 +233,13 @@ public final class SkillManifestApis {
     public static class Builder {
         private com.amazon.ask.smapi.model.v1.skill.Manifest.FlashBriefingApis flashBriefing;
         private com.amazon.ask.smapi.model.v1.skill.Manifest.CustomApis custom;
+        private com.amazon.ask.smapi.model.v1.skill.Manifest.KnowledgeApis knowledge;
         private com.amazon.ask.smapi.model.v1.skill.Manifest.SmartHomeApis smartHome;
         private com.amazon.ask.smapi.model.v1.skill.Manifest.VideoApis video;
         private com.amazon.ask.smapi.model.v1.skill.Manifest.AlexaForBusinessApis alexaForBusiness;
-        private com.amazon.ask.smapi.model.v1.skill.Manifest.HealthApis health;
         private com.amazon.ask.smapi.model.v1.skill.Manifest.HouseHoldList householdList;
         private com.amazon.ask.smapi.model.v1.skill.Manifest.MusicApis music;
+        private com.amazon.ask.smapi.model.v1.skill.Manifest.DemandResponseApis demandResponse;
 
         private Builder() {}
 
@@ -236,6 +255,14 @@ public final class SkillManifestApis {
 
         public Builder withCustom(com.amazon.ask.smapi.model.v1.skill.Manifest.CustomApis custom) {
             this.custom = custom;
+            return this;
+        }
+
+
+        @JsonProperty("knowledge")
+
+        public Builder withKnowledge(com.amazon.ask.smapi.model.v1.skill.Manifest.KnowledgeApis knowledge) {
+            this.knowledge = knowledge;
             return this;
         }
 
@@ -264,14 +291,6 @@ public final class SkillManifestApis {
         }
 
 
-        @JsonProperty("health")
-
-        public Builder withHealth(com.amazon.ask.smapi.model.v1.skill.Manifest.HealthApis health) {
-            this.health = health;
-            return this;
-        }
-
-
         @JsonProperty("householdList")
 
         public Builder withHouseholdList(com.amazon.ask.smapi.model.v1.skill.Manifest.HouseHoldList householdList) {
@@ -284,6 +303,14 @@ public final class SkillManifestApis {
 
         public Builder withMusic(com.amazon.ask.smapi.model.v1.skill.Manifest.MusicApis music) {
             this.music = music;
+            return this;
+        }
+
+
+        @JsonProperty("demandResponse")
+
+        public Builder withDemandResponse(com.amazon.ask.smapi.model.v1.skill.Manifest.DemandResponseApis demandResponse) {
+            this.demandResponse = demandResponse;
             return this;
         }
 

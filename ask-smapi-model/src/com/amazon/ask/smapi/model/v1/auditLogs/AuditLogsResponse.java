@@ -31,6 +31,9 @@ public final class AuditLogsResponse {
     @JsonProperty("paginationContext")
     private com.amazon.ask.smapi.model.v1.auditLogs.ResponsePaginationContext paginationContext = null;
 
+    @JsonProperty("_links")
+    private com.amazon.ask.smapi.model.v1.Links links = null;
+
     @JsonProperty("auditLogs")
     private List<com.amazon.ask.smapi.model.v1.auditLogs.AuditLog> auditLogs = new ArrayList<com.amazon.ask.smapi.model.v1.auditLogs.AuditLog>();
 
@@ -41,6 +44,9 @@ public final class AuditLogsResponse {
     private AuditLogsResponse(Builder builder) {
         if (builder.paginationContext != null) {
             this.paginationContext = builder.paginationContext;
+        }
+        if (builder.links != null) {
+            this.links = builder.links;
         }
         if (builder.auditLogs != null) {
             this.auditLogs = builder.auditLogs;
@@ -54,6 +60,16 @@ public final class AuditLogsResponse {
     @JsonProperty("paginationContext")
     public com.amazon.ask.smapi.model.v1.auditLogs.ResponsePaginationContext getPaginationContext() {
         return paginationContext;
+    }
+
+
+    /**
+     * Get links
+     * @return links
+    **/
+    @JsonProperty("_links")
+    public com.amazon.ask.smapi.model.v1.Links getLinks() {
+        return links;
     }
 
 
@@ -77,12 +93,13 @@ public final class AuditLogsResponse {
         }
         AuditLogsResponse v1AuditLogsAuditLogsResponse = (AuditLogsResponse) o;
         return Objects.equals(this.paginationContext, v1AuditLogsAuditLogsResponse.paginationContext) &&
+            Objects.equals(this.links, v1AuditLogsAuditLogsResponse.links) &&
             Objects.equals(this.auditLogs, v1AuditLogsAuditLogsResponse.auditLogs);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(paginationContext, auditLogs);
+        return Objects.hash(paginationContext, links, auditLogs);
     }
 
     @Override
@@ -91,6 +108,7 @@ public final class AuditLogsResponse {
         sb.append("class AuditLogsResponse {\n");
         
         sb.append("    paginationContext: ").append(toIndentedString(paginationContext)).append("\n");
+        sb.append("    links: ").append(toIndentedString(links)).append("\n");
         sb.append("    auditLogs: ").append(toIndentedString(auditLogs)).append("\n");
         sb.append("}");
         return sb.toString();
@@ -109,6 +127,7 @@ public final class AuditLogsResponse {
   
     public static class Builder {
         private com.amazon.ask.smapi.model.v1.auditLogs.ResponsePaginationContext paginationContext;
+        private com.amazon.ask.smapi.model.v1.Links links;
         private List<com.amazon.ask.smapi.model.v1.auditLogs.AuditLog> auditLogs;
 
         private Builder() {}
@@ -117,6 +136,14 @@ public final class AuditLogsResponse {
 
         public Builder withPaginationContext(com.amazon.ask.smapi.model.v1.auditLogs.ResponsePaginationContext paginationContext) {
             this.paginationContext = paginationContext;
+            return this;
+        }
+
+
+        @JsonProperty("_links")
+
+        public Builder withLinks(com.amazon.ask.smapi.model.v1.Links links) {
+            this.links = links;
             return this;
         }
 

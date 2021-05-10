@@ -30,6 +30,12 @@ import java.util.ArrayList;
 @JsonDeserialize(builder = CustomApis.Builder.class)
 public final class CustomApis {
 
+    @JsonProperty("_targetRuntimes")
+    private List<com.amazon.ask.smapi.model.v1.skill.Manifest.Custom.TargetRuntime> targetRuntimes = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.Custom.TargetRuntime>();
+
+    @JsonProperty("locales")
+    private Map<String, com.amazon.ask.smapi.model.v1.skill.Manifest.CustomLocalizedInformation> locales = new HashMap<String, com.amazon.ask.smapi.model.v1.skill.Manifest.CustomLocalizedInformation>();
+
     @JsonProperty("regions")
     private Map<String, com.amazon.ask.smapi.model.v1.skill.Manifest.Region> regions = new HashMap<String, com.amazon.ask.smapi.model.v1.skill.Manifest.Region>();
 
@@ -40,16 +46,28 @@ public final class CustomApis {
     private List<com.amazon.ask.smapi.model.v1.skill.Manifest.ModelInterface> interfaces = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.ModelInterface>();
 
     @JsonProperty("tasks")
-    private List<com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifestCustomTask> tasks = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifestCustomTask>();
+    private List<com.amazon.ask.smapi.model.v1.skill.Manifest.CustomTask> tasks = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.CustomTask>();
 
     @JsonProperty("connections")
     private com.amazon.ask.smapi.model.v1.skill.Manifest.CustomConnections connections = null;
+
+    @JsonProperty("dialogManagement")
+    private com.amazon.ask.smapi.model.v1.skill.Manifest.DialogManagement dialogManagement = null;
+
+    @JsonProperty("appLink")
+    private com.amazon.ask.smapi.model.v1.skill.Manifest.AppLink appLink = null;
 
     public static Builder builder() {
         return new Builder();
     }
 
     private CustomApis(Builder builder) {
+        if (builder.targetRuntimes != null) {
+            this.targetRuntimes = builder.targetRuntimes;
+        }
+        if (builder.locales != null) {
+            this.locales = builder.locales;
+        }
         if (builder.regions != null) {
             this.regions = builder.regions;
         }
@@ -65,7 +83,33 @@ public final class CustomApis {
         if (builder.connections != null) {
             this.connections = builder.connections;
         }
+        if (builder.dialogManagement != null) {
+            this.dialogManagement = builder.dialogManagement;
+        }
+        if (builder.appLink != null) {
+            this.appLink = builder.appLink;
+        }
     }
+
+    /**
+     * Defines the set of target runtimes for this skill.
+     * @return targetRuntimes
+    **/
+    @JsonProperty("_targetRuntimes")
+    public List<com.amazon.ask.smapi.model.v1.skill.Manifest.Custom.TargetRuntime> getTargetRuntimes() {
+        return targetRuntimes;
+    }
+
+
+    /**
+     * Object that contains &amp;lt;locale&amp;gt; Objects for each supported locale.
+     * @return locales
+    **/
+    @JsonProperty("locales")
+    public Map<String, com.amazon.ask.smapi.model.v1.skill.Manifest.CustomLocalizedInformation> getLocales() {
+        return locales;
+    }
+
 
     /**
      * Contains an array of the supported &amp;lt;region&amp;gt; Objects.
@@ -102,7 +146,7 @@ public final class CustomApis {
      * @return tasks
     **/
     @JsonProperty("tasks")
-    public List<com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifestCustomTask> getTasks() {
+    public List<com.amazon.ask.smapi.model.v1.skill.Manifest.CustomTask> getTasks() {
         return tasks;
     }
 
@@ -117,6 +161,26 @@ public final class CustomApis {
     }
 
 
+    /**
+     * Get dialogManagement
+     * @return dialogManagement
+    **/
+    @JsonProperty("dialogManagement")
+    public com.amazon.ask.smapi.model.v1.skill.Manifest.DialogManagement getDialogManagement() {
+        return dialogManagement;
+    }
+
+
+    /**
+     * Get appLink
+     * @return appLink
+    **/
+    @JsonProperty("appLink")
+    public com.amazon.ask.smapi.model.v1.skill.Manifest.AppLink getAppLink() {
+        return appLink;
+    }
+
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -126,16 +190,20 @@ public final class CustomApis {
             return false;
         }
         CustomApis v1SkillManifestCustomApis = (CustomApis) o;
-        return Objects.equals(this.regions, v1SkillManifestCustomApis.regions) &&
+        return Objects.equals(this.targetRuntimes, v1SkillManifestCustomApis.targetRuntimes) &&
+            Objects.equals(this.locales, v1SkillManifestCustomApis.locales) &&
+            Objects.equals(this.regions, v1SkillManifestCustomApis.regions) &&
             Objects.equals(this.endpoint, v1SkillManifestCustomApis.endpoint) &&
             Objects.equals(this.interfaces, v1SkillManifestCustomApis.interfaces) &&
             Objects.equals(this.tasks, v1SkillManifestCustomApis.tasks) &&
-            Objects.equals(this.connections, v1SkillManifestCustomApis.connections);
+            Objects.equals(this.connections, v1SkillManifestCustomApis.connections) &&
+            Objects.equals(this.dialogManagement, v1SkillManifestCustomApis.dialogManagement) &&
+            Objects.equals(this.appLink, v1SkillManifestCustomApis.appLink);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(regions, endpoint, interfaces, tasks, connections);
+        return Objects.hash(targetRuntimes, locales, regions, endpoint, interfaces, tasks, connections, dialogManagement, appLink);
     }
 
     @Override
@@ -143,11 +211,15 @@ public final class CustomApis {
         StringBuilder sb = new StringBuilder();
         sb.append("class CustomApis {\n");
         
+        sb.append("    targetRuntimes: ").append(toIndentedString(targetRuntimes)).append("\n");
+        sb.append("    locales: ").append(toIndentedString(locales)).append("\n");
         sb.append("    regions: ").append(toIndentedString(regions)).append("\n");
         sb.append("    endpoint: ").append(toIndentedString(endpoint)).append("\n");
         sb.append("    interfaces: ").append(toIndentedString(interfaces)).append("\n");
         sb.append("    tasks: ").append(toIndentedString(tasks)).append("\n");
         sb.append("    connections: ").append(toIndentedString(connections)).append("\n");
+        sb.append("    dialogManagement: ").append(toIndentedString(dialogManagement)).append("\n");
+        sb.append("    appLink: ").append(toIndentedString(appLink)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -164,13 +236,47 @@ public final class CustomApis {
     }
   
     public static class Builder {
+        private List<com.amazon.ask.smapi.model.v1.skill.Manifest.Custom.TargetRuntime> targetRuntimes;
+        private Map<String, com.amazon.ask.smapi.model.v1.skill.Manifest.CustomLocalizedInformation> locales;
         private Map<String, com.amazon.ask.smapi.model.v1.skill.Manifest.Region> regions;
         private com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifestEndpoint endpoint;
         private List<com.amazon.ask.smapi.model.v1.skill.Manifest.ModelInterface> interfaces;
-        private List<com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifestCustomTask> tasks;
+        private List<com.amazon.ask.smapi.model.v1.skill.Manifest.CustomTask> tasks;
         private com.amazon.ask.smapi.model.v1.skill.Manifest.CustomConnections connections;
+        private com.amazon.ask.smapi.model.v1.skill.Manifest.DialogManagement dialogManagement;
+        private com.amazon.ask.smapi.model.v1.skill.Manifest.AppLink appLink;
 
         private Builder() {}
+
+        @JsonProperty("_targetRuntimes")
+
+        public Builder withTargetRuntimes(List<com.amazon.ask.smapi.model.v1.skill.Manifest.Custom.TargetRuntime> targetRuntimes) {
+            this.targetRuntimes = targetRuntimes;
+            return this;
+        }
+
+        public Builder addTargetRuntimesItem(com.amazon.ask.smapi.model.v1.skill.Manifest.Custom.TargetRuntime targetRuntimesItem) {
+            if (this.targetRuntimes == null) {
+                this.targetRuntimes = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.Custom.TargetRuntime>();
+            }
+            this.targetRuntimes.add(targetRuntimesItem);
+            return this;
+        }
+
+        @JsonProperty("locales")
+
+        public Builder withLocales(Map<String, com.amazon.ask.smapi.model.v1.skill.Manifest.CustomLocalizedInformation> locales) {
+            this.locales = locales;
+            return this;
+        }
+
+        public Builder putLocalesItem(String key, com.amazon.ask.smapi.model.v1.skill.Manifest.CustomLocalizedInformation localesItem) {
+            if (this.locales == null) {
+                this.locales = new HashMap<String, com.amazon.ask.smapi.model.v1.skill.Manifest.CustomLocalizedInformation>();
+            }
+            this.locales.put(key, localesItem);
+            return this;
+        }
 
         @JsonProperty("regions")
 
@@ -212,14 +318,14 @@ public final class CustomApis {
 
         @JsonProperty("tasks")
 
-        public Builder withTasks(List<com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifestCustomTask> tasks) {
+        public Builder withTasks(List<com.amazon.ask.smapi.model.v1.skill.Manifest.CustomTask> tasks) {
             this.tasks = tasks;
             return this;
         }
 
-        public Builder addTasksItem(com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifestCustomTask tasksItem) {
+        public Builder addTasksItem(com.amazon.ask.smapi.model.v1.skill.Manifest.CustomTask tasksItem) {
             if (this.tasks == null) {
-                this.tasks = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifestCustomTask>();
+                this.tasks = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.CustomTask>();
             }
             this.tasks.add(tasksItem);
             return this;
@@ -229,6 +335,22 @@ public final class CustomApis {
 
         public Builder withConnections(com.amazon.ask.smapi.model.v1.skill.Manifest.CustomConnections connections) {
             this.connections = connections;
+            return this;
+        }
+
+
+        @JsonProperty("dialogManagement")
+
+        public Builder withDialogManagement(com.amazon.ask.smapi.model.v1.skill.Manifest.DialogManagement dialogManagement) {
+            this.dialogManagement = dialogManagement;
+            return this;
+        }
+
+
+        @JsonProperty("appLink")
+
+        public Builder withAppLink(com.amazon.ask.smapi.model.v1.skill.Manifest.AppLink appLink) {
+            this.appLink = appLink;
             return this;
         }
 

@@ -20,15 +20,13 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * format of the feed content.
+ * Format of the feed content.
  */
 public enum FlashBriefingContentType {
   
   TEXT("TEXT"),
   
   AUDIO("AUDIO"),
-  
-  AUDIO_AND_VIDEO("AUDIO_AND_VIDEO"),
   
   UNKNOWN_TO_SDK_VERSION(null);
 

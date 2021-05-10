@@ -56,7 +56,7 @@ public final class UploadResponse {
 
 
     /**
-     * Get expiresAt
+     * The expiration time of the URL
      * @return expiresAt
     **/
     @JsonProperty("expiresAt")

@@ -22,7 +22,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Defines the structure for flash briefing api of the skill.
+ * Defines the structure of flash briefing api in the skill manifest.
  */
 
 @JsonDeserialize(builder = FlashBriefingApis.Builder.class)
@@ -42,7 +42,7 @@ public final class FlashBriefingApis {
     }
 
     /**
-     * Defines the structure for locale specific flash briefing api information.
+     * Object that contains &amp;lt;locale&amp;gt; objects for each supported locale.
      * @return locales
     **/
     @JsonProperty("locales")

@@ -70,7 +70,7 @@ public final class LocalizedMusicInfo {
 
 
     /**
-     * Get aliases
+     * Defines the structure of the music prompt name information in the skill manifest.
      * @return aliases
     **/
     @JsonProperty("aliases")

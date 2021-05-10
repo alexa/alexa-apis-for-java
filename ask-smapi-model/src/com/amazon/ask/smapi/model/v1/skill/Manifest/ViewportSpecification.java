@@ -124,6 +124,7 @@ public final class ViewportSpecification {
 
     /**
      * Defines the minimum width of viewport that comply with this specification.
+     * minimum: 1
      * @return minWidth
     **/
     @JsonProperty("minWidth")
@@ -134,6 +135,7 @@ public final class ViewportSpecification {
 
     /**
      * Defines the maximum width of viewport that comply with this specification.
+     * minimum: 1
      * @return maxWidth
     **/
     @JsonProperty("maxWidth")
@@ -144,6 +146,7 @@ public final class ViewportSpecification {
 
     /**
      * Defines the minimum height of viewport that comply with this specification.
+     * minimum: 1
      * @return minHeight
     **/
     @JsonProperty("minHeight")
@@ -154,6 +157,7 @@ public final class ViewportSpecification {
 
     /**
      * Defines the maximum height of viewport that comply with this specification.
+     * minimum: 1
      * @return maxHeight
     **/
     @JsonProperty("maxHeight")

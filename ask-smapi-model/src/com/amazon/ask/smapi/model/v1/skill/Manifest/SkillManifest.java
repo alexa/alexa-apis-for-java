@@ -43,6 +43,9 @@ public final class SkillManifest {
     @JsonProperty("permissions")
     private List<com.amazon.ask.smapi.model.v1.skill.Manifest.PermissionItems> permissions = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.PermissionItems>();
 
+    @JsonProperty("authorizedClients")
+    private List<com.amazon.ask.smapi.model.v1.skill.Manifest.AuthorizedClient> authorizedClients = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.AuthorizedClient>();
+
     @JsonProperty("apis")
     private com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifestApis apis = null;
 
@@ -66,20 +69,40 @@ public final class SkillManifest {
         if (builder.permissions != null) {
             this.permissions = builder.permissions;
         }
+        if (builder.authorizedClients != null) {
+            this.authorizedClients = builder.authorizedClients;
+        }
         if (builder.apis != null) {
             this.apis = builder.apis;
         }
     }
 
     /**
-     * Version of the skill manifest.
+     * Get manifestVersion
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getManifestVersionAsString().
+     *
      * @return manifestVersion
     **/
-    @JsonProperty("manifestVersion")
-    public String getManifestVersion() {
-        return manifestVersion;
+    
+    public com.amazon.ask.smapi.model.v1.skill.Manifest.ManifestVersion getManifestVersion() {
+        return com.amazon.ask.smapi.model.v1.skill.Manifest.ManifestVersion.fromValue(manifestVersion);
     }
 
+    /**
+     * Get the underlying String value for manifestVersion.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return manifestVersion as a String value
+    **/
+    @JsonProperty("manifestVersion")
+    public String getManifestVersionAsString() {
+      return manifestVersion;
+    }
 
     /**
      * Get publishingInformation
@@ -122,6 +145,16 @@ public final class SkillManifest {
 
 
     /**
+     * Defines a list of clients authorized for a skill.
+     * @return authorizedClients
+    **/
+    @JsonProperty("authorizedClients")
+    public List<com.amazon.ask.smapi.model.v1.skill.Manifest.AuthorizedClient> getAuthorizedClients() {
+        return authorizedClients;
+    }
+
+
+    /**
      * Get apis
      * @return apis
     **/
@@ -145,12 +178,13 @@ public final class SkillManifest {
             Objects.equals(this.privacyAndCompliance, v1SkillManifestSkillManifest.privacyAndCompliance) &&
             Objects.equals(this.events, v1SkillManifestSkillManifest.events) &&
             Objects.equals(this.permissions, v1SkillManifestSkillManifest.permissions) &&
+            Objects.equals(this.authorizedClients, v1SkillManifestSkillManifest.authorizedClients) &&
             Objects.equals(this.apis, v1SkillManifestSkillManifest.apis);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(manifestVersion, publishingInformation, privacyAndCompliance, events, permissions, apis);
+        return Objects.hash(manifestVersion, publishingInformation, privacyAndCompliance, events, permissions, authorizedClients, apis);
     }
 
     @Override
@@ -163,6 +197,7 @@ public final class SkillManifest {
         sb.append("    privacyAndCompliance: ").append(toIndentedString(privacyAndCompliance)).append("\n");
         sb.append("    events: ").append(toIndentedString(events)).append("\n");
         sb.append("    permissions: ").append(toIndentedString(permissions)).append("\n");
+        sb.append("    authorizedClients: ").append(toIndentedString(authorizedClients)).append("\n");
         sb.append("    apis: ").append(toIndentedString(apis)).append("\n");
         sb.append("}");
         return sb.toString();
@@ -185,14 +220,19 @@ public final class SkillManifest {
         private com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifestPrivacyAndCompliance privacyAndCompliance;
         private com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifestEvents events;
         private List<com.amazon.ask.smapi.model.v1.skill.Manifest.PermissionItems> permissions;
+        private List<com.amazon.ask.smapi.model.v1.skill.Manifest.AuthorizedClient> authorizedClients;
         private com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifestApis apis;
 
         private Builder() {}
 
         @JsonProperty("manifestVersion")
-
         public Builder withManifestVersion(String manifestVersion) {
-            this.manifestVersion = manifestVersion;
+          this.manifestVersion = manifestVersion;
+          return this;
+        }
+
+        public Builder withManifestVersion(com.amazon.ask.smapi.model.v1.skill.Manifest.ManifestVersion manifestVersion) {
+            this.manifestVersion = manifestVersion != null ? manifestVersion.toString() : null;
             return this;
         }
 
@@ -233,6 +273,21 @@ public final class SkillManifest {
                 this.permissions = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.PermissionItems>();
             }
             this.permissions.add(permissionsItem);
+            return this;
+        }
+
+        @JsonProperty("authorizedClients")
+
+        public Builder withAuthorizedClients(List<com.amazon.ask.smapi.model.v1.skill.Manifest.AuthorizedClient> authorizedClients) {
+            this.authorizedClients = authorizedClients;
+            return this;
+        }
+
+        public Builder addAuthorizedClientsItem(com.amazon.ask.smapi.model.v1.skill.Manifest.AuthorizedClient authorizedClientsItem) {
+            if (this.authorizedClients == null) {
+                this.authorizedClients = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.AuthorizedClient>();
+            }
+            this.authorizedClients.add(authorizedClientsItem);
             return this;
         }
 

@@ -30,8 +30,6 @@ public enum FlashBriefingUpdateFrequency {
   
   WEEKLY("WEEKLY"),
   
-  UNKNOWN("UNKNOWN"),
-  
   UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;

@@ -31,6 +31,9 @@ public final class ImageAttributes {
     @JsonProperty("size")
     private com.amazon.ask.smapi.model.v1.skill.ImageSize size = null;
 
+    @JsonProperty("maximumSize")
+    private com.amazon.ask.smapi.model.v1.skill.ImageSize maximumSize = null;
+
     public static Builder builder() {
         return new Builder();
     }
@@ -41,6 +44,9 @@ public final class ImageAttributes {
         }
         if (builder.size != null) {
             this.size = builder.size;
+        }
+        if (builder.maximumSize != null) {
+            this.maximumSize = builder.maximumSize;
         }
     }
 
@@ -64,6 +70,16 @@ public final class ImageAttributes {
     }
 
 
+    /**
+     * Get maximumSize
+     * @return maximumSize
+    **/
+    @JsonProperty("maximumSize")
+    public com.amazon.ask.smapi.model.v1.skill.ImageSize getMaximumSize() {
+        return maximumSize;
+    }
+
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -74,12 +90,13 @@ public final class ImageAttributes {
         }
         ImageAttributes v1SkillImageAttributes = (ImageAttributes) o;
         return Objects.equals(this.dimension, v1SkillImageAttributes.dimension) &&
-            Objects.equals(this.size, v1SkillImageAttributes.size);
+            Objects.equals(this.size, v1SkillImageAttributes.size) &&
+            Objects.equals(this.maximumSize, v1SkillImageAttributes.maximumSize);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(dimension, size);
+        return Objects.hash(dimension, size, maximumSize);
     }
 
     @Override
@@ -89,6 +106,7 @@ public final class ImageAttributes {
         
         sb.append("    dimension: ").append(toIndentedString(dimension)).append("\n");
         sb.append("    size: ").append(toIndentedString(size)).append("\n");
+        sb.append("    maximumSize: ").append(toIndentedString(maximumSize)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +125,7 @@ public final class ImageAttributes {
     public static class Builder {
         private com.amazon.ask.smapi.model.v1.skill.ImageDimension dimension;
         private com.amazon.ask.smapi.model.v1.skill.ImageSize size;
+        private com.amazon.ask.smapi.model.v1.skill.ImageSize maximumSize;
 
         private Builder() {}
 
@@ -122,6 +141,14 @@ public final class ImageAttributes {
 
         public Builder withSize(com.amazon.ask.smapi.model.v1.skill.ImageSize size) {
             this.size = size;
+            return this;
+        }
+
+
+        @JsonProperty("maximumSize")
+
+        public Builder withMaximumSize(com.amazon.ask.smapi.model.v1.skill.ImageSize maximumSize) {
+            this.maximumSize = maximumSize;
             return this;
         }
 

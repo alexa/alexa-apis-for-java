@@ -29,7 +29,7 @@ import java.util.ArrayList;
 public final class ListSubscribersResponse {
 
     @JsonProperty("_links")
-    private com.amazon.ask.smapi.model.v0.Links links = null;
+    private com.amazon.ask.smapi.model.v1.Links links = null;
 
     @JsonProperty("nextToken")
     private String nextToken = null;
@@ -58,7 +58,7 @@ public final class ListSubscribersResponse {
      * @return links
     **/
     @JsonProperty("_links")
-    public com.amazon.ask.smapi.model.v0.Links getLinks() {
+    public com.amazon.ask.smapi.model.v1.Links getLinks() {
         return links;
     }
 
@@ -126,7 +126,7 @@ public final class ListSubscribersResponse {
     }
   
     public static class Builder {
-        private com.amazon.ask.smapi.model.v0.Links links;
+        private com.amazon.ask.smapi.model.v1.Links links;
         private String nextToken;
         private List<com.amazon.ask.smapi.model.v0.developmentEvents.subscriber.SubscriberSummary> subscribers;
 
@@ -134,7 +134,7 @@ public final class ListSubscribersResponse {
 
         @JsonProperty("_links")
 
-        public Builder withLinks(com.amazon.ask.smapi.model.v0.Links links) {
+        public Builder withLinks(com.amazon.ask.smapi.model.v1.Links links) {
             this.links = links;
             return this;
         }

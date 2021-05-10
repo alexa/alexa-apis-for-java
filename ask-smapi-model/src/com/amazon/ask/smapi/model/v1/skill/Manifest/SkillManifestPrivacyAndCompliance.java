@@ -78,7 +78,7 @@ public final class SkillManifestPrivacyAndCompliance {
     }
 
     /**
-     * Defines the structure for locale specific privacy &amp; compliance information in the skill manifest.
+     * Object that contains &amp;lt;locale&amp;gt; objects for each supported locale.
      * @return locales
     **/
     @JsonProperty("locales")

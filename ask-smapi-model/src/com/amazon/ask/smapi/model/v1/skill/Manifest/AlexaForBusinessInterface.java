@@ -35,7 +35,7 @@ public final class AlexaForBusinessInterface {
     private String version = null;
 
     @JsonProperty("requests")
-    private List<com.amazon.ask.smapi.model.v1.skill.Manifest.Request> requests = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.Request>();
+    private List<com.amazon.ask.smapi.model.v1.skill.Manifest.AlexaForBusinessInterfaceRequest> requests = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.AlexaForBusinessInterfaceRequest>();
 
     public static Builder builder() {
         return new Builder();
@@ -95,7 +95,7 @@ public final class AlexaForBusinessInterface {
      * @return requests
     **/
     @JsonProperty("requests")
-    public List<com.amazon.ask.smapi.model.v1.skill.Manifest.Request> getRequests() {
+    public List<com.amazon.ask.smapi.model.v1.skill.Manifest.AlexaForBusinessInterfaceRequest> getRequests() {
         return requests;
     }
 
@@ -145,7 +145,7 @@ public final class AlexaForBusinessInterface {
     public static class Builder {
         private String namespace;
         private String version;
-        private List<com.amazon.ask.smapi.model.v1.skill.Manifest.Request> requests;
+        private List<com.amazon.ask.smapi.model.v1.skill.Manifest.AlexaForBusinessInterfaceRequest> requests;
 
         private Builder() {}
 
@@ -171,14 +171,14 @@ public final class AlexaForBusinessInterface {
 
         @JsonProperty("requests")
 
-        public Builder withRequests(List<com.amazon.ask.smapi.model.v1.skill.Manifest.Request> requests) {
+        public Builder withRequests(List<com.amazon.ask.smapi.model.v1.skill.Manifest.AlexaForBusinessInterfaceRequest> requests) {
             this.requests = requests;
             return this;
         }
 
-        public Builder addRequestsItem(com.amazon.ask.smapi.model.v1.skill.Manifest.Request requestsItem) {
+        public Builder addRequestsItem(com.amazon.ask.smapi.model.v1.skill.Manifest.AlexaForBusinessInterfaceRequest requestsItem) {
             if (this.requests == null) {
-                this.requests = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.Request>();
+                this.requests = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.AlexaForBusinessInterfaceRequest>();
             }
             this.requests.add(requestsItem);
             return this;

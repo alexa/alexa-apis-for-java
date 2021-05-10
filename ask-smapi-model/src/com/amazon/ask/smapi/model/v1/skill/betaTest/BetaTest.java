@@ -15,7 +15,6 @@
 package com.amazon.ask.smapi.model.v1.skill.betaTest;
 
 import java.util.Objects;
-import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -40,7 +39,7 @@ public final class BetaTest {
     private String invitationUrl = null;
 
     @JsonProperty("invitesRemaining")
-    private BigDecimal invitesRemaining = null;
+    private Integer invitesRemaining = null;
 
     public static Builder builder() {
         return new Builder();
@@ -126,7 +125,7 @@ public final class BetaTest {
      * @return invitesRemaining
     **/
     @JsonProperty("invitesRemaining")
-    public BigDecimal getInvitesRemaining() {
+    public Integer getInvitesRemaining() {
         return invitesRemaining;
     }
 
@@ -182,7 +181,7 @@ public final class BetaTest {
         private String status;
         private String feedbackEmail;
         private String invitationUrl;
-        private BigDecimal invitesRemaining;
+        private Integer invitesRemaining;
 
         private Builder() {}
 
@@ -224,7 +223,7 @@ public final class BetaTest {
 
         @JsonProperty("invitesRemaining")
 
-        public Builder withInvitesRemaining(BigDecimal invitesRemaining) {
+        public Builder withInvitesRemaining(Integer invitesRemaining) {
             this.invitesRemaining = invitesRemaining;
             return this;
         }

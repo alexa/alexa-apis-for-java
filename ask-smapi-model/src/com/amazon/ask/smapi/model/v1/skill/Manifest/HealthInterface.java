@@ -15,13 +15,8 @@
 package com.amazon.ask.smapi.model.v1.skill.Manifest;
 
 import java.util.Objects;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import java.util.ArrayList;
 
 /**
  * HealthInterface
@@ -36,12 +31,6 @@ public final class HealthInterface {
     @JsonProperty("version")
     private String version = null;
 
-    @JsonProperty("requests")
-    private List<com.amazon.ask.smapi.model.v1.skill.Manifest.HealthRequest> requests = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.HealthRequest>();
-
-    @JsonProperty("locales")
-    private Map<String, com.amazon.ask.smapi.model.v1.skill.Manifest.LocalizedHealthInfo> locales = new HashMap<String, com.amazon.ask.smapi.model.v1.skill.Manifest.LocalizedHealthInfo>();
-
     public static Builder builder() {
         return new Builder();
     }
@@ -52,12 +41,6 @@ public final class HealthInterface {
         }
         if (builder.version != null) {
             this.version = builder.version;
-        }
-        if (builder.requests != null) {
-            this.requests = builder.requests;
-        }
-        if (builder.locales != null) {
-            this.locales = builder.locales;
         }
     }
 
@@ -72,49 +55,12 @@ public final class HealthInterface {
 
 
     /**
-     * Get version
-     *
-     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
-     * enumeration value will be returned. To directly return the raw String value, use getVersionAsString().
-     *
+     * defines the version of skill interface.
      * @return version
     **/
-    
-    public com.amazon.ask.smapi.model.v1.skill.Manifest.Version getVersion() {
-        return com.amazon.ask.smapi.model.v1.skill.Manifest.Version.fromValue(version);
-    }
-
-    /**
-     * Get the underlying String value for version.
-     *
-     * Using this accessor will retrieve the raw underlying value, even if it is not
-     * present in the corresponding enumeration. For forward compatibility, it is recommended
-     * to use this approach over the enumeration.
-     *
-     * @return version as a String value
-    **/
     @JsonProperty("version")
-    public String getVersionAsString() {
-      return version;
-    }
-
-    /**
-     * Defines the details of requests that a health skill is capable of handling.
-     * @return requests
-    **/
-    @JsonProperty("requests")
-    public List<com.amazon.ask.smapi.model.v1.skill.Manifest.HealthRequest> getRequests() {
-        return requests;
-    }
-
-
-    /**
-     * Defines the list for health skill locale specific publishing information in the skill manifest.
-     * @return locales
-    **/
-    @JsonProperty("locales")
-    public Map<String, com.amazon.ask.smapi.model.v1.skill.Manifest.LocalizedHealthInfo> getLocales() {
-        return locales;
+    public String getVersion() {
+        return version;
     }
 
 
@@ -128,14 +74,12 @@ public final class HealthInterface {
         }
         HealthInterface v1SkillManifestHealthInterface = (HealthInterface) o;
         return Objects.equals(this.namespace, v1SkillManifestHealthInterface.namespace) &&
-            Objects.equals(this.version, v1SkillManifestHealthInterface.version) &&
-            Objects.equals(this.requests, v1SkillManifestHealthInterface.requests) &&
-            Objects.equals(this.locales, v1SkillManifestHealthInterface.locales);
+            Objects.equals(this.version, v1SkillManifestHealthInterface.version);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(namespace, version, requests, locales);
+        return Objects.hash(namespace, version);
     }
 
     @Override
@@ -145,8 +89,6 @@ public final class HealthInterface {
         
         sb.append("    namespace: ").append(toIndentedString(namespace)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
-        sb.append("    requests: ").append(toIndentedString(requests)).append("\n");
-        sb.append("    locales: ").append(toIndentedString(locales)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -165,8 +107,6 @@ public final class HealthInterface {
     public static class Builder {
         private String namespace;
         private String version;
-        private List<com.amazon.ask.smapi.model.v1.skill.Manifest.HealthRequest> requests;
-        private Map<String, com.amazon.ask.smapi.model.v1.skill.Manifest.LocalizedHealthInfo> locales;
 
         private Builder() {}
 
@@ -179,46 +119,12 @@ public final class HealthInterface {
 
 
         @JsonProperty("version")
+
         public Builder withVersion(String version) {
-          this.version = version;
-          return this;
-        }
-
-        public Builder withVersion(com.amazon.ask.smapi.model.v1.skill.Manifest.Version version) {
-            this.version = version != null ? version.toString() : null;
+            this.version = version;
             return this;
         }
 
-
-        @JsonProperty("requests")
-
-        public Builder withRequests(List<com.amazon.ask.smapi.model.v1.skill.Manifest.HealthRequest> requests) {
-            this.requests = requests;
-            return this;
-        }
-
-        public Builder addRequestsItem(com.amazon.ask.smapi.model.v1.skill.Manifest.HealthRequest requestsItem) {
-            if (this.requests == null) {
-                this.requests = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.HealthRequest>();
-            }
-            this.requests.add(requestsItem);
-            return this;
-        }
-
-        @JsonProperty("locales")
-
-        public Builder withLocales(Map<String, com.amazon.ask.smapi.model.v1.skill.Manifest.LocalizedHealthInfo> locales) {
-            this.locales = locales;
-            return this;
-        }
-
-        public Builder putLocalesItem(String key, com.amazon.ask.smapi.model.v1.skill.Manifest.LocalizedHealthInfo localesItem) {
-            if (this.locales == null) {
-                this.locales = new HashMap<String, com.amazon.ask.smapi.model.v1.skill.Manifest.LocalizedHealthInfo>();
-            }
-            this.locales.put(key, localesItem);
-            return this;
-        }
 
         public HealthInterface build() {
             return new HealthInterface(this);

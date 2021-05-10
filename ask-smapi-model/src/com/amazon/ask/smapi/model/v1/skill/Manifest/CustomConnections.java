@@ -29,10 +29,10 @@ import java.util.ArrayList;
 public final class CustomConnections {
 
     @JsonProperty("requires")
-    private List<com.amazon.ask.smapi.model.v1.skill.Manifest.Connections> requires = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.Connections>();
+    private List<com.amazon.ask.smapi.model.v1.skill.Manifest.Custom.Connection> requires = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.Custom.Connection>();
 
     @JsonProperty("provides")
-    private List<com.amazon.ask.smapi.model.v1.skill.Manifest.Connections> provides = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.Connections>();
+    private List<com.amazon.ask.smapi.model.v1.skill.Manifest.Custom.Connection> provides = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.Custom.Connection>();
 
     public static Builder builder() {
         return new Builder();
@@ -52,7 +52,7 @@ public final class CustomConnections {
      * @return requires
     **/
     @JsonProperty("requires")
-    public List<com.amazon.ask.smapi.model.v1.skill.Manifest.Connections> getRequires() {
+    public List<com.amazon.ask.smapi.model.v1.skill.Manifest.Custom.Connection> getRequires() {
         return requires;
     }
 
@@ -62,7 +62,7 @@ public final class CustomConnections {
      * @return provides
     **/
     @JsonProperty("provides")
-    public List<com.amazon.ask.smapi.model.v1.skill.Manifest.Connections> getProvides() {
+    public List<com.amazon.ask.smapi.model.v1.skill.Manifest.Custom.Connection> getProvides() {
         return provides;
     }
 
@@ -108,21 +108,21 @@ public final class CustomConnections {
     }
   
     public static class Builder {
-        private List<com.amazon.ask.smapi.model.v1.skill.Manifest.Connections> requires;
-        private List<com.amazon.ask.smapi.model.v1.skill.Manifest.Connections> provides;
+        private List<com.amazon.ask.smapi.model.v1.skill.Manifest.Custom.Connection> requires;
+        private List<com.amazon.ask.smapi.model.v1.skill.Manifest.Custom.Connection> provides;
 
         private Builder() {}
 
         @JsonProperty("requires")
 
-        public Builder withRequires(List<com.amazon.ask.smapi.model.v1.skill.Manifest.Connections> requires) {
+        public Builder withRequires(List<com.amazon.ask.smapi.model.v1.skill.Manifest.Custom.Connection> requires) {
             this.requires = requires;
             return this;
         }
 
-        public Builder addRequiresItem(com.amazon.ask.smapi.model.v1.skill.Manifest.Connections requiresItem) {
+        public Builder addRequiresItem(com.amazon.ask.smapi.model.v1.skill.Manifest.Custom.Connection requiresItem) {
             if (this.requires == null) {
-                this.requires = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.Connections>();
+                this.requires = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.Custom.Connection>();
             }
             this.requires.add(requiresItem);
             return this;
@@ -130,14 +130,14 @@ public final class CustomConnections {
 
         @JsonProperty("provides")
 
-        public Builder withProvides(List<com.amazon.ask.smapi.model.v1.skill.Manifest.Connections> provides) {
+        public Builder withProvides(List<com.amazon.ask.smapi.model.v1.skill.Manifest.Custom.Connection> provides) {
             this.provides = provides;
             return this;
         }
 
-        public Builder addProvidesItem(com.amazon.ask.smapi.model.v1.skill.Manifest.Connections providesItem) {
+        public Builder addProvidesItem(com.amazon.ask.smapi.model.v1.skill.Manifest.Custom.Connection providesItem) {
             if (this.provides == null) {
-                this.provides = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.Connections>();
+                this.provides = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.Custom.Connection>();
             }
             this.provides.add(providesItem);
             return this;

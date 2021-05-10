@@ -12,55 +12,39 @@
 */
 
 
-package com.amazon.ask.smapi.model.v0;
+package com.amazon.ask.smapi.model.v1.skill.Manifest;
 
 import java.util.Objects;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Links for the API navigation.
+ * Defines the structure of localized knowledge information in the skill manifest.
  */
 
-@JsonDeserialize(builder = Links.Builder.class)
-public final class Links {
+@JsonDeserialize(builder = LocalizedKnowledgeInformation.Builder.class)
+public final class LocalizedKnowledgeInformation {
 
-    @JsonProperty("self")
-    private com.amazon.ask.smapi.model.v0.Link self = null;
-
-    @JsonProperty("next")
-    private com.amazon.ask.smapi.model.v0.Link next = null;
+    @JsonProperty("answerAttribution")
+    private String answerAttribution = null;
 
     public static Builder builder() {
         return new Builder();
     }
 
-    private Links(Builder builder) {
-        if (builder.self != null) {
-            this.self = builder.self;
-        }
-        if (builder.next != null) {
-            this.next = builder.next;
+    private LocalizedKnowledgeInformation(Builder builder) {
+        if (builder.answerAttribution != null) {
+            this.answerAttribution = builder.answerAttribution;
         }
     }
 
     /**
-     * Get self
-     * @return self
+     * enables skill developers to prepend a custom message to all of their knowledge skill's answers, which can help inform end-users of the skill and data source answering their question.
+     * @return answerAttribution
     **/
-    @JsonProperty("self")
-    public com.amazon.ask.smapi.model.v0.Link getSelf() {
-        return self;
-    }
-
-
-    /**
-     * Get next
-     * @return next
-    **/
-    @JsonProperty("next")
-    public com.amazon.ask.smapi.model.v0.Link getNext() {
-        return next;
+    @JsonProperty("answerAttribution")
+    public String getAnswerAttribution() {
+        return answerAttribution;
     }
 
 
@@ -72,23 +56,21 @@ public final class Links {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        Links v0Links = (Links) o;
-        return Objects.equals(this.self, v0Links.self) &&
-            Objects.equals(this.next, v0Links.next);
+        LocalizedKnowledgeInformation v1SkillManifestLocalizedKnowledgeInformation = (LocalizedKnowledgeInformation) o;
+        return Objects.equals(this.answerAttribution, v1SkillManifestLocalizedKnowledgeInformation.answerAttribution);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(self, next);
+        return Objects.hash(answerAttribution);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class Links {\n");
+        sb.append("class LocalizedKnowledgeInformation {\n");
         
-        sb.append("    self: ").append(toIndentedString(self)).append("\n");
-        sb.append("    next: ").append(toIndentedString(next)).append("\n");
+        sb.append("    answerAttribution: ").append(toIndentedString(answerAttribution)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -105,29 +87,20 @@ public final class Links {
     }
   
     public static class Builder {
-        private com.amazon.ask.smapi.model.v0.Link self;
-        private com.amazon.ask.smapi.model.v0.Link next;
+        private String answerAttribution;
 
         private Builder() {}
 
-        @JsonProperty("self")
+        @JsonProperty("answerAttribution")
 
-        public Builder withSelf(com.amazon.ask.smapi.model.v0.Link self) {
-            this.self = self;
+        public Builder withAnswerAttribution(String answerAttribution) {
+            this.answerAttribution = answerAttribution;
             return this;
         }
 
 
-        @JsonProperty("next")
-
-        public Builder withNext(com.amazon.ask.smapi.model.v0.Link next) {
-            this.next = next;
-            return this;
-        }
-
-
-        public Links build() {
-            return new Links(this);
+        public LocalizedKnowledgeInformation build() {
+            return new LocalizedKnowledgeInformation(this);
         }
     }
 }

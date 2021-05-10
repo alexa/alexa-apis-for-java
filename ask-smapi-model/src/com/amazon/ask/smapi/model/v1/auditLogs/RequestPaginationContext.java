@@ -15,7 +15,6 @@
 package com.amazon.ask.smapi.model.v1.auditLogs;
 
 import java.util.Objects;
-import java.math.BigDecimal;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -30,7 +29,7 @@ public final class RequestPaginationContext {
     private String nextToken = null;
 
     @JsonProperty("maxResults")
-    private BigDecimal maxResults = null;
+    private Integer maxResults = null;
 
     public static Builder builder() {
         return new Builder();
@@ -58,11 +57,11 @@ public final class RequestPaginationContext {
     /**
      * Sets the maximum number of results returned in the response body. If you want to retrieve more or less than the default of 50 results, you can add this parameter to your request. maxResults can exceed the upper limit of 250 but we will not return more items than that. The response might contain fewer results than maxResults for purpose of keeping SLA or because there are not enough items, but it will never contain more.
      * minimum: 1
-     * maximum: 250
+     * maximum: 200
      * @return maxResults
     **/
     @JsonProperty("maxResults")
-    public BigDecimal getMaxResults() {
+    public Integer getMaxResults() {
         return maxResults;
     }
 
@@ -109,7 +108,7 @@ public final class RequestPaginationContext {
   
     public static class Builder {
         private String nextToken;
-        private BigDecimal maxResults;
+        private Integer maxResults;
 
         private Builder() {}
 
@@ -123,7 +122,7 @@ public final class RequestPaginationContext {
 
         @JsonProperty("maxResults")
 
-        public Builder withMaxResults(BigDecimal maxResults) {
+        public Builder withMaxResults(Integer maxResults) {
             this.maxResults = maxResults;
             return this;
         }

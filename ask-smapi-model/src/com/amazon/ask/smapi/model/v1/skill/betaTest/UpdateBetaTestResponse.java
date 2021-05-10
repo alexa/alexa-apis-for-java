@@ -12,41 +12,25 @@
 */
 
 
-package com.amazon.ask.smapi.model.v0;
+package com.amazon.ask.smapi.model.v1.skill.betaTest;
 
 import java.util.Objects;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Link
+ * UpdateBetaTestResponse
  */
 
-@JsonDeserialize(builder = Link.Builder.class)
-public final class Link {
-
-    @JsonProperty("href")
-    private String href = null;
+@JsonDeserialize(builder = UpdateBetaTestResponse.Builder.class)
+public final class UpdateBetaTestResponse {
 
     public static Builder builder() {
         return new Builder();
     }
 
-    private Link(Builder builder) {
-        if (builder.href != null) {
-            this.href = builder.href;
-        }
+    private UpdateBetaTestResponse(Builder builder) {
     }
-
-    /**
-     * Get href
-     * @return href
-    **/
-    @JsonProperty("href")
-    public String getHref() {
-        return href;
-    }
-
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,21 +40,19 @@ public final class Link {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        Link v0Link = (Link) o;
-        return Objects.equals(this.href, v0Link.href);
+        return true;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(href);
+        return Objects.hash();
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class Link {\n");
+        sb.append("class UpdateBetaTestResponse {\n");
         
-        sb.append("    href: ").append(toIndentedString(href)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -87,20 +69,11 @@ public final class Link {
     }
   
     public static class Builder {
-        private String href;
 
         private Builder() {}
 
-        @JsonProperty("href")
-
-        public Builder withHref(String href) {
-            this.href = href;
-            return this;
-        }
-
-
-        public Link build() {
-            return new Link(this);
+        public UpdateBetaTestResponse build() {
+            return new UpdateBetaTestResponse(this);
         }
     }
 }

@@ -12,41 +12,28 @@
 */
 
 
-package com.amazon.ask.smapi.model.v1.skill.Manifest;
+package com.amazon.ask.smapi.model.v1.skill.Manifest.Custom;
 
 import java.util.Objects;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * HealthRequest
+ * The type of target runtime.
  */
 
-@JsonDeserialize(builder = HealthRequest.Builder.class)
-public final class HealthRequest {
-
-    @JsonProperty("name")
-    private String name = null;
+@JsonDeserialize(builder = TargetRuntimeDevice.Builder.class)
+public final class TargetRuntimeDevice extends com.amazon.ask.smapi.model.v1.skill.Manifest.Custom.TargetRuntime  {
 
     public static Builder builder() {
         return new Builder();
     }
 
-    private HealthRequest(Builder builder) {
-        if (builder.name != null) {
-            this.name = builder.name;
-        }
-    }
+    private TargetRuntimeDevice(Builder builder) {
+        String discriminatorValue = "DEVICE";
 
-    /**
-     * Defines the name of request, each request has their own payload format.
-     * @return name
-    **/
-    @JsonProperty("name")
-    public String getName() {
-        return name;
+        this.type = discriminatorValue;
     }
-
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -56,21 +43,19 @@ public final class HealthRequest {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        HealthRequest v1SkillManifestHealthRequest = (HealthRequest) o;
-        return Objects.equals(this.name, v1SkillManifestHealthRequest.name);
+        return super.equals(o);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name);
+        return Objects.hash(super.hashCode());
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class HealthRequest {\n");
-        
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("class TargetRuntimeDevice {\n");
+        sb.append("    ").append(toIndentedString(super.toString())).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -87,20 +72,11 @@ public final class HealthRequest {
     }
   
     public static class Builder {
-        private String name;
 
         private Builder() {}
 
-        @JsonProperty("name")
-
-        public Builder withName(String name) {
-            this.name = name;
-            return this;
-        }
-
-
-        public HealthRequest build() {
-            return new HealthRequest(this);
+        public TargetRuntimeDevice build() {
+            return new TargetRuntimeDevice(this);
         }
     }
 }

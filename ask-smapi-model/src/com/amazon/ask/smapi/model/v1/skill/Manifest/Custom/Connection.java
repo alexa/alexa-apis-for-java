@@ -12,58 +12,57 @@
 */
 
 
-package com.amazon.ask.smapi.model.v1.skill.Manifest;
+package com.amazon.ask.smapi.model.v1.skill.Manifest.Custom;
 
 import java.util.Objects;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Request
+ * Skill connection object.
  */
 
-@JsonDeserialize(builder = Request.Builder.class)
-public final class Request {
+@JsonDeserialize(builder = Connection.Builder.class)
+public final class Connection {
 
     @JsonProperty("name")
     private String name = null;
+
+    @JsonProperty("payload")
+    private com.amazon.ask.smapi.model.v1.skill.Manifest.ConnectionsPayload payload = null;
 
     public static Builder builder() {
         return new Builder();
     }
 
-    private Request(Builder builder) {
+    private Connection(Builder builder) {
         if (builder.name != null) {
             this.name = builder.name;
+        }
+        if (builder.payload != null) {
+            this.payload = builder.payload;
         }
     }
 
     /**
-     * Get name
-     *
-     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
-     * enumeration value will be returned. To directly return the raw String value, use getNameAsString().
-     *
+     * Name of the connection.
      * @return name
     **/
-    
-    public com.amazon.ask.smapi.model.v1.skill.Manifest.RequestName getName() {
-        return com.amazon.ask.smapi.model.v1.skill.Manifest.RequestName.fromValue(name);
+    @JsonProperty("name")
+    public String getName() {
+        return name;
     }
 
+
     /**
-     * Get the underlying String value for name.
-     *
-     * Using this accessor will retrieve the raw underlying value, even if it is not
-     * present in the corresponding enumeration. For forward compatibility, it is recommended
-     * to use this approach over the enumeration.
-     *
-     * @return name as a String value
+     * Get payload
+     * @return payload
     **/
-    @JsonProperty("name")
-    public String getNameAsString() {
-      return name;
+    @JsonProperty("payload")
+    public com.amazon.ask.smapi.model.v1.skill.Manifest.ConnectionsPayload getPayload() {
+        return payload;
     }
+
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -73,21 +72,23 @@ public final class Request {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        Request v1SkillManifestRequest = (Request) o;
-        return Objects.equals(this.name, v1SkillManifestRequest.name);
+        Connection v1SkillManifestCustomConnection = (Connection) o;
+        return Objects.equals(this.name, v1SkillManifestCustomConnection.name) &&
+            Objects.equals(this.payload, v1SkillManifestCustomConnection.payload);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name);
+        return Objects.hash(name, payload);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class Request {\n");
+        sb.append("class Connection {\n");
         
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    payload: ").append(toIndentedString(payload)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -105,23 +106,28 @@ public final class Request {
   
     public static class Builder {
         private String name;
+        private com.amazon.ask.smapi.model.v1.skill.Manifest.ConnectionsPayload payload;
 
         private Builder() {}
 
         @JsonProperty("name")
-        public Builder withName(String name) {
-          this.name = name;
-          return this;
-        }
 
-        public Builder withName(com.amazon.ask.smapi.model.v1.skill.Manifest.RequestName name) {
-            this.name = name != null ? name.toString() : null;
+        public Builder withName(String name) {
+            this.name = name;
             return this;
         }
 
 
-        public Request build() {
-            return new Request(this);
+        @JsonProperty("payload")
+
+        public Builder withPayload(com.amazon.ask.smapi.model.v1.skill.Manifest.ConnectionsPayload payload) {
+            this.payload = payload;
+            return this;
+        }
+
+
+        public Connection build() {
+            return new Connection(this);
         }
     }
 }

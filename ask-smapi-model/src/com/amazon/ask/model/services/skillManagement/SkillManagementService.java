@@ -28,9 +28,9 @@ public interface SkillManagementService {
     ApiResponse<com.amazon.ask.smapi.model.v0.catalog.CatalogDetails> callGetCatalogV0(String catalogId) throws ServiceException;
 
 
-    com.amazon.ask.smapi.model.v0.catalog.upload.ListUploadsResponse listUploadsForCatalogV0(String catalogId, String nextToken, BigDecimal maxResults) throws ServiceException;
+    com.amazon.ask.smapi.model.v0.catalog.upload.ListUploadsResponse listUploadsForCatalogV0(String catalogId, String nextToken, Integer maxResults) throws ServiceException;
 
-    ApiResponse<com.amazon.ask.smapi.model.v0.catalog.upload.ListUploadsResponse> callListUploadsForCatalogV0(String catalogId, String nextToken, BigDecimal maxResults) throws ServiceException;
+    ApiResponse<com.amazon.ask.smapi.model.v0.catalog.upload.ListUploadsResponse> callListUploadsForCatalogV0(String catalogId, String nextToken, Integer maxResults) throws ServiceException;
 
 
     com.amazon.ask.smapi.model.v0.catalog.upload.CreateContentUploadResponse createContentUploadV0(String catalogId, com.amazon.ask.smapi.model.v0.catalog.upload.CreateContentUploadRequest createContentUploadRequest) throws ServiceException;
@@ -48,9 +48,9 @@ public interface SkillManagementService {
     ApiResponse<Void> callCompleteCatalogUploadV0(String catalogId, String uploadId, com.amazon.ask.smapi.model.v0.catalog.upload.CompleteUploadRequest completeUploadRequestPayload) throws ServiceException;
 
 
-    com.amazon.ask.smapi.model.v0.catalog.ListCatalogsResponse listCatalogsForVendorV0(String vendorId, String nextToken, BigDecimal maxResults) throws ServiceException;
+    com.amazon.ask.smapi.model.v0.catalog.ListCatalogsResponse listCatalogsForVendorV0(String vendorId, String nextToken, Integer maxResults) throws ServiceException;
 
-    ApiResponse<com.amazon.ask.smapi.model.v0.catalog.ListCatalogsResponse> callListCatalogsForVendorV0(String vendorId, String nextToken, BigDecimal maxResults) throws ServiceException;
+    ApiResponse<com.amazon.ask.smapi.model.v0.catalog.ListCatalogsResponse> callListCatalogsForVendorV0(String vendorId, String nextToken, Integer maxResults) throws ServiceException;
 
 
     com.amazon.ask.smapi.model.v0.catalog.CatalogDetails createCatalogV0(com.amazon.ask.smapi.model.v0.catalog.CreateCatalogRequest createCatalogRequest) throws ServiceException;
@@ -58,9 +58,9 @@ public interface SkillManagementService {
     ApiResponse<com.amazon.ask.smapi.model.v0.catalog.CatalogDetails> callCreateCatalogV0(com.amazon.ask.smapi.model.v0.catalog.CreateCatalogRequest createCatalogRequest) throws ServiceException;
 
 
-    com.amazon.ask.smapi.model.v0.developmentEvents.subscriber.ListSubscribersResponse listSubscribersForDevelopmentEventsV0(String vendorId, String nextToken, BigDecimal maxResults) throws ServiceException;
+    com.amazon.ask.smapi.model.v0.developmentEvents.subscriber.ListSubscribersResponse listSubscribersForDevelopmentEventsV0(String vendorId, String nextToken, Integer maxResults) throws ServiceException;
 
-    ApiResponse<com.amazon.ask.smapi.model.v0.developmentEvents.subscriber.ListSubscribersResponse> callListSubscribersForDevelopmentEventsV0(String vendorId, String nextToken, BigDecimal maxResults) throws ServiceException;
+    ApiResponse<com.amazon.ask.smapi.model.v0.developmentEvents.subscriber.ListSubscribersResponse> callListSubscribersForDevelopmentEventsV0(String vendorId, String nextToken, Integer maxResults) throws ServiceException;
 
 
     void createSubscriberForDevelopmentEventsV0(com.amazon.ask.smapi.model.v0.developmentEvents.subscriber.CreateSubscriberRequest createSubscriberRequest) throws ServiceException;
@@ -83,9 +83,9 @@ public interface SkillManagementService {
     ApiResponse<Void> callSetSubscriberForDevelopmentEventsV0(String subscriberId, com.amazon.ask.smapi.model.v0.developmentEvents.subscriber.UpdateSubscriberRequest updateSubscriberRequest) throws ServiceException;
 
 
-    com.amazon.ask.smapi.model.v0.developmentEvents.subscription.ListSubscriptionsResponse listSubscriptionsForDevelopmentEventsV0(String vendorId, String nextToken, BigDecimal maxResults, String subscriberId) throws ServiceException;
+    com.amazon.ask.smapi.model.v0.developmentEvents.subscription.ListSubscriptionsResponse listSubscriptionsForDevelopmentEventsV0(String vendorId, String nextToken, Integer maxResults, String subscriberId) throws ServiceException;
 
-    ApiResponse<com.amazon.ask.smapi.model.v0.developmentEvents.subscription.ListSubscriptionsResponse> callListSubscriptionsForDevelopmentEventsV0(String vendorId, String nextToken, BigDecimal maxResults, String subscriberId) throws ServiceException;
+    ApiResponse<com.amazon.ask.smapi.model.v0.developmentEvents.subscription.ListSubscriptionsResponse> callListSubscriptionsForDevelopmentEventsV0(String vendorId, String nextToken, Integer maxResults, String subscriberId) throws ServiceException;
 
 
     void createSubscriptionForDevelopmentEventsV0(com.amazon.ask.smapi.model.v0.developmentEvents.subscription.CreateSubscriptionRequest createSubscriptionRequest) throws ServiceException;
@@ -113,9 +113,9 @@ public interface SkillManagementService {
     ApiResponse<Void> callAssociateCatalogWithSkillV0(String skillId, String catalogId) throws ServiceException;
 
 
-    com.amazon.ask.smapi.model.v0.catalog.ListCatalogsResponse listCatalogsForSkillV0(String skillId, String nextToken, BigDecimal maxResults) throws ServiceException;
+    com.amazon.ask.smapi.model.v0.catalog.ListCatalogsResponse listCatalogsForSkillV0(String skillId, String nextToken, Integer maxResults) throws ServiceException;
 
-    ApiResponse<com.amazon.ask.smapi.model.v0.catalog.ListCatalogsResponse> callListCatalogsForSkillV0(String skillId, String nextToken, BigDecimal maxResults) throws ServiceException;
+    ApiResponse<com.amazon.ask.smapi.model.v0.catalog.ListCatalogsResponse> callListCatalogsForSkillV0(String skillId, String nextToken, Integer maxResults) throws ServiceException;
 
 
     void createCatalogUploadV1(String catalogId, com.amazon.ask.smapi.model.v1.catalog.upload.CatalogUploadBase catalogUploadRequestBody) throws ServiceException;
@@ -138,9 +138,9 @@ public interface SkillManagementService {
     ApiResponse<com.amazon.ask.smapi.model.v1.auditLogs.AuditLogsResponse> callQueryDevelopmentAuditLogsV1(com.amazon.ask.smapi.model.v1.auditLogs.AuditLogsRequest getAuditLogsRequest) throws ServiceException;
 
 
-    com.amazon.ask.smapi.model.v1.isp.ListInSkillProductResponse getIspListForVendorV1(String vendorId, String nextToken, BigDecimal maxResults, List<String> productId, String stage, String type, String referenceName, String status, String isAssociatedWithSkill) throws ServiceException;
+    com.amazon.ask.smapi.model.v1.isp.ListInSkillProductResponse getIspListForVendorV1(String vendorId, String nextToken, Integer maxResults, List<String> productId, String stage, String type, String referenceName, String status, String isAssociatedWithSkill) throws ServiceException;
 
-    ApiResponse<com.amazon.ask.smapi.model.v1.isp.ListInSkillProductResponse> callGetIspListForVendorV1(String vendorId, String nextToken, BigDecimal maxResults, List<String> productId, String stage, String type, String referenceName, String status, String isAssociatedWithSkill) throws ServiceException;
+    ApiResponse<com.amazon.ask.smapi.model.v1.isp.ListInSkillProductResponse> callGetIspListForVendorV1(String vendorId, String nextToken, Integer maxResults, List<String> productId, String stage, String type, String referenceName, String status, String isAssociatedWithSkill) throws ServiceException;
 
 
     com.amazon.ask.smapi.model.v1.isp.ProductResponse createIspForVendorV1(com.amazon.ask.smapi.model.v1.isp.CreateInSkillProductRequest createInSkillProductRequest) throws ServiceException;
@@ -178,9 +178,9 @@ public interface SkillManagementService {
     ApiResponse<Void> callUpdateIspForProductV1(String productId, String stage, com.amazon.ask.smapi.model.v1.isp.UpdateInSkillProductRequest updateInSkillProductRequest, String ifMatch) throws ServiceException;
 
 
-    com.amazon.ask.smapi.model.v1.isp.AssociatedSkillResponse getIspAssociatedSkillsV1(String productId, String stage, String nextToken, BigDecimal maxResults) throws ServiceException;
+    com.amazon.ask.smapi.model.v1.isp.AssociatedSkillResponse getIspAssociatedSkillsV1(String productId, String stage, String nextToken, Integer maxResults) throws ServiceException;
 
-    ApiResponse<com.amazon.ask.smapi.model.v1.isp.AssociatedSkillResponse> callGetIspAssociatedSkillsV1(String productId, String stage, String nextToken, BigDecimal maxResults) throws ServiceException;
+    ApiResponse<com.amazon.ask.smapi.model.v1.isp.AssociatedSkillResponse> callGetIspAssociatedSkillsV1(String productId, String stage, String nextToken, Integer maxResults) throws ServiceException;
 
 
     com.amazon.ask.smapi.model.v1.isp.InSkillProductSummaryResponse getIspSummaryV1(String productId, String stage) throws ServiceException;
@@ -208,9 +208,9 @@ public interface SkillManagementService {
     ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.CatalogStatus> callGetInteractionModelCatalogUpdateStatusV1(String catalogId, String updateRequestId) throws ServiceException;
 
 
-    com.amazon.ask.smapi.model.v1.skill.interactionModel.version.ListCatalogEntityVersionsResponse listInteractionModelCatalogVersionsV1(String catalogId, BigDecimal maxResults, String nextToken, String sortDirection, String sortField) throws ServiceException;
+    com.amazon.ask.smapi.model.v1.skill.interactionModel.version.ListCatalogEntityVersionsResponse listInteractionModelCatalogVersionsV1(String catalogId, Integer maxResults, String nextToken, String sortDirection, String sortField) throws ServiceException;
 
-    ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.version.ListCatalogEntityVersionsResponse> callListInteractionModelCatalogVersionsV1(String catalogId, BigDecimal maxResults, String nextToken, String sortDirection, String sortField) throws ServiceException;
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.version.ListCatalogEntityVersionsResponse> callListInteractionModelCatalogVersionsV1(String catalogId, Integer maxResults, String nextToken, String sortDirection, String sortField) throws ServiceException;
 
 
     void createInteractionModelCatalogVersionV1(String catalogId, com.amazon.ask.smapi.model.v1.skill.interactionModel.version.VersionData catalog) throws ServiceException;
@@ -233,14 +233,14 @@ public interface SkillManagementService {
     ApiResponse<Void> callUpdateInteractionModelCatalogVersionV1(String catalogId, String version, com.amazon.ask.smapi.model.v1.skill.interactionModel.version.CatalogUpdate catalogUpdate) throws ServiceException;
 
 
-    com.amazon.ask.smapi.model.v1.skill.interactionModel.version.CatalogValues getInteractionModelCatalogValuesV1(String catalogId, String version, BigDecimal maxResults, String nextToken) throws ServiceException;
+    com.amazon.ask.smapi.model.v1.skill.interactionModel.version.CatalogValues getInteractionModelCatalogValuesV1(String catalogId, String version, Integer maxResults, String nextToken) throws ServiceException;
 
-    ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.version.CatalogValues> callGetInteractionModelCatalogValuesV1(String catalogId, String version, BigDecimal maxResults, String nextToken) throws ServiceException;
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.version.CatalogValues> callGetInteractionModelCatalogValuesV1(String catalogId, String version, Integer maxResults, String nextToken) throws ServiceException;
 
 
-    com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.ListCatalogResponse listInteractionModelCatalogsV1(String vendorId, BigDecimal maxResults, String nextToken, String sortDirection) throws ServiceException;
+    com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.ListCatalogResponse listInteractionModelCatalogsV1(String vendorId, Integer maxResults, String nextToken, String sortDirection) throws ServiceException;
 
-    ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.ListCatalogResponse> callListInteractionModelCatalogsV1(String vendorId, BigDecimal maxResults, String nextToken, String sortDirection) throws ServiceException;
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.ListCatalogResponse> callListInteractionModelCatalogsV1(String vendorId, Integer maxResults, String nextToken, String sortDirection) throws ServiceException;
 
 
     com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.CatalogResponse createInteractionModelCatalogV1(com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.DefinitionData catalog) throws ServiceException;
@@ -248,9 +248,9 @@ public interface SkillManagementService {
     ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.CatalogResponse> callCreateInteractionModelCatalogV1(com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.DefinitionData catalog) throws ServiceException;
 
 
-    com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.ListJobDefinitionsResponse listJobDefinitionsForInteractionModelV1(String vendorId, BigDecimal maxResults, String nextToken) throws ServiceException;
+    com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.ListJobDefinitionsResponse listJobDefinitionsForInteractionModelV1(String vendorId, Integer maxResults, String nextToken) throws ServiceException;
 
-    ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.ListJobDefinitionsResponse> callListJobDefinitionsForInteractionModelV1(String vendorId, BigDecimal maxResults, String nextToken) throws ServiceException;
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.ListJobDefinitionsResponse> callListJobDefinitionsForInteractionModelV1(String vendorId, Integer maxResults, String nextToken) throws ServiceException;
 
 
     void deleteJobDefinitionForInteractionModelV1(String jobId) throws ServiceException;
@@ -263,9 +263,9 @@ public interface SkillManagementService {
     ApiResponse<Void> callCancelNextJobExecutionForInteractionModelV1(String jobId, String executionId) throws ServiceException;
 
 
-    com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.GetExecutionsResponse listJobExecutionsForInteractionModelV1(String jobId, BigDecimal maxResults, String nextToken, String sortDirection) throws ServiceException;
+    com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.GetExecutionsResponse listJobExecutionsForInteractionModelV1(String jobId, Integer maxResults, String nextToken, String sortDirection) throws ServiceException;
 
-    ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.GetExecutionsResponse> callListJobExecutionsForInteractionModelV1(String jobId, BigDecimal maxResults, String nextToken, String sortDirection) throws ServiceException;
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.GetExecutionsResponse> callListJobExecutionsForInteractionModelV1(String jobId, Integer maxResults, String nextToken, String sortDirection) throws ServiceException;
 
 
     com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.JobDefinition getJobDefinitionForInteractionModelV1(String jobId) throws ServiceException;
@@ -283,9 +283,9 @@ public interface SkillManagementService {
     ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.CreateJobDefinitionResponse> callCreateJobDefinitionForInteractionModelV1(com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.CreateJobDefinitionRequest createJobDefinitionRequest) throws ServiceException;
 
 
-    com.amazon.ask.smapi.model.v1.skill.interactionModel.type.ListSlotTypeResponse listInteractionModelSlotTypesV1(String vendorId, BigDecimal maxResults, String nextToken, String sortDirection) throws ServiceException;
+    com.amazon.ask.smapi.model.v1.skill.interactionModel.type.ListSlotTypeResponse listInteractionModelSlotTypesV1(String vendorId, Integer maxResults, String nextToken, String sortDirection) throws ServiceException;
 
-    ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.type.ListSlotTypeResponse> callListInteractionModelSlotTypesV1(String vendorId, BigDecimal maxResults, String nextToken, String sortDirection) throws ServiceException;
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.type.ListSlotTypeResponse> callListInteractionModelSlotTypesV1(String vendorId, Integer maxResults, String nextToken, String sortDirection) throws ServiceException;
 
 
     com.amazon.ask.smapi.model.v1.skill.interactionModel.type.SlotTypeResponse createInteractionModelSlotTypeV1(com.amazon.ask.smapi.model.v1.skill.interactionModel.type.DefinitionData slotType) throws ServiceException;
@@ -313,9 +313,9 @@ public interface SkillManagementService {
     ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.type.SlotTypeStatus> callGetInteractionModelSlotTypeBuildStatusV1(String slotTypeId, String updateRequestId) throws ServiceException;
 
 
-    com.amazon.ask.smapi.model.v1.skill.interactionModel.typeVersion.ListSlotTypeVersionResponse listInteractionModelSlotTypeVersionsV1(String slotTypeId, BigDecimal maxResults, String nextToken, String sortDirection) throws ServiceException;
+    com.amazon.ask.smapi.model.v1.skill.interactionModel.typeVersion.ListSlotTypeVersionResponse listInteractionModelSlotTypeVersionsV1(String slotTypeId, Integer maxResults, String nextToken, String sortDirection) throws ServiceException;
 
-    ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.typeVersion.ListSlotTypeVersionResponse> callListInteractionModelSlotTypeVersionsV1(String slotTypeId, BigDecimal maxResults, String nextToken, String sortDirection) throws ServiceException;
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.typeVersion.ListSlotTypeVersionResponse> callListInteractionModelSlotTypeVersionsV1(String slotTypeId, Integer maxResults, String nextToken, String sortDirection) throws ServiceException;
 
 
     void createInteractionModelSlotTypeVersionV1(String slotTypeId, com.amazon.ask.smapi.model.v1.skill.interactionModel.typeVersion.VersionData slotType) throws ServiceException;
@@ -343,9 +343,9 @@ public interface SkillManagementService {
     ApiResponse<com.amazon.ask.smapi.model.v1.skill.ExportResponse> callGetStatusOfExportRequestV1(String exportId) throws ServiceException;
 
 
-    com.amazon.ask.smapi.model.v1.skill.ListSkillResponse listSkillsForVendorV1(String vendorId, String nextToken, BigDecimal maxResults, List<String> skillId) throws ServiceException;
+    com.amazon.ask.smapi.model.v1.skill.ListSkillResponse listSkillsForVendorV1(String vendorId, String nextToken, Integer maxResults, List<String> skillId) throws ServiceException;
 
-    ApiResponse<com.amazon.ask.smapi.model.v1.skill.ListSkillResponse> callListSkillsForVendorV1(String vendorId, String nextToken, BigDecimal maxResults, List<String> skillId) throws ServiceException;
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.ListSkillResponse> callListSkillsForVendorV1(String vendorId, String nextToken, Integer maxResults, List<String> skillId) throws ServiceException;
 
 
     com.amazon.ask.smapi.model.v1.skill.ImportResponse getImportStatusV1(String importId) throws ServiceException;
@@ -453,9 +453,9 @@ public interface SkillManagementService {
     ApiResponse<Void> callCreateBetaTestV1(String skillId, com.amazon.ask.smapi.model.v1.skill.betaTest.TestBody createTestBody) throws ServiceException;
 
 
-    void updateBetaTestV1(String skillId, com.amazon.ask.smapi.model.v1.skill.betaTest.TestBody createTestBody) throws ServiceException;
+    com.amazon.ask.smapi.model.v1.skill.betaTest.UpdateBetaTestResponse updateBetaTestV1(String skillId, com.amazon.ask.smapi.model.v1.skill.betaTest.TestBody createTestBody) throws ServiceException;
 
-    ApiResponse<Void> callUpdateBetaTestV1(String skillId, com.amazon.ask.smapi.model.v1.skill.betaTest.TestBody createTestBody) throws ServiceException;
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.betaTest.UpdateBetaTestResponse> callUpdateBetaTestV1(String skillId, com.amazon.ask.smapi.model.v1.skill.betaTest.TestBody createTestBody) throws ServiceException;
 
 
     void startBetaTestV1(String skillId) throws ServiceException;
@@ -468,9 +468,9 @@ public interface SkillManagementService {
     ApiResponse<Void> callAddTestersToBetaTestV1(String skillId, com.amazon.ask.smapi.model.v1.skill.betaTest.testers.TestersList testersRequest) throws ServiceException;
 
 
-    com.amazon.ask.smapi.model.v1.skill.betaTest.testers.ListTestersResponse getListOfTestersV1(String skillId, String nextToken, BigDecimal maxResults) throws ServiceException;
+    com.amazon.ask.smapi.model.v1.skill.betaTest.testers.ListTestersResponse getListOfTestersV1(String skillId, String nextToken, Integer maxResults) throws ServiceException;
 
-    ApiResponse<com.amazon.ask.smapi.model.v1.skill.betaTest.testers.ListTestersResponse> callGetListOfTestersV1(String skillId, String nextToken, BigDecimal maxResults) throws ServiceException;
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.betaTest.testers.ListTestersResponse> callGetListOfTestersV1(String skillId, String nextToken, Integer maxResults) throws ServiceException;
 
 
     void removeTestersFromBetaTestV1(String skillId, com.amazon.ask.smapi.model.v1.skill.betaTest.testers.TestersList testersRequest) throws ServiceException;
@@ -493,9 +493,9 @@ public interface SkillManagementService {
     ApiResponse<com.amazon.ask.smapi.model.v1.skill.certification.CertificationResponse> callGetCertificationReviewV1(String skillId, String certificationId, String acceptLanguage) throws ServiceException;
 
 
-    com.amazon.ask.smapi.model.v1.skill.certification.ListCertificationsResponse getCertificationsListV1(String skillId, String nextToken, BigDecimal maxResults) throws ServiceException;
+    com.amazon.ask.smapi.model.v1.skill.certification.ListCertificationsResponse getCertificationsListV1(String skillId, String nextToken, Integer maxResults) throws ServiceException;
 
-    ApiResponse<com.amazon.ask.smapi.model.v1.skill.certification.ListCertificationsResponse> callGetCertificationsListV1(String skillId, String nextToken, BigDecimal maxResults) throws ServiceException;
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.certification.ListCertificationsResponse> callGetCertificationsListV1(String skillId, String nextToken, Integer maxResults) throws ServiceException;
 
 
     com.amazon.ask.smapi.model.v1.skill.SkillCredentials getSkillCredentialsV1(String skillId) throws ServiceException;
@@ -508,9 +508,9 @@ public interface SkillManagementService {
     ApiResponse<Void> callDeleteSkillV1(String skillId) throws ServiceException;
 
 
-    com.amazon.ask.smapi.model.v1.skill.history.IntentRequests getUtteranceDataV1(String skillId, String stage, String nextToken, BigDecimal maxResults, String sortDirection, String sortField, List<com.amazon.ask.smapi.model.v1.skill.history.LocaleInQuery> locale, List<com.amazon.ask.smapi.model.v1.skill.history.DialogActName> dialogActName, List<com.amazon.ask.smapi.model.v1.skill.history.IntentConfidenceBin> intentConfidenceBin, List<String> intentName, List<String> intentSlotsName, List<com.amazon.ask.smapi.model.v1.skill.history.InteractionType> interactionType, List<com.amazon.ask.smapi.model.v1.skill.history.PublicationStatus> publicationStatus, List<String> utteranceText) throws ServiceException;
+    com.amazon.ask.smapi.model.v1.skill.history.IntentRequests getUtteranceDataV1(String skillId, String stage, String nextToken, Integer maxResults, String sortDirection, String sortField, List<com.amazon.ask.smapi.model.v1.skill.history.LocaleInQuery> locale, List<com.amazon.ask.smapi.model.v1.skill.history.DialogActName> dialogActName, List<com.amazon.ask.smapi.model.v1.skill.history.IntentConfidenceBin> intentConfidenceBin, List<String> intentName, List<String> intentSlotsName, List<com.amazon.ask.smapi.model.v1.skill.history.InteractionType> interactionType, List<com.amazon.ask.smapi.model.v1.skill.history.PublicationStatus> publicationStatus, List<String> utteranceText) throws ServiceException;
 
-    ApiResponse<com.amazon.ask.smapi.model.v1.skill.history.IntentRequests> callGetUtteranceDataV1(String skillId, String stage, String nextToken, BigDecimal maxResults, String sortDirection, String sortField, List<com.amazon.ask.smapi.model.v1.skill.history.LocaleInQuery> locale, List<com.amazon.ask.smapi.model.v1.skill.history.DialogActName> dialogActName, List<com.amazon.ask.smapi.model.v1.skill.history.IntentConfidenceBin> intentConfidenceBin, List<String> intentName, List<String> intentSlotsName, List<com.amazon.ask.smapi.model.v1.skill.history.InteractionType> interactionType, List<com.amazon.ask.smapi.model.v1.skill.history.PublicationStatus> publicationStatus, List<String> utteranceText) throws ServiceException;
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.history.IntentRequests> callGetUtteranceDataV1(String skillId, String stage, String nextToken, Integer maxResults, String sortDirection, String sortField, List<com.amazon.ask.smapi.model.v1.skill.history.LocaleInQuery> locale, List<com.amazon.ask.smapi.model.v1.skill.history.DialogActName> dialogActName, List<com.amazon.ask.smapi.model.v1.skill.history.IntentConfidenceBin> intentConfidenceBin, List<String> intentName, List<String> intentSlotsName, List<com.amazon.ask.smapi.model.v1.skill.history.InteractionType> interactionType, List<com.amazon.ask.smapi.model.v1.skill.history.PublicationStatus> publicationStatus, List<String> utteranceText) throws ServiceException;
 
 
     void importSkillPackageV1(com.amazon.ask.smapi.model.v1.skill.UpdateSkillWithPackageRequest updateSkillWithPackageRequest, String skillId, String ifMatch) throws ServiceException;
@@ -523,9 +523,9 @@ public interface SkillManagementService {
     ApiResponse<com.amazon.ask.smapi.model.v1.skill.invocations.InvokeSkillResponse> callInvokeSkillV1(String skillId, com.amazon.ask.smapi.model.v1.skill.invocations.InvokeSkillRequest invokeSkillRequest) throws ServiceException;
 
 
-    com.amazon.ask.smapi.model.v1.skill.metrics.GetMetricDataResponse getSkillMetricsV1(String skillId, OffsetDateTime startTime, OffsetDateTime endTime, String period, String metric, String stage, String skillType, String intent, String locale, BigDecimal maxResults, String nextToken) throws ServiceException;
+    com.amazon.ask.smapi.model.v1.skill.metrics.GetMetricDataResponse getSkillMetricsV1(String skillId, OffsetDateTime startTime, OffsetDateTime endTime, String period, String metric, String stage, String skillType, String intent, String locale, Integer maxResults, String nextToken) throws ServiceException;
 
-    ApiResponse<com.amazon.ask.smapi.model.v1.skill.metrics.GetMetricDataResponse> callGetSkillMetricsV1(String skillId, OffsetDateTime startTime, OffsetDateTime endTime, String period, String metric, String stage, String skillType, String intent, String locale, BigDecimal maxResults, String nextToken) throws ServiceException;
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.metrics.GetMetricDataResponse> callGetSkillMetricsV1(String skillId, OffsetDateTime startTime, OffsetDateTime endTime, String period, String metric, String stage, String skillType, String intent, String locale, Integer maxResults, String nextToken) throws ServiceException;
 
 
     void getAnnotationsForNLUAnnotationSetsV1(String skillId, String annotationId, String accept) throws ServiceException;
@@ -618,14 +618,14 @@ public interface SkillManagementService {
     ApiResponse<com.amazon.ask.smapi.model.v1.smartHomeEvaluation.GetSHCapabilityEvaluationResponse> callGetSmartHomeCapabilityEvaluationV1(String skillId, String evaluationId) throws ServiceException;
 
 
-    com.amazon.ask.smapi.model.v1.smartHomeEvaluation.GetSHCapabilityEvaluationResultsResponse getSmarthomeCapablityEvaluationResultsV1(String skillId, String evaluationId, BigDecimal maxResults, String nextToken) throws ServiceException;
+    com.amazon.ask.smapi.model.v1.smartHomeEvaluation.GetSHCapabilityEvaluationResultsResponse getSmarthomeCapablityEvaluationResultsV1(String skillId, String evaluationId, Integer maxResults, String nextToken) throws ServiceException;
 
-    ApiResponse<com.amazon.ask.smapi.model.v1.smartHomeEvaluation.GetSHCapabilityEvaluationResultsResponse> callGetSmarthomeCapablityEvaluationResultsV1(String skillId, String evaluationId, BigDecimal maxResults, String nextToken) throws ServiceException;
+    ApiResponse<com.amazon.ask.smapi.model.v1.smartHomeEvaluation.GetSHCapabilityEvaluationResultsResponse> callGetSmarthomeCapablityEvaluationResultsV1(String skillId, String evaluationId, Integer maxResults, String nextToken) throws ServiceException;
 
 
-    com.amazon.ask.smapi.model.v1.smartHomeEvaluation.ListSHCapabilityEvaluationsResponse listSmarthomeCapabilityEvaluationsV1(String skillId, String stage, OffsetDateTime startTimestampFrom, OffsetDateTime startTimestampTo, BigDecimal maxResults, String nextToken) throws ServiceException;
+    com.amazon.ask.smapi.model.v1.smartHomeEvaluation.ListSHCapabilityEvaluationsResponse listSmarthomeCapabilityEvaluationsV1(String skillId, String stage, OffsetDateTime startTimestampFrom, OffsetDateTime startTimestampTo, Integer maxResults, String nextToken) throws ServiceException;
 
-    ApiResponse<com.amazon.ask.smapi.model.v1.smartHomeEvaluation.ListSHCapabilityEvaluationsResponse> callListSmarthomeCapabilityEvaluationsV1(String skillId, String stage, OffsetDateTime startTimestampFrom, OffsetDateTime startTimestampTo, BigDecimal maxResults, String nextToken) throws ServiceException;
+    ApiResponse<com.amazon.ask.smapi.model.v1.smartHomeEvaluation.ListSHCapabilityEvaluationsResponse> callListSmarthomeCapabilityEvaluationsV1(String skillId, String stage, OffsetDateTime startTimestampFrom, OffsetDateTime startTimestampTo, Integer maxResults, String nextToken) throws ServiceException;
 
 
     com.amazon.ask.smapi.model.v1.smartHomeEvaluation.EvaluateSHCapabilityResponse createSmarthomeCapabilityEvaluationV1(String skillId, com.amazon.ask.smapi.model.v1.smartHomeEvaluation.EvaluateSHCapabilityRequest evaluateSHCapabilityPayload) throws ServiceException;
@@ -633,9 +633,9 @@ public interface SkillManagementService {
     ApiResponse<com.amazon.ask.smapi.model.v1.smartHomeEvaluation.EvaluateSHCapabilityResponse> callCreateSmarthomeCapabilityEvaluationV1(String skillId, com.amazon.ask.smapi.model.v1.smartHomeEvaluation.EvaluateSHCapabilityRequest evaluateSHCapabilityPayload) throws ServiceException;
 
 
-    com.amazon.ask.smapi.model.v1.smartHomeEvaluation.ListSHCapabilityTestPlansResponse listSmarthomeCapabilityTestPlansV1(String skillId, BigDecimal maxResults, String nextToken) throws ServiceException;
+    com.amazon.ask.smapi.model.v1.smartHomeEvaluation.ListSHCapabilityTestPlansResponse listSmarthomeCapabilityTestPlansV1(String skillId, Integer maxResults, String nextToken) throws ServiceException;
 
-    ApiResponse<com.amazon.ask.smapi.model.v1.smartHomeEvaluation.ListSHCapabilityTestPlansResponse> callListSmarthomeCapabilityTestPlansV1(String skillId, BigDecimal maxResults, String nextToken) throws ServiceException;
+    ApiResponse<com.amazon.ask.smapi.model.v1.smartHomeEvaluation.ListSHCapabilityTestPlansResponse> callListSmarthomeCapabilityTestPlansV1(String skillId, Integer maxResults, String nextToken) throws ServiceException;
 
 
     com.amazon.ask.smapi.model.v1.skill.SSLCertificatePayload getSSLCertificatesV1(String skillId) throws ServiceException;
@@ -668,9 +668,9 @@ public interface SkillManagementService {
     ApiResponse<Void> callCreateExportRequestForSkillV1(String skillId, String stage) throws ServiceException;
 
 
-    com.amazon.ask.smapi.model.v1.isp.ListInSkillProductResponse getIspListForSkillIdV1(String skillId, String stage, String nextToken, BigDecimal maxResults) throws ServiceException;
+    com.amazon.ask.smapi.model.v1.isp.ListInSkillProductResponse getIspListForSkillIdV1(String skillId, String stage, String nextToken, Integer maxResults) throws ServiceException;
 
-    ApiResponse<com.amazon.ask.smapi.model.v1.isp.ListInSkillProductResponse> callGetIspListForSkillIdV1(String skillId, String stage, String nextToken, BigDecimal maxResults) throws ServiceException;
+    ApiResponse<com.amazon.ask.smapi.model.v1.isp.ListInSkillProductResponse> callGetIspListForSkillIdV1(String skillId, String stage, String nextToken, Integer maxResults) throws ServiceException;
 
 
     com.amazon.ask.smapi.model.v1.skill.evaluations.ProfileNluResponse profileNluV1(com.amazon.ask.smapi.model.v1.skill.evaluations.ProfileNluRequest profileNluRequest, String skillId, String stage, String locale) throws ServiceException;
@@ -688,9 +688,9 @@ public interface SkillManagementService {
     ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.GetConflictsResponse> callGetConflictsForInteractionModelV1(String skillId, String locale, String stage, String version, String nextToken, BigDecimal maxResults) throws ServiceException;
 
 
-    com.amazon.ask.smapi.model.v1.skill.Private.ListPrivateDistributionAccountsResponse listPrivateDistributionAccountsV1(String skillId, String stage, String nextToken, BigDecimal maxResults) throws ServiceException;
+    com.amazon.ask.smapi.model.v1.skill.Private.ListPrivateDistributionAccountsResponse listPrivateDistributionAccountsV1(String skillId, String stage, String nextToken, Integer maxResults) throws ServiceException;
 
-    ApiResponse<com.amazon.ask.smapi.model.v1.skill.Private.ListPrivateDistributionAccountsResponse> callListPrivateDistributionAccountsV1(String skillId, String stage, String nextToken, BigDecimal maxResults) throws ServiceException;
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.Private.ListPrivateDistributionAccountsResponse> callListPrivateDistributionAccountsV1(String skillId, String stage, String nextToken, Integer maxResults) throws ServiceException;
 
 
     void deletePrivateDistributionAccountIdV1(String skillId, String stage, String id) throws ServiceException;
@@ -743,9 +743,9 @@ public interface SkillManagementService {
     ApiResponse<Void> callSetInteractionModelV1(String skillId, String stageV2, String locale, com.amazon.ask.smapi.model.v1.skill.interactionModel.InteractionModelData interactionModel, String ifMatch) throws ServiceException;
 
 
-    com.amazon.ask.smapi.model.v1.skill.interactionModel.version.ListResponse listInteractionModelVersionsV1(String skillId, String stageV2, String locale, String nextToken, BigDecimal maxResults, String sortDirection, String sortField) throws ServiceException;
+    com.amazon.ask.smapi.model.v1.skill.interactionModel.version.ListResponse listInteractionModelVersionsV1(String skillId, String stageV2, String locale, String nextToken, Integer maxResults, String sortDirection, String sortField) throws ServiceException;
 
-    ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.version.ListResponse> callListInteractionModelVersionsV1(String skillId, String stageV2, String locale, String nextToken, BigDecimal maxResults, String sortDirection, String sortField) throws ServiceException;
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.version.ListResponse> callListInteractionModelVersionsV1(String skillId, String stageV2, String locale, String nextToken, Integer maxResults, String sortDirection, String sortField) throws ServiceException;
 
 
     com.amazon.ask.smapi.model.v1.skill.interactionModel.InteractionModelData getInteractionModelVersionV1(String skillId, String stageV2, String locale, String version) throws ServiceException;
@@ -783,9 +783,9 @@ public interface SkillManagementService {
     ApiResponse<Void> callSubmitSkillForCertificationV1(String skillId, com.amazon.ask.smapi.model.v1.skill.SubmitSkillForCertificationRequest submitSkillForCertificationRequest) throws ServiceException;
 
 
-    com.amazon.ask.smapi.model.v1.skill.ListSkillVersionsResponse listVersionsForSkillV1(String skillId, String nextToken, BigDecimal maxResults) throws ServiceException;
+    com.amazon.ask.smapi.model.v1.skill.ListSkillVersionsResponse listVersionsForSkillV1(String skillId, String nextToken, Integer maxResults) throws ServiceException;
 
-    ApiResponse<com.amazon.ask.smapi.model.v1.skill.ListSkillVersionsResponse> callListVersionsForSkillV1(String skillId, String nextToken, BigDecimal maxResults) throws ServiceException;
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.ListSkillVersionsResponse> callListVersionsForSkillV1(String skillId, String nextToken, Integer maxResults) throws ServiceException;
 
 
     void withdrawSkillFromCertificationV1(String skillId, com.amazon.ask.smapi.model.v1.skill.WithdrawRequest withdrawRequest) throws ServiceException;
@@ -803,9 +803,9 @@ public interface SkillManagementService {
     ApiResponse<com.amazon.ask.smapi.model.v1.vendorManagement.Vendors> callGetVendorListV1() throws ServiceException;
 
 
-    com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillPermission getAlexaHostedSkillUserPermissionsV1(String vendorId, String permission) throws ServiceException;
+    com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillPermission getAlexaHostedSkillUserPermissionsV1(String vendorId, String hostedSkillPermissionType) throws ServiceException;
 
-    ApiResponse<com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillPermission> callGetAlexaHostedSkillUserPermissionsV1(String vendorId, String permission) throws ServiceException;
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillPermission> callGetAlexaHostedSkillUserPermissionsV1(String vendorId, String hostedSkillPermissionType) throws ServiceException;
 
 
     com.amazon.ask.smapi.model.v2.skill.invocations.InvocationsApiResponse invokeSkillEndPointV2(String skillId, String stage, com.amazon.ask.smapi.model.v2.skill.invocations.InvocationsApiRequest invocationsApiRequest) throws ServiceException;

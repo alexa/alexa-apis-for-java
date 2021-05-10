@@ -19,32 +19,32 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * HealthAlias
+ * Defines the localized custom api information.
  */
 
-@JsonDeserialize(builder = HealthAlias.Builder.class)
-public final class HealthAlias {
+@JsonDeserialize(builder = CustomLocalizedInformation.Builder.class)
+public final class CustomLocalizedInformation {
 
-    @JsonProperty("name")
-    private String name = null;
+    @JsonProperty("dialogManagement")
+    private com.amazon.ask.smapi.model.v1.skill.Manifest.CustomLocalizedInformationDialogManagement dialogManagement = null;
 
     public static Builder builder() {
         return new Builder();
     }
 
-    private HealthAlias(Builder builder) {
-        if (builder.name != null) {
-            this.name = builder.name;
+    private CustomLocalizedInformation(Builder builder) {
+        if (builder.dialogManagement != null) {
+            this.dialogManagement = builder.dialogManagement;
         }
     }
 
     /**
-     * Name of alias to use when invoking a health skill.
-     * @return name
+     * Get dialogManagement
+     * @return dialogManagement
     **/
-    @JsonProperty("name")
-    public String getName() {
-        return name;
+    @JsonProperty("dialogManagement")
+    public com.amazon.ask.smapi.model.v1.skill.Manifest.CustomLocalizedInformationDialogManagement getDialogManagement() {
+        return dialogManagement;
     }
 
 
@@ -56,21 +56,21 @@ public final class HealthAlias {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        HealthAlias v1SkillManifestHealthAlias = (HealthAlias) o;
-        return Objects.equals(this.name, v1SkillManifestHealthAlias.name);
+        CustomLocalizedInformation v1SkillManifestCustomLocalizedInformation = (CustomLocalizedInformation) o;
+        return Objects.equals(this.dialogManagement, v1SkillManifestCustomLocalizedInformation.dialogManagement);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name);
+        return Objects.hash(dialogManagement);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class HealthAlias {\n");
+        sb.append("class CustomLocalizedInformation {\n");
         
-        sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    dialogManagement: ").append(toIndentedString(dialogManagement)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -87,20 +87,20 @@ public final class HealthAlias {
     }
   
     public static class Builder {
-        private String name;
+        private com.amazon.ask.smapi.model.v1.skill.Manifest.CustomLocalizedInformationDialogManagement dialogManagement;
 
         private Builder() {}
 
-        @JsonProperty("name")
+        @JsonProperty("dialogManagement")
 
-        public Builder withName(String name) {
-            this.name = name;
+        public Builder withDialogManagement(com.amazon.ask.smapi.model.v1.skill.Manifest.CustomLocalizedInformationDialogManagement dialogManagement) {
+            this.dialogManagement = dialogManagement;
             return this;
         }
 
 
-        public HealthAlias build() {
-            return new HealthAlias(this);
+        public CustomLocalizedInformation build() {
+            return new CustomLocalizedInformation(this);
         }
     }
 }

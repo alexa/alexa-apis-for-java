@@ -211,8 +211,8 @@ public final class InSkillProductSummary {
      * @return stage
     **/
     
-    public com.amazon.ask.smapi.model.v1.isp.Stage getStage() {
-        return com.amazon.ask.smapi.model.v1.isp.Stage.fromValue(stage);
+    public com.amazon.ask.smapi.model.v1.StageType getStage() {
+        return com.amazon.ask.smapi.model.v1.StageType.fromValue(stage);
     }
 
     /**
@@ -475,7 +475,7 @@ public final class InSkillProductSummary {
           return this;
         }
 
-        public Builder withStage(com.amazon.ask.smapi.model.v1.isp.Stage stage) {
+        public Builder withStage(com.amazon.ask.smapi.model.v1.StageType stage) {
             this.stage = stage != null ? stage.toString() : null;
             return this;
         }

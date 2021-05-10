@@ -20,19 +20,19 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Gets or Sets v1.skill.Manifest.HealthProtocolVersion
+ * Supported catalog
  */
-public enum HealthProtocolVersion {
+public enum CatalogType {
   
-  _1("1"),
+  IOS_APP_STORE("IOS_APP_STORE"),
   
-  _2("2"),
+  GOOGLE_PLAY_STORE("GOOGLE_PLAY_STORE"),
   
   UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
-  HealthProtocolVersion(String value) {
+  CatalogType(String value) {
     this.value = value;
   }
 
@@ -47,13 +47,13 @@ public enum HealthProtocolVersion {
   }
 
   @JsonCreator
-  public static HealthProtocolVersion fromValue(String text) {
-    for (HealthProtocolVersion b : HealthProtocolVersion.values()) {
+  public static CatalogType fromValue(String text) {
+    for (CatalogType b : CatalogType.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }
     }
-    return HealthProtocolVersion.UNKNOWN_TO_SDK_VERSION;
+    return CatalogType.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

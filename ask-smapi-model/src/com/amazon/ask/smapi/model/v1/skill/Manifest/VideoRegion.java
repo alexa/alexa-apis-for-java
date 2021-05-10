@@ -29,7 +29,7 @@ import java.util.ArrayList;
 public final class VideoRegion {
 
     @JsonProperty("endpoint")
-    private com.amazon.ask.smapi.model.v1.skill.Manifest.LambdaEndpoint endpoint = null;
+    private com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifestEndpoint endpoint = null;
 
     @JsonProperty("upchannel")
     private List<com.amazon.ask.smapi.model.v1.skill.Manifest.UpChannelItems> upchannel = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.UpChannelItems>();
@@ -52,7 +52,7 @@ public final class VideoRegion {
      * @return endpoint
     **/
     @JsonProperty("endpoint")
-    public com.amazon.ask.smapi.model.v1.skill.Manifest.LambdaEndpoint getEndpoint() {
+    public com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifestEndpoint getEndpoint() {
         return endpoint;
     }
 
@@ -108,14 +108,14 @@ public final class VideoRegion {
     }
   
     public static class Builder {
-        private com.amazon.ask.smapi.model.v1.skill.Manifest.LambdaEndpoint endpoint;
+        private com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifestEndpoint endpoint;
         private List<com.amazon.ask.smapi.model.v1.skill.Manifest.UpChannelItems> upchannel;
 
         private Builder() {}
 
         @JsonProperty("endpoint")
 
-        public Builder withEndpoint(com.amazon.ask.smapi.model.v1.skill.Manifest.LambdaEndpoint endpoint) {
+        public Builder withEndpoint(com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifestEndpoint endpoint) {
             this.endpoint = endpoint;
             return this;
         }

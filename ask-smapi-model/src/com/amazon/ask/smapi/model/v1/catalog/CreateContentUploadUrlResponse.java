@@ -31,8 +31,8 @@ public final class CreateContentUploadUrlResponse {
     @JsonProperty("urlId")
     private String urlId = null;
 
-    @JsonProperty("preSignedUploadParts")
-    private List<com.amazon.ask.smapi.model.v1.catalog.PresignedUploadPartItems> preSignedUploadParts = new ArrayList<com.amazon.ask.smapi.model.v1.catalog.PresignedUploadPartItems>();
+    @JsonProperty("presignedUploadParts")
+    private List<com.amazon.ask.smapi.model.v1.catalog.PresignedUploadPartItems> presignedUploadParts = new ArrayList<com.amazon.ask.smapi.model.v1.catalog.PresignedUploadPartItems>();
 
     public static Builder builder() {
         return new Builder();
@@ -42,8 +42,8 @@ public final class CreateContentUploadUrlResponse {
         if (builder.urlId != null) {
             this.urlId = builder.urlId;
         }
-        if (builder.preSignedUploadParts != null) {
-            this.preSignedUploadParts = builder.preSignedUploadParts;
+        if (builder.presignedUploadParts != null) {
+            this.presignedUploadParts = builder.presignedUploadParts;
         }
     }
 
@@ -59,11 +59,11 @@ public final class CreateContentUploadUrlResponse {
 
     /**
      * Ordered list of presigned upload parts to perform a partitioned (multipart) file upload
-     * @return preSignedUploadParts
+     * @return presignedUploadParts
     **/
-    @JsonProperty("preSignedUploadParts")
-    public List<com.amazon.ask.smapi.model.v1.catalog.PresignedUploadPartItems> getPreSignedUploadParts() {
-        return preSignedUploadParts;
+    @JsonProperty("presignedUploadParts")
+    public List<com.amazon.ask.smapi.model.v1.catalog.PresignedUploadPartItems> getPresignedUploadParts() {
+        return presignedUploadParts;
     }
 
 
@@ -77,12 +77,12 @@ public final class CreateContentUploadUrlResponse {
         }
         CreateContentUploadUrlResponse v1CatalogCreateContentUploadUrlResponse = (CreateContentUploadUrlResponse) o;
         return Objects.equals(this.urlId, v1CatalogCreateContentUploadUrlResponse.urlId) &&
-            Objects.equals(this.preSignedUploadParts, v1CatalogCreateContentUploadUrlResponse.preSignedUploadParts);
+            Objects.equals(this.presignedUploadParts, v1CatalogCreateContentUploadUrlResponse.presignedUploadParts);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(urlId, preSignedUploadParts);
+        return Objects.hash(urlId, presignedUploadParts);
     }
 
     @Override
@@ -91,7 +91,7 @@ public final class CreateContentUploadUrlResponse {
         sb.append("class CreateContentUploadUrlResponse {\n");
         
         sb.append("    urlId: ").append(toIndentedString(urlId)).append("\n");
-        sb.append("    preSignedUploadParts: ").append(toIndentedString(preSignedUploadParts)).append("\n");
+        sb.append("    presignedUploadParts: ").append(toIndentedString(presignedUploadParts)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -109,7 +109,7 @@ public final class CreateContentUploadUrlResponse {
   
     public static class Builder {
         private String urlId;
-        private List<com.amazon.ask.smapi.model.v1.catalog.PresignedUploadPartItems> preSignedUploadParts;
+        private List<com.amazon.ask.smapi.model.v1.catalog.PresignedUploadPartItems> presignedUploadParts;
 
         private Builder() {}
 
@@ -121,18 +121,18 @@ public final class CreateContentUploadUrlResponse {
         }
 
 
-        @JsonProperty("preSignedUploadParts")
+        @JsonProperty("presignedUploadParts")
 
-        public Builder withPreSignedUploadParts(List<com.amazon.ask.smapi.model.v1.catalog.PresignedUploadPartItems> preSignedUploadParts) {
-            this.preSignedUploadParts = preSignedUploadParts;
+        public Builder withPresignedUploadParts(List<com.amazon.ask.smapi.model.v1.catalog.PresignedUploadPartItems> presignedUploadParts) {
+            this.presignedUploadParts = presignedUploadParts;
             return this;
         }
 
-        public Builder addPreSignedUploadPartsItem(com.amazon.ask.smapi.model.v1.catalog.PresignedUploadPartItems preSignedUploadPartsItem) {
-            if (this.preSignedUploadParts == null) {
-                this.preSignedUploadParts = new ArrayList<com.amazon.ask.smapi.model.v1.catalog.PresignedUploadPartItems>();
+        public Builder addPresignedUploadPartsItem(com.amazon.ask.smapi.model.v1.catalog.PresignedUploadPartItems presignedUploadPartsItem) {
+            if (this.presignedUploadParts == null) {
+                this.presignedUploadParts = new ArrayList<com.amazon.ask.smapi.model.v1.catalog.PresignedUploadPartItems>();
             }
-            this.preSignedUploadParts.add(preSignedUploadPartsItem);
+            this.presignedUploadParts.add(presignedUploadPartsItem);
             return this;
         }
 

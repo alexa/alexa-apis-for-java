@@ -43,19 +43,19 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
                                     .withSerializer(apiConfiguration.getSerializer())
                                     .build())
           .build();
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.9.0").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.10.1").build();
   }
 
   public SkillManagementServiceClient(ApiConfiguration apiConfiguration, LwaClient lwaClient) {
       super(apiConfiguration);
       this.lwaClient = lwaClient;
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.9.0").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.10.1").build();
   }
 
   /**
    * 
    * Returns information about a particular catalog.
-   * @param catalogId Provides a unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog. (required)
    * @return com.amazon.ask.smapi.model.v0.catalog.CatalogDetails
    * @throws ServiceException if fails to make API call
    */
@@ -69,7 +69,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v0/catalogs/{catalogId}";
+    String resourcePath = "/v0/catalogs/{catalogId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v0.catalog.CatalogDetails.class, 200, "Successful operation."));
@@ -83,14 +83,14 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v0.catalog.CatalogDetails.class, false);
   }
 
   /**
    * 
    * Returns information about a particular catalog.
-   * @param catalogId Provides a unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog. (required)
    * @return com.amazon.ask.smapi.model.v0.catalog.CatalogDetails
    * @throws ServiceException if fails to make API call
    */
@@ -101,13 +101,13 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Lists all the uploads for a particular catalog.
-   * @param catalogId Provides a unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog. (required)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
    * @return com.amazon.ask.smapi.model.v0.catalog.upload.ListUploadsResponse
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.smapi.model.v0.catalog.upload.ListUploadsResponse> callListUploadsForCatalogV0(String catalogId, String nextToken, BigDecimal maxResults) throws ServiceException {
+  public ApiResponse<com.amazon.ask.smapi.model.v0.catalog.upload.ListUploadsResponse> callListUploadsForCatalogV0(String catalogId, String nextToken, Integer maxResults) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
 
     if(nextToken != null) {
@@ -125,7 +125,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v0/catalogs/{catalogId}/uploads";
+    String resourcePath = "/v0/catalogs/{catalogId}/uploads";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v0.catalog.upload.ListUploadsResponse.class, 200, "Successful operation."));
@@ -139,27 +139,27 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v0.catalog.upload.ListUploadsResponse.class, false);
   }
 
   /**
    * 
    * Lists all the uploads for a particular catalog.
-   * @param catalogId Provides a unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog. (required)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
    * @return com.amazon.ask.smapi.model.v0.catalog.upload.ListUploadsResponse
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.smapi.model.v0.catalog.upload.ListUploadsResponse listUploadsForCatalogV0(String catalogId, String nextToken, BigDecimal maxResults) throws ServiceException {
+  public com.amazon.ask.smapi.model.v0.catalog.upload.ListUploadsResponse listUploadsForCatalogV0(String catalogId, String nextToken, Integer maxResults) throws ServiceException {
     return this.callListUploadsForCatalogV0(catalogId, nextToken, maxResults).getResponse();
   }
 
   /**
    * 
    * Creates a new upload for a catalog and returns presigned upload parts for uploading the file.
-   * @param catalogId Provides a unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog. (required)
    * @param createContentUploadRequest Defines the request body for updateCatalog API. (required)
    * @return com.amazon.ask.smapi.model.v0.catalog.upload.CreateContentUploadResponse
    * @throws ServiceException if fails to make API call
@@ -174,7 +174,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v0/catalogs/{catalogId}/uploads";
+    String resourcePath = "/v0/catalogs/{catalogId}/uploads";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v0.catalog.upload.CreateContentUploadResponse.class, 201, "Content upload created."));
@@ -188,14 +188,14 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, createContentUploadRequest, com.amazon.ask.smapi.model.v0.catalog.upload.CreateContentUploadResponse.class, false);
   }
 
   /**
    * 
    * Creates a new upload for a catalog and returns presigned upload parts for uploading the file.
-   * @param catalogId Provides a unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog. (required)
    * @param createContentUploadRequest Defines the request body for updateCatalog API. (required)
    * @return com.amazon.ask.smapi.model.v0.catalog.upload.CreateContentUploadResponse
    * @throws ServiceException if fails to make API call
@@ -207,8 +207,8 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Gets detailed information about an upload which was created for a specific catalog. Includes the upload&#39;s ingestion steps and a presigned url for downloading the file.
-   * @param catalogId Provides a unique identifier of the catalog (required)
-   * @param uploadId Unique identifier of the upload (required)
+   * @param catalogId Provides a unique identifier of the catalog. (required)
+   * @param uploadId Unique identifier of the upload. (required)
    * @return com.amazon.ask.smapi.model.v0.catalog.upload.GetContentUploadResponse
    * @throws ServiceException if fails to make API call
    */
@@ -223,7 +223,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v0/catalogs/{catalogId}/uploads/{uploadId}";
+    String resourcePath = "/v0/catalogs/{catalogId}/uploads/{uploadId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v0.catalog.upload.GetContentUploadResponse.class, 200, "Successful operation."));
@@ -237,15 +237,15 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v0.catalog.upload.GetContentUploadResponse.class, false);
   }
 
   /**
    * 
    * Gets detailed information about an upload which was created for a specific catalog. Includes the upload&#39;s ingestion steps and a presigned url for downloading the file.
-   * @param catalogId Provides a unique identifier of the catalog (required)
-   * @param uploadId Unique identifier of the upload (required)
+   * @param catalogId Provides a unique identifier of the catalog. (required)
+   * @param uploadId Unique identifier of the upload. (required)
    * @return com.amazon.ask.smapi.model.v0.catalog.upload.GetContentUploadResponse
    * @throws ServiceException if fails to make API call
    */
@@ -256,8 +256,8 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Completes an upload. To be called after the file is uploaded to the backend data store using presigned url(s).
-   * @param catalogId Provides a unique identifier of the catalog (required)
-   * @param uploadId Unique identifier of the upload (required)
+   * @param catalogId Provides a unique identifier of the catalog. (required)
+   * @param uploadId Unique identifier of the upload. (required)
    * @param completeUploadRequestPayload Request payload to complete an upload. (required)
    * @throws ServiceException if fails to make API call
    */
@@ -272,7 +272,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v0/catalogs/{catalogId}/uploads/{uploadId}";
+    String resourcePath = "/v0/catalogs/{catalogId}/uploads/{uploadId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 202, "Accepted."));
@@ -280,21 +280,22 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v0.Error.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v0.BadRequestError.class, 403, "The operation being requested is not allowed."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v0.Error.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v0.Error.class, 409, "The request could not be completed due to a conflict with the current state of the target resource."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v0.Error.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v0.Error.class, 500, "Internal Server Error."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v0.Error.class, 503, "Service Unavailable."));
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, completeUploadRequestPayload, null, false);
   }
 
   /**
    * 
    * Completes an upload. To be called after the file is uploaded to the backend data store using presigned url(s).
-   * @param catalogId Provides a unique identifier of the catalog (required)
-   * @param uploadId Unique identifier of the upload (required)
+   * @param catalogId Provides a unique identifier of the catalog. (required)
+   * @param uploadId Unique identifier of the upload. (required)
    * @param completeUploadRequestPayload Request payload to complete an upload. (required)
    * @throws ServiceException if fails to make API call
    */
@@ -307,11 +308,11 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * Lists catalogs associated with a vendor.
    * @param vendorId The vendor ID. (required)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults  (optional)
    * @return com.amazon.ask.smapi.model.v0.catalog.ListCatalogsResponse
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.smapi.model.v0.catalog.ListCatalogsResponse> callListCatalogsForVendorV0(String vendorId, String nextToken, BigDecimal maxResults) throws ServiceException {
+  public ApiResponse<com.amazon.ask.smapi.model.v0.catalog.ListCatalogsResponse> callListCatalogsForVendorV0(String vendorId, String nextToken, Integer maxResults) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
 
     if(nextToken != null) {
@@ -332,7 +333,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v0/catalogs";
+    String resourcePath = "/v0/catalogs";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v0.catalog.ListCatalogsResponse.class, 200, "Successful operation."));
@@ -346,7 +347,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v0.catalog.ListCatalogsResponse.class, false);
   }
 
@@ -355,11 +356,11 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * Lists catalogs associated with a vendor.
    * @param vendorId The vendor ID. (required)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults  (optional)
    * @return com.amazon.ask.smapi.model.v0.catalog.ListCatalogsResponse
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.smapi.model.v0.catalog.ListCatalogsResponse listCatalogsForVendorV0(String vendorId, String nextToken, BigDecimal maxResults) throws ServiceException {
+  public com.amazon.ask.smapi.model.v0.catalog.ListCatalogsResponse listCatalogsForVendorV0(String vendorId, String nextToken, Integer maxResults) throws ServiceException {
     return this.callListCatalogsForVendorV0(vendorId, nextToken, maxResults).getResponse();
   }
 
@@ -379,7 +380,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v0/catalogs";
+    String resourcePath = "/v0/catalogs";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v0.catalog.CatalogDetails.class, 201, "Catalog created."));
@@ -393,7 +394,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, createCatalogRequest, com.amazon.ask.smapi.model.v0.catalog.CatalogDetails.class, false);
   }
 
@@ -417,7 +418,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @return com.amazon.ask.smapi.model.v0.developmentEvents.subscriber.ListSubscribersResponse
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.smapi.model.v0.developmentEvents.subscriber.ListSubscribersResponse> callListSubscribersForDevelopmentEventsV0(String vendorId, String nextToken, BigDecimal maxResults) throws ServiceException {
+  public ApiResponse<com.amazon.ask.smapi.model.v0.developmentEvents.subscriber.ListSubscribersResponse> callListSubscribersForDevelopmentEventsV0(String vendorId, String nextToken, Integer maxResults) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
 
     if(vendorId != null) {
@@ -438,7 +439,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v0/developmentEvents/subscribers";
+    String resourcePath = "/v0/developmentEvents/subscribers";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v0.developmentEvents.subscriber.ListSubscribersResponse.class, 200, "Successful operation."));
@@ -452,7 +453,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v0.developmentEvents.subscriber.ListSubscribersResponse.class, false);
   }
 
@@ -465,7 +466,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @return com.amazon.ask.smapi.model.v0.developmentEvents.subscriber.ListSubscribersResponse
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.smapi.model.v0.developmentEvents.subscriber.ListSubscribersResponse listSubscribersForDevelopmentEventsV0(String vendorId, String nextToken, BigDecimal maxResults) throws ServiceException {
+  public com.amazon.ask.smapi.model.v0.developmentEvents.subscriber.ListSubscribersResponse listSubscribersForDevelopmentEventsV0(String vendorId, String nextToken, Integer maxResults) throws ServiceException {
     return this.callListSubscribersForDevelopmentEventsV0(vendorId, nextToken, maxResults).getResponse();
   }
 
@@ -484,7 +485,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v0/developmentEvents/subscribers";
+    String resourcePath = "/v0/developmentEvents/subscribers";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 201, "Created. Returns a URL to retrieve the subscriber in 'Location' header."));
@@ -496,7 +497,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, createSubscriberRequest, null, false);
   }
 
@@ -526,7 +527,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v0/developmentEvents/subscribers/{subscriberId}";
+    String resourcePath = "/v0/developmentEvents/subscribers/{subscriberId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "Successful operation."));
@@ -540,7 +541,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("DELETE", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("DELETE", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, null, false);
   }
 
@@ -571,7 +572,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v0/developmentEvents/subscribers/{subscriberId}";
+    String resourcePath = "/v0/developmentEvents/subscribers/{subscriberId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v0.developmentEvents.subscriber.SubscriberInfo.class, 200, "Successful operation."));
@@ -585,7 +586,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v0.developmentEvents.subscriber.SubscriberInfo.class, false);
   }
 
@@ -617,7 +618,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v0/developmentEvents/subscribers/{subscriberId}";
+    String resourcePath = "/v0/developmentEvents/subscribers/{subscriberId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "Success."));
@@ -631,7 +632,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("PUT", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("PUT", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, updateSubscriberRequest, null, false);
   }
 
@@ -656,7 +657,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @return com.amazon.ask.smapi.model.v0.developmentEvents.subscription.ListSubscriptionsResponse
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.smapi.model.v0.developmentEvents.subscription.ListSubscriptionsResponse> callListSubscriptionsForDevelopmentEventsV0(String vendorId, String nextToken, BigDecimal maxResults, String subscriberId) throws ServiceException {
+  public ApiResponse<com.amazon.ask.smapi.model.v0.developmentEvents.subscription.ListSubscriptionsResponse> callListSubscriptionsForDevelopmentEventsV0(String vendorId, String nextToken, Integer maxResults, String subscriberId) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
 
     if(vendorId != null) {
@@ -681,7 +682,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v0/developmentEvents/subscriptions";
+    String resourcePath = "/v0/developmentEvents/subscriptions";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v0.developmentEvents.subscription.ListSubscriptionsResponse.class, 200, "Successful operation."));
@@ -695,7 +696,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v0.developmentEvents.subscription.ListSubscriptionsResponse.class, false);
   }
 
@@ -709,7 +710,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @return com.amazon.ask.smapi.model.v0.developmentEvents.subscription.ListSubscriptionsResponse
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.smapi.model.v0.developmentEvents.subscription.ListSubscriptionsResponse listSubscriptionsForDevelopmentEventsV0(String vendorId, String nextToken, BigDecimal maxResults, String subscriberId) throws ServiceException {
+  public com.amazon.ask.smapi.model.v0.developmentEvents.subscription.ListSubscriptionsResponse listSubscriptionsForDevelopmentEventsV0(String vendorId, String nextToken, Integer maxResults, String subscriberId) throws ServiceException {
     return this.callListSubscriptionsForDevelopmentEventsV0(vendorId, nextToken, maxResults, subscriberId).getResponse();
   }
 
@@ -728,7 +729,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v0/developmentEvents/subscriptions";
+    String resourcePath = "/v0/developmentEvents/subscriptions";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 201, "Created; Returns a URL to retrieve the subscription in 'Location' header."));
@@ -742,7 +743,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, createSubscriptionRequest, null, false);
   }
 
@@ -772,7 +773,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v0/developmentEvents/subscriptions/{subscriptionId}";
+    String resourcePath = "/v0/developmentEvents/subscriptions/{subscriptionId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "Successful operation."));
@@ -786,7 +787,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("DELETE", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("DELETE", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, null, false);
   }
 
@@ -817,7 +818,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v0/developmentEvents/subscriptions/{subscriptionId}";
+    String resourcePath = "/v0/developmentEvents/subscriptions/{subscriptionId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v0.developmentEvents.subscription.SubscriptionInfo.class, 200, "Successful operation."));
@@ -831,7 +832,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v0.developmentEvents.subscription.SubscriptionInfo.class, false);
   }
 
@@ -863,7 +864,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v0/developmentEvents/subscriptions/{subscriptionId}";
+    String resourcePath = "/v0/developmentEvents/subscriptions/{subscriptionId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "No content."));
@@ -877,7 +878,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("PUT", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("PUT", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, updateSubscriptionRequest, null, false);
   }
 
@@ -896,7 +897,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * 
    * Associate skill with catalog.
    * @param skillId The skill ID. (required)
-   * @param catalogId Provides a unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog. (required)
    * @throws ServiceException if fails to make API call
    */
   public ApiResponse<Void> callAssociateCatalogWithSkillV0(String skillId, String catalogId) throws ServiceException {
@@ -910,7 +911,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v0/skills/{skillId}/catalogs/{catalogId}";
+    String resourcePath = "/v0/skills/{skillId}/catalogs/{catalogId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 201, "Successful operation."));
@@ -924,7 +925,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("PUT", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("PUT", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, null, false);
   }
 
@@ -932,7 +933,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * 
    * Associate skill with catalog.
    * @param skillId The skill ID. (required)
-   * @param catalogId Provides a unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog. (required)
    * @throws ServiceException if fails to make API call
    */
   public void associateCatalogWithSkillV0(String skillId, String catalogId) throws ServiceException {
@@ -944,11 +945,11 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * Lists all the catalogs associated with a skill.
    * @param skillId The skill ID. (required)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults  (optional)
    * @return com.amazon.ask.smapi.model.v0.catalog.ListCatalogsResponse
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.smapi.model.v0.catalog.ListCatalogsResponse> callListCatalogsForSkillV0(String skillId, String nextToken, BigDecimal maxResults) throws ServiceException {
+  public ApiResponse<com.amazon.ask.smapi.model.v0.catalog.ListCatalogsResponse> callListCatalogsForSkillV0(String skillId, String nextToken, Integer maxResults) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
 
     if(nextToken != null) {
@@ -966,7 +967,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v0/skills/{skillId}/catalogs";
+    String resourcePath = "/v0/skills/{skillId}/catalogs";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v0.catalog.ListCatalogsResponse.class, 200, "Successful operation."));
@@ -980,7 +981,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v0.catalog.ListCatalogsResponse.class, false);
   }
 
@@ -989,18 +990,18 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * Lists all the catalogs associated with a skill.
    * @param skillId The skill ID. (required)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults  (optional)
    * @return com.amazon.ask.smapi.model.v0.catalog.ListCatalogsResponse
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.smapi.model.v0.catalog.ListCatalogsResponse listCatalogsForSkillV0(String skillId, String nextToken, BigDecimal maxResults) throws ServiceException {
+  public com.amazon.ask.smapi.model.v0.catalog.ListCatalogsResponse listCatalogsForSkillV0(String skillId, String nextToken, Integer maxResults) throws ServiceException {
     return this.callListCatalogsForSkillV0(skillId, nextToken, maxResults).getResponse();
   }
 
   /**
    * Create new upload
    * Creates a new upload for a catalog and returns location to track the upload process.
-   * @param catalogId Provides a unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog. (required)
    * @param catalogUploadRequestBody Provides the request body for create content upload (required)
    * @throws ServiceException if fails to make API call
    */
@@ -1014,7 +1015,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/catalogs/{catalogId}/uploads";
+    String resourcePath = "/v1/catalogs/{catalogId}/uploads";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 202, "Accepted"));
@@ -1028,14 +1029,14 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, catalogUploadRequestBody, null, false);
   }
 
   /**
    * Create new upload
    * Creates a new upload for a catalog and returns location to track the upload process.
-   * @param catalogId Provides a unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog. (required)
    * @param catalogUploadRequestBody Provides the request body for create content upload (required)
    * @throws ServiceException if fails to make API call
    */
@@ -1046,8 +1047,8 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * Get upload
    * Gets detailed information about an upload which was created for a specific catalog. Includes the upload&#39;s ingestion steps and a url for downloading the file.
-   * @param catalogId Provides a unique identifier of the catalog (required)
-   * @param uploadId Unique identifier of the upload (required)
+   * @param catalogId Provides a unique identifier of the catalog. (required)
+   * @param uploadId Unique identifier of the upload. (required)
    * @return com.amazon.ask.smapi.model.v1.catalog.upload.GetContentUploadResponse
    * @throws ServiceException if fails to make API call
    */
@@ -1062,7 +1063,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/catalogs/{catalogId}/uploads/{uploadId}";
+    String resourcePath = "/v1/catalogs/{catalogId}/uploads/{uploadId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.catalog.upload.GetContentUploadResponse.class, 200, "Successful operation."));
@@ -1075,15 +1076,15 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.catalog.upload.GetContentUploadResponse.class, false);
   }
 
   /**
    * Get upload
    * Gets detailed information about an upload which was created for a specific catalog. Includes the upload&#39;s ingestion steps and a url for downloading the file.
-   * @param catalogId Provides a unique identifier of the catalog (required)
-   * @param uploadId Unique identifier of the upload (required)
+   * @param catalogId Provides a unique identifier of the catalog. (required)
+   * @param uploadId Unique identifier of the upload. (required)
    * @return com.amazon.ask.smapi.model.v1.catalog.upload.GetContentUploadResponse
    * @throws ServiceException if fails to make API call
    */
@@ -1094,7 +1095,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Generates preSigned urls to upload data
-   * @param catalogId Provides a unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog. (required)
    * @param generateCatalogUploadUrlRequestBody Request body to generate catalog upload url (required)
    * @return com.amazon.ask.smapi.model.v1.catalog.CreateContentUploadUrlResponse
    * @throws ServiceException if fails to make API call
@@ -1109,7 +1110,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/catalogs/{catalogId}/urls";
+    String resourcePath = "/v1/catalogs/{catalogId}/urls";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.catalog.CreateContentUploadUrlResponse.class, 201, "Successful operation."));
@@ -1123,14 +1124,14 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, generateCatalogUploadUrlRequestBody, com.amazon.ask.smapi.model.v1.catalog.CreateContentUploadUrlResponse.class, false);
   }
 
   /**
    * 
    * Generates preSigned urls to upload data
-   * @param catalogId Provides a unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog. (required)
    * @param generateCatalogUploadUrlRequestBody Request body to generate catalog upload url (required)
    * @return com.amazon.ask.smapi.model.v1.catalog.CreateContentUploadUrlResponse
    * @throws ServiceException if fails to make API call
@@ -1155,7 +1156,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/developmentAuditLogs/query";
+    String resourcePath = "/v1/developmentAuditLogs/query";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.auditLogs.AuditLogsResponse.class, 200, "Returns a list of audit logs for the given vendor."));
@@ -1169,7 +1170,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, getAuditLogsRequest, com.amazon.ask.smapi.model.v1.auditLogs.AuditLogsResponse.class, false);
   }
 
@@ -1199,7 +1200,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @return com.amazon.ask.smapi.model.v1.isp.ListInSkillProductResponse
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.smapi.model.v1.isp.ListInSkillProductResponse> callGetIspListForVendorV1(String vendorId, String nextToken, BigDecimal maxResults, List<String> productId, String stage, String type, String referenceName, String status, String isAssociatedWithSkill) throws ServiceException {
+  public ApiResponse<com.amazon.ask.smapi.model.v1.isp.ListInSkillProductResponse> callGetIspListForVendorV1(String vendorId, String nextToken, Integer maxResults, List<String> productId, String stage, String type, String referenceName, String status, String isAssociatedWithSkill) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
 
     if(vendorId != null) {
@@ -1246,7 +1247,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/inSkillProducts";
+    String resourcePath = "/v1/inSkillProducts";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.isp.ListInSkillProductResponse.class, 200, "Response contains list of in-skill products for the specified vendor and stage."));
@@ -1257,7 +1258,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.isp.ListInSkillProductResponse.class, false);
   }
 
@@ -1276,7 +1277,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @return com.amazon.ask.smapi.model.v1.isp.ListInSkillProductResponse
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.smapi.model.v1.isp.ListInSkillProductResponse getIspListForVendorV1(String vendorId, String nextToken, BigDecimal maxResults, List<String> productId, String stage, String type, String referenceName, String status, String isAssociatedWithSkill) throws ServiceException {
+  public com.amazon.ask.smapi.model.v1.isp.ListInSkillProductResponse getIspListForVendorV1(String vendorId, String nextToken, Integer maxResults, List<String> productId, String stage, String type, String referenceName, String status, String isAssociatedWithSkill) throws ServiceException {
     return this.callGetIspListForVendorV1(vendorId, nextToken, maxResults, productId, stage, type, referenceName, status, isAssociatedWithSkill).getResponse();
   }
 
@@ -1296,7 +1297,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/inSkillProducts";
+    String resourcePath = "/v1/inSkillProducts";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.isp.ProductResponse.class, 201, "Success."));
@@ -1307,7 +1308,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, createInSkillProductRequest, com.amazon.ask.smapi.model.v1.isp.ProductResponse.class, false);
   }
 
@@ -1340,7 +1341,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/inSkillProducts/{productId}/skills/{skillId}";
+    String resourcePath = "/v1/inSkillProducts/{productId}/skills/{skillId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "Success. No content."));
@@ -1353,7 +1354,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("DELETE", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("DELETE", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, null, false);
   }
 
@@ -1386,7 +1387,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/inSkillProducts/{productId}/skills/{skillId}";
+    String resourcePath = "/v1/inSkillProducts/{productId}/skills/{skillId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "Success. No content."));
@@ -1399,7 +1400,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("PUT", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("PUT", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, null, false);
   }
 
@@ -1437,7 +1438,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/inSkillProducts/{productId}/stages/{stage}";
+    String resourcePath = "/v1/inSkillProducts/{productId}/stages/{stage}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "Success. No content."));
@@ -1451,7 +1452,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("DELETE", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("DELETE", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, null, false);
   }
 
@@ -1485,7 +1486,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/inSkillProducts/{productId}/stages/{stage}/entitlement";
+    String resourcePath = "/v1/inSkillProducts/{productId}/stages/{stage}/entitlement";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "Success. No content."));
@@ -1499,7 +1500,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("DELETE", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("DELETE", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, null, false);
   }
 
@@ -1533,7 +1534,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/inSkillProducts/{productId}/stages/{stage}";
+    String resourcePath = "/v1/inSkillProducts/{productId}/stages/{stage}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.isp.InSkillProductDefinitionResponse.class, 200, "Response contains the latest version of an in-skill product for the specified stage."));
@@ -1545,7 +1546,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.isp.InSkillProductDefinitionResponse.class, false);
   }
 
@@ -1585,7 +1586,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/inSkillProducts/{productId}/stages/{stage}";
+    String resourcePath = "/v1/inSkillProducts/{productId}/stages/{stage}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "Success."));
@@ -1599,7 +1600,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("PUT", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("PUT", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, updateInSkillProductRequest, null, false);
   }
 
@@ -1626,7 +1627,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @return com.amazon.ask.smapi.model.v1.isp.AssociatedSkillResponse
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.smapi.model.v1.isp.AssociatedSkillResponse> callGetIspAssociatedSkillsV1(String productId, String stage, String nextToken, BigDecimal maxResults) throws ServiceException {
+  public ApiResponse<com.amazon.ask.smapi.model.v1.isp.AssociatedSkillResponse> callGetIspAssociatedSkillsV1(String productId, String stage, String nextToken, Integer maxResults) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
 
     if(nextToken != null) {
@@ -1645,10 +1646,11 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/inSkillProducts/{productId}/stages/{stage}/skills";
+    String resourcePath = "/v1/inSkillProducts/{productId}/stages/{stage}/skills";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.isp.AssociatedSkillResponse.class, 200, "Returns skills associated with the in-skill product."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Bad request. Returned when a required parameter is not present, badly formatted. "));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 404, "Requested resource not found."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 429, "Too many requests received."));
@@ -1656,7 +1658,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.isp.AssociatedSkillResponse.class, false);
   }
 
@@ -1670,7 +1672,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @return com.amazon.ask.smapi.model.v1.isp.AssociatedSkillResponse
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.smapi.model.v1.isp.AssociatedSkillResponse getIspAssociatedSkillsV1(String productId, String stage, String nextToken, BigDecimal maxResults) throws ServiceException {
+  public com.amazon.ask.smapi.model.v1.isp.AssociatedSkillResponse getIspAssociatedSkillsV1(String productId, String stage, String nextToken, Integer maxResults) throws ServiceException {
     return this.callGetIspAssociatedSkillsV1(productId, stage, nextToken, maxResults).getResponse();
   }
 
@@ -1693,7 +1695,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/inSkillProducts/{productId}/stages/{stage}/summary";
+    String resourcePath = "/v1/inSkillProducts/{productId}/stages/{stage}/summary";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.isp.InSkillProductSummaryResponse.class, 200, "Returns current in-skill product summary for productId."));
@@ -1704,7 +1706,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.isp.InSkillProductSummaryResponse.class, false);
   }
 
@@ -1723,7 +1725,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Delete the catalog. 
-   * @param catalogId Provides a unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog. (required)
    * @throws ServiceException if fails to make API call
    */
   public ApiResponse<Void> callDeleteInteractionModelCatalogV1(String catalogId) throws ServiceException {
@@ -1736,7 +1738,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/api/custom/interactionModel/catalogs/{catalogId}";
+    String resourcePath = "/v1/skills/api/custom/interactionModel/catalogs/{catalogId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "No content; just confirm the catalog is deleted."));
@@ -1750,14 +1752,14 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("DELETE", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("DELETE", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, null, false);
   }
 
   /**
    * 
    * Delete the catalog. 
-   * @param catalogId Provides a unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog. (required)
    * @throws ServiceException if fails to make API call
    */
   public void deleteInteractionModelCatalogV1(String catalogId) throws ServiceException {
@@ -1767,7 +1769,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * get the catalog definition 
-   * @param catalogId Provides a unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog. (required)
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.CatalogDefinitionOutput
    * @throws ServiceException if fails to make API call
    */
@@ -1781,7 +1783,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/api/custom/interactionModel/catalogs/{catalogId}";
+    String resourcePath = "/v1/skills/api/custom/interactionModel/catalogs/{catalogId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.CatalogDefinitionOutput.class, 200, "the catalog definition"));
@@ -1795,14 +1797,14 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.CatalogDefinitionOutput.class, false);
   }
 
   /**
    * 
    * get the catalog definition 
-   * @param catalogId Provides a unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog. (required)
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.CatalogDefinitionOutput
    * @throws ServiceException if fails to make API call
    */
@@ -1813,7 +1815,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * update description and vendorGuidance string for certain version of a catalog. 
-   * @param catalogId Provides a unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog. (required)
    * @param updateRequest  (required)
    * @throws ServiceException if fails to make API call
    */
@@ -1827,7 +1829,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/api/custom/interactionModel/catalogs/{catalogId}/update";
+    String resourcePath = "/v1/skills/api/custom/interactionModel/catalogs/{catalogId}/update";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "No content, indicates the fields were successfully updated."));
@@ -1841,14 +1843,14 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, updateRequest, null, false);
   }
 
   /**
    * 
    * update description and vendorGuidance string for certain version of a catalog. 
-   * @param catalogId Provides a unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog. (required)
    * @param updateRequest  (required)
    * @throws ServiceException if fails to make API call
    */
@@ -1859,7 +1861,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Get the status of catalog resource and its sub-resources for a given catalogId. 
-   * @param catalogId Provides a unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog. (required)
    * @param updateRequestId The identifier for slotType version creation process (required)
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.CatalogStatus
    * @throws ServiceException if fails to make API call
@@ -1875,7 +1877,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/api/custom/interactionModel/catalogs/{catalogId}/updateRequest/{updateRequestId}";
+    String resourcePath = "/v1/skills/api/custom/interactionModel/catalogs/{catalogId}/updateRequest/{updateRequestId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.CatalogStatus.class, 200, "Returns the build status and error codes for the given catalogId"));
@@ -1889,14 +1891,14 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.CatalogStatus.class, false);
   }
 
   /**
    * 
    * Get the status of catalog resource and its sub-resources for a given catalogId. 
-   * @param catalogId Provides a unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog. (required)
    * @param updateRequestId The identifier for slotType version creation process (required)
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.CatalogStatus
    * @throws ServiceException if fails to make API call
@@ -1908,7 +1910,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * List all the historical versions of the given catalogId.
-   * @param catalogId Provides a unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog. (required)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
    * @param sortDirection Sets the sorting direction of the result items. When set to &#39;asc&#39; these items are returned in ascending order of sortField value and when set to &#39;desc&#39; these items are returned in descending order of sortField value. (optional)
@@ -1916,7 +1918,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.version.ListCatalogEntityVersionsResponse
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.version.ListCatalogEntityVersionsResponse> callListInteractionModelCatalogVersionsV1(String catalogId, BigDecimal maxResults, String nextToken, String sortDirection, String sortField) throws ServiceException {
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.version.ListCatalogEntityVersionsResponse> callListInteractionModelCatalogVersionsV1(String catalogId, Integer maxResults, String nextToken, String sortDirection, String sortField) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
 
     if(maxResults != null) {
@@ -1942,7 +1944,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/api/custom/interactionModel/catalogs/{catalogId}/versions";
+    String resourcePath = "/v1/skills/api/custom/interactionModel/catalogs/{catalogId}/versions";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.version.ListCatalogEntityVersionsResponse.class, 200, "Returns list of catalogs for the vendor."));
@@ -1956,14 +1958,14 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.interactionModel.version.ListCatalogEntityVersionsResponse.class, false);
   }
 
   /**
    * 
    * List all the historical versions of the given catalogId.
-   * @param catalogId Provides a unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog. (required)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
    * @param sortDirection Sets the sorting direction of the result items. When set to &#39;asc&#39; these items are returned in ascending order of sortField value and when set to &#39;desc&#39; these items are returned in descending order of sortField value. (optional)
@@ -1971,14 +1973,14 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.version.ListCatalogEntityVersionsResponse
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.smapi.model.v1.skill.interactionModel.version.ListCatalogEntityVersionsResponse listInteractionModelCatalogVersionsV1(String catalogId, BigDecimal maxResults, String nextToken, String sortDirection, String sortField) throws ServiceException {
+  public com.amazon.ask.smapi.model.v1.skill.interactionModel.version.ListCatalogEntityVersionsResponse listInteractionModelCatalogVersionsV1(String catalogId, Integer maxResults, String nextToken, String sortDirection, String sortField) throws ServiceException {
     return this.callListInteractionModelCatalogVersionsV1(catalogId, maxResults, nextToken, sortDirection, sortField).getResponse();
   }
 
   /**
    * 
    * Create a new version of catalog entity for the given catalogId. 
-   * @param catalogId Provides a unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog. (required)
    * @param catalog  (required)
    * @throws ServiceException if fails to make API call
    */
@@ -1992,7 +1994,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/api/custom/interactionModel/catalogs/{catalogId}/versions";
+    String resourcePath = "/v1/skills/api/custom/interactionModel/catalogs/{catalogId}/versions";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 202, "Returns update status location link on success."));
@@ -2006,14 +2008,14 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, catalog, null, false);
   }
 
   /**
    * 
    * Create a new version of catalog entity for the given catalogId. 
-   * @param catalogId Provides a unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog. (required)
    * @param catalog  (required)
    * @throws ServiceException if fails to make API call
    */
@@ -2024,7 +2026,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Delete catalog version. 
-   * @param catalogId Provides a unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog. (required)
    * @param version Version for interaction model. (required)
    * @throws ServiceException if fails to make API call
    */
@@ -2039,7 +2041,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/api/custom/interactionModel/catalogs/{catalogId}/versions/{version}";
+    String resourcePath = "/v1/skills/api/custom/interactionModel/catalogs/{catalogId}/versions/{version}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "No Content; Confirms that version is successfully deleted."));
@@ -2053,14 +2055,14 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("DELETE", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("DELETE", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, null, false);
   }
 
   /**
    * 
    * Delete catalog version. 
-   * @param catalogId Provides a unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog. (required)
    * @param version Version for interaction model. (required)
    * @throws ServiceException if fails to make API call
    */
@@ -2071,7 +2073,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Get catalog version data of given catalog version. 
-   * @param catalogId Provides a unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog. (required)
    * @param version Version for interaction model. (required)
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.version.CatalogVersionData
    * @throws ServiceException if fails to make API call
@@ -2087,7 +2089,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/api/custom/interactionModel/catalogs/{catalogId}/versions/{version}";
+    String resourcePath = "/v1/skills/api/custom/interactionModel/catalogs/{catalogId}/versions/{version}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.version.CatalogVersionData.class, 200, "Returns the catalog version metadata for the given catalogId and version."));
@@ -2101,14 +2103,14 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.interactionModel.version.CatalogVersionData.class, false);
   }
 
   /**
    * 
    * Get catalog version data of given catalog version. 
-   * @param catalogId Provides a unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog. (required)
    * @param version Version for interaction model. (required)
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.version.CatalogVersionData
    * @throws ServiceException if fails to make API call
@@ -2120,7 +2122,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Update description and vendorGuidance string for certain version of a catalog. 
-   * @param catalogId Provides a unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog. (required)
    * @param version Version for interaction model. (required)
    * @param catalogUpdate  (optional)
    * @throws ServiceException if fails to make API call
@@ -2136,7 +2138,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/api/custom/interactionModel/catalogs/{catalogId}/versions/{version}/update";
+    String resourcePath = "/v1/skills/api/custom/interactionModel/catalogs/{catalogId}/versions/{version}/update";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "No Content; Confirms that version is successfully updated."));
@@ -2150,14 +2152,14 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, catalogUpdate, null, false);
   }
 
   /**
    * 
    * Update description and vendorGuidance string for certain version of a catalog. 
-   * @param catalogId Provides a unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog. (required)
    * @param version Version for interaction model. (required)
    * @param catalogUpdate  (optional)
    * @throws ServiceException if fails to make API call
@@ -2169,14 +2171,14 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
   /**
    * 
    * Get catalog values from the given catalogId &amp;amp; version. 
-   * @param catalogId Provides a unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog. (required)
    * @param version Version for interaction model. (required)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.version.CatalogValues
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.version.CatalogValues> callGetInteractionModelCatalogValuesV1(String catalogId, String version, BigDecimal maxResults, String nextToken) throws ServiceException {
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.version.CatalogValues> callGetInteractionModelCatalogValuesV1(String catalogId, String version, Integer maxResults, String nextToken) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
 
     if(maxResults != null) {
@@ -2195,7 +2197,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/api/custom/interactionModel/catalogs/{catalogId}/versions/{version}/values";
+    String resourcePath = "/v1/skills/api/custom/interactionModel/catalogs/{catalogId}/versions/{version}/values";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.version.CatalogValues.class, 200, "Returns list of catalog values for the given catalogId and version."));
@@ -2209,21 +2211,21 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.interactionModel.version.CatalogValues.class, false);
   }
 
   /**
    * 
    * Get catalog values from the given catalogId &amp;amp; version. 
-   * @param catalogId Provides a unique identifier of the catalog (required)
+   * @param catalogId Provides a unique identifier of the catalog. (required)
    * @param version Version for interaction model. (required)
    * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.version.CatalogValues
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.smapi.model.v1.skill.interactionModel.version.CatalogValues getInteractionModelCatalogValuesV1(String catalogId, String version, BigDecimal maxResults, String nextToken) throws ServiceException {
+  public com.amazon.ask.smapi.model.v1.skill.interactionModel.version.CatalogValues getInteractionModelCatalogValuesV1(String catalogId, String version, Integer maxResults, String nextToken) throws ServiceException {
     return this.callGetInteractionModelCatalogValuesV1(catalogId, version, maxResults, nextToken).getResponse();
   }
 
@@ -2237,7 +2239,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.ListCatalogResponse
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.ListCatalogResponse> callListInteractionModelCatalogsV1(String vendorId, BigDecimal maxResults, String nextToken, String sortDirection) throws ServiceException {
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.ListCatalogResponse> callListInteractionModelCatalogsV1(String vendorId, Integer maxResults, String nextToken, String sortDirection) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
 
     if(vendorId != null) {
@@ -2262,7 +2264,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/api/custom/interactionModel/catalogs";
+    String resourcePath = "/v1/skills/api/custom/interactionModel/catalogs";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.ListCatalogResponse.class, 200, "Returns list of catalogs for the vendor."));
@@ -2276,7 +2278,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.ListCatalogResponse.class, false);
   }
 
@@ -2290,7 +2292,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.ListCatalogResponse
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.ListCatalogResponse listInteractionModelCatalogsV1(String vendorId, BigDecimal maxResults, String nextToken, String sortDirection) throws ServiceException {
+  public com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.ListCatalogResponse listInteractionModelCatalogsV1(String vendorId, Integer maxResults, String nextToken, String sortDirection) throws ServiceException {
     return this.callListInteractionModelCatalogsV1(vendorId, maxResults, nextToken, sortDirection).getResponse();
   }
 
@@ -2310,7 +2312,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/api/custom/interactionModel/catalogs";
+    String resourcePath = "/v1/skills/api/custom/interactionModel/catalogs";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.CatalogResponse.class, 200, "Returns the generated catalogId."));
@@ -2324,7 +2326,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, catalog, com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.CatalogResponse.class, false);
   }
 
@@ -2348,7 +2350,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.ListJobDefinitionsResponse
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.ListJobDefinitionsResponse> callListJobDefinitionsForInteractionModelV1(String vendorId, BigDecimal maxResults, String nextToken) throws ServiceException {
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.ListJobDefinitionsResponse> callListJobDefinitionsForInteractionModelV1(String vendorId, Integer maxResults, String nextToken) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
 
     if(vendorId != null) {
@@ -2369,7 +2371,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/api/custom/interactionModel/jobs";
+    String resourcePath = "/v1/skills/api/custom/interactionModel/jobs";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.ListJobDefinitionsResponse.class, 200, "List of all jobs associated with the vendor."));
@@ -2382,7 +2384,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.ListJobDefinitionsResponse.class, false);
   }
 
@@ -2395,7 +2397,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.ListJobDefinitionsResponse
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.ListJobDefinitionsResponse listJobDefinitionsForInteractionModelV1(String vendorId, BigDecimal maxResults, String nextToken) throws ServiceException {
+  public com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.ListJobDefinitionsResponse listJobDefinitionsForInteractionModelV1(String vendorId, Integer maxResults, String nextToken) throws ServiceException {
     return this.callListJobDefinitionsForInteractionModelV1(vendorId, maxResults, nextToken).getResponse();
   }
 
@@ -2415,7 +2417,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/api/custom/interactionModel/jobs/{jobId}";
+    String resourcePath = "/v1/skills/api/custom/interactionModel/jobs/{jobId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "No content, confirms the resource is updated."));
@@ -2429,7 +2431,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("DELETE", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("DELETE", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, null, false);
   }
 
@@ -2461,7 +2463,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/api/custom/interactionModel/jobs/{jobId}/executions/{executionId}";
+    String resourcePath = "/v1/skills/api/custom/interactionModel/jobs/{jobId}/executions/{executionId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "No Content; Confirms that the next execution is canceled."));
@@ -2475,7 +2477,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("DELETE", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("DELETE", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, null, false);
   }
 
@@ -2500,7 +2502,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.GetExecutionsResponse
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.GetExecutionsResponse> callListJobExecutionsForInteractionModelV1(String jobId, BigDecimal maxResults, String nextToken, String sortDirection) throws ServiceException {
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.GetExecutionsResponse> callListJobExecutionsForInteractionModelV1(String jobId, Integer maxResults, String nextToken, String sortDirection) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
 
     if(maxResults != null) {
@@ -2522,7 +2524,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/api/custom/interactionModel/jobs/{jobId}/executions";
+    String resourcePath = "/v1/skills/api/custom/interactionModel/jobs/{jobId}/executions";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.GetExecutionsResponse.class, 200, "Retrun list of executions associated with the job definition."));
@@ -2535,7 +2537,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.GetExecutionsResponse.class, false);
   }
 
@@ -2549,7 +2551,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.GetExecutionsResponse
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.GetExecutionsResponse listJobExecutionsForInteractionModelV1(String jobId, BigDecimal maxResults, String nextToken, String sortDirection) throws ServiceException {
+  public com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.GetExecutionsResponse listJobExecutionsForInteractionModelV1(String jobId, Integer maxResults, String nextToken, String sortDirection) throws ServiceException {
     return this.callListJobExecutionsForInteractionModelV1(jobId, maxResults, nextToken, sortDirection).getResponse();
   }
 
@@ -2570,7 +2572,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/api/custom/interactionModel/jobs/{jobId}";
+    String resourcePath = "/v1/skills/api/custom/interactionModel/jobs/{jobId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.JobDefinition.class, 200, "The job definition for a given jobId."));
@@ -2583,7 +2585,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.JobDefinition.class, false);
   }
 
@@ -2615,7 +2617,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/api/custom/interactionModel/jobs/{jobId}/status";
+    String resourcePath = "/v1/skills/api/custom/interactionModel/jobs/{jobId}/status";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "No content; Confirms that the fields are updated."));
@@ -2629,7 +2631,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("PUT", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("PUT", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, updateJobStatusRequest, null, false);
   }
 
@@ -2660,7 +2662,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/api/custom/interactionModel/jobs";
+    String resourcePath = "/v1/skills/api/custom/interactionModel/jobs";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.CreateJobDefinitionResponse.class, 201, "Returns the generated jobId."));
@@ -2673,7 +2675,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, createJobDefinitionRequest, com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.CreateJobDefinitionResponse.class, false);
   }
 
@@ -2698,7 +2700,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.type.ListSlotTypeResponse
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.type.ListSlotTypeResponse> callListInteractionModelSlotTypesV1(String vendorId, BigDecimal maxResults, String nextToken, String sortDirection) throws ServiceException {
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.type.ListSlotTypeResponse> callListInteractionModelSlotTypesV1(String vendorId, Integer maxResults, String nextToken, String sortDirection) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
 
     if(vendorId != null) {
@@ -2723,7 +2725,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/api/custom/interactionModel/slotTypes";
+    String resourcePath = "/v1/skills/api/custom/interactionModel/slotTypes";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.type.ListSlotTypeResponse.class, 200, "Returns list of slot types for the vendor."));
@@ -2736,7 +2738,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.interactionModel.type.ListSlotTypeResponse.class, false);
   }
 
@@ -2750,7 +2752,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.type.ListSlotTypeResponse
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.smapi.model.v1.skill.interactionModel.type.ListSlotTypeResponse listInteractionModelSlotTypesV1(String vendorId, BigDecimal maxResults, String nextToken, String sortDirection) throws ServiceException {
+  public com.amazon.ask.smapi.model.v1.skill.interactionModel.type.ListSlotTypeResponse listInteractionModelSlotTypesV1(String vendorId, Integer maxResults, String nextToken, String sortDirection) throws ServiceException {
     return this.callListInteractionModelSlotTypesV1(vendorId, maxResults, nextToken, sortDirection).getResponse();
   }
 
@@ -2770,7 +2772,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/api/custom/interactionModel/slotTypes";
+    String resourcePath = "/v1/skills/api/custom/interactionModel/slotTypes";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.type.SlotTypeResponse.class, 200, "Returns the generated slotTypeId."));
@@ -2782,7 +2784,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, slotType, com.amazon.ask.smapi.model.v1.skill.interactionModel.type.SlotTypeResponse.class, false);
   }
 
@@ -2813,7 +2815,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/api/custom/interactionModel/slotTypes/{slotTypeId}";
+    String resourcePath = "/v1/skills/api/custom/interactionModel/slotTypes/{slotTypeId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "No content; just confirm the slot type is deleted."));
@@ -2827,7 +2829,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("DELETE", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("DELETE", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, null, false);
   }
 
@@ -2858,7 +2860,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/api/custom/interactionModel/slotTypes/{slotTypeId}";
+    String resourcePath = "/v1/skills/api/custom/interactionModel/slotTypes/{slotTypeId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.type.SlotTypeDefinitionOutput.class, 200, "The slot type definition."));
@@ -2872,7 +2874,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.interactionModel.type.SlotTypeDefinitionOutput.class, false);
   }
 
@@ -2904,7 +2906,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/api/custom/interactionModel/slotTypes/{slotTypeId}/update";
+    String resourcePath = "/v1/skills/api/custom/interactionModel/slotTypes/{slotTypeId}/update";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "No content, indicates the fields were successfully updated."));
@@ -2918,7 +2920,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, updateRequest, null, false);
   }
 
@@ -2952,7 +2954,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/api/custom/interactionModel/slotTypes/{slotTypeId}/updateRequest/{updateRequestId}";
+    String resourcePath = "/v1/skills/api/custom/interactionModel/slotTypes/{slotTypeId}/updateRequest/{updateRequestId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.type.SlotTypeStatus.class, 200, "Returns the build status and error codes for the given slotTypeId."));
@@ -2966,7 +2968,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.interactionModel.type.SlotTypeStatus.class, false);
   }
 
@@ -2992,7 +2994,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.typeVersion.ListSlotTypeVersionResponse
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.typeVersion.ListSlotTypeVersionResponse> callListInteractionModelSlotTypeVersionsV1(String slotTypeId, BigDecimal maxResults, String nextToken, String sortDirection) throws ServiceException {
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.typeVersion.ListSlotTypeVersionResponse> callListInteractionModelSlotTypeVersionsV1(String slotTypeId, Integer maxResults, String nextToken, String sortDirection) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
 
     if(maxResults != null) {
@@ -3014,7 +3016,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/api/custom/interactionModel/slotTypes/{slotTypeId}/versions";
+    String resourcePath = "/v1/skills/api/custom/interactionModel/slotTypes/{slotTypeId}/versions";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.typeVersion.ListSlotTypeVersionResponse.class, 200, "Returns list of slot type version for the slot type id."));
@@ -3027,7 +3029,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.interactionModel.typeVersion.ListSlotTypeVersionResponse.class, false);
   }
 
@@ -3041,7 +3043,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.typeVersion.ListSlotTypeVersionResponse
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.smapi.model.v1.skill.interactionModel.typeVersion.ListSlotTypeVersionResponse listInteractionModelSlotTypeVersionsV1(String slotTypeId, BigDecimal maxResults, String nextToken, String sortDirection) throws ServiceException {
+  public com.amazon.ask.smapi.model.v1.skill.interactionModel.typeVersion.ListSlotTypeVersionResponse listInteractionModelSlotTypeVersionsV1(String slotTypeId, Integer maxResults, String nextToken, String sortDirection) throws ServiceException {
     return this.callListInteractionModelSlotTypeVersionsV1(slotTypeId, maxResults, nextToken, sortDirection).getResponse();
   }
 
@@ -3062,7 +3064,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/api/custom/interactionModel/slotTypes/{slotTypeId}/versions";
+    String resourcePath = "/v1/skills/api/custom/interactionModel/slotTypes/{slotTypeId}/versions";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 202, "Returns update status location link on success."));
@@ -3076,7 +3078,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, slotType, null, false);
   }
 
@@ -3109,7 +3111,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/api/custom/interactionModel/slotTypes/{slotTypeId}/versions/{version}";
+    String resourcePath = "/v1/skills/api/custom/interactionModel/slotTypes/{slotTypeId}/versions/{version}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "No Content; Confirms that version is successfully deleted."));
@@ -3123,7 +3125,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("DELETE", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("DELETE", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, null, false);
   }
 
@@ -3157,7 +3159,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/api/custom/interactionModel/slotTypes/{slotTypeId}/versions/{version}";
+    String resourcePath = "/v1/skills/api/custom/interactionModel/slotTypes/{slotTypeId}/versions/{version}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.typeVersion.SlotTypeVersionData.class, 200, "Returns the slot type version metadata for the given slotTypeId and version."));
@@ -3171,7 +3173,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.interactionModel.typeVersion.SlotTypeVersionData.class, false);
   }
 
@@ -3206,7 +3208,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/api/custom/interactionModel/slotTypes/{slotTypeId}/versions/{version}/update";
+    String resourcePath = "/v1/skills/api/custom/interactionModel/slotTypes/{slotTypeId}/versions/{version}/update";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "No Content; Confirms that version is successfully updated."));
@@ -3220,7 +3222,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, slotTypeUpdate, null, false);
   }
 
@@ -3253,10 +3255,11 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/exports/{exportId}";
+    String resourcePath = "/v1/skills/exports/{exportId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.ExportResponse.class, 200, "OK."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 404, "The resource being requested is not found."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
@@ -3265,7 +3268,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.ExportResponse.class, false);
   }
 
@@ -3290,7 +3293,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @return com.amazon.ask.smapi.model.v1.skill.ListSkillResponse
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.ListSkillResponse> callListSkillsForVendorV1(String vendorId, String nextToken, BigDecimal maxResults, List<String> skillId) throws ServiceException {
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.ListSkillResponse> callListSkillsForVendorV1(String vendorId, String nextToken, Integer maxResults, List<String> skillId) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
 
     if(vendorId != null) {
@@ -3317,7 +3320,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills";
+    String resourcePath = "/v1/skills";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.ListSkillResponse.class, 200, "Returns list of skills for the vendor."));
@@ -3329,7 +3332,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.ListSkillResponse.class, false);
   }
 
@@ -3343,7 +3346,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @return com.amazon.ask.smapi.model.v1.skill.ListSkillResponse
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.smapi.model.v1.skill.ListSkillResponse listSkillsForVendorV1(String vendorId, String nextToken, BigDecimal maxResults, List<String> skillId) throws ServiceException {
+  public com.amazon.ask.smapi.model.v1.skill.ListSkillResponse listSkillsForVendorV1(String vendorId, String nextToken, Integer maxResults, List<String> skillId) throws ServiceException {
     return this.callListSkillsForVendorV1(vendorId, nextToken, maxResults, skillId).getResponse();
   }
 
@@ -3364,7 +3367,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/imports/{importId}";
+    String resourcePath = "/v1/skills/imports/{importId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.ImportResponse.class, 200, "OK."));
@@ -3376,7 +3379,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.ImportResponse.class, false);
   }
 
@@ -3406,12 +3409,13 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/imports";
+    String resourcePath = "/v1/skills/imports";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 202, "Accepted."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 409, "The request could not be completed due to a conflict with the current state of the target resource."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 413, "Payload too large."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 500, "Internal Server Error."));
@@ -3419,7 +3423,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, createSkillWithPackageRequest, null, false);
   }
 
@@ -3449,7 +3453,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills";
+    String resourcePath = "/v1/skills";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.CreateSkillResponse.class, 202, "Accepted; Returns a URL to track the status in 'Location' header."));
@@ -3462,7 +3466,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, createSkillRequest, com.amazon.ask.smapi.model.v1.skill.CreateSkillResponse.class, false);
   }
 
@@ -3504,7 +3508,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/resourceSchema/{resource}";
+    String resourcePath = "/v1/skills/resourceSchema/{resource}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.resourceSchema.GetResourceSchemaResponse.class, 200, "Returns a S3 presigned URL to location of schema"));
@@ -3517,7 +3521,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.resourceSchema.GetResourceSchemaResponse.class, false);
   }
 
@@ -3551,7 +3555,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/alexaHosted";
+    String resourcePath = "/v1/skills/{skillId}/alexaHosted";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillMetadata.class, 200, "response contains the Alexa hosted skill's metadata"));
@@ -3564,7 +3568,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillMetadata.class, false);
   }
 
@@ -3597,7 +3601,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/alexaHosted/repository/credentials/generate";
+    String resourcePath = "/v1/skills/{skillId}/alexaHosted/repository/credentials/generate";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillRepositoryCredentialsList.class, 200, "Response contains the hosted skill repository credentials"));
@@ -3610,7 +3614,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, hostedSkillRepositoryCredentialsRequest, com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillRepositoryCredentialsList.class, false);
   }
 
@@ -3660,7 +3664,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/asrAnnotationSets/{annotationSetId}/annotations";
+    String resourcePath = "/v1/skills/{skillId}/asrAnnotationSets/{annotationSetId}/annotations";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.GetAsrAnnotationSetAnnotationsResponse.class, 200, "The annotation set contents payload in specified format.  This API also supports pagination for annotation set contents requested in  `application/json` content type. Paginaiton for requested content  type `text/csv` is not supported. In this case, the nextToken and  maxResults query parameters would be ignored even if they are  specified as query parameters. "));
@@ -3674,7 +3678,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.GetAsrAnnotationSetAnnotationsResponse.class, false);
   }
 
@@ -3712,7 +3716,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/asrAnnotationSets/{annotationSetId}/annotations";
+    String resourcePath = "/v1/skills/{skillId}/asrAnnotationSets/{annotationSetId}/annotations";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "ASR annotation set contents have been updated successfully."));
@@ -3726,7 +3730,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("PUT", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("PUT", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, updateAsrAnnotationSetContentsRequest, null, false);
   }
 
@@ -3760,7 +3764,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/asrAnnotationSets/{annotationSetId}";
+    String resourcePath = "/v1/skills/{skillId}/asrAnnotationSets/{annotationSetId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "ASR annotation set exists and is deleted successfully."));
@@ -3775,7 +3779,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("DELETE", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("DELETE", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, null, false);
   }
 
@@ -3809,7 +3813,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/asrAnnotationSets/{annotationSetId}";
+    String resourcePath = "/v1/skills/{skillId}/asrAnnotationSets/{annotationSetId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.GetASRAnnotationSetsPropertiesResponse.class, 200, "The ASR annotation set exists."));
@@ -3823,7 +3827,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.GetASRAnnotationSetsPropertiesResponse.class, false);
   }
 
@@ -3858,7 +3862,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/asrAnnotationSets/{annotationSetId}";
+    String resourcePath = "/v1/skills/{skillId}/asrAnnotationSets/{annotationSetId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "ASR annotation set exists and properties are updated successfully."));
@@ -3872,7 +3876,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("PUT", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("PUT", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, updateAsrAnnotationSetPropertiesRequestV1, null, false);
   }
 
@@ -3915,7 +3919,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/asrAnnotationSets";
+    String resourcePath = "/v1/skills/{skillId}/asrAnnotationSets";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.ListASRAnnotationSetsResponse.class, 200, "ASR annotation sets metadata are returned."));
@@ -3929,7 +3933,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.ListASRAnnotationSetsResponse.class, false);
   }
 
@@ -3964,7 +3968,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/asrAnnotationSets";
+    String resourcePath = "/v1/skills/{skillId}/asrAnnotationSets";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.CreateAsrAnnotationSetResponse.class, 200, "ASR annotation set created successfully."));
@@ -3978,7 +3982,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, createAsrAnnotationSetRequest, com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.CreateAsrAnnotationSetResponse.class, false);
   }
 
@@ -4012,7 +4016,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/asrEvaluations/{evaluationId}";
+    String resourcePath = "/v1/skills/{skillId}/asrEvaluations/{evaluationId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "ASR evaluation exists and is deleted successfully."));
@@ -4026,7 +4030,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("DELETE", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("DELETE", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, null, false);
   }
 
@@ -4075,7 +4079,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/asrEvaluations/{evaluationId}/results";
+    String resourcePath = "/v1/skills/{skillId}/asrEvaluations/{evaluationId}/results";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.asr.evaluations.GetAsrEvaluationsResultsResponse.class, 200, "Evaluation exists and its status is queryable."));
@@ -4089,7 +4093,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.asr.evaluations.GetAsrEvaluationsResultsResponse.class, false);
   }
 
@@ -4127,7 +4131,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/asrEvaluations/{evaluationId}/status";
+    String resourcePath = "/v1/skills/{skillId}/asrEvaluations/{evaluationId}/status";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.asr.evaluations.GetAsrEvaluationStatusResponseObject.class, 200, "Evaluation exists and its status is queryable."));
@@ -4141,7 +4145,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.asr.evaluations.GetAsrEvaluationStatusResponseObject.class, false);
   }
 
@@ -4199,7 +4203,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/asrEvaluations";
+    String resourcePath = "/v1/skills/{skillId}/asrEvaluations";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.asr.evaluations.ListAsrEvaluationsResponse.class, 200, "Evaluations are returned."));
@@ -4213,7 +4217,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.asr.evaluations.ListAsrEvaluationsResponse.class, false);
   }
 
@@ -4251,7 +4255,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/asrEvaluations";
+    String resourcePath = "/v1/skills/{skillId}/asrEvaluations";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.asr.evaluations.PostAsrEvaluationsResponseObject.class, 200, "Evaluation has successfully begun."));
@@ -4266,7 +4270,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, postAsrEvaluationsRequest, com.amazon.ask.smapi.model.v1.skill.asr.evaluations.PostAsrEvaluationsResponseObject.class, false);
   }
 
@@ -4298,7 +4302,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/betaTest/end";
+    String resourcePath = "/v1/skills/{skillId}/betaTest/end";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 202, "Accept. Return a URL to track the resource in 'Location' header."));
@@ -4311,7 +4315,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, null, false);
   }
 
@@ -4342,19 +4346,20 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/betaTest";
+    String resourcePath = "/v1/skills/{skillId}/betaTest";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.betaTest.BetaTest.class, 200, "Success."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 409, "Thrown if user tries to request a new simulation while the old simulation is in progress."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 500, "Internal Server Error."));
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.betaTest.BetaTest.class, false);
   }
 
@@ -4386,10 +4391,10 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/betaTest";
+    String resourcePath = "/v1/skills/{skillId}/betaTest";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
-    serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "Success. Return a URL to track the resource in 'Location' header."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(null, 201, "Success. Return a URL to track the resource in 'Location' header."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 404, "The resource being requested is not found."));
@@ -4399,7 +4404,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, createTestBody, null, false);
   }
 
@@ -4419,9 +4424,10 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * Update a beta test for a given Alexa skill.
    * @param skillId The skill ID. (required)
    * @param createTestBody JSON object containing the details of a beta test used to create the test. (optional)
+   * @return com.amazon.ask.smapi.model.v1.skill.betaTest.UpdateBetaTestResponse
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<Void> callUpdateBetaTestV1(String skillId, com.amazon.ask.smapi.model.v1.skill.betaTest.TestBody createTestBody) throws ServiceException {
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.betaTest.UpdateBetaTestResponse> callUpdateBetaTestV1(String skillId, com.amazon.ask.smapi.model.v1.skill.betaTest.TestBody createTestBody) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
     pathParams.put("skillId", skillId);
@@ -4431,20 +4437,21 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/betaTest";
+    String resourcePath = "/v1/skills/{skillId}/betaTest";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
-    serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "Success. No content."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.betaTest.UpdateBetaTestResponse.class, 204, "Success. No content."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 409, "Thrown if user tries to request a new simulation while the old simulation is in progress."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 500, "Internal Server Error."));
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("PUT", this.apiEndpoint, path, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, createTestBody, null, false);
+    return this.executeRequest("PUT", this.apiEndpoint, resourcePath, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, createTestBody, com.amazon.ask.smapi.model.v1.skill.betaTest.UpdateBetaTestResponse.class, false);
   }
 
   /**
@@ -4452,10 +4459,11 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * Update a beta test for a given Alexa skill.
    * @param skillId The skill ID. (required)
    * @param createTestBody JSON object containing the details of a beta test used to create the test. (optional)
+   * @return com.amazon.ask.smapi.model.v1.skill.betaTest.UpdateBetaTestResponse
    * @throws ServiceException if fails to make API call
    */
-  public void updateBetaTestV1(String skillId, com.amazon.ask.smapi.model.v1.skill.betaTest.TestBody createTestBody) throws ServiceException {
-    this.callUpdateBetaTestV1(skillId, createTestBody).getResponse();
+  public com.amazon.ask.smapi.model.v1.skill.betaTest.UpdateBetaTestResponse updateBetaTestV1(String skillId, com.amazon.ask.smapi.model.v1.skill.betaTest.TestBody createTestBody) throws ServiceException {
+    return this.callUpdateBetaTestV1(skillId, createTestBody).getResponse();
   }
 
   /**
@@ -4474,7 +4482,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/betaTest/start";
+    String resourcePath = "/v1/skills/{skillId}/betaTest/start";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 202, "Accept. Return a URL to track the resource in 'Location' header."));
@@ -4487,7 +4495,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, null, false);
   }
 
@@ -4518,19 +4526,20 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/betaTest/testers/add";
+    String resourcePath = "/v1/skills/{skillId}/betaTest/testers/add";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "Success. No content."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 409, "The request could not be completed due to a conflict with the current state of the target resource."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 429, "Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 500, "Internal Server Error."));
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, testersRequest, null, false);
   }
 
@@ -4550,11 +4559,11 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * List all testers in a beta test for the given Alexa skill.
    * @param skillId The skill ID. (required)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 500 results, you can add this parameter to your request. The response might contain fewer results than maxResults, but it will never contain more. (optional)
    * @return com.amazon.ask.smapi.model.v1.skill.betaTest.testers.ListTestersResponse
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.betaTest.testers.ListTestersResponse> callGetListOfTestersV1(String skillId, String nextToken, BigDecimal maxResults) throws ServiceException {
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.betaTest.testers.ListTestersResponse> callGetListOfTestersV1(String skillId, String nextToken, Integer maxResults) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
 
     if(nextToken != null) {
@@ -4572,19 +4581,20 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/betaTest/testers";
+    String resourcePath = "/v1/skills/{skillId}/betaTest/testers";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.betaTest.testers.ListTestersResponse.class, 200, "Success."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Bad request."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 409, "The request could not be completed due to a conflict with the current state of the target resource."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 429, "Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 500, "Internal Server Error."));
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.betaTest.testers.ListTestersResponse.class, false);
   }
 
@@ -4593,11 +4603,11 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * List all testers in a beta test for the given Alexa skill.
    * @param skillId The skill ID. (required)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 500 results, you can add this parameter to your request. The response might contain fewer results than maxResults, but it will never contain more. (optional)
    * @return com.amazon.ask.smapi.model.v1.skill.betaTest.testers.ListTestersResponse
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.smapi.model.v1.skill.betaTest.testers.ListTestersResponse getListOfTestersV1(String skillId, String nextToken, BigDecimal maxResults) throws ServiceException {
+  public com.amazon.ask.smapi.model.v1.skill.betaTest.testers.ListTestersResponse getListOfTestersV1(String skillId, String nextToken, Integer maxResults) throws ServiceException {
     return this.callGetListOfTestersV1(skillId, nextToken, maxResults).getResponse();
   }
 
@@ -4618,19 +4628,20 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/betaTest/testers/remove";
+    String resourcePath = "/v1/skills/{skillId}/betaTest/testers/remove";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "Success. No content."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 409, "The request could not be completed due to a conflict with the current state of the target resource."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 429, "Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 500, "Internal Server Error."));
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, testersRequest, null, false);
   }
 
@@ -4662,7 +4673,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/betaTest/testers/requestFeedback";
+    String resourcePath = "/v1/skills/{skillId}/betaTest/testers/requestFeedback";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "Success. No content."));
@@ -4675,7 +4686,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, testersRequest, null, false);
   }
 
@@ -4707,7 +4718,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/betaTest/testers/sendReminder";
+    String resourcePath = "/v1/skills/{skillId}/betaTest/testers/sendReminder";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "Success. No content."));
@@ -4720,7 +4731,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, testersRequest, null, false);
   }
 
@@ -4759,10 +4770,11 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/certifications/{certificationId}";
+    String resourcePath = "/v1/skills/{skillId}/certifications/{certificationId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.certification.CertificationResponse.class, 200, "Successfully retrieved skill certification information."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error e.g. if any request parameter is invalid like certification Id or pagination token etc. If the maxResults is not in the range of 1 to 50, it also qualifies for this error. "));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 404, "The resource being requested is not found."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 429, "Exceeded the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId. "));
@@ -4770,7 +4782,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.certification.CertificationResponse.class, false);
   }
 
@@ -4796,7 +4808,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @return com.amazon.ask.smapi.model.v1.skill.certification.ListCertificationsResponse
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.certification.ListCertificationsResponse> callGetCertificationsListV1(String skillId, String nextToken, BigDecimal maxResults) throws ServiceException {
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.certification.ListCertificationsResponse> callGetCertificationsListV1(String skillId, String nextToken, Integer maxResults) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
 
     if(nextToken != null) {
@@ -4814,7 +4826,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/certifications";
+    String resourcePath = "/v1/skills/{skillId}/certifications";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.certification.ListCertificationsResponse.class, 200, "Returns list of certifications for the skillId."));
@@ -4826,7 +4838,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.certification.ListCertificationsResponse.class, false);
   }
 
@@ -4839,7 +4851,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @return com.amazon.ask.smapi.model.v1.skill.certification.ListCertificationsResponse
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.smapi.model.v1.skill.certification.ListCertificationsResponse getCertificationsListV1(String skillId, String nextToken, BigDecimal maxResults) throws ServiceException {
+  public com.amazon.ask.smapi.model.v1.skill.certification.ListCertificationsResponse getCertificationsListV1(String skillId, String nextToken, Integer maxResults) throws ServiceException {
     return this.callGetCertificationsListV1(skillId, nextToken, maxResults).getResponse();
   }
 
@@ -4860,7 +4872,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/credentials";
+    String resourcePath = "/v1/skills/{skillId}/credentials";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.SkillCredentials.class, 200, "Response contains the skill credentials."));
@@ -4872,7 +4884,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.SkillCredentials.class, false);
   }
 
@@ -4903,7 +4915,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}";
+    String resourcePath = "/v1/skills/{skillId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "Success. No content."));
@@ -4916,7 +4928,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("DELETE", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("DELETE", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, null, false);
   }
 
@@ -4950,7 +4962,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @return com.amazon.ask.smapi.model.v1.skill.history.IntentRequests
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.history.IntentRequests> callGetUtteranceDataV1(String skillId, String stage, String nextToken, BigDecimal maxResults, String sortDirection, String sortField, List<com.amazon.ask.smapi.model.v1.skill.history.LocaleInQuery> locale, List<com.amazon.ask.smapi.model.v1.skill.history.DialogActName> dialogActName, List<com.amazon.ask.smapi.model.v1.skill.history.IntentConfidenceBin> intentConfidenceBin, List<String> intentName, List<String> intentSlotsName, List<com.amazon.ask.smapi.model.v1.skill.history.InteractionType> interactionType, List<com.amazon.ask.smapi.model.v1.skill.history.PublicationStatus> publicationStatus, List<String> utteranceText) throws ServiceException {
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.history.IntentRequests> callGetUtteranceDataV1(String skillId, String stage, String nextToken, Integer maxResults, String sortDirection, String sortField, List<com.amazon.ask.smapi.model.v1.skill.history.LocaleInQuery> locale, List<com.amazon.ask.smapi.model.v1.skill.history.DialogActName> dialogActName, List<com.amazon.ask.smapi.model.v1.skill.history.IntentConfidenceBin> intentConfidenceBin, List<String> intentName, List<String> intentSlotsName, List<com.amazon.ask.smapi.model.v1.skill.history.InteractionType> interactionType, List<com.amazon.ask.smapi.model.v1.skill.history.PublicationStatus> publicationStatus, List<String> utteranceText) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
 
     if(nextToken != null) {
@@ -5028,7 +5040,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/history/intentRequests";
+    String resourcePath = "/v1/skills/{skillId}/history/intentRequests";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.history.IntentRequests.class, 200, "Returns a list of utterance items for the given skill."));
@@ -5041,7 +5053,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.history.IntentRequests.class, false);
   }
 
@@ -5065,7 +5077,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @return com.amazon.ask.smapi.model.v1.skill.history.IntentRequests
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.smapi.model.v1.skill.history.IntentRequests getUtteranceDataV1(String skillId, String stage, String nextToken, BigDecimal maxResults, String sortDirection, String sortField, List<com.amazon.ask.smapi.model.v1.skill.history.LocaleInQuery> locale, List<com.amazon.ask.smapi.model.v1.skill.history.DialogActName> dialogActName, List<com.amazon.ask.smapi.model.v1.skill.history.IntentConfidenceBin> intentConfidenceBin, List<String> intentName, List<String> intentSlotsName, List<com.amazon.ask.smapi.model.v1.skill.history.InteractionType> interactionType, List<com.amazon.ask.smapi.model.v1.skill.history.PublicationStatus> publicationStatus, List<String> utteranceText) throws ServiceException {
+  public com.amazon.ask.smapi.model.v1.skill.history.IntentRequests getUtteranceDataV1(String skillId, String stage, String nextToken, Integer maxResults, String sortDirection, String sortField, List<com.amazon.ask.smapi.model.v1.skill.history.LocaleInQuery> locale, List<com.amazon.ask.smapi.model.v1.skill.history.DialogActName> dialogActName, List<com.amazon.ask.smapi.model.v1.skill.history.IntentConfidenceBin> intentConfidenceBin, List<String> intentName, List<String> intentSlotsName, List<com.amazon.ask.smapi.model.v1.skill.history.InteractionType> interactionType, List<com.amazon.ask.smapi.model.v1.skill.history.PublicationStatus> publicationStatus, List<String> utteranceText) throws ServiceException {
     return this.callGetUtteranceDataV1(skillId, stage, nextToken, maxResults, sortDirection, sortField, locale, dialogActName, intentConfidenceBin, intentName, intentSlotsName, interactionType, publicationStatus, utteranceText).getResponse();
   }
 
@@ -5091,7 +5103,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/imports";
+    String resourcePath = "/v1/skills/{skillId}/imports";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 202, "Accepted."));
@@ -5099,6 +5111,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 404, "The resource being requested is not found."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 409, "The request could not be completed due to a conflict with the current state of the target resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 412, "Precondition failed."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 413, "Payload too large."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 500, "Internal Server Error."));
@@ -5106,7 +5119,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, updateSkillWithPackageRequest, null, false);
   }
 
@@ -5140,7 +5153,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/invocations";
+    String resourcePath = "/v1/skills/{skillId}/invocations";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.invocations.InvokeSkillResponse.class, 200, "Skill was invoked."));
@@ -5153,7 +5166,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, invokeSkillRequest, com.amazon.ask.smapi.model.v1.skill.invocations.InvokeSkillResponse.class, false);
   }
 
@@ -5186,7 +5199,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @return com.amazon.ask.smapi.model.v1.skill.metrics.GetMetricDataResponse
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.metrics.GetMetricDataResponse> callGetSkillMetricsV1(String skillId, OffsetDateTime startTime, OffsetDateTime endTime, String period, String metric, String stage, String skillType, String intent, String locale, BigDecimal maxResults, String nextToken) throws ServiceException {
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.metrics.GetMetricDataResponse> callGetSkillMetricsV1(String skillId, OffsetDateTime startTime, OffsetDateTime endTime, String period, String metric, String stage, String skillType, String intent, String locale, Integer maxResults, String nextToken) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
 
     if(startTime != null) {
@@ -5236,7 +5249,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/metrics";
+    String resourcePath = "/v1/skills/{skillId}/metrics";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.metrics.GetMetricDataResponse.class, 200, "Get analytic metrics report successfully."));
@@ -5250,7 +5263,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.metrics.GetMetricDataResponse.class, false);
   }
 
@@ -5271,7 +5284,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @return com.amazon.ask.smapi.model.v1.skill.metrics.GetMetricDataResponse
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.smapi.model.v1.skill.metrics.GetMetricDataResponse getSkillMetricsV1(String skillId, OffsetDateTime startTime, OffsetDateTime endTime, String period, String metric, String stage, String skillType, String intent, String locale, BigDecimal maxResults, String nextToken) throws ServiceException {
+  public com.amazon.ask.smapi.model.v1.skill.metrics.GetMetricDataResponse getSkillMetricsV1(String skillId, OffsetDateTime startTime, OffsetDateTime endTime, String period, String metric, String stage, String skillType, String intent, String locale, Integer maxResults, String nextToken) throws ServiceException {
     return this.callGetSkillMetricsV1(skillId, startTime, endTime, period, metric, stage, skillType, intent, locale, maxResults, nextToken).getResponse();
   }
 
@@ -5298,7 +5311,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/nluAnnotationSets/{annotationId}/annotations";
+    String resourcePath = "/v1/skills/{skillId}/nluAnnotationSets/{annotationId}/annotations";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 200, "The specific version of a NLU annotation set has the content."));
@@ -5311,7 +5324,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, null, false);
   }
 
@@ -5351,7 +5364,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/nluAnnotationSets/{annotationId}/annotations";
+    String resourcePath = "/v1/skills/{skillId}/nluAnnotationSets/{annotationId}/annotations";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 200, "NLU annotation set exists and starts the update."));
@@ -5364,7 +5377,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, updateNLUAnnotationSetAnnotationsRequest, null, false);
   }
 
@@ -5399,7 +5412,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/nluAnnotationSets/{annotationId}";
+    String resourcePath = "/v1/skills/{skillId}/nluAnnotationSets/{annotationId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "NLU annotation set exists and is deleted successfully."));
@@ -5412,7 +5425,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("DELETE", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("DELETE", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, null, false);
   }
 
@@ -5446,7 +5459,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/nluAnnotationSets/{annotationId}/properties";
+    String resourcePath = "/v1/skills/{skillId}/nluAnnotationSets/{annotationId}/properties";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.GetNLUAnnotationSetPropertiesResponse.class, 200, "The NLU annotation set exists."));
@@ -5459,7 +5472,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.GetNLUAnnotationSetPropertiesResponse.class, false);
   }
 
@@ -5494,7 +5507,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/nluAnnotationSets/{annotationId}/properties";
+    String resourcePath = "/v1/skills/{skillId}/nluAnnotationSets/{annotationId}/properties";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 201, "NLU annotation set exists and properties are updated successfully."));
@@ -5507,7 +5520,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("PUT", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("PUT", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, updateNLUAnnotationSetPropertiesRequest, null, false);
   }
 
@@ -5555,7 +5568,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/nluAnnotationSets";
+    String resourcePath = "/v1/skills/{skillId}/nluAnnotationSets";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.ListNLUAnnotationSetsResponse.class, 200, "NLU annotation sets are returned."));
@@ -5568,7 +5581,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.ListNLUAnnotationSetsResponse.class, false);
   }
 
@@ -5604,7 +5617,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/nluAnnotationSets";
+    String resourcePath = "/v1/skills/{skillId}/nluAnnotationSets";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.CreateNLUAnnotationSetResponse.class, 201, "NLU annotation set created successfully."));
@@ -5618,7 +5631,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, createNLUAnnotationSetRequest, com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.CreateNLUAnnotationSetResponse.class, false);
   }
 
@@ -5653,7 +5666,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/nluEvaluations/{evaluationId}";
+    String resourcePath = "/v1/skills/{skillId}/nluEvaluations/{evaluationId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.GetNLUEvaluationResponse.class, 200, "Evaluation exists and its status is queryable."));
@@ -5666,7 +5679,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.GetNLUEvaluationResponse.class, false);
   }
 
@@ -5731,7 +5744,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/nluEvaluations/{evaluationId}/results";
+    String resourcePath = "/v1/skills/{skillId}/nluEvaluations/{evaluationId}/results";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.GetNLUEvaluationResultsResponse.class, 200, "Evaluation exists and its status is queryable."));
@@ -5744,7 +5757,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.GetNLUEvaluationResultsResponse.class, false);
   }
 
@@ -5808,7 +5821,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/nluEvaluations";
+    String resourcePath = "/v1/skills/{skillId}/nluEvaluations";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.ListNLUEvaluationsResponse.class, 200, "Evaluations are returned."));
@@ -5821,7 +5834,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.ListNLUEvaluationsResponse.class, false);
   }
 
@@ -5859,7 +5872,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/nluEvaluations";
+    String resourcePath = "/v1/skills/{skillId}/nluEvaluations";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.EvaluateResponse.class, 200, "Evaluation has successfully begun."));
@@ -5872,7 +5885,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, evaluateNLURequest, com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.EvaluateResponse.class, false);
   }
 
@@ -5911,7 +5924,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/publications";
+    String resourcePath = "/v1/skills/{skillId}/publications";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.publication.SkillPublicationResponse.class, 202, "Successfully processed skill publication request."));
@@ -5925,7 +5938,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, publishSkillRequest, com.amazon.ask.smapi.model.v1.skill.publication.SkillPublicationResponse.class, false);
   }
 
@@ -5964,10 +5977,11 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/publications/~latest";
+    String resourcePath = "/v1/skills/{skillId}/publications/~latest";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.publication.SkillPublicationResponse.class, 200, "Successfully retrieved latest skill publication information."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 404, "The resource being requested is not found."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
@@ -5976,7 +5990,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.publication.SkillPublicationResponse.class, false);
   }
 
@@ -6010,7 +6024,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/rollbacks";
+    String resourcePath = "/v1/skills/{skillId}/rollbacks";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.CreateRollbackResponse.class, 201, "Rollback request created; Returns the generated identifier to track the rollback request and returns a URL to track the status in Location header."));
@@ -6025,7 +6039,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, createRollbackRequest, com.amazon.ask.smapi.model.v1.skill.CreateRollbackResponse.class, false);
   }
 
@@ -6060,7 +6074,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/rollbacks/{rollbackRequestId}";
+    String resourcePath = "/v1/skills/{skillId}/rollbacks/{rollbackRequestId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.RollbackRequestStatus.class, 200, "Returns the rollback status for a given skillId and rollbackRequestId. Returns the latest rollback status if ~latest is used in place of rollbackRequestId."));
@@ -6074,7 +6088,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.RollbackRequestStatus.class, false);
   }
 
@@ -6108,7 +6122,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/simulations";
+    String resourcePath = "/v1/skills/{skillId}/simulations";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.simulations.SimulationsApiResponse.class, 200, "Skill simulation has successfully began."));
@@ -6123,7 +6137,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, simulationsApiRequest, com.amazon.ask.smapi.model.v1.skill.simulations.SimulationsApiResponse.class, false);
   }
 
@@ -6158,7 +6172,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/simulations/{simulationId}";
+    String resourcePath = "/v1/skills/{skillId}/simulations/{simulationId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.simulations.SimulationsApiResponse.class, 200, "Successfully retrieved skill simulation information."));
@@ -6171,7 +6185,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.simulations.SimulationsApiResponse.class, false);
   }
 
@@ -6206,7 +6220,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/smartHome/testing/capabilityEvaluations/{evaluationId}";
+    String resourcePath = "/v1/skills/{skillId}/smartHome/testing/capabilityEvaluations/{evaluationId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.smartHomeEvaluation.GetSHCapabilityEvaluationResponse.class, 200, "Successfully retrieved the evaluation status."));
@@ -6219,7 +6233,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.smartHomeEvaluation.GetSHCapabilityEvaluationResponse.class, false);
   }
 
@@ -6245,7 +6259,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @return com.amazon.ask.smapi.model.v1.smartHomeEvaluation.GetSHCapabilityEvaluationResultsResponse
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.smapi.model.v1.smartHomeEvaluation.GetSHCapabilityEvaluationResultsResponse> callGetSmarthomeCapablityEvaluationResultsV1(String skillId, String evaluationId, BigDecimal maxResults, String nextToken) throws ServiceException {
+  public ApiResponse<com.amazon.ask.smapi.model.v1.smartHomeEvaluation.GetSHCapabilityEvaluationResultsResponse> callGetSmarthomeCapablityEvaluationResultsV1(String skillId, String evaluationId, Integer maxResults, String nextToken) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
 
     if(maxResults != null) {
@@ -6264,7 +6278,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/smartHome/testing/capabilityEvaluations/{evaluationId}/results";
+    String resourcePath = "/v1/skills/{skillId}/smartHome/testing/capabilityEvaluations/{evaluationId}/results";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.smartHomeEvaluation.GetSHCapabilityEvaluationResultsResponse.class, 200, "Successfully retrieved the evaluation result content."));
@@ -6277,7 +6291,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.smartHomeEvaluation.GetSHCapabilityEvaluationResultsResponse.class, false);
   }
 
@@ -6291,7 +6305,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @return com.amazon.ask.smapi.model.v1.smartHomeEvaluation.GetSHCapabilityEvaluationResultsResponse
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.smapi.model.v1.smartHomeEvaluation.GetSHCapabilityEvaluationResultsResponse getSmarthomeCapablityEvaluationResultsV1(String skillId, String evaluationId, BigDecimal maxResults, String nextToken) throws ServiceException {
+  public com.amazon.ask.smapi.model.v1.smartHomeEvaluation.GetSHCapabilityEvaluationResultsResponse getSmarthomeCapablityEvaluationResultsV1(String skillId, String evaluationId, Integer maxResults, String nextToken) throws ServiceException {
     return this.callGetSmarthomeCapablityEvaluationResultsV1(skillId, evaluationId, maxResults, nextToken).getResponse();
   }
 
@@ -6307,7 +6321,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @return com.amazon.ask.smapi.model.v1.smartHomeEvaluation.ListSHCapabilityEvaluationsResponse
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.smapi.model.v1.smartHomeEvaluation.ListSHCapabilityEvaluationsResponse> callListSmarthomeCapabilityEvaluationsV1(String skillId, String stage, OffsetDateTime startTimestampFrom, OffsetDateTime startTimestampTo, BigDecimal maxResults, String nextToken) throws ServiceException {
+  public ApiResponse<com.amazon.ask.smapi.model.v1.smartHomeEvaluation.ListSHCapabilityEvaluationsResponse> callListSmarthomeCapabilityEvaluationsV1(String skillId, String stage, OffsetDateTime startTimestampFrom, OffsetDateTime startTimestampTo, Integer maxResults, String nextToken) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
 
     if(stage != null) {
@@ -6337,7 +6351,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/smartHome/testing/capabilityEvaluations";
+    String resourcePath = "/v1/skills/{skillId}/smartHome/testing/capabilityEvaluations";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.smartHomeEvaluation.ListSHCapabilityEvaluationsResponse.class, 200, "Successfully retrieved the evaluation infomation."));
@@ -6350,7 +6364,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.smartHomeEvaluation.ListSHCapabilityEvaluationsResponse.class, false);
   }
 
@@ -6366,7 +6380,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @return com.amazon.ask.smapi.model.v1.smartHomeEvaluation.ListSHCapabilityEvaluationsResponse
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.smapi.model.v1.smartHomeEvaluation.ListSHCapabilityEvaluationsResponse listSmarthomeCapabilityEvaluationsV1(String skillId, String stage, OffsetDateTime startTimestampFrom, OffsetDateTime startTimestampTo, BigDecimal maxResults, String nextToken) throws ServiceException {
+  public com.amazon.ask.smapi.model.v1.smartHomeEvaluation.ListSHCapabilityEvaluationsResponse listSmarthomeCapabilityEvaluationsV1(String skillId, String stage, OffsetDateTime startTimestampFrom, OffsetDateTime startTimestampTo, Integer maxResults, String nextToken) throws ServiceException {
     return this.callListSmarthomeCapabilityEvaluationsV1(skillId, stage, startTimestampFrom, startTimestampTo, maxResults, nextToken).getResponse();
   }
 
@@ -6388,7 +6402,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/smartHome/testing/capabilityEvaluations";
+    String resourcePath = "/v1/skills/{skillId}/smartHome/testing/capabilityEvaluations";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.smartHomeEvaluation.EvaluateSHCapabilityResponse.class, 200, "Evaluation has successfully begun."));
@@ -6402,7 +6416,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, evaluateSHCapabilityPayload, com.amazon.ask.smapi.model.v1.smartHomeEvaluation.EvaluateSHCapabilityResponse.class, false);
   }
 
@@ -6427,7 +6441,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @return com.amazon.ask.smapi.model.v1.smartHomeEvaluation.ListSHCapabilityTestPlansResponse
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.smapi.model.v1.smartHomeEvaluation.ListSHCapabilityTestPlansResponse> callListSmarthomeCapabilityTestPlansV1(String skillId, BigDecimal maxResults, String nextToken) throws ServiceException {
+  public ApiResponse<com.amazon.ask.smapi.model.v1.smartHomeEvaluation.ListSHCapabilityTestPlansResponse> callListSmarthomeCapabilityTestPlansV1(String skillId, Integer maxResults, String nextToken) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
 
     if(maxResults != null) {
@@ -6445,7 +6459,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/smartHome/testing/capabilityTestPlans";
+    String resourcePath = "/v1/skills/{skillId}/smartHome/testing/capabilityTestPlans";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.smartHomeEvaluation.ListSHCapabilityTestPlansResponse.class, 200, "Successfully got the list of test plans."));
@@ -6458,7 +6472,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.smartHomeEvaluation.ListSHCapabilityTestPlansResponse.class, false);
   }
 
@@ -6471,7 +6485,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @return com.amazon.ask.smapi.model.v1.smartHomeEvaluation.ListSHCapabilityTestPlansResponse
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.smapi.model.v1.smartHomeEvaluation.ListSHCapabilityTestPlansResponse listSmarthomeCapabilityTestPlansV1(String skillId, BigDecimal maxResults, String nextToken) throws ServiceException {
+  public com.amazon.ask.smapi.model.v1.smartHomeEvaluation.ListSHCapabilityTestPlansResponse listSmarthomeCapabilityTestPlansV1(String skillId, Integer maxResults, String nextToken) throws ServiceException {
     return this.callListSmarthomeCapabilityTestPlansV1(skillId, maxResults, nextToken).getResponse();
   }
 
@@ -6492,7 +6506,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/sslCertificateSets/~latest";
+    String resourcePath = "/v1/skills/{skillId}/sslCertificateSets/~latest";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.SSLCertificatePayload.class, 200, "Response contains the latest version of the ssl certificates."));
@@ -6504,7 +6518,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.SSLCertificatePayload.class, false);
   }
 
@@ -6536,7 +6550,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/sslCertificateSets/~latest";
+    String resourcePath = "/v1/skills/{skillId}/sslCertificateSets/~latest";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "Accepted; Request was successful and get will now result in the new values."));
@@ -6549,7 +6563,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("PUT", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("PUT", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, sslCertificatePayload, null, false);
   }
 
@@ -6582,7 +6596,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/stages/{stage}/enablement";
+    String resourcePath = "/v1/skills/{skillId}/stages/{stage}/enablement";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "No Content; Confirms that enablement is successfully deleted."));
@@ -6596,7 +6610,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("DELETE", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("DELETE", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, null, false);
   }
 
@@ -6629,7 +6643,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/stages/{stage}/enablement";
+    String resourcePath = "/v1/skills/{skillId}/stages/{stage}/enablement";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "No Content; Confirms that enablement resource exists for given skillId &amp; stage."));
@@ -6643,7 +6657,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, null, false);
   }
 
@@ -6676,7 +6690,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/stages/{stage}/enablement";
+    String resourcePath = "/v1/skills/{skillId}/stages/{stage}/enablement";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "No Content; Confirms that enablement is successfully created/updated."));
@@ -6691,7 +6705,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("PUT", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("PUT", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, null, false);
   }
 
@@ -6724,10 +6738,11 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/stages/{stage}/exports";
+    String resourcePath = "/v1/skills/{skillId}/stages/{stage}/exports";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 202, "Accepted."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 404, "The resource being requested is not found."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 409, "The request could not be completed due to a conflict with the current state of the target resource."));
@@ -6737,7 +6752,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, null, false);
   }
 
@@ -6762,7 +6777,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @return com.amazon.ask.smapi.model.v1.isp.ListInSkillProductResponse
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.smapi.model.v1.isp.ListInSkillProductResponse> callGetIspListForSkillIdV1(String skillId, String stage, String nextToken, BigDecimal maxResults) throws ServiceException {
+  public ApiResponse<com.amazon.ask.smapi.model.v1.isp.ListInSkillProductResponse> callGetIspListForSkillIdV1(String skillId, String stage, String nextToken, Integer maxResults) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
 
     if(nextToken != null) {
@@ -6781,7 +6796,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/stages/{stage}/inSkillProducts";
+    String resourcePath = "/v1/skills/{skillId}/stages/{stage}/inSkillProducts";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.isp.ListInSkillProductResponse.class, 200, "Response contains list of in-skill products for the specified skillId and stage."));
@@ -6793,7 +6808,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.isp.ListInSkillProductResponse.class, false);
   }
 
@@ -6807,7 +6822,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @return com.amazon.ask.smapi.model.v1.isp.ListInSkillProductResponse
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.smapi.model.v1.isp.ListInSkillProductResponse getIspListForSkillIdV1(String skillId, String stage, String nextToken, BigDecimal maxResults) throws ServiceException {
+  public com.amazon.ask.smapi.model.v1.isp.ListInSkillProductResponse getIspListForSkillIdV1(String skillId, String stage, String nextToken, Integer maxResults) throws ServiceException {
     return this.callGetIspListForSkillIdV1(skillId, stage, nextToken, maxResults).getResponse();
   }
 
@@ -6833,7 +6848,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/stages/{stage}/interactionModel/locales/{locale}/profileNlu";
+    String resourcePath = "/v1/skills/{skillId}/stages/{stage}/interactionModel/locales/{locale}/profileNlu";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.evaluations.ProfileNluResponse.class, 200, "Profiled utterance against interaction model and returned nlu response successfully."));
@@ -6846,7 +6861,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, profileNluRequest, com.amazon.ask.smapi.model.v1.skill.evaluations.ProfileNluResponse.class, false);
   }
 
@@ -6887,7 +6902,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/stages/{stage}/interactionModel/locales/{locale}/versions/{version}/conflictDetectionJobStatus";
+    String resourcePath = "/v1/skills/{skillId}/stages/{stage}/interactionModel/locales/{locale}/versions/{version}/conflictDetectionJobStatus";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.GetConflictDetectionJobStatusResponse.class, 200, "Get conflict detection results successfully."));
@@ -6901,7 +6916,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.GetConflictDetectionJobStatusResponse.class, false);
   }
 
@@ -6952,7 +6967,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/stages/{stage}/interactionModel/locales/{locale}/versions/{version}/conflicts";
+    String resourcePath = "/v1/skills/{skillId}/stages/{stage}/interactionModel/locales/{locale}/versions/{version}/conflicts";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.GetConflictsResponse.class, 200, "Get conflict detection results sucessfully."));
@@ -6966,7 +6981,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.GetConflictsResponse.class, false);
   }
 
@@ -6996,7 +7011,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @return com.amazon.ask.smapi.model.v1.skill.Private.ListPrivateDistributionAccountsResponse
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.Private.ListPrivateDistributionAccountsResponse> callListPrivateDistributionAccountsV1(String skillId, String stage, String nextToken, BigDecimal maxResults) throws ServiceException {
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.Private.ListPrivateDistributionAccountsResponse> callListPrivateDistributionAccountsV1(String skillId, String stage, String nextToken, Integer maxResults) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
 
     if(nextToken != null) {
@@ -7015,7 +7030,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/stages/{stage}/privateDistributionAccounts";
+    String resourcePath = "/v1/skills/{skillId}/stages/{stage}/privateDistributionAccounts";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.Private.ListPrivateDistributionAccountsResponse.class, 200, "Returns list of private distribution accounts on success."));
@@ -7029,7 +7044,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.Private.ListPrivateDistributionAccountsResponse.class, false);
   }
 
@@ -7043,7 +7058,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @return com.amazon.ask.smapi.model.v1.skill.Private.ListPrivateDistributionAccountsResponse
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.smapi.model.v1.skill.Private.ListPrivateDistributionAccountsResponse listPrivateDistributionAccountsV1(String skillId, String stage, String nextToken, BigDecimal maxResults) throws ServiceException {
+  public com.amazon.ask.smapi.model.v1.skill.Private.ListPrivateDistributionAccountsResponse listPrivateDistributionAccountsV1(String skillId, String stage, String nextToken, Integer maxResults) throws ServiceException {
     return this.callListPrivateDistributionAccountsV1(skillId, stage, nextToken, maxResults).getResponse();
   }
 
@@ -7067,7 +7082,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/stages/{stage}/privateDistributionAccounts/{id}";
+    String resourcePath = "/v1/skills/{skillId}/stages/{stage}/privateDistributionAccounts/{id}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "Success."));
@@ -7081,7 +7096,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("DELETE", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("DELETE", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, null, false);
   }
 
@@ -7117,7 +7132,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/stages/{stage}/privateDistributionAccounts/{id}";
+    String resourcePath = "/v1/skills/{skillId}/stages/{stage}/privateDistributionAccounts/{id}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "Success."));
@@ -7131,7 +7146,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("PUT", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("PUT", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, null, false);
   }
 
@@ -7165,7 +7180,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/stages/{stageV2}/accountLinkingClient";
+    String resourcePath = "/v1/skills/{skillId}/stages/{stageV2}/accountLinkingClient";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "Success. No content."));
@@ -7178,7 +7193,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("DELETE", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("DELETE", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, null, false);
   }
 
@@ -7212,7 +7227,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/stages/{stageV2}/accountLinkingClient";
+    String resourcePath = "/v1/skills/{skillId}/stages/{stageV2}/accountLinkingClient";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.accountLinking.AccountLinkingResponse.class, 200, "Returns AccountLinking response of the skill."));
@@ -7225,7 +7240,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.accountLinking.AccountLinkingResponse.class, false);
   }
 
@@ -7265,7 +7280,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/stages/{stageV2}/accountLinkingClient";
+    String resourcePath = "/v1/skills/{skillId}/stages/{stageV2}/accountLinkingClient";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "Success"));
@@ -7280,7 +7295,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("PUT", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("PUT", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, accountLinkingRequest, null, false);
   }
 
@@ -7316,7 +7331,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/stages/{stageV2}/cloneLocale";
+    String resourcePath = "/v1/skills/{skillId}/stages/{stageV2}/cloneLocale";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 202, "Accepted."));
@@ -7331,7 +7346,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, cloneLocaleRequest, null, false);
   }
 
@@ -7368,7 +7383,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/stages/{stageV2}/cloneLocaleRequests/{cloneLocaleRequestId}";
+    String resourcePath = "/v1/skills/{skillId}/stages/{stageV2}/cloneLocaleRequests/{cloneLocaleRequestId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.CloneLocaleStatusResponse.class, 200, "OK."));
@@ -7382,7 +7397,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.CloneLocaleStatusResponse.class, false);
   }
 
@@ -7420,7 +7435,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/stages/{stageV2}/interactionModel/locales/{locale}";
+    String resourcePath = "/v1/skills/{skillId}/stages/{stageV2}/interactionModel/locales/{locale}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.InteractionModelData.class, 200, "Returns interaction model object on success."));
@@ -7434,7 +7449,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.interactionModel.InteractionModelData.class, false);
   }
 
@@ -7471,7 +7486,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/stages/{stageV2}/interactionModel/locales/{locale}";
+    String resourcePath = "/v1/skills/{skillId}/stages/{stageV2}/interactionModel/locales/{locale}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "Success. There is no content but returns etag."));
@@ -7485,7 +7500,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("HEAD", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("HEAD", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, null, false);
   }
 
@@ -7527,7 +7542,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/stages/{stageV2}/interactionModel/locales/{locale}";
+    String resourcePath = "/v1/skills/{skillId}/stages/{stageV2}/interactionModel/locales/{locale}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 202, "Returns build status location link on success."));
@@ -7542,7 +7557,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("PUT", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("PUT", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, interactionModel, null, false);
   }
 
@@ -7573,7 +7588,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.version.ListResponse
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.version.ListResponse> callListInteractionModelVersionsV1(String skillId, String stageV2, String locale, String nextToken, BigDecimal maxResults, String sortDirection, String sortField) throws ServiceException {
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.version.ListResponse> callListInteractionModelVersionsV1(String skillId, String stageV2, String locale, String nextToken, Integer maxResults, String sortDirection, String sortField) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
 
     if(nextToken != null) {
@@ -7601,7 +7616,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/stages/{stageV2}/interactionModel/locales/{locale}/versions";
+    String resourcePath = "/v1/skills/{skillId}/stages/{stageV2}/interactionModel/locales/{locale}/versions";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.version.ListResponse.class, 200, "Returns list of interactionModel versions of a skill for the vendor."));
@@ -7615,7 +7630,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.interactionModel.version.ListResponse.class, false);
   }
 
@@ -7632,7 +7647,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.version.ListResponse
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.smapi.model.v1.skill.interactionModel.version.ListResponse listInteractionModelVersionsV1(String skillId, String stageV2, String locale, String nextToken, BigDecimal maxResults, String sortDirection, String sortField) throws ServiceException {
+  public com.amazon.ask.smapi.model.v1.skill.interactionModel.version.ListResponse listInteractionModelVersionsV1(String skillId, String stageV2, String locale, String nextToken, Integer maxResults, String sortDirection, String sortField) throws ServiceException {
     return this.callListInteractionModelVersionsV1(skillId, stageV2, locale, nextToken, maxResults, sortDirection, sortField).getResponse();
   }
 
@@ -7659,7 +7674,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/stages/{stageV2}/interactionModel/locales/{locale}/versions/{version}";
+    String resourcePath = "/v1/skills/{skillId}/stages/{stageV2}/interactionModel/locales/{locale}/versions/{version}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.InteractionModelData.class, 200, "Returns interaction model object on success."));
@@ -7673,7 +7688,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.interactionModel.InteractionModelData.class, false);
   }
 
@@ -7710,7 +7725,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/stages/{stageV2}/manifest";
+    String resourcePath = "/v1/skills/{skillId}/stages/{stageV2}/manifest";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifestEnvelope.class, 200, "Response contains the latest version of skill manifest."));
@@ -7725,7 +7740,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifestEnvelope.class, false);
   }
 
@@ -7765,7 +7780,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/stages/{stageV2}/manifest";
+    String resourcePath = "/v1/skills/{skillId}/stages/{stageV2}/manifest";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 202, "Accepted; Returns a URL to track the status in 'Location' header."));
@@ -7781,7 +7796,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("PUT", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("PUT", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, updateSkillRequest, null, false);
   }
 
@@ -7818,7 +7833,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/stages/{stage}/validations";
+    String resourcePath = "/v1/skills/{skillId}/stages/{stage}/validations";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.validations.ValidationsApiResponse.class, 202, "Skill validation has successfully begun."));
@@ -7832,7 +7847,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, validationsApiRequest, com.amazon.ask.smapi.model.v1.skill.validations.ValidationsApiResponse.class, false);
   }
 
@@ -7875,7 +7890,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/stages/{stage}/validations/{validationId}";
+    String resourcePath = "/v1/skills/{skillId}/stages/{stage}/validations/{validationId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.validations.ValidationsApiResponse.class, 200, "Successfully retrieved skill validation information."));
@@ -7887,7 +7902,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.validations.ValidationsApiResponse.class, false);
   }
 
@@ -7927,7 +7942,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/status";
+    String resourcePath = "/v1/skills/{skillId}/status";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.SkillStatus.class, 200, "Returns status for skill resource and sub-resources."));
@@ -7941,7 +7956,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.SkillStatus.class, false);
   }
 
@@ -7974,7 +7989,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/submit";
+    String resourcePath = "/v1/skills/{skillId}/submit";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 202, "Success. There is no content but returns Location in the header."));
@@ -7988,7 +8003,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, submitSkillForCertificationRequest, null, false);
   }
 
@@ -8012,7 +8027,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @return com.amazon.ask.smapi.model.v1.skill.ListSkillVersionsResponse
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.ListSkillVersionsResponse> callListVersionsForSkillV1(String skillId, String nextToken, BigDecimal maxResults) throws ServiceException {
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.ListSkillVersionsResponse> callListVersionsForSkillV1(String skillId, String nextToken, Integer maxResults) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
 
     if(nextToken != null) {
@@ -8030,7 +8045,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/versions";
+    String resourcePath = "/v1/skills/{skillId}/versions";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.ListSkillVersionsResponse.class, 200, "Successfully retrieved skill versions"));
@@ -8044,7 +8059,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.ListSkillVersionsResponse.class, false);
   }
 
@@ -8057,7 +8072,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @return com.amazon.ask.smapi.model.v1.skill.ListSkillVersionsResponse
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.smapi.model.v1.skill.ListSkillVersionsResponse listVersionsForSkillV1(String skillId, String nextToken, BigDecimal maxResults) throws ServiceException {
+  public com.amazon.ask.smapi.model.v1.skill.ListSkillVersionsResponse listVersionsForSkillV1(String skillId, String nextToken, Integer maxResults) throws ServiceException {
     return this.callListVersionsForSkillV1(skillId, nextToken, maxResults).getResponse();
   }
 
@@ -8078,7 +8093,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/{skillId}/withdraw";
+    String resourcePath = "/v1/skills/{skillId}/withdraw";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "Success."));
@@ -8092,7 +8107,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, withdrawRequest, null, false);
   }
 
@@ -8122,7 +8137,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skills/uploads";
+    String resourcePath = "/v1/skills/uploads";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.UploadResponse.class, 201, "Created."));
@@ -8133,7 +8148,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.UploadResponse.class, false);
   }
 
@@ -8162,7 +8177,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/vendors";
+    String resourcePath = "/v1/vendors";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.vendorManagement.Vendors.class, 200, "Return vendor information on success."));
@@ -8173,7 +8188,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.vendorManagement.Vendors.class, false);
   }
 
@@ -8191,22 +8206,22 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * 
    * Get the current user permissions about Alexa hosted skill features.
    * @param vendorId vendorId (required)
-   * @param permission The permission of a hosted skill feature that customer needs to check. (required)
+   * @param hostedSkillPermissionType The permission of a hosted skill feature that customer needs to check. (required)
    * @return com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillPermission
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillPermission> callGetAlexaHostedSkillUserPermissionsV1(String vendorId, String permission) throws ServiceException {
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillPermission> callGetAlexaHostedSkillUserPermissionsV1(String vendorId, String hostedSkillPermissionType) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
     pathParams.put("vendorId", vendorId);
-    pathParams.put("permission", permission);
+    pathParams.put("hostedSkillPermissionType", hostedSkillPermissionType);
     List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
     headerParams.add(new Pair<String, String>("Content-type", "application/json"));
 
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/vendors/{vendorId}/alexaHosted/permissions/{permission}";
+    String resourcePath = "/v1/vendors/{vendorId}/alexaHosted/permissions/{hostedSkillPermissionType}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillPermission.class, 200, "response contains the user's permission of hosted skill features"));
@@ -8218,7 +8233,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillPermission.class, false);
   }
 
@@ -8226,12 +8241,12 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * 
    * Get the current user permissions about Alexa hosted skill features.
    * @param vendorId vendorId (required)
-   * @param permission The permission of a hosted skill feature that customer needs to check. (required)
+   * @param hostedSkillPermissionType The permission of a hosted skill feature that customer needs to check. (required)
    * @return com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillPermission
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillPermission getAlexaHostedSkillUserPermissionsV1(String vendorId, String permission) throws ServiceException {
-    return this.callGetAlexaHostedSkillUserPermissionsV1(vendorId, permission).getResponse();
+  public com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillPermission getAlexaHostedSkillUserPermissionsV1(String vendorId, String hostedSkillPermissionType) throws ServiceException {
+    return this.callGetAlexaHostedSkillUserPermissionsV1(vendorId, hostedSkillPermissionType).getResponse();
   }
 
   /**
@@ -8239,7 +8254,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * This is a synchronous API that invokes the Lambda or third party HTTPS endpoint for a given skill. A successful response will contain information related to what endpoint was called, payload sent to and received from the endpoint. In cases where requests to this API results in an error, the response will contain an error code and a description of the problem. In cases where invoking the skill endpoint specifically fails, the response will contain a status attribute indicating that a failure occurred and details about what was sent to the endpoint. The skill must belong to and be enabled by the user of this API. Also,  note that calls to the skill endpoint will timeout after 10 seconds. This  API is currently designed in a way that allows extension to an asynchronous  API if a significantly bigger timeout is required. 
    * @param skillId The skill ID. (required)
    * @param stage Stage for skill. (required)
-   * @param invocationsApiRequest Payload sent to the skill invocation API. (required)
+   * @param invocationsApiRequest Payload sent to the skill invocation API. (optional)
    * @return com.amazon.ask.smapi.model.v2.skill.invocations.InvocationsApiResponse
    * @throws ServiceException if fails to make API call
    */
@@ -8254,7 +8269,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v2/skills/{skillId}/stages/{stage}/invocations";
+    String resourcePath = "/v2/skills/{skillId}/stages/{stage}/invocations";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v2.skill.invocations.InvocationsApiResponse.class, 200, "Skill was invoked."));
@@ -8268,7 +8283,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, invocationsApiRequest, com.amazon.ask.smapi.model.v2.skill.invocations.InvocationsApiResponse.class, false);
   }
 
@@ -8277,7 +8292,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * This is a synchronous API that invokes the Lambda or third party HTTPS endpoint for a given skill. A successful response will contain information related to what endpoint was called, payload sent to and received from the endpoint. In cases where requests to this API results in an error, the response will contain an error code and a description of the problem. In cases where invoking the skill endpoint specifically fails, the response will contain a status attribute indicating that a failure occurred and details about what was sent to the endpoint. The skill must belong to and be enabled by the user of this API. Also,  note that calls to the skill endpoint will timeout after 10 seconds. This  API is currently designed in a way that allows extension to an asynchronous  API if a significantly bigger timeout is required. 
    * @param skillId The skill ID. (required)
    * @param stage Stage for skill. (required)
-   * @param invocationsApiRequest Payload sent to the skill invocation API. (required)
+   * @param invocationsApiRequest Payload sent to the skill invocation API. (optional)
    * @return com.amazon.ask.smapi.model.v2.skill.invocations.InvocationsApiResponse
    * @throws ServiceException if fails to make API call
    */
@@ -8305,7 +8320,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v2/skills/{skillId}/stages/{stage}/simulations";
+    String resourcePath = "/v2/skills/{skillId}/stages/{stage}/simulations";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v2.skill.simulations.SimulationsApiResponse.class, 200, "Skill simulation has successfully began."));
@@ -8320,7 +8335,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, simulationsApiRequest, com.amazon.ask.smapi.model.v2.skill.simulations.SimulationsApiResponse.class, false);
   }
 
@@ -8358,7 +8373,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String accessToken = lwaClient.getAccessTokenForRefreshToken();
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v2/skills/{skillId}/stages/{stage}/simulations/{simulationId}";
+    String resourcePath = "/v2/skills/{skillId}/stages/{stage}/simulations/{simulationId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v2.skill.simulations.SimulationsApiResponse.class, 200, "Successfully retrieved skill simulation information."));
@@ -8371,7 +8386,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v2.skill.simulations.SimulationsApiResponse.class, false);
   }
 

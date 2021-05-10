@@ -29,7 +29,7 @@ import java.util.ArrayList;
 public final class ListUploadsResponse {
 
     @JsonProperty("_links")
-    private com.amazon.ask.smapi.model.v0.Links links = null;
+    private com.amazon.ask.smapi.model.v1.Links links = null;
 
     @JsonProperty("isTruncated")
     private Boolean isTruncated = null;
@@ -64,7 +64,7 @@ public final class ListUploadsResponse {
      * @return links
     **/
     @JsonProperty("_links")
-    public com.amazon.ask.smapi.model.v0.Links getLinks() {
+    public com.amazon.ask.smapi.model.v1.Links getLinks() {
         return links;
     }
 
@@ -144,7 +144,7 @@ public final class ListUploadsResponse {
     }
   
     public static class Builder {
-        private com.amazon.ask.smapi.model.v0.Links links;
+        private com.amazon.ask.smapi.model.v1.Links links;
         private Boolean isTruncated;
         private String nextToken;
         private List<com.amazon.ask.smapi.model.v0.catalog.upload.ContentUploadSummary> uploads;
@@ -153,7 +153,7 @@ public final class ListUploadsResponse {
 
         @JsonProperty("_links")
 
-        public Builder withLinks(com.amazon.ask.smapi.model.v0.Links links) {
+        public Builder withLinks(com.amazon.ask.smapi.model.v1.Links links) {
             this.links = links;
             return this;
         }

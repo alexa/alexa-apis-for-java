@@ -20,19 +20,17 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Specifies if gadget support is required/optional for this skill to work.
+ * Type of the supported functionality.
  */
-public enum GadgetSupport {
+public enum SupportedControlsType {
   
-  REQUIRED("REQUIRED"),
-  
-  OPTIONAL("OPTIONAL"),
+  REMOTE_VEHICLE_CONTROL("REMOTE_VEHICLE_CONTROL"),
   
   UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
-  GadgetSupport(String value) {
+  SupportedControlsType(String value) {
     this.value = value;
   }
 
@@ -47,13 +45,13 @@ public enum GadgetSupport {
   }
 
   @JsonCreator
-  public static GadgetSupport fromValue(String text) {
-    for (GadgetSupport b : GadgetSupport.values()) {
+  public static SupportedControlsType fromValue(String text) {
+    for (SupportedControlsType b : SupportedControlsType.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }
     }
-    return GadgetSupport.UNKNOWN_TO_SDK_VERSION;
+    return SupportedControlsType.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

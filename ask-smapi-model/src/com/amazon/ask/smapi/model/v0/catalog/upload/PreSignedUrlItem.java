@@ -56,6 +56,8 @@ public final class PreSignedUrlItem {
 
     /**
      * Get partNumber
+     * minimum: 1
+     * maximum: 1000
      * @return partNumber
     **/
     @JsonProperty("partNumber")

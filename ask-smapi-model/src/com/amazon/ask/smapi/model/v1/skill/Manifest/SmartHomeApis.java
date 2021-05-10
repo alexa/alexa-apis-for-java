@@ -22,7 +22,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Defines the structure for smart home api of the skill.
+ * Defines the structure of smart home api of the skill.
  */
 
 @JsonDeserialize(builder = SmartHomeApis.Builder.class)
@@ -37,6 +37,9 @@ public final class SmartHomeApis {
     @JsonProperty("protocolVersion")
     private String protocolVersion = null;
 
+    @JsonProperty("supportedControls")
+    private com.amazon.ask.smapi.model.v1.skill.Manifest.SupportedControls supportedControls = null;
+
     public static Builder builder() {
         return new Builder();
     }
@@ -50,6 +53,9 @@ public final class SmartHomeApis {
         }
         if (builder.protocolVersion != null) {
             this.protocolVersion = builder.protocolVersion;
+        }
+        if (builder.supportedControls != null) {
+            this.supportedControls = builder.supportedControls;
         }
     }
 
@@ -100,6 +106,16 @@ public final class SmartHomeApis {
       return protocolVersion;
     }
 
+    /**
+     * Get supportedControls
+     * @return supportedControls
+    **/
+    @JsonProperty("supportedControls")
+    public com.amazon.ask.smapi.model.v1.skill.Manifest.SupportedControls getSupportedControls() {
+        return supportedControls;
+    }
+
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -111,12 +127,13 @@ public final class SmartHomeApis {
         SmartHomeApis v1SkillManifestSmartHomeApis = (SmartHomeApis) o;
         return Objects.equals(this.regions, v1SkillManifestSmartHomeApis.regions) &&
             Objects.equals(this.endpoint, v1SkillManifestSmartHomeApis.endpoint) &&
-            Objects.equals(this.protocolVersion, v1SkillManifestSmartHomeApis.protocolVersion);
+            Objects.equals(this.protocolVersion, v1SkillManifestSmartHomeApis.protocolVersion) &&
+            Objects.equals(this.supportedControls, v1SkillManifestSmartHomeApis.supportedControls);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(regions, endpoint, protocolVersion);
+        return Objects.hash(regions, endpoint, protocolVersion, supportedControls);
     }
 
     @Override
@@ -127,6 +144,7 @@ public final class SmartHomeApis {
         sb.append("    regions: ").append(toIndentedString(regions)).append("\n");
         sb.append("    endpoint: ").append(toIndentedString(endpoint)).append("\n");
         sb.append("    protocolVersion: ").append(toIndentedString(protocolVersion)).append("\n");
+        sb.append("    supportedControls: ").append(toIndentedString(supportedControls)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -146,6 +164,7 @@ public final class SmartHomeApis {
         private Map<String, com.amazon.ask.smapi.model.v1.skill.Manifest.LambdaRegion> regions;
         private com.amazon.ask.smapi.model.v1.skill.Manifest.LambdaEndpoint endpoint;
         private String protocolVersion;
+        private com.amazon.ask.smapi.model.v1.skill.Manifest.SupportedControls supportedControls;
 
         private Builder() {}
 
@@ -180,6 +199,14 @@ public final class SmartHomeApis {
 
         public Builder withProtocolVersion(com.amazon.ask.smapi.model.v1.skill.Manifest.SmartHomeProtocol protocolVersion) {
             this.protocolVersion = protocolVersion != null ? protocolVersion.toString() : null;
+            return this;
+        }
+
+
+        @JsonProperty("supportedControls")
+
+        public Builder withSupportedControls(com.amazon.ask.smapi.model.v1.skill.Manifest.SupportedControls supportedControls) {
+            this.supportedControls = supportedControls;
             return this;
         }
 

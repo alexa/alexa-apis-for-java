@@ -20,21 +20,17 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Name of the request.
+ * Version of the skill manifest.
  */
-public enum RequestName {
+public enum ManifestVersion {
   
-  SEARCH("Search"),
-  
-  CREATE("Create"),
-  
-  UPDATE("Update"),
+  _1_0("1.0"),
   
   UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
-  RequestName(String value) {
+  ManifestVersion(String value) {
     this.value = value;
   }
 
@@ -49,13 +45,13 @@ public enum RequestName {
   }
 
   @JsonCreator
-  public static RequestName fromValue(String text) {
-    for (RequestName b : RequestName.values()) {
+  public static ManifestVersion fromValue(String text) {
+    for (ManifestVersion b : ManifestVersion.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }
     }
-    return RequestName.UNKNOWN_TO_SDK_VERSION;
+    return ManifestVersion.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

@@ -28,6 +28,9 @@ public final class AlexaHostedConfig {
     @JsonProperty("runtime")
     private String runtime = null;
 
+    @JsonProperty("region")
+    private String region = null;
+
     public static Builder builder() {
         return new Builder();
     }
@@ -35,6 +38,9 @@ public final class AlexaHostedConfig {
     private AlexaHostedConfig(Builder builder) {
         if (builder.runtime != null) {
             this.runtime = builder.runtime;
+        }
+        if (builder.region != null) {
+            this.region = builder.region;
         }
     }
 
@@ -65,6 +71,33 @@ public final class AlexaHostedConfig {
       return runtime;
     }
 
+    /**
+     * Get region
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getRegionAsString().
+     *
+     * @return region
+    **/
+    
+    public com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillRegion getRegion() {
+        return com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillRegion.fromValue(region);
+    }
+
+    /**
+     * Get the underlying String value for region.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return region as a String value
+    **/
+    @JsonProperty("region")
+    public String getRegionAsString() {
+      return region;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -74,12 +107,13 @@ public final class AlexaHostedConfig {
             return false;
         }
         AlexaHostedConfig v1SkillAlexaHostedAlexaHostedConfig = (AlexaHostedConfig) o;
-        return Objects.equals(this.runtime, v1SkillAlexaHostedAlexaHostedConfig.runtime);
+        return Objects.equals(this.runtime, v1SkillAlexaHostedAlexaHostedConfig.runtime) &&
+            Objects.equals(this.region, v1SkillAlexaHostedAlexaHostedConfig.region);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(runtime);
+        return Objects.hash(runtime, region);
     }
 
     @Override
@@ -88,6 +122,7 @@ public final class AlexaHostedConfig {
         sb.append("class AlexaHostedConfig {\n");
         
         sb.append("    runtime: ").append(toIndentedString(runtime)).append("\n");
+        sb.append("    region: ").append(toIndentedString(region)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -105,6 +140,7 @@ public final class AlexaHostedConfig {
   
     public static class Builder {
         private String runtime;
+        private String region;
 
         private Builder() {}
 
@@ -116,6 +152,18 @@ public final class AlexaHostedConfig {
 
         public Builder withRuntime(com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillRuntime runtime) {
             this.runtime = runtime != null ? runtime.toString() : null;
+            return this;
+        }
+
+
+        @JsonProperty("region")
+        public Builder withRegion(String region) {
+          this.region = region;
+          return this;
+        }
+
+        public Builder withRegion(com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillRegion region) {
+            this.region = region != null ? region.toString() : null;
             return this;
         }
 

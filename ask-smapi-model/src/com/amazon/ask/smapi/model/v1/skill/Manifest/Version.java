@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonValue;
  */
 public enum Version {
   
-  _1("1"),
+  _1_0("1.0"),
   
   UNKNOWN_TO_SDK_VERSION(null);
 

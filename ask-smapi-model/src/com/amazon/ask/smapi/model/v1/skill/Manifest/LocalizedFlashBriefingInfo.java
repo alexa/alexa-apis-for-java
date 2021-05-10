@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;
 
 /**
- * Defines the localized flash briefing api information.
+ * Defines the structure of a localized flash briefing information.
  */
 
 @JsonDeserialize(builder = LocalizedFlashBriefingInfo.Builder.class)
