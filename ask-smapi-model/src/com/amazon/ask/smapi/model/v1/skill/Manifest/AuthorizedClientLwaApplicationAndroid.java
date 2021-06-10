@@ -28,6 +28,12 @@ public final class AuthorizedClientLwaApplicationAndroid {
     @JsonProperty("type")
     private String type = null;
 
+    @JsonProperty("appStoreAppId")
+    private String appStoreAppId = null;
+
+    @JsonProperty("clientId")
+    private String clientId = null;
+
     public static Builder builder() {
         return new Builder();
     }
@@ -35,6 +41,12 @@ public final class AuthorizedClientLwaApplicationAndroid {
     private AuthorizedClientLwaApplicationAndroid(Builder builder) {
         if (builder.type != null) {
             this.type = builder.type;
+        }
+        if (builder.appStoreAppId != null) {
+            this.appStoreAppId = builder.appStoreAppId;
+        }
+        if (builder.clientId != null) {
+            this.clientId = builder.clientId;
         }
     }
 
@@ -48,6 +60,26 @@ public final class AuthorizedClientLwaApplicationAndroid {
     }
 
 
+    /**
+     * Get appStoreAppId
+     * @return appStoreAppId
+    **/
+    @JsonProperty("appStoreAppId")
+    public String getAppStoreAppId() {
+        return appStoreAppId;
+    }
+
+
+    /**
+     * Get clientId
+     * @return clientId
+    **/
+    @JsonProperty("clientId")
+    public String getClientId() {
+        return clientId;
+    }
+
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -57,12 +89,14 @@ public final class AuthorizedClientLwaApplicationAndroid {
             return false;
         }
         AuthorizedClientLwaApplicationAndroid v1SkillManifestAuthorizedClientLwaApplicationAndroid = (AuthorizedClientLwaApplicationAndroid) o;
-        return Objects.equals(this.type, v1SkillManifestAuthorizedClientLwaApplicationAndroid.type);
+        return Objects.equals(this.type, v1SkillManifestAuthorizedClientLwaApplicationAndroid.type) &&
+            Objects.equals(this.appStoreAppId, v1SkillManifestAuthorizedClientLwaApplicationAndroid.appStoreAppId) &&
+            Objects.equals(this.clientId, v1SkillManifestAuthorizedClientLwaApplicationAndroid.clientId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type);
+        return Objects.hash(type, appStoreAppId, clientId);
     }
 
     @Override
@@ -71,6 +105,8 @@ public final class AuthorizedClientLwaApplicationAndroid {
         sb.append("class AuthorizedClientLwaApplicationAndroid {\n");
         
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
+        sb.append("    appStoreAppId: ").append(toIndentedString(appStoreAppId)).append("\n");
+        sb.append("    clientId: ").append(toIndentedString(clientId)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -88,6 +124,8 @@ public final class AuthorizedClientLwaApplicationAndroid {
   
     public static class Builder {
         private String type;
+        private String appStoreAppId;
+        private String clientId;
 
         private Builder() {}
 
@@ -95,6 +133,22 @@ public final class AuthorizedClientLwaApplicationAndroid {
 
         public Builder withType(String type) {
             this.type = type;
+            return this;
+        }
+
+
+        @JsonProperty("appStoreAppId")
+
+        public Builder withAppStoreAppId(String appStoreAppId) {
+            this.appStoreAppId = appStoreAppId;
+            return this;
+        }
+
+
+        @JsonProperty("clientId")
+
+        public Builder withClientId(String clientId) {
+            this.clientId = clientId;
             return this;
         }
 

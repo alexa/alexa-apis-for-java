@@ -27,7 +27,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "name", visible = true )
 @JsonSubTypes({
   @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.Manifest.VoiceProfileFeature.class, name = "VIDEO_VOICE_PROFILE"),
-  @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.Manifest.VideoWebPlayerFeature.class, name = "VIDEO_WEB_PLAYER"),
 })
 public abstract class VideoFeature {
 

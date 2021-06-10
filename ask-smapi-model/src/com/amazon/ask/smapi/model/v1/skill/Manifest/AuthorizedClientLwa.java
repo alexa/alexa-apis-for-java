@@ -15,8 +15,11 @@
 package com.amazon.ask.smapi.model.v1.skill.Manifest;
 
 import java.util.Objects;
+import java.util.ArrayList;
+import java.util.List;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.ArrayList;
 
 /**
  * Defines client using Login With Amazon authentication provider, corresponds to LWA Security Profile.
@@ -28,6 +31,9 @@ public final class AuthorizedClientLwa {
     @JsonProperty("authenticationProvider")
     private String authenticationProvider = null;
 
+    @JsonProperty("applications")
+    private List<com.amazon.ask.smapi.model.v1.skill.Manifest.AuthorizedClientLwaApplication> applications = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.AuthorizedClientLwaApplication>();
+
     public static Builder builder() {
         return new Builder();
     }
@@ -35,6 +41,9 @@ public final class AuthorizedClientLwa {
     private AuthorizedClientLwa(Builder builder) {
         if (builder.authenticationProvider != null) {
             this.authenticationProvider = builder.authenticationProvider;
+        }
+        if (builder.applications != null) {
+            this.applications = builder.applications;
         }
     }
 
@@ -48,6 +57,16 @@ public final class AuthorizedClientLwa {
     }
 
 
+    /**
+     * Get applications
+     * @return applications
+    **/
+    @JsonProperty("applications")
+    public List<com.amazon.ask.smapi.model.v1.skill.Manifest.AuthorizedClientLwaApplication> getApplications() {
+        return applications;
+    }
+
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -57,12 +76,13 @@ public final class AuthorizedClientLwa {
             return false;
         }
         AuthorizedClientLwa v1SkillManifestAuthorizedClientLwa = (AuthorizedClientLwa) o;
-        return Objects.equals(this.authenticationProvider, v1SkillManifestAuthorizedClientLwa.authenticationProvider);
+        return Objects.equals(this.authenticationProvider, v1SkillManifestAuthorizedClientLwa.authenticationProvider) &&
+            Objects.equals(this.applications, v1SkillManifestAuthorizedClientLwa.applications);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(authenticationProvider);
+        return Objects.hash(authenticationProvider, applications);
     }
 
     @Override
@@ -71,6 +91,7 @@ public final class AuthorizedClientLwa {
         sb.append("class AuthorizedClientLwa {\n");
         
         sb.append("    authenticationProvider: ").append(toIndentedString(authenticationProvider)).append("\n");
+        sb.append("    applications: ").append(toIndentedString(applications)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -88,6 +109,7 @@ public final class AuthorizedClientLwa {
   
     public static class Builder {
         private String authenticationProvider;
+        private List<com.amazon.ask.smapi.model.v1.skill.Manifest.AuthorizedClientLwaApplication> applications;
 
         private Builder() {}
 
@@ -98,6 +120,21 @@ public final class AuthorizedClientLwa {
             return this;
         }
 
+
+        @JsonProperty("applications")
+
+        public Builder withApplications(List<com.amazon.ask.smapi.model.v1.skill.Manifest.AuthorizedClientLwaApplication> applications) {
+            this.applications = applications;
+            return this;
+        }
+
+        public Builder addApplicationsItem(com.amazon.ask.smapi.model.v1.skill.Manifest.AuthorizedClientLwaApplication applicationsItem) {
+            if (this.applications == null) {
+                this.applications = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.AuthorizedClientLwaApplication>();
+            }
+            this.applications.add(applicationsItem);
+            return this;
+        }
 
         public AuthorizedClientLwa build() {
             return new AuthorizedClientLwa(this);

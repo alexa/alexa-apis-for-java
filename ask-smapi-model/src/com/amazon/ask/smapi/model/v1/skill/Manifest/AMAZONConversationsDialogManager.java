@@ -19,7 +19,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * The type of dialog manager:  * AMAZON.Conversations - The Alexa Conversations (Coltrane) model for this skill. See https://w.amazon.com/bin/view/Digital/Alexa/ConversationalAI/Coltrane
+ * The type of dialog manager:  * AMAZON.Conversations - The Alexa Conversations (Coltrane) model for this skill.
  */
 
 @JsonDeserialize(builder = AMAZONConversationsDialogManager.Builder.class)

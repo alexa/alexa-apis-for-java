@@ -90,6 +90,8 @@ public enum PermissionName {
   
   ALEXA_ENERGY_DEVICES_STATE_READ("alexa::energy:devices:state:read"),
   
+  ALEXA_ORIGIN_IP_ADDRESS_READ("alexa::origin_ip_address:read"),
+  
   UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;

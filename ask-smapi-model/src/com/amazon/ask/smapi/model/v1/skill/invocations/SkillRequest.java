@@ -39,7 +39,7 @@ public final class SkillRequest {
     }
 
     /**
-     * ASK request body schema as defined in the public facing documentation (https://tiny.amazon.com/1h8keglep/deveamazpublsolualexalexdocs) 
+     * ASK request body schema as defined in the public facing documentation (https://developer.amazon.com/en-US/docs/alexa/custom-skills/request-and-response-json-reference.html#request-body-syntax) 
      * @return body
     **/
     @JsonProperty("body")

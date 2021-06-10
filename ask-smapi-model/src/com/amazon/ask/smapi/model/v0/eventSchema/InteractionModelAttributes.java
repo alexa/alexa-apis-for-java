@@ -31,6 +31,9 @@ public final class InteractionModelAttributes {
     @JsonProperty("vendorId")
     private String vendorId = null;
 
+    @JsonProperty("locale")
+    private String locale = null;
+
     public static Builder builder() {
         return new Builder();
     }
@@ -41,6 +44,9 @@ public final class InteractionModelAttributes {
         }
         if (builder.vendorId != null) {
             this.vendorId = builder.vendorId;
+        }
+        if (builder.locale != null) {
+            this.locale = builder.locale;
         }
     }
 
@@ -64,6 +70,16 @@ public final class InteractionModelAttributes {
     }
 
 
+    /**
+     * Locale of interaction model. 
+     * @return locale
+    **/
+    @JsonProperty("locale")
+    public String getLocale() {
+        return locale;
+    }
+
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -74,12 +90,13 @@ public final class InteractionModelAttributes {
         }
         InteractionModelAttributes v0EventSchemaInteractionModelAttributes = (InteractionModelAttributes) o;
         return Objects.equals(this.skillId, v0EventSchemaInteractionModelAttributes.skillId) &&
-            Objects.equals(this.vendorId, v0EventSchemaInteractionModelAttributes.vendorId);
+            Objects.equals(this.vendorId, v0EventSchemaInteractionModelAttributes.vendorId) &&
+            Objects.equals(this.locale, v0EventSchemaInteractionModelAttributes.locale);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(skillId, vendorId);
+        return Objects.hash(skillId, vendorId, locale);
     }
 
     @Override
@@ -89,6 +106,7 @@ public final class InteractionModelAttributes {
         
         sb.append("    skillId: ").append(toIndentedString(skillId)).append("\n");
         sb.append("    vendorId: ").append(toIndentedString(vendorId)).append("\n");
+        sb.append("    locale: ").append(toIndentedString(locale)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +125,7 @@ public final class InteractionModelAttributes {
     public static class Builder {
         private String skillId;
         private String vendorId;
+        private String locale;
 
         private Builder() {}
 
@@ -122,6 +141,14 @@ public final class InteractionModelAttributes {
 
         public Builder withVendorId(String vendorId) {
             this.vendorId = vendorId;
+            return this;
+        }
+
+
+        @JsonProperty("locale")
+
+        public Builder withLocale(String locale) {
+            this.locale = locale;
             return this;
         }
 

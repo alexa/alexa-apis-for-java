@@ -60,7 +60,6 @@ public class SubTypesManifest {
 
     Map<String, Class> v1SkillManifestVideoFeatureSubTypes = new HashMap<>();
     v1SkillManifestVideoFeatureSubTypes.put("VIDEO_VOICE_PROFILE", com.amazon.ask.smapi.model.v1.skill.Manifest.VoiceProfileFeature.class);
-    v1SkillManifestVideoFeatureSubTypes.put("VIDEO_WEB_PLAYER", com.amazon.ask.smapi.model.v1.skill.Manifest.VideoWebPlayerFeature.class);
     baseTypes.put(com.amazon.ask.smapi.model.v1.skill.Manifest.VideoFeature.class, v1SkillManifestVideoFeatureSubTypes);
 
     Map<String, Class> v1SkillInteractionModelSlotValidationSubTypes = new HashMap<>();

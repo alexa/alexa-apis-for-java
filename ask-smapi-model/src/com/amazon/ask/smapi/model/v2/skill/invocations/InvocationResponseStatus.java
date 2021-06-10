@@ -20,11 +20,11 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * String that specifies the status of skill invocation. Possible values are \"SUCCEEDED\", and \"FAILED\". 
+ * String that specifies the status of skill invocation. Possible values are \"SUCCESSFUL\", and \"FAILED\". 
  */
 public enum InvocationResponseStatus {
   
-  SUCCEEDED("SUCCEEDED"),
+  SUCCESSFUL("SUCCESSFUL"),
   
   FAILED("FAILED"),
   
