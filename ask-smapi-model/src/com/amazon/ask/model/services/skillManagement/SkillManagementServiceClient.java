@@ -43,13 +43,13 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
                                     .withSerializer(apiConfiguration.getSerializer())
                                     .build())
           .build();
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.10.2").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.11.0").build();
   }
 
   public SkillManagementServiceClient(ApiConfiguration apiConfiguration, LwaClient lwaClient) {
       super(apiConfiguration);
       this.lwaClient = lwaClient;
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.10.2").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.11.0").build();
   }
 
   /**
@@ -8302,7 +8302,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
 
   /**
    * Simulate executing a skill with the given id against a given stage.
-   * This is an asynchronous API that simulates a skill execution in the Alexa eco-system given an utterance text of what a customer would say to Alexa. A successful response will contain a header with the location of the simulation resource. In cases where requests to this API results in an error, the response will contain an error code and a description of the problem. The skill being simulated must belong to and be enabled  by the user of this API. Concurrent requests per user is currently not supported. 
+   * This is an asynchronous API that simulates a skill execution in the Alexa eco-system given an utterance text of what a customer would say to Alexa. A successful response will contain a header with the location of the simulation resource. In cases where requests to this API results in an error, the response will contain an error code and a description of the problem. The skill being simulated must belong to and be enabled by the user of this API. Concurrent requests per user is currently not supported. 
    * @param skillId The skill ID. (required)
    * @param stage Stage for skill. (required)
    * @param simulationsApiRequest Payload sent to the skill simulation API. (required)
@@ -8341,7 +8341,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
 
   /**
    * Simulate executing a skill with the given id against a given stage.
-   * This is an asynchronous API that simulates a skill execution in the Alexa eco-system given an utterance text of what a customer would say to Alexa. A successful response will contain a header with the location of the simulation resource. In cases where requests to this API results in an error, the response will contain an error code and a description of the problem. The skill being simulated must belong to and be enabled  by the user of this API. Concurrent requests per user is currently not supported. 
+   * This is an asynchronous API that simulates a skill execution in the Alexa eco-system given an utterance text of what a customer would say to Alexa. A successful response will contain a header with the location of the simulation resource. In cases where requests to this API results in an error, the response will contain an error code and a description of the problem. The skill being simulated must belong to and be enabled by the user of this API. Concurrent requests per user is currently not supported. 
    * @param skillId The skill ID. (required)
    * @param stage Stage for skill. (required)
    * @param simulationsApiRequest Payload sent to the skill simulation API. (required)

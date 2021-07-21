@@ -34,6 +34,9 @@ public final class SimulationsApiRequest {
     @JsonProperty("session")
     private com.amazon.ask.smapi.model.v2.skill.simulations.Session session = null;
 
+    @JsonProperty("simulation")
+    private com.amazon.ask.smapi.model.v2.skill.simulations.Simulation simulation = null;
+
     public static Builder builder() {
         return new Builder();
     }
@@ -47,6 +50,9 @@ public final class SimulationsApiRequest {
         }
         if (builder.session != null) {
             this.session = builder.session;
+        }
+        if (builder.simulation != null) {
+            this.simulation = builder.simulation;
         }
     }
 
@@ -80,6 +86,16 @@ public final class SimulationsApiRequest {
     }
 
 
+    /**
+     * Get simulation
+     * @return simulation
+    **/
+    @JsonProperty("simulation")
+    public com.amazon.ask.smapi.model.v2.skill.simulations.Simulation getSimulation() {
+        return simulation;
+    }
+
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -91,12 +107,13 @@ public final class SimulationsApiRequest {
         SimulationsApiRequest v2SkillSimulationsSimulationsApiRequest = (SimulationsApiRequest) o;
         return Objects.equals(this.input, v2SkillSimulationsSimulationsApiRequest.input) &&
             Objects.equals(this.device, v2SkillSimulationsSimulationsApiRequest.device) &&
-            Objects.equals(this.session, v2SkillSimulationsSimulationsApiRequest.session);
+            Objects.equals(this.session, v2SkillSimulationsSimulationsApiRequest.session) &&
+            Objects.equals(this.simulation, v2SkillSimulationsSimulationsApiRequest.simulation);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(input, device, session);
+        return Objects.hash(input, device, session, simulation);
     }
 
     @Override
@@ -107,6 +124,7 @@ public final class SimulationsApiRequest {
         sb.append("    input: ").append(toIndentedString(input)).append("\n");
         sb.append("    device: ").append(toIndentedString(device)).append("\n");
         sb.append("    session: ").append(toIndentedString(session)).append("\n");
+        sb.append("    simulation: ").append(toIndentedString(simulation)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -126,6 +144,7 @@ public final class SimulationsApiRequest {
         private com.amazon.ask.smapi.model.v2.skill.simulations.Input input;
         private com.amazon.ask.smapi.model.v2.skill.simulations.Device device;
         private com.amazon.ask.smapi.model.v2.skill.simulations.Session session;
+        private com.amazon.ask.smapi.model.v2.skill.simulations.Simulation simulation;
 
         private Builder() {}
 
@@ -149,6 +168,14 @@ public final class SimulationsApiRequest {
 
         public Builder withSession(com.amazon.ask.smapi.model.v2.skill.simulations.Session session) {
             this.session = session;
+            return this;
+        }
+
+
+        @JsonProperty("simulation")
+
+        public Builder withSimulation(com.amazon.ask.smapi.model.v2.skill.simulations.Simulation simulation) {
+            this.simulation = simulation;
             return this;
         }
 

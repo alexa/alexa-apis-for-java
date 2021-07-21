@@ -60,6 +60,9 @@ public final class SkillManifestPublishingInformation {
     @JsonProperty("automaticDistribution")
     private com.amazon.ask.smapi.model.v1.skill.Manifest.AutomaticDistribution automaticDistribution = null;
 
+    @JsonProperty("automaticClonedLocale")
+    private com.amazon.ask.smapi.model.v1.skill.Manifest.AutomaticClonedLocale automaticClonedLocale = null;
+
     public static Builder builder() {
         return new Builder();
     }
@@ -94,6 +97,9 @@ public final class SkillManifestPublishingInformation {
         }
         if (builder.automaticDistribution != null) {
             this.automaticDistribution = builder.automaticDistribution;
+        }
+        if (builder.automaticClonedLocale != null) {
+            this.automaticClonedLocale = builder.automaticClonedLocale;
         }
     }
 
@@ -214,6 +220,16 @@ public final class SkillManifestPublishingInformation {
     }
 
 
+    /**
+     * Get automaticClonedLocale
+     * @return automaticClonedLocale
+    **/
+    @JsonProperty("automaticClonedLocale")
+    public com.amazon.ask.smapi.model.v1.skill.Manifest.AutomaticClonedLocale getAutomaticClonedLocale() {
+        return automaticClonedLocale;
+    }
+
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -232,12 +248,13 @@ public final class SkillManifestPublishingInformation {
             Objects.equals(this.testingInstructions, v1SkillManifestSkillManifestPublishingInformation.testingInstructions) &&
             Objects.equals(this.category, v1SkillManifestSkillManifestPublishingInformation.category) &&
             Objects.equals(this.distributionCountries, v1SkillManifestSkillManifestPublishingInformation.distributionCountries) &&
-            Objects.equals(this.automaticDistribution, v1SkillManifestSkillManifestPublishingInformation.automaticDistribution);
+            Objects.equals(this.automaticDistribution, v1SkillManifestSkillManifestPublishingInformation.automaticDistribution) &&
+            Objects.equals(this.automaticClonedLocale, v1SkillManifestSkillManifestPublishingInformation.automaticClonedLocale);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, locales, isAvailableWorldwide, distributionMode, gadgetSupport, testingInstructions, category, distributionCountries, automaticDistribution);
+        return Objects.hash(name, description, locales, isAvailableWorldwide, distributionMode, gadgetSupport, testingInstructions, category, distributionCountries, automaticDistribution, automaticClonedLocale);
     }
 
     @Override
@@ -255,6 +272,7 @@ public final class SkillManifestPublishingInformation {
         sb.append("    category: ").append(toIndentedString(category)).append("\n");
         sb.append("    distributionCountries: ").append(toIndentedString(distributionCountries)).append("\n");
         sb.append("    automaticDistribution: ").append(toIndentedString(automaticDistribution)).append("\n");
+        sb.append("    automaticClonedLocale: ").append(toIndentedString(automaticClonedLocale)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -281,6 +299,7 @@ public final class SkillManifestPublishingInformation {
         private String category;
         private List<com.amazon.ask.smapi.model.v1.skill.Manifest.DistributionCountries> distributionCountries;
         private com.amazon.ask.smapi.model.v1.skill.Manifest.AutomaticDistribution automaticDistribution;
+        private com.amazon.ask.smapi.model.v1.skill.Manifest.AutomaticClonedLocale automaticClonedLocale;
 
         private Builder() {}
 
@@ -378,6 +397,14 @@ public final class SkillManifestPublishingInformation {
 
         public Builder withAutomaticDistribution(com.amazon.ask.smapi.model.v1.skill.Manifest.AutomaticDistribution automaticDistribution) {
             this.automaticDistribution = automaticDistribution;
+            return this;
+        }
+
+
+        @JsonProperty("automaticClonedLocale")
+
+        public Builder withAutomaticClonedLocale(com.amazon.ask.smapi.model.v1.skill.Manifest.AutomaticClonedLocale automaticClonedLocale) {
+            this.automaticClonedLocale = automaticClonedLocale;
             return this;
         }
 
