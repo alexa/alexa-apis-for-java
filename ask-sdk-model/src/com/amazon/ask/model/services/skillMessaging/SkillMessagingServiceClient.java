@@ -41,13 +41,13 @@ public class SkillMessagingServiceClient extends BaseServiceClient implements Sk
                                     .withSerializer(apiConfiguration.getSerializer())
                                     .build())
           .build();
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.35.1").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.36.0").build();
   }
 
   public SkillMessagingServiceClient(ApiConfiguration apiConfiguration, LwaClient lwaClient) {
       super(apiConfiguration);
       this.lwaClient = lwaClient;
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.35.1").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.36.0").build();
   }
 
   /**
@@ -67,7 +67,7 @@ public class SkillMessagingServiceClient extends BaseServiceClient implements Sk
     String accessToken = lwaClient.getAccessTokenForScope("alexa:skill_messaging");
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/skillmessages/users/{userId}";
+    String resourcePath = "/v1/skillmessages/users/{userId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 202, "Message has been successfully accepted, and will be sent to the skill "));
@@ -80,7 +80,7 @@ public class SkillMessagingServiceClient extends BaseServiceClient implements Sk
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, sendSkillMessagingRequest, null, false);
   }
 

@@ -31,7 +31,7 @@ public class DirectiveServiceClient extends BaseServiceClient implements Directi
   private final UserAgentHelper userAgentHelper;
   public DirectiveServiceClient(ApiConfiguration apiConfiguration) {
       super(apiConfiguration);
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.35.1").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.36.0").build();
   }
 
   /**
@@ -49,7 +49,7 @@ public class DirectiveServiceClient extends BaseServiceClient implements Directi
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v1/directives";
+    String resourcePath = "/v1/directives";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "Directive sent successfully."));
@@ -60,7 +60,7 @@ public class DirectiveServiceClient extends BaseServiceClient implements Directi
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, sendDirectiveRequest, null, false);
   }
 

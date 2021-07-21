@@ -33,7 +33,7 @@ public class MonetizationServiceClient extends BaseServiceClient implements Mone
   private final UserAgentHelper userAgentHelper;
   public MonetizationServiceClient(ApiConfiguration apiConfiguration) {
       super(apiConfiguration);
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.35.1").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.36.0").build();
   }
 
   /**
@@ -81,7 +81,7 @@ public class MonetizationServiceClient extends BaseServiceClient implements Mone
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v1/users/~current/skills/~current/inSkillProducts";
+    String resourcePath = "/v1/users/~current/skills/~current/inSkillProducts";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.monetization.InSkillProductsResponse.class, 200, "Returns a list of In-Skill products on success."));
@@ -91,7 +91,7 @@ public class MonetizationServiceClient extends BaseServiceClient implements Mone
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.model.services.monetization.InSkillProductsResponse.class, false);
   }
 
@@ -133,7 +133,7 @@ public class MonetizationServiceClient extends BaseServiceClient implements Mone
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v1/users/~current/skills/~current/inSkillProducts/{productId}";
+    String resourcePath = "/v1/users/~current/skills/~current/inSkillProducts/{productId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.monetization.InSkillProduct.class, 200, "Returns an In-Skill Product on success."));
@@ -144,7 +144,7 @@ public class MonetizationServiceClient extends BaseServiceClient implements Mone
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.model.services.monetization.InSkillProduct.class, false);
   }
 
@@ -210,7 +210,7 @@ public class MonetizationServiceClient extends BaseServiceClient implements Mone
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v1/users/~current/skills/~current/inSkillProductsTransactions";
+    String resourcePath = "/v1/users/~current/skills/~current/inSkillProductsTransactions";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.monetization.InSkillProductTransactionsResponse.class, 200, "Returns a list of transactions of all in skill products purchases in last 30 days on success."));
@@ -224,7 +224,7 @@ public class MonetizationServiceClient extends BaseServiceClient implements Mone
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.model.services.monetization.InSkillProductTransactionsResponse.class, false);
   }
 
@@ -260,7 +260,7 @@ public class MonetizationServiceClient extends BaseServiceClient implements Mone
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v1/users/~current/skills/~current/settings/voicePurchasing.enabled";
+    String resourcePath = "/v1/users/~current/skills/~current/settings/voicePurchasing.enabled";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(Boolean.class, 200, "Returns a boolean value for voice purchase setting on success."));
@@ -270,7 +270,7 @@ public class MonetizationServiceClient extends BaseServiceClient implements Mone
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, Boolean.class, false);
   }
 

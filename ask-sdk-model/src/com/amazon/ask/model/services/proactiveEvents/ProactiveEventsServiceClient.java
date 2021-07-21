@@ -41,13 +41,13 @@ public class ProactiveEventsServiceClient extends BaseServiceClient implements P
                                     .withSerializer(apiConfiguration.getSerializer())
                                     .build())
           .build();
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.35.1").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.36.0").build();
   }
 
   public ProactiveEventsServiceClient(ApiConfiguration apiConfiguration, LwaClient lwaClient) {
       super(apiConfiguration);
       this.lwaClient = lwaClient;
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.35.1").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.36.0").build();
   }
 
   /**
@@ -65,9 +65,9 @@ public class ProactiveEventsServiceClient extends BaseServiceClient implements P
     String accessToken = lwaClient.getAccessTokenForScope("alexa::proactive_events");
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
 
-    String path = "/v1/proactiveEvents";
+    String resourcePath = "/v1/proactiveEvents";
     if (stage == com.amazon.ask.model.services.proactiveEvents.SkillStage.DEVELOPMENT) {
-      path += "/stages/development";
+      resourcePath += "/stages/development";
     }
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
@@ -81,7 +81,7 @@ public class ProactiveEventsServiceClient extends BaseServiceClient implements P
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, createProactiveEventRequest, null, false);
   }
 

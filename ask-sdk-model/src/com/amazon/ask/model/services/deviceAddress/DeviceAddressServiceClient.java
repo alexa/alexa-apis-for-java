@@ -31,7 +31,7 @@ public class DeviceAddressServiceClient extends BaseServiceClient implements Dev
   private final UserAgentHelper userAgentHelper;
   public DeviceAddressServiceClient(ApiConfiguration apiConfiguration) {
       super(apiConfiguration);
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.35.1").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.36.0").build();
   }
 
   /**
@@ -51,7 +51,7 @@ public class DeviceAddressServiceClient extends BaseServiceClient implements Dev
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v1/devices/{deviceId}/settings/address/countryAndPostalCode";
+    String resourcePath = "/v1/devices/{deviceId}/settings/address/countryAndPostalCode";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.deviceAddress.ShortAddress.class, 200, "Successfully get the country and postal code of the deviceId"));
@@ -63,7 +63,7 @@ public class DeviceAddressServiceClient extends BaseServiceClient implements Dev
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.model.services.deviceAddress.ShortAddress.class, false);
   }
 
@@ -95,7 +95,7 @@ public class DeviceAddressServiceClient extends BaseServiceClient implements Dev
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v1/devices/{deviceId}/settings/address";
+    String resourcePath = "/v1/devices/{deviceId}/settings/address";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.deviceAddress.Address.class, 200, "Successfully get the address of the device"));
@@ -107,7 +107,7 @@ public class DeviceAddressServiceClient extends BaseServiceClient implements Dev
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.model.services.deviceAddress.Address.class, false);
   }
 

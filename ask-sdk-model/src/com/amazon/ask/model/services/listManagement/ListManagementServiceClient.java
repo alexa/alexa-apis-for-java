@@ -31,7 +31,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
   private final UserAgentHelper userAgentHelper;
   public ListManagementServiceClient(ApiConfiguration apiConfiguration) {
       super(apiConfiguration);
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.35.1").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.36.0").build();
   }
 
   /**
@@ -49,7 +49,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v2/householdlists";
+    String resourcePath = "/v2/householdlists";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.AlexaListsMetadata.class, 200, "Success"));
@@ -58,7 +58,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", "https://api.amazonalexa.com/", path, queryParams, headerParams,
+    return this.executeRequest("GET", "https://api.amazonalexa.com/", resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.model.services.listManagement.AlexaListsMetadata.class, false);
   }
 
@@ -88,7 +88,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v2/householdlists/{listId}";
+    String resourcePath = "/v2/householdlists/{listId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 200, "Success"));
@@ -99,7 +99,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("DELETE", "https://api.amazonalexa.com/", path, queryParams, headerParams,
+    return this.executeRequest("DELETE", "https://api.amazonalexa.com/", resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, null, false);
   }
 
@@ -131,7 +131,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v2/householdlists/{listId}/items/{itemId}";
+    String resourcePath = "/v2/householdlists/{listId}/items/{itemId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 200, "Success"));
@@ -142,7 +142,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("DELETE", "https://api.amazonalexa.com/", path, queryParams, headerParams,
+    return this.executeRequest("DELETE", "https://api.amazonalexa.com/", resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, null, false);
   }
 
@@ -176,7 +176,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v2/householdlists/{listId}/items/{itemId}";
+    String resourcePath = "/v2/householdlists/{listId}/items/{itemId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.AlexaListItem.class, 200, "Success"));
@@ -187,7 +187,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", "https://api.amazonalexa.com/", path, queryParams, headerParams,
+    return this.executeRequest("GET", "https://api.amazonalexa.com/", resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.model.services.listManagement.AlexaListItem.class, false);
   }
 
@@ -223,7 +223,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v2/householdlists/{listId}/items/{itemId}";
+    String resourcePath = "/v2/householdlists/{listId}/items/{itemId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.AlexaListItem.class, 200, "Success"));
@@ -235,7 +235,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("PUT", "https://api.amazonalexa.com/", path, queryParams, headerParams,
+    return this.executeRequest("PUT", "https://api.amazonalexa.com/", resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, updateListItemRequest, com.amazon.ask.model.services.listManagement.AlexaListItem.class, false);
   }
 
@@ -270,7 +270,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v2/householdlists/{listId}/items";
+    String resourcePath = "/v2/householdlists/{listId}/items";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.AlexaListItem.class, 201, "Success"));
@@ -282,7 +282,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", "https://api.amazonalexa.com/", path, queryParams, headerParams,
+    return this.executeRequest("POST", "https://api.amazonalexa.com/", resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, createListItemRequest, com.amazon.ask.model.services.listManagement.AlexaListItem.class, false);
   }
 
@@ -316,7 +316,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v2/householdlists/{listId}";
+    String resourcePath = "/v2/householdlists/{listId}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.AlexaListMetadata.class, 200, "Success"));
@@ -329,7 +329,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("PUT", "https://api.amazonalexa.com/", path, queryParams, headerParams,
+    return this.executeRequest("PUT", "https://api.amazonalexa.com/", resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, updateListRequest, com.amazon.ask.model.services.listManagement.AlexaListMetadata.class, false);
   }
 
@@ -364,7 +364,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v2/householdlists/{listId}/{status}";
+    String resourcePath = "/v2/householdlists/{listId}/{status}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.AlexaList.class, 200, "Success"));
@@ -376,7 +376,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", "https://api.amazonalexa.com/", path, queryParams, headerParams,
+    return this.executeRequest("GET", "https://api.amazonalexa.com/", resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.model.services.listManagement.AlexaList.class, false);
   }
 
@@ -408,7 +408,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v2/householdlists";
+    String resourcePath = "/v2/householdlists";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.listManagement.AlexaListMetadata.class, 201, "Success"));
@@ -420,7 +420,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", "https://api.amazonalexa.com/", path, queryParams, headerParams,
+    return this.executeRequest("POST", "https://api.amazonalexa.com/", resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, createListRequest, com.amazon.ask.model.services.listManagement.AlexaListMetadata.class, false);
   }
 

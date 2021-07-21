@@ -15,8 +15,11 @@
 package com.amazon.ask.model.ui;
 
 import java.util.Objects;
+import java.util.ArrayList;
+import java.util.List;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.ArrayList;
 
 /**
  * Reprompt
@@ -28,6 +31,9 @@ public final class Reprompt {
     @JsonProperty("outputSpeech")
     private com.amazon.ask.model.ui.OutputSpeech outputSpeech = null;
 
+    @JsonProperty("directives")
+    private List<com.amazon.ask.model.Directive> directives = new ArrayList<com.amazon.ask.model.Directive>();
+
     public static Builder builder() {
         return new Builder();
     }
@@ -35,6 +41,9 @@ public final class Reprompt {
     private Reprompt(Builder builder) {
         if (builder.outputSpeech != null) {
             this.outputSpeech = builder.outputSpeech;
+        }
+        if (builder.directives != null) {
+            this.directives = builder.directives;
         }
     }
 
@@ -48,6 +57,16 @@ public final class Reprompt {
     }
 
 
+    /**
+     * Get directives
+     * @return directives
+    **/
+    @JsonProperty("directives")
+    public List<com.amazon.ask.model.Directive> getDirectives() {
+        return directives;
+    }
+
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -57,12 +76,13 @@ public final class Reprompt {
             return false;
         }
         Reprompt uiReprompt = (Reprompt) o;
-        return Objects.equals(this.outputSpeech, uiReprompt.outputSpeech);
+        return Objects.equals(this.outputSpeech, uiReprompt.outputSpeech) &&
+            Objects.equals(this.directives, uiReprompt.directives);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(outputSpeech);
+        return Objects.hash(outputSpeech, directives);
     }
 
     @Override
@@ -71,6 +91,7 @@ public final class Reprompt {
         sb.append("class Reprompt {\n");
         
         sb.append("    outputSpeech: ").append(toIndentedString(outputSpeech)).append("\n");
+        sb.append("    directives: ").append(toIndentedString(directives)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -88,6 +109,7 @@ public final class Reprompt {
   
     public static class Builder {
         private com.amazon.ask.model.ui.OutputSpeech outputSpeech;
+        private List<com.amazon.ask.model.Directive> directives;
 
         private Builder() {}
 
@@ -98,6 +120,21 @@ public final class Reprompt {
             return this;
         }
 
+
+        @JsonProperty("directives")
+
+        public Builder withDirectives(List<com.amazon.ask.model.Directive> directives) {
+            this.directives = directives;
+            return this;
+        }
+
+        public Builder addDirectivesItem(com.amazon.ask.model.Directive directivesItem) {
+            if (this.directives == null) {
+                this.directives = new ArrayList<com.amazon.ask.model.Directive>();
+            }
+            this.directives.add(directivesItem);
+            return this;
+        }
 
         public Reprompt build() {
             return new Reprompt(this);

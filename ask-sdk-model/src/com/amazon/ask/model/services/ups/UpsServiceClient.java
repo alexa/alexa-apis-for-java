@@ -31,7 +31,7 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
   private final UserAgentHelper userAgentHelper;
   public UpsServiceClient(ApiConfiguration apiConfiguration) {
       super(apiConfiguration);
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.35.1").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.36.0").build();
   }
 
   /**
@@ -49,7 +49,7 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v2/accounts/~current/settings/Profile.email";
+    String resourcePath = "/v2/accounts/~current/settings/Profile.email";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(String.class, 200, "Successfully retrieved the requested information."));
@@ -61,7 +61,7 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, String.class, false);
   }
 
@@ -90,7 +90,7 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v2/accounts/~current/settings/Profile.givenName";
+    String resourcePath = "/v2/accounts/~current/settings/Profile.givenName";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(String.class, 200, "Successfully retrieved the requested information."));
@@ -102,7 +102,7 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, String.class, false);
   }
 
@@ -131,7 +131,7 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v2/accounts/~current/settings/Profile.mobileNumber";
+    String resourcePath = "/v2/accounts/~current/settings/Profile.mobileNumber";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.PhoneNumber.class, 200, "Successfully retrieved the requested information."));
@@ -143,7 +143,7 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.model.services.ups.PhoneNumber.class, false);
   }
 
@@ -172,7 +172,7 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v2/accounts/~current/settings/Profile.name";
+    String resourcePath = "/v2/accounts/~current/settings/Profile.name";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(String.class, 200, "Successfully retrieved the requested information."));
@@ -184,7 +184,7 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, String.class, false);
   }
 
@@ -215,7 +215,7 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v2/devices/{deviceId}/settings/System.distanceUnits";
+    String resourcePath = "/v2/devices/{deviceId}/settings/System.distanceUnits";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.DistanceUnits.class, 200, "Successfully get the setting"));
@@ -227,7 +227,7 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.model.services.ups.DistanceUnits.class, false);
   }
 
@@ -259,7 +259,7 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v2/devices/{deviceId}/settings/System.temperatureUnit";
+    String resourcePath = "/v2/devices/{deviceId}/settings/System.temperatureUnit";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.TemperatureUnit.class, 200, "Successfully get the setting"));
@@ -271,7 +271,7 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.model.services.ups.TemperatureUnit.class, false);
   }
 
@@ -303,7 +303,7 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v2/devices/{deviceId}/settings/System.timeZone";
+    String resourcePath = "/v2/devices/{deviceId}/settings/System.timeZone";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(String.class, 200, "Successfully get the setting"));
@@ -315,7 +315,7 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, String.class, false);
   }
 
@@ -345,7 +345,7 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v2/persons/~current/profile/givenName";
+    String resourcePath = "/v2/persons/~current/profile/givenName";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(String.class, 200, "Successfully retrieved the requested information."));
@@ -357,7 +357,7 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, String.class, false);
   }
 
@@ -386,7 +386,7 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v2/persons/~current/profile/mobileNumber";
+    String resourcePath = "/v2/persons/~current/profile/mobileNumber";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.ups.PhoneNumber.class, 200, "Successfully retrieved the requested information."));
@@ -398,7 +398,7 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.model.services.ups.PhoneNumber.class, false);
   }
 
@@ -427,7 +427,7 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v2/persons/~current/profile/name";
+    String resourcePath = "/v2/persons/~current/profile/name";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(String.class, 200, "Successfully retrieved the requested information."));
@@ -439,7 +439,7 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, String.class, false);
   }
 

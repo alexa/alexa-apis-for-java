@@ -31,7 +31,7 @@ public class TimerManagementServiceClient extends BaseServiceClient implements T
   private final UserAgentHelper userAgentHelper;
   public TimerManagementServiceClient(ApiConfiguration apiConfiguration) {
       super(apiConfiguration);
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.35.1").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.36.0").build();
   }
 
   /**
@@ -48,7 +48,7 @@ public class TimerManagementServiceClient extends BaseServiceClient implements T
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v1/alerts/timers";
+    String resourcePath = "/v1/alerts/timers";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 200, "Success"));
@@ -58,7 +58,7 @@ public class TimerManagementServiceClient extends BaseServiceClient implements T
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("DELETE", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("DELETE", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, null, false);
   }
 
@@ -86,7 +86,7 @@ public class TimerManagementServiceClient extends BaseServiceClient implements T
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v1/alerts/timers";
+    String resourcePath = "/v1/alerts/timers";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.timerManagement.TimersResponse.class, 200, "Success"));
@@ -96,7 +96,7 @@ public class TimerManagementServiceClient extends BaseServiceClient implements T
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.model.services.timerManagement.TimersResponse.class, false);
   }
 
@@ -126,7 +126,7 @@ public class TimerManagementServiceClient extends BaseServiceClient implements T
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v1/alerts/timers/{id}";
+    String resourcePath = "/v1/alerts/timers/{id}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 200, "Success"));
@@ -137,7 +137,7 @@ public class TimerManagementServiceClient extends BaseServiceClient implements T
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("DELETE", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("DELETE", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, null, false);
   }
 
@@ -168,7 +168,7 @@ public class TimerManagementServiceClient extends BaseServiceClient implements T
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v1/alerts/timers/{id}";
+    String resourcePath = "/v1/alerts/timers/{id}";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.timerManagement.TimerResponse.class, 200, "Success"));
@@ -179,7 +179,7 @@ public class TimerManagementServiceClient extends BaseServiceClient implements T
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("GET", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, com.amazon.ask.model.services.timerManagement.TimerResponse.class, false);
   }
 
@@ -210,7 +210,7 @@ public class TimerManagementServiceClient extends BaseServiceClient implements T
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v1/alerts/timers/{id}/pause";
+    String resourcePath = "/v1/alerts/timers/{id}/pause";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 200, "Success"));
@@ -222,7 +222,7 @@ public class TimerManagementServiceClient extends BaseServiceClient implements T
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, null, false);
   }
 
@@ -252,7 +252,7 @@ public class TimerManagementServiceClient extends BaseServiceClient implements T
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v1/alerts/timers/{id}/resume";
+    String resourcePath = "/v1/alerts/timers/{id}/resume";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(null, 200, "Success"));
@@ -264,7 +264,7 @@ public class TimerManagementServiceClient extends BaseServiceClient implements T
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, null, null, false);
   }
 
@@ -294,7 +294,7 @@ public class TimerManagementServiceClient extends BaseServiceClient implements T
     String apiAuthorizationValue = "Bearer " +  this.authorizationValue;
     headerParams.add(new Pair<>("Authorization", apiAuthorizationValue));
 
-    String path = "/v1/alerts/timers";
+    String resourcePath = "/v1/alerts/timers";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.timerManagement.TimerResponse.class, 200, "Success"));
@@ -306,7 +306,7 @@ public class TimerManagementServiceClient extends BaseServiceClient implements T
     headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
 
 
-    return this.executeRequest("POST", this.apiEndpoint, path, queryParams, headerParams,
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
       pathParams, serviceResponseDefinitions, timerRequest, com.amazon.ask.model.services.timerManagement.TimerResponse.class, false);
   }
 
