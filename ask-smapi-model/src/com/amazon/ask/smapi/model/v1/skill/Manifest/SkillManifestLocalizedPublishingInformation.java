@@ -52,6 +52,9 @@ public final class SkillManifestLocalizedPublishingInformation {
     @JsonProperty("keywords")
     private List<String> keywords = new ArrayList<String>();
 
+    @JsonProperty("customProductPrompts")
+    private com.amazon.ask.smapi.model.v1.skill.Manifest.CustomProductPrompts customProductPrompts = null;
+
     public static Builder builder() {
         return new Builder();
     }
@@ -80,6 +83,9 @@ public final class SkillManifestLocalizedPublishingInformation {
         }
         if (builder.keywords != null) {
             this.keywords = builder.keywords;
+        }
+        if (builder.customProductPrompts != null) {
+            this.customProductPrompts = builder.customProductPrompts;
         }
     }
 
@@ -163,6 +169,16 @@ public final class SkillManifestLocalizedPublishingInformation {
     }
 
 
+    /**
+     * Get customProductPrompts
+     * @return customProductPrompts
+    **/
+    @JsonProperty("customProductPrompts")
+    public com.amazon.ask.smapi.model.v1.skill.Manifest.CustomProductPrompts getCustomProductPrompts() {
+        return customProductPrompts;
+    }
+
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -179,12 +195,13 @@ public final class SkillManifestLocalizedPublishingInformation {
             Objects.equals(this.description, v1SkillManifestSkillManifestLocalizedPublishingInformation.description) &&
             Objects.equals(this.updatesDescription, v1SkillManifestSkillManifestLocalizedPublishingInformation.updatesDescription) &&
             Objects.equals(this.examplePhrases, v1SkillManifestSkillManifestLocalizedPublishingInformation.examplePhrases) &&
-            Objects.equals(this.keywords, v1SkillManifestSkillManifestLocalizedPublishingInformation.keywords);
+            Objects.equals(this.keywords, v1SkillManifestSkillManifestLocalizedPublishingInformation.keywords) &&
+            Objects.equals(this.customProductPrompts, v1SkillManifestSkillManifestLocalizedPublishingInformation.customProductPrompts);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, smallIconUri, largeIconUri, summary, description, updatesDescription, examplePhrases, keywords);
+        return Objects.hash(name, smallIconUri, largeIconUri, summary, description, updatesDescription, examplePhrases, keywords, customProductPrompts);
     }
 
     @Override
@@ -200,6 +217,7 @@ public final class SkillManifestLocalizedPublishingInformation {
         sb.append("    updatesDescription: ").append(toIndentedString(updatesDescription)).append("\n");
         sb.append("    examplePhrases: ").append(toIndentedString(examplePhrases)).append("\n");
         sb.append("    keywords: ").append(toIndentedString(keywords)).append("\n");
+        sb.append("    customProductPrompts: ").append(toIndentedString(customProductPrompts)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -224,6 +242,7 @@ public final class SkillManifestLocalizedPublishingInformation {
         private String updatesDescription;
         private List<String> examplePhrases;
         private List<String> keywords;
+        private com.amazon.ask.smapi.model.v1.skill.Manifest.CustomProductPrompts customProductPrompts;
 
         private Builder() {}
 
@@ -304,6 +323,14 @@ public final class SkillManifestLocalizedPublishingInformation {
             this.keywords.add(keywordsItem);
             return this;
         }
+
+        @JsonProperty("customProductPrompts")
+
+        public Builder withCustomProductPrompts(com.amazon.ask.smapi.model.v1.skill.Manifest.CustomProductPrompts customProductPrompts) {
+            this.customProductPrompts = customProductPrompts;
+            return this;
+        }
+
 
         public SkillManifestLocalizedPublishingInformation build() {
             return new SkillManifestLocalizedPublishingInformation(this);

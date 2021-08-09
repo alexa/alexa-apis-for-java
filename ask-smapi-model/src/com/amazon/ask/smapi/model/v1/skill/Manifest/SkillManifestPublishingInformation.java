@@ -63,6 +63,9 @@ public final class SkillManifestPublishingInformation {
     @JsonProperty("automaticClonedLocale")
     private com.amazon.ask.smapi.model.v1.skill.Manifest.AutomaticClonedLocale automaticClonedLocale = null;
 
+    @JsonProperty("paidSkillInformation")
+    private com.amazon.ask.smapi.model.v1.skill.Manifest.PaidSkillInformation paidSkillInformation = null;
+
     public static Builder builder() {
         return new Builder();
     }
@@ -100,6 +103,9 @@ public final class SkillManifestPublishingInformation {
         }
         if (builder.automaticClonedLocale != null) {
             this.automaticClonedLocale = builder.automaticClonedLocale;
+        }
+        if (builder.paidSkillInformation != null) {
+            this.paidSkillInformation = builder.paidSkillInformation;
         }
     }
 
@@ -230,6 +236,16 @@ public final class SkillManifestPublishingInformation {
     }
 
 
+    /**
+     * Get paidSkillInformation
+     * @return paidSkillInformation
+    **/
+    @JsonProperty("paidSkillInformation")
+    public com.amazon.ask.smapi.model.v1.skill.Manifest.PaidSkillInformation getPaidSkillInformation() {
+        return paidSkillInformation;
+    }
+
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -249,12 +265,13 @@ public final class SkillManifestPublishingInformation {
             Objects.equals(this.category, v1SkillManifestSkillManifestPublishingInformation.category) &&
             Objects.equals(this.distributionCountries, v1SkillManifestSkillManifestPublishingInformation.distributionCountries) &&
             Objects.equals(this.automaticDistribution, v1SkillManifestSkillManifestPublishingInformation.automaticDistribution) &&
-            Objects.equals(this.automaticClonedLocale, v1SkillManifestSkillManifestPublishingInformation.automaticClonedLocale);
+            Objects.equals(this.automaticClonedLocale, v1SkillManifestSkillManifestPublishingInformation.automaticClonedLocale) &&
+            Objects.equals(this.paidSkillInformation, v1SkillManifestSkillManifestPublishingInformation.paidSkillInformation);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, description, locales, isAvailableWorldwide, distributionMode, gadgetSupport, testingInstructions, category, distributionCountries, automaticDistribution, automaticClonedLocale);
+        return Objects.hash(name, description, locales, isAvailableWorldwide, distributionMode, gadgetSupport, testingInstructions, category, distributionCountries, automaticDistribution, automaticClonedLocale, paidSkillInformation);
     }
 
     @Override
@@ -273,6 +290,7 @@ public final class SkillManifestPublishingInformation {
         sb.append("    distributionCountries: ").append(toIndentedString(distributionCountries)).append("\n");
         sb.append("    automaticDistribution: ").append(toIndentedString(automaticDistribution)).append("\n");
         sb.append("    automaticClonedLocale: ").append(toIndentedString(automaticClonedLocale)).append("\n");
+        sb.append("    paidSkillInformation: ").append(toIndentedString(paidSkillInformation)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -300,6 +318,7 @@ public final class SkillManifestPublishingInformation {
         private List<com.amazon.ask.smapi.model.v1.skill.Manifest.DistributionCountries> distributionCountries;
         private com.amazon.ask.smapi.model.v1.skill.Manifest.AutomaticDistribution automaticDistribution;
         private com.amazon.ask.smapi.model.v1.skill.Manifest.AutomaticClonedLocale automaticClonedLocale;
+        private com.amazon.ask.smapi.model.v1.skill.Manifest.PaidSkillInformation paidSkillInformation;
 
         private Builder() {}
 
@@ -405,6 +424,14 @@ public final class SkillManifestPublishingInformation {
 
         public Builder withAutomaticClonedLocale(com.amazon.ask.smapi.model.v1.skill.Manifest.AutomaticClonedLocale automaticClonedLocale) {
             this.automaticClonedLocale = automaticClonedLocale;
+            return this;
+        }
+
+
+        @JsonProperty("paidSkillInformation")
+
+        public Builder withPaidSkillInformation(com.amazon.ask.smapi.model.v1.skill.Manifest.PaidSkillInformation paidSkillInformation) {
+            this.paidSkillInformation = paidSkillInformation;
             return this;
         }
 

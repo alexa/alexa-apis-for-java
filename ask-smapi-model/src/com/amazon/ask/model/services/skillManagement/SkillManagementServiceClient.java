@@ -43,13 +43,13 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
                                     .withSerializer(apiConfiguration.getSerializer())
                                     .build())
           .build();
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.12.0").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.13.0").build();
   }
 
   public SkillManagementServiceClient(ApiConfiguration apiConfiguration, LwaClient lwaClient) {
       super(apiConfiguration);
       this.lwaClient = lwaClient;
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.12.0").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.13.0").build();
   }
 
   /**
@@ -103,7 +103,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * Lists all the uploads for a particular catalog.
    * @param catalogId Provides a unique identifier of the catalog. (required)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults Maximum number of datapoints in a single result for a query (optional, default to 100)
    * @return com.amazon.ask.smapi.model.v0.catalog.upload.ListUploadsResponse
    * @throws ServiceException if fails to make API call
    */
@@ -148,7 +148,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * Lists all the uploads for a particular catalog.
    * @param catalogId Provides a unique identifier of the catalog. (required)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults Maximum number of datapoints in a single result for a query (optional, default to 100)
    * @return com.amazon.ask.smapi.model.v0.catalog.upload.ListUploadsResponse
    * @throws ServiceException if fails to make API call
    */
@@ -414,7 +414,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * Lists the subscribers for a particular vendor.
    * @param vendorId The vendor ID. (required)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults Maximum number of datapoints in a single result for a query (optional, default to 100)
    * @return com.amazon.ask.smapi.model.v0.developmentEvents.subscriber.ListSubscribersResponse
    * @throws ServiceException if fails to make API call
    */
@@ -462,7 +462,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * Lists the subscribers for a particular vendor.
    * @param vendorId The vendor ID. (required)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults Maximum number of datapoints in a single result for a query (optional, default to 100)
    * @return com.amazon.ask.smapi.model.v0.developmentEvents.subscriber.ListSubscribersResponse
    * @throws ServiceException if fails to make API call
    */
@@ -652,7 +652,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * Lists all the subscriptions for a vendor/subscriber depending on the query parameter.
    * @param vendorId The vendor ID. (required)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults Maximum number of datapoints in a single result for a query (optional, default to 100)
    * @param subscriberId Unique identifier of the subscriber. If this query parameter is provided, the list would be filtered by the owning subscriberId. (optional)
    * @return com.amazon.ask.smapi.model.v0.developmentEvents.subscription.ListSubscriptionsResponse
    * @throws ServiceException if fails to make API call
@@ -705,7 +705,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * Lists all the subscriptions for a vendor/subscriber depending on the query parameter.
    * @param vendorId The vendor ID. (required)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults Maximum number of datapoints in a single result for a query (optional, default to 100)
    * @param subscriberId Unique identifier of the subscriber. If this query parameter is provided, the list would be filtered by the owning subscriberId. (optional)
    * @return com.amazon.ask.smapi.model.v0.developmentEvents.subscription.ListSubscriptionsResponse
    * @throws ServiceException if fails to make API call
@@ -1911,7 +1911,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * 
    * List all the historical versions of the given catalogId.
    * @param catalogId Provides a unique identifier of the catalog. (required)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults Maximum number of datapoints in a single result for a query (optional, default to 100)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
    * @param sortDirection Sets the sorting direction of the result items. When set to &#39;asc&#39; these items are returned in ascending order of sortField value and when set to &#39;desc&#39; these items are returned in descending order of sortField value. (optional)
    * @param sortField Sets the field on which the sorting would be applied. (optional)
@@ -1966,7 +1966,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * 
    * List all the historical versions of the given catalogId.
    * @param catalogId Provides a unique identifier of the catalog. (required)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults Maximum number of datapoints in a single result for a query (optional, default to 100)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
    * @param sortDirection Sets the sorting direction of the result items. When set to &#39;asc&#39; these items are returned in ascending order of sortField value and when set to &#39;desc&#39; these items are returned in descending order of sortField value. (optional)
    * @param sortField Sets the field on which the sorting would be applied. (optional)
@@ -2173,7 +2173,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * Get catalog values from the given catalogId &amp;amp; version. 
    * @param catalogId Provides a unique identifier of the catalog. (required)
    * @param version Version for interaction model. (required)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults Maximum number of datapoints in a single result for a query (optional, default to 100)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.version.CatalogValues
    * @throws ServiceException if fails to make API call
@@ -2220,7 +2220,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * Get catalog values from the given catalogId &amp;amp; version. 
    * @param catalogId Provides a unique identifier of the catalog. (required)
    * @param version Version for interaction model. (required)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults Maximum number of datapoints in a single result for a query (optional, default to 100)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.version.CatalogValues
    * @throws ServiceException if fails to make API call
@@ -2233,7 +2233,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * 
    * List all catalogs for the vendor. 
    * @param vendorId The vendor ID. (required)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults Maximum number of datapoints in a single result for a query (optional, default to 100)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
    * @param sortDirection Sets the sorting direction of the result items. When set to &#39;asc&#39; these items are returned in ascending order of sortField value and when set to &#39;desc&#39; these items are returned in descending order of sortField value. (optional)
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.ListCatalogResponse
@@ -2286,7 +2286,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * 
    * List all catalogs for the vendor. 
    * @param vendorId The vendor ID. (required)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults Maximum number of datapoints in a single result for a query (optional, default to 100)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
    * @param sortDirection Sets the sorting direction of the result items. When set to &#39;asc&#39; these items are returned in ascending order of sortField value and when set to &#39;desc&#39; these items are returned in descending order of sortField value. (optional)
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.ListCatalogResponse
@@ -2345,7 +2345,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * 
    * Retrieve a list of jobs associated with the vendor.
    * @param vendorId The vendor ID. (required)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults Maximum number of datapoints in a single result for a query (optional, default to 100)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.ListJobDefinitionsResponse
    * @throws ServiceException if fails to make API call
@@ -2392,7 +2392,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * 
    * Retrieve a list of jobs associated with the vendor.
    * @param vendorId The vendor ID. (required)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults Maximum number of datapoints in a single result for a query (optional, default to 100)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.ListJobDefinitionsResponse
    * @throws ServiceException if fails to make API call
@@ -2496,7 +2496,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * 
    * List the execution history associated with the job definition, with default sortField to be the executions&#39; timestamp.
    * @param jobId The identifier for dynamic jobs. (required)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults Maximum number of datapoints in a single result for a query (optional, default to 100)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
    * @param sortDirection Sets the sorting direction of the result items. When set to &#39;asc&#39; these items are returned in ascending order of sortField value and when set to &#39;desc&#39; these items are returned in descending order of sortField value. (optional)
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.GetExecutionsResponse
@@ -2545,7 +2545,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * 
    * List the execution history associated with the job definition, with default sortField to be the executions&#39; timestamp.
    * @param jobId The identifier for dynamic jobs. (required)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults Maximum number of datapoints in a single result for a query (optional, default to 100)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
    * @param sortDirection Sets the sorting direction of the result items. When set to &#39;asc&#39; these items are returned in ascending order of sortField value and when set to &#39;desc&#39; these items are returned in descending order of sortField value. (optional)
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.GetExecutionsResponse
@@ -2694,7 +2694,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * 
    * List all slot types for the vendor. 
    * @param vendorId The vendor ID. (required)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults Maximum number of datapoints in a single result for a query (optional, default to 100)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
    * @param sortDirection Sets the sorting direction of the result items. When set to &#39;asc&#39; these items are returned in ascending order of sortField value and when set to &#39;desc&#39; these items are returned in descending order of sortField value. (optional)
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.type.ListSlotTypeResponse
@@ -2746,7 +2746,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * 
    * List all slot types for the vendor. 
    * @param vendorId The vendor ID. (required)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults Maximum number of datapoints in a single result for a query (optional, default to 100)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
    * @param sortDirection Sets the sorting direction of the result items. When set to &#39;asc&#39; these items are returned in ascending order of sortField value and when set to &#39;desc&#39; these items are returned in descending order of sortField value. (optional)
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.type.ListSlotTypeResponse
@@ -2988,7 +2988,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * 
    * List all slot type versions for the slot type id. 
    * @param slotTypeId The identifier for a slot type. (required)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults Maximum number of datapoints in a single result for a query (optional, default to 100)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
    * @param sortDirection Sets the sorting direction of the result items. When set to &#39;asc&#39; these items are returned in ascending order of sortField value and when set to &#39;desc&#39; these items are returned in descending order of sortField value. (optional)
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.typeVersion.ListSlotTypeVersionResponse
@@ -3037,7 +3037,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * 
    * List all slot type versions for the slot type id. 
    * @param slotTypeId The identifier for a slot type. (required)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults Maximum number of datapoints in a single result for a query (optional, default to 100)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
    * @param sortDirection Sets the sorting direction of the result items. When set to &#39;asc&#39; these items are returned in ascending order of sortField value and when set to &#39;desc&#39; these items are returned in descending order of sortField value. (optional)
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.typeVersion.ListSlotTypeVersionResponse
@@ -3288,7 +3288,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * Get the list of skills for the vendor.
    * @param vendorId The vendor ID. (required)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults Maximum number of datapoints in a single result for a query (optional, default to 100)
    * @param skillId The list of skillIds that you wish to get the summary for. A maximum of 10 skillIds can be specified to get the skill summary in single listSkills call. Please note that this parameter must not be used with &#39;nextToken&#39; or/and &#39;maxResults&#39; parameter. (optional)
    * @return com.amazon.ask.smapi.model.v1.skill.ListSkillResponse
    * @throws ServiceException if fails to make API call
@@ -3341,7 +3341,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * Get the list of skills for the vendor.
    * @param vendorId The vendor ID. (required)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults Maximum number of datapoints in a single result for a query (optional, default to 100)
    * @param skillId The list of skillIds that you wish to get the summary for. A maximum of 10 skillIds can be specified to get the skill summary in single listSkills call. Please note that this parameter must not be used with &#39;nextToken&#39; or/and &#39;maxResults&#39; parameter. (optional)
    * @return com.amazon.ask.smapi.model.v1.skill.ListSkillResponse
    * @throws ServiceException if fails to make API call
@@ -4804,7 +4804,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * Get list of all certifications available for a skill, including information about past certifications and any ongoing certification. The default sort order is descending on skillSubmissionTimestamp for Certifications. 
    * @param skillId The skill ID. (required)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults Maximum number of datapoints in a single result for a query (optional, default to 100)
    * @return com.amazon.ask.smapi.model.v1.skill.certification.ListCertificationsResponse
    * @throws ServiceException if fails to make API call
    */
@@ -4847,7 +4847,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * Get list of all certifications available for a skill, including information about past certifications and any ongoing certification. The default sort order is descending on skillSubmissionTimestamp for Certifications. 
    * @param skillId The skill ID. (required)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults Maximum number of datapoints in a single result for a query (optional, default to 100)
    * @return com.amazon.ask.smapi.model.v1.skill.certification.ListCertificationsResponse
    * @throws ServiceException if fails to make API call
    */
@@ -4948,7 +4948,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @param skillId The skill ID. (required)
    * @param stage The stage of the skill to be used for evaluation. An error will be returned if this skill stage is not enabled on the account used for evaluation. (required)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults Maximum number of datapoints in a single result for a query (optional, default to 100)
    * @param sortDirection Sets the sorting direction of the result items. When set to &#39;asc&#39; these items are returned in ascending order of sortField value and when set to &#39;desc&#39; these items are returned in descending order of sortField value. (optional)
    * @param sortField Sets the field on which the sorting would be applied. (optional)
    * @param locale  (optional)
@@ -5063,7 +5063,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @param skillId The skill ID. (required)
    * @param stage The stage of the skill to be used for evaluation. An error will be returned if this skill stage is not enabled on the account used for evaluation. (required)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults Maximum number of datapoints in a single result for a query (optional, default to 100)
    * @param sortDirection Sets the sorting direction of the result items. When set to &#39;asc&#39; these items are returned in ascending order of sortField value and when set to &#39;desc&#39; these items are returned in descending order of sortField value. (optional)
    * @param sortField Sets the field on which the sorting would be applied. (optional)
    * @param locale  (optional)
@@ -5194,7 +5194,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @param skillType The type of the skill (custom, smartHome and flashBriefing). (required)
    * @param intent The intent of the skill. (optional)
    * @param locale The locale for the skill. e.g. en-GB, en-US, de-DE and etc. (optional)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults Maximum number of datapoints in a single result for a query (optional, default to 100)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
    * @return com.amazon.ask.smapi.model.v1.skill.metrics.GetMetricDataResponse
    * @throws ServiceException if fails to make API call
@@ -5279,7 +5279,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @param skillType The type of the skill (custom, smartHome and flashBriefing). (required)
    * @param intent The intent of the skill. (optional)
    * @param locale The locale for the skill. e.g. en-GB, en-US, de-DE and etc. (optional)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults Maximum number of datapoints in a single result for a query (optional, default to 100)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
    * @return com.amazon.ask.smapi.model.v1.skill.metrics.GetMetricDataResponse
    * @throws ServiceException if fails to make API call
@@ -6254,7 +6254,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * Get test case results for an evaluation run.
    * @param skillId The skill ID. (required)
    * @param evaluationId A unique ID to identify each Smart Home capability evaluation. (required)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults Maximum number of datapoints in a single result for a query (optional, default to 100)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
    * @return com.amazon.ask.smapi.model.v1.smartHomeEvaluation.GetSHCapabilityEvaluationResultsResponse
    * @throws ServiceException if fails to make API call
@@ -6300,7 +6300,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * Get test case results for an evaluation run.
    * @param skillId The skill ID. (required)
    * @param evaluationId A unique ID to identify each Smart Home capability evaluation. (required)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults Maximum number of datapoints in a single result for a query (optional, default to 100)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
    * @return com.amazon.ask.smapi.model.v1.smartHomeEvaluation.GetSHCapabilityEvaluationResultsResponse
    * @throws ServiceException if fails to make API call
@@ -6316,7 +6316,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @param stage The stage of the skill to be used for evaluation. An error will be returned if this skill stage is not enabled on the account used for evaluation. (required)
    * @param startTimestampFrom The begnning of the start time to query evaluation result. (optional)
    * @param startTimestampTo The end of the start time to query evaluation result. (optional)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults Maximum number of datapoints in a single result for a query (optional, default to 100)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
    * @return com.amazon.ask.smapi.model.v1.smartHomeEvaluation.ListSHCapabilityEvaluationsResponse
    * @throws ServiceException if fails to make API call
@@ -6375,7 +6375,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @param stage The stage of the skill to be used for evaluation. An error will be returned if this skill stage is not enabled on the account used for evaluation. (required)
    * @param startTimestampFrom The begnning of the start time to query evaluation result. (optional)
    * @param startTimestampTo The end of the start time to query evaluation result. (optional)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults Maximum number of datapoints in a single result for a query (optional, default to 100)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
    * @return com.amazon.ask.smapi.model.v1.smartHomeEvaluation.ListSHCapabilityEvaluationsResponse
    * @throws ServiceException if fails to make API call
@@ -6436,7 +6436,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * List all the test plan names and ids for a given skill ID.
    * List all the test plan names and ids for a given skill ID.
    * @param skillId The skill ID. (required)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults Maximum number of datapoints in a single result for a query (optional, default to 100)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
    * @return com.amazon.ask.smapi.model.v1.smartHomeEvaluation.ListSHCapabilityTestPlansResponse
    * @throws ServiceException if fails to make API call
@@ -6480,7 +6480,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * List all the test plan names and ids for a given skill ID.
    * List all the test plan names and ids for a given skill ID.
    * @param skillId The skill ID. (required)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults Maximum number of datapoints in a single result for a query (optional, default to 100)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
    * @return com.amazon.ask.smapi.model.v1.smartHomeEvaluation.ListSHCapabilityTestPlansResponse
    * @throws ServiceException if fails to make API call
@@ -7007,7 +7007,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @param skillId The skill ID. (required)
    * @param stage Stage for skill. (required)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults Maximum number of datapoints in a single result for a query (optional, default to 100)
    * @return com.amazon.ask.smapi.model.v1.skill.Private.ListPrivateDistributionAccountsResponse
    * @throws ServiceException if fails to make API call
    */
@@ -7054,7 +7054,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @param skillId The skill ID. (required)
    * @param stage Stage for skill. (required)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults Maximum number of datapoints in a single result for a query (optional, default to 100)
    * @return com.amazon.ask.smapi.model.v1.skill.Private.ListPrivateDistributionAccountsResponse
    * @throws ServiceException if fails to make API call
    */
@@ -7582,7 +7582,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @param stageV2 Stages of a skill including the new certified stage. * &#x60;development&#x60; - skills which are currently in development corresponds to this stage. * &#x60;certified&#x60; -  skills which have completed certification and ready for publishing corresponds to this stage. * &#x60;live&#x60; - skills which are currently live corresponds to this stage.  (required)
    * @param locale The locale for the model requested e.g. en-GB, en-US, de-DE. (required)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults Maximum number of datapoints in a single result for a query (optional, default to 100)
    * @param sortDirection Sets the sorting direction of the result items. When set to &#39;asc&#39; these items are returned in ascending order of sortField value and when set to &#39;desc&#39; these items are returned in descending order of sortField value. (optional)
    * @param sortField Sets the field on which the sorting would be applied. (optional)
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.version.ListResponse
@@ -7641,7 +7641,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * @param stageV2 Stages of a skill including the new certified stage. * &#x60;development&#x60; - skills which are currently in development corresponds to this stage. * &#x60;certified&#x60; -  skills which have completed certification and ready for publishing corresponds to this stage. * &#x60;live&#x60; - skills which are currently live corresponds to this stage.  (required)
    * @param locale The locale for the model requested e.g. en-GB, en-US, de-DE. (required)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults Maximum number of datapoints in a single result for a query (optional, default to 100)
    * @param sortDirection Sets the sorting direction of the result items. When set to &#39;asc&#39; these items are returned in ascending order of sortField value and when set to &#39;desc&#39; these items are returned in descending order of sortField value. (optional)
    * @param sortField Sets the field on which the sorting would be applied. (optional)
    * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.version.ListResponse
@@ -8023,7 +8023,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * Retrieve a list of all skill versions associated with this skill id
    * @param skillId The skill ID. (required)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults Maximum number of datapoints in a single result for a query (optional, default to 100)
    * @return com.amazon.ask.smapi.model.v1.skill.ListSkillVersionsResponse
    * @throws ServiceException if fails to make API call
    */
@@ -8068,7 +8068,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * Retrieve a list of all skill versions associated with this skill id
    * @param skillId The skill ID. (required)
    * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @param maxResults Maximum number of datapoints in a single result for a query (optional, default to 100)
    * @return com.amazon.ask.smapi.model.v1.skill.ListSkillVersionsResponse
    * @throws ServiceException if fails to make API call
    */
