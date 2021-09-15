@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * String indicating the type of simulation request. Possible values are \"DEFAULT\" and \"NFI_ISOLATED_SIMULATION\". \"DEFAULT\" is used to proceed with the default skill simulation behavior. \"NFI_ISOLATED_SIMULATION\" is used to test the NFI(Name Free Interaction)  enabled skills in isolation. 
+ * String indicating the type of simulation request. Possible values are \"DEFAULT\" and \"NFI_ISOLATED_SIMULATION\". \"NFI_ISOLATED_SIMULATION\" is used to test the NFI(Name Free Interaction) enabled skills in isolation. This field is reserved for testing Name Free Interactions(NFI). Skills that are eligible to add NFI can only use this field. To learn more, visit https://developer.amazon.com/en-US/docs/alexa/custom-skills/understand-name-free-interaction-for-custom-skills.html 
  */
 public enum SimulationType {
   
