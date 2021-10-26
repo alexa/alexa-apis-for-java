@@ -34,6 +34,9 @@ public final class SupportedInterfaces {
     @JsonProperty("Alexa.Presentation.HTML")
     private com.amazon.ask.model.interfaces.alexa.presentation.html.AlexaPresentationHtmlInterface alexaPresentationHTML = null;
 
+    @JsonProperty("AppLink")
+    private com.amazon.ask.model.interfaces.applink.AppLinkInterface appLink = null;
+
     @JsonProperty("AudioPlayer")
     private com.amazon.ask.model.interfaces.audioplayer.AudioPlayerInterface audioPlayer = null;
 
@@ -62,6 +65,9 @@ public final class SupportedInterfaces {
         }
         if (builder.alexaPresentationHTML != null) {
             this.alexaPresentationHTML = builder.alexaPresentationHTML;
+        }
+        if (builder.appLink != null) {
+            this.appLink = builder.appLink;
         }
         if (builder.audioPlayer != null) {
             this.audioPlayer = builder.audioPlayer;
@@ -107,6 +113,16 @@ public final class SupportedInterfaces {
     @JsonProperty("Alexa.Presentation.HTML")
     public com.amazon.ask.model.interfaces.alexa.presentation.html.AlexaPresentationHtmlInterface getAlexaPresentationHTML() {
         return alexaPresentationHTML;
+    }
+
+
+    /**
+     * Get appLink
+     * @return appLink
+    **/
+    @JsonProperty("AppLink")
+    public com.amazon.ask.model.interfaces.applink.AppLinkInterface getAppLink() {
+        return appLink;
     }
 
 
@@ -172,6 +188,7 @@ public final class SupportedInterfaces {
         return Objects.equals(this.alexaPresentationAPL, supportedInterfaces.alexaPresentationAPL) &&
             Objects.equals(this.alexaPresentationAPLT, supportedInterfaces.alexaPresentationAPLT) &&
             Objects.equals(this.alexaPresentationHTML, supportedInterfaces.alexaPresentationHTML) &&
+            Objects.equals(this.appLink, supportedInterfaces.appLink) &&
             Objects.equals(this.audioPlayer, supportedInterfaces.audioPlayer) &&
             Objects.equals(this.display, supportedInterfaces.display) &&
             Objects.equals(this.videoApp, supportedInterfaces.videoApp) &&
@@ -181,7 +198,7 @@ public final class SupportedInterfaces {
 
     @Override
     public int hashCode() {
-        return Objects.hash(alexaPresentationAPL, alexaPresentationAPLT, alexaPresentationHTML, audioPlayer, display, videoApp, geolocation, navigation);
+        return Objects.hash(alexaPresentationAPL, alexaPresentationAPLT, alexaPresentationHTML, appLink, audioPlayer, display, videoApp, geolocation, navigation);
     }
 
     @Override
@@ -192,6 +209,7 @@ public final class SupportedInterfaces {
         sb.append("    alexaPresentationAPL: ").append(toIndentedString(alexaPresentationAPL)).append("\n");
         sb.append("    alexaPresentationAPLT: ").append(toIndentedString(alexaPresentationAPLT)).append("\n");
         sb.append("    alexaPresentationHTML: ").append(toIndentedString(alexaPresentationHTML)).append("\n");
+        sb.append("    appLink: ").append(toIndentedString(appLink)).append("\n");
         sb.append("    audioPlayer: ").append(toIndentedString(audioPlayer)).append("\n");
         sb.append("    display: ").append(toIndentedString(display)).append("\n");
         sb.append("    videoApp: ").append(toIndentedString(videoApp)).append("\n");
@@ -216,6 +234,7 @@ public final class SupportedInterfaces {
         private com.amazon.ask.model.interfaces.alexa.presentation.apl.AlexaPresentationAplInterface alexaPresentationAPL;
         private com.amazon.ask.model.interfaces.alexa.presentation.aplt.AlexaPresentationApltInterface alexaPresentationAPLT;
         private com.amazon.ask.model.interfaces.alexa.presentation.html.AlexaPresentationHtmlInterface alexaPresentationHTML;
+        private com.amazon.ask.model.interfaces.applink.AppLinkInterface appLink;
         private com.amazon.ask.model.interfaces.audioplayer.AudioPlayerInterface audioPlayer;
         private com.amazon.ask.model.interfaces.display.DisplayInterface display;
         private com.amazon.ask.model.interfaces.videoapp.VideoAppInterface videoApp;
@@ -244,6 +263,14 @@ public final class SupportedInterfaces {
 
         public Builder withAlexaPresentationHTML(com.amazon.ask.model.interfaces.alexa.presentation.html.AlexaPresentationHtmlInterface alexaPresentationHTML) {
             this.alexaPresentationHTML = alexaPresentationHTML;
+            return this;
+        }
+
+
+        @JsonProperty("AppLink")
+
+        public Builder withAppLink(com.amazon.ask.model.interfaces.applink.AppLinkInterface appLink) {
+            this.appLink = appLink;
             return this;
         }
 

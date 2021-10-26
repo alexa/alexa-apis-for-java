@@ -45,7 +45,7 @@ public final class Unit {
     }
 
     /**
-     * A string that represents unitId directed at skill level. Each skill gets a different directed identifier for same internal identifier. This is Skill enablement scoped identifier. This should be in format - amzn1.ask.unit.&amp;lt;skillDirectedId&amp;gt;
+     * A string that represents a unique identifier for the unit in the context of a request.  The length of this identifier can vary, but is never more than 255 characters.  Alexa generates this string only when a request made to your skill has a valid unit context.  This identifier is scoped to a skill. Normally, disabling and re-enabling a skill generates a new identifier.
      * @return unitId
     **/
     @JsonProperty("unitId")
@@ -55,7 +55,7 @@ public final class Unit {
 
 
     /**
-     * A string that represents a unitId directed using directedIdConfuser associated with the respective Organization's developer account. This identifier is directed at an Organization level. Same identifier is shared across Organization's backend systems (which invokes API), Skills owned by the organization and authorized 3P skills. This should be in format - amzn1.alexa.unit.did.&amp;lt;LWAConfuserDirectedId&amp;gt;
+     * A string that represents a unique identifier for the unit in the context of a request.  The length of this identifier can vary, but is never more than 255 characters.  Alexa generates this string only when the request made to your skill has a valid unit context.  This is another unit identifier associated with an organization's developer account.  Only registered Alexa for Residential and Alexa for Hospitality vendors can see the Read PersistentUnitId toggle in the Alexa skills developers console. This identifier is scoped to a vendor, therefore all skills that belong to particular vendor share this identifier, therefore it will stay the same regardless of skill enablement.
      * @return persistentUnitId
     **/
     @JsonProperty("persistentUnitId")

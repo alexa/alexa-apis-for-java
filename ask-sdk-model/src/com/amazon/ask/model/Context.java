@@ -55,6 +55,9 @@ public final class Context {
     @JsonProperty("Extensions")
     private com.amazon.ask.model.interfaces.alexa.extension.ExtensionsState extensions = null;
 
+    @JsonProperty("AppLink")
+    private com.amazon.ask.model.interfaces.applink.AppLinkState appLink = null;
+
     public static Builder builder() {
         return new Builder();
     }
@@ -86,6 +89,9 @@ public final class Context {
         }
         if (builder.extensions != null) {
             this.extensions = builder.extensions;
+        }
+        if (builder.appLink != null) {
+            this.appLink = builder.appLink;
         }
     }
 
@@ -179,6 +185,16 @@ public final class Context {
     }
 
 
+    /**
+     * Provides the current state for app link capability.
+     * @return appLink
+    **/
+    @JsonProperty("AppLink")
+    public com.amazon.ask.model.interfaces.applink.AppLinkState getAppLink() {
+        return appLink;
+    }
+
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -196,12 +212,13 @@ public final class Context {
             Objects.equals(this.geolocation, context.geolocation) &&
             Objects.equals(this.viewport, context.viewport) &&
             Objects.equals(this.viewports, context.viewports) &&
-            Objects.equals(this.extensions, context.extensions);
+            Objects.equals(this.extensions, context.extensions) &&
+            Objects.equals(this.appLink, context.appLink);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(system, alexaPresentationAPL, audioPlayer, automotive, display, geolocation, viewport, viewports, extensions);
+        return Objects.hash(system, alexaPresentationAPL, audioPlayer, automotive, display, geolocation, viewport, viewports, extensions, appLink);
     }
 
     @Override
@@ -218,6 +235,7 @@ public final class Context {
         sb.append("    viewport: ").append(toIndentedString(viewport)).append("\n");
         sb.append("    viewports: ").append(toIndentedString(viewports)).append("\n");
         sb.append("    extensions: ").append(toIndentedString(extensions)).append("\n");
+        sb.append("    appLink: ").append(toIndentedString(appLink)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -243,6 +261,7 @@ public final class Context {
         private com.amazon.ask.model.interfaces.viewport.ViewportState viewport;
         private List<com.amazon.ask.model.interfaces.viewport.TypedViewportState> viewports;
         private com.amazon.ask.model.interfaces.alexa.extension.ExtensionsState extensions;
+        private com.amazon.ask.model.interfaces.applink.AppLinkState appLink;
 
         private Builder() {}
 
@@ -321,6 +340,14 @@ public final class Context {
 
         public Builder withExtensions(com.amazon.ask.model.interfaces.alexa.extension.ExtensionsState extensions) {
             this.extensions = extensions;
+            return this;
+        }
+
+
+        @JsonProperty("AppLink")
+
+        public Builder withAppLink(com.amazon.ask.model.interfaces.applink.AppLinkState appLink) {
+            this.appLink = appLink;
             return this;
         }
 

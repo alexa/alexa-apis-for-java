@@ -45,7 +45,7 @@ public final class Device {
     }
 
     /**
-     * The deviceId property uniquely identifies the device.
+     * The deviceId property uniquely identifies the device. This identifier is scoped to a skill. Normally, disabling and re-enabling a skill generates a new identifier.
      * @return deviceId
     **/
     @JsonProperty("deviceId")
