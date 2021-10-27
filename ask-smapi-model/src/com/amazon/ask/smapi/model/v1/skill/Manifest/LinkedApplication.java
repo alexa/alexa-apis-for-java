@@ -40,6 +40,9 @@ public final class LinkedApplication {
     @JsonProperty("friendlyName")
     private com.amazon.ask.smapi.model.v1.skill.Manifest.FriendlyName friendlyName = null;
 
+    @JsonProperty("androidCustomIntents")
+    private List<com.amazon.ask.smapi.model.v1.skill.Manifest.AndroidCustomIntent> androidCustomIntents = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.AndroidCustomIntent>();
+
     public static Builder builder() {
         return new Builder();
     }
@@ -56,6 +59,9 @@ public final class LinkedApplication {
         }
         if (builder.friendlyName != null) {
             this.friendlyName = builder.friendlyName;
+        }
+        if (builder.androidCustomIntents != null) {
+            this.androidCustomIntents = builder.androidCustomIntents;
         }
     }
 
@@ -99,6 +105,16 @@ public final class LinkedApplication {
     }
 
 
+    /**
+     * Supported android custom intent
+     * @return androidCustomIntents
+    **/
+    @JsonProperty("androidCustomIntents")
+    public List<com.amazon.ask.smapi.model.v1.skill.Manifest.AndroidCustomIntent> getAndroidCustomIntents() {
+        return androidCustomIntents;
+    }
+
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -111,12 +127,13 @@ public final class LinkedApplication {
         return Objects.equals(this.catalogInfo, v1SkillManifestLinkedApplication.catalogInfo) &&
             Objects.equals(this.customSchemes, v1SkillManifestLinkedApplication.customSchemes) &&
             Objects.equals(this.domains, v1SkillManifestLinkedApplication.domains) &&
-            Objects.equals(this.friendlyName, v1SkillManifestLinkedApplication.friendlyName);
+            Objects.equals(this.friendlyName, v1SkillManifestLinkedApplication.friendlyName) &&
+            Objects.equals(this.androidCustomIntents, v1SkillManifestLinkedApplication.androidCustomIntents);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(catalogInfo, customSchemes, domains, friendlyName);
+        return Objects.hash(catalogInfo, customSchemes, domains, friendlyName, androidCustomIntents);
     }
 
     @Override
@@ -128,6 +145,7 @@ public final class LinkedApplication {
         sb.append("    customSchemes: ").append(toIndentedString(customSchemes)).append("\n");
         sb.append("    domains: ").append(toIndentedString(domains)).append("\n");
         sb.append("    friendlyName: ").append(toIndentedString(friendlyName)).append("\n");
+        sb.append("    androidCustomIntents: ").append(toIndentedString(androidCustomIntents)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -148,6 +166,7 @@ public final class LinkedApplication {
         private List<String> customSchemes;
         private List<String> domains;
         private com.amazon.ask.smapi.model.v1.skill.Manifest.FriendlyName friendlyName;
+        private List<com.amazon.ask.smapi.model.v1.skill.Manifest.AndroidCustomIntent> androidCustomIntents;
 
         private Builder() {}
 
@@ -196,6 +215,21 @@ public final class LinkedApplication {
             return this;
         }
 
+
+        @JsonProperty("androidCustomIntents")
+
+        public Builder withAndroidCustomIntents(List<com.amazon.ask.smapi.model.v1.skill.Manifest.AndroidCustomIntent> androidCustomIntents) {
+            this.androidCustomIntents = androidCustomIntents;
+            return this;
+        }
+
+        public Builder addAndroidCustomIntentsItem(com.amazon.ask.smapi.model.v1.skill.Manifest.AndroidCustomIntent androidCustomIntentsItem) {
+            if (this.androidCustomIntents == null) {
+                this.androidCustomIntents = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.AndroidCustomIntent>();
+            }
+            this.androidCustomIntents.add(androidCustomIntentsItem);
+            return this;
+        }
 
         public LinkedApplication build() {
             return new LinkedApplication(this);

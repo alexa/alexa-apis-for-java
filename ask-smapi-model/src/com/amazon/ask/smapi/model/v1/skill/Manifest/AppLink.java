@@ -31,6 +31,15 @@ public final class AppLink {
     @JsonProperty("linkedApplications")
     private List<com.amazon.ask.smapi.model.v1.skill.Manifest.LinkedApplication> linkedApplications = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.LinkedApplication>();
 
+    @JsonProperty("linkedWebDomains")
+    private List<String> linkedWebDomains = new ArrayList<String>();
+
+    @JsonProperty("linkedAndroidCommonIntents")
+    private List<com.amazon.ask.smapi.model.v1.skill.Manifest.LinkedAndroidCommonIntent> linkedAndroidCommonIntents = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.LinkedAndroidCommonIntent>();
+
+    @JsonProperty("linkedCommonSchemes")
+    private com.amazon.ask.smapi.model.v1.skill.Manifest.LinkedCommonSchemes linkedCommonSchemes = null;
+
     public static Builder builder() {
         return new Builder();
     }
@@ -38,6 +47,15 @@ public final class AppLink {
     private AppLink(Builder builder) {
         if (builder.linkedApplications != null) {
             this.linkedApplications = builder.linkedApplications;
+        }
+        if (builder.linkedWebDomains != null) {
+            this.linkedWebDomains = builder.linkedWebDomains;
+        }
+        if (builder.linkedAndroidCommonIntents != null) {
+            this.linkedAndroidCommonIntents = builder.linkedAndroidCommonIntents;
+        }
+        if (builder.linkedCommonSchemes != null) {
+            this.linkedCommonSchemes = builder.linkedCommonSchemes;
         }
     }
 
@@ -51,6 +69,36 @@ public final class AppLink {
     }
 
 
+    /**
+     * Allow developer to decalre their skill to link to the declared web domains.
+     * @return linkedWebDomains
+    **/
+    @JsonProperty("linkedWebDomains")
+    public List<String> getLinkedWebDomains() {
+        return linkedWebDomains;
+    }
+
+
+    /**
+     * Allow developer to declare their skill to link to the speicified android common intents.
+     * @return linkedAndroidCommonIntents
+    **/
+    @JsonProperty("linkedAndroidCommonIntents")
+    public List<com.amazon.ask.smapi.model.v1.skill.Manifest.LinkedAndroidCommonIntent> getLinkedAndroidCommonIntents() {
+        return linkedAndroidCommonIntents;
+    }
+
+
+    /**
+     * Get linkedCommonSchemes
+     * @return linkedCommonSchemes
+    **/
+    @JsonProperty("linkedCommonSchemes")
+    public com.amazon.ask.smapi.model.v1.skill.Manifest.LinkedCommonSchemes getLinkedCommonSchemes() {
+        return linkedCommonSchemes;
+    }
+
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -60,12 +108,15 @@ public final class AppLink {
             return false;
         }
         AppLink v1SkillManifestAppLink = (AppLink) o;
-        return Objects.equals(this.linkedApplications, v1SkillManifestAppLink.linkedApplications);
+        return Objects.equals(this.linkedApplications, v1SkillManifestAppLink.linkedApplications) &&
+            Objects.equals(this.linkedWebDomains, v1SkillManifestAppLink.linkedWebDomains) &&
+            Objects.equals(this.linkedAndroidCommonIntents, v1SkillManifestAppLink.linkedAndroidCommonIntents) &&
+            Objects.equals(this.linkedCommonSchemes, v1SkillManifestAppLink.linkedCommonSchemes);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(linkedApplications);
+        return Objects.hash(linkedApplications, linkedWebDomains, linkedAndroidCommonIntents, linkedCommonSchemes);
     }
 
     @Override
@@ -74,6 +125,9 @@ public final class AppLink {
         sb.append("class AppLink {\n");
         
         sb.append("    linkedApplications: ").append(toIndentedString(linkedApplications)).append("\n");
+        sb.append("    linkedWebDomains: ").append(toIndentedString(linkedWebDomains)).append("\n");
+        sb.append("    linkedAndroidCommonIntents: ").append(toIndentedString(linkedAndroidCommonIntents)).append("\n");
+        sb.append("    linkedCommonSchemes: ").append(toIndentedString(linkedCommonSchemes)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -91,6 +145,9 @@ public final class AppLink {
   
     public static class Builder {
         private List<com.amazon.ask.smapi.model.v1.skill.Manifest.LinkedApplication> linkedApplications;
+        private List<String> linkedWebDomains;
+        private List<com.amazon.ask.smapi.model.v1.skill.Manifest.LinkedAndroidCommonIntent> linkedAndroidCommonIntents;
+        private com.amazon.ask.smapi.model.v1.skill.Manifest.LinkedCommonSchemes linkedCommonSchemes;
 
         private Builder() {}
 
@@ -108,6 +165,44 @@ public final class AppLink {
             this.linkedApplications.add(linkedApplicationsItem);
             return this;
         }
+
+        @JsonProperty("linkedWebDomains")
+
+        public Builder withLinkedWebDomains(List<String> linkedWebDomains) {
+            this.linkedWebDomains = linkedWebDomains;
+            return this;
+        }
+
+        public Builder addLinkedWebDomainsItem(String linkedWebDomainsItem) {
+            if (this.linkedWebDomains == null) {
+                this.linkedWebDomains = new ArrayList<String>();
+            }
+            this.linkedWebDomains.add(linkedWebDomainsItem);
+            return this;
+        }
+
+        @JsonProperty("linkedAndroidCommonIntents")
+
+        public Builder withLinkedAndroidCommonIntents(List<com.amazon.ask.smapi.model.v1.skill.Manifest.LinkedAndroidCommonIntent> linkedAndroidCommonIntents) {
+            this.linkedAndroidCommonIntents = linkedAndroidCommonIntents;
+            return this;
+        }
+
+        public Builder addLinkedAndroidCommonIntentsItem(com.amazon.ask.smapi.model.v1.skill.Manifest.LinkedAndroidCommonIntent linkedAndroidCommonIntentsItem) {
+            if (this.linkedAndroidCommonIntents == null) {
+                this.linkedAndroidCommonIntents = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.LinkedAndroidCommonIntent>();
+            }
+            this.linkedAndroidCommonIntents.add(linkedAndroidCommonIntentsItem);
+            return this;
+        }
+
+        @JsonProperty("linkedCommonSchemes")
+
+        public Builder withLinkedCommonSchemes(com.amazon.ask.smapi.model.v1.skill.Manifest.LinkedCommonSchemes linkedCommonSchemes) {
+            this.linkedCommonSchemes = linkedCommonSchemes;
+            return this;
+        }
+
 
         public AppLink build() {
             return new AppLink(this);
