@@ -25,8 +25,8 @@ import java.util.ArrayList;
  * Parameters for VUI presentation of the reminder
  */
 
-@JsonDeserialize(builder = AlertInfoSpokenInfo.Builder.class)
-public final class AlertInfoSpokenInfo {
+@JsonDeserialize(builder = SpokenInfo.Builder.class)
+public final class SpokenInfo {
 
     @JsonProperty("content")
     private List<com.amazon.ask.model.services.reminderManagement.SpokenText> content = new ArrayList<com.amazon.ask.model.services.reminderManagement.SpokenText>();
@@ -35,7 +35,7 @@ public final class AlertInfoSpokenInfo {
         return new Builder();
     }
 
-    private AlertInfoSpokenInfo(Builder builder) {
+    private SpokenInfo(Builder builder) {
         if (builder.content != null) {
             this.content = builder.content;
         }
@@ -59,8 +59,8 @@ public final class AlertInfoSpokenInfo {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        AlertInfoSpokenInfo servicesReminderManagementAlertInfoSpokenInfo = (AlertInfoSpokenInfo) o;
-        return Objects.equals(this.content, servicesReminderManagementAlertInfoSpokenInfo.content);
+        SpokenInfo servicesReminderManagementSpokenInfo = (SpokenInfo) o;
+        return Objects.equals(this.content, servicesReminderManagementSpokenInfo.content);
     }
 
     @Override
@@ -71,7 +71,7 @@ public final class AlertInfoSpokenInfo {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class AlertInfoSpokenInfo {\n");
+        sb.append("class SpokenInfo {\n");
         
         sb.append("    content: ").append(toIndentedString(content)).append("\n");
         sb.append("}");
@@ -109,8 +109,8 @@ public final class AlertInfoSpokenInfo {
             return this;
         }
 
-        public AlertInfoSpokenInfo build() {
-            return new AlertInfoSpokenInfo(this);
+        public SpokenInfo build() {
+            return new SpokenInfo(this);
         }
     }
 }

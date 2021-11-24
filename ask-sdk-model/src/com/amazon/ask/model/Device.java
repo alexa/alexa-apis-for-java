@@ -28,6 +28,9 @@ public final class Device {
     @JsonProperty("deviceId")
     private String deviceId = null;
 
+    @JsonProperty("persistentEndpointId")
+    private String persistentEndpointId = null;
+
     @JsonProperty("supportedInterfaces")
     private com.amazon.ask.model.SupportedInterfaces supportedInterfaces = null;
 
@@ -38,6 +41,9 @@ public final class Device {
     private Device(Builder builder) {
         if (builder.deviceId != null) {
             this.deviceId = builder.deviceId;
+        }
+        if (builder.persistentEndpointId != null) {
+            this.persistentEndpointId = builder.persistentEndpointId;
         }
         if (builder.supportedInterfaces != null) {
             this.supportedInterfaces = builder.supportedInterfaces;
@@ -51,6 +57,16 @@ public final class Device {
     @JsonProperty("deviceId")
     public String getDeviceId() {
         return deviceId;
+    }
+
+
+    /**
+     * A persistent identifier for the Endpoint ID where the skill request is issued from. An endpoint represents an Alexa-connected Endpoint (like an Echo device, or an application) with which an Alexa customer can interact rather than a physical device,  so it could represent applications on your fire TV or your Alexa phone app.  The persistentEndpointId is a string that represents a unique identifier for the endpoint in the context of a request.  It is in the Amazon Common Identifier format \"amzn1.alexa.endpoint.did.{id}\". This identifier space is scoped to a vendor, therefore it will stay the same regardless of skill enablement.
+     * @return persistentEndpointId
+    **/
+    @JsonProperty("persistentEndpointId")
+    public String getPersistentEndpointId() {
+        return persistentEndpointId;
     }
 
 
@@ -74,12 +90,13 @@ public final class Device {
         }
         Device device = (Device) o;
         return Objects.equals(this.deviceId, device.deviceId) &&
+            Objects.equals(this.persistentEndpointId, device.persistentEndpointId) &&
             Objects.equals(this.supportedInterfaces, device.supportedInterfaces);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(deviceId, supportedInterfaces);
+        return Objects.hash(deviceId, persistentEndpointId, supportedInterfaces);
     }
 
     @Override
@@ -88,6 +105,7 @@ public final class Device {
         sb.append("class Device {\n");
         
         sb.append("    deviceId: ").append(toIndentedString(deviceId)).append("\n");
+        sb.append("    persistentEndpointId: ").append(toIndentedString(persistentEndpointId)).append("\n");
         sb.append("    supportedInterfaces: ").append(toIndentedString(supportedInterfaces)).append("\n");
         sb.append("}");
         return sb.toString();
@@ -106,6 +124,7 @@ public final class Device {
   
     public static class Builder {
         private String deviceId;
+        private String persistentEndpointId;
         private com.amazon.ask.model.SupportedInterfaces supportedInterfaces;
 
         private Builder() {}
@@ -114,6 +133,14 @@ public final class Device {
 
         public Builder withDeviceId(String deviceId) {
             this.deviceId = deviceId;
+            return this;
+        }
+
+
+        @JsonProperty("persistentEndpointId")
+
+        public Builder withPersistentEndpointId(String persistentEndpointId) {
+            this.persistentEndpointId = persistentEndpointId;
             return this;
         }
 

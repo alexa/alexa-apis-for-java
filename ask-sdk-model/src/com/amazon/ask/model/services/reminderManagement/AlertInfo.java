@@ -26,7 +26,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public final class AlertInfo {
 
     @JsonProperty("spokenInfo")
-    private com.amazon.ask.model.services.reminderManagement.AlertInfoSpokenInfo spokenInfo = null;
+    private com.amazon.ask.model.services.reminderManagement.SpokenInfo spokenInfo = null;
 
     public static Builder builder() {
         return new Builder();
@@ -43,7 +43,7 @@ public final class AlertInfo {
      * @return spokenInfo
     **/
     @JsonProperty("spokenInfo")
-    public com.amazon.ask.model.services.reminderManagement.AlertInfoSpokenInfo getSpokenInfo() {
+    public com.amazon.ask.model.services.reminderManagement.SpokenInfo getSpokenInfo() {
         return spokenInfo;
     }
 
@@ -87,13 +87,13 @@ public final class AlertInfo {
     }
   
     public static class Builder {
-        private com.amazon.ask.model.services.reminderManagement.AlertInfoSpokenInfo spokenInfo;
+        private com.amazon.ask.model.services.reminderManagement.SpokenInfo spokenInfo;
 
         private Builder() {}
 
         @JsonProperty("spokenInfo")
 
-        public Builder withSpokenInfo(com.amazon.ask.model.services.reminderManagement.AlertInfoSpokenInfo spokenInfo) {
+        public Builder withSpokenInfo(com.amazon.ask.model.services.reminderManagement.SpokenInfo spokenInfo) {
             this.spokenInfo = spokenInfo;
             return this;
         }
