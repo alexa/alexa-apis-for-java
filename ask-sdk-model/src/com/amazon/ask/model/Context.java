@@ -58,6 +58,9 @@ public final class Context {
     @JsonProperty("AppLink")
     private com.amazon.ask.model.interfaces.applink.AppLinkState appLink = null;
 
+    @JsonProperty("Experimentation")
+    private com.amazon.ask.model.interfaces.alexa.experimentation.ExperimentationState experimentation = null;
+
     public static Builder builder() {
         return new Builder();
     }
@@ -92,6 +95,9 @@ public final class Context {
         }
         if (builder.appLink != null) {
             this.appLink = builder.appLink;
+        }
+        if (builder.experimentation != null) {
+            this.experimentation = builder.experimentation;
         }
     }
 
@@ -195,6 +201,16 @@ public final class Context {
     }
 
 
+    /**
+     * Provides the current experimentation state
+     * @return experimentation
+    **/
+    @JsonProperty("Experimentation")
+    public com.amazon.ask.model.interfaces.alexa.experimentation.ExperimentationState getExperimentation() {
+        return experimentation;
+    }
+
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -213,12 +229,13 @@ public final class Context {
             Objects.equals(this.viewport, context.viewport) &&
             Objects.equals(this.viewports, context.viewports) &&
             Objects.equals(this.extensions, context.extensions) &&
-            Objects.equals(this.appLink, context.appLink);
+            Objects.equals(this.appLink, context.appLink) &&
+            Objects.equals(this.experimentation, context.experimentation);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(system, alexaPresentationAPL, audioPlayer, automotive, display, geolocation, viewport, viewports, extensions, appLink);
+        return Objects.hash(system, alexaPresentationAPL, audioPlayer, automotive, display, geolocation, viewport, viewports, extensions, appLink, experimentation);
     }
 
     @Override
@@ -236,6 +253,7 @@ public final class Context {
         sb.append("    viewports: ").append(toIndentedString(viewports)).append("\n");
         sb.append("    extensions: ").append(toIndentedString(extensions)).append("\n");
         sb.append("    appLink: ").append(toIndentedString(appLink)).append("\n");
+        sb.append("    experimentation: ").append(toIndentedString(experimentation)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -262,6 +280,7 @@ public final class Context {
         private List<com.amazon.ask.model.interfaces.viewport.TypedViewportState> viewports;
         private com.amazon.ask.model.interfaces.alexa.extension.ExtensionsState extensions;
         private com.amazon.ask.model.interfaces.applink.AppLinkState appLink;
+        private com.amazon.ask.model.interfaces.alexa.experimentation.ExperimentationState experimentation;
 
         private Builder() {}
 
@@ -348,6 +367,14 @@ public final class Context {
 
         public Builder withAppLink(com.amazon.ask.model.interfaces.applink.AppLinkState appLink) {
             this.appLink = appLink;
+            return this;
+        }
+
+
+        @JsonProperty("Experimentation")
+
+        public Builder withExperimentation(com.amazon.ask.model.interfaces.alexa.experimentation.ExperimentationState experimentation) {
+            this.experimentation = experimentation;
             return this;
         }
 

@@ -49,6 +49,9 @@ public final class Response {
     @JsonProperty("canFulfillIntent")
     private com.amazon.ask.model.canfulfill.CanFulfillIntent canFulfillIntent = null;
 
+    @JsonProperty("experimentation")
+    private com.amazon.ask.model.interfaces.alexa.experimentation.ExperimentTriggerResponse experimentation = null;
+
     public static Builder builder() {
         return new Builder();
     }
@@ -74,6 +77,9 @@ public final class Response {
         }
         if (builder.canFulfillIntent != null) {
             this.canFulfillIntent = builder.canFulfillIntent;
+        }
+        if (builder.experimentation != null) {
+            this.experimentation = builder.experimentation;
         }
     }
 
@@ -147,6 +153,16 @@ public final class Response {
     }
 
 
+    /**
+     * Experiment trigger response from skill
+     * @return experimentation
+    **/
+    @JsonProperty("experimentation")
+    public com.amazon.ask.model.interfaces.alexa.experimentation.ExperimentTriggerResponse getExperimentation() {
+        return experimentation;
+    }
+
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -162,12 +178,13 @@ public final class Response {
             Objects.equals(this.directives, response.directives) &&
             Objects.equals(this.apiResponse, response.apiResponse) &&
             Objects.equals(this.shouldEndSession, response.shouldEndSession) &&
-            Objects.equals(this.canFulfillIntent, response.canFulfillIntent);
+            Objects.equals(this.canFulfillIntent, response.canFulfillIntent) &&
+            Objects.equals(this.experimentation, response.experimentation);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(outputSpeech, card, reprompt, directives, apiResponse, shouldEndSession, canFulfillIntent);
+        return Objects.hash(outputSpeech, card, reprompt, directives, apiResponse, shouldEndSession, canFulfillIntent, experimentation);
     }
 
     @Override
@@ -182,6 +199,7 @@ public final class Response {
         sb.append("    apiResponse: ").append(toIndentedString(apiResponse)).append("\n");
         sb.append("    shouldEndSession: ").append(toIndentedString(shouldEndSession)).append("\n");
         sb.append("    canFulfillIntent: ").append(toIndentedString(canFulfillIntent)).append("\n");
+        sb.append("    experimentation: ").append(toIndentedString(experimentation)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -205,6 +223,7 @@ public final class Response {
         private Object apiResponse;
         private Boolean shouldEndSession;
         private com.amazon.ask.model.canfulfill.CanFulfillIntent canFulfillIntent;
+        private com.amazon.ask.model.interfaces.alexa.experimentation.ExperimentTriggerResponse experimentation;
 
         private Builder() {}
 
@@ -267,6 +286,14 @@ public final class Response {
 
         public Builder withCanFulfillIntent(com.amazon.ask.model.canfulfill.CanFulfillIntent canFulfillIntent) {
             this.canFulfillIntent = canFulfillIntent;
+            return this;
+        }
+
+
+        @JsonProperty("experimentation")
+
+        public Builder withExperimentation(com.amazon.ask.model.interfaces.alexa.experimentation.ExperimentTriggerResponse experimentation) {
+            this.experimentation = experimentation;
             return this;
         }
 
