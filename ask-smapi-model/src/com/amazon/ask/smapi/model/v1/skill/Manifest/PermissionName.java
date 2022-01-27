@@ -92,6 +92,8 @@ public enum PermissionName {
   
   ALEXA_ORIGIN_IP_ADDRESS_READ("alexa::origin_ip_address:read"),
   
+  ALEXA_DEVICES_ALL_COARSE_LOCATION_READ("alexa::devices:all:coarse_location:read"),
+  
   UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;

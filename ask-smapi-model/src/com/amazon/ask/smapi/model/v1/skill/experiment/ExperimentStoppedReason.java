@@ -12,7 +12,7 @@
 */
 
 
-package com.amazon.ask.smapi.model.v1.skill;
+package com.amazon.ask.smapi.model.v1.skill.experiment;
 
 import java.util.Objects;
 
@@ -20,25 +20,19 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Name of the build step. Possible values - * `DIALOG_MODEL_BUILD` - Build status for dialog model. * `LANGUAGE_MODEL_QUICK_BUILD` - Build status for FST model. * `LANGUAGE_MODEL_FULL_BUILD` - Build status for statistical model. * `ALEXA_CONVERSATIONS_QUICK_BUILD` - AlexaConversations LowFidelity model build status. * `ALEXA_CONVERSATIONS_FULL_BUILD` - AlexaConversations HighFidelity model build status. 
+ * The reason indicating why an exerpiment was stopped. If none is chosen then default to DEVELOPER_REQUEST. Only used when putting experiment into STOPPED state. 
  */
-public enum BuildStepName {
+public enum ExperimentStoppedReason {
   
-  DIALOG_MODEL_BUILD("DIALOG_MODEL_BUILD"),
+  EXPERIMENT_SUCCESS("EXPERIMENT_SUCCESS"),
   
-  LANGUAGE_MODEL_QUICK_BUILD("LANGUAGE_MODEL_QUICK_BUILD"),
-  
-  LANGUAGE_MODEL_FULL_BUILD("LANGUAGE_MODEL_FULL_BUILD"),
-  
-  ALEXA_CONVERSATIONS_QUICK_BUILD("ALEXA_CONVERSATIONS_QUICK_BUILD"),
-  
-  ALEXA_CONVERSATIONS_FULL_BUILD("ALEXA_CONVERSATIONS_FULL_BUILD"),
+  EXPERIMENT_ISSUE("EXPERIMENT_ISSUE"),
   
   UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
-  BuildStepName(String value) {
+  ExperimentStoppedReason(String value) {
     this.value = value;
   }
 
@@ -53,13 +47,13 @@ public enum BuildStepName {
   }
 
   @JsonCreator
-  public static BuildStepName fromValue(String text) {
-    for (BuildStepName b : BuildStepName.values()) {
+  public static ExperimentStoppedReason fromValue(String text) {
+    for (ExperimentStoppedReason b : ExperimentStoppedReason.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }
     }
-    return BuildStepName.UNKNOWN_TO_SDK_VERSION;
+    return ExperimentStoppedReason.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

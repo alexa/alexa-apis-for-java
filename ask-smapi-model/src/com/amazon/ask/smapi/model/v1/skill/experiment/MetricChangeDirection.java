@@ -12,7 +12,7 @@
 */
 
 
-package com.amazon.ask.smapi.model.v1.skill;
+package com.amazon.ask.smapi.model.v1.skill.experiment;
 
 import java.util.Objects;
 
@@ -20,25 +20,19 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Name of the build step. Possible values - * `DIALOG_MODEL_BUILD` - Build status for dialog model. * `LANGUAGE_MODEL_QUICK_BUILD` - Build status for FST model. * `LANGUAGE_MODEL_FULL_BUILD` - Build status for statistical model. * `ALEXA_CONVERSATIONS_QUICK_BUILD` - AlexaConversations LowFidelity model build status. * `ALEXA_CONVERSATIONS_FULL_BUILD` - AlexaConversations HighFidelity model build status. 
+ * The direction that an experiment metric is expected to trend during the experiment. * `INCREASE` - An upward change in metric value. * `DECREASE` - A downward change in metric value. 
  */
-public enum BuildStepName {
+public enum MetricChangeDirection {
   
-  DIALOG_MODEL_BUILD("DIALOG_MODEL_BUILD"),
+  INCREASE("INCREASE"),
   
-  LANGUAGE_MODEL_QUICK_BUILD("LANGUAGE_MODEL_QUICK_BUILD"),
-  
-  LANGUAGE_MODEL_FULL_BUILD("LANGUAGE_MODEL_FULL_BUILD"),
-  
-  ALEXA_CONVERSATIONS_QUICK_BUILD("ALEXA_CONVERSATIONS_QUICK_BUILD"),
-  
-  ALEXA_CONVERSATIONS_FULL_BUILD("ALEXA_CONVERSATIONS_FULL_BUILD"),
+  DECREASE("DECREASE"),
   
   UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
-  BuildStepName(String value) {
+  MetricChangeDirection(String value) {
     this.value = value;
   }
 
@@ -53,13 +47,13 @@ public enum BuildStepName {
   }
 
   @JsonCreator
-  public static BuildStepName fromValue(String text) {
-    for (BuildStepName b : BuildStepName.values()) {
+  public static MetricChangeDirection fromValue(String text) {
+    for (MetricChangeDirection b : MetricChangeDirection.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }
     }
-    return BuildStepName.UNKNOWN_TO_SDK_VERSION;
+    return MetricChangeDirection.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

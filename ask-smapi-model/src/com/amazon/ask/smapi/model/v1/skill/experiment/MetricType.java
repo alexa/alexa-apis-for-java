@@ -12,7 +12,7 @@
 */
 
 
-package com.amazon.ask.smapi.model.v1.skill;
+package com.amazon.ask.smapi.model.v1.skill.experiment;
 
 import java.util.Objects;
 
@@ -20,25 +20,19 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Name of the build step. Possible values - * `DIALOG_MODEL_BUILD` - Build status for dialog model. * `LANGUAGE_MODEL_QUICK_BUILD` - Build status for FST model. * `LANGUAGE_MODEL_FULL_BUILD` - Build status for statistical model. * `ALEXA_CONVERSATIONS_QUICK_BUILD` - AlexaConversations LowFidelity model build status. * `ALEXA_CONVERSATIONS_FULL_BUILD` - AlexaConversations HighFidelity model build status. 
+ * The metric types a specific metric can be assigned to. * `KEY` - Identified as a metric that should provide clear evidence of expected changes caused by the new treatment experience. * `GUARDRAIL` - Identified as a metric that would detect unexpected regressions caused by the new treatment experience. 
  */
-public enum BuildStepName {
+public enum MetricType {
   
-  DIALOG_MODEL_BUILD("DIALOG_MODEL_BUILD"),
+  KEY("KEY"),
   
-  LANGUAGE_MODEL_QUICK_BUILD("LANGUAGE_MODEL_QUICK_BUILD"),
-  
-  LANGUAGE_MODEL_FULL_BUILD("LANGUAGE_MODEL_FULL_BUILD"),
-  
-  ALEXA_CONVERSATIONS_QUICK_BUILD("ALEXA_CONVERSATIONS_QUICK_BUILD"),
-  
-  ALEXA_CONVERSATIONS_FULL_BUILD("ALEXA_CONVERSATIONS_FULL_BUILD"),
+  GUARDRAIL("GUARDRAIL"),
   
   UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
-  BuildStepName(String value) {
+  MetricType(String value) {
     this.value = value;
   }
 
@@ -53,13 +47,13 @@ public enum BuildStepName {
   }
 
   @JsonCreator
-  public static BuildStepName fromValue(String text) {
-    for (BuildStepName b : BuildStepName.values()) {
+  public static MetricType fromValue(String text) {
+    for (MetricType b : MetricType.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }
     }
-    return BuildStepName.UNKNOWN_TO_SDK_VERSION;
+    return MetricType.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

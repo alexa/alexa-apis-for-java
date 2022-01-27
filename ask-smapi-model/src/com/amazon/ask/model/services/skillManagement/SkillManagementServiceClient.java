@@ -43,13 +43,13 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
                                     .withSerializer(apiConfiguration.getSerializer())
                                     .build())
           .build();
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.14.0").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.14.1").build();
   }
 
   public SkillManagementServiceClient(ApiConfiguration apiConfiguration, LwaClient lwaClient) {
       super(apiConfiguration);
       this.lwaClient = lwaClient;
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.14.0").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.14.1").build();
   }
 
   /**
@@ -4940,6 +4940,614 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    */
   public void deleteSkillV1(String skillId) throws ServiceException {
     this.callDeleteSkillV1(skillId).getResponse();
+  }
+
+  /**
+   * 
+   * Deletes an existing experiment for a skill.
+   * @param skillId The skill ID. (required)
+   * @param experimentId Identifies the experiment in a skill. (required)
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<Void> callDeleteExperimentV1(String skillId, String experimentId) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    pathParams.put("experimentId", experimentId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String resourcePath = "/v1/skills/{skillId}/experiments/{experimentId}";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "Success. No content."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 409, "The request could not be completed due to a conflict with the current state of the target resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 500, "Internal Server Error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 503, "Service Unavailable."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("DELETE", this.apiEndpoint, resourcePath, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null, null, false);
+  }
+
+  /**
+   * 
+   * Deletes an existing experiment for a skill.
+   * @param skillId The skill ID. (required)
+   * @param experimentId Identifies the experiment in a skill. (required)
+   * @throws ServiceException if fails to make API call
+   */
+  public void deleteExperimentV1(String skillId, String experimentId) throws ServiceException {
+    this.callDeleteExperimentV1(skillId, experimentId).getResponse();
+  }
+
+  /**
+   * 
+   * Updates the exposure of an experiment that is in CREATED or RUNNING state. 
+   * @param skillId The skill ID. (required)
+   * @param experimentId Identifies the experiment in a skill. (required)
+   * @param updateExposureRequest Defines the request body for updating the exposure percentage of a running experiment. (required)
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<Void> callUpdateExposureV1(String skillId, String experimentId, com.amazon.ask.smapi.model.v1.skill.experiment.UpdateExposureRequest updateExposureRequest) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    pathParams.put("experimentId", experimentId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String resourcePath = "/v1/skills/{skillId}/experiments/{experimentId}/exposurePercentage";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "Success. No content."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 409, "The request could not be completed due to a conflict with the current state of the target resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 500, "Internal Server Error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 503, "Service Unavailable."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, updateExposureRequest, null, false);
+  }
+
+  /**
+   * 
+   * Updates the exposure of an experiment that is in CREATED or RUNNING state. 
+   * @param skillId The skill ID. (required)
+   * @param experimentId Identifies the experiment in a skill. (required)
+   * @param updateExposureRequest Defines the request body for updating the exposure percentage of a running experiment. (required)
+   * @throws ServiceException if fails to make API call
+   */
+  public void updateExposureV1(String skillId, String experimentId, com.amazon.ask.smapi.model.v1.skill.experiment.UpdateExposureRequest updateExposureRequest) throws ServiceException {
+    this.callUpdateExposureV1(skillId, experimentId, updateExposureRequest).getResponse();
+  }
+
+  /**
+   * 
+   * Retrieves an existing experiment for a skill.
+   * @param skillId The skill ID. (required)
+   * @param experimentId Identifies the experiment in a skill. (required)
+   * @return com.amazon.ask.smapi.model.v1.skill.experiment.GetExperimentResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.experiment.GetExperimentResponse> callGetExperimentV1(String skillId, String experimentId) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    pathParams.put("experimentId", experimentId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String resourcePath = "/v1/skills/{skillId}/experiments/{experimentId}";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.experiment.GetExperimentResponse.class, 200, "Returned skill experiment."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 500, "Internal Server Error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 503, "Service Unavailable."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.experiment.GetExperimentResponse.class, false);
+  }
+
+  /**
+   * 
+   * Retrieves an existing experiment for a skill.
+   * @param skillId The skill ID. (required)
+   * @param experimentId Identifies the experiment in a skill. (required)
+   * @return com.amazon.ask.smapi.model.v1.skill.experiment.GetExperimentResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.smapi.model.v1.skill.experiment.GetExperimentResponse getExperimentV1(String skillId, String experimentId) throws ServiceException {
+    return this.callGetExperimentV1(skillId, experimentId).getResponse();
+  }
+
+  /**
+   * 
+   * Gets a list of all metric snapshots associated with this experiment id. The metric snapshots represent the metric data available for a time range. 
+   * @param skillId The skill ID. (required)
+   * @param experimentId Identifies the experiment in a skill. (required)
+   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @return com.amazon.ask.smapi.model.v1.skill.experiment.ListExperimentMetricSnapshotsResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.experiment.ListExperimentMetricSnapshotsResponse> callListExperimentMetricSnapshotsV1(String skillId, String experimentId, String nextToken, Integer maxResults) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+
+    if(nextToken != null) {
+    queryParams.add(new Pair<String, String>("nextToken", nextToken));
+  }
+
+    if(maxResults != null) {
+    queryParams.add(new Pair<String, String>("maxResults", maxResults.toString()));
+  }
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    pathParams.put("experimentId", experimentId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String resourcePath = "/v1/skills/{skillId}/experiments/{experimentId}/metricSnapshots";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.experiment.ListExperimentMetricSnapshotsResponse.class, 200, "Returned experiment metric snapshots."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 500, "Internal Server Error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 503, "Service Unavailable."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.experiment.ListExperimentMetricSnapshotsResponse.class, false);
+  }
+
+  /**
+   * 
+   * Gets a list of all metric snapshots associated with this experiment id. The metric snapshots represent the metric data available for a time range. 
+   * @param skillId The skill ID. (required)
+   * @param experimentId Identifies the experiment in a skill. (required)
+   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @return com.amazon.ask.smapi.model.v1.skill.experiment.ListExperimentMetricSnapshotsResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.smapi.model.v1.skill.experiment.ListExperimentMetricSnapshotsResponse listExperimentMetricSnapshotsV1(String skillId, String experimentId, String nextToken, Integer maxResults) throws ServiceException {
+    return this.callListExperimentMetricSnapshotsV1(skillId, experimentId, nextToken, maxResults).getResponse();
+  }
+
+  /**
+   * 
+   * Gets a list of all metric data associated with this experiment&#39;s metric snapshot.
+   * @param skillId The skill ID. (required)
+   * @param experimentId Identifies the experiment in a skill. (required)
+   * @param metricSnapshotId Identifies the experiment metric snapshot in a skill experiment. The metric snapshot represents metric data for a date range.  (required)
+   * @return com.amazon.ask.smapi.model.v1.skill.experiment.GetExperimentMetricSnapshotResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.experiment.GetExperimentMetricSnapshotResponse> callGetExperimentMetricSnapshotV1(String skillId, String experimentId, String metricSnapshotId) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    pathParams.put("experimentId", experimentId);
+    pathParams.put("metricSnapshotId", metricSnapshotId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String resourcePath = "/v1/skills/{skillId}/experiments/{experimentId}/metricSnapshots/{metricSnapshotId}";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.experiment.GetExperimentMetricSnapshotResponse.class, 200, "Returned experiment metric data."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 500, "Internal Server Error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 503, "Service Unavailable."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.experiment.GetExperimentMetricSnapshotResponse.class, false);
+  }
+
+  /**
+   * 
+   * Gets a list of all metric data associated with this experiment&#39;s metric snapshot.
+   * @param skillId The skill ID. (required)
+   * @param experimentId Identifies the experiment in a skill. (required)
+   * @param metricSnapshotId Identifies the experiment metric snapshot in a skill experiment. The metric snapshot represents metric data for a date range.  (required)
+   * @return com.amazon.ask.smapi.model.v1.skill.experiment.GetExperimentMetricSnapshotResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.smapi.model.v1.skill.experiment.GetExperimentMetricSnapshotResponse getExperimentMetricSnapshotV1(String skillId, String experimentId, String metricSnapshotId) throws ServiceException {
+    return this.callGetExperimentMetricSnapshotV1(skillId, experimentId, metricSnapshotId).getResponse();
+  }
+
+  /**
+   * 
+   * Updates an existing experiment for a skill. Can only be called while the experiment is in CREATED state. 
+   * @param skillId The skill ID. (required)
+   * @param experimentId Identifies the experiment in a skill. (required)
+   * @param updateExperimentRequest Defines the request body for updating an experiment. (required)
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<Void> callUpdateExperimentV1(String skillId, String experimentId, com.amazon.ask.smapi.model.v1.skill.experiment.UpdateExperimentRequest updateExperimentRequest) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    pathParams.put("experimentId", experimentId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String resourcePath = "/v1/skills/{skillId}/experiments/{experimentId}/properties";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "Success. No content."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 409, "The request could not be completed due to a conflict with the current state of the target resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 500, "Internal Server Error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 503, "Service Unavailable."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, updateExperimentRequest, null, false);
+  }
+
+  /**
+   * 
+   * Updates an existing experiment for a skill. Can only be called while the experiment is in CREATED state. 
+   * @param skillId The skill ID. (required)
+   * @param experimentId Identifies the experiment in a skill. (required)
+   * @param updateExperimentRequest Defines the request body for updating an experiment. (required)
+   * @throws ServiceException if fails to make API call
+   */
+  public void updateExperimentV1(String skillId, String experimentId, com.amazon.ask.smapi.model.v1.skill.experiment.UpdateExperimentRequest updateExperimentRequest) throws ServiceException {
+    this.callUpdateExperimentV1(skillId, experimentId, updateExperimentRequest).getResponse();
+  }
+
+  /**
+   * 
+   * Retrieves the current state of the experiment. 
+   * @param skillId The skill ID. (required)
+   * @param experimentId Identifies the experiment in a skill. (required)
+   * @return com.amazon.ask.smapi.model.v1.skill.experiment.GetExperimentStateResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.experiment.GetExperimentStateResponse> callGetExperimentStateV1(String skillId, String experimentId) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    pathParams.put("experimentId", experimentId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String resourcePath = "/v1/skills/{skillId}/experiments/{experimentId}/state";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.experiment.GetExperimentStateResponse.class, 200, "Returned skill experiment state."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 500, "Internal Server Error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 503, "Service Unavailable."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.experiment.GetExperimentStateResponse.class, false);
+  }
+
+  /**
+   * 
+   * Retrieves the current state of the experiment. 
+   * @param skillId The skill ID. (required)
+   * @param experimentId Identifies the experiment in a skill. (required)
+   * @return com.amazon.ask.smapi.model.v1.skill.experiment.GetExperimentStateResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.smapi.model.v1.skill.experiment.GetExperimentStateResponse getExperimentStateV1(String skillId, String experimentId) throws ServiceException {
+    return this.callGetExperimentStateV1(skillId, experimentId).getResponse();
+  }
+
+  /**
+   * 
+   * Requests an action on the experiment to move it to the targetState. Acceptable targetState values are: * &#x60;ENABLED&#x60;: Experiment configurations are deployed and customer overrides are enabled. Actual experiment has not started yet but customers with overrides set to T1 will see the T1 behavior. Initial state must be CREATED. * &#x60;RUNNING&#x60;: Starts the experiment with the configured exposure. Skill customers selected to be in the experiment will start contributing to the metric data. Initial state must be CREATED or ENABLED. * &#x60;STOPPED&#x60;: Stops the experiment by removing the experiment configurations. All customer treatment overrides are removed. Initial state must be ENABLED or RUNNING.              Final state for ENDPOINT_BASED experiments, no further action is taken by ASK. It is expected that the skill builder updates their endpoint code to make T1 the default live behavior. 
+   * @param skillId The skill ID. (required)
+   * @param experimentId Identifies the experiment in a skill. (required)
+   * @param manageExperimentStateRequest Defines the request body for performing an experiment action to move it to a target state. (required)
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<Void> callManageExperimentStateV1(String skillId, String experimentId, com.amazon.ask.smapi.model.v1.skill.experiment.ManageExperimentStateRequest manageExperimentStateRequest) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    pathParams.put("experimentId", experimentId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String resourcePath = "/v1/skills/{skillId}/experiments/{experimentId}/state";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(null, 202, "Accepted; Returns a URL to track the experiment state in 'Location' header."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 409, "The request could not be completed due to a conflict with the current state of the target resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 500, "Internal Server Error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 503, "Service Unavailable."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, manageExperimentStateRequest, null, false);
+  }
+
+  /**
+   * 
+   * Requests an action on the experiment to move it to the targetState. Acceptable targetState values are: * &#x60;ENABLED&#x60;: Experiment configurations are deployed and customer overrides are enabled. Actual experiment has not started yet but customers with overrides set to T1 will see the T1 behavior. Initial state must be CREATED. * &#x60;RUNNING&#x60;: Starts the experiment with the configured exposure. Skill customers selected to be in the experiment will start contributing to the metric data. Initial state must be CREATED or ENABLED. * &#x60;STOPPED&#x60;: Stops the experiment by removing the experiment configurations. All customer treatment overrides are removed. Initial state must be ENABLED or RUNNING.              Final state for ENDPOINT_BASED experiments, no further action is taken by ASK. It is expected that the skill builder updates their endpoint code to make T1 the default live behavior. 
+   * @param skillId The skill ID. (required)
+   * @param experimentId Identifies the experiment in a skill. (required)
+   * @param manageExperimentStateRequest Defines the request body for performing an experiment action to move it to a target state. (required)
+   * @throws ServiceException if fails to make API call
+   */
+  public void manageExperimentStateV1(String skillId, String experimentId, com.amazon.ask.smapi.model.v1.skill.experiment.ManageExperimentStateRequest manageExperimentStateRequest) throws ServiceException {
+    this.callManageExperimentStateV1(skillId, experimentId, manageExperimentStateRequest).getResponse();
+  }
+
+  /**
+   * 
+   * Retrieves the current user&#39;s customer treatment override for an existing A/B Test experiment. The current user must be under the same skill vendor of the requested skill id to have access to the resource. 
+   * @param skillId The skill ID. (required)
+   * @param experimentId Identifies the experiment in a skill. (required)
+   * @return com.amazon.ask.smapi.model.v1.skill.experiment.GetCustomerTreatmentOverrideResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.experiment.GetCustomerTreatmentOverrideResponse> callGetCustomerTreatmentOverrideV1(String skillId, String experimentId) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    pathParams.put("experimentId", experimentId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String resourcePath = "/v1/skills/{skillId}/experiments/{experimentId}/treatmentOverrides/~current";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.experiment.GetCustomerTreatmentOverrideResponse.class, 200, "Returned customer treatment override details."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 500, "Internal Server Error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 503, "Service Unavailable."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.experiment.GetCustomerTreatmentOverrideResponse.class, false);
+  }
+
+  /**
+   * 
+   * Retrieves the current user&#39;s customer treatment override for an existing A/B Test experiment. The current user must be under the same skill vendor of the requested skill id to have access to the resource. 
+   * @param skillId The skill ID. (required)
+   * @param experimentId Identifies the experiment in a skill. (required)
+   * @return com.amazon.ask.smapi.model.v1.skill.experiment.GetCustomerTreatmentOverrideResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.smapi.model.v1.skill.experiment.GetCustomerTreatmentOverrideResponse getCustomerTreatmentOverrideV1(String skillId, String experimentId) throws ServiceException {
+    return this.callGetCustomerTreatmentOverrideV1(skillId, experimentId).getResponse();
+  }
+
+  /**
+   * 
+   * Adds the requesting user&#39;s customer treatment override to an existing experiment. The current user must be under the same skill vendor of the requested skill id to have access to the resource. Only the current user can attempt to add the override of their own customer account to an experiment. Can only be called before the experiment is enabled. 
+   * @param skillId The skill ID. (required)
+   * @param experimentId Identifies the experiment in a skill. (required)
+   * @param setCustomerTreatmentOverrideRequest Defines the request body for adding this customer&#39;s treatment override to an experiment. (required)
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<Void> callSetCustomerTreatmentOverrideV1(String skillId, String experimentId, com.amazon.ask.smapi.model.v1.skill.experiment.SetCustomerTreatmentOverrideRequest setCustomerTreatmentOverrideRequest) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    pathParams.put("experimentId", experimentId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String resourcePath = "/v1/skills/{skillId}/experiments/{experimentId}/treatmentOverrides/~current";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "Success. No content."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 409, "The request could not be completed due to a conflict with the current state of the target resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 500, "Internal Server Error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 503, "Service Unavailable."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("PUT", this.apiEndpoint, resourcePath, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, setCustomerTreatmentOverrideRequest, null, false);
+  }
+
+  /**
+   * 
+   * Adds the requesting user&#39;s customer treatment override to an existing experiment. The current user must be under the same skill vendor of the requested skill id to have access to the resource. Only the current user can attempt to add the override of their own customer account to an experiment. Can only be called before the experiment is enabled. 
+   * @param skillId The skill ID. (required)
+   * @param experimentId Identifies the experiment in a skill. (required)
+   * @param setCustomerTreatmentOverrideRequest Defines the request body for adding this customer&#39;s treatment override to an experiment. (required)
+   * @throws ServiceException if fails to make API call
+   */
+  public void setCustomerTreatmentOverrideV1(String skillId, String experimentId, com.amazon.ask.smapi.model.v1.skill.experiment.SetCustomerTreatmentOverrideRequest setCustomerTreatmentOverrideRequest) throws ServiceException {
+    this.callSetCustomerTreatmentOverrideV1(skillId, experimentId, setCustomerTreatmentOverrideRequest).getResponse();
+  }
+
+  /**
+   * 
+   * Gets a list of all experiments associated with this skill id.
+   * @param skillId The skill ID. (required)
+   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @return com.amazon.ask.smapi.model.v1.skill.experiment.ListExperimentsResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.experiment.ListExperimentsResponse> callListExperimentsV1(String skillId, String nextToken, Integer maxResults) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+
+    if(nextToken != null) {
+    queryParams.add(new Pair<String, String>("nextToken", nextToken));
+  }
+
+    if(maxResults != null) {
+    queryParams.add(new Pair<String, String>("maxResults", maxResults.toString()));
+  }
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String resourcePath = "/v1/skills/{skillId}/experiments";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.experiment.ListExperimentsResponse.class, 200, "Returned skill experiments."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 500, "Internal Server Error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 503, "Service Unavailable."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.experiment.ListExperimentsResponse.class, false);
+  }
+
+  /**
+   * 
+   * Gets a list of all experiments associated with this skill id.
+   * @param skillId The skill ID. (required)
+   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
+   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
+   * @return com.amazon.ask.smapi.model.v1.skill.experiment.ListExperimentsResponse
+   * @throws ServiceException if fails to make API call
+   */
+  public com.amazon.ask.smapi.model.v1.skill.experiment.ListExperimentsResponse listExperimentsV1(String skillId, String nextToken, Integer maxResults) throws ServiceException {
+    return this.callListExperimentsV1(skillId, nextToken, maxResults).getResponse();
+  }
+
+  /**
+   * 
+   * Create a new experiment for a skill.
+   * @param skillId The skill ID. (required)
+   * @param createExperimentRequest Defines the request body for creating an experiment. (required)
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<Void> callCreateExperimentV1(String skillId, com.amazon.ask.smapi.model.v1.skill.experiment.CreateExperimentRequest createExperimentRequest) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("skillId", skillId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    String accessToken = lwaClient.getAccessTokenForRefreshToken();
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String resourcePath = "/v1/skills/{skillId}/experiments";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(null, 201, "Experiment created. Returns the generated experiment identifier in 'Location' header."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 404, "The resource being requested is not found."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 500, "Internal Server Error."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 503, "Service Unavailable."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, createExperimentRequest, null, false);
+  }
+
+  /**
+   * 
+   * Create a new experiment for a skill.
+   * @param skillId The skill ID. (required)
+   * @param createExperimentRequest Defines the request body for creating an experiment. (required)
+   * @throws ServiceException if fails to make API call
+   */
+  public void createExperimentV1(String skillId, com.amazon.ask.smapi.model.v1.skill.experiment.CreateExperimentRequest createExperimentRequest) throws ServiceException {
+    this.callCreateExperimentV1(skillId, createExperimentRequest).getResponse();
   }
 
   /**

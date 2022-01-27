@@ -12,7 +12,7 @@
 */
 
 
-package com.amazon.ask.smapi.model.v1.skill;
+package com.amazon.ask.smapi.model.v1.skill.experiment;
 
 import java.util.Objects;
 
@@ -20,25 +20,21 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Name of the build step. Possible values - * `DIALOG_MODEL_BUILD` - Build status for dialog model. * `LANGUAGE_MODEL_QUICK_BUILD` - Build status for FST model. * `LANGUAGE_MODEL_FULL_BUILD` - Build status for statistical model. * `ALEXA_CONVERSATIONS_QUICK_BUILD` - AlexaConversations LowFidelity model build status. * `ALEXA_CONVERSATIONS_FULL_BUILD` - AlexaConversations HighFidelity model build status. 
+ * These states are for recording the previous state from a transition action (Created, Pilot, Start, Stop) on the experiment. * `CREATED`: Result state for the 'Create' action. Experiment has been created. * `ENABLED`: Result state for the 'Pilot' action. Experiment configurations are deployed and customer overrides are activated. Actual experiment has not started yet. * `RUNNING`: Result state for the 'Start' action. Experiment has started with the configured exposure. Skill customers selected within the exposure are contributing to the metric data. 
  */
-public enum BuildStepName {
+public enum SourceState {
   
-  DIALOG_MODEL_BUILD("DIALOG_MODEL_BUILD"),
+  CREATED("CREATED"),
   
-  LANGUAGE_MODEL_QUICK_BUILD("LANGUAGE_MODEL_QUICK_BUILD"),
+  ENABLED("ENABLED"),
   
-  LANGUAGE_MODEL_FULL_BUILD("LANGUAGE_MODEL_FULL_BUILD"),
-  
-  ALEXA_CONVERSATIONS_QUICK_BUILD("ALEXA_CONVERSATIONS_QUICK_BUILD"),
-  
-  ALEXA_CONVERSATIONS_FULL_BUILD("ALEXA_CONVERSATIONS_FULL_BUILD"),
+  RUNNING("RUNNING"),
   
   UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
-  BuildStepName(String value) {
+  SourceState(String value) {
     this.value = value;
   }
 
@@ -53,13 +49,13 @@ public enum BuildStepName {
   }
 
   @JsonCreator
-  public static BuildStepName fromValue(String text) {
-    for (BuildStepName b : BuildStepName.values()) {
+  public static SourceState fromValue(String text) {
+    for (SourceState b : SourceState.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }
     }
-    return BuildStepName.UNKNOWN_TO_SDK_VERSION;
+    return SourceState.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

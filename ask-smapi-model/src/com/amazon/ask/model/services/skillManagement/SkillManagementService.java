@@ -508,6 +508,66 @@ public interface SkillManagementService {
     ApiResponse<Void> callDeleteSkillV1(String skillId) throws ServiceException;
 
 
+    void deleteExperimentV1(String skillId, String experimentId) throws ServiceException;
+
+    ApiResponse<Void> callDeleteExperimentV1(String skillId, String experimentId) throws ServiceException;
+
+
+    void updateExposureV1(String skillId, String experimentId, com.amazon.ask.smapi.model.v1.skill.experiment.UpdateExposureRequest updateExposureRequest) throws ServiceException;
+
+    ApiResponse<Void> callUpdateExposureV1(String skillId, String experimentId, com.amazon.ask.smapi.model.v1.skill.experiment.UpdateExposureRequest updateExposureRequest) throws ServiceException;
+
+
+    com.amazon.ask.smapi.model.v1.skill.experiment.GetExperimentResponse getExperimentV1(String skillId, String experimentId) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.experiment.GetExperimentResponse> callGetExperimentV1(String skillId, String experimentId) throws ServiceException;
+
+
+    com.amazon.ask.smapi.model.v1.skill.experiment.ListExperimentMetricSnapshotsResponse listExperimentMetricSnapshotsV1(String skillId, String experimentId, String nextToken, Integer maxResults) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.experiment.ListExperimentMetricSnapshotsResponse> callListExperimentMetricSnapshotsV1(String skillId, String experimentId, String nextToken, Integer maxResults) throws ServiceException;
+
+
+    com.amazon.ask.smapi.model.v1.skill.experiment.GetExperimentMetricSnapshotResponse getExperimentMetricSnapshotV1(String skillId, String experimentId, String metricSnapshotId) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.experiment.GetExperimentMetricSnapshotResponse> callGetExperimentMetricSnapshotV1(String skillId, String experimentId, String metricSnapshotId) throws ServiceException;
+
+
+    void updateExperimentV1(String skillId, String experimentId, com.amazon.ask.smapi.model.v1.skill.experiment.UpdateExperimentRequest updateExperimentRequest) throws ServiceException;
+
+    ApiResponse<Void> callUpdateExperimentV1(String skillId, String experimentId, com.amazon.ask.smapi.model.v1.skill.experiment.UpdateExperimentRequest updateExperimentRequest) throws ServiceException;
+
+
+    com.amazon.ask.smapi.model.v1.skill.experiment.GetExperimentStateResponse getExperimentStateV1(String skillId, String experimentId) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.experiment.GetExperimentStateResponse> callGetExperimentStateV1(String skillId, String experimentId) throws ServiceException;
+
+
+    void manageExperimentStateV1(String skillId, String experimentId, com.amazon.ask.smapi.model.v1.skill.experiment.ManageExperimentStateRequest manageExperimentStateRequest) throws ServiceException;
+
+    ApiResponse<Void> callManageExperimentStateV1(String skillId, String experimentId, com.amazon.ask.smapi.model.v1.skill.experiment.ManageExperimentStateRequest manageExperimentStateRequest) throws ServiceException;
+
+
+    com.amazon.ask.smapi.model.v1.skill.experiment.GetCustomerTreatmentOverrideResponse getCustomerTreatmentOverrideV1(String skillId, String experimentId) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.experiment.GetCustomerTreatmentOverrideResponse> callGetCustomerTreatmentOverrideV1(String skillId, String experimentId) throws ServiceException;
+
+
+    void setCustomerTreatmentOverrideV1(String skillId, String experimentId, com.amazon.ask.smapi.model.v1.skill.experiment.SetCustomerTreatmentOverrideRequest setCustomerTreatmentOverrideRequest) throws ServiceException;
+
+    ApiResponse<Void> callSetCustomerTreatmentOverrideV1(String skillId, String experimentId, com.amazon.ask.smapi.model.v1.skill.experiment.SetCustomerTreatmentOverrideRequest setCustomerTreatmentOverrideRequest) throws ServiceException;
+
+
+    com.amazon.ask.smapi.model.v1.skill.experiment.ListExperimentsResponse listExperimentsV1(String skillId, String nextToken, Integer maxResults) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.smapi.model.v1.skill.experiment.ListExperimentsResponse> callListExperimentsV1(String skillId, String nextToken, Integer maxResults) throws ServiceException;
+
+
+    void createExperimentV1(String skillId, com.amazon.ask.smapi.model.v1.skill.experiment.CreateExperimentRequest createExperimentRequest) throws ServiceException;
+
+    ApiResponse<Void> callCreateExperimentV1(String skillId, com.amazon.ask.smapi.model.v1.skill.experiment.CreateExperimentRequest createExperimentRequest) throws ServiceException;
+
+
     com.amazon.ask.smapi.model.v1.skill.history.IntentRequests getUtteranceDataV1(String skillId, String stage, String nextToken, Integer maxResults, String sortDirection, String sortField, List<com.amazon.ask.smapi.model.v1.skill.history.LocaleInQuery> locale, List<com.amazon.ask.smapi.model.v1.skill.history.DialogActName> dialogActName, List<com.amazon.ask.smapi.model.v1.skill.history.IntentConfidenceBin> intentConfidenceBin, List<String> intentName, List<String> intentSlotsName, List<com.amazon.ask.smapi.model.v1.skill.history.InteractionType> interactionType, List<com.amazon.ask.smapi.model.v1.skill.history.PublicationStatus> publicationStatus, List<String> utteranceText) throws ServiceException;
 
     ApiResponse<com.amazon.ask.smapi.model.v1.skill.history.IntentRequests> callGetUtteranceDataV1(String skillId, String stage, String nextToken, Integer maxResults, String sortDirection, String sortField, List<com.amazon.ask.smapi.model.v1.skill.history.LocaleInQuery> locale, List<com.amazon.ask.smapi.model.v1.skill.history.DialogActName> dialogActName, List<com.amazon.ask.smapi.model.v1.skill.history.IntentConfidenceBin> intentConfidenceBin, List<String> intentName, List<String> intentSlotsName, List<com.amazon.ask.smapi.model.v1.skill.history.InteractionType> interactionType, List<com.amazon.ask.smapi.model.v1.skill.history.PublicationStatus> publicationStatus, List<String> utteranceText) throws ServiceException;
