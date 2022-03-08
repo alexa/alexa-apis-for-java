@@ -50,6 +50,7 @@ public class SubTypesManifest {
     directiveSubTypes.put("AudioPlayer.Play", com.amazon.ask.model.interfaces.audioplayer.PlayDirective.class);
     directiveSubTypes.put("Alexa.Presentation.APL.ExecuteCommands", com.amazon.ask.model.interfaces.alexa.presentation.apl.ExecuteCommandsDirective.class);
     directiveSubTypes.put("Display.RenderTemplate", com.amazon.ask.model.interfaces.display.RenderTemplateDirective.class);
+    directiveSubTypes.put("Conversations.ResetContext", com.amazon.ask.model.interfaces.conversations.ResetContextDirective.class);
     directiveSubTypes.put("Dialog.DelegateRequest", com.amazon.ask.model.dialog.DelegateRequestDirective.class);
     directiveSubTypes.put("Hint", com.amazon.ask.model.interfaces.display.HintDirective.class);
     directiveSubTypes.put("Connections.StartConnection", com.amazon.ask.model.interfaces.connections.V1.StartConnectionDirective.class);
@@ -145,12 +146,15 @@ public class SubTypesManifest {
     interfacesAlexaPresentationAplCommandSubTypes.put("Finish", com.amazon.ask.model.interfaces.alexa.presentation.apl.FinishCommand.class);
     interfacesAlexaPresentationAplCommandSubTypes.put("AutoPage", com.amazon.ask.model.interfaces.alexa.presentation.apl.AutoPageCommand.class);
     interfacesAlexaPresentationAplCommandSubTypes.put("PlayMedia", com.amazon.ask.model.interfaces.alexa.presentation.apl.PlayMediaCommand.class);
+    interfacesAlexaPresentationAplCommandSubTypes.put("GoBack", com.amazon.ask.model.interfaces.alexa.presentation.apl.GoBackCommand.class);
     interfacesAlexaPresentationAplCommandSubTypes.put("Scroll", com.amazon.ask.model.interfaces.alexa.presentation.apl.ScrollCommand.class);
     interfacesAlexaPresentationAplCommandSubTypes.put("Idle", com.amazon.ask.model.interfaces.alexa.presentation.apl.IdleCommand.class);
     interfacesAlexaPresentationAplCommandSubTypes.put("AnimateItem", com.amazon.ask.model.interfaces.alexa.presentation.apl.AnimateItemCommand.class);
     interfacesAlexaPresentationAplCommandSubTypes.put("SendEvent", com.amazon.ask.model.interfaces.alexa.presentation.apl.SendEventCommand.class);
+    interfacesAlexaPresentationAplCommandSubTypes.put("ShowOverlay", com.amazon.ask.model.interfaces.alexa.presentation.apl.ShowOverlayCommand.class);
     interfacesAlexaPresentationAplCommandSubTypes.put("SpeakList", com.amazon.ask.model.interfaces.alexa.presentation.apl.SpeakListCommand.class);
     interfacesAlexaPresentationAplCommandSubTypes.put("Select", com.amazon.ask.model.interfaces.alexa.presentation.apl.SelectCommand.class);
+    interfacesAlexaPresentationAplCommandSubTypes.put("HideOverlay", com.amazon.ask.model.interfaces.alexa.presentation.apl.HideOverlayCommand.class);
     interfacesAlexaPresentationAplCommandSubTypes.put("Sequential", com.amazon.ask.model.interfaces.alexa.presentation.apl.SequentialCommand.class);
     interfacesAlexaPresentationAplCommandSubTypes.put("SetState", com.amazon.ask.model.interfaces.alexa.presentation.apl.SetStateCommand.class);
     interfacesAlexaPresentationAplCommandSubTypes.put("SpeakItem", com.amazon.ask.model.interfaces.alexa.presentation.apl.SpeakItemCommand.class);

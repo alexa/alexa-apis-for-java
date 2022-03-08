@@ -12,7 +12,7 @@
 */
 
 
-package com.amazon.ask.model.interfaces.alexa.experimentation;
+package com.amazon.ask.model.interfaces.alexa.presentation.apl;
 
 import java.util.Objects;
 
@@ -20,19 +20,21 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Experiment treatment identifier
+ * The type of back navigation to use. Defaults to count.
  */
-public enum TreatmentId {
+public enum BackType {
   
-  C("C"),
+  COUNT("count"),
   
-  T1("T1"),
+  INDEX("index"),
+  
+  ID("id"),
   
   UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
 
-  TreatmentId(String value) {
+  BackType(String value) {
     this.value = value;
   }
 
@@ -47,13 +49,13 @@ public enum TreatmentId {
   }
 
   @JsonCreator
-  public static TreatmentId fromValue(String text) {
-    for (TreatmentId b : TreatmentId.values()) {
+  public static BackType fromValue(String text) {
+    for (BackType b : BackType.values()) {
       if (String.valueOf(b.value).equals(text)) {
         return b;
       }
     }
-    return TreatmentId.UNKNOWN_TO_SDK_VERSION;
+    return BackType.UNKNOWN_TO_SDK_VERSION;
   }
 }
 

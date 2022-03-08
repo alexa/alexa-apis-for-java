@@ -29,7 +29,7 @@ public final class ExperimentAssignment {
     private String id = null;
 
     @JsonProperty("treatmentId")
-    private com.amazon.ask.model.interfaces.alexa.experimentation.Treatment treatmentId = null;
+    private String treatmentId = null;
 
     public static Builder builder() {
         return new Builder();
@@ -56,13 +56,30 @@ public final class ExperimentAssignment {
 
     /**
      * Get treatmentId
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getTreatmentIdAsString().
+     *
      * @return treatmentId
     **/
-    @JsonProperty("treatmentId")
-    public com.amazon.ask.model.interfaces.alexa.experimentation.Treatment getTreatmentId() {
-        return treatmentId;
+    
+    public com.amazon.ask.model.interfaces.alexa.experimentation.TreatmentId getTreatmentId() {
+        return com.amazon.ask.model.interfaces.alexa.experimentation.TreatmentId.fromValue(treatmentId);
     }
 
+    /**
+     * Get the underlying String value for treatmentId.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return treatmentId as a String value
+    **/
+    @JsonProperty("treatmentId")
+    public String getTreatmentIdAsString() {
+      return treatmentId;
+    }
 
     @Override
     public boolean equals(java.lang.Object o) {
@@ -106,7 +123,7 @@ public final class ExperimentAssignment {
   
     public static class Builder {
         private String id;
-        private com.amazon.ask.model.interfaces.alexa.experimentation.Treatment treatmentId;
+        private String treatmentId;
 
         private Builder() {}
 
@@ -119,9 +136,13 @@ public final class ExperimentAssignment {
 
 
         @JsonProperty("treatmentId")
+        public Builder withTreatmentId(String treatmentId) {
+          this.treatmentId = treatmentId;
+          return this;
+        }
 
-        public Builder withTreatmentId(com.amazon.ask.model.interfaces.alexa.experimentation.Treatment treatmentId) {
-            this.treatmentId = treatmentId;
+        public Builder withTreatmentId(com.amazon.ask.model.interfaces.alexa.experimentation.TreatmentId treatmentId) {
+            this.treatmentId = treatmentId != null ? treatmentId.toString() : null;
             return this;
         }
 
