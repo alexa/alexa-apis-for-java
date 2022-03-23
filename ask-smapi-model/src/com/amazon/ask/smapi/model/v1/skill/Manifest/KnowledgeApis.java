@@ -28,6 +28,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = KnowledgeApis.Builder.class)
 public final class KnowledgeApis {
 
+    @JsonProperty("enablementChannel")
+    private String enablementChannel = null;
+
     @JsonProperty("locales")
     private Map<String, com.amazon.ask.smapi.model.v1.skill.Manifest.LocalizedKnowledgeInformation> locales = new HashMap<String, com.amazon.ask.smapi.model.v1.skill.Manifest.LocalizedKnowledgeInformation>();
 
@@ -36,9 +39,39 @@ public final class KnowledgeApis {
     }
 
     private KnowledgeApis(Builder builder) {
+        if (builder.enablementChannel != null) {
+            this.enablementChannel = builder.enablementChannel;
+        }
         if (builder.locales != null) {
             this.locales = builder.locales;
         }
+    }
+
+    /**
+     * Get enablementChannel
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getEnablementChannelAsString().
+     *
+     * @return enablementChannel
+    **/
+    
+    public com.amazon.ask.smapi.model.v1.skill.Manifest.KnowledgeApisEnablementChannel getEnablementChannel() {
+        return com.amazon.ask.smapi.model.v1.skill.Manifest.KnowledgeApisEnablementChannel.fromValue(enablementChannel);
+    }
+
+    /**
+     * Get the underlying String value for enablementChannel.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return enablementChannel as a String value
+    **/
+    @JsonProperty("enablementChannel")
+    public String getEnablementChannelAsString() {
+      return enablementChannel;
     }
 
     /**
@@ -60,12 +93,13 @@ public final class KnowledgeApis {
             return false;
         }
         KnowledgeApis v1SkillManifestKnowledgeApis = (KnowledgeApis) o;
-        return Objects.equals(this.locales, v1SkillManifestKnowledgeApis.locales);
+        return Objects.equals(this.enablementChannel, v1SkillManifestKnowledgeApis.enablementChannel) &&
+            Objects.equals(this.locales, v1SkillManifestKnowledgeApis.locales);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(locales);
+        return Objects.hash(enablementChannel, locales);
     }
 
     @Override
@@ -73,6 +107,7 @@ public final class KnowledgeApis {
         StringBuilder sb = new StringBuilder();
         sb.append("class KnowledgeApis {\n");
         
+        sb.append("    enablementChannel: ").append(toIndentedString(enablementChannel)).append("\n");
         sb.append("    locales: ").append(toIndentedString(locales)).append("\n");
         sb.append("}");
         return sb.toString();
@@ -90,9 +125,22 @@ public final class KnowledgeApis {
     }
   
     public static class Builder {
+        private String enablementChannel;
         private Map<String, com.amazon.ask.smapi.model.v1.skill.Manifest.LocalizedKnowledgeInformation> locales;
 
         private Builder() {}
+
+        @JsonProperty("enablementChannel")
+        public Builder withEnablementChannel(String enablementChannel) {
+          this.enablementChannel = enablementChannel;
+          return this;
+        }
+
+        public Builder withEnablementChannel(com.amazon.ask.smapi.model.v1.skill.Manifest.KnowledgeApisEnablementChannel enablementChannel) {
+            this.enablementChannel = enablementChannel != null ? enablementChannel.toString() : null;
+            return this;
+        }
+
 
         @JsonProperty("locales")
 

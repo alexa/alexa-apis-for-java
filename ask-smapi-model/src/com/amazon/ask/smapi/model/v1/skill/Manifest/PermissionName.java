@@ -94,6 +94,8 @@ public enum PermissionName {
   
   ALEXA_DEVICES_ALL_COARSE_LOCATION_READ("alexa::devices:all:coarse_location:read"),
   
+  ALEXA_DEVICES_ALL_TOKENIZED_GEOLOCATION_READ("alexa::devices:all:tokenized_geolocation:read"),
+  
   UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
