@@ -28,6 +28,9 @@ public final class LambdaEndpoint {
     @JsonProperty("uri")
     private String uri = null;
 
+    @JsonProperty("sslCertificateType")
+    private String sslCertificateType = null;
+
     public static Builder builder() {
         return new Builder();
     }
@@ -35,6 +38,9 @@ public final class LambdaEndpoint {
     private LambdaEndpoint(Builder builder) {
         if (builder.uri != null) {
             this.uri = builder.uri;
+        }
+        if (builder.sslCertificateType != null) {
+            this.sslCertificateType = builder.sslCertificateType;
         }
     }
 
@@ -48,6 +54,33 @@ public final class LambdaEndpoint {
     }
 
 
+    /**
+     * Get sslCertificateType
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getSslCertificateTypeAsString().
+     *
+     * @return sslCertificateType
+    **/
+    
+    public com.amazon.ask.smapi.model.v1.skill.Manifest.LambdaSSLCertificateType getSslCertificateType() {
+        return com.amazon.ask.smapi.model.v1.skill.Manifest.LambdaSSLCertificateType.fromValue(sslCertificateType);
+    }
+
+    /**
+     * Get the underlying String value for sslCertificateType.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return sslCertificateType as a String value
+    **/
+    @JsonProperty("sslCertificateType")
+    public String getSslCertificateTypeAsString() {
+      return sslCertificateType;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -57,12 +90,13 @@ public final class LambdaEndpoint {
             return false;
         }
         LambdaEndpoint v1SkillManifestLambdaEndpoint = (LambdaEndpoint) o;
-        return Objects.equals(this.uri, v1SkillManifestLambdaEndpoint.uri);
+        return Objects.equals(this.uri, v1SkillManifestLambdaEndpoint.uri) &&
+            Objects.equals(this.sslCertificateType, v1SkillManifestLambdaEndpoint.sslCertificateType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(uri);
+        return Objects.hash(uri, sslCertificateType);
     }
 
     @Override
@@ -71,6 +105,7 @@ public final class LambdaEndpoint {
         sb.append("class LambdaEndpoint {\n");
         
         sb.append("    uri: ").append(toIndentedString(uri)).append("\n");
+        sb.append("    sslCertificateType: ").append(toIndentedString(sslCertificateType)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -88,6 +123,7 @@ public final class LambdaEndpoint {
   
     public static class Builder {
         private String uri;
+        private String sslCertificateType;
 
         private Builder() {}
 
@@ -95,6 +131,18 @@ public final class LambdaEndpoint {
 
         public Builder withUri(String uri) {
             this.uri = uri;
+            return this;
+        }
+
+
+        @JsonProperty("sslCertificateType")
+        public Builder withSslCertificateType(String sslCertificateType) {
+          this.sslCertificateType = sslCertificateType;
+          return this;
+        }
+
+        public Builder withSslCertificateType(com.amazon.ask.smapi.model.v1.skill.Manifest.LambdaSSLCertificateType sslCertificateType) {
+            this.sslCertificateType = sslCertificateType != null ? sslCertificateType.toString() : null;
             return this;
         }
 
