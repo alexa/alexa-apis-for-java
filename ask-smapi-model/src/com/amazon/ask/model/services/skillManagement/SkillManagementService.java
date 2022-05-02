@@ -453,9 +453,9 @@ public interface SkillManagementService {
     ApiResponse<Void> callCreateBetaTestV1(String skillId, com.amazon.ask.smapi.model.v1.skill.betaTest.TestBody createTestBody) throws ServiceException;
 
 
-    com.amazon.ask.smapi.model.v1.skill.betaTest.UpdateBetaTestResponse updateBetaTestV1(String skillId, com.amazon.ask.smapi.model.v1.skill.betaTest.TestBody createTestBody) throws ServiceException;
+    void updateBetaTestV1(String skillId, com.amazon.ask.smapi.model.v1.skill.betaTest.TestBody createTestBody) throws ServiceException;
 
-    ApiResponse<com.amazon.ask.smapi.model.v1.skill.betaTest.UpdateBetaTestResponse> callUpdateBetaTestV1(String skillId, com.amazon.ask.smapi.model.v1.skill.betaTest.TestBody createTestBody) throws ServiceException;
+    ApiResponse<Void> callUpdateBetaTestV1(String skillId, com.amazon.ask.smapi.model.v1.skill.betaTest.TestBody createTestBody) throws ServiceException;
 
 
     void startBetaTestV1(String skillId) throws ServiceException;

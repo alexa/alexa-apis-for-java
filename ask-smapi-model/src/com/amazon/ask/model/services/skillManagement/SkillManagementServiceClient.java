@@ -43,13 +43,13 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
                                     .withSerializer(apiConfiguration.getSerializer())
                                     .build())
           .build();
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.14.5").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.14.6").build();
   }
 
   public SkillManagementServiceClient(ApiConfiguration apiConfiguration, LwaClient lwaClient) {
       super(apiConfiguration);
       this.lwaClient = lwaClient;
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.14.5").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.14.6").build();
   }
 
   /**
@@ -4424,10 +4424,9 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * Update a beta test for a given Alexa skill.
    * @param skillId The skill ID. (required)
    * @param createTestBody JSON object containing the details of a beta test used to create the test. (optional)
-   * @return com.amazon.ask.smapi.model.v1.skill.betaTest.UpdateBetaTestResponse
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.betaTest.UpdateBetaTestResponse> callUpdateBetaTestV1(String skillId, com.amazon.ask.smapi.model.v1.skill.betaTest.TestBody createTestBody) throws ServiceException {
+  public ApiResponse<Void> callUpdateBetaTestV1(String skillId, com.amazon.ask.smapi.model.v1.skill.betaTest.TestBody createTestBody) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
     pathParams.put("skillId", skillId);
@@ -4440,7 +4439,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
     String resourcePath = "/v1/skills/{skillId}/betaTest";
 
     List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.betaTest.UpdateBetaTestResponse.class, 204, "Success. No content."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "Success. No content."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
     serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.Error.class, 404, "The resource being requested is not found."));
@@ -4451,7 +4450,7 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
 
 
     return this.executeRequest("PUT", this.apiEndpoint, resourcePath, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, createTestBody, com.amazon.ask.smapi.model.v1.skill.betaTest.UpdateBetaTestResponse.class, false);
+      pathParams, serviceResponseDefinitions, createTestBody, null, false);
   }
 
   /**
@@ -4459,11 +4458,10 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    * Update a beta test for a given Alexa skill.
    * @param skillId The skill ID. (required)
    * @param createTestBody JSON object containing the details of a beta test used to create the test. (optional)
-   * @return com.amazon.ask.smapi.model.v1.skill.betaTest.UpdateBetaTestResponse
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.smapi.model.v1.skill.betaTest.UpdateBetaTestResponse updateBetaTestV1(String skillId, com.amazon.ask.smapi.model.v1.skill.betaTest.TestBody createTestBody) throws ServiceException {
-    return this.callUpdateBetaTestV1(skillId, createTestBody).getResponse();
+  public void updateBetaTestV1(String skillId, com.amazon.ask.smapi.model.v1.skill.betaTest.TestBody createTestBody) throws ServiceException {
+    this.callUpdateBetaTestV1(skillId, createTestBody).getResponse();
   }
 
   /**
