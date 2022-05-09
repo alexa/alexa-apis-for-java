@@ -218,6 +218,7 @@ public final class AuditLogsRequest {
 
 
         @JsonProperty("sortDirection")
+
         public Builder withSortDirection(String sortDirection) {
           this.sortDirection = sortDirection;
           return this;
@@ -230,6 +231,7 @@ public final class AuditLogsRequest {
 
 
         @JsonProperty("sortField")
+
         public Builder withSortField(String sortField) {
           this.sortField = sortField;
           return this;

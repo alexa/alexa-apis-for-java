@@ -224,6 +224,7 @@ public final class GetSHCapabilityEvaluationResponse {
 
 
         @JsonProperty("status")
+
         public Builder withStatus(String status) {
           this.status = status;
           return this;

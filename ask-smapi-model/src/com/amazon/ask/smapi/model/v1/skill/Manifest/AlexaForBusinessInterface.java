@@ -158,6 +158,7 @@ public final class AlexaForBusinessInterface {
 
 
         @JsonProperty("version")
+
         public Builder withVersion(String version) {
           this.version = version;
           return this;

@@ -407,6 +407,7 @@ public final class InSkillProductSummary {
         private Builder() {}
 
         @JsonProperty("type")
+
         public Builder withType(String type) {
           this.type = type;
           return this;
@@ -458,6 +459,7 @@ public final class InSkillProductSummary {
         }
 
         @JsonProperty("status")
+
         public Builder withStatus(String status) {
           this.status = status;
           return this;
@@ -470,6 +472,7 @@ public final class InSkillProductSummary {
 
 
         @JsonProperty("stage")
+
         public Builder withStage(String stage) {
           this.stage = stage;
           return this;
@@ -482,6 +485,7 @@ public final class InSkillProductSummary {
 
 
         @JsonProperty("editableState")
+
         public Builder withEditableState(String editableState) {
           this.editableState = editableState;
           return this;
@@ -494,6 +498,7 @@ public final class InSkillProductSummary {
 
 
         @JsonProperty("purchasableState")
+
         public Builder withPurchasableState(String purchasableState) {
           this.purchasableState = purchasableState;
           return this;
@@ -506,6 +511,7 @@ public final class InSkillProductSummary {
 
 
         @JsonProperty("promotableState")
+
         public Builder withPromotableState(String promotableState) {
           this.promotableState = promotableState;
           return this;

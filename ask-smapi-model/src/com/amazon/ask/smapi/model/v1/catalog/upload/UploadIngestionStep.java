@@ -186,6 +186,7 @@ public final class UploadIngestionStep {
         private Builder() {}
 
         @JsonProperty("name")
+
         public Builder withName(String name) {
           this.name = name;
           return this;
@@ -198,6 +199,7 @@ public final class UploadIngestionStep {
 
 
         @JsonProperty("status")
+
         public Builder withStatus(String status) {
           this.status = status;
           return this;

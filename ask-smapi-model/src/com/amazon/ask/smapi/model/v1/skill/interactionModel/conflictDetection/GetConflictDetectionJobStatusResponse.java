@@ -129,6 +129,7 @@ public final class GetConflictDetectionJobStatusResponse {
         private Builder() {}
 
         @JsonProperty("status")
+
         public Builder withStatus(String status) {
           this.status = status;
           return this;

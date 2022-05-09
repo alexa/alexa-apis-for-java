@@ -109,6 +109,7 @@ public final class TaxInformation {
         private Builder() {}
 
         @JsonProperty("category")
+
         public Builder withCategory(String category) {
           this.category = category;
           return this;

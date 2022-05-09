@@ -173,6 +173,7 @@ public final class MetricConfiguration {
         }
 
         @JsonProperty("expectedChange")
+
         public Builder withExpectedChange(String expectedChange) {
           this.expectedChange = expectedChange;
           return this;

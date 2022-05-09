@@ -171,6 +171,7 @@ public final class CloneLocaleStatusResponse {
         private Builder() {}
 
         @JsonProperty("status")
+
         public Builder withStatus(String status) {
           this.status = status;
           return this;

@@ -136,6 +136,7 @@ public final class HostedSkillInfo {
 
 
         @JsonProperty("runtime")
+
         public Builder withRuntime(String runtime) {
           this.runtime = runtime;
           return this;

@@ -145,6 +145,7 @@ public final class LinkedAndroidCommonIntent {
         private Builder() {}
 
         @JsonProperty("intentName")
+
         public Builder withIntentName(String intentName) {
           this.intentName = intentName;
           return this;
@@ -157,6 +158,7 @@ public final class LinkedAndroidCommonIntent {
 
 
         @JsonProperty("catalogType")
+
         public Builder withCatalogType(String catalogType) {
           this.catalogType = catalogType;
           return this;

@@ -109,6 +109,7 @@ public final class AlexaForBusinessInterfaceRequest {
         private Builder() {}
 
         @JsonProperty("name")
+
         public Builder withName(String name) {
           this.name = name;
           return this;

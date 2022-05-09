@@ -109,6 +109,7 @@ public final class EventName {
         private Builder() {}
 
         @JsonProperty("eventName")
+
         public Builder withEventName(String eventName) {
           this.eventName = eventName;
           return this;

@@ -128,6 +128,7 @@ public final class InvocationsApiRequest {
         private Builder() {}
 
         @JsonProperty("endpointRegion")
+
         public Builder withEndpointRegion(String endpointRegion) {
           this.endpointRegion = endpointRegion;
           return this;

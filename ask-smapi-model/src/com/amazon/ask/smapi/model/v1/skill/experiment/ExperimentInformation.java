@@ -318,6 +318,7 @@ public final class ExperimentInformation {
 
 
         @JsonProperty("type")
+
         public Builder withType(String type) {
           this.type = type;
           return this;
@@ -369,6 +370,7 @@ public final class ExperimentInformation {
         }
 
         @JsonProperty("state")
+
         public Builder withState(String state) {
           this.state = state;
           return this;

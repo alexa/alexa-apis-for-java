@@ -131,6 +131,7 @@ public final class KnowledgeApis {
         private Builder() {}
 
         @JsonProperty("enablementChannel")
+
         public Builder withEnablementChannel(String enablementChannel) {
           this.enablementChannel = enablementChannel;
           return this;

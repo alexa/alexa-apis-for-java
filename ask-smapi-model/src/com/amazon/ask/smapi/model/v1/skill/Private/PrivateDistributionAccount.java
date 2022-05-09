@@ -136,6 +136,7 @@ public final class PrivateDistributionAccount {
 
 
         @JsonProperty("acceptStatus")
+
         public Builder withAcceptStatus(String acceptStatus) {
           this.acceptStatus = acceptStatus;
           return this;

@@ -131,6 +131,7 @@ public final class Dialog {
         private Builder() {}
 
         @JsonProperty("delegationStrategy")
+
         public Builder withDelegationStrategy(String delegationStrategy) {
           this.delegationStrategy = delegationStrategy;
           return this;

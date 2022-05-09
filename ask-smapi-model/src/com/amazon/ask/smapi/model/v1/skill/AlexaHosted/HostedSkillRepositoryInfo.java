@@ -136,6 +136,7 @@ public final class HostedSkillRepositoryInfo {
 
 
         @JsonProperty("type")
+
         public Builder withType(String type) {
           this.type = type;
           return this;

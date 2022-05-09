@@ -109,6 +109,7 @@ public final class SetCustomerTreatmentOverrideRequest {
         private Builder() {}
 
         @JsonProperty("treatmentId")
+
         public Builder withTreatmentId(String treatmentId) {
           this.treatmentId = treatmentId;
           return this;

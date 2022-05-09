@@ -303,6 +303,7 @@ public final class InSkillProductDefinition {
 
 
         @JsonProperty("type")
+
         public Builder withType(String type) {
           this.type = type;
           return this;
@@ -323,6 +324,7 @@ public final class InSkillProductDefinition {
 
 
         @JsonProperty("purchasableState")
+
         public Builder withPurchasableState(String purchasableState) {
           this.purchasableState = purchasableState;
           return this;
@@ -335,6 +337,7 @@ public final class InSkillProductDefinition {
 
 
         @JsonProperty("promotableState")
+
         public Builder withPromotableState(String promotableState) {
           this.promotableState = promotableState;
           return this;

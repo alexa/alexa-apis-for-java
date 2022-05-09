@@ -260,6 +260,7 @@ public final class CatalogSummary {
 
 
         @JsonProperty("type")
+
         public Builder withType(String type) {
           this.type = type;
           return this;
@@ -272,6 +273,7 @@ public final class CatalogSummary {
 
 
         @JsonProperty("usage")
+
         public Builder withUsage(String usage) {
           this.usage = usage;
           return this;

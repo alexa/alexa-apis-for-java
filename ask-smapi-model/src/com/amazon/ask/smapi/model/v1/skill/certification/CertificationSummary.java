@@ -175,6 +175,7 @@ public final class CertificationSummary {
 
 
         @JsonProperty("status")
+
         public Builder withStatus(String status) {
           this.status = status;
           return this;

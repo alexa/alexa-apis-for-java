@@ -213,6 +213,7 @@ public final class ResourceImportStatus {
 
 
         @JsonProperty("status")
+
         public Builder withStatus(String status) {
           this.status = status;
           return this;
@@ -225,6 +226,7 @@ public final class ResourceImportStatus {
 
 
         @JsonProperty("action")
+
         public Builder withAction(String action) {
           this.action = action;
           return this;

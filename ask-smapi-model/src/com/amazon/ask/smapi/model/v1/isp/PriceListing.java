@@ -137,6 +137,7 @@ public final class PriceListing {
 
 
         @JsonProperty("currency")
+
         public Builder withCurrency(String currency) {
           this.currency = currency;
           return this;

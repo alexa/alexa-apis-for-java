@@ -163,6 +163,7 @@ public final class JobDefinitionMetadata {
 
 
         @JsonProperty("status")
+
         public Builder withStatus(String status) {
           this.status = status;
           return this;

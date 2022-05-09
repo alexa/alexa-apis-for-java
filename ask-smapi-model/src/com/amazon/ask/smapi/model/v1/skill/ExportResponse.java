@@ -128,6 +128,7 @@ public final class ExportResponse {
         private Builder() {}
 
         @JsonProperty("status")
+
         public Builder withStatus(String status) {
           this.status = status;
           return this;

@@ -290,6 +290,7 @@ public final class IntentRequest {
 
 
         @JsonProperty("interactionType")
+
         public Builder withInteractionType(String interactionType) {
           this.interactionType = interactionType;
           return this;
@@ -302,6 +303,7 @@ public final class IntentRequest {
 
 
         @JsonProperty("locale")
+
         public Builder withLocale(String locale) {
           this.locale = locale;
           return this;
@@ -314,6 +316,7 @@ public final class IntentRequest {
 
 
         @JsonProperty("publicationStatus")
+
         public Builder withPublicationStatus(String publicationStatus) {
           this.publicationStatus = publicationStatus;
           return this;
@@ -326,6 +329,7 @@ public final class IntentRequest {
 
 
         @JsonProperty("stage")
+
         public Builder withStage(String stage) {
           this.stage = stage;
           return this;

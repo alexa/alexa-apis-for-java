@@ -167,6 +167,7 @@ public final class BuildStep {
         private Builder() {}
 
         @JsonProperty("name")
+
         public Builder withName(String name) {
           this.name = name;
           return this;
@@ -179,6 +180,7 @@ public final class BuildStep {
 
 
         @JsonProperty("status")
+
         public Builder withStatus(String status) {
           this.status = status;
           return this;

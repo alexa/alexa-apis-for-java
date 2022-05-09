@@ -327,6 +327,7 @@ public final class LocalizedFlashBriefingInfoItems {
 
 
         @JsonProperty("contentType")
+
         public Builder withContentType(String contentType) {
           this.contentType = contentType;
           return this;
@@ -339,6 +340,7 @@ public final class LocalizedFlashBriefingInfoItems {
 
 
         @JsonProperty("genre")
+
         public Builder withGenre(String genre) {
           this.genre = genre;
           return this;
@@ -351,6 +353,7 @@ public final class LocalizedFlashBriefingInfoItems {
 
 
         @JsonProperty("updateFrequency")
+
         public Builder withUpdateFrequency(String updateFrequency) {
           this.updateFrequency = updateFrequency;
           return this;

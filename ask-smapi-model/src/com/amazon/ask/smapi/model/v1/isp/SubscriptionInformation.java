@@ -128,6 +128,7 @@ public final class SubscriptionInformation {
         private Builder() {}
 
         @JsonProperty("subscriptionPaymentFrequency")
+
         public Builder withSubscriptionPaymentFrequency(String subscriptionPaymentFrequency) {
           this.subscriptionPaymentFrequency = subscriptionPaymentFrequency;
           return this;

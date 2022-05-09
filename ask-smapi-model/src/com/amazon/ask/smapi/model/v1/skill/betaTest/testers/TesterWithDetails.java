@@ -191,6 +191,7 @@ public final class TesterWithDetails {
 
 
         @JsonProperty("invitationStatus")
+
         public Builder withInvitationStatus(String invitationStatus) {
           this.invitationStatus = invitationStatus;
           return this;

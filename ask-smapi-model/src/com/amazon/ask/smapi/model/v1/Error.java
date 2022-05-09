@@ -108,6 +108,7 @@ public class Error {
 
 
         @JsonProperty("code")
+
         public T withCode(String code) {
             this.code = code;
             return (T)this;
@@ -116,6 +117,7 @@ public class Error {
 
 
         @JsonProperty("message")
+
         public T withMessage(String message) {
             this.message = message;
             return (T)this;

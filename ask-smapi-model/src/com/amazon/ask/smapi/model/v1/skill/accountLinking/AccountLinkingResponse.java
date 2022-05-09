@@ -300,6 +300,7 @@ public final class AccountLinkingResponse {
         private Builder() {}
 
         @JsonProperty("type")
+
         public Builder withType(String type) {
           this.type = type;
           return this;
@@ -366,6 +367,7 @@ public final class AccountLinkingResponse {
 
 
         @JsonProperty("accessTokenScheme")
+
         public Builder withAccessTokenScheme(String accessTokenScheme) {
           this.accessTokenScheme = accessTokenScheme;
           return this;

@@ -362,6 +362,7 @@ public final class SkillManifestPublishingInformation {
 
 
         @JsonProperty("distributionMode")
+
         public Builder withDistributionMode(String distributionMode) {
           this.distributionMode = distributionMode;
           return this;

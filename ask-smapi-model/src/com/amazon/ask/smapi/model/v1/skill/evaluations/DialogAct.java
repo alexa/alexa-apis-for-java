@@ -128,6 +128,7 @@ public final class DialogAct {
         private Builder() {}
 
         @JsonProperty("type")
+
         public Builder withType(String type) {
           this.type = type;
           return this;

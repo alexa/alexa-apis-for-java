@@ -128,6 +128,7 @@ public final class SubmitSkillForCertificationRequest {
         private Builder() {}
 
         @JsonProperty("publicationMethod")
+
         public Builder withPublicationMethod(String publicationMethod) {
           this.publicationMethod = publicationMethod;
           return this;

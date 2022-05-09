@@ -145,6 +145,7 @@ public final class ManageExperimentStateRequest {
         private Builder() {}
 
         @JsonProperty("targetState")
+
         public Builder withTargetState(String targetState) {
           this.targetState = targetState;
           return this;
@@ -157,6 +158,7 @@ public final class ManageExperimentStateRequest {
 
 
         @JsonProperty("stoppedReason")
+
         public Builder withStoppedReason(String stoppedReason) {
           this.stoppedReason = stoppedReason;
           return this;

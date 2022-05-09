@@ -164,6 +164,7 @@ public final class HostedSkillPermission {
         private Builder() {}
 
         @JsonProperty("permission")
+
         public Builder withPermission(String permission) {
           this.permission = permission;
           return this;
@@ -176,6 +177,7 @@ public final class HostedSkillPermission {
 
 
         @JsonProperty("status")
+
         public Builder withStatus(String status) {
           this.status = status;
           return this;

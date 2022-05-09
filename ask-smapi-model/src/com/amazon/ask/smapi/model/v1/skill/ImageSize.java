@@ -137,6 +137,7 @@ public final class ImageSize {
 
 
         @JsonProperty("unit")
+
         public Builder withUnit(String unit) {
           this.unit = unit;
           return this;

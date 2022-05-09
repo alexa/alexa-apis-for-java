@@ -145,6 +145,7 @@ public final class AlexaHostedConfig {
         private Builder() {}
 
         @JsonProperty("runtime")
+
         public Builder withRuntime(String runtime) {
           this.runtime = runtime;
           return this;
@@ -157,6 +158,7 @@ public final class AlexaHostedConfig {
 
 
         @JsonProperty("region")
+
         public Builder withRegion(String region) {
           this.region = region;
           return this;

@@ -182,6 +182,7 @@ public final class EvaluateSHCapabilityResponse {
 
 
         @JsonProperty("stage")
+
         public Builder withStage(String stage) {
           this.stage = stage;
           return this;

@@ -192,6 +192,7 @@ public final class SmartHomeApis {
 
 
         @JsonProperty("protocolVersion")
+
         public Builder withProtocolVersion(String protocolVersion) {
           this.protocolVersion = protocolVersion;
           return this;

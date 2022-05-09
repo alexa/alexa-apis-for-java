@@ -109,6 +109,7 @@ public final class FallbackIntentSensitivity {
         private Builder() {}
 
         @JsonProperty("level")
+
         public Builder withLevel(String level) {
           this.level = level;
           return this;

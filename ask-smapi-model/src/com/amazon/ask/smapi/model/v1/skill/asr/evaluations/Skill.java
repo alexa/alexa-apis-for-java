@@ -128,6 +128,7 @@ public final class Skill {
         private Builder() {}
 
         @JsonProperty("stage")
+
         public Builder withStage(String stage) {
           this.stage = stage;
           return this;

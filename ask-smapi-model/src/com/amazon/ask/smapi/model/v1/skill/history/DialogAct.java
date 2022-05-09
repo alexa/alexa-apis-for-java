@@ -109,6 +109,7 @@ public final class DialogAct {
         private Builder() {}
 
         @JsonProperty("name")
+
         public Builder withName(String name) {
           this.name = name;
           return this;

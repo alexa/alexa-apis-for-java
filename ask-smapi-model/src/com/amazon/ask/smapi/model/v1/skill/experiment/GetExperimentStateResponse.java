@@ -109,6 +109,7 @@ public final class GetExperimentStateResponse {
         private Builder() {}
 
         @JsonProperty("state")
+
         public Builder withState(String state) {
           this.state = state;
           return this;

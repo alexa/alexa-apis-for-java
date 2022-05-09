@@ -643,6 +643,7 @@ public final class ValidationDetails {
 
 
         @JsonProperty("expectedFormat")
+
         public Builder withExpectedFormat(String expectedFormat) {
           this.expectedFormat = expectedFormat;
           return this;
@@ -671,6 +672,7 @@ public final class ValidationDetails {
 
 
         @JsonProperty("agreementType")
+
         public Builder withAgreementType(String agreementType) {
           this.agreementType = agreementType;
           return this;

@@ -196,6 +196,7 @@ public final class DialogIntents {
 
 
         @JsonProperty("delegationStrategy")
+
         public Builder withDelegationStrategy(String delegationStrategy) {
           this.delegationStrategy = delegationStrategy;
           return this;

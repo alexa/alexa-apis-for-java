@@ -273,6 +273,7 @@ public final class SkillSummary {
 
 
         @JsonProperty("stage")
+
         public Builder withStage(String stage) {
           this.stage = stage;
           return this;
@@ -300,6 +301,7 @@ public final class SkillSummary {
         }
 
         @JsonProperty("publicationStatus")
+
         public Builder withPublicationStatus(String publicationStatus) {
           this.publicationStatus = publicationStatus;
           return this;

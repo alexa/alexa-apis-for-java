@@ -202,6 +202,7 @@ public final class EvaluationEntity {
 
 
         @JsonProperty("status")
+
         public Builder withStatus(String status) {
           this.status = status;
           return this;

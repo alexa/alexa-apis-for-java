@@ -128,6 +128,7 @@ public final class GetCustomerTreatmentOverrideResponse {
         private Builder() {}
 
         @JsonProperty("treatmentId")
+
         public Builder withTreatmentId(String treatmentId) {
           this.treatmentId = treatmentId;
           return this;

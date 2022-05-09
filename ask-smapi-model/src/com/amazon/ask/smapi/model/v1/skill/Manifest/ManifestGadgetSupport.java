@@ -192,6 +192,7 @@ public final class ManifestGadgetSupport {
         private Builder() {}
 
         @JsonProperty("requirement")
+
         public Builder withRequirement(String requirement) {
           this.requirement = requirement;
           return this;

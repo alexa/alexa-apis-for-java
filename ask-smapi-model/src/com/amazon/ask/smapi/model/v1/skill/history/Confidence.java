@@ -109,6 +109,7 @@ public final class Confidence {
         private Builder() {}
 
         @JsonProperty("bin")
+
         public Builder withBin(String bin) {
           this.bin = bin;
           return this;

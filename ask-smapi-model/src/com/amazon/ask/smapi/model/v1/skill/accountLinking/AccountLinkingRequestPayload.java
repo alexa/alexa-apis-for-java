@@ -357,6 +357,7 @@ public final class AccountLinkingRequestPayload {
         private Builder() {}
 
         @JsonProperty("type")
+
         public Builder withType(String type) {
           this.type = type;
           return this;
@@ -431,6 +432,7 @@ public final class AccountLinkingRequestPayload {
 
 
         @JsonProperty("accessTokenScheme")
+
         public Builder withAccessTokenScheme(String accessTokenScheme) {
           this.accessTokenScheme = accessTokenScheme;
           return this;

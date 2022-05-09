@@ -201,6 +201,7 @@ public final class SubscriberSummary {
 
 
         @JsonProperty("status")
+
         public Builder withStatus(String status) {
           this.status = status;
           return this;

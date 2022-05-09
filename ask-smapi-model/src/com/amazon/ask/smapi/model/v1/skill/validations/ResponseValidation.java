@@ -253,6 +253,7 @@ public final class ResponseValidation {
 
 
         @JsonProperty("importance")
+
         public Builder withImportance(String importance) {
           this.importance = importance;
           return this;
@@ -265,6 +266,7 @@ public final class ResponseValidation {
 
 
         @JsonProperty("status")
+
         public Builder withStatus(String status) {
           this.status = status;
           return this;

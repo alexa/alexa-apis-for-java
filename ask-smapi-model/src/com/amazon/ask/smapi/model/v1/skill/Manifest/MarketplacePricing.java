@@ -203,6 +203,7 @@ public final class MarketplacePricing {
         private Builder() {}
 
         @JsonProperty("offerType")
+
         public Builder withOfferType(String offerType) {
           this.offerType = offerType;
           return this;
@@ -223,6 +224,7 @@ public final class MarketplacePricing {
 
 
         @JsonProperty("currency")
+
         public Builder withCurrency(String currency) {
           this.currency = currency;
           return this;

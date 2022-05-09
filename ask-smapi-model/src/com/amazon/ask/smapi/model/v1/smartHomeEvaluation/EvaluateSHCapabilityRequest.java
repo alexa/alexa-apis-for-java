@@ -163,6 +163,7 @@ public final class EvaluateSHCapabilityRequest {
 
 
         @JsonProperty("stage")
+
         public Builder withStage(String stage) {
           this.stage = stage;
           return this;

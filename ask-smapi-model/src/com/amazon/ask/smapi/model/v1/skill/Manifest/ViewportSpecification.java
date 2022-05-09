@@ -225,6 +225,7 @@ public final class ViewportSpecification {
         private Builder() {}
 
         @JsonProperty("mode")
+
         public Builder withMode(String mode) {
           this.mode = mode;
           return this;
@@ -237,6 +238,7 @@ public final class ViewportSpecification {
 
 
         @JsonProperty("shape")
+
         public Builder withShape(String shape) {
           this.shape = shape;
           return this;

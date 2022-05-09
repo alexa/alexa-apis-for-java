@@ -136,6 +136,7 @@ public final class LambdaEndpoint {
 
 
         @JsonProperty("sslCertificateType")
+
         public Builder withSslCertificateType(String sslCertificateType) {
           this.sslCertificateType = sslCertificateType;
           return this;

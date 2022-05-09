@@ -155,6 +155,7 @@ public final class Metric {
 
 
         @JsonProperty("treatmentId")
+
         public Builder withTreatmentId(String treatmentId) {
           this.treatmentId = treatmentId;
           return this;

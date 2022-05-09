@@ -155,6 +155,7 @@ public final class Instance {
 
 
         @JsonProperty("dataType")
+
         public Builder withDataType(String dataType) {
           this.dataType = dataType;
           return this;

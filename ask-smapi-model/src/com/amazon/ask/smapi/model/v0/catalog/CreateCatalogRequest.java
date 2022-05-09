@@ -191,6 +191,7 @@ public final class CreateCatalogRequest {
 
 
         @JsonProperty("type")
+
         public Builder withType(String type) {
           this.type = type;
           return this;
@@ -203,6 +204,7 @@ public final class CreateCatalogRequest {
 
 
         @JsonProperty("usage")
+
         public Builder withUsage(String usage) {
           this.usage = usage;
           return this;

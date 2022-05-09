@@ -128,6 +128,7 @@ public final class AccountLinkingPlatformAuthorizationUrl {
         private Builder() {}
 
         @JsonProperty("platformType")
+
         public Builder withPlatformType(String platformType) {
           this.platformType = platformType;
           return this;

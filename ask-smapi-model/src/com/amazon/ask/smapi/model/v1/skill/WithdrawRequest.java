@@ -128,6 +128,7 @@ public final class WithdrawRequest {
         private Builder() {}
 
         @JsonProperty("reason")
+
         public Builder withReason(String reason) {
           this.reason = reason;
           return this;

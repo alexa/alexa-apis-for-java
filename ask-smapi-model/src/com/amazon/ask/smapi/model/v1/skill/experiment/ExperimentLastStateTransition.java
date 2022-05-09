@@ -242,6 +242,7 @@ public final class ExperimentLastStateTransition {
         private Builder() {}
 
         @JsonProperty("sourceState")
+
         public Builder withSourceState(String sourceState) {
           this.sourceState = sourceState;
           return this;
@@ -254,6 +255,7 @@ public final class ExperimentLastStateTransition {
 
 
         @JsonProperty("targetState")
+
         public Builder withTargetState(String targetState) {
           this.targetState = targetState;
           return this;
@@ -266,6 +268,7 @@ public final class ExperimentLastStateTransition {
 
 
         @JsonProperty("status")
+
         public Builder withStatus(String status) {
           this.status = status;
           return this;

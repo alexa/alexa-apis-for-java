@@ -226,6 +226,7 @@ public final class SkillManifest {
         private Builder() {}
 
         @JsonProperty("manifestVersion")
+
         public Builder withManifestVersion(String manifestVersion) {
           this.manifestVersion = manifestVersion;
           return this;

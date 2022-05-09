@@ -182,6 +182,7 @@ public final class SlotsProps {
 
 
         @JsonProperty("confirmationStatus")
+
         public Builder withConfirmationStatus(String confirmationStatus) {
           this.confirmationStatus = confirmationStatus;
           return this;
