@@ -174,6 +174,7 @@ public final class ImageInstance {
 
 
         @JsonProperty("size")
+
         public Builder withSize(String size) {
           this.size = size;
           return this;

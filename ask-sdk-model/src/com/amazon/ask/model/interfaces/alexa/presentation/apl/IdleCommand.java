@@ -102,6 +102,8 @@ public final class IdleCommand extends com.amazon.ask.model.interfaces.alexa.pre
             return this;
         }
 
+        @JsonProperty("delay")
+
         public Builder withDelay(String delayExpression) {
             this.delay = delayExpression;
             return this;

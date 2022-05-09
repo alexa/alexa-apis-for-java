@@ -150,6 +150,7 @@ public final class SetLightParameters {
         private Builder() {}
 
         @JsonProperty("triggerEvent")
+
         public Builder withTriggerEvent(String triggerEvent) {
           this.triggerEvent = triggerEvent;
           return this;

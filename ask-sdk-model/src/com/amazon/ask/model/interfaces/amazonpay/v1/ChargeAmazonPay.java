@@ -247,6 +247,7 @@ public final class ChargeAmazonPay {
 
 
         @JsonProperty("paymentAction")
+
         public Builder withPaymentAction(String paymentAction) {
           this.paymentAction = paymentAction;
           return this;

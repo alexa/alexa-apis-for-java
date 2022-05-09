@@ -160,6 +160,8 @@ public final class SetValueCommand extends com.amazon.ask.model.interfaces.alexa
             return this;
         }
 
+        @JsonProperty("delay")
+
         public Builder withDelay(String delayExpression) {
             this.delay = delayExpression;
             return this;

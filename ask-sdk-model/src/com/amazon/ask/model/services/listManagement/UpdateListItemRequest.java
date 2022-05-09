@@ -155,6 +155,7 @@ public final class UpdateListItemRequest {
 
 
         @JsonProperty("status")
+
         public Builder withStatus(String status) {
           this.status = status;
           return this;

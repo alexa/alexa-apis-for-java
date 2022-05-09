@@ -201,6 +201,7 @@ public final class Pattern {
         }
 
         @JsonProperty("action")
+
         public Builder withAction(String action) {
           this.action = action;
           return this;

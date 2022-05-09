@@ -223,6 +223,7 @@ public final class AlexaList {
 
 
         @JsonProperty("state")
+
         public Builder withState(String state) {
           this.state = state;
           return this;

@@ -102,6 +102,8 @@ public final class FinishCommand extends com.amazon.ask.model.interfaces.alexa.p
             return this;
         }
 
+        @JsonProperty("delay")
+
         public Builder withDelay(String delayExpression) {
             this.delay = delayExpression;
             return this;

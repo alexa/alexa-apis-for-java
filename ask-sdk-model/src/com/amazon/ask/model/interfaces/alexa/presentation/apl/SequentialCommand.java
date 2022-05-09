@@ -182,6 +182,8 @@ public final class SequentialCommand extends com.amazon.ask.model.interfaces.ale
             return this;
         }
 
+        @JsonProperty("delay")
+
         public Builder withDelay(String delayExpression) {
             this.delay = delayExpression;
             return this;
@@ -270,6 +272,8 @@ public final class SequentialCommand extends com.amazon.ask.model.interfaces.ale
             this.repeatCount = String.valueOf(repeatCount);
             return this;
         }
+
+        @JsonProperty("repeatCount")
 
         public Builder withRepeatCount(String repeatCountExpression) {
             this.repeatCount = repeatCountExpression;

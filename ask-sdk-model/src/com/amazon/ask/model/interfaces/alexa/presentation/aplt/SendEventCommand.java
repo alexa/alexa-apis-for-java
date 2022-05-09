@@ -164,6 +164,8 @@ public final class SendEventCommand extends com.amazon.ask.model.interfaces.alex
             return this;
         }
 
+        @JsonProperty("when")
+
         public Builder withWhen(String whenExpression) {
             this.when = whenExpression;
             return this;

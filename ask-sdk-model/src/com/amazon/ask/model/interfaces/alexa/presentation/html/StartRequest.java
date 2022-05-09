@@ -147,6 +147,7 @@ public final class StartRequest {
         private Builder() {}
 
         @JsonProperty("method")
+
         public Builder withMethod(String method) {
           this.method = method;
           return this;

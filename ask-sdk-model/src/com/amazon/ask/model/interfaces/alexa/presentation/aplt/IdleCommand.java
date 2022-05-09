@@ -122,6 +122,8 @@ public final class IdleCommand extends com.amazon.ask.model.interfaces.alexa.pre
             return this;
         }
 
+        @JsonProperty("when")
+
         public Builder withWhen(String whenExpression) {
             this.when = whenExpression;
             return this;

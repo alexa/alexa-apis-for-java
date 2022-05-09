@@ -147,6 +147,7 @@ public final class ComponentVisibleOnScreenScrollableTag {
         private Builder() {}
 
         @JsonProperty("direction")
+
         public Builder withDirection(String direction) {
           this.direction = direction;
           return this;

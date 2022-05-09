@@ -249,6 +249,7 @@ public final class Event {
         }
 
         @JsonProperty("reports")
+
         public Builder withReports(String reports) {
           this.reports = reports;
           return this;

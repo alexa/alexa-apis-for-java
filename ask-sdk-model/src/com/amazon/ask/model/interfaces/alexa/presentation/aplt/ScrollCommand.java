@@ -161,6 +161,8 @@ public final class ScrollCommand extends com.amazon.ask.model.interfaces.alexa.p
             return this;
         }
 
+        @JsonProperty("when")
+
         public Builder withWhen(String whenExpression) {
             this.when = whenExpression;
             return this;
@@ -172,6 +174,8 @@ public final class ScrollCommand extends com.amazon.ask.model.interfaces.alexa.p
             this.distance = String.valueOf(distance);
             return this;
         }
+
+        @JsonProperty("distance")
 
         public Builder withDistance(String distanceExpression) {
             this.distance = distanceExpression;

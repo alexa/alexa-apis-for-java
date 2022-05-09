@@ -109,6 +109,7 @@ public final class DisplayExperience {
         private Builder() {}
 
         @JsonProperty("visibility")
+
         public Builder withVisibility(String visibility) {
           this.visibility = visibility;
           return this;

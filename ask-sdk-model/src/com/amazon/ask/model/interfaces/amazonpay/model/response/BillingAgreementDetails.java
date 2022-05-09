@@ -264,6 +264,7 @@ public final class BillingAgreementDetails {
 
 
         @JsonProperty("billingAgreementStatus")
+
         public Builder withBillingAgreementStatus(String billingAgreementStatus) {
           this.billingAgreementStatus = billingAgreementStatus;
           return this;

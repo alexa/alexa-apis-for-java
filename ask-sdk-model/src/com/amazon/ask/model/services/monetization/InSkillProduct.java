@@ -372,6 +372,7 @@ public final class InSkillProduct {
 
 
         @JsonProperty("type")
+
         public Builder withType(String type) {
           this.type = type;
           return this;
@@ -392,6 +393,7 @@ public final class InSkillProduct {
 
 
         @JsonProperty("purchasable")
+
         public Builder withPurchasable(String purchasable) {
           this.purchasable = purchasable;
           return this;
@@ -404,6 +406,7 @@ public final class InSkillProduct {
 
 
         @JsonProperty("entitled")
+
         public Builder withEntitled(String entitled) {
           this.entitled = entitled;
           return this;
@@ -416,6 +419,7 @@ public final class InSkillProduct {
 
 
         @JsonProperty("entitlementReason")
+
         public Builder withEntitlementReason(String entitlementReason) {
           this.entitlementReason = entitlementReason;
           return this;
@@ -436,6 +440,7 @@ public final class InSkillProduct {
 
 
         @JsonProperty("purchaseMode")
+
         public Builder withPurchaseMode(String purchaseMode) {
           this.purchaseMode = purchaseMode;
           return this;

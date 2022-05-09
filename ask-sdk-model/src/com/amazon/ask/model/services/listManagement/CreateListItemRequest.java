@@ -136,6 +136,7 @@ public final class CreateListItemRequest {
 
 
         @JsonProperty("status")
+
         public Builder withStatus(String status) {
           this.status = status;
           return this;

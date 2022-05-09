@@ -179,6 +179,8 @@ public final class SpeakItemCommand extends com.amazon.ask.model.interfaces.alex
             return this;
         }
 
+        @JsonProperty("delay")
+
         public Builder withDelay(String delayExpression) {
             this.delay = delayExpression;
             return this;
@@ -246,6 +248,8 @@ public final class SpeakItemCommand extends com.amazon.ask.model.interfaces.alex
             this.minimumDwellTime = String.valueOf(minimumDwellTime);
             return this;
         }
+
+        @JsonProperty("minimumDwellTime")
 
         public Builder withMinimumDwellTime(String minimumDwellTimeExpression) {
             this.minimumDwellTime = minimumDwellTimeExpression;

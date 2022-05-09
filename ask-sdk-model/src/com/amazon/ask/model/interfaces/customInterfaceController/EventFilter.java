@@ -136,6 +136,7 @@ public final class EventFilter {
 
 
         @JsonProperty("filterMatchAction")
+
         public Builder withFilterMatchAction(String filterMatchAction) {
           this.filterMatchAction = filterMatchAction;
           return this;

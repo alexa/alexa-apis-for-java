@@ -109,6 +109,7 @@ public final class DelegationPeriod {
         private Builder() {}
 
         @JsonProperty("until")
+
         public Builder withUntil(String until) {
           this.until = until;
           return this;

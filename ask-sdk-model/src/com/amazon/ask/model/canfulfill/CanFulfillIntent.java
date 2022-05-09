@@ -131,6 +131,7 @@ public final class CanFulfillIntent {
         private Builder() {}
 
         @JsonProperty("canFulfill")
+
         public Builder withCanFulfill(String canFulfill) {
           this.canFulfill = canFulfill;
           return this;

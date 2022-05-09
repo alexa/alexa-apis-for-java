@@ -209,6 +209,7 @@ public final class BillingAgreementAttributes {
 
 
         @JsonProperty("billingAgreementType")
+
         public Builder withBillingAgreementType(String billingAgreementType) {
           this.billingAgreementType = billingAgreementType;
           return this;

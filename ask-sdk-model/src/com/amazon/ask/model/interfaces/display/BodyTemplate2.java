@@ -169,6 +169,7 @@ public final class BodyTemplate2 extends com.amazon.ask.model.interfaces.display
 
 
         @JsonProperty("backButton")
+
         public Builder withBackButton(String backButton) {
           this.backButton = backButton;
           return this;

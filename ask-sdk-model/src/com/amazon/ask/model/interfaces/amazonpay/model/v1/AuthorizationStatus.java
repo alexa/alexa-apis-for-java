@@ -167,6 +167,7 @@ public final class AuthorizationStatus {
         private Builder() {}
 
         @JsonProperty("state")
+
         public Builder withState(String state) {
           this.state = state;
           return this;

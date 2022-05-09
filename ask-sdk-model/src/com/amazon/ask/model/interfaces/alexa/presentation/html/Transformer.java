@@ -147,6 +147,7 @@ public final class Transformer {
         private Builder() {}
 
         @JsonProperty("transformer")
+
         public Builder withTransformer(String transformer) {
           this.transformer = transformer;
           return this;

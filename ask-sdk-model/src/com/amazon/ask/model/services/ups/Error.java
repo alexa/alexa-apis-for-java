@@ -128,6 +128,7 @@ public final class Error {
         private Builder() {}
 
         @JsonProperty("code")
+
         public Builder withCode(String code) {
           this.code = code;
           return this;

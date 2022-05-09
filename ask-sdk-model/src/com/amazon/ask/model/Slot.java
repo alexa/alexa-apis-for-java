@@ -201,6 +201,7 @@ public final class Slot {
 
 
         @JsonProperty("confirmationStatus")
+
         public Builder withConfirmationStatus(String confirmationStatus) {
           this.confirmationStatus = confirmationStatus;
           return this;

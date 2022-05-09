@@ -198,6 +198,8 @@ public final class SpeakListCommand extends com.amazon.ask.model.interfaces.alex
             return this;
         }
 
+        @JsonProperty("delay")
+
         public Builder withDelay(String delayExpression) {
             this.delay = delayExpression;
             return this;
@@ -258,6 +260,8 @@ public final class SpeakListCommand extends com.amazon.ask.model.interfaces.alex
             return this;
         }
 
+        @JsonProperty("count")
+
         public Builder withCount(String countExpression) {
             this.count = countExpression;
             return this;
@@ -270,6 +274,8 @@ public final class SpeakListCommand extends com.amazon.ask.model.interfaces.alex
             return this;
         }
 
+        @JsonProperty("minimumDwellTime")
+
         public Builder withMinimumDwellTime(String minimumDwellTimeExpression) {
             this.minimumDwellTime = minimumDwellTimeExpression;
             return this;
@@ -281,6 +287,8 @@ public final class SpeakListCommand extends com.amazon.ask.model.interfaces.alex
             this.start = String.valueOf(start);
             return this;
         }
+
+        @JsonProperty("start")
 
         public Builder withStart(String startExpression) {
             this.start = startExpression;

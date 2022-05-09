@@ -163,6 +163,7 @@ public final class AudioPlayerState {
 
 
         @JsonProperty("playerActivity")
+
         public Builder withPlayerActivity(String playerActivity) {
           this.playerActivity = playerActivity;
           return this;

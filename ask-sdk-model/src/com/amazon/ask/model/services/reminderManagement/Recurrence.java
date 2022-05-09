@@ -209,6 +209,7 @@ public final class Recurrence {
         private Builder() {}
 
         @JsonProperty("freq")
+
         public Builder withFreq(String freq) {
           this.freq = freq;
           return this;

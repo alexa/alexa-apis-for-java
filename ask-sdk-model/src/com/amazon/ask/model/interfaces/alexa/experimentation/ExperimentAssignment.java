@@ -136,6 +136,7 @@ public final class ExperimentAssignment {
 
 
         @JsonProperty("treatmentId")
+
         public Builder withTreatmentId(String treatmentId) {
           this.treatmentId = treatmentId;
           return this;

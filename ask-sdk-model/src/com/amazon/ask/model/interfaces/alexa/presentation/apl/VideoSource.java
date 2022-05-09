@@ -182,6 +182,8 @@ public final class VideoSource {
             return this;
         }
 
+        @JsonProperty("duration")
+
         public Builder withDuration(String durationExpression) {
             this.duration = durationExpression;
             return this;
@@ -202,6 +204,8 @@ public final class VideoSource {
             return this;
         }
 
+        @JsonProperty("repeatCount")
+
         public Builder withRepeatCount(String repeatCountExpression) {
             this.repeatCount = repeatCountExpression;
             return this;
@@ -213,6 +217,8 @@ public final class VideoSource {
             this.offset = String.valueOf(offset);
             return this;
         }
+
+        @JsonProperty("offset")
 
         public Builder withOffset(String offsetExpression) {
             this.offset = offsetExpression;

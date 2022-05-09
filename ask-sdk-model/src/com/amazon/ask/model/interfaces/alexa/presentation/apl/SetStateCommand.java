@@ -160,6 +160,8 @@ public final class SetStateCommand extends com.amazon.ask.model.interfaces.alexa
             return this;
         }
 
+        @JsonProperty("delay")
+
         public Builder withDelay(String delayExpression) {
             this.delay = delayExpression;
             return this;
@@ -219,6 +221,8 @@ public final class SetStateCommand extends com.amazon.ask.model.interfaces.alexa
             this.value = String.valueOf(value);
             return this;
         }
+
+        @JsonProperty("value")
 
         public Builder withValue(String valueExpression) {
             this.value = valueExpression;

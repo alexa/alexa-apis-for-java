@@ -204,6 +204,7 @@ public final class AlexaListMetadata {
 
 
         @JsonProperty("state")
+
         public Builder withState(String state) {
           this.state = state;
           return this;

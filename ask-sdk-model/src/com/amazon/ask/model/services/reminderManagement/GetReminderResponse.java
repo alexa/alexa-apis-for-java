@@ -267,6 +267,7 @@ public final class GetReminderResponse {
 
 
         @JsonProperty("status")
+
         public Builder withStatus(String status) {
           this.status = status;
           return this;

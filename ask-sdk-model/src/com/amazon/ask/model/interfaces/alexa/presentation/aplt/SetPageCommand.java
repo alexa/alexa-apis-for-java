@@ -180,6 +180,8 @@ public final class SetPageCommand extends com.amazon.ask.model.interfaces.alexa.
             return this;
         }
 
+        @JsonProperty("when")
+
         public Builder withWhen(String whenExpression) {
             this.when = whenExpression;
             return this;
@@ -207,6 +209,8 @@ public final class SetPageCommand extends com.amazon.ask.model.interfaces.alexa.
             this.value = String.valueOf(value);
             return this;
         }
+
+        @JsonProperty("value")
 
         public Builder withValue(String valueExpression) {
             this.value = valueExpression;

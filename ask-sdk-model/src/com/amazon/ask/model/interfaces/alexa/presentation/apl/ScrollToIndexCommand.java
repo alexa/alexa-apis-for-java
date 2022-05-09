@@ -160,6 +160,8 @@ public final class ScrollToIndexCommand extends com.amazon.ask.model.interfaces.
             return this;
         }
 
+        @JsonProperty("delay")
+
         public Builder withDelay(String delayExpression) {
             this.delay = delayExpression;
             return this;
@@ -219,6 +221,8 @@ public final class ScrollToIndexCommand extends com.amazon.ask.model.interfaces.
             this.index = String.valueOf(index);
             return this;
         }
+
+        @JsonProperty("index")
 
         public Builder withIndex(String indexExpression) {
             this.index = indexExpression;

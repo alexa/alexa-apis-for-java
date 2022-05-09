@@ -141,6 +141,8 @@ public final class ScrollToComponentCommand extends com.amazon.ask.model.interfa
             return this;
         }
 
+        @JsonProperty("delay")
+
         public Builder withDelay(String delayExpression) {
             this.delay = delayExpression;
             return this;

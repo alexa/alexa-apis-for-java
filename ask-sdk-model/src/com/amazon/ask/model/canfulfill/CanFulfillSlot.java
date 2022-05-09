@@ -145,6 +145,7 @@ public final class CanFulfillSlot {
         private Builder() {}
 
         @JsonProperty("canUnderstand")
+
         public Builder withCanUnderstand(String canUnderstand) {
           this.canUnderstand = canUnderstand;
           return this;
@@ -157,6 +158,7 @@ public final class CanFulfillSlot {
 
 
         @JsonProperty("canFulfill")
+
         public Builder withCanFulfill(String canFulfill) {
           this.canFulfill = canFulfill;
           return this;

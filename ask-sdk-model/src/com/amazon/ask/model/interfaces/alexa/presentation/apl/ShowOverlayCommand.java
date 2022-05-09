@@ -179,6 +179,8 @@ public final class ShowOverlayCommand extends com.amazon.ask.model.interfaces.al
             return this;
         }
 
+        @JsonProperty("delay")
+
         public Builder withDelay(String delayExpression) {
             this.delay = delayExpression;
             return this;

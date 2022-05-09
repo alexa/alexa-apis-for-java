@@ -136,6 +136,7 @@ public final class CreateListRequest {
 
 
         @JsonProperty("state")
+
         public Builder withState(String state) {
           this.state = state;
           return this;

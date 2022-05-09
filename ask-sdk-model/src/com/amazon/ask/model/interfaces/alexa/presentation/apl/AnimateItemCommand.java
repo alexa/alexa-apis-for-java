@@ -220,6 +220,8 @@ public final class AnimateItemCommand extends com.amazon.ask.model.interfaces.al
             return this;
         }
 
+        @JsonProperty("delay")
+
         public Builder withDelay(String delayExpression) {
             this.delay = delayExpression;
             return this;
@@ -272,6 +274,8 @@ public final class AnimateItemCommand extends com.amazon.ask.model.interfaces.al
             return this;
         }
 
+        @JsonProperty("duration")
+
         public Builder withDuration(String durationExpression) {
             this.duration = durationExpression;
             return this;
@@ -291,6 +295,8 @@ public final class AnimateItemCommand extends com.amazon.ask.model.interfaces.al
             this.repeatCount = String.valueOf(repeatCount);
             return this;
         }
+
+        @JsonProperty("repeatCount")
 
         public Builder withRepeatCount(String repeatCountExpression) {
             this.repeatCount = repeatCountExpression;

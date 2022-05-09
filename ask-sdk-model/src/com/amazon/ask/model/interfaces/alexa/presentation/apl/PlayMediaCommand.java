@@ -163,6 +163,8 @@ public final class PlayMediaCommand extends com.amazon.ask.model.interfaces.alex
             return this;
         }
 
+        @JsonProperty("delay")
+
         public Builder withDelay(String delayExpression) {
             this.delay = delayExpression;
             return this;

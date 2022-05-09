@@ -137,6 +137,8 @@ public final class ScaleTransformProperty extends com.amazon.ask.model.interface
             return this;
         }
 
+        @JsonProperty("scale")
+
         public Builder withScale(String scaleExpression) {
             this.scale = scaleExpression;
             return this;
@@ -149,6 +151,8 @@ public final class ScaleTransformProperty extends com.amazon.ask.model.interface
             return this;
         }
 
+        @JsonProperty("scaleX")
+
         public Builder withScaleX(String scaleXExpression) {
             this.scaleX = scaleXExpression;
             return this;
@@ -160,6 +164,8 @@ public final class ScaleTransformProperty extends com.amazon.ask.model.interface
             this.scaleY = String.valueOf(scaleY);
             return this;
         }
+
+        @JsonProperty("scaleY")
 
         public Builder withScaleY(String scaleYExpression) {
             this.scaleY = scaleYExpression;

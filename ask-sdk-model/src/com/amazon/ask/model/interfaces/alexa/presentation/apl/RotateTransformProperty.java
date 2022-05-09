@@ -99,6 +99,8 @@ public final class RotateTransformProperty extends com.amazon.ask.model.interfac
             return this;
         }
 
+        @JsonProperty("rotate")
+
         public Builder withRotate(String rotateExpression) {
             this.rotate = rotateExpression;
             return this;

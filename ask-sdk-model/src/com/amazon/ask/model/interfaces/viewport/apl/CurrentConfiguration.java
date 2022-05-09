@@ -183,6 +183,7 @@ public final class CurrentConfiguration {
         private Builder() {}
 
         @JsonProperty("mode")
+
         public Builder withMode(String mode) {
           this.mode = mode;
           return this;
@@ -211,6 +212,7 @@ public final class CurrentConfiguration {
 
 
         @JsonProperty("dialog")
+
         public Builder withDialog(String dialog) {
           this.dialog = dialog;
           return this;

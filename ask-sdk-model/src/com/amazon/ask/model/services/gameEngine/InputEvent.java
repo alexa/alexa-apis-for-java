@@ -201,6 +201,7 @@ public final class InputEvent {
 
 
         @JsonProperty("action")
+
         public Builder withAction(String action) {
           this.action = action;
           return this;

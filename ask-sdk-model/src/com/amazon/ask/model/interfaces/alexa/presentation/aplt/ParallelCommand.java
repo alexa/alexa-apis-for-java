@@ -145,6 +145,8 @@ public final class ParallelCommand extends com.amazon.ask.model.interfaces.alexa
             return this;
         }
 
+        @JsonProperty("when")
+
         public Builder withWhen(String whenExpression) {
             this.when = whenExpression;
             return this;

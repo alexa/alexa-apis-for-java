@@ -118,6 +118,8 @@ public final class SkewTransformProperty extends com.amazon.ask.model.interfaces
             return this;
         }
 
+        @JsonProperty("skewX")
+
         public Builder withSkewX(String skewXExpression) {
             this.skewX = skewXExpression;
             return this;
@@ -129,6 +131,8 @@ public final class SkewTransformProperty extends com.amazon.ask.model.interfaces
             this.skewY = String.valueOf(skewY);
             return this;
         }
+
+        @JsonProperty("skewY")
 
         public Builder withSkewY(String skewYExpression) {
             this.skewY = skewYExpression;

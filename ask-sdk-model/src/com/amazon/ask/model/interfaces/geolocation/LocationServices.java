@@ -145,6 +145,7 @@ public final class LocationServices {
         private Builder() {}
 
         @JsonProperty("status")
+
         public Builder withStatus(String status) {
           this.status = status;
           return this;
@@ -157,6 +158,7 @@ public final class LocationServices {
 
 
         @JsonProperty("access")
+
         public Builder withAccess(String access) {
           this.access = access;
           return this;

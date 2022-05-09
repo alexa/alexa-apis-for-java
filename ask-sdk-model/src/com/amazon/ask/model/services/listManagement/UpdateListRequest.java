@@ -155,6 +155,7 @@ public final class UpdateListRequest {
 
 
         @JsonProperty("state")
+
         public Builder withState(String state) {
           this.state = state;
           return this;

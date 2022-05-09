@@ -121,6 +121,8 @@ public final class AnimatedOpacityProperty extends com.amazon.ask.model.interfac
             return this;
         }
 
+        @JsonProperty("from")
+
         public Builder withFrom(String fromExpression) {
             this.from = fromExpression;
             return this;
@@ -132,6 +134,8 @@ public final class AnimatedOpacityProperty extends com.amazon.ask.model.interfac
             this.to = String.valueOf(to);
             return this;
         }
+
+        @JsonProperty("to")
 
         public Builder withTo(String toExpression) {
             this.to = toExpression;

@@ -147,6 +147,7 @@ public final class RuntimeError {
         private Builder() {}
 
         @JsonProperty("reason")
+
         public Builder withReason(String reason) {
           this.reason = reason;
           return this;

@@ -202,6 +202,8 @@ public final class SequentialCommand extends com.amazon.ask.model.interfaces.ale
             return this;
         }
 
+        @JsonProperty("when")
+
         public Builder withWhen(String whenExpression) {
             this.when = whenExpression;
             return this;
@@ -258,6 +260,8 @@ public final class SequentialCommand extends com.amazon.ask.model.interfaces.ale
             this.repeatCount = String.valueOf(repeatCount);
             return this;
         }
+
+        @JsonProperty("repeatCount")
 
         public Builder withRepeatCount(String repeatCountExpression) {
             this.repeatCount = repeatCountExpression;

@@ -155,6 +155,7 @@ public final class CurrentPlaybackState {
 
 
         @JsonProperty("playerActivity")
+
         public Builder withPlayerActivity(String playerActivity) {
           this.playerActivity = playerActivity;
           return this;

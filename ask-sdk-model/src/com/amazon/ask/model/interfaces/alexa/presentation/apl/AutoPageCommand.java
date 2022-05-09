@@ -160,6 +160,8 @@ public final class AutoPageCommand extends com.amazon.ask.model.interfaces.alexa
             return this;
         }
 
+        @JsonProperty("delay")
+
         public Builder withDelay(String delayExpression) {
             this.delay = delayExpression;
             return this;
@@ -212,6 +214,8 @@ public final class AutoPageCommand extends com.amazon.ask.model.interfaces.alexa
             return this;
         }
 
+        @JsonProperty("count")
+
         public Builder withCount(String countExpression) {
             this.count = countExpression;
             return this;
@@ -223,6 +227,8 @@ public final class AutoPageCommand extends com.amazon.ask.model.interfaces.alexa
             this.duration = String.valueOf(duration);
             return this;
         }
+
+        @JsonProperty("duration")
 
         public Builder withDuration(String durationExpression) {
             this.duration = durationExpression;

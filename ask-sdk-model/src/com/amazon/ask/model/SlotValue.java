@@ -37,7 +37,7 @@ public abstract class SlotValue {
     }
 
     /**
-     * Type of value that was captured. Can be 'Simple' or 'List'.
+     * Type of value that was captured. Can be 'Simple','List' or 'Composite'.
      * @return type
     **/
     @JsonIgnore
