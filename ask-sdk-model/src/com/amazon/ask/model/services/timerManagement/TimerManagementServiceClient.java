@@ -31,7 +31,7 @@ public class TimerManagementServiceClient extends BaseServiceClient implements T
   private final UserAgentHelper userAgentHelper;
   public TimerManagementServiceClient(ApiConfiguration apiConfiguration) {
       super(apiConfiguration);
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.39.2").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.39.3").build();
   }
 
   /**

@@ -26,6 +26,10 @@ public enum AudioTrack {
   
   FOREGROUND("foreground"),
   
+  BACKGROUND("background"),
+  
+  NONE("none"),
+  
   UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;

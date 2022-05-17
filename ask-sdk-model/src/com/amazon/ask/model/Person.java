@@ -19,7 +19,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * An object that describes the user (person) who is making the request.
+ * An object that describes the user (person) who is interacting with Alexa.
  */
 
 @JsonDeserialize(builder = Person.Builder.class)
@@ -45,7 +45,7 @@ public final class Person {
     }
 
     /**
-     * A string that represents a unique identifier for the person who is making the request. The length of this identifier can vary, but is never more than 255 characters. It is generated when a recognized user makes a request to your skill.
+     * A string that represents a unique identifier for the person who is interacting with Alexa. The length of this identifier can vary, but is never more than 255 characters. It is generated when a recognized user makes a request to your skill.
      * @return personId
     **/
     @JsonProperty("personId")
