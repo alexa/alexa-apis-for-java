@@ -49,6 +49,9 @@ public final class SkillManifestPrivacyAndCompliance {
     @JsonProperty("usesHealthInfo")
     private Boolean usesHealthInfo = null;
 
+    @JsonProperty("shoppingKit")
+    private com.amazon.ask.smapi.model.v1.skill.Manifest.ShoppingKit shoppingKit = null;
+
     public static Builder builder() {
         return new Builder();
     }
@@ -74,6 +77,9 @@ public final class SkillManifestPrivacyAndCompliance {
         }
         if (builder.usesHealthInfo != null) {
             this.usesHealthInfo = builder.usesHealthInfo;
+        }
+        if (builder.shoppingKit != null) {
+            this.shoppingKit = builder.shoppingKit;
         }
     }
 
@@ -147,6 +153,16 @@ public final class SkillManifestPrivacyAndCompliance {
     }
 
 
+    /**
+     * Get shoppingKit
+     * @return shoppingKit
+    **/
+    @JsonProperty("shoppingKit")
+    public com.amazon.ask.smapi.model.v1.skill.Manifest.ShoppingKit getShoppingKit() {
+        return shoppingKit;
+    }
+
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -162,12 +178,13 @@ public final class SkillManifestPrivacyAndCompliance {
             Objects.equals(this.isChildDirected, v1SkillManifestSkillManifestPrivacyAndCompliance.isChildDirected) &&
             Objects.equals(this.isExportCompliant, v1SkillManifestSkillManifestPrivacyAndCompliance.isExportCompliant) &&
             Objects.equals(this.containsAds, v1SkillManifestSkillManifestPrivacyAndCompliance.containsAds) &&
-            Objects.equals(this.usesHealthInfo, v1SkillManifestSkillManifestPrivacyAndCompliance.usesHealthInfo);
+            Objects.equals(this.usesHealthInfo, v1SkillManifestSkillManifestPrivacyAndCompliance.usesHealthInfo) &&
+            Objects.equals(this.shoppingKit, v1SkillManifestSkillManifestPrivacyAndCompliance.shoppingKit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(locales, allowsPurchases, usesPersonalInfo, isChildDirected, isExportCompliant, containsAds, usesHealthInfo);
+        return Objects.hash(locales, allowsPurchases, usesPersonalInfo, isChildDirected, isExportCompliant, containsAds, usesHealthInfo, shoppingKit);
     }
 
     @Override
@@ -182,6 +199,7 @@ public final class SkillManifestPrivacyAndCompliance {
         sb.append("    isExportCompliant: ").append(toIndentedString(isExportCompliant)).append("\n");
         sb.append("    containsAds: ").append(toIndentedString(containsAds)).append("\n");
         sb.append("    usesHealthInfo: ").append(toIndentedString(usesHealthInfo)).append("\n");
+        sb.append("    shoppingKit: ").append(toIndentedString(shoppingKit)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -205,6 +223,7 @@ public final class SkillManifestPrivacyAndCompliance {
         private Boolean isExportCompliant;
         private Boolean containsAds;
         private Boolean usesHealthInfo;
+        private com.amazon.ask.smapi.model.v1.skill.Manifest.ShoppingKit shoppingKit;
 
         private Builder() {}
 
@@ -267,6 +286,14 @@ public final class SkillManifestPrivacyAndCompliance {
 
         public Builder withUsesHealthInfo(Boolean usesHealthInfo) {
             this.usesHealthInfo = usesHealthInfo;
+            return this;
+        }
+
+
+        @JsonProperty("shoppingKit")
+
+        public Builder withShoppingKit(com.amazon.ask.smapi.model.v1.skill.Manifest.ShoppingKit shoppingKit) {
+            this.shoppingKit = shoppingKit;
             return this;
         }
 

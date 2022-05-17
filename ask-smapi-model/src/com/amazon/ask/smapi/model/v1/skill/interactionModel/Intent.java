@@ -31,6 +31,9 @@ public final class Intent {
     @JsonProperty("name")
     private String name = null;
 
+    @JsonProperty("generatedBy")
+    private String generatedBy = null;
+
     @JsonProperty("slots")
     private List<com.amazon.ask.smapi.model.v1.skill.interactionModel.SlotDefinition> slots = new ArrayList<com.amazon.ask.smapi.model.v1.skill.interactionModel.SlotDefinition>();
 
@@ -44,6 +47,9 @@ public final class Intent {
     private Intent(Builder builder) {
         if (builder.name != null) {
             this.name = builder.name;
+        }
+        if (builder.generatedBy != null) {
+            this.generatedBy = builder.generatedBy;
         }
         if (builder.slots != null) {
             this.slots = builder.slots;
@@ -60,6 +66,16 @@ public final class Intent {
     @JsonProperty("name")
     public String getName() {
         return name;
+    }
+
+
+    /**
+     * Name of the generator used to generate this object.
+     * @return generatedBy
+    **/
+    @JsonProperty("generatedBy")
+    public String getGeneratedBy() {
+        return generatedBy;
     }
 
 
@@ -93,13 +109,14 @@ public final class Intent {
         }
         Intent v1SkillInteractionModelIntent = (Intent) o;
         return Objects.equals(this.name, v1SkillInteractionModelIntent.name) &&
+            Objects.equals(this.generatedBy, v1SkillInteractionModelIntent.generatedBy) &&
             Objects.equals(this.slots, v1SkillInteractionModelIntent.slots) &&
             Objects.equals(this.samples, v1SkillInteractionModelIntent.samples);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, slots, samples);
+        return Objects.hash(name, generatedBy, slots, samples);
     }
 
     @Override
@@ -108,6 +125,7 @@ public final class Intent {
         sb.append("class Intent {\n");
         
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    generatedBy: ").append(toIndentedString(generatedBy)).append("\n");
         sb.append("    slots: ").append(toIndentedString(slots)).append("\n");
         sb.append("    samples: ").append(toIndentedString(samples)).append("\n");
         sb.append("}");
@@ -127,6 +145,7 @@ public final class Intent {
   
     public static class Builder {
         private String name;
+        private String generatedBy;
         private List<com.amazon.ask.smapi.model.v1.skill.interactionModel.SlotDefinition> slots;
         private List<String> samples;
 
@@ -136,6 +155,14 @@ public final class Intent {
 
         public Builder withName(String name) {
             this.name = name;
+            return this;
+        }
+
+
+        @JsonProperty("generatedBy")
+
+        public Builder withGeneratedBy(String generatedBy) {
+            this.generatedBy = generatedBy;
             return this;
         }
 
