@@ -31,6 +31,9 @@ public final class SlotType {
     @JsonProperty("name")
     private String name = null;
 
+    @JsonProperty("generatedBy")
+    private String generatedBy = null;
+
     @JsonProperty("values")
     private List<com.amazon.ask.smapi.model.v1.skill.interactionModel.TypeValue> values = new ArrayList<com.amazon.ask.smapi.model.v1.skill.interactionModel.TypeValue>();
 
@@ -44,6 +47,9 @@ public final class SlotType {
     private SlotType(Builder builder) {
         if (builder.name != null) {
             this.name = builder.name;
+        }
+        if (builder.generatedBy != null) {
+            this.generatedBy = builder.generatedBy;
         }
         if (builder.values != null) {
             this.values = builder.values;
@@ -60,6 +66,16 @@ public final class SlotType {
     @JsonProperty("name")
     public String getName() {
         return name;
+    }
+
+
+    /**
+     * Name of the generator used to generate this object.
+     * @return generatedBy
+    **/
+    @JsonProperty("generatedBy")
+    public String getGeneratedBy() {
+        return generatedBy;
     }
 
 
@@ -93,13 +109,14 @@ public final class SlotType {
         }
         SlotType v1SkillInteractionModelSlotType = (SlotType) o;
         return Objects.equals(this.name, v1SkillInteractionModelSlotType.name) &&
+            Objects.equals(this.generatedBy, v1SkillInteractionModelSlotType.generatedBy) &&
             Objects.equals(this.values, v1SkillInteractionModelSlotType.values) &&
             Objects.equals(this.valueSupplier, v1SkillInteractionModelSlotType.valueSupplier);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, values, valueSupplier);
+        return Objects.hash(name, generatedBy, values, valueSupplier);
     }
 
     @Override
@@ -108,6 +125,7 @@ public final class SlotType {
         sb.append("class SlotType {\n");
         
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
+        sb.append("    generatedBy: ").append(toIndentedString(generatedBy)).append("\n");
         sb.append("    values: ").append(toIndentedString(values)).append("\n");
         sb.append("    valueSupplier: ").append(toIndentedString(valueSupplier)).append("\n");
         sb.append("}");
@@ -127,6 +145,7 @@ public final class SlotType {
   
     public static class Builder {
         private String name;
+        private String generatedBy;
         private List<com.amazon.ask.smapi.model.v1.skill.interactionModel.TypeValue> values;
         private com.amazon.ask.smapi.model.v1.skill.interactionModel.ValueSupplier valueSupplier;
 
@@ -136,6 +155,14 @@ public final class SlotType {
 
         public Builder withName(String name) {
             this.name = name;
+            return this;
+        }
+
+
+        @JsonProperty("generatedBy")
+
+        public Builder withGeneratedBy(String generatedBy) {
+            this.generatedBy = generatedBy;
             return this;
         }
 

@@ -43,13 +43,13 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
                                     .withSerializer(apiConfiguration.getSerializer())
                                     .build())
           .build();
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.14.8").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.15.0").build();
   }
 
   public SkillManagementServiceClient(ApiConfiguration apiConfiguration, LwaClient lwaClient) {
       super(apiConfiguration);
       this.lwaClient = lwaClient;
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.14.8").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.15.0").build();
   }
 
   /**

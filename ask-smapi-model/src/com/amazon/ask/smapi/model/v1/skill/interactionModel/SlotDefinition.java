@@ -34,9 +34,6 @@ public final class SlotDefinition {
     @JsonProperty("type")
     private String type = null;
 
-    @JsonProperty("generatedBy")
-    private String generatedBy = null;
-
     @JsonProperty("multipleValues")
     private com.amazon.ask.smapi.model.v1.skill.interactionModel.MultipleValuesConfig multipleValues = null;
 
@@ -53,9 +50,6 @@ public final class SlotDefinition {
         }
         if (builder.type != null) {
             this.type = builder.type;
-        }
-        if (builder.generatedBy != null) {
-            this.generatedBy = builder.generatedBy;
         }
         if (builder.multipleValues != null) {
             this.multipleValues = builder.multipleValues;
@@ -82,16 +76,6 @@ public final class SlotDefinition {
     @JsonProperty("type")
     public String getType() {
         return type;
-    }
-
-
-    /**
-     * Name of the generator used to generate this object.
-     * @return generatedBy
-    **/
-    @JsonProperty("generatedBy")
-    public String getGeneratedBy() {
-        return generatedBy;
     }
 
 
@@ -126,14 +110,13 @@ public final class SlotDefinition {
         SlotDefinition v1SkillInteractionModelSlotDefinition = (SlotDefinition) o;
         return Objects.equals(this.name, v1SkillInteractionModelSlotDefinition.name) &&
             Objects.equals(this.type, v1SkillInteractionModelSlotDefinition.type) &&
-            Objects.equals(this.generatedBy, v1SkillInteractionModelSlotDefinition.generatedBy) &&
             Objects.equals(this.multipleValues, v1SkillInteractionModelSlotDefinition.multipleValues) &&
             Objects.equals(this.samples, v1SkillInteractionModelSlotDefinition.samples);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, type, generatedBy, multipleValues, samples);
+        return Objects.hash(name, type, multipleValues, samples);
     }
 
     @Override
@@ -143,7 +126,6 @@ public final class SlotDefinition {
         
         sb.append("    name: ").append(toIndentedString(name)).append("\n");
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
-        sb.append("    generatedBy: ").append(toIndentedString(generatedBy)).append("\n");
         sb.append("    multipleValues: ").append(toIndentedString(multipleValues)).append("\n");
         sb.append("    samples: ").append(toIndentedString(samples)).append("\n");
         sb.append("}");
@@ -164,7 +146,6 @@ public final class SlotDefinition {
     public static class Builder {
         private String name;
         private String type;
-        private String generatedBy;
         private com.amazon.ask.smapi.model.v1.skill.interactionModel.MultipleValuesConfig multipleValues;
         private List<String> samples;
 
@@ -182,14 +163,6 @@ public final class SlotDefinition {
 
         public Builder withType(String type) {
             this.type = type;
-            return this;
-        }
-
-
-        @JsonProperty("generatedBy")
-
-        public Builder withGeneratedBy(String generatedBy) {
-            this.generatedBy = generatedBy;
             return this;
         }
 
