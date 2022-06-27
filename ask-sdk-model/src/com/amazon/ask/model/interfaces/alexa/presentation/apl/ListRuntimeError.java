@@ -48,6 +48,9 @@ public final class ListRuntimeError extends com.amazon.ask.model.interfaces.alex
         if (builder.message != null) {
             this.message = builder.message;
         }
+        if (builder.token != null) {
+            this.token = builder.token;
+        }
         if (builder.reason != null) {
             this.reason = builder.reason;
         }
@@ -149,6 +152,7 @@ public final class ListRuntimeError extends com.amazon.ask.model.interfaces.alex
   
     public static class Builder {
         private String message;
+        private String token;
         private com.amazon.ask.model.interfaces.alexa.presentation.apl.ListRuntimeErrorReason reason;
         private String listId;
         private Integer listVersion;
@@ -160,6 +164,14 @@ public final class ListRuntimeError extends com.amazon.ask.model.interfaces.alex
 
         public Builder withMessage(String message) {
             this.message = message;
+            return this;
+        }
+
+
+        @JsonProperty("token")
+
+        public Builder withToken(String token) {
+            this.token = token;
             return this;
         }
 

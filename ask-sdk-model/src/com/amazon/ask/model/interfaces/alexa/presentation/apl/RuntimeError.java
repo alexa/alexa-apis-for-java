@@ -35,6 +35,9 @@ public abstract class RuntimeError {
     @JsonProperty("message")
     protected String message = null;
 
+    @JsonProperty("token")
+    protected String token = null;
+
     protected RuntimeError() {
     }
 
@@ -58,6 +61,16 @@ public abstract class RuntimeError {
     }
 
 
+    /**
+     * The token as specified in the presentation's RenderDocument directive.
+     * @return token
+    **/
+    @JsonProperty("token")
+    public String getToken() {
+        return token;
+    }
+
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -68,12 +81,13 @@ public abstract class RuntimeError {
         }
         RuntimeError interfacesAlexaPresentationAplRuntimeError = (RuntimeError) o;
         return Objects.equals(this.type, interfacesAlexaPresentationAplRuntimeError.type) &&
-            Objects.equals(this.message, interfacesAlexaPresentationAplRuntimeError.message);
+            Objects.equals(this.message, interfacesAlexaPresentationAplRuntimeError.message) &&
+            Objects.equals(this.token, interfacesAlexaPresentationAplRuntimeError.token);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, message);
+        return Objects.hash(type, message, token);
     }
 
     @Override
@@ -83,6 +97,7 @@ public abstract class RuntimeError {
         
         sb.append("    type: ").append(toIndentedString(type)).append("\n");
         sb.append("    message: ").append(toIndentedString(message)).append("\n");
+        sb.append("    token: ").append(toIndentedString(token)).append("\n");
         sb.append("}");
         return sb.toString();
     }

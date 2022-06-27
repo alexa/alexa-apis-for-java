@@ -37,6 +37,9 @@ public final class RenderedDocumentState {
     @JsonProperty("componentsVisibleOnScreen")
     private List<com.amazon.ask.model.interfaces.alexa.presentation.apl.ComponentVisibleOnScreen> componentsVisibleOnScreen = new ArrayList<com.amazon.ask.model.interfaces.alexa.presentation.apl.ComponentVisibleOnScreen>();
 
+    @JsonProperty("dataSources")
+    private List<Object> dataSources = new ArrayList<Object>();
+
     public static Builder builder() {
         return new Builder();
     }
@@ -50,6 +53,9 @@ public final class RenderedDocumentState {
         }
         if (builder.componentsVisibleOnScreen != null) {
             this.componentsVisibleOnScreen = builder.componentsVisibleOnScreen;
+        }
+        if (builder.dataSources != null) {
+            this.dataSources = builder.dataSources;
         }
     }
 
@@ -83,6 +89,16 @@ public final class RenderedDocumentState {
     }
 
 
+    /**
+     * List of registered data sources' associated metadata
+     * @return dataSources
+    **/
+    @JsonProperty("dataSources")
+    public List<Object> getDataSources() {
+        return dataSources;
+    }
+
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -94,12 +110,13 @@ public final class RenderedDocumentState {
         RenderedDocumentState interfacesAlexaPresentationAplRenderedDocumentState = (RenderedDocumentState) o;
         return Objects.equals(this.token, interfacesAlexaPresentationAplRenderedDocumentState.token) &&
             Objects.equals(this.version, interfacesAlexaPresentationAplRenderedDocumentState.version) &&
-            Objects.equals(this.componentsVisibleOnScreen, interfacesAlexaPresentationAplRenderedDocumentState.componentsVisibleOnScreen);
+            Objects.equals(this.componentsVisibleOnScreen, interfacesAlexaPresentationAplRenderedDocumentState.componentsVisibleOnScreen) &&
+            Objects.equals(this.dataSources, interfacesAlexaPresentationAplRenderedDocumentState.dataSources);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(token, version, componentsVisibleOnScreen);
+        return Objects.hash(token, version, componentsVisibleOnScreen, dataSources);
     }
 
     @Override
@@ -110,6 +127,7 @@ public final class RenderedDocumentState {
         sb.append("    token: ").append(toIndentedString(token)).append("\n");
         sb.append("    version: ").append(toIndentedString(version)).append("\n");
         sb.append("    componentsVisibleOnScreen: ").append(toIndentedString(componentsVisibleOnScreen)).append("\n");
+        sb.append("    dataSources: ").append(toIndentedString(dataSources)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -129,6 +147,7 @@ public final class RenderedDocumentState {
         private String token;
         private String version;
         private List<com.amazon.ask.model.interfaces.alexa.presentation.apl.ComponentVisibleOnScreen> componentsVisibleOnScreen;
+        private List<Object> dataSources;
 
         private Builder() {}
 
@@ -160,6 +179,21 @@ public final class RenderedDocumentState {
                 this.componentsVisibleOnScreen = new ArrayList<com.amazon.ask.model.interfaces.alexa.presentation.apl.ComponentVisibleOnScreen>();
             }
             this.componentsVisibleOnScreen.add(componentsVisibleOnScreenItem);
+            return this;
+        }
+
+        @JsonProperty("dataSources")
+
+        public Builder withDataSources(List<Object> dataSources) {
+            this.dataSources = dataSources;
+            return this;
+        }
+
+        public Builder addDataSourcesItem(Object dataSourcesItem) {
+            if (this.dataSources == null) {
+                this.dataSources = new ArrayList<Object>();
+            }
+            this.dataSources.add(dataSourcesItem);
             return this;
         }
 
