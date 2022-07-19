@@ -96,6 +96,8 @@ public enum PermissionName {
   
   ALEXA_DEVICES_ALL_TOKENIZED_GEOLOCATION_READ("alexa::devices:all:tokenized_geolocation:read"),
   
+  ALEXA_MEASUREMENT_SYSTEM_READWRITE("alexa::measurement_system::readwrite"),
+  
   UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;

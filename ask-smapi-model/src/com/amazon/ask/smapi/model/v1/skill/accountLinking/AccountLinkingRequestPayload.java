@@ -67,6 +67,9 @@ public final class AccountLinkingRequestPayload {
     @JsonProperty("skipOnEnablement")
     private Boolean skipOnEnablement = null;
 
+    @JsonProperty("voiceForwardAccountLinking")
+    private String voiceForwardAccountLinking = null;
+
     public static Builder builder() {
         return new Builder();
     }
@@ -110,6 +113,9 @@ public final class AccountLinkingRequestPayload {
         }
         if (builder.skipOnEnablement != null) {
             this.skipOnEnablement = builder.skipOnEnablement;
+        }
+        if (builder.voiceForwardAccountLinking != null) {
+            this.voiceForwardAccountLinking = builder.voiceForwardAccountLinking;
         }
     }
 
@@ -277,6 +283,33 @@ public final class AccountLinkingRequestPayload {
     }
 
 
+    /**
+     * Get voiceForwardAccountLinking
+     *
+     * For this enum type, if a value unknown to the SDK is returned the UNKNOWN_TO_SDK_VERSION
+     * enumeration value will be returned. To directly return the raw String value, use getVoiceForwardAccountLinkingAsString().
+     *
+     * @return voiceForwardAccountLinking
+    **/
+    
+    public com.amazon.ask.smapi.model.v1.skill.accountLinking.VoiceForwardAccountLinkingStatus getVoiceForwardAccountLinking() {
+        return com.amazon.ask.smapi.model.v1.skill.accountLinking.VoiceForwardAccountLinkingStatus.fromValue(voiceForwardAccountLinking);
+    }
+
+    /**
+     * Get the underlying String value for voiceForwardAccountLinking.
+     *
+     * Using this accessor will retrieve the raw underlying value, even if it is not
+     * present in the corresponding enumeration. For forward compatibility, it is recommended
+     * to use this approach over the enumeration.
+     *
+     * @return voiceForwardAccountLinking as a String value
+    **/
+    @JsonProperty("voiceForwardAccountLinking")
+    public String getVoiceForwardAccountLinkingAsString() {
+      return voiceForwardAccountLinking;
+    }
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -298,12 +331,13 @@ public final class AccountLinkingRequestPayload {
             Objects.equals(this.reciprocalAccessTokenUrl, v1SkillAccountLinkingAccountLinkingRequestPayload.reciprocalAccessTokenUrl) &&
             Objects.equals(this.redirectUrls, v1SkillAccountLinkingAccountLinkingRequestPayload.redirectUrls) &&
             Objects.equals(this.authorizationUrlsByPlatform, v1SkillAccountLinkingAccountLinkingRequestPayload.authorizationUrlsByPlatform) &&
-            Objects.equals(this.skipOnEnablement, v1SkillAccountLinkingAccountLinkingRequestPayload.skipOnEnablement);
+            Objects.equals(this.skipOnEnablement, v1SkillAccountLinkingAccountLinkingRequestPayload.skipOnEnablement) &&
+            Objects.equals(this.voiceForwardAccountLinking, v1SkillAccountLinkingAccountLinkingRequestPayload.voiceForwardAccountLinking);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(type, authorizationUrl, domains, clientId, scopes, accessTokenUrl, clientSecret, accessTokenScheme, defaultTokenExpirationInSeconds, reciprocalAccessTokenUrl, redirectUrls, authorizationUrlsByPlatform, skipOnEnablement);
+        return Objects.hash(type, authorizationUrl, domains, clientId, scopes, accessTokenUrl, clientSecret, accessTokenScheme, defaultTokenExpirationInSeconds, reciprocalAccessTokenUrl, redirectUrls, authorizationUrlsByPlatform, skipOnEnablement, voiceForwardAccountLinking);
     }
 
     @Override
@@ -324,6 +358,7 @@ public final class AccountLinkingRequestPayload {
         sb.append("    redirectUrls: ").append(toIndentedString(redirectUrls)).append("\n");
         sb.append("    authorizationUrlsByPlatform: ").append(toIndentedString(authorizationUrlsByPlatform)).append("\n");
         sb.append("    skipOnEnablement: ").append(toIndentedString(skipOnEnablement)).append("\n");
+        sb.append("    voiceForwardAccountLinking: ").append(toIndentedString(voiceForwardAccountLinking)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -353,6 +388,7 @@ public final class AccountLinkingRequestPayload {
         private List<String> redirectUrls;
         private List<com.amazon.ask.smapi.model.v1.skill.accountLinking.AccountLinkingPlatformAuthorizationUrl> authorizationUrlsByPlatform;
         private Boolean skipOnEnablement;
+        private String voiceForwardAccountLinking;
 
         private Builder() {}
 
@@ -494,6 +530,19 @@ public final class AccountLinkingRequestPayload {
 
         public Builder withSkipOnEnablement(Boolean skipOnEnablement) {
             this.skipOnEnablement = skipOnEnablement;
+            return this;
+        }
+
+
+        @JsonProperty("voiceForwardAccountLinking")
+
+        public Builder withVoiceForwardAccountLinking(String voiceForwardAccountLinking) {
+          this.voiceForwardAccountLinking = voiceForwardAccountLinking;
+          return this;
+        }
+
+        public Builder withVoiceForwardAccountLinking(com.amazon.ask.smapi.model.v1.skill.accountLinking.VoiceForwardAccountLinkingStatus voiceForwardAccountLinking) {
+            this.voiceForwardAccountLinking = voiceForwardAccountLinking != null ? voiceForwardAccountLinking.toString() : null;
             return this;
         }
 
