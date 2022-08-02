@@ -31,6 +31,9 @@ public final class SkillManifestLocalizedPrivacyAndCompliance {
     @JsonProperty("termsOfUseUrl")
     private String termsOfUseUrl = null;
 
+    private SkillManifestLocalizedPrivacyAndCompliance() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

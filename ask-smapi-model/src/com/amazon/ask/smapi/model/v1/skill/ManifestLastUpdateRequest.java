@@ -40,6 +40,9 @@ public final class ManifestLastUpdateRequest {
     @JsonProperty("version")
     private String version = null;
 
+    private ManifestLastUpdateRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -100,6 +100,9 @@ public final class ValidationDetails {
     @JsonProperty("unexpectedProperty")
     private String unexpectedProperty = null;
 
+    private ValidationDetails() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

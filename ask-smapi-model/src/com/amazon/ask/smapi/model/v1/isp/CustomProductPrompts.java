@@ -31,6 +31,9 @@ public final class CustomProductPrompts {
     @JsonProperty("boughtCardDescription")
     private String boughtCardDescription = null;
 
+    private CustomProductPrompts() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

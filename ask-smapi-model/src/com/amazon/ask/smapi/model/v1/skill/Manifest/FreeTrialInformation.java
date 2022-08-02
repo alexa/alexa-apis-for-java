@@ -28,6 +28,9 @@ public final class FreeTrialInformation {
     @JsonProperty("freeTrialDuration")
     private String freeTrialDuration = null;
 
+    private FreeTrialInformation() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -28,6 +28,9 @@ public final class AccountLinkingRequest {
     @JsonProperty("accountLinkingRequest")
     private com.amazon.ask.smapi.model.v1.skill.accountLinking.AccountLinkingRequestPayload accountLinkingRequest = null;
 
+    private AccountLinkingRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -25,6 +25,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = HouseHoldList.Builder.class)
 public final class HouseHoldList {
 
+    private HouseHoldList() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

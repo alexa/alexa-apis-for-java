@@ -37,6 +37,9 @@ public final class ListPrivateDistributionAccountsResponse {
     @JsonProperty("nextToken")
     private String nextToken = null;
 
+    private ListPrivateDistributionAccountsResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

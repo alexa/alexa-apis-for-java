@@ -31,6 +31,9 @@ public final class ManageExperimentStateRequest {
     @JsonProperty("stoppedReason")
     private String stoppedReason = null;
 
+    private ManageExperimentStateRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -37,6 +37,9 @@ public final class CatalogItem {
     @JsonProperty("_links")
     private com.amazon.ask.smapi.model.v1.Links links = null;
 
+    private CatalogItem() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

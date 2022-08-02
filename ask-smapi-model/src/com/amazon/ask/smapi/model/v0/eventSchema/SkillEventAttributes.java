@@ -37,6 +37,9 @@ public final class SkillEventAttributes {
     @JsonProperty("subscription")
     private com.amazon.ask.smapi.model.v0.eventSchema.SubscriptionAttributes subscription = null;
 
+    private SkillEventAttributes() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

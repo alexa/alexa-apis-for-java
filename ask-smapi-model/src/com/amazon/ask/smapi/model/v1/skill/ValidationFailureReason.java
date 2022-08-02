@@ -28,6 +28,9 @@ public final class ValidationFailureReason {
     @JsonProperty("type")
     private String type = null;
 
+    private ValidationFailureReason() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

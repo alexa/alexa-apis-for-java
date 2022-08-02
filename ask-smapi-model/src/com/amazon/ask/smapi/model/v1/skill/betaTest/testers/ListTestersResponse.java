@@ -37,6 +37,9 @@ public final class ListTestersResponse {
     @JsonProperty("nextToken")
     private String nextToken = null;
 
+    private ListTestersResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

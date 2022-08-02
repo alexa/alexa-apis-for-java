@@ -24,6 +24,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public abstract class CatalogUploadBase {
 
+    protected CatalogUploadBase() {
+    }
+
     protected CatalogUploadBase(Builder builder) {
     }
 

@@ -46,6 +46,9 @@ public final class DialogSlotItems {
     @JsonProperty("validations")
     private List<com.amazon.ask.smapi.model.v1.skill.interactionModel.SlotValidation> validations = new ArrayList<com.amazon.ask.smapi.model.v1.skill.interactionModel.SlotValidation>();
 
+    private DialogSlotItems() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

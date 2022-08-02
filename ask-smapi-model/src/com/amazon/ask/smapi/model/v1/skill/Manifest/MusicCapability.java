@@ -34,6 +34,9 @@ public final class MusicCapability {
     @JsonProperty("version")
     private String version = null;
 
+    private MusicCapability() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

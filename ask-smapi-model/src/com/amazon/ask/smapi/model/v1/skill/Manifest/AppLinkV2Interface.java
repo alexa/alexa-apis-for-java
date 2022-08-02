@@ -25,6 +25,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = AppLinkV2Interface.Builder.class)
 public final class AppLinkV2Interface extends com.amazon.ask.smapi.model.v1.skill.Manifest.ModelInterface  {
 
+    private AppLinkV2Interface() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

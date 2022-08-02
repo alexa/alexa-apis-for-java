@@ -49,6 +49,9 @@ public final class SkillManifest {
     @JsonProperty("apis")
     private com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifestApis apis = null;
 
+    private SkillManifest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

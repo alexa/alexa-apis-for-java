@@ -31,6 +31,9 @@ public final class PagedResultsResponsePaginationContext {
     @JsonProperty("totalCount")
     private String totalCount = null;
 
+    private PagedResultsResponsePaginationContext() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

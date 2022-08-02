@@ -31,6 +31,9 @@ public final class ManifestStatus {
     @JsonProperty("eTag")
     private String eTag = null;
 
+    private ManifestStatus() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

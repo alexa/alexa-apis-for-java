@@ -37,6 +37,9 @@ public final class ExperimentSummary {
     @JsonProperty("experimentHistory")
     private com.amazon.ask.smapi.model.v1.skill.experiment.ExperimentHistory experimentHistory = null;
 
+    private ExperimentSummary() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -28,6 +28,9 @@ public final class SlotTypeUpdateObject {
     @JsonProperty("description")
     private String description = null;
 
+    private SlotTypeUpdateObject() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

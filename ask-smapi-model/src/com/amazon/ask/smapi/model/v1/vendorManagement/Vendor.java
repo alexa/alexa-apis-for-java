@@ -37,6 +37,9 @@ public final class Vendor {
     @JsonProperty("roles")
     private List<String> roles = new ArrayList<String>();
 
+    private Vendor() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

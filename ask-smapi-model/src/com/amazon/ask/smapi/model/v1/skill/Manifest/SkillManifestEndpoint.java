@@ -31,6 +31,9 @@ public final class SkillManifestEndpoint {
     @JsonProperty("sslCertificateType")
     private String sslCertificateType = null;
 
+    private SkillManifestEndpoint() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

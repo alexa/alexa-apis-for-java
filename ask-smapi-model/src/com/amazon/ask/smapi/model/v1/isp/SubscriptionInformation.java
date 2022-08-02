@@ -31,6 +31,9 @@ public final class SubscriptionInformation {
     @JsonProperty("subscriptionTrialPeriodDays")
     private Integer subscriptionTrialPeriodDays = null;
 
+    private SubscriptionInformation() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

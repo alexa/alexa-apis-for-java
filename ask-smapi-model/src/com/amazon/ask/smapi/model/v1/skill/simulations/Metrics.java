@@ -28,6 +28,9 @@ public final class Metrics {
     @JsonProperty("skillExecutionTimeInMilliseconds")
     private Integer skillExecutionTimeInMilliseconds = null;
 
+    private Metrics() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

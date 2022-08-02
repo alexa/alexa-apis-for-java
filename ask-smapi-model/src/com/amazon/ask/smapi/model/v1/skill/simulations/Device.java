@@ -28,6 +28,9 @@ public final class Device {
     @JsonProperty("locale")
     private String locale = null;
 
+    private Device() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

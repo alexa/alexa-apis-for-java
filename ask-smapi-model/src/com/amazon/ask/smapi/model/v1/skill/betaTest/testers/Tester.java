@@ -28,6 +28,9 @@ public final class Tester {
     @JsonProperty("emailId")
     private String emailId = null;
 
+    private Tester() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

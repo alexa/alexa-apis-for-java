@@ -41,6 +41,9 @@ public final class BetaTest {
     @JsonProperty("invitesRemaining")
     private Integer invitesRemaining = null;
 
+    private BetaTest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

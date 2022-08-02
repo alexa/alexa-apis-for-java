@@ -37,6 +37,9 @@ public final class ListSlotTypeResponse {
     @JsonProperty("nextToken")
     private String nextToken = null;
 
+    private ListSlotTypeResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

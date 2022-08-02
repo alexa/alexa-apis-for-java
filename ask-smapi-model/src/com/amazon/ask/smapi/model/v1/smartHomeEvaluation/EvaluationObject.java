@@ -50,6 +50,9 @@ public final class EvaluationObject {
     @JsonProperty("testPlanId")
     private String testPlanId = null;
 
+    private EvaluationObject() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

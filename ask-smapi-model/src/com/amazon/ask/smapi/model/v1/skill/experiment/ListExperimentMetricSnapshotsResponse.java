@@ -34,6 +34,9 @@ public final class ListExperimentMetricSnapshotsResponse {
     @JsonProperty("metricSnapshots")
     private List<com.amazon.ask.smapi.model.v1.skill.experiment.MetricSnapshot> metricSnapshots = new ArrayList<com.amazon.ask.smapi.model.v1.skill.experiment.MetricSnapshot>();
 
+    private ListExperimentMetricSnapshotsResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

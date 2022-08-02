@@ -40,6 +40,9 @@ public final class ImportResponse {
     @JsonProperty("skill")
     private com.amazon.ask.smapi.model.v1.skill.ImportResponseSkill skill = null;
 
+    private ImportResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

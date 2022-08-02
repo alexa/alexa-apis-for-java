@@ -52,6 +52,9 @@ public final class LocalizedFlashBriefingInfoItems {
     @JsonProperty("isDefault")
     private Boolean isDefault = null;
 
+    private LocalizedFlashBriefingInfoItems() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

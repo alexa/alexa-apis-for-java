@@ -31,6 +31,9 @@ public final class SlotTypeInput {
     @JsonProperty("description")
     private String description = null;
 
+    private SlotTypeInput() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

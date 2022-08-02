@@ -34,6 +34,9 @@ public final class ImageAttributes {
     @JsonProperty("maximumSize")
     private com.amazon.ask.smapi.model.v1.skill.ImageSize maximumSize = null;
 
+    private ImageAttributes() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

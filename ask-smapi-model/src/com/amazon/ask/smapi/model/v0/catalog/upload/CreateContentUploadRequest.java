@@ -28,6 +28,9 @@ public final class CreateContentUploadRequest {
     @JsonProperty("numberOfUploadParts")
     private Integer numberOfUploadParts = null;
 
+    private CreateContentUploadRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

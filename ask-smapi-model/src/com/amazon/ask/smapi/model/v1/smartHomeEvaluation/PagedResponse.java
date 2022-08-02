@@ -28,6 +28,9 @@ public final class PagedResponse {
     @JsonProperty("paginationContext")
     private com.amazon.ask.smapi.model.v1.smartHomeEvaluation.PaginationContext paginationContext = null;
 
+    private PagedResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

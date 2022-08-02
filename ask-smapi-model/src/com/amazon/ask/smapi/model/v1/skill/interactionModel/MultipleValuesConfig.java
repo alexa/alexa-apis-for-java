@@ -28,6 +28,9 @@ public final class MultipleValuesConfig {
     @JsonProperty("enabled")
     private Boolean enabled = null;
 
+    private MultipleValuesConfig() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

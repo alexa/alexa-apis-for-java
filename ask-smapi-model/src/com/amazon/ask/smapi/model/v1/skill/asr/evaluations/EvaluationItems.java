@@ -51,6 +51,9 @@ public final class EvaluationItems {
     @JsonProperty("id")
     private String id = null;
 
+    private EvaluationItems() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

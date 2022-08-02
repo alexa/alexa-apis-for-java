@@ -40,6 +40,9 @@ public final class UploadIngestionStep {
     @JsonProperty("violations")
     private List<com.amazon.ask.smapi.model.v1.Error> violations = new ArrayList<com.amazon.ask.smapi.model.v1.Error>();
 
+    private UploadIngestionStep() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

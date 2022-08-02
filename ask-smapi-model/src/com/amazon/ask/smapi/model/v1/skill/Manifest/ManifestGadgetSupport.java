@@ -40,6 +40,9 @@ public final class ManifestGadgetSupport {
     @JsonProperty("numPlayersMin")
     private Integer numPlayersMin = null;
 
+    private ManifestGadgetSupport() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -35,6 +35,9 @@ public final class ExperimentHistory {
     @JsonProperty("stoppedReason")
     private String stoppedReason = null;
 
+    private ExperimentHistory() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -31,6 +31,9 @@ public final class HostedSkillInfo {
     @JsonProperty("runtime")
     private String runtime = null;
 
+    private HostedSkillInfo() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

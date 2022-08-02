@@ -40,6 +40,9 @@ public final class Intent {
     @JsonProperty("samples")
     private List<String> samples = new ArrayList<String>();
 
+    private Intent() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

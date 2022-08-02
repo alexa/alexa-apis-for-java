@@ -28,6 +28,9 @@ public final class IspSummaryLinks {
     @JsonProperty("self")
     private com.amazon.ask.smapi.model.v1.Link self = null;
 
+    private IspSummaryLinks() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

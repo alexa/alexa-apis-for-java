@@ -40,6 +40,9 @@ public final class CreateSubscriptionRequest {
     @JsonProperty("subscriberId")
     private String subscriberId = null;
 
+    private CreateSubscriptionRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -41,6 +41,9 @@ public final class GetNLUEvaluationResultsResponse {
     @JsonProperty("testCases")
     private List<com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.TestCase> testCases = new ArrayList<com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.TestCase>();
 
+    private GetNLUEvaluationResultsResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

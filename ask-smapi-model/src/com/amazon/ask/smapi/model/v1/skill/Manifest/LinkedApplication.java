@@ -43,6 +43,9 @@ public final class LinkedApplication {
     @JsonProperty("androidCustomIntents")
     private List<com.amazon.ask.smapi.model.v1.skill.Manifest.AndroidCustomIntent> androidCustomIntents = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.AndroidCustomIntent>();
 
+    private LinkedApplication() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

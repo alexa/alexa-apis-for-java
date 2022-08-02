@@ -65,6 +65,9 @@ public final class InSkillProductSummary {
     @JsonProperty("pricing")
     private Map<String, com.amazon.ask.smapi.model.v1.isp.SummaryMarketplacePricing> pricing = new HashMap<String, com.amazon.ask.smapi.model.v1.isp.SummaryMarketplacePricing>();
 
+    private InSkillProductSummary() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

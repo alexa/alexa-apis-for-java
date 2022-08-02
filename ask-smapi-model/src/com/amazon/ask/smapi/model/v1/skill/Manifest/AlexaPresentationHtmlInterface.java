@@ -25,6 +25,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = AlexaPresentationHtmlInterface.Builder.class)
 public final class AlexaPresentationHtmlInterface extends com.amazon.ask.smapi.model.v1.skill.Manifest.ModelInterface  {
 
+    private AlexaPresentationHtmlInterface() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -31,6 +31,9 @@ public final class ValidationFeature {
     @JsonProperty("contact")
     private String contact = null;
 
+    private ValidationFeature() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

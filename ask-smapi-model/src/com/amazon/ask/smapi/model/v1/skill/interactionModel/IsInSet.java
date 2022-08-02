@@ -31,6 +31,9 @@ public final class IsInSet extends com.amazon.ask.smapi.model.v1.skill.interacti
     @JsonProperty("values")
     private List<String> values = new ArrayList<String>();
 
+    private IsInSet() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

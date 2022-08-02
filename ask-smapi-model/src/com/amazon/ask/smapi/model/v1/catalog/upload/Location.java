@@ -28,6 +28,9 @@ public final class Location extends com.amazon.ask.smapi.model.v1.catalog.upload
     @JsonProperty("location")
     private String location = null;
 
+    private Location() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

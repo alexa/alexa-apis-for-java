@@ -34,6 +34,9 @@ public final class AlexaExecutionInfo {
     @JsonProperty("consideredIntents")
     private List<com.amazon.ask.smapi.model.v2.skill.simulations.Intent> consideredIntents = new ArrayList<com.amazon.ask.smapi.model.v2.skill.simulations.Intent>();
 
+    private AlexaExecutionInfo() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

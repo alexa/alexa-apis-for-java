@@ -31,6 +31,9 @@ public final class LambdaEndpoint {
     @JsonProperty("sslCertificateType")
     private String sslCertificateType = null;
 
+    private LambdaEndpoint() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

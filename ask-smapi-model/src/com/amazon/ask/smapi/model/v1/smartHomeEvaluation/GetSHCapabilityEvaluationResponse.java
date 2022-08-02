@@ -47,6 +47,9 @@ public final class GetSHCapabilityEvaluationResponse {
     @JsonProperty("metrics")
     private Map<String, com.amazon.ask.smapi.model.v1.smartHomeEvaluation.SHEvaluationResultsMetric> metrics = new HashMap<String, com.amazon.ask.smapi.model.v1.smartHomeEvaluation.SHEvaluationResultsMetric>();
 
+    private GetSHCapabilityEvaluationResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

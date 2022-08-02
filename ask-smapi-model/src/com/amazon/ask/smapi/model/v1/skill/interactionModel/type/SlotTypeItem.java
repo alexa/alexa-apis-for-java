@@ -37,6 +37,9 @@ public final class SlotTypeItem {
     @JsonProperty("_links")
     private com.amazon.ask.smapi.model.v1.Links links = null;
 
+    private SlotTypeItem() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

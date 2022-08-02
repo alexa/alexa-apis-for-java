@@ -31,6 +31,9 @@ public class Error {
     @JsonProperty("message")
     private String message = null;
 
+    protected Error() {
+    }
+
     protected Error(Builder builder) {
         if (builder.code != null) {
             this.code = builder.code;

@@ -40,6 +40,9 @@ public final class LocalizedMusicInfo {
     @JsonProperty("wordmarkLogos")
     private List<com.amazon.ask.smapi.model.v1.skill.Manifest.MusicWordmark> wordmarkLogos = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.MusicWordmark>();
 
+    private LocalizedMusicInfo() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

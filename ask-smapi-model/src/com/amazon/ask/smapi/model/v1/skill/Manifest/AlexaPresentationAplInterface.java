@@ -31,6 +31,9 @@ public final class AlexaPresentationAplInterface extends com.amazon.ask.smapi.mo
     @JsonProperty("supportedViewports")
     private List<com.amazon.ask.smapi.model.v1.skill.Manifest.ViewportSpecification> supportedViewports = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.ViewportSpecification>();
 
+    private AlexaPresentationAplInterface() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -42,6 +42,9 @@ public final class GetMetricDataResponse {
     @JsonProperty("nextToken")
     private String nextToken = null;
 
+    private GetMetricDataResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

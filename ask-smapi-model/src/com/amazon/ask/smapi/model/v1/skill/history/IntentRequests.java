@@ -50,6 +50,9 @@ public final class IntentRequests {
     @JsonProperty("items")
     private List<com.amazon.ask.smapi.model.v1.skill.history.IntentRequest> items = new ArrayList<com.amazon.ask.smapi.model.v1.skill.history.IntentRequest>();
 
+    private IntentRequests() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

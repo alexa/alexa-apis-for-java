@@ -28,6 +28,9 @@ public final class ValueSupplierObject {
     @JsonProperty("valueSupplier")
     private com.amazon.ask.smapi.model.v1.skill.interactionModel.ValueSupplier valueSupplier = null;
 
+    private ValueSupplierObject() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

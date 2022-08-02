@@ -38,6 +38,9 @@ public final class GetNLUAnnotationSetPropertiesResponse {
     @JsonProperty("updatedTimestamp")
     private OffsetDateTime updatedTimestamp = null;
 
+    private GetNLUAnnotationSetPropertiesResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

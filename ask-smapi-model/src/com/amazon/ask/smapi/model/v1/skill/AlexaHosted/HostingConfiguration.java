@@ -28,6 +28,9 @@ public final class HostingConfiguration {
     @JsonProperty("alexaHosted")
     private com.amazon.ask.smapi.model.v1.skill.AlexaHosted.AlexaHostedConfig alexaHosted = null;
 
+    private HostingConfiguration() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

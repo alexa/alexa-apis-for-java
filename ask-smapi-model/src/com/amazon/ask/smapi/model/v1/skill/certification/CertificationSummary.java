@@ -38,6 +38,9 @@ public final class CertificationSummary {
     @JsonProperty("reviewTrackingInfo")
     private com.amazon.ask.smapi.model.v1.skill.certification.ReviewTrackingInfoSummary reviewTrackingInfo = null;
 
+    private CertificationSummary() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

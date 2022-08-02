@@ -40,6 +40,9 @@ public final class ListSkillResponse {
     @JsonProperty("nextToken")
     private String nextToken = null;
 
+    private ListSkillResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -28,6 +28,9 @@ public final class SubscriptionInformation {
     @JsonProperty("subscriptionPaymentFrequency")
     private String subscriptionPaymentFrequency = null;
 
+    private SubscriptionInformation() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -31,6 +31,9 @@ public final class CreateSkillWithPackageRequest {
     @JsonProperty("location")
     private String location = null;
 
+    private CreateSkillWithPackageRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

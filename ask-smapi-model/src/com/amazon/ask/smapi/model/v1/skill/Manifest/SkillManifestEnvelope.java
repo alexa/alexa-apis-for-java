@@ -28,6 +28,9 @@ public final class SkillManifestEnvelope {
     @JsonProperty("manifest")
     private com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifest manifest = null;
 
+    private SkillManifestEnvelope() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

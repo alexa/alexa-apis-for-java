@@ -34,6 +34,9 @@ public final class SkillReviewEventAttributes {
     @JsonProperty("review")
     private com.amazon.ask.smapi.model.v0.eventSchema.SkillReviewAttributes review = null;
 
+    private SkillReviewEventAttributes() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

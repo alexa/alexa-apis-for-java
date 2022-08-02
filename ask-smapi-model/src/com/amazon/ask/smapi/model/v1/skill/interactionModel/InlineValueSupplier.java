@@ -31,6 +31,9 @@ public final class InlineValueSupplier extends com.amazon.ask.smapi.model.v1.ski
     @JsonProperty("values")
     private List<com.amazon.ask.smapi.model.v1.skill.interactionModel.TypeValue> values = new ArrayList<com.amazon.ask.smapi.model.v1.skill.interactionModel.TypeValue>();
 
+    private InlineValueSupplier() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

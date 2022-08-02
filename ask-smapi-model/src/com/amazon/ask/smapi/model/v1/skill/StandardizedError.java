@@ -28,6 +28,9 @@ public final class StandardizedError extends com.amazon.ask.smapi.model.v1.Error
     @JsonProperty("validationDetails")
     private com.amazon.ask.smapi.model.v1.skill.ValidationDetails validationDetails = null;
 
+    private StandardizedError() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

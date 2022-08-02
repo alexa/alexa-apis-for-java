@@ -31,6 +31,9 @@ public final class HostedSkillRepositoryInfo {
     @JsonProperty("type")
     private String type = null;
 
+    private HostedSkillRepositoryInfo() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

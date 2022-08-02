@@ -38,6 +38,9 @@ public final class CatalogEntityVersion {
     @JsonProperty("_links")
     private com.amazon.ask.smapi.model.v1.skill.interactionModel.version.Links links = null;
 
+    private CatalogEntityVersion() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

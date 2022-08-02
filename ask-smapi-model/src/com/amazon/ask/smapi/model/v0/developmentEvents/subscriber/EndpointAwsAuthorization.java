@@ -28,6 +28,9 @@ public final class EndpointAwsAuthorization extends com.amazon.ask.smapi.model.v
     @JsonProperty("arn")
     private String arn = null;
 
+    private EndpointAwsAuthorization() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

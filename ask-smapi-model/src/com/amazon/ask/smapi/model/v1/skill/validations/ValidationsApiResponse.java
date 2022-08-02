@@ -34,6 +34,9 @@ public final class ValidationsApiResponse {
     @JsonProperty("result")
     private com.amazon.ask.smapi.model.v1.skill.validations.ValidationsApiResponseResult result = null;
 
+    private ValidationsApiResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

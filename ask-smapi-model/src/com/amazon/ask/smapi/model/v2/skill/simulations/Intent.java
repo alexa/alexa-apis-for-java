@@ -37,6 +37,9 @@ public final class Intent {
     @JsonProperty("slots")
     private Map<String, com.amazon.ask.smapi.model.v2.skill.simulations.Slot> slots = new HashMap<String, com.amazon.ask.smapi.model.v2.skill.simulations.Slot>();
 
+    private Intent() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -31,6 +31,9 @@ public final class Request {
     @JsonProperty("body")
     private Object body = null;
 
+    private Request() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

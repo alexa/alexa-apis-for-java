@@ -34,6 +34,9 @@ public final class VideoRegion {
     @JsonProperty("upchannel")
     private List<com.amazon.ask.smapi.model.v1.skill.Manifest.UpChannelItems> upchannel = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.UpChannelItems>();
 
+    private VideoRegion() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -37,6 +37,9 @@ public final class ProfileNluSelectedIntent {
     @JsonProperty("slots")
     private Map<String, com.amazon.ask.smapi.model.v1.skill.evaluations.Slot> slots = new HashMap<String, com.amazon.ask.smapi.model.v1.skill.evaluations.Slot>();
 
+    private ProfileNluSelectedIntent() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

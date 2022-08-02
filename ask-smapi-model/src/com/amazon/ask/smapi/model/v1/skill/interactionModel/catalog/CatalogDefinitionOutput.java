@@ -34,6 +34,9 @@ public final class CatalogDefinitionOutput {
     @JsonProperty("totalVersions")
     private String totalVersions = null;
 
+    private CatalogDefinitionOutput() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

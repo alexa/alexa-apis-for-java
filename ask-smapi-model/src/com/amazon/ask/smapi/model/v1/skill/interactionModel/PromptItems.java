@@ -31,6 +31,9 @@ public final class PromptItems {
     @JsonProperty("value")
     private String value = null;
 
+    private PromptItems() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

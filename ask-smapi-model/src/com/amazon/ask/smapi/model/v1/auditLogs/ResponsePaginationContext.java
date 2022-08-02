@@ -28,6 +28,9 @@ public final class ResponsePaginationContext {
     @JsonProperty("nextToken")
     private String nextToken = null;
 
+    private ResponsePaginationContext() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

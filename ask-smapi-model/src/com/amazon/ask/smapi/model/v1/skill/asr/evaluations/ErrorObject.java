@@ -31,6 +31,9 @@ public final class ErrorObject {
     @JsonProperty("code")
     private String code = null;
 
+    private ErrorObject() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

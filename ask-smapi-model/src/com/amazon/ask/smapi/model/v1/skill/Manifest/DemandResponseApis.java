@@ -37,6 +37,9 @@ public final class DemandResponseApis {
     @JsonProperty("enrollmentUrl")
     private String enrollmentUrl = null;
 
+    private DemandResponseApis() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

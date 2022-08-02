@@ -40,6 +40,9 @@ public final class LastUpdateRequest {
     @JsonProperty("warnings")
     private List<com.amazon.ask.smapi.model.v1.skill.interactionModel.type.Warning> warnings = new ArrayList<com.amazon.ask.smapi.model.v1.skill.interactionModel.type.Warning>();
 
+    private LastUpdateRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -28,6 +28,9 @@ public final class HostedSkillMetadata {
     @JsonProperty("alexaHosted")
     private com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillInfo alexaHosted = null;
 
+    private HostedSkillMetadata() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

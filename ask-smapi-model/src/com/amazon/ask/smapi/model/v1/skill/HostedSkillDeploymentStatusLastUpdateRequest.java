@@ -40,6 +40,9 @@ public final class HostedSkillDeploymentStatusLastUpdateRequest {
     @JsonProperty("deploymentDetails")
     private com.amazon.ask.smapi.model.v1.skill.HostedSkillDeploymentDetails deploymentDetails = null;
 
+    private HostedSkillDeploymentStatusLastUpdateRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -31,6 +31,9 @@ public final class CatalogInfo {
     @JsonProperty("identifier")
     private String identifier = null;
 
+    private CatalogInfo() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

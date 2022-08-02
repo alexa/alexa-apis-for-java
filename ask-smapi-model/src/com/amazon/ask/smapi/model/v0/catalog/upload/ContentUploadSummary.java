@@ -41,6 +41,9 @@ public final class ContentUploadSummary {
     @JsonProperty("lastUpdatedDate")
     private OffsetDateTime lastUpdatedDate = null;
 
+    private ContentUploadSummary() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -37,6 +37,9 @@ public final class CloneLocaleRequest {
     @JsonProperty("overwriteMode")
     private String overwriteMode = null;
 
+    private CloneLocaleRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

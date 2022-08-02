@@ -28,6 +28,9 @@ public final class MusicRequest {
     @JsonProperty("name")
     private String name = null;
 
+    private MusicRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

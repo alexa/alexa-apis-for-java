@@ -28,6 +28,9 @@ public final class UpdateExposureRequest {
     @JsonProperty("exposurePercentage")
     private Integer exposurePercentage = null;
 
+    private UpdateExposureRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

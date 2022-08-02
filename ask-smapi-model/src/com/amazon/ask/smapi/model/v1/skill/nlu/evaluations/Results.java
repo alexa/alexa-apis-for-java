@@ -28,6 +28,9 @@ public final class Results {
     @JsonProperty("href")
     private String href = null;
 
+    private Results() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

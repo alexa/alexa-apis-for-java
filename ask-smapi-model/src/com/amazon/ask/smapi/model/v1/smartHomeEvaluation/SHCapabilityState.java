@@ -25,6 +25,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = SHCapabilityState.Builder.class)
 public final class SHCapabilityState {
 
+    private SHCapabilityState() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

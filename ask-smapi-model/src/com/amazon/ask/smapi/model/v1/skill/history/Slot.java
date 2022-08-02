@@ -28,6 +28,9 @@ public final class Slot {
     @JsonProperty("name")
     private String name = null;
 
+    private Slot() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

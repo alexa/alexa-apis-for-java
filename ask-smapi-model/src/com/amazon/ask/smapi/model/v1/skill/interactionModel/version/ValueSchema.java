@@ -31,6 +31,9 @@ public final class ValueSchema {
     @JsonProperty("name")
     private com.amazon.ask.smapi.model.v1.skill.interactionModel.version.ValueSchemaName name = null;
 
+    private ValueSchema() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -37,6 +37,9 @@ public final class GetExecutionsResponse {
     @JsonProperty("executions")
     private List<com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.Execution> executions = new ArrayList<com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.Execution>();
 
+    private GetExecutionsResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

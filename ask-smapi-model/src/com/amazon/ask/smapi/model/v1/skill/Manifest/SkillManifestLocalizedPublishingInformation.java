@@ -55,6 +55,9 @@ public final class SkillManifestLocalizedPublishingInformation {
     @JsonProperty("customProductPrompts")
     private com.amazon.ask.smapi.model.v1.skill.Manifest.CustomProductPrompts customProductPrompts = null;
 
+    private SkillManifestLocalizedPublishingInformation() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

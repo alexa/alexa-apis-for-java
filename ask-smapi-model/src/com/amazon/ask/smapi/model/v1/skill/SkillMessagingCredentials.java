@@ -31,6 +31,9 @@ public final class SkillMessagingCredentials {
     @JsonProperty("clientSecret")
     private String clientSecret = null;
 
+    private SkillMessagingCredentials() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

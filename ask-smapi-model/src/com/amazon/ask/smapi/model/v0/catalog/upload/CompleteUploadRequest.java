@@ -31,6 +31,9 @@ public final class CompleteUploadRequest {
     @JsonProperty("partETags")
     private List<com.amazon.ask.smapi.model.v0.catalog.upload.PreSignedUrlItem> partETags = new ArrayList<com.amazon.ask.smapi.model.v0.catalog.upload.PreSignedUrlItem>();
 
+    private CompleteUploadRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

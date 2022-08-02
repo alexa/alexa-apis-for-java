@@ -41,6 +41,9 @@ public final class SkillVersion {
     @JsonProperty("submissions")
     private List<com.amazon.ask.smapi.model.v1.skill.VersionSubmission> submissions = new ArrayList<com.amazon.ask.smapi.model.v1.skill.VersionSubmission>();
 
+    private SkillVersion() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

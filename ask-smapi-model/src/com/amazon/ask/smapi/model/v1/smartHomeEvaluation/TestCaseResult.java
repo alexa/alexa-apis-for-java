@@ -52,6 +52,9 @@ public final class TestCaseResult {
     @JsonProperty("status")
     private String status = null;
 
+    private TestCaseResult() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

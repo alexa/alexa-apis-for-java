@@ -31,6 +31,9 @@ public final class AutomaticClonedLocale {
     @JsonProperty("locales")
     private List<com.amazon.ask.smapi.model.v1.skill.Manifest.LocalesByAutomaticClonedLocale> locales = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.LocalesByAutomaticClonedLocale>();
 
+    private AutomaticClonedLocale() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

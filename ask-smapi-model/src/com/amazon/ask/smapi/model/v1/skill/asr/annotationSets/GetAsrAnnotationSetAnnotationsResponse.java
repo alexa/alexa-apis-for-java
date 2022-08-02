@@ -34,6 +34,9 @@ public final class GetAsrAnnotationSetAnnotationsResponse {
     @JsonProperty("paginationContext")
     private com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.PaginationContext paginationContext = null;
 
+    private GetAsrAnnotationSetAnnotationsResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

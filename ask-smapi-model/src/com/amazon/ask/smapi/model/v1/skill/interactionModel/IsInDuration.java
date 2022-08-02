@@ -31,6 +31,9 @@ public final class IsInDuration extends com.amazon.ask.smapi.model.v1.skill.inte
     @JsonProperty("end")
     private String end = null;
 
+    private IsInDuration() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

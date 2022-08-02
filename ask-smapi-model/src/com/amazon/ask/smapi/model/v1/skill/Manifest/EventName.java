@@ -28,6 +28,9 @@ public final class EventName {
     @JsonProperty("eventName")
     private String eventName = null;
 
+    private EventName() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

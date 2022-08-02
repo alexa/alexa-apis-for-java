@@ -50,6 +50,9 @@ public final class GetContentUploadResponse {
     @JsonProperty("ingestionSteps")
     private List<com.amazon.ask.smapi.model.v1.catalog.upload.UploadIngestionStep> ingestionSteps = new ArrayList<com.amazon.ask.smapi.model.v1.catalog.upload.UploadIngestionStep>();
 
+    private GetContentUploadResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

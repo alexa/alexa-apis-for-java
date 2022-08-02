@@ -41,6 +41,9 @@ public final class AnnotationWithAudioAsset {
     @JsonProperty("audioAsset")
     private com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.AudioAsset audioAsset = null;
 
+    private AnnotationWithAudioAsset() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

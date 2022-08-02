@@ -31,6 +31,9 @@ public final class StateTransitionError {
     @JsonProperty("message")
     private String message = null;
 
+    private StateTransitionError() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

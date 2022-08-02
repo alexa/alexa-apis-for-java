@@ -28,6 +28,9 @@ public final class MusicContentType {
     @JsonProperty("name")
     private String name = null;
 
+    private MusicContentType() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

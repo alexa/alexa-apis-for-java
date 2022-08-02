@@ -40,6 +40,9 @@ public final class SlotDefinition {
     @JsonProperty("samples")
     private List<String> samples = new ArrayList<String>();
 
+    private SlotDefinition() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

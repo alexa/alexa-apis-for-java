@@ -34,6 +34,9 @@ public final class ExpectedIntent {
     @JsonProperty("slots")
     private Map<String, com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.ExpectedIntentSlotsProps> slots = new HashMap<String, com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.ExpectedIntentSlotsProps>();
 
+    private ExpectedIntent() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -28,6 +28,9 @@ public final class FallbackIntentSensitivity {
     @JsonProperty("level")
     private String level = null;
 
+    private FallbackIntentSensitivity() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

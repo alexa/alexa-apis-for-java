@@ -31,6 +31,9 @@ public final class InvocationsApiResponse {
     @JsonProperty("result")
     private com.amazon.ask.smapi.model.v2.skill.invocations.InvocationResponseResult result = null;
 
+    private InvocationsApiResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -28,6 +28,9 @@ public final class SessionStartDelegationStrategy {
     @JsonProperty("target")
     private String target = null;
 
+    private SessionStartDelegationStrategy() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

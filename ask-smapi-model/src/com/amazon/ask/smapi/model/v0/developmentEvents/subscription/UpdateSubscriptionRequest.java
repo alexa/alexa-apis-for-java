@@ -34,6 +34,9 @@ public final class UpdateSubscriptionRequest {
     @JsonProperty("events")
     private List<com.amazon.ask.smapi.model.v0.developmentEvents.subscription.Event> events = new ArrayList<com.amazon.ask.smapi.model.v0.developmentEvents.subscription.Event>();
 
+    private UpdateSubscriptionRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -35,6 +35,9 @@ public final class SummaryPriceListing {
     @JsonProperty("currency")
     private String currency = null;
 
+    private SummaryPriceListing() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

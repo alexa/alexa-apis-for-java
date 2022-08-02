@@ -34,6 +34,9 @@ public final class PublicationFailure {
     @JsonProperty("countries")
     private List<String> countries = new ArrayList<String>();
 
+    private PublicationFailure() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

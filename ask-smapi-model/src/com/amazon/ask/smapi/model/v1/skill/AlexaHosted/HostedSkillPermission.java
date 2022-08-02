@@ -34,6 +34,9 @@ public final class HostedSkillPermission {
     @JsonProperty("actionUrl")
     private String actionUrl = null;
 
+    private HostedSkillPermission() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

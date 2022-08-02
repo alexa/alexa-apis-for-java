@@ -28,6 +28,9 @@ public final class UpdateSkillWithPackageRequest {
     @JsonProperty("location")
     private String location = null;
 
+    private UpdateSkillWithPackageRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

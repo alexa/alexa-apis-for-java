@@ -37,6 +37,9 @@ public final class GetConflictsResponse {
     @JsonProperty("results")
     private List<com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.GetConflictsResponseResult> results = new ArrayList<com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.GetConflictsResponseResult>();
 
+    private GetConflictsResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

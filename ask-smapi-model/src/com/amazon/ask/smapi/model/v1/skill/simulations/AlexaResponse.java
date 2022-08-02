@@ -31,6 +31,9 @@ public final class AlexaResponse {
     @JsonProperty("content")
     private com.amazon.ask.smapi.model.v1.skill.simulations.AlexaResponseContent content = null;
 
+    private AlexaResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

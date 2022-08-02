@@ -28,6 +28,9 @@ public final class RegionalSSLCertificate {
     @JsonProperty("sslCertificate")
     private String sslCertificate = null;
 
+    private RegionalSSLCertificate() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

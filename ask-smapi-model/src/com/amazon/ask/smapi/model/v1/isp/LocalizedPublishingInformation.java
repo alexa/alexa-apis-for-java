@@ -52,6 +52,9 @@ public final class LocalizedPublishingInformation {
     @JsonProperty("customProductPrompts")
     private com.amazon.ask.smapi.model.v1.isp.CustomProductPrompts customProductPrompts = null;
 
+    private LocalizedPublishingInformation() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

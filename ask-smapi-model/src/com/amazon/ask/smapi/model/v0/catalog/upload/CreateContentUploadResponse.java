@@ -50,6 +50,9 @@ public final class CreateContentUploadResponse {
     @JsonProperty("presignedUploadParts")
     private List<com.amazon.ask.smapi.model.v0.catalog.upload.PresignedUploadPart> presignedUploadParts = new ArrayList<com.amazon.ask.smapi.model.v0.catalog.upload.PresignedUploadPart>();
 
+    private CreateContentUploadResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

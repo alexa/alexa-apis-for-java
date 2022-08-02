@@ -25,6 +25,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = GadgetControllerInterface.Builder.class)
 public final class GadgetControllerInterface extends com.amazon.ask.smapi.model.v1.skill.Manifest.ModelInterface  {
 
+    private GadgetControllerInterface() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

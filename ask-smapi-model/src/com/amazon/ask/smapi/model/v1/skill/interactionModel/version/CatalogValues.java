@@ -43,6 +43,9 @@ public final class CatalogValues {
     @JsonProperty("values")
     private List<com.amazon.ask.smapi.model.v1.skill.interactionModel.version.ValueSchema> values = new ArrayList<com.amazon.ask.smapi.model.v1.skill.interactionModel.version.ValueSchema>();
 
+    private CatalogValues() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

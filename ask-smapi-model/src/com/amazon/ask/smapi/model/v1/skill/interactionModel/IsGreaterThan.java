@@ -28,6 +28,9 @@ public final class IsGreaterThan extends com.amazon.ask.smapi.model.v1.skill.int
     @JsonProperty("value")
     private String value = null;
 
+    private IsGreaterThan() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

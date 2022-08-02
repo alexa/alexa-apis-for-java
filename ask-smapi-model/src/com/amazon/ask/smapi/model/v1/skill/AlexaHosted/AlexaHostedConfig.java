@@ -31,6 +31,9 @@ public final class AlexaHostedConfig {
     @JsonProperty("region")
     private String region = null;
 
+    private AlexaHostedConfig() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

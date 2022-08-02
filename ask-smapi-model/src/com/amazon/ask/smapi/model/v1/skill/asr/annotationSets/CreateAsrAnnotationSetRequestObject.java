@@ -28,6 +28,9 @@ public final class CreateAsrAnnotationSetRequestObject {
     @JsonProperty("name")
     private String name = null;
 
+    private CreateAsrAnnotationSetRequestObject() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

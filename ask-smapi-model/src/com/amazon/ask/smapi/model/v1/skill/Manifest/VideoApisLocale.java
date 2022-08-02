@@ -43,6 +43,9 @@ public final class VideoApisLocale {
     @JsonProperty("promptNames")
     private List<com.amazon.ask.smapi.model.v1.skill.Manifest.VideoPromptName> promptNames = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.VideoPromptName>();
 
+    private VideoApisLocale() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

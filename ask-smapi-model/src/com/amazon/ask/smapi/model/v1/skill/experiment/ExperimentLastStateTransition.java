@@ -47,6 +47,9 @@ public final class ExperimentLastStateTransition {
     @JsonProperty("errors")
     private List<com.amazon.ask.smapi.model.v1.skill.experiment.StateTransitionError> errors = new ArrayList<com.amazon.ask.smapi.model.v1.skill.experiment.StateTransitionError>();
 
+    private ExperimentLastStateTransition() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

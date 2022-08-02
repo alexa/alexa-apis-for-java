@@ -32,6 +32,9 @@ public final class VersionSubmission {
     @JsonProperty("submissionTime")
     private OffsetDateTime submissionTime = null;
 
+    private VersionSubmission() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -31,6 +31,9 @@ public final class SkillExecutionInfo {
     @JsonProperty("invocations")
     private List<com.amazon.ask.smapi.model.v2.skill.Invocation> invocations = new ArrayList<com.amazon.ask.smapi.model.v2.skill.Invocation>();
 
+    private SkillExecutionInfo() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

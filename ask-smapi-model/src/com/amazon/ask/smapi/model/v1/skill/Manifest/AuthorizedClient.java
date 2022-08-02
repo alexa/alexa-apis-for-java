@@ -28,6 +28,9 @@ public final class AuthorizedClient {
     @JsonProperty("authenticationProvider")
     private String authenticationProvider = null;
 
+    private AuthorizedClient() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

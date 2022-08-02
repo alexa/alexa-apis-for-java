@@ -32,6 +32,9 @@ public final class Resolutions {
     @JsonProperty("resolutionsPerAuthority")
     private List<Map<String, com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.ResolutionsPerAuthority>> resolutionsPerAuthority = new ArrayList<Map<String, com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.ResolutionsPerAuthority>>();
 
+    private Resolutions() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

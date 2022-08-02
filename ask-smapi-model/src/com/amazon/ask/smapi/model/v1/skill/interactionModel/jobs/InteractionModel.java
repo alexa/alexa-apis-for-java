@@ -34,6 +34,9 @@ public final class InteractionModel extends com.amazon.ask.smapi.model.v1.skill.
     @JsonProperty("locales")
     private List<String> locales = new ArrayList<String>();
 
+    private InteractionModel() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

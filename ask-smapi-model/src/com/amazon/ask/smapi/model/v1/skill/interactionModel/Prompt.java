@@ -34,6 +34,9 @@ public final class Prompt {
     @JsonProperty("variations")
     private List<com.amazon.ask.smapi.model.v1.skill.interactionModel.PromptItems> variations = new ArrayList<com.amazon.ask.smapi.model.v1.skill.interactionModel.PromptItems>();
 
+    private Prompt() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

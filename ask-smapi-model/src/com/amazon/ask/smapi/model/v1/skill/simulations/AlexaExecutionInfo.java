@@ -31,6 +31,9 @@ public final class AlexaExecutionInfo {
     @JsonProperty("alexaResponses")
     private List<com.amazon.ask.smapi.model.v1.skill.simulations.AlexaResponse> alexaResponses = new ArrayList<com.amazon.ask.smapi.model.v1.skill.simulations.AlexaResponse>();
 
+    private AlexaExecutionInfo() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -38,6 +38,9 @@ public final class GetASRAnnotationSetsPropertiesResponse {
     @JsonProperty("eligibleForEvaluation")
     private Boolean eligibleForEvaluation = null;
 
+    private GetASRAnnotationSetsPropertiesResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

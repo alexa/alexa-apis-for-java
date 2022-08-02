@@ -28,6 +28,9 @@ public final class EvaluationResultOutput {
     @JsonProperty("transcription")
     private String transcription = null;
 
+    private EvaluationResultOutput() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

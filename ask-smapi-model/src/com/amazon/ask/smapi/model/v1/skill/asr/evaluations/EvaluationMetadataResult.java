@@ -31,6 +31,9 @@ public final class EvaluationMetadataResult {
     @JsonProperty("metrics")
     private com.amazon.ask.smapi.model.v1.skill.asr.evaluations.Metrics metrics = null;
 
+    private EvaluationMetadataResult() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

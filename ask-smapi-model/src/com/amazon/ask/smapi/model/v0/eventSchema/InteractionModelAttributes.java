@@ -34,6 +34,9 @@ public final class InteractionModelAttributes {
     @JsonProperty("locale")
     private String locale = null;
 
+    private InteractionModelAttributes() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

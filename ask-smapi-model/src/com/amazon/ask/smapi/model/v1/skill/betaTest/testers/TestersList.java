@@ -31,6 +31,9 @@ public final class TestersList {
     @JsonProperty("testers")
     private List<com.amazon.ask.smapi.model.v1.skill.betaTest.testers.Tester> testers = new ArrayList<com.amazon.ask.smapi.model.v1.skill.betaTest.testers.Tester>();
 
+    private TestersList() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

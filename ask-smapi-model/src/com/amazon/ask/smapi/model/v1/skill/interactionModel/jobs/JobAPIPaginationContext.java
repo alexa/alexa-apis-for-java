@@ -28,6 +28,9 @@ public final class JobAPIPaginationContext {
     @JsonProperty("nextToken")
     private String nextToken = null;
 
+    private JobAPIPaginationContext() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

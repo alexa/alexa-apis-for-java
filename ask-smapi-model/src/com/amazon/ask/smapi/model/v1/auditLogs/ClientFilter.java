@@ -28,6 +28,9 @@ public final class ClientFilter {
     @JsonProperty("id")
     private String id = null;
 
+    private ClientFilter() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

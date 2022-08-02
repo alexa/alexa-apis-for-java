@@ -25,6 +25,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = VoiceProfileFeature.Builder.class)
 public final class VoiceProfileFeature extends com.amazon.ask.smapi.model.v1.skill.Manifest.VideoFeature  {
 
+    private VoiceProfileFeature() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

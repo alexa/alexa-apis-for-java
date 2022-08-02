@@ -48,6 +48,9 @@ public final class MusicApis {
     @JsonProperty("contentTypes")
     private List<com.amazon.ask.smapi.model.v1.skill.Manifest.MusicContentType> contentTypes = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.MusicContentType>();
 
+    private MusicApis() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

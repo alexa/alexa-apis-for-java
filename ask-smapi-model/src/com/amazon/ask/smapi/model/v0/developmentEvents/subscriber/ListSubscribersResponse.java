@@ -37,6 +37,9 @@ public final class ListSubscribersResponse {
     @JsonProperty("subscribers")
     private List<com.amazon.ask.smapi.model.v0.developmentEvents.subscriber.SubscriberSummary> subscribers = new ArrayList<com.amazon.ask.smapi.model.v0.developmentEvents.subscriber.SubscriberSummary>();
 
+    private ListSubscribersResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

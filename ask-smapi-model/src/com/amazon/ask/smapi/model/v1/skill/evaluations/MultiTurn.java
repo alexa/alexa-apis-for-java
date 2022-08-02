@@ -34,6 +34,9 @@ public final class MultiTurn {
     @JsonProperty("prompt")
     private String prompt = null;
 
+    private MultiTurn() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

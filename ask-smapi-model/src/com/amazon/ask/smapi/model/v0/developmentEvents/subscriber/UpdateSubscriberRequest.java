@@ -31,6 +31,9 @@ public final class UpdateSubscriberRequest {
     @JsonProperty("endpoint")
     private com.amazon.ask.smapi.model.v0.developmentEvents.subscriber.Endpoint endpoint = null;
 
+    private UpdateSubscriberRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

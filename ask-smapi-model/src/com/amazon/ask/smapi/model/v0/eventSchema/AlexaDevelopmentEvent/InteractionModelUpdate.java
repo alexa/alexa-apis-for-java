@@ -32,6 +32,9 @@ public final class InteractionModelUpdate extends com.amazon.ask.smapi.model.v0.
     @JsonProperty("payload")
     private com.amazon.ask.smapi.model.v0.eventSchema.InteractionModelEventAttributes payload = null;
 
+    private InteractionModelUpdate() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

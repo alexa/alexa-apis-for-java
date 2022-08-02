@@ -50,6 +50,9 @@ public final class CatalogDetails {
     @JsonProperty("associatedSkillIds")
     private List<String> associatedSkillIds = new ArrayList<String>();
 
+    private CatalogDetails() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

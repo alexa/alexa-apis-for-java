@@ -37,6 +37,9 @@ public final class MetricConfiguration {
     @JsonProperty("expectedChange")
     private String expectedChange = null;
 
+    private MetricConfiguration() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

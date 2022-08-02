@@ -28,6 +28,9 @@ public final class ShoppingKit {
     @JsonProperty("isShoppingActionsEnabled")
     private Boolean isShoppingActionsEnabled = null;
 
+    private ShoppingKit() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

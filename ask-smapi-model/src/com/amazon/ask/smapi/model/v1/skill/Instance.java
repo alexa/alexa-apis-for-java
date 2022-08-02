@@ -34,6 +34,9 @@ public final class Instance {
     @JsonProperty("value")
     private String value = null;
 
+    private Instance() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

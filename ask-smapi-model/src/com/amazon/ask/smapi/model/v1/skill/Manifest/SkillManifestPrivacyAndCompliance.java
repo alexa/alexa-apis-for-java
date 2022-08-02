@@ -52,6 +52,9 @@ public final class SkillManifestPrivacyAndCompliance {
     @JsonProperty("shoppingKit")
     private com.amazon.ask.smapi.model.v1.skill.Manifest.ShoppingKit shoppingKit = null;
 
+    private SkillManifestPrivacyAndCompliance() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

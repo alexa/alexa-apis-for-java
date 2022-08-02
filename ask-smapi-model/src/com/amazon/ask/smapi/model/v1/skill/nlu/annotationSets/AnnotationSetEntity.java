@@ -38,6 +38,9 @@ public final class AnnotationSetEntity {
     @JsonProperty("updatedTimestamp")
     private OffsetDateTime updatedTimestamp = null;
 
+    private AnnotationSetEntity() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

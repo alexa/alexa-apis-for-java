@@ -31,6 +31,9 @@ public final class ExtensionInitializationRequest {
     @JsonProperty("settings")
     private Object settings = null;
 
+    private ExtensionInitializationRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

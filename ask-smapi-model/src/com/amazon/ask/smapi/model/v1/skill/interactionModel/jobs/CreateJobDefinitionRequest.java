@@ -31,6 +31,9 @@ public final class CreateJobDefinitionRequest {
     @JsonProperty("jobDefinition")
     private com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.JobDefinition jobDefinition = null;
 
+    private CreateJobDefinitionRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

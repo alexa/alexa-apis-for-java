@@ -31,6 +31,9 @@ public final class ConnectionsPayload {
     @JsonProperty("version")
     private String version = null;
 
+    private ConnectionsPayload() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

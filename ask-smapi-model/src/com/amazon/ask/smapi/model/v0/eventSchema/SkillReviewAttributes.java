@@ -34,6 +34,9 @@ public final class SkillReviewAttributes {
     @JsonProperty("starRating")
     private String starRating = null;
 
+    private SkillReviewAttributes() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

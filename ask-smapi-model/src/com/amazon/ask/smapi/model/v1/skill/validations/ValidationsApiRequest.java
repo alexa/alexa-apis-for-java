@@ -31,6 +31,9 @@ public final class ValidationsApiRequest {
     @JsonProperty("locales")
     private List<String> locales = new ArrayList<String>();
 
+    private ValidationsApiRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

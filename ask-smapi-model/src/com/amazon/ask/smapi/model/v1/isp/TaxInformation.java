@@ -28,6 +28,9 @@ public final class TaxInformation {
     @JsonProperty("category")
     private String category = null;
 
+    private TaxInformation() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

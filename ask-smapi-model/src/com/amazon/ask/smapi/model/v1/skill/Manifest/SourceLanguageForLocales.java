@@ -31,6 +31,9 @@ public final class SourceLanguageForLocales {
     @JsonProperty("sourceLocale")
     private String sourceLocale = null;
 
+    private SourceLanguageForLocales() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

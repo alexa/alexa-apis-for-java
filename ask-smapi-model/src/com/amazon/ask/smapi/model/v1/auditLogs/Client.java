@@ -31,6 +31,9 @@ public final class Client {
     @JsonProperty("name")
     private String name = null;
 
+    private Client() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

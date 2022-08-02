@@ -31,6 +31,9 @@ public final class CreateNLUAnnotationSetRequest {
     @JsonProperty("name")
     private String name = null;
 
+    private CreateNLUAnnotationSetRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -48,6 +48,9 @@ public final class EvaluationMetadata {
     @JsonProperty("result")
     private com.amazon.ask.smapi.model.v1.skill.asr.evaluations.EvaluationMetadataResult result = null;
 
+    private EvaluationMetadata() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

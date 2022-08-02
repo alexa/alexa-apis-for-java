@@ -31,6 +31,9 @@ public final class PagedResultsResponse {
     @JsonProperty("_links")
     private com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.Links links = null;
 
+    private PagedResultsResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

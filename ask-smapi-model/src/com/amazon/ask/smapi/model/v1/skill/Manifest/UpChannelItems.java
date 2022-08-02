@@ -31,6 +31,9 @@ public final class UpChannelItems {
     @JsonProperty("uri")
     private String uri = null;
 
+    private UpChannelItems() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -31,6 +31,9 @@ public final class PresignedUploadPart {
     @JsonProperty("partNumber")
     private Integer partNumber = null;
 
+    private PresignedUploadPart() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -43,6 +43,9 @@ public final class ListCatalogResponse {
     @JsonProperty("totalCount")
     private Integer totalCount = null;
 
+    private ListCatalogResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

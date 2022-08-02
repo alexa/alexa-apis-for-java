@@ -28,6 +28,9 @@ public final class SlotTypeStatus {
     @JsonProperty("updateRequest")
     private com.amazon.ask.smapi.model.v1.skill.interactionModel.type.LastUpdateRequest updateRequest = null;
 
+    private SlotTypeStatus() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

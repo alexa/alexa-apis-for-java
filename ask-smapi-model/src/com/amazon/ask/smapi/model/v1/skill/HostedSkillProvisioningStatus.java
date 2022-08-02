@@ -28,6 +28,9 @@ public final class HostedSkillProvisioningStatus {
     @JsonProperty("lastUpdateRequest")
     private com.amazon.ask.smapi.model.v1.skill.HostedSkillProvisioningLastUpdateRequest lastUpdateRequest = null;
 
+    private HostedSkillProvisioningStatus() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

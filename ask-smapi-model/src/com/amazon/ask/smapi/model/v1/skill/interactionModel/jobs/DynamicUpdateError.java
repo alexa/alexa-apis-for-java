@@ -31,6 +31,9 @@ public final class DynamicUpdateError {
     @JsonProperty("message")
     private String message = null;
 
+    private DynamicUpdateError() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

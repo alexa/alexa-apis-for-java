@@ -28,6 +28,9 @@ public final class CustomLocalizedInformationDialogManagement {
     @JsonProperty("sessionStartDelegationStrategy")
     private com.amazon.ask.smapi.model.v1.skill.Manifest.CustomDialogManagement.SessionStartDelegationStrategy sessionStartDelegationStrategy = null;
 
+    private CustomLocalizedInformationDialogManagement() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

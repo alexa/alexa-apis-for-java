@@ -31,6 +31,9 @@ public final class Scheduled extends com.amazon.ask.smapi.model.v1.skill.interac
     @JsonProperty("dayOfWeek")
     private Integer dayOfWeek = null;
 
+    private Scheduled() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

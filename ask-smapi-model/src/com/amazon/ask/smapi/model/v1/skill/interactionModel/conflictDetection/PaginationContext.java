@@ -31,6 +31,9 @@ public final class PaginationContext {
     @JsonProperty("totalCount")
     private Long totalCount = null;
 
+    private PaginationContext() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -32,6 +32,9 @@ public final class GetConflictDetectionJobStatusResponse {
     @JsonProperty("totalConflicts")
     private BigDecimal totalConflicts = null;
 
+    private GetConflictDetectionJobStatusResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

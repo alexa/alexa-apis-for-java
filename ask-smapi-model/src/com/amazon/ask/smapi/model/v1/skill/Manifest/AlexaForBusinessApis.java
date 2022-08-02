@@ -39,6 +39,9 @@ public final class AlexaForBusinessApis {
     @JsonProperty("interfaces")
     private List<com.amazon.ask.smapi.model.v1.skill.Manifest.AlexaForBusinessInterface> interfaces = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.AlexaForBusinessInterface>();
 
+    private AlexaForBusinessApis() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

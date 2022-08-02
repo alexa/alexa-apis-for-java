@@ -31,6 +31,9 @@ public final class HostedSkillDeploymentDetails {
     @JsonProperty("logUrl")
     private String logUrl = null;
 
+    private HostedSkillDeploymentDetails() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

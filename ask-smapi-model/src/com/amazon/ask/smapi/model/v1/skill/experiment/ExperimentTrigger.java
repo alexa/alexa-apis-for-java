@@ -29,6 +29,9 @@ public final class ExperimentTrigger {
     @JsonProperty("scheduledEndTime")
     private OffsetDateTime scheduledEndTime = null;
 
+    private ExperimentTrigger() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

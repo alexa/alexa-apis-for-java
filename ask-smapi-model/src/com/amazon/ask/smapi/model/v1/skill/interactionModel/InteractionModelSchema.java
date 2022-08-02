@@ -37,6 +37,9 @@ public final class InteractionModelSchema {
     @JsonProperty("prompts")
     private List<com.amazon.ask.smapi.model.v1.skill.interactionModel.Prompt> prompts = new ArrayList<com.amazon.ask.smapi.model.v1.skill.interactionModel.Prompt>();
 
+    private InteractionModelSchema() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

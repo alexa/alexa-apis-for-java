@@ -31,6 +31,9 @@ public final class LocalizedName {
     @JsonProperty("name")
     private String name = null;
 
+    private LocalizedName() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

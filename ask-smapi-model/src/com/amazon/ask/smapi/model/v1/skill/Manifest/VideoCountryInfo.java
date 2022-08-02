@@ -31,6 +31,9 @@ public final class VideoCountryInfo {
     @JsonProperty("catalogInformation")
     private List<com.amazon.ask.smapi.model.v1.skill.Manifest.VideoCatalogInfo> catalogInformation = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.VideoCatalogInfo>();
 
+    private VideoCountryInfo() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

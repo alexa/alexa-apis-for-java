@@ -28,6 +28,9 @@ public final class CreateNLUAnnotationSetResponse {
     @JsonProperty("id")
     private String id = null;
 
+    private CreateNLUAnnotationSetResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -34,6 +34,9 @@ public final class ValueSchemaName {
     @JsonProperty("synonyms")
     private List<String> synonyms = new ArrayList<String>();
 
+    private ValueSchemaName() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

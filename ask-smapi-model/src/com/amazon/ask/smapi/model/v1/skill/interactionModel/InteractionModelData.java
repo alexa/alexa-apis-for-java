@@ -34,6 +34,9 @@ public final class InteractionModelData {
     @JsonProperty("interactionModel")
     private com.amazon.ask.smapi.model.v1.skill.interactionModel.InteractionModelSchema interactionModel = null;
 
+    private InteractionModelData() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

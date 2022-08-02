@@ -40,6 +40,9 @@ public final class ProfileNluResponse {
     @JsonProperty("multiTurn")
     private com.amazon.ask.smapi.model.v1.skill.evaluations.MultiTurn multiTurn = null;
 
+    private ProfileNluResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -35,6 +35,9 @@ public final class HostedSkillRepositoryCredentials {
     @JsonProperty("expiresAt")
     private OffsetDateTime expiresAt = null;
 
+    private HostedSkillRepositoryCredentials() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

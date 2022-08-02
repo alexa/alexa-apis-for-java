@@ -25,6 +25,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = SHCapabilityDirective.Builder.class)
 public final class SHCapabilityDirective {
 
+    private SHCapabilityDirective() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -35,6 +35,9 @@ public final class MetricSnapshot {
     @JsonProperty("endDate")
     private OffsetDateTime endDate = null;
 
+    private MetricSnapshot() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

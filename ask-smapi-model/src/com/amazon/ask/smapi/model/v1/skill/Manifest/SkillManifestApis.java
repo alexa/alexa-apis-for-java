@@ -52,6 +52,9 @@ public final class SkillManifestApis {
     @JsonProperty("demandResponse")
     private com.amazon.ask.smapi.model.v1.skill.Manifest.DemandResponseApis demandResponse = null;
 
+    private SkillManifestApis() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

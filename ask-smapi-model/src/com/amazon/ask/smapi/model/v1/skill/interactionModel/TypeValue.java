@@ -31,6 +31,9 @@ public final class TypeValue {
     @JsonProperty("name")
     private com.amazon.ask.smapi.model.v1.skill.interactionModel.TypeValueObject name = null;
 
+    private TypeValue() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

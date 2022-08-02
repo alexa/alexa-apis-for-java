@@ -31,6 +31,9 @@ public final class ListSHTestPlanItem {
     @JsonProperty("name")
     private String name = null;
 
+    private ListSHTestPlanItem() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

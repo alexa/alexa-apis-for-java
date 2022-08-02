@@ -28,6 +28,9 @@ public final class Endpoint {
     @JsonProperty("endpointId")
     private String endpointId = null;
 
+    private Endpoint() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

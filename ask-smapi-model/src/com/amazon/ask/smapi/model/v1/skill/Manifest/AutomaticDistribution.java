@@ -34,6 +34,9 @@ public final class AutomaticDistribution {
     @JsonProperty("sourceLocaleForLanguages")
     private List<com.amazon.ask.smapi.model.v1.skill.Manifest.SourceLanguageForLocales> sourceLocaleForLanguages = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.SourceLanguageForLocales>();
 
+    private AutomaticDistribution() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

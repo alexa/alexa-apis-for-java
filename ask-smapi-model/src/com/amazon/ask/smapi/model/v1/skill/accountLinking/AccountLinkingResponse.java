@@ -61,6 +61,9 @@ public final class AccountLinkingResponse {
     @JsonProperty("voiceForwardAccountLinking")
     private String voiceForwardAccountLinking = null;
 
+    private AccountLinkingResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

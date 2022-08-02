@@ -28,6 +28,9 @@ public final class DialogAct {
     @JsonProperty("name")
     private String name = null;
 
+    private DialogAct() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

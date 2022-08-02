@@ -28,6 +28,9 @@ public final class ModelConfiguration {
     @JsonProperty("fallbackIntentSensitivity")
     private com.amazon.ask.smapi.model.v1.skill.interactionModel.FallbackIntentSensitivity fallbackIntentSensitivity = null;
 
+    private ModelConfiguration() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

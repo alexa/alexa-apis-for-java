@@ -28,6 +28,9 @@ public final class CreateRollbackRequest {
     @JsonProperty("targetVersion")
     private String targetVersion = null;
 
+    private CreateRollbackRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

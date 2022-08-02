@@ -37,6 +37,9 @@ public final class MusicInterfaces {
     @JsonProperty("requests")
     private List<com.amazon.ask.smapi.model.v1.skill.Manifest.MusicRequest> requests = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.MusicRequest>();
 
+    private MusicInterfaces() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

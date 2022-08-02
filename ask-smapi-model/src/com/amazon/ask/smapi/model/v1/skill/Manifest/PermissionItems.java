@@ -28,6 +28,9 @@ public final class PermissionItems {
     @JsonProperty("name")
     private String name = null;
 
+    private PermissionItems() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

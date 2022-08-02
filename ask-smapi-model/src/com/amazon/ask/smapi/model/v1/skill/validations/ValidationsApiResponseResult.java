@@ -34,6 +34,9 @@ public final class ValidationsApiResponseResult {
     @JsonProperty("error")
     private com.amazon.ask.smapi.model.v1.Error error = null;
 
+    private ValidationsApiResponseResult() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

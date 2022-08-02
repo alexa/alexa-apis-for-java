@@ -35,6 +35,9 @@ public final class ContentUploadFileSummary {
     @JsonProperty("status")
     private String status = null;
 
+    private ContentUploadFileSummary() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

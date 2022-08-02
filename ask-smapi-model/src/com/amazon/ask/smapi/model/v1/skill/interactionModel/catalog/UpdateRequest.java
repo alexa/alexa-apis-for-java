@@ -31,6 +31,9 @@ public final class UpdateRequest {
     @JsonProperty("description")
     private String description = null;
 
+    private UpdateRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -41,6 +41,9 @@ public final class AnnotationSetItems {
     @JsonProperty("id")
     private String id = null;
 
+    private AnnotationSetItems() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

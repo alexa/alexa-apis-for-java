@@ -31,6 +31,9 @@ public final class DisplayInterface extends com.amazon.ask.smapi.model.v1.skill.
     @JsonProperty("minimumApmlVersion")
     private com.amazon.ask.smapi.model.v1.skill.Manifest.DisplayInterfaceApmlVersion minimumApmlVersion = null;
 
+    private DisplayInterface() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

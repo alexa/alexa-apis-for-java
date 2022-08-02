@@ -31,6 +31,9 @@ public final class DialogPrompts {
     @JsonProperty("confirmation")
     private String confirmation = null;
 
+    private DialogPrompts() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

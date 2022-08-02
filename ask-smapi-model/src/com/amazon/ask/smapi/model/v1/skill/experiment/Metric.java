@@ -34,6 +34,9 @@ public final class Metric {
     @JsonProperty("values")
     private com.amazon.ask.smapi.model.v1.skill.experiment.MetricValues values = null;
 
+    private Metric() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

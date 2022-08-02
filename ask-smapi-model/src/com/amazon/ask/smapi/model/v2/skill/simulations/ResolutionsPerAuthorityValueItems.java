@@ -31,6 +31,9 @@ public final class ResolutionsPerAuthorityValueItems {
     @JsonProperty("id")
     private String id = null;
 
+    private ResolutionsPerAuthorityValueItems() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

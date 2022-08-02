@@ -37,6 +37,9 @@ public final class SlotsProps {
     @JsonProperty("resolutions")
     private com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.Resolutions resolutions = null;
 
+    private SlotsProps() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

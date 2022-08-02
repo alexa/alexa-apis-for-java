@@ -34,6 +34,9 @@ public final class CustomConnections {
     @JsonProperty("provides")
     private List<com.amazon.ask.smapi.model.v1.skill.Manifest.Custom.Connection> provides = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.Custom.Connection>();
 
+    private CustomConnections() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

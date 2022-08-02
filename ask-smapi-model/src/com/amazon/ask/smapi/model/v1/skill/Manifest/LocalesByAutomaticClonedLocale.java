@@ -34,6 +34,9 @@ public final class LocalesByAutomaticClonedLocale {
     @JsonProperty("targets")
     private List<String> targets = new ArrayList<String>();
 
+    private LocalesByAutomaticClonedLocale() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

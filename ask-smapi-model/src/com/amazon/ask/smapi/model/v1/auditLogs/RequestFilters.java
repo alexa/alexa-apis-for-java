@@ -50,6 +50,9 @@ public final class RequestFilters {
     @JsonProperty("httpResponseCodes")
     private List<String> httpResponseCodes = new ArrayList<String>();
 
+    private RequestFilters() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -28,6 +28,9 @@ public final class IsLessThanOrEqualTo extends com.amazon.ask.smapi.model.v1.ski
     @JsonProperty("value")
     private String value = null;
 
+    private IsLessThanOrEqualTo() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

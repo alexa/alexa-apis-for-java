@@ -31,6 +31,9 @@ public final class ExportResponse {
     @JsonProperty("skill")
     private com.amazon.ask.smapi.model.v1.skill.ExportResponseSkill skill = null;
 
+    private ExportResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -38,6 +38,9 @@ public final class TesterWithDetails {
     @JsonProperty("invitationStatus")
     private String invitationStatus = null;
 
+    private TesterWithDetails() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

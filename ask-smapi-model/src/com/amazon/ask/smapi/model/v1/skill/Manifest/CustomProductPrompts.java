@@ -31,6 +31,9 @@ public final class CustomProductPrompts {
     @JsonProperty("purchaseConfirmationDescription")
     private String purchaseConfirmationDescription = null;
 
+    private CustomProductPrompts() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

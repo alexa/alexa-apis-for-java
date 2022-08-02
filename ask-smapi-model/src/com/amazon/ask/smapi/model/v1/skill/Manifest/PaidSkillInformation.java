@@ -34,6 +34,9 @@ public final class PaidSkillInformation {
     @JsonProperty("taxInformation")
     private com.amazon.ask.smapi.model.v1.skill.Manifest.TaxInformation taxInformation = null;
 
+    private PaidSkillInformation() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

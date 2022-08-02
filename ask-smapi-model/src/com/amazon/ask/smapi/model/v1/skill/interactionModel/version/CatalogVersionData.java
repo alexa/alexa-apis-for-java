@@ -34,6 +34,9 @@ public final class CatalogVersionData {
     @JsonProperty("version")
     private String version = null;
 
+    private CatalogVersionData() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

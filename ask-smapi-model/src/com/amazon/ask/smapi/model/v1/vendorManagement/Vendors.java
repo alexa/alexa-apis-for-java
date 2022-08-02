@@ -31,6 +31,9 @@ public final class Vendors {
     @JsonProperty("vendors")
     private List<com.amazon.ask.smapi.model.v1.vendorManagement.Vendor> vendors = new ArrayList<com.amazon.ask.smapi.model.v1.vendorManagement.Vendor>();
 
+    private Vendors() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

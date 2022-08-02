@@ -40,6 +40,9 @@ public final class InteractionModelLastUpdateRequest {
     @JsonProperty("buildDetails")
     private com.amazon.ask.smapi.model.v1.skill.BuildDetails buildDetails = null;
 
+    private InteractionModelLastUpdateRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

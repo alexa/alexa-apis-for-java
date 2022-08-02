@@ -42,6 +42,9 @@ public final class SkillManifestEvents {
     @JsonProperty("endpoint")
     private com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifestEndpoint endpoint = null;
 
+    private SkillManifestEvents() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

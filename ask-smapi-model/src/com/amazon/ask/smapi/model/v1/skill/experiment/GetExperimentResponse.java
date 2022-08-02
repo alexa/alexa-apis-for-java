@@ -31,6 +31,9 @@ public final class GetExperimentResponse {
     @JsonProperty("lastStateTransition")
     private com.amazon.ask.smapi.model.v1.skill.experiment.ExperimentLastStateTransition lastStateTransition = null;
 
+    private GetExperimentResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

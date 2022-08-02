@@ -28,6 +28,9 @@ public final class UpdateJobStatusRequest {
     @JsonProperty("status")
     private String status = null;
 
+    private UpdateJobStatusRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -28,6 +28,9 @@ public final class ProductResponse {
     @JsonProperty("productId")
     private String productId = null;
 
+    private ProductResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

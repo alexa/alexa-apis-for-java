@@ -70,6 +70,9 @@ public final class AccountLinkingRequestPayload {
     @JsonProperty("voiceForwardAccountLinking")
     private String voiceForwardAccountLinking = null;
 
+    private AccountLinkingRequestPayload() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

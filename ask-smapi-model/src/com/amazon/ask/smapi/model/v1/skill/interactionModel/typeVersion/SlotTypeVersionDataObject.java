@@ -37,6 +37,9 @@ public final class SlotTypeVersionDataObject {
     @JsonProperty("version")
     private String version = null;
 
+    private SlotTypeVersionDataObject() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

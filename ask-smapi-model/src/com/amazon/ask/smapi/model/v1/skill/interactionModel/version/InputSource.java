@@ -31,6 +31,9 @@ public final class InputSource {
     @JsonProperty("url")
     private String url = null;
 
+    private InputSource() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

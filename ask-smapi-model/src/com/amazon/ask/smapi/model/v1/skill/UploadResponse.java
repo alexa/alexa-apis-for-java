@@ -32,6 +32,9 @@ public final class UploadResponse {
     @JsonProperty("expiresAt")
     private OffsetDateTime expiresAt = null;
 
+    private UploadResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

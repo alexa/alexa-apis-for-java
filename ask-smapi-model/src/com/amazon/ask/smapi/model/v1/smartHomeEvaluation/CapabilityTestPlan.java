@@ -28,6 +28,9 @@ public final class CapabilityTestPlan {
     @JsonProperty("id")
     private String id = null;
 
+    private CapabilityTestPlan() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -28,6 +28,9 @@ public final class ListInSkillProductResponse {
     @JsonProperty("inSkillProductSummaryList")
     private com.amazon.ask.smapi.model.v1.isp.ListInSkillProduct inSkillProductSummaryList = null;
 
+    private ListInSkillProductResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

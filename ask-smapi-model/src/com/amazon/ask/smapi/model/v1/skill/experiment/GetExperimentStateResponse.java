@@ -28,6 +28,9 @@ public final class GetExperimentStateResponse {
     @JsonProperty("state")
     private String state = null;
 
+    private GetExperimentStateResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

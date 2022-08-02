@@ -31,6 +31,9 @@ public final class Warning {
     @JsonProperty("message")
     private String message = null;
 
+    private Warning() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -35,6 +35,9 @@ public final class EstimationUpdate {
     @JsonProperty("reason")
     private String reason = null;
 
+    private EstimationUpdate() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

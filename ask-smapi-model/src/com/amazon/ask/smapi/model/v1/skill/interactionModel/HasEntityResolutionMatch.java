@@ -25,6 +25,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = HasEntityResolutionMatch.Builder.class)
 public final class HasEntityResolutionMatch extends com.amazon.ask.smapi.model.v1.skill.interactionModel.SlotValidation  {
 
+    private HasEntityResolutionMatch() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

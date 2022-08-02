@@ -42,6 +42,9 @@ public final class PublishingInformation {
     @JsonProperty("taxInformation")
     private com.amazon.ask.smapi.model.v1.isp.TaxInformation taxInformation = null;
 
+    private PublishingInformation() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

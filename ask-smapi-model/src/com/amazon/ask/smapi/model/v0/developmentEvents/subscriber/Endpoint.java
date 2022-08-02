@@ -31,6 +31,9 @@ public final class Endpoint {
     @JsonProperty("authorization")
     private com.amazon.ask.smapi.model.v0.developmentEvents.subscriber.EndpointAuthorization authorization = null;
 
+    private Endpoint() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

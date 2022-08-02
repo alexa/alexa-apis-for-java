@@ -31,6 +31,9 @@ public final class Resource {
     @JsonProperty("type")
     private String type = null;
 
+    private Resource() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

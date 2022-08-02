@@ -31,6 +31,9 @@ public final class DefinitionData {
     @JsonProperty("vendorId")
     private String vendorId = null;
 
+    private DefinitionData() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

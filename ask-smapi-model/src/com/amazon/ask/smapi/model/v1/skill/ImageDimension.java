@@ -31,6 +31,9 @@ public final class ImageDimension {
     @JsonProperty("heightInPixels")
     private Integer heightInPixels = null;
 
+    private ImageDimension() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

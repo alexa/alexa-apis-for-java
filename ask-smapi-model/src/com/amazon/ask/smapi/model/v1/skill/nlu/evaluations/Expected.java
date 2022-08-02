@@ -31,6 +31,9 @@ public final class Expected {
     @JsonProperty("intent")
     private com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.ExpectedIntent intent = null;
 
+    private Expected() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

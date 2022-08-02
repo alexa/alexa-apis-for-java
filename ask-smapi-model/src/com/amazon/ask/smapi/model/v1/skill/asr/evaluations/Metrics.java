@@ -29,6 +29,9 @@ public final class Metrics {
     @JsonProperty("overallErrorRate")
     private BigDecimal overallErrorRate = null;
 
+    private Metrics() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

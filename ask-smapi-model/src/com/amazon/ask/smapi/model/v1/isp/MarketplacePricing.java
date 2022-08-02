@@ -32,6 +32,9 @@ public final class MarketplacePricing {
     @JsonProperty("defaultPriceListing")
     private com.amazon.ask.smapi.model.v1.isp.PriceListing defaultPriceListing = null;
 
+    private MarketplacePricing() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

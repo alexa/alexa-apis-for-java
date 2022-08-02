@@ -40,6 +40,9 @@ public final class AuditLogsRequest {
     @JsonProperty("paginationContext")
     private com.amazon.ask.smapi.model.v1.auditLogs.RequestPaginationContext paginationContext = null;
 
+    private AuditLogsRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -28,6 +28,9 @@ public final class Response {
     @JsonProperty("body")
     private Object body = null;
 
+    private Response() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

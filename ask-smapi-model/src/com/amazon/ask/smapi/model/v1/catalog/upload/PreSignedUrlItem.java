@@ -31,6 +31,9 @@ public final class PreSignedUrlItem {
     @JsonProperty("partNumber")
     private Integer partNumber = null;
 
+    private PreSignedUrlItem() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -28,6 +28,9 @@ public final class SlotTypeVersionData {
     @JsonProperty("slotType")
     private com.amazon.ask.smapi.model.v1.skill.interactionModel.typeVersion.SlotTypeVersionDataObject slotType = null;
 
+    private SlotTypeVersionData() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -34,6 +34,9 @@ public final class AuthorizedClientLwa {
     @JsonProperty("applications")
     private List<com.amazon.ask.smapi.model.v1.skill.Manifest.AuthorizedClientLwaApplication> applications = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.AuthorizedClientLwaApplication>();
 
+    private AuthorizedClientLwa() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

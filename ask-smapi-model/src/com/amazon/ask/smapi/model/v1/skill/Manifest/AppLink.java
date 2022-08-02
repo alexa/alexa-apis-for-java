@@ -40,6 +40,9 @@ public final class AppLink {
     @JsonProperty("linkedCommonSchemes")
     private com.amazon.ask.smapi.model.v1.skill.Manifest.LinkedCommonSchemes linkedCommonSchemes = null;
 
+    private AppLink() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

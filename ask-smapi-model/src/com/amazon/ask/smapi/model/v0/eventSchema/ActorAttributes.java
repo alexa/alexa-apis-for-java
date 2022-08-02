@@ -28,6 +28,9 @@ public final class ActorAttributes {
     @JsonProperty("customerId")
     private String customerId = null;
 
+    private ActorAttributes() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -31,6 +31,9 @@ public final class HealthInterface {
     @JsonProperty("version")
     private String version = null;
 
+    private HealthInterface() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -37,6 +37,9 @@ public final class VersionItems {
     @JsonProperty("_links")
     private com.amazon.ask.smapi.model.v1.skill.interactionModel.version.Links links = null;
 
+    private VersionItems() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

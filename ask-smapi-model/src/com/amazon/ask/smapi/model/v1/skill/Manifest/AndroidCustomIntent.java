@@ -31,6 +31,9 @@ public final class AndroidCustomIntent {
     @JsonProperty("action")
     private String action = null;
 
+    private AndroidCustomIntent() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

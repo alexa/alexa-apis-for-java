@@ -43,6 +43,9 @@ public final class ListCatalogEntityVersionsResponse {
     @JsonProperty("totalCount")
     private Integer totalCount = null;
 
+    private ListCatalogEntityVersionsResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

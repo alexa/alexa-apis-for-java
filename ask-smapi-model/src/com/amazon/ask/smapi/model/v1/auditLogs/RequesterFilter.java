@@ -28,6 +28,9 @@ public final class RequesterFilter {
     @JsonProperty("userId")
     private String userId = null;
 
+    private RequesterFilter() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

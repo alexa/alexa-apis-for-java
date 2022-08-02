@@ -43,6 +43,9 @@ public final class DialogIntents {
     @JsonProperty("prompts")
     private com.amazon.ask.smapi.model.v1.skill.interactionModel.DialogIntentsPrompts prompts = null;
 
+    private DialogIntents() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

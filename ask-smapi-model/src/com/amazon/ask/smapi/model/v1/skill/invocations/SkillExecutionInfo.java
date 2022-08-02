@@ -37,6 +37,9 @@ public final class SkillExecutionInfo {
     @JsonProperty("metrics")
     private Map<String, com.amazon.ask.smapi.model.v1.skill.invocations.Metrics> metrics = new HashMap<String, com.amazon.ask.smapi.model.v1.skill.invocations.Metrics>();
 
+    private SkillExecutionInfo() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

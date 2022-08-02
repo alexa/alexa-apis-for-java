@@ -28,6 +28,9 @@ public final class AlexaForBusinessInterfaceRequest {
     @JsonProperty("name")
     private String name = null;
 
+    private AlexaForBusinessInterfaceRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

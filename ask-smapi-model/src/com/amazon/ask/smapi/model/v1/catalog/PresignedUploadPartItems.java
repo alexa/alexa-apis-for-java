@@ -35,6 +35,9 @@ public final class PresignedUploadPartItems {
     @JsonProperty("expiresAt")
     private OffsetDateTime expiresAt = null;
 
+    private PresignedUploadPartItems() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

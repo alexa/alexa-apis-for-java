@@ -28,6 +28,9 @@ public final class CreateRollbackResponse {
     @JsonProperty("rollbackRequestId")
     private String rollbackRequestId = null;
 
+    private CreateRollbackResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

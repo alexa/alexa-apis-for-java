@@ -31,6 +31,9 @@ public final class ValueCatalog {
     @JsonProperty("version")
     private String version = null;
 
+    private ValueCatalog() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

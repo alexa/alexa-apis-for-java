@@ -57,6 +57,9 @@ public final class CustomApis {
     @JsonProperty("appLink")
     private com.amazon.ask.smapi.model.v1.skill.Manifest.AppLink appLink = null;
 
+    private CustomApis() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

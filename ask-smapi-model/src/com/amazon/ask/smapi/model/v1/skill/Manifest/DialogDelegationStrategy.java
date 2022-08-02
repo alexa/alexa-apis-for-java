@@ -28,6 +28,9 @@ public final class DialogDelegationStrategy {
     @JsonProperty("target")
     private String target = null;
 
+    private DialogDelegationStrategy() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

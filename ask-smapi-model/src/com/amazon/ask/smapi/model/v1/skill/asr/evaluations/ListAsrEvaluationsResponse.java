@@ -34,6 +34,9 @@ public final class ListAsrEvaluationsResponse {
     @JsonProperty("paginationContext")
     private com.amazon.ask.smapi.model.v1.skill.asr.evaluations.PaginationContext paginationContext = null;
 
+    private ListAsrEvaluationsResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

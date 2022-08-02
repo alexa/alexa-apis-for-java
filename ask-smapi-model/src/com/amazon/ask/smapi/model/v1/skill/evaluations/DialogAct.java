@@ -31,6 +31,9 @@ public final class DialogAct {
     @JsonProperty("targetSlot")
     private String targetSlot = null;
 
+    private DialogAct() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

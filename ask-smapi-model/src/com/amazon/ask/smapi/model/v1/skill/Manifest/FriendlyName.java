@@ -34,6 +34,9 @@ public final class FriendlyName {
     @JsonProperty("localizedNames")
     private List<com.amazon.ask.smapi.model.v1.skill.Manifest.LocalizedName> localizedNames = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.LocalizedName>();
 
+    private FriendlyName() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

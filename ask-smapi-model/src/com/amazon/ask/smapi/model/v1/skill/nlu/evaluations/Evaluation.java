@@ -44,6 +44,9 @@ public final class Evaluation {
     @JsonProperty("id")
     private String id = null;
 
+    private Evaluation() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

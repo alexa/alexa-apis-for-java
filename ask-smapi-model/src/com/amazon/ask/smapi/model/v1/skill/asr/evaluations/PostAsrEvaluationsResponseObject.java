@@ -28,6 +28,9 @@ public final class PostAsrEvaluationsResponseObject {
     @JsonProperty("id")
     private String id = null;
 
+    private PostAsrEvaluationsResponseObject() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

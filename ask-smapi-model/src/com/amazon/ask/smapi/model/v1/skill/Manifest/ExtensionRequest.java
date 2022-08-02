@@ -28,6 +28,9 @@ public final class ExtensionRequest {
     @JsonProperty("uri")
     private String uri = null;
 
+    private ExtensionRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

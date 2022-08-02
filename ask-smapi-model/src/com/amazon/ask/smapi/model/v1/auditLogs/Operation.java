@@ -31,6 +31,9 @@ public final class Operation {
     @JsonProperty("version")
     private String version = null;
 
+    private Operation() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

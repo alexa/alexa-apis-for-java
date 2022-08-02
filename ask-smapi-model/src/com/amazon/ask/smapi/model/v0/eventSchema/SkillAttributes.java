@@ -31,6 +31,9 @@ public final class SkillAttributes {
     @JsonProperty("vendorId")
     private String vendorId = null;
 
+    private SkillAttributes() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

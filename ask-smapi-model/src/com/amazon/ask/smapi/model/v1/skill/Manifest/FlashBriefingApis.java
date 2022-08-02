@@ -31,6 +31,9 @@ public final class FlashBriefingApis {
     @JsonProperty("locales")
     private Map<String, com.amazon.ask.smapi.model.v1.skill.Manifest.LocalizedFlashBriefingInfo> locales = new HashMap<String, com.amazon.ask.smapi.model.v1.skill.Manifest.LocalizedFlashBriefingInfo>();
 
+    private FlashBriefingApis() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

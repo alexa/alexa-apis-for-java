@@ -28,6 +28,9 @@ public final class LocalizedPrivacyAndCompliance {
     @JsonProperty("privacyPolicyUrl")
     private String privacyPolicyUrl = null;
 
+    private LocalizedPrivacyAndCompliance() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

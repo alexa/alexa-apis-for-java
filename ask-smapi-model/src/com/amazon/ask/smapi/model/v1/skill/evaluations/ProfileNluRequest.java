@@ -31,6 +31,9 @@ public final class ProfileNluRequest {
     @JsonProperty("multiTurnToken")
     private String multiTurnToken = null;
 
+    private ProfileNluRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -35,6 +35,9 @@ public final class ReviewTrackingInfoSummary {
     @JsonProperty("lastUpdated")
     private OffsetDateTime lastUpdated = null;
 
+    private ReviewTrackingInfoSummary() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

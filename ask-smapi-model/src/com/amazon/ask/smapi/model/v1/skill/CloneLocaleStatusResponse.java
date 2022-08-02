@@ -42,6 +42,9 @@ public final class CloneLocaleStatusResponse {
     @JsonProperty("targetLocales")
     private Map<String, com.amazon.ask.smapi.model.v1.skill.CloneLocaleResourceStatus> targetLocales = new HashMap<String, com.amazon.ask.smapi.model.v1.skill.CloneLocaleResourceStatus>();
 
+    private CloneLocaleStatusResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -29,6 +29,9 @@ public final class PublishSkillRequest {
     @JsonProperty("publishesAtDate")
     private OffsetDateTime publishesAtDate = null;
 
+    private PublishSkillRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

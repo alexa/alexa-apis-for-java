@@ -31,6 +31,9 @@ public final class InvocationResponseResult {
     @JsonProperty("error")
     private com.amazon.ask.smapi.model.v2.Error error = null;
 
+    private InvocationResponseResult() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

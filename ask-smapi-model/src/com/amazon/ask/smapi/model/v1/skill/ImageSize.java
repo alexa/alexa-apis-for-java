@@ -32,6 +32,9 @@ public final class ImageSize {
     @JsonProperty("unit")
     private String unit = null;
 
+    private ImageSize() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

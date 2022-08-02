@@ -28,6 +28,9 @@ public final class SkillRequest {
     @JsonProperty("body")
     private Object body = null;
 
+    private SkillRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

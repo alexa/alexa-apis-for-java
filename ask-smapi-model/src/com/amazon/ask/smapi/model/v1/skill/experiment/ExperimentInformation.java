@@ -58,6 +58,9 @@ public final class ExperimentInformation {
     @JsonProperty("trigger")
     private com.amazon.ask.smapi.model.v1.skill.experiment.ExperimentTrigger trigger = null;
 
+    private ExperimentInformation() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

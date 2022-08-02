@@ -28,6 +28,9 @@ public final class SlotTypeResponseEntity {
     @JsonProperty("id")
     private String id = null;
 
+    private SlotTypeResponseEntity() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

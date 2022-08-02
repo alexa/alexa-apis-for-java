@@ -34,6 +34,9 @@ public final class CreateSkillRequest {
     @JsonProperty("hosting")
     private com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostingConfiguration hosting = null;
 
+    private CreateSkillRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

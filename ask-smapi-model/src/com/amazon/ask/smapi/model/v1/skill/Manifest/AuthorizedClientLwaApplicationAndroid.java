@@ -34,6 +34,9 @@ public final class AuthorizedClientLwaApplicationAndroid {
     @JsonProperty("clientId")
     private String clientId = null;
 
+    private AuthorizedClientLwaApplicationAndroid() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

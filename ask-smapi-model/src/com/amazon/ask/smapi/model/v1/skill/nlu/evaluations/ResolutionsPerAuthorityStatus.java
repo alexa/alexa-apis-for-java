@@ -28,6 +28,9 @@ public final class ResolutionsPerAuthorityStatus {
     @JsonProperty("code")
     private String code = null;
 
+    private ResolutionsPerAuthorityStatus() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

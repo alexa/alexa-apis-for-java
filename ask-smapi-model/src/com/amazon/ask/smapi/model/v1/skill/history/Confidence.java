@@ -28,6 +28,9 @@ public final class Confidence {
     @JsonProperty("bin")
     private String bin = null;
 
+    private Confidence() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

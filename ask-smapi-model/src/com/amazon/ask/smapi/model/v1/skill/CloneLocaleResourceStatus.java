@@ -34,6 +34,9 @@ public final class CloneLocaleResourceStatus {
     @JsonProperty("errors")
     private List<com.amazon.ask.smapi.model.v1.skill.StandardizedError> errors = new ArrayList<com.amazon.ask.smapi.model.v1.skill.StandardizedError>();
 
+    private CloneLocaleResourceStatus() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

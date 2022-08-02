@@ -38,6 +38,9 @@ public final class Annotation {
     @JsonProperty("expectedTranscription")
     private String expectedTranscription = null;
 
+    private Annotation() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

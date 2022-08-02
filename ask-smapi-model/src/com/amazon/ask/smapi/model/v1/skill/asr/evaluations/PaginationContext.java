@@ -28,6 +28,9 @@ public final class PaginationContext {
     @JsonProperty("nextToken")
     private String nextToken = null;
 
+    private PaginationContext() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

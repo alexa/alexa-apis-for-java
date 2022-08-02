@@ -31,6 +31,9 @@ public final class UpdateAsrAnnotationSetContentsPayload {
     @JsonProperty("annotations")
     private List<com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.Annotation> annotations = new ArrayList<com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.Annotation>();
 
+    private UpdateAsrAnnotationSetContentsPayload() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

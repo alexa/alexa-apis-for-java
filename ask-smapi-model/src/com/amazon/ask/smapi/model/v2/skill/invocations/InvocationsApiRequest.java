@@ -31,6 +31,9 @@ public final class InvocationsApiRequest {
     @JsonProperty("skillRequest")
     private com.amazon.ask.smapi.model.v2.skill.invocations.SkillRequest skillRequest = null;
 
+    private InvocationsApiRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

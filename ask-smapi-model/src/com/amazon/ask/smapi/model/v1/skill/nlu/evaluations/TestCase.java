@@ -40,6 +40,9 @@ public final class TestCase {
     @JsonProperty("expected")
     private List<com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.Expected> expected = new ArrayList<com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.Expected>();
 
+    private TestCase() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

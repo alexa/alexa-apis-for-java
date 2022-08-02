@@ -34,6 +34,9 @@ public final class TypeValueObject {
     @JsonProperty("synonyms")
     private List<String> synonyms = new ArrayList<String>();
 
+    private TypeValueObject() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

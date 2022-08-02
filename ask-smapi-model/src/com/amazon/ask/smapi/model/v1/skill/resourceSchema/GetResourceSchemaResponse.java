@@ -32,6 +32,9 @@ public final class GetResourceSchemaResponse {
     @JsonProperty("expiryTime")
     private OffsetDateTime expiryTime = null;
 
+    private GetResourceSchemaResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -25,6 +25,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = ReferencedResourceJobsComplete.Builder.class)
 public final class ReferencedResourceJobsComplete extends com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.Trigger  {
 
+    private ReferencedResourceJobsComplete() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

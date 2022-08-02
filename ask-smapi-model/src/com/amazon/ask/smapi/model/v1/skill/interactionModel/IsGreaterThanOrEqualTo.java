@@ -28,6 +28,9 @@ public final class IsGreaterThanOrEqualTo extends com.amazon.ask.smapi.model.v1.
     @JsonProperty("value")
     private String value = null;
 
+    private IsGreaterThanOrEqualTo() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

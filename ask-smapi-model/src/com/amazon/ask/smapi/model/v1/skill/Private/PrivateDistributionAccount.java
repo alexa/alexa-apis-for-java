@@ -31,6 +31,9 @@ public final class PrivateDistributionAccount {
     @JsonProperty("acceptStatus")
     private String acceptStatus = null;
 
+    private PrivateDistributionAccount() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

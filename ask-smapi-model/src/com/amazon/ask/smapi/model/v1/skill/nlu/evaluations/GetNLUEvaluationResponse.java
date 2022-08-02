@@ -44,6 +44,9 @@ public final class GetNLUEvaluationResponse {
     @JsonProperty("_links")
     private com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.GetNLUEvaluationResponseLinks links = null;
 
+    private GetNLUEvaluationResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

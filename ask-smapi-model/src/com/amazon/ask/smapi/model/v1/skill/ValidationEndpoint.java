@@ -34,6 +34,9 @@ public final class ValidationEndpoint {
     @JsonProperty("value")
     private String value = null;
 
+    private ValidationEndpoint() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

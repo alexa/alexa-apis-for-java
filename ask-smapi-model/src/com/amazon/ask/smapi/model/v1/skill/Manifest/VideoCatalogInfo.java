@@ -28,6 +28,9 @@ public final class VideoCatalogInfo {
     @JsonProperty("sourceId")
     private String sourceId = null;
 
+    private VideoCatalogInfo() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

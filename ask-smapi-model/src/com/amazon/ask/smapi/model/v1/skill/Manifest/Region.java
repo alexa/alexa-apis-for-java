@@ -28,6 +28,9 @@ public final class Region {
     @JsonProperty("endpoint")
     private com.amazon.ask.smapi.model.v1.skill.Manifest.SkillManifestEndpoint endpoint = null;
 
+    private Region() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

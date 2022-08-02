@@ -40,6 +40,9 @@ public final class ListInSkillProduct {
     @JsonProperty("nextToken")
     private String nextToken = null;
 
+    private ListInSkillProduct() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

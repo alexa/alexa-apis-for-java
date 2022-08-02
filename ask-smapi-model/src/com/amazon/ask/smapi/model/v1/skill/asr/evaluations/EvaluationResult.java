@@ -37,6 +37,9 @@ public final class EvaluationResult {
     @JsonProperty("error")
     private com.amazon.ask.smapi.model.v1.skill.asr.evaluations.ErrorObject error = null;
 
+    private EvaluationResult() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

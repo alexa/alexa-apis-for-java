@@ -31,6 +31,9 @@ public final class CreateInSkillProductRequest {
     @JsonProperty("inSkillProductDefinition")
     private com.amazon.ask.smapi.model.v1.isp.InSkillProductDefinition inSkillProductDefinition = null;
 
+    private CreateInSkillProductRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -31,6 +31,9 @@ public final class ConflictResult {
     @JsonProperty("intent")
     private com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.ConflictIntent intent = null;
 
+    private ConflictResult() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

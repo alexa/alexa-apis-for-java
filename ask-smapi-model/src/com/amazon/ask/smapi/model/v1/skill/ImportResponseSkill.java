@@ -37,6 +37,9 @@ public final class ImportResponseSkill {
     @JsonProperty("resources")
     private List<com.amazon.ask.smapi.model.v1.skill.ResourceImportStatus> resources = new ArrayList<com.amazon.ask.smapi.model.v1.skill.ResourceImportStatus>();
 
+    private ImportResponseSkill() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

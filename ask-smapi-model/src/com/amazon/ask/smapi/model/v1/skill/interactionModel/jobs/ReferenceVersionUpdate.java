@@ -40,6 +40,9 @@ public final class ReferenceVersionUpdate extends com.amazon.ask.smapi.model.v1.
     @JsonProperty("publishToLive")
     private Boolean publishToLive = null;
 
+    private ReferenceVersionUpdate() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

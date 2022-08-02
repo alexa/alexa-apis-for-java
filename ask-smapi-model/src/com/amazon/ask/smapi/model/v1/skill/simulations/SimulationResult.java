@@ -34,6 +34,9 @@ public final class SimulationResult {
     @JsonProperty("error")
     private com.amazon.ask.smapi.model.v1.Error error = null;
 
+    private SimulationResult() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

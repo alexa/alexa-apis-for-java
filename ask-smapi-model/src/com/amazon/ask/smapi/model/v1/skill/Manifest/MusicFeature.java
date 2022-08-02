@@ -28,6 +28,9 @@ public final class MusicFeature {
     @JsonProperty("name")
     private String name = null;
 
+    private MusicFeature() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

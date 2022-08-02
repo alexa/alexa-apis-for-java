@@ -31,6 +31,9 @@ public final class Actual {
     @JsonProperty("intent")
     private com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.Intent intent = null;
 
+    private Actual() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

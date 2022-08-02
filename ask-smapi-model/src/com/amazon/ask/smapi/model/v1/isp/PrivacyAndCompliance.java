@@ -31,6 +31,9 @@ public final class PrivacyAndCompliance {
     @JsonProperty("locales")
     private Map<String, com.amazon.ask.smapi.model.v1.isp.LocalizedPrivacyAndCompliance> locales = new HashMap<String, com.amazon.ask.smapi.model.v1.isp.LocalizedPrivacyAndCompliance>();
 
+    private PrivacyAndCompliance() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

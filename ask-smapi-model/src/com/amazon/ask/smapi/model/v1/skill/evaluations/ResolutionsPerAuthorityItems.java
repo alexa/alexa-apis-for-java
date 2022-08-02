@@ -37,6 +37,9 @@ public final class ResolutionsPerAuthorityItems {
     @JsonProperty("values")
     private List<com.amazon.ask.smapi.model.v1.skill.evaluations.ResolutionsPerAuthorityValueItems> values = new ArrayList<com.amazon.ask.smapi.model.v1.skill.evaluations.ResolutionsPerAuthorityValueItems>();
 
+    private ResolutionsPerAuthorityItems() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

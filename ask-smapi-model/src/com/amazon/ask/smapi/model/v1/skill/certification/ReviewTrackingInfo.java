@@ -41,6 +41,9 @@ public final class ReviewTrackingInfo {
     @JsonProperty("estimationUpdates")
     private List<com.amazon.ask.smapi.model.v1.skill.certification.EstimationUpdate> estimationUpdates = new ArrayList<com.amazon.ask.smapi.model.v1.skill.certification.EstimationUpdate>();
 
+    private ReviewTrackingInfo() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

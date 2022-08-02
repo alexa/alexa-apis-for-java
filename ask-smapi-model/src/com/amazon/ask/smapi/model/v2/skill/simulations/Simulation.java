@@ -28,6 +28,9 @@ public final class Simulation {
     @JsonProperty("type")
     private String type = null;
 
+    private Simulation() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -34,6 +34,9 @@ public final class DialogManagement {
     @JsonProperty("sessionStartDelegationStrategy")
     private com.amazon.ask.smapi.model.v1.skill.Manifest.DialogDelegationStrategy sessionStartDelegationStrategy = null;
 
+    private DialogManagement() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

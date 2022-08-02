@@ -31,6 +31,9 @@ public final class JobErrorDetails {
     @JsonProperty("executionMetadata")
     private List<com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.ExecutionMetadata> executionMetadata = new ArrayList<com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.ExecutionMetadata>();
 
+    private JobErrorDetails() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -28,6 +28,9 @@ public final class CertificationResult {
     @JsonProperty("distributionInfo")
     private com.amazon.ask.smapi.model.v1.skill.certification.DistributionInfo distributionInfo = null;
 
+    private CertificationResult() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

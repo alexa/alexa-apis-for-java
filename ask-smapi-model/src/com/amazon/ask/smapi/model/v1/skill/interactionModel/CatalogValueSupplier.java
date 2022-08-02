@@ -28,6 +28,9 @@ public final class CatalogValueSupplier extends com.amazon.ask.smapi.model.v1.sk
     @JsonProperty("valueCatalog")
     private com.amazon.ask.smapi.model.v1.skill.interactionModel.ValueCatalog valueCatalog = null;
 
+    private CatalogValueSupplier() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

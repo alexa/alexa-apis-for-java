@@ -28,6 +28,9 @@ public final class Catalog extends com.amazon.ask.smapi.model.v1.skill.interacti
     @JsonProperty("id")
     private String id = null;
 
+    private Catalog() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

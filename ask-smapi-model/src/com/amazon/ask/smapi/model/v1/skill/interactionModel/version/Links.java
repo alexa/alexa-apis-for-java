@@ -28,6 +28,9 @@ public final class Links {
     @JsonProperty("self")
     private com.amazon.ask.smapi.model.v1.Link self = null;
 
+    private Links() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

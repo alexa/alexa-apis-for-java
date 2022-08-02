@@ -43,6 +43,9 @@ public final class ViewportSpecification {
     @JsonProperty("maxHeight")
     private Integer maxHeight = null;
 
+    private ViewportSpecification() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

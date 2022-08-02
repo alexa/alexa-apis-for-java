@@ -28,6 +28,9 @@ public final class ExpectedIntentSlotsProps {
     @JsonProperty("value")
     private String value = null;
 
+    private ExpectedIntentSlotsProps() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -28,6 +28,9 @@ public final class CreateJobDefinitionResponse {
     @JsonProperty("jobId")
     private String jobId = null;
 
+    private CreateJobDefinitionResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

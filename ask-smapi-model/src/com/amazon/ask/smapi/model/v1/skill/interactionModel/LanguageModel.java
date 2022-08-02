@@ -40,6 +40,9 @@ public final class LanguageModel {
     @JsonProperty("modelConfiguration")
     private com.amazon.ask.smapi.model.v1.skill.interactionModel.ModelConfiguration modelConfiguration = null;
 
+    private LanguageModel() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

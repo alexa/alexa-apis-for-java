@@ -31,6 +31,9 @@ public final class SlotResolutions {
     @JsonProperty("resolutionsPerAuthority")
     private List<com.amazon.ask.smapi.model.v2.skill.simulations.ResolutionsPerAuthorityItems> resolutionsPerAuthority = new ArrayList<com.amazon.ask.smapi.model.v2.skill.simulations.ResolutionsPerAuthorityItems>();
 
+    private SlotResolutions() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

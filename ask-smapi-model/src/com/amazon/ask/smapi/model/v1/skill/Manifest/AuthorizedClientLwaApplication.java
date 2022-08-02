@@ -28,6 +28,9 @@ public final class AuthorizedClientLwaApplication {
     @JsonProperty("type")
     private String type = null;
 
+    private AuthorizedClientLwaApplication() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

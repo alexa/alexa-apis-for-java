@@ -31,6 +31,9 @@ public final class CatalogEntity {
     @JsonProperty("description")
     private String description = null;
 
+    private CatalogEntity() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

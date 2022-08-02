@@ -34,6 +34,9 @@ public final class Dialog {
     @JsonProperty("intents")
     private List<com.amazon.ask.smapi.model.v1.skill.interactionModel.DialogIntents> intents = new ArrayList<com.amazon.ask.smapi.model.v1.skill.interactionModel.DialogIntents>();
 
+    private Dialog() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

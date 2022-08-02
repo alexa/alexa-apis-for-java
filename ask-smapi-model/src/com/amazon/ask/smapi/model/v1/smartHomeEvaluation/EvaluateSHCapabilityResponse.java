@@ -37,6 +37,9 @@ public final class EvaluateSHCapabilityResponse {
     @JsonProperty("id")
     private String id = null;
 
+    private EvaluateSHCapabilityResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

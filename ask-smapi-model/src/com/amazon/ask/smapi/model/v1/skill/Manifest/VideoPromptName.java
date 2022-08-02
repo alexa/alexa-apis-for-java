@@ -31,6 +31,9 @@ public final class VideoPromptName {
     @JsonProperty("name")
     private String name = null;
 
+    private VideoPromptName() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

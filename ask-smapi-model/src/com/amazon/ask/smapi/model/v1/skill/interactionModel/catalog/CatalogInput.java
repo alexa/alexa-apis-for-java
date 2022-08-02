@@ -31,6 +31,9 @@ public final class CatalogInput {
     @JsonProperty("description")
     private String description = null;
 
+    private CatalogInput() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

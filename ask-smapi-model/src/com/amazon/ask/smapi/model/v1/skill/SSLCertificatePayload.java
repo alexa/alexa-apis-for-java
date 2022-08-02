@@ -34,6 +34,9 @@ public final class SSLCertificatePayload {
     @JsonProperty("regions")
     private Map<String, com.amazon.ask.smapi.model.v1.skill.RegionalSSLCertificate> regions = new HashMap<String, com.amazon.ask.smapi.model.v1.skill.RegionalSSLCertificate>();
 
+    private SSLCertificatePayload() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

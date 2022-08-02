@@ -31,6 +31,9 @@ public final class AccountLinkingPlatformAuthorizationUrl {
     @JsonProperty("platformAuthorizationUrl")
     private String platformAuthorizationUrl = null;
 
+    private AccountLinkingPlatformAuthorizationUrl() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

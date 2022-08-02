@@ -34,6 +34,9 @@ public final class EvaluateSHCapabilityRequest {
     @JsonProperty("stage")
     private String stage = null;
 
+    private EvaluateSHCapabilityRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

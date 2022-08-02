@@ -31,6 +31,9 @@ public final class BuildDetails {
     @JsonProperty("steps")
     private List<com.amazon.ask.smapi.model.v1.skill.BuildStep> steps = new ArrayList<com.amazon.ask.smapi.model.v1.skill.BuildStep>();
 
+    private BuildDetails() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

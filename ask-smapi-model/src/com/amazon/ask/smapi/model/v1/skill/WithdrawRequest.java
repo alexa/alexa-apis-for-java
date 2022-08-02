@@ -31,6 +31,9 @@ public final class WithdrawRequest {
     @JsonProperty("message")
     private String message = null;
 
+    private WithdrawRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

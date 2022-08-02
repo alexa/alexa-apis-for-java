@@ -28,6 +28,9 @@ public final class Session {
     @JsonProperty("mode")
     private String mode = null;
 
+    private Session() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

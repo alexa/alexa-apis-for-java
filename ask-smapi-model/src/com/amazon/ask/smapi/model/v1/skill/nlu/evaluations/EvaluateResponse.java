@@ -28,6 +28,9 @@ public final class EvaluateResponse {
     @JsonProperty("id")
     private String id = null;
 
+    private EvaluateResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

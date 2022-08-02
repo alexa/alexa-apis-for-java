@@ -37,6 +37,9 @@ public final class LastUpdateRequest {
     @JsonProperty("errors")
     private List<com.amazon.ask.smapi.model.v1.skill.StandardizedError> errors = new ArrayList<com.amazon.ask.smapi.model.v1.skill.StandardizedError>();
 
+    private LastUpdateRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

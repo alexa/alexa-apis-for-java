@@ -34,6 +34,9 @@ public final class ExecutionMetadata {
     @JsonProperty("status")
     private String status = null;
 
+    private ExecutionMetadata() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

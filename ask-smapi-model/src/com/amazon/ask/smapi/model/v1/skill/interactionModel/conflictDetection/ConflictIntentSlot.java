@@ -31,6 +31,9 @@ public final class ConflictIntentSlot {
     @JsonProperty("type")
     private String type = null;
 
+    private ConflictIntentSlot() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

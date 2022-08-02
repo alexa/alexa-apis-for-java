@@ -25,6 +25,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = AudioInterface.Builder.class)
 public final class AudioInterface extends com.amazon.ask.smapi.model.v1.skill.Manifest.ModelInterface  {
 
+    private AudioInterface() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

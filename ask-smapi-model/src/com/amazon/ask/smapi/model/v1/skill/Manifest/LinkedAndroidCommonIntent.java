@@ -31,6 +31,9 @@ public final class LinkedAndroidCommonIntent {
     @JsonProperty("catalogType")
     private String catalogType = null;
 
+    private LinkedAndroidCommonIntent() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

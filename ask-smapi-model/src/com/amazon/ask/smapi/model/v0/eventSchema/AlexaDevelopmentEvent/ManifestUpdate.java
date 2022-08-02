@@ -32,6 +32,9 @@ public final class ManifestUpdate extends com.amazon.ask.smapi.model.v0.eventSch
     @JsonProperty("payload")
     private com.amazon.ask.smapi.model.v0.eventSchema.SkillEventAttributes payload = null;
 
+    private ManifestUpdate() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

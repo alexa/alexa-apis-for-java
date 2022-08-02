@@ -34,6 +34,9 @@ public final class PreSignedUrl extends com.amazon.ask.smapi.model.v1.catalog.up
     @JsonProperty("partETags")
     private List<com.amazon.ask.smapi.model.v1.catalog.upload.PreSignedUrlItem> partETags = new ArrayList<com.amazon.ask.smapi.model.v1.catalog.upload.PreSignedUrlItem>();
 
+    private PreSignedUrl() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -25,6 +25,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = GameEngineInterface.Builder.class)
 public final class GameEngineInterface extends com.amazon.ask.smapi.model.v1.skill.Manifest.ModelInterface  {
 
+    private GameEngineInterface() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

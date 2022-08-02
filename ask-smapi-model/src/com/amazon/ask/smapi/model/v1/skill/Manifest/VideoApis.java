@@ -40,6 +40,9 @@ public final class VideoApis {
     @JsonProperty("countries")
     private Map<String, com.amazon.ask.smapi.model.v1.skill.Manifest.VideoCountryInfo> countries = new HashMap<String, com.amazon.ask.smapi.model.v1.skill.Manifest.VideoCountryInfo>();
 
+    private VideoApis() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

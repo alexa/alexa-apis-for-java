@@ -28,6 +28,9 @@ public final class CatalogUpdate {
     @JsonProperty("description")
     private String description = null;
 
+    private CatalogUpdate() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

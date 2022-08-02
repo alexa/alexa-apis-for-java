@@ -32,6 +32,9 @@ public final class SkillCertification extends com.amazon.ask.smapi.model.v0.even
     @JsonProperty("payload")
     private com.amazon.ask.smapi.model.v0.eventSchema.SkillEventAttributes payload = null;
 
+    private SkillCertification() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

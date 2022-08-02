@@ -31,6 +31,9 @@ public final class VideoFireTvCatalogIngestion {
     @JsonProperty("isFireTvCatalogIngestionEnabled")
     private Boolean isFireTvCatalogIngestionEnabled = null;
 
+    private VideoFireTvCatalogIngestion() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -41,6 +41,9 @@ public final class EvaluationEntity {
     @JsonProperty("inputs")
     private com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.EvaluationInputs inputs = null;
 
+    private EvaluationEntity() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

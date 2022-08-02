@@ -25,6 +25,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = VideoAppInterface.Builder.class)
 public final class VideoAppInterface extends com.amazon.ask.smapi.model.v1.skill.Manifest.ModelInterface  {
 
+    private VideoAppInterface() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

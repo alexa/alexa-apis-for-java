@@ -31,6 +31,9 @@ public final class VersionDataObject {
     @JsonProperty("description")
     private String description = null;
 
+    private VersionDataObject() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

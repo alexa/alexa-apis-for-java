@@ -31,6 +31,9 @@ public final class GetCustomerTreatmentOverrideResponse {
     @JsonProperty("treatmentOverrideCount")
     private Integer treatmentOverrideCount = null;
 
+    private GetCustomerTreatmentOverrideResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

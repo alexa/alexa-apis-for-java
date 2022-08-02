@@ -28,6 +28,9 @@ public final class SetCustomerTreatmentOverrideRequest {
     @JsonProperty("treatmentId")
     private String treatmentId = null;
 
+    private SetCustomerTreatmentOverrideRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

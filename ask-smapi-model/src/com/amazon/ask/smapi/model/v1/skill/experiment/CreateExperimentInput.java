@@ -46,6 +46,9 @@ public final class CreateExperimentInput {
     @JsonProperty("metricConfigurations")
     private List<com.amazon.ask.smapi.model.v1.skill.experiment.MetricConfiguration> metricConfigurations = new ArrayList<com.amazon.ask.smapi.model.v1.skill.experiment.MetricConfiguration>();
 
+    private CreateExperimentInput() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

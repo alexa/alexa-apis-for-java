@@ -28,6 +28,9 @@ public final class SupportedControls {
     @JsonProperty("type")
     private String type = null;
 
+    private SupportedControls() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

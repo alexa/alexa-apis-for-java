@@ -31,6 +31,9 @@ public final class SlotTypeDefinitionOutput {
     @JsonProperty("totalVersions")
     private String totalVersions = null;
 
+    private SlotTypeDefinitionOutput() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

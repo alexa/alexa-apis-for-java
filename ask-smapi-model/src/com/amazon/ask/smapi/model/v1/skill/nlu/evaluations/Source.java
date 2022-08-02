@@ -28,6 +28,9 @@ public final class Source {
     @JsonProperty("annotationId")
     private String annotationId = null;
 
+    private Source() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

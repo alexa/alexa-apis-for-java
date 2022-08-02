@@ -25,6 +25,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = TargetRuntimeDevice.Builder.class)
 public final class TargetRuntimeDevice extends com.amazon.ask.smapi.model.v1.skill.Manifest.Custom.TargetRuntime  {
 
+    private TargetRuntimeDevice() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

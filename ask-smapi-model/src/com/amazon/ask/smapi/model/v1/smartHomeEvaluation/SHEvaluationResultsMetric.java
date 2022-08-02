@@ -37,6 +37,9 @@ public final class SHEvaluationResultsMetric {
     @JsonProperty("totalTestCases")
     private Integer totalTestCases = null;
 
+    private SHEvaluationResultsMetric() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

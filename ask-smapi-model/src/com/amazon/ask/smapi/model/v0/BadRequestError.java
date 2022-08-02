@@ -34,6 +34,9 @@ public final class BadRequestError {
     @JsonProperty("violations")
     private List<com.amazon.ask.smapi.model.v0.Error> violations = new ArrayList<com.amazon.ask.smapi.model.v0.Error>();
 
+    private BadRequestError() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

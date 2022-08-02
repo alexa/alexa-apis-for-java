@@ -34,6 +34,9 @@ public final class EvaluationInputs {
     @JsonProperty("source")
     private com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.Source source = null;
 
+    private EvaluationInputs() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

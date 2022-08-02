@@ -37,6 +37,9 @@ public final class AuditLogsResponse {
     @JsonProperty("auditLogs")
     private List<com.amazon.ask.smapi.model.v1.auditLogs.AuditLog> auditLogs = new ArrayList<com.amazon.ask.smapi.model.v1.auditLogs.AuditLog>();
 
+    private AuditLogsResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

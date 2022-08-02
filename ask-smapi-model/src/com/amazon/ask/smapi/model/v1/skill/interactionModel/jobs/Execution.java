@@ -41,6 +41,9 @@ public final class Execution {
     @JsonProperty("errorDetails")
     private com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.JobErrorDetails errorDetails = null;
 
+    private Execution() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -32,6 +32,9 @@ public final class SkillPublish extends com.amazon.ask.smapi.model.v0.eventSchem
     @JsonProperty("payload")
     private com.amazon.ask.smapi.model.v0.eventSchema.SkillEventAttributes payload = null;
 
+    private SkillPublish() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -28,6 +28,9 @@ public final class AlexaResponseContent {
     @JsonProperty("caption")
     private String caption = null;
 
+    private AlexaResponseContent() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

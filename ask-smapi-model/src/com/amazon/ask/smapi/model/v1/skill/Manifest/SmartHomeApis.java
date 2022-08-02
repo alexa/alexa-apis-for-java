@@ -40,6 +40,9 @@ public final class SmartHomeApis {
     @JsonProperty("supportedControls")
     private com.amazon.ask.smapi.model.v1.skill.Manifest.SupportedControls supportedControls = null;
 
+    private SmartHomeApis() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

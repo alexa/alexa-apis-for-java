@@ -28,6 +28,9 @@ public final class LocalizedKnowledgeInformation {
     @JsonProperty("answerAttribution")
     private String answerAttribution = null;
 
+    private LocalizedKnowledgeInformation() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

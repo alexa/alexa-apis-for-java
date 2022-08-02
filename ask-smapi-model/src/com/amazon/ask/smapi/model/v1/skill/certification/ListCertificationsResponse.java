@@ -43,6 +43,9 @@ public final class ListCertificationsResponse {
     @JsonProperty("items")
     private List<com.amazon.ask.smapi.model.v1.skill.certification.CertificationSummary> items = new ArrayList<com.amazon.ask.smapi.model.v1.skill.certification.CertificationSummary>();
 
+    private ListCertificationsResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

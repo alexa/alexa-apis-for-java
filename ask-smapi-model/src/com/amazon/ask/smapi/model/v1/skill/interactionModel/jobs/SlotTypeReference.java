@@ -28,6 +28,9 @@ public final class SlotTypeReference extends com.amazon.ask.smapi.model.v1.skill
     @JsonProperty("id")
     private String id = null;
 
+    private SlotTypeReference() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

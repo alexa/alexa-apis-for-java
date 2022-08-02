@@ -40,6 +40,9 @@ public final class SubscriberSummary {
     @JsonProperty("endpoint")
     private com.amazon.ask.smapi.model.v0.developmentEvents.subscriber.Endpoint endpoint = null;
 
+    private SubscriberSummary() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

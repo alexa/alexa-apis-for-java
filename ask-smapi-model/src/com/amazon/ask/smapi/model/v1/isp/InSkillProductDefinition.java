@@ -52,6 +52,9 @@ public final class InSkillProductDefinition {
     @JsonProperty("testingInstructions")
     private String testingInstructions = null;
 
+    private InSkillProductDefinition() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

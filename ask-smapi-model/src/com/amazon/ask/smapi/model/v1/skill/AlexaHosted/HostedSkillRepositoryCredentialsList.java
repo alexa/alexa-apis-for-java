@@ -28,6 +28,9 @@ public final class HostedSkillRepositoryCredentialsList {
     @JsonProperty("repositoryCredentials")
     private com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillRepositoryCredentials repositoryCredentials = null;
 
+    private HostedSkillRepositoryCredentialsList() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

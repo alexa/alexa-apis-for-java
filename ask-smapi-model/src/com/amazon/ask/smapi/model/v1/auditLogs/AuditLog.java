@@ -50,6 +50,9 @@ public final class AuditLog {
     @JsonProperty("httpResponseCode")
     private Integer httpResponseCode = null;
 
+    private AuditLog() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

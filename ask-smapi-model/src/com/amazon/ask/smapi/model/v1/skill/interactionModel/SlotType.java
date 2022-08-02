@@ -40,6 +40,9 @@ public final class SlotType {
     @JsonProperty("valueSupplier")
     private com.amazon.ask.smapi.model.v1.skill.interactionModel.ValueSupplier valueSupplier = null;
 
+    private SlotType() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

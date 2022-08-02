@@ -34,6 +34,9 @@ public final class ConflictIntent {
     @JsonProperty("slots")
     private Map<String, com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.ConflictIntentSlot> slots = new HashMap<String, com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.ConflictIntentSlot>();
 
+    private ConflictIntent() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -31,6 +31,9 @@ public final class Skill {
     @JsonProperty("locale")
     private String locale = null;
 
+    private Skill() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

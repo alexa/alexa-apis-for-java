@@ -34,6 +34,9 @@ public final class LinkedCommonSchemes {
     @JsonProperty("GOOGLE_PLAY_STORE")
     private List<com.amazon.ask.smapi.model.v1.skill.Manifest.PlayStoreCommonSchemeName> GOOGLE_PLAY_STORE = new ArrayList<com.amazon.ask.smapi.model.v1.skill.Manifest.PlayStoreCommonSchemeName>();
 
+    private LinkedCommonSchemes() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

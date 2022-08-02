@@ -28,6 +28,9 @@ public final class SkillCredentials {
     @JsonProperty("skillMessagingCredentials")
     private com.amazon.ask.smapi.model.v1.skill.SkillMessagingCredentials skillMessagingCredentials = null;
 
+    private SkillCredentials() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -37,6 +37,9 @@ public final class ListNLUEvaluationsResponse {
     @JsonProperty("evaluations")
     private List<com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.Evaluation> evaluations = new ArrayList<com.amazon.ask.smapi.model.v1.skill.nlu.evaluations.Evaluation>();
 
+    private ListNLUEvaluationsResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

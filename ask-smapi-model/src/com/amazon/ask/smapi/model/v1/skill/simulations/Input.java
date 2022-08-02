@@ -28,6 +28,9 @@ public final class Input {
     @JsonProperty("content")
     private String content = null;
 
+    private Input() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

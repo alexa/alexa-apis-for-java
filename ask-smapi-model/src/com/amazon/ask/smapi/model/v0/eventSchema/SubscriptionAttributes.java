@@ -28,6 +28,9 @@ public final class SubscriptionAttributes {
     @JsonProperty("subscriptionId")
     private String subscriptionId = null;
 
+    private SubscriptionAttributes() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -34,6 +34,9 @@ public final class SimulationsApiResponse {
     @JsonProperty("result")
     private com.amazon.ask.smapi.model.v2.skill.simulations.SimulationResult result = null;
 
+    private SimulationsApiResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

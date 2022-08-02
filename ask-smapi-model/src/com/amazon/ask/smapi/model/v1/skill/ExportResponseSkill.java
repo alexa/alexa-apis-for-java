@@ -34,6 +34,9 @@ public final class ExportResponseSkill {
     @JsonProperty("expiresAt")
     private String expiresAt = null;
 
+    private ExportResponseSkill() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

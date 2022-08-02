@@ -37,6 +37,9 @@ public final class InteractionModelEventAttributes {
     @JsonProperty("subscription")
     private com.amazon.ask.smapi.model.v0.eventSchema.SubscriptionAttributes subscription = null;
 
+    private InteractionModelEventAttributes() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

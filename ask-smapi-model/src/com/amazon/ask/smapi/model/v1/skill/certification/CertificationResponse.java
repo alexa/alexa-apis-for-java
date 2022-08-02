@@ -41,6 +41,9 @@ public final class CertificationResponse {
     @JsonProperty("result")
     private com.amazon.ask.smapi.model.v1.skill.certification.CertificationResult result = null;
 
+    private CertificationResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

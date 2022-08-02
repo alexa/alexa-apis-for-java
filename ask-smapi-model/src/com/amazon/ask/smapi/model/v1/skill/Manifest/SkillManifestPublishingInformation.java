@@ -66,6 +66,9 @@ public final class SkillManifestPublishingInformation {
     @JsonProperty("paidSkillInformation")
     private com.amazon.ask.smapi.model.v1.skill.Manifest.PaidSkillInformation paidSkillInformation = null;
 
+    private SkillManifestPublishingInformation() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

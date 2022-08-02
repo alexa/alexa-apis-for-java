@@ -37,6 +37,9 @@ public final class CreateCatalogRequest {
     @JsonProperty("vendorId")
     private String vendorId = null;
 
+    private CreateCatalogRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

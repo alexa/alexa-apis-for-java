@@ -34,6 +34,9 @@ public final class SkillInteractionModelStatus {
     @JsonProperty("version")
     private String version = null;
 
+    private SkillInteractionModelStatus() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

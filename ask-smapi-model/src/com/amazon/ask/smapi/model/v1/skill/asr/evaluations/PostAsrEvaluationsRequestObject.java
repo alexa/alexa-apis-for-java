@@ -31,6 +31,9 @@ public final class PostAsrEvaluationsRequestObject {
     @JsonProperty("annotationSetId")
     private String annotationSetId = null;
 
+    private PostAsrEvaluationsRequestObject() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

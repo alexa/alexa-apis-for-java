@@ -34,6 +34,9 @@ public final class DistributionInfo {
     @JsonProperty("publicationFailures")
     private List<com.amazon.ask.smapi.model.v1.skill.certification.PublicationFailure> publicationFailures = new ArrayList<com.amazon.ask.smapi.model.v1.skill.certification.PublicationFailure>();
 
+    private DistributionInfo() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -28,6 +28,9 @@ public final class UpdateNLUAnnotationSetPropertiesRequest {
     @JsonProperty("name")
     private String name = null;
 
+    private UpdateNLUAnnotationSetPropertiesRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

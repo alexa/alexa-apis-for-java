@@ -31,6 +31,9 @@ public final class SHCapabilityError {
     @JsonProperty("message")
     private String message = null;
 
+    private SHCapabilityError() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

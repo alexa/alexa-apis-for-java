@@ -28,6 +28,9 @@ public final class IsLessThan extends com.amazon.ask.smapi.model.v1.skill.intera
     @JsonProperty("value")
     private String value = null;
 
+    private IsLessThan() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

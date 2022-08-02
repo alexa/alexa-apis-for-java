@@ -28,6 +28,9 @@ public final class CatalogStatus {
     @JsonProperty("lastUpdateRequest")
     private com.amazon.ask.smapi.model.v1.skill.interactionModel.catalog.LastUpdateRequest lastUpdateRequest = null;
 
+    private CatalogStatus() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

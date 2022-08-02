@@ -28,6 +28,9 @@ public final class CreateAsrAnnotationSetResponse {
     @JsonProperty("id")
     private String id = null;
 
+    private CreateAsrAnnotationSetResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

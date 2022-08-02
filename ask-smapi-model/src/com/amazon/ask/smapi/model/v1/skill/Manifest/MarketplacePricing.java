@@ -41,6 +41,9 @@ public final class MarketplacePricing {
     @JsonProperty("subscriptionInformation")
     private com.amazon.ask.smapi.model.v1.skill.Manifest.SubscriptionInformation subscriptionInformation = null;
 
+    private MarketplacePricing() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

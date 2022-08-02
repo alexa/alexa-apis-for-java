@@ -43,6 +43,9 @@ public final class ResourceImportStatus {
     @JsonProperty("warnings")
     private List<com.amazon.ask.smapi.model.v1.skill.StandardizedError> warnings = new ArrayList<com.amazon.ask.smapi.model.v1.skill.StandardizedError>();
 
+    private ResourceImportStatus() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

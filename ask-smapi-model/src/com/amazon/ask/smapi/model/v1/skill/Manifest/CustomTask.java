@@ -31,6 +31,9 @@ public final class CustomTask {
     @JsonProperty("version")
     private String version = null;
 
+    private CustomTask() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

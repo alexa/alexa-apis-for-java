@@ -43,6 +43,9 @@ public final class MetricValues {
     @JsonProperty("userCount")
     private Long userCount = null;
 
+    private MetricValues() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

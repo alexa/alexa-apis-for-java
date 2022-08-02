@@ -28,6 +28,9 @@ public final class CreateSkillResponse {
     @JsonProperty("skillId")
     private String skillId = null;
 
+    private CreateSkillResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

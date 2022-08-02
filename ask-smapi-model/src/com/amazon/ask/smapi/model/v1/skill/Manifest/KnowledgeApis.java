@@ -34,6 +34,9 @@ public final class KnowledgeApis {
     @JsonProperty("locales")
     private Map<String, com.amazon.ask.smapi.model.v1.skill.Manifest.LocalizedKnowledgeInformation> locales = new HashMap<String, com.amazon.ask.smapi.model.v1.skill.Manifest.LocalizedKnowledgeInformation>();
 
+    private KnowledgeApis() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

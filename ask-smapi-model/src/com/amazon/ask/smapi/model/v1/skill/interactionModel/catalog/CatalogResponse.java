@@ -28,6 +28,9 @@ public final class CatalogResponse {
     @JsonProperty("catalogId")
     private String catalogId = null;
 
+    private CatalogResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

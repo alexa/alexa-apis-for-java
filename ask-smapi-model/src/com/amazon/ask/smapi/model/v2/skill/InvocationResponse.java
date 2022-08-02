@@ -31,6 +31,9 @@ public final class InvocationResponse {
     @JsonProperty("body")
     private Map<String, Object> body = new HashMap<String, Object>();
 
+    private InvocationResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

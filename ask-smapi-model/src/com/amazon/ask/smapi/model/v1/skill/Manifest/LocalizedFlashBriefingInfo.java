@@ -34,6 +34,9 @@ public final class LocalizedFlashBriefingInfo {
     @JsonProperty("customErrorMessage")
     private String customErrorMessage = null;
 
+    private LocalizedFlashBriefingInfo() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

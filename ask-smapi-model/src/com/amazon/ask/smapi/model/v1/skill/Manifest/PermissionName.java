@@ -98,6 +98,8 @@ public enum PermissionName {
   
   ALEXA_MEASUREMENT_SYSTEM_READWRITE("alexa::measurement_system::readwrite"),
   
+  DASH_VENDOR_READ_ENDPOINTS("dash::vendor:read:endpoints"),
+  
   UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;

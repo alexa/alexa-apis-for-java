@@ -43,6 +43,9 @@ public final class ResponseValidation {
     @JsonProperty("status")
     private String status = null;
 
+    private ResponseValidation() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

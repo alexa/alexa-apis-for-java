@@ -32,6 +32,9 @@ public final class Inputs {
     @JsonProperty("referenceTimestamp")
     private OffsetDateTime referenceTimestamp = null;
 
+    private Inputs() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -28,6 +28,9 @@ public final class UpdateExperimentRequest {
     @JsonProperty("experiment")
     private com.amazon.ask.smapi.model.v1.skill.experiment.UpdateExperimentInput experiment = null;
 
+    private UpdateExperimentRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

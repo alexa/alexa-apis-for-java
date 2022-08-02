@@ -31,6 +31,9 @@ public final class RequestPaginationContext {
     @JsonProperty("maxResults")
     private Integer maxResults = null;
 
+    private RequestPaginationContext() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -28,6 +28,9 @@ public final class Requester {
     @JsonProperty("userId")
     private String userId = null;
 
+    private Requester() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

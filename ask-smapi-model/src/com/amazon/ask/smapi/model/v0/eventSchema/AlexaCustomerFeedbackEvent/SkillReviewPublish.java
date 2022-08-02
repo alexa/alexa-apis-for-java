@@ -29,6 +29,9 @@ public final class SkillReviewPublish extends com.amazon.ask.smapi.model.v0.even
     @JsonProperty("payload")
     private com.amazon.ask.smapi.model.v0.eventSchema.SkillReviewEventAttributes payload = null;
 
+    private SkillReviewPublish() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

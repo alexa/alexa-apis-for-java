@@ -25,6 +25,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = UpdateNLUAnnotationSetAnnotationsRequest.Builder.class)
 public final class UpdateNLUAnnotationSetAnnotationsRequest {
 
+    private UpdateNLUAnnotationSetAnnotationsRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

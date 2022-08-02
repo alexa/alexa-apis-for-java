@@ -34,6 +34,9 @@ public final class JobDefinitionMetadata {
     @JsonProperty("status")
     private String status = null;
 
+    private JobDefinitionMetadata() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

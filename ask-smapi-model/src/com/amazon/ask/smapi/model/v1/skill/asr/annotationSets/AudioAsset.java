@@ -31,6 +31,9 @@ public final class AudioAsset {
     @JsonProperty("expiryTime")
     private String expiryTime = null;
 
+    private AudioAsset() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

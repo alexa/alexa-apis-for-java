@@ -28,6 +28,9 @@ public final class LambdaRegion {
     @JsonProperty("endpoint")
     private com.amazon.ask.smapi.model.v1.skill.Manifest.LambdaEndpoint endpoint = null;
 
+    private LambdaRegion() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

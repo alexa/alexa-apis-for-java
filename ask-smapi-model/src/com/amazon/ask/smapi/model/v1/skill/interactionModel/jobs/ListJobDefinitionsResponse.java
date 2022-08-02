@@ -37,6 +37,9 @@ public final class ListJobDefinitionsResponse {
     @JsonProperty("jobs")
     private List<com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.JobDefinitionMetadata> jobs = new ArrayList<com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.JobDefinitionMetadata>();
 
+    private ListJobDefinitionsResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

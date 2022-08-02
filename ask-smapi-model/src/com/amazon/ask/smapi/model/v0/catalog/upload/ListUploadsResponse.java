@@ -40,6 +40,9 @@ public final class ListUploadsResponse {
     @JsonProperty("uploads")
     private List<com.amazon.ask.smapi.model.v0.catalog.upload.ContentUploadSummary> uploads = new ArrayList<com.amazon.ask.smapi.model.v0.catalog.upload.ContentUploadSummary>();
 
+    private ListUploadsResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

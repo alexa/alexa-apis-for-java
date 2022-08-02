@@ -25,6 +25,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = AMAZONConversationsDialogManager.Builder.class)
 public final class AMAZONConversationsDialogManager extends com.amazon.ask.smapi.model.v1.skill.Manifest.DialogManager  {
 
+    private AMAZONConversationsDialogManager() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -31,6 +31,9 @@ public final class CatalogAutoRefresh extends com.amazon.ask.smapi.model.v1.skil
     @JsonProperty("resource")
     private com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.Catalog resource = null;
 
+    private CatalogAutoRefresh() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

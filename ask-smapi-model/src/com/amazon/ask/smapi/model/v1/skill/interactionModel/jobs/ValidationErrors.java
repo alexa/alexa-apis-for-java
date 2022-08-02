@@ -31,6 +31,9 @@ public final class ValidationErrors {
     @JsonProperty("errors")
     private List<com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.DynamicUpdateError> errors = new ArrayList<com.amazon.ask.smapi.model.v1.skill.interactionModel.jobs.DynamicUpdateError>();
 
+    private ValidationErrors() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

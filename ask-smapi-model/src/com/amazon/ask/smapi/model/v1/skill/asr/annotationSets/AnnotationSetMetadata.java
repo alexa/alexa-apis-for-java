@@ -38,6 +38,9 @@ public final class AnnotationSetMetadata {
     @JsonProperty("eligibleForEvaluation")
     private Boolean eligibleForEvaluation = null;
 
+    private AnnotationSetMetadata() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

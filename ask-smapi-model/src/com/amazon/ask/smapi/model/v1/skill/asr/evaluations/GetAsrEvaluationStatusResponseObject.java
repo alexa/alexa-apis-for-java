@@ -48,6 +48,9 @@ public final class GetAsrEvaluationStatusResponseObject {
     @JsonProperty("result")
     private com.amazon.ask.smapi.model.v1.skill.asr.evaluations.EvaluationMetadataResult result = null;
 
+    private GetAsrEvaluationStatusResponseObject() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

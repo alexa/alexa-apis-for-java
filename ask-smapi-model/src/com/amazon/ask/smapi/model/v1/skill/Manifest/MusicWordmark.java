@@ -28,6 +28,9 @@ public final class MusicWordmark {
     @JsonProperty("uri")
     private String uri = null;
 
+    private MusicWordmark() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

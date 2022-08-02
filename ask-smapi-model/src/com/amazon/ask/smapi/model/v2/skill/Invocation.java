@@ -34,6 +34,9 @@ public final class Invocation {
     @JsonProperty("metrics")
     private com.amazon.ask.smapi.model.v2.skill.Metrics metrics = null;
 
+    private Invocation() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

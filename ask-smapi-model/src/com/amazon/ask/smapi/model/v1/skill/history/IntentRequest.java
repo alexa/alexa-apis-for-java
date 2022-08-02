@@ -46,6 +46,9 @@ public final class IntentRequest {
     @JsonProperty("utteranceText")
     private String utteranceText = null;
 
+    private IntentRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

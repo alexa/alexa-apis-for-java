@@ -55,6 +55,9 @@ public final class SkillSummary {
     @JsonProperty("_links")
     private com.amazon.ask.smapi.model.v1.Links links = null;
 
+    private SkillSummary() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

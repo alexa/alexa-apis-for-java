@@ -28,6 +28,9 @@ public final class CustomLocalizedInformation {
     @JsonProperty("dialogManagement")
     private com.amazon.ask.smapi.model.v1.skill.Manifest.CustomLocalizedInformationDialogManagement dialogManagement = null;
 
+    private CustomLocalizedInformation() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

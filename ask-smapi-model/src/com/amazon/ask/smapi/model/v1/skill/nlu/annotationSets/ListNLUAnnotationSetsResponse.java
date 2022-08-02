@@ -37,6 +37,9 @@ public final class ListNLUAnnotationSetsResponse {
     @JsonProperty("_links")
     private com.amazon.ask.smapi.model.v1.skill.nlu.annotationSets.Links links = null;
 
+    private ListNLUAnnotationSetsResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

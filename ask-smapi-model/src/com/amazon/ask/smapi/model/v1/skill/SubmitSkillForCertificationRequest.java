@@ -31,6 +31,9 @@ public final class SubmitSkillForCertificationRequest {
     @JsonProperty("versionMessage")
     private String versionMessage = null;
 
+    private SubmitSkillForCertificationRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

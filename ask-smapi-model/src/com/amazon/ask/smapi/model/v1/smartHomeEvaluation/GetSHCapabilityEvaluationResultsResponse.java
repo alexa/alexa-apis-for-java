@@ -34,6 +34,9 @@ public final class GetSHCapabilityEvaluationResultsResponse {
     @JsonProperty("testCaseResults")
     private List<com.amazon.ask.smapi.model.v1.smartHomeEvaluation.TestCaseResult> testCaseResults = new ArrayList<com.amazon.ask.smapi.model.v1.smartHomeEvaluation.TestCaseResult>();
 
+    private GetSHCapabilityEvaluationResultsResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -32,6 +32,9 @@ public final class SkillPublicationResponse {
     @JsonProperty("status")
     private String status = null;
 
+    private SkillPublicationResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }
