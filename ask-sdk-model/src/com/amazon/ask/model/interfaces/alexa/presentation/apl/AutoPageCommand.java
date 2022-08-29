@@ -34,6 +34,9 @@ public final class AutoPageCommand extends com.amazon.ask.model.interfaces.alexa
     @JsonProperty("duration")
     private String duration = null;
 
+    private AutoPageCommand() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -28,6 +28,9 @@ public final class DelegateDirective extends com.amazon.ask.model.Directive  {
     @JsonProperty("updatedIntent")
     private com.amazon.ask.model.Intent updatedIntent = null;
 
+    private DelegateDirective() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

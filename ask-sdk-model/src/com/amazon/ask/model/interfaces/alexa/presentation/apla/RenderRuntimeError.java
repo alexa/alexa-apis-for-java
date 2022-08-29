@@ -28,6 +28,9 @@ public final class RenderRuntimeError extends com.amazon.ask.model.interfaces.al
     @JsonProperty("reason")
     private com.amazon.ask.model.interfaces.alexa.presentation.apla.RenderErrorReason reason = null;
 
+    private RenderRuntimeError() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

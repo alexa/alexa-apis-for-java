@@ -37,6 +37,9 @@ public final class PrintImageRequest extends com.amazon.ask.model.interfaces.con
     @JsonProperty("imageType")
     private String imageType = null;
 
+    private PrintImageRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

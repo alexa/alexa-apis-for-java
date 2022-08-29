@@ -61,6 +61,9 @@ public final class Context {
     @JsonProperty("Experimentation")
     private com.amazon.ask.model.interfaces.alexa.experimentation.ExperimentationState experimentation = null;
 
+    private Context() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

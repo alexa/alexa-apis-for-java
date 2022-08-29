@@ -34,6 +34,9 @@ public final class InputHandlerEvent {
     @JsonProperty("inputEvents")
     private List<com.amazon.ask.model.services.gameEngine.InputEvent> inputEvents = new ArrayList<com.amazon.ask.model.services.gameEngine.InputEvent>();
 
+    private InputHandlerEvent() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

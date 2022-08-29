@@ -29,6 +29,9 @@ public final class ProactiveSubscriptionChangedRequest extends com.amazon.ask.mo
     @JsonProperty("body")
     private com.amazon.ask.model.events.skillevents.ProactiveSubscriptionChangedBody body = null;
 
+    private ProactiveSubscriptionChangedRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

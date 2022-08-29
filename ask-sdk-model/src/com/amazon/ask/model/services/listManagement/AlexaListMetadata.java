@@ -43,6 +43,9 @@ public final class AlexaListMetadata {
     @JsonProperty("statusMap")
     private List<com.amazon.ask.model.services.listManagement.Status> statusMap = new ArrayList<com.amazon.ask.model.services.listManagement.Status>();
 
+    private AlexaListMetadata() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

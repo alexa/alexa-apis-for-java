@@ -47,6 +47,9 @@ public final class CreateProactiveEventRequest {
     @JsonProperty("relevantAudience")
     private com.amazon.ask.model.services.proactiveEvents.RelevantAudience relevantAudience = null;
 
+    private CreateProactiveEventRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

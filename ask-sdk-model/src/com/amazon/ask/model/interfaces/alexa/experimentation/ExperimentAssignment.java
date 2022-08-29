@@ -31,6 +31,9 @@ public final class ExperimentAssignment {
     @JsonProperty("treatmentId")
     private String treatmentId = null;
 
+    private ExperimentAssignment() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

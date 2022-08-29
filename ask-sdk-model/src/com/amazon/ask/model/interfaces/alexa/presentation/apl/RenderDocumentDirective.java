@@ -45,6 +45,9 @@ public final class RenderDocumentDirective extends com.amazon.ask.model.Directiv
     @JsonProperty("packages")
     private List<Object> packages = new ArrayList<Object>();
 
+    private RenderDocumentDirective() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

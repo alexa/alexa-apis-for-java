@@ -34,6 +34,9 @@ public final class StatusMap {
     @JsonProperty("deleted")
     private List<String> deleted = new ArrayList<String>();
 
+    private StatusMap() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

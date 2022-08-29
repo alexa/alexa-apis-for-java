@@ -37,6 +37,9 @@ public final class TimersResponse {
     @JsonProperty("nextToken")
     private String nextToken = null;
 
+    private TimersResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

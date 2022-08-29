@@ -38,6 +38,9 @@ public final class UserEvent extends com.amazon.ask.model.Request  {
     @JsonProperty("source")
     private Object source = null;
 
+    private UserEvent() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

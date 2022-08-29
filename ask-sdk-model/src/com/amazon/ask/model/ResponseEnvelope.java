@@ -42,6 +42,9 @@ public final class ResponseEnvelope {
     @JsonProperty("response")
     private com.amazon.ask.model.Response response = null;
 
+    private ResponseEnvelope() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

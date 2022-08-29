@@ -31,6 +31,9 @@ public final class ElicitSlotDirective extends com.amazon.ask.model.Directive  {
     @JsonProperty("slotToElicit")
     private String slotToElicit = null;
 
+    private ElicitSlotDirective() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

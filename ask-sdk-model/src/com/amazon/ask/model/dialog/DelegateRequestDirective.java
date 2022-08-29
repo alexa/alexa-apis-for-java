@@ -34,6 +34,9 @@ public final class DelegateRequestDirective extends com.amazon.ask.model.Directi
     @JsonProperty("updatedRequest")
     private com.amazon.ask.model.dialog.UpdatedRequest updatedRequest = null;
 
+    private DelegateRequestDirective() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -40,6 +40,9 @@ public final class UpdateIndexListDataDirective extends com.amazon.ask.model.Dir
     @JsonProperty("operations")
     private List<com.amazon.ask.model.interfaces.alexa.presentation.apl.listoperations.Operation> operations = new ArrayList<com.amazon.ask.model.interfaces.alexa.presentation.apl.listoperations.Operation>();
 
+    private UpdateIndexListDataDirective() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

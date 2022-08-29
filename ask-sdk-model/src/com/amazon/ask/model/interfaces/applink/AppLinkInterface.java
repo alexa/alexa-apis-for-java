@@ -28,6 +28,9 @@ public final class AppLinkInterface {
     @JsonProperty("version")
     private String version = null;
 
+    private AppLinkInterface() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

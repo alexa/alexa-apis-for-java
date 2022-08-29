@@ -29,6 +29,9 @@ public final class SessionResumedRequest extends com.amazon.ask.model.Request  {
     @JsonProperty("cause")
     private com.amazon.ask.model.Cause cause = null;
 
+    private SessionResumedRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

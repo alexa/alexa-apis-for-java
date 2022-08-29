@@ -28,6 +28,9 @@ public final class AudioSourceRuntimeError extends com.amazon.ask.model.interfac
     @JsonProperty("reason")
     private com.amazon.ask.model.interfaces.alexa.presentation.apla.AudioSourceErrorReason reason = null;
 
+    private AudioSourceRuntimeError() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

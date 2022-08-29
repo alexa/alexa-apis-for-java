@@ -28,6 +28,9 @@ public final class Permission {
     @JsonProperty("scope")
     private String scope = null;
 
+    private Permission() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

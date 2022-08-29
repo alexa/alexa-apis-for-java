@@ -28,6 +28,9 @@ public final class InsertItemOperation extends com.amazon.ask.model.interfaces.a
     @JsonProperty("item")
     private Object item = null;
 
+    private InsertItemOperation() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

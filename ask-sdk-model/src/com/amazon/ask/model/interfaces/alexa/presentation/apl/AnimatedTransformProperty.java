@@ -34,6 +34,9 @@ public final class AnimatedTransformProperty extends com.amazon.ask.model.interf
     @JsonProperty("to")
     private List<com.amazon.ask.model.interfaces.alexa.presentation.apl.TransformProperty> to = new ArrayList<com.amazon.ask.model.interfaces.alexa.presentation.apl.TransformProperty>();
 
+    private AnimatedTransformProperty() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

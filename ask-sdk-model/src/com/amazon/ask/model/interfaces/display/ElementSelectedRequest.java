@@ -29,6 +29,9 @@ public final class ElementSelectedRequest extends com.amazon.ask.model.Request  
     @JsonProperty("token")
     private String token = null;
 
+    private ElementSelectedRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

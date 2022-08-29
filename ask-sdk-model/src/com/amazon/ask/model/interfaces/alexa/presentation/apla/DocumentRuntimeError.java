@@ -28,6 +28,9 @@ public final class DocumentRuntimeError extends com.amazon.ask.model.interfaces.
     @JsonProperty("reason")
     private com.amazon.ask.model.interfaces.alexa.presentation.apla.DocumentErrorReason reason = null;
 
+    private DocumentRuntimeError() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

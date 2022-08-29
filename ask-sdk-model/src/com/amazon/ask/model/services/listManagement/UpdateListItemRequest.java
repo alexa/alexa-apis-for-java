@@ -34,6 +34,9 @@ public final class UpdateListItemRequest {
     @JsonProperty("version")
     private Long version = null;
 
+    private UpdateListItemRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

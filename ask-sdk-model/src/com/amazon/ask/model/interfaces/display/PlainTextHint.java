@@ -28,6 +28,9 @@ public final class PlainTextHint extends com.amazon.ask.model.interfaces.display
     @JsonProperty("text")
     private String text = null;
 
+    private PlainTextHint() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

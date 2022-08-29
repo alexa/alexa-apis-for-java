@@ -31,6 +31,9 @@ public final class ParallelCommand extends com.amazon.ask.model.interfaces.alexa
     @JsonProperty("commands")
     private List<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command> commands = new ArrayList<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command>();
 
+    private ParallelCommand() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

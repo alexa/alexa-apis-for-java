@@ -34,6 +34,9 @@ public final class LaunchTaskOperation extends com.amazon.ask.model.services.tim
     @JsonProperty("task")
     private com.amazon.ask.model.services.timerManagement.Task task = null;
 
+    private LaunchTaskOperation() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

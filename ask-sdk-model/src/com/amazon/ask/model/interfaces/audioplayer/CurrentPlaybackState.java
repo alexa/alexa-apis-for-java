@@ -34,6 +34,9 @@ public final class CurrentPlaybackState {
     @JsonProperty("token")
     private String token = null;
 
+    private CurrentPlaybackState() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

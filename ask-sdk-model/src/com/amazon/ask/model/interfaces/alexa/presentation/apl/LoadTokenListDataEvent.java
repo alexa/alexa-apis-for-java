@@ -38,6 +38,9 @@ public final class LoadTokenListDataEvent extends com.amazon.ask.model.Request  
     @JsonProperty("pageToken")
     private String pageToken = null;
 
+    private LoadTokenListDataEvent() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -32,6 +32,9 @@ public final class ExpiredRequest extends com.amazon.ask.model.Request  {
     @JsonProperty("expirationPayload")
     private Object expirationPayload = null;
 
+    private ExpiredRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

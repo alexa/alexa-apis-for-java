@@ -31,6 +31,9 @@ public final class Person {
     @JsonProperty("accessToken")
     private String accessToken = null;
 
+    private Person() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

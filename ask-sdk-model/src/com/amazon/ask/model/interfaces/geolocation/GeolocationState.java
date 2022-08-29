@@ -43,6 +43,9 @@ public final class GeolocationState {
     @JsonProperty("locationServices")
     private com.amazon.ask.model.interfaces.geolocation.LocationServices locationServices = null;
 
+    private GeolocationState() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

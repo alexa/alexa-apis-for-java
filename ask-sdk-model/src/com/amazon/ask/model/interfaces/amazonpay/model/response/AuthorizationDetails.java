@@ -71,6 +71,9 @@ public final class AuthorizationDetails {
     @JsonProperty("authorizationBillingAddress")
     private com.amazon.ask.model.interfaces.amazonpay.model.response.Destination authorizationBillingAddress = null;
 
+    private AuthorizationDetails() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

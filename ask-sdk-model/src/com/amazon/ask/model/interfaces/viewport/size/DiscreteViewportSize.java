@@ -31,6 +31,9 @@ public final class DiscreteViewportSize extends com.amazon.ask.model.interfaces.
     @JsonProperty("pixelHeight")
     private Integer pixelHeight = null;
 
+    private DiscreteViewportSize() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

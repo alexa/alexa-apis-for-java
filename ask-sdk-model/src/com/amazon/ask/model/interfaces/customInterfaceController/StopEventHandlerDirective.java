@@ -28,6 +28,9 @@ public final class StopEventHandlerDirective extends com.amazon.ask.model.Direct
     @JsonProperty("token")
     private String token = null;
 
+    private StopEventHandlerDirective() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

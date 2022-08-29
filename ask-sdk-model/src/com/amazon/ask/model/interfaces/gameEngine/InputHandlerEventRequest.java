@@ -35,6 +35,9 @@ public final class InputHandlerEventRequest extends com.amazon.ask.model.Request
     @JsonProperty("events")
     private List<com.amazon.ask.model.services.gameEngine.InputHandlerEvent> events = new ArrayList<com.amazon.ask.model.services.gameEngine.InputHandlerEvent>();
 
+    private InputHandlerEventRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

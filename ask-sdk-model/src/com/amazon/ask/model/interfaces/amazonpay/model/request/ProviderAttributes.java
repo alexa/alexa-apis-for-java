@@ -34,6 +34,9 @@ public final class ProviderAttributes extends com.amazon.ask.model.interfaces.am
     @JsonProperty("providerCreditList")
     private List<com.amazon.ask.model.interfaces.amazonpay.model.request.ProviderCredit> providerCreditList = new ArrayList<com.amazon.ask.model.interfaces.amazonpay.model.request.ProviderCredit>();
 
+    private ProviderAttributes() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

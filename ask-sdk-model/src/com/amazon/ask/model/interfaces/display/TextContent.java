@@ -34,6 +34,9 @@ public final class TextContent {
     @JsonProperty("tertiaryText")
     private com.amazon.ask.model.interfaces.display.TextField tertiaryText = null;
 
+    private TextContent() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

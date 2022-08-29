@@ -31,6 +31,9 @@ public final class DisplayInterface {
     @JsonProperty("markupVersion")
     private String markupVersion = null;
 
+    private DisplayInterface() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

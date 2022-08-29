@@ -32,6 +32,9 @@ public final class PlaybackNearlyFinishedRequest extends com.amazon.ask.model.Re
     @JsonProperty("token")
     private String token = null;
 
+    private PlaybackNearlyFinishedRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

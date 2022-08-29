@@ -49,6 +49,9 @@ public final class Address {
     @JsonProperty("postalCode")
     private String postalCode = null;
 
+    private Address() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

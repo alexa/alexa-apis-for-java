@@ -37,6 +37,9 @@ public final class CurrentConfiguration {
     @JsonProperty("dialog")
     private String dialog = null;
 
+    private CurrentConfiguration() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

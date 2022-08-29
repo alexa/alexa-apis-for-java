@@ -34,6 +34,9 @@ public final class DynamicEntitiesDirective extends com.amazon.ask.model.Directi
     @JsonProperty("types")
     private List<com.amazon.ask.model.er.dynamic.EntityListItem> types = new ArrayList<com.amazon.ask.model.er.dynamic.EntityListItem>();
 
+    private DynamicEntitiesDirective() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

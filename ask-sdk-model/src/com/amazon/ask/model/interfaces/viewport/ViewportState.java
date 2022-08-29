@@ -62,6 +62,9 @@ public final class ViewportState {
     @JsonProperty("video")
     private com.amazon.ask.model.interfaces.viewport.ViewportStateVideo video = null;
 
+    private ViewportState() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -37,6 +37,9 @@ public final class Resolution {
     @JsonProperty("values")
     private List<com.amazon.ask.model.slu.entityresolution.ValueWrapper> values = new ArrayList<com.amazon.ask.model.slu.entityresolution.ValueWrapper>();
 
+    private Resolution() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

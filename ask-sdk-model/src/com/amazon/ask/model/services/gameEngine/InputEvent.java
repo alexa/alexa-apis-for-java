@@ -40,6 +40,9 @@ public final class InputEvent {
     @JsonProperty("feature")
     private String feature = null;
 
+    private InputEvent() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

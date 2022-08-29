@@ -29,6 +29,9 @@ public final class RuntimeErrorRequest extends com.amazon.ask.model.Request  {
     @JsonProperty("error")
     private com.amazon.ask.model.interfaces.alexa.presentation.html.RuntimeError error = null;
 
+    private RuntimeErrorRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -40,6 +40,9 @@ public final class SequentialCommand extends com.amazon.ask.model.interfaces.ale
     @JsonProperty("repeatCount")
     private String repeatCount = null;
 
+    private SequentialCommand() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

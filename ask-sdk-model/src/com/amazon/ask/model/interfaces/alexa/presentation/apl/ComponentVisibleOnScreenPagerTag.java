@@ -37,6 +37,9 @@ public final class ComponentVisibleOnScreenPagerTag {
     @JsonProperty("allowBackwards")
     private Boolean allowBackwards = null;
 
+    private ComponentVisibleOnScreenPagerTag() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

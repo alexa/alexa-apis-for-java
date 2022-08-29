@@ -37,6 +37,9 @@ public final class ScheduleTaxiReservationRequest extends com.amazon.ask.model.i
     @JsonProperty("dropOffLocation")
     private com.amazon.ask.model.interfaces.connections.entities.PostalAddress dropOffLocation = null;
 
+    private ScheduleTaxiReservationRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

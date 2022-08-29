@@ -37,6 +37,9 @@ public final class GetRemindersResponse {
     @JsonProperty("links")
     private String links = null;
 
+    private GetRemindersResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

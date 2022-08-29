@@ -37,6 +37,9 @@ public final class SpeakItemCommand extends com.amazon.ask.model.interfaces.alex
     @JsonProperty("minimumDwellTime")
     private String minimumDwellTime = null;
 
+    private SpeakItemCommand() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

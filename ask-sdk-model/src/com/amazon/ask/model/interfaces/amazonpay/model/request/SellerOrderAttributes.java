@@ -37,6 +37,9 @@ public final class SellerOrderAttributes extends com.amazon.ask.model.interfaces
     @JsonProperty("sellerNote")
     private String sellerNote = null;
 
+    private SellerOrderAttributes() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

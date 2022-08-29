@@ -31,6 +31,9 @@ public final class AnimatedOpacityProperty extends com.amazon.ask.model.interfac
     @JsonProperty("to")
     private String to = null;
 
+    private AnimatedOpacityProperty() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

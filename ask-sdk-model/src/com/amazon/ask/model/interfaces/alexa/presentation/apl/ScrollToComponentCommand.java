@@ -31,6 +31,9 @@ public final class ScrollToComponentCommand extends com.amazon.ask.model.interfa
     @JsonProperty("componentId")
     private String componentId = null;
 
+    private ScrollToComponentCommand() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -31,6 +31,9 @@ public final class Unit {
     @JsonProperty("persistentUnitId")
     private String persistentUnitId = null;
 
+    private Unit() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -25,6 +25,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = SendToDevice.Builder.class)
 public final class SendToDevice {
 
+    private SendToDevice() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -34,6 +34,9 @@ public final class PrintPDFRequest extends com.amazon.ask.model.interfaces.conne
     @JsonProperty("description")
     private String description = null;
 
+    private PrintPDFRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

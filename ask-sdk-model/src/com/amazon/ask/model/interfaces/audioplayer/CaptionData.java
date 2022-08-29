@@ -31,6 +31,9 @@ public final class CaptionData {
     @JsonProperty("type")
     private String type = null;
 
+    private CaptionData() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

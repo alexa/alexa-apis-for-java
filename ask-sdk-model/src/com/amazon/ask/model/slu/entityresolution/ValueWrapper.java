@@ -28,6 +28,9 @@ public final class ValueWrapper {
     @JsonProperty("value")
     private com.amazon.ask.model.slu.entityresolution.Value value = null;
 
+    private ValueWrapper() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

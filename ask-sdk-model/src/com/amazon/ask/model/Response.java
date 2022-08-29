@@ -52,6 +52,9 @@ public final class Response {
     @JsonProperty("experimentation")
     private com.amazon.ask.model.interfaces.alexa.experimentation.ExperimentTriggerResponse experimentation = null;
 
+    private Response() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

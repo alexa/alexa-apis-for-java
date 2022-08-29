@@ -47,6 +47,9 @@ public final class BillingAgreementDetails {
     @JsonProperty("billingAddress")
     private com.amazon.ask.model.interfaces.amazonpay.model.response.Destination billingAddress = null;
 
+    private BillingAgreementDetails() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

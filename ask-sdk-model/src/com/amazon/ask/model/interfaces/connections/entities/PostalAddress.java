@@ -40,6 +40,9 @@ public final class PostalAddress extends com.amazon.ask.model.interfaces.connect
     @JsonProperty("country")
     private String country = null;
 
+    private PostalAddress() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

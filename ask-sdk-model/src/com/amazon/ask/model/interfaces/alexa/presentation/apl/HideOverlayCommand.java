@@ -37,6 +37,9 @@ public final class HideOverlayCommand extends com.amazon.ask.model.interfaces.al
     @JsonProperty("duration")
     private Integer duration = null;
 
+    private HideOverlayCommand() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

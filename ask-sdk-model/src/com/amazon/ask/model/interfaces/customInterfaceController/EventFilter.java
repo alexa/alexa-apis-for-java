@@ -31,6 +31,9 @@ public final class EventFilter {
     @JsonProperty("filterMatchAction")
     private String filterMatchAction = null;
 
+    private EventFilter() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

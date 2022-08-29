@@ -28,6 +28,9 @@ public final class ProactiveSubscriptionEvent {
     @JsonProperty("eventName")
     private String eventName = null;
 
+    private ProactiveSubscriptionEvent() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

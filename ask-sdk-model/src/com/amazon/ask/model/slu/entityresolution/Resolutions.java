@@ -31,6 +31,9 @@ public final class Resolutions {
     @JsonProperty("resolutionsPerAuthority")
     private List<com.amazon.ask.model.slu.entityresolution.Resolution> resolutionsPerAuthority = new ArrayList<com.amazon.ask.model.slu.entityresolution.Resolution>();
 
+    private Resolutions() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

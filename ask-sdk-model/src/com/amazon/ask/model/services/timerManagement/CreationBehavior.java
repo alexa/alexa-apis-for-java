@@ -28,6 +28,9 @@ public final class CreationBehavior {
     @JsonProperty("displayExperience")
     private com.amazon.ask.model.services.timerManagement.DisplayExperience displayExperience = null;
 
+    private CreationBehavior() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

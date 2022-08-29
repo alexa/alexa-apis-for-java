@@ -34,6 +34,9 @@ public final class EndpointCapability {
     @JsonProperty("version")
     private String version = null;
 
+    private EndpointCapability() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

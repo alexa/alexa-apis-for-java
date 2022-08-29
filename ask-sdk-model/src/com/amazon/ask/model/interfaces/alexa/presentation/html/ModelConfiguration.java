@@ -28,6 +28,9 @@ public final class ModelConfiguration {
     @JsonProperty("timeoutInSeconds")
     private Integer timeoutInSeconds = null;
 
+    private ModelConfiguration() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

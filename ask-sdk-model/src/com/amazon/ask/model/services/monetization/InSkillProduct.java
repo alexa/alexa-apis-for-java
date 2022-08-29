@@ -55,6 +55,9 @@ public final class InSkillProduct {
     @JsonProperty("purchaseMode")
     private String purchaseMode = null;
 
+    private InSkillProduct() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

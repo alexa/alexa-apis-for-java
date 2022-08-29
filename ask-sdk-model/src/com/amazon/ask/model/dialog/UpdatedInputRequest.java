@@ -28,6 +28,9 @@ public final class UpdatedInputRequest extends com.amazon.ask.model.dialog.Updat
     @JsonProperty("input")
     private com.amazon.ask.model.dialog.Input input = null;
 
+    private UpdatedInputRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

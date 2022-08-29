@@ -28,6 +28,9 @@ public final class Metadata {
     @JsonProperty("resultSet")
     private com.amazon.ask.model.services.monetization.ResultSet resultSet = null;
 
+    private Metadata() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

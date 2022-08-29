@@ -31,6 +31,9 @@ public final class DirectLaunch {
     @JsonProperty("GOOGLE_PLAY_STORE")
     private Object GOOGLE_PLAY_STORE = null;
 
+    private DirectLaunch() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

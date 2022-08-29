@@ -25,6 +25,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = FinishCommand.Builder.class)
 public final class FinishCommand extends com.amazon.ask.model.interfaces.alexa.presentation.apl.Command  {
 
+    private FinishCommand() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -34,6 +34,9 @@ public final class Image {
     @JsonProperty("sources")
     private List<com.amazon.ask.model.interfaces.display.ImageInstance> sources = new ArrayList<com.amazon.ask.model.interfaces.display.ImageInstance>();
 
+    private Image() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

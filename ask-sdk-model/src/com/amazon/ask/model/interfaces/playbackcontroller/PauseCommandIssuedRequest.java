@@ -26,6 +26,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = PauseCommandIssuedRequest.Builder.class)
 public final class PauseCommandIssuedRequest extends com.amazon.ask.model.Request  {
 
+    private PauseCommandIssuedRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

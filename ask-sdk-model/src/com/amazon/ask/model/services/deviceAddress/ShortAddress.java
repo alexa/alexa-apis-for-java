@@ -31,6 +31,9 @@ public final class ShortAddress {
     @JsonProperty("postalCode")
     private String postalCode = null;
 
+    private ShortAddress() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

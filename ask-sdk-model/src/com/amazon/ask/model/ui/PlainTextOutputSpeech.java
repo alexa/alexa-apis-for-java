@@ -28,6 +28,9 @@ public final class PlainTextOutputSpeech extends com.amazon.ask.model.ui.OutputS
     @JsonProperty("text")
     private String text = null;
 
+    private PlainTextOutputSpeech() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

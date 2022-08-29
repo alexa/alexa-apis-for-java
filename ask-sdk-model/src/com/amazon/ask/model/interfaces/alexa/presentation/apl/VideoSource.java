@@ -40,6 +40,9 @@ public final class VideoSource {
     @JsonProperty("offset")
     private String offset = null;
 
+    private VideoSource() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

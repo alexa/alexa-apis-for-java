@@ -46,6 +46,9 @@ public final class AnimateItemCommand extends com.amazon.ask.model.interfaces.al
     @JsonProperty("value")
     private List<com.amazon.ask.model.interfaces.alexa.presentation.apl.AnimatedProperty> value = new ArrayList<com.amazon.ask.model.interfaces.alexa.presentation.apl.AnimatedProperty>();
 
+    private AnimateItemCommand() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

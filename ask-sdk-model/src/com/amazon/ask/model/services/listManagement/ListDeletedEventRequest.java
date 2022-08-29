@@ -35,6 +35,9 @@ public final class ListDeletedEventRequest extends com.amazon.ask.model.Request 
     @JsonProperty("eventPublishingTime")
     private OffsetDateTime eventPublishingTime = null;
 
+    private ListDeletedEventRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

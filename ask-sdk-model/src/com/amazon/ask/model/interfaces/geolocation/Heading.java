@@ -31,6 +31,9 @@ public final class Heading {
     @JsonProperty("accuracyInDegrees")
     private Double accuracyInDegrees = null;
 
+    private Heading() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

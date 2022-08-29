@@ -28,6 +28,9 @@ public final class RichText extends com.amazon.ask.model.interfaces.display.Text
     @JsonProperty("text")
     private String text = null;
 
+    private RichText() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

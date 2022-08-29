@@ -28,6 +28,9 @@ public final class ErrorCause {
     @JsonProperty("requestId")
     private String requestId = null;
 
+    private ErrorCause() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

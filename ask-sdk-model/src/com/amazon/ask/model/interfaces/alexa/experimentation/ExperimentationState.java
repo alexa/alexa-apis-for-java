@@ -31,6 +31,9 @@ public final class ExperimentationState {
     @JsonProperty("activeExperiments")
     private List<com.amazon.ask.model.interfaces.alexa.experimentation.ExperimentAssignment> activeExperiments = new ArrayList<com.amazon.ask.model.interfaces.alexa.experimentation.ExperimentAssignment>();
 
+    private ExperimentationState() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

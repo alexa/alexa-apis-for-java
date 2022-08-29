@@ -35,6 +35,9 @@ public final class PermissionChangedRequest extends com.amazon.ask.model.Request
     @JsonProperty("eventPublishingTime")
     private OffsetDateTime eventPublishingTime = null;
 
+    private PermissionChangedRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

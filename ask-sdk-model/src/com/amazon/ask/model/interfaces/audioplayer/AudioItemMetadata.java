@@ -37,6 +37,9 @@ public final class AudioItemMetadata {
     @JsonProperty("backgroundImage")
     private com.amazon.ask.model.interfaces.display.Image backgroundImage = null;
 
+    private AudioItemMetadata() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

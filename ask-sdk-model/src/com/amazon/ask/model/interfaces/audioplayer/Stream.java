@@ -40,6 +40,9 @@ public final class Stream {
     @JsonProperty("captionData")
     private com.amazon.ask.model.interfaces.audioplayer.CaptionData captionData = null;
 
+    private Stream() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

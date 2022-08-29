@@ -34,6 +34,9 @@ public final class Task {
     @JsonProperty("input")
     private Object input = null;
 
+    private Task() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

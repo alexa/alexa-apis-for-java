@@ -34,6 +34,9 @@ public final class User {
     @JsonProperty("permissions")
     private com.amazon.ask.model.Permissions permissions = null;
 
+    private User() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

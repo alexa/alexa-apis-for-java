@@ -35,6 +35,9 @@ public final class EventsReceivedRequest extends com.amazon.ask.model.Request  {
     @JsonProperty("events")
     private List<com.amazon.ask.model.interfaces.customInterfaceController.Event> events = new ArrayList<com.amazon.ask.model.interfaces.customInterfaceController.Event>();
 
+    private EventsReceivedRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

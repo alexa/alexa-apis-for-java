@@ -28,6 +28,9 @@ public final class DeviationRecognizer extends com.amazon.ask.model.services.gam
     @JsonProperty("recognizer")
     private String recognizer = null;
 
+    private DeviationRecognizer() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

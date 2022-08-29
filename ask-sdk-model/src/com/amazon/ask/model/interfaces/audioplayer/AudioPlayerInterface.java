@@ -25,6 +25,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = AudioPlayerInterface.Builder.class)
 public final class AudioPlayerInterface {
 
+    private AudioPlayerInterface() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

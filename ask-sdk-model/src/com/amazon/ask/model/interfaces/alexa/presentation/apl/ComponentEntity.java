@@ -34,6 +34,9 @@ public final class ComponentEntity {
     @JsonProperty("id")
     private String id = null;
 
+    private ComponentEntity() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

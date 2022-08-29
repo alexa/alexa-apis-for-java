@@ -37,6 +37,9 @@ public final class SetLightDirective extends com.amazon.ask.model.Directive  {
     @JsonProperty("parameters")
     private com.amazon.ask.model.services.gadgetController.SetLightParameters parameters = null;
 
+    private SetLightDirective() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -34,6 +34,9 @@ public final class ComponentVisibleOnScreenScrollableTag {
     @JsonProperty("allowBackward")
     private Boolean allowBackward = null;
 
+    private ComponentVisibleOnScreenScrollableTag() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

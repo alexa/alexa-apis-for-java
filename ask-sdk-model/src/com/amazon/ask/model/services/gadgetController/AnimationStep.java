@@ -34,6 +34,9 @@ public final class AnimationStep {
     @JsonProperty("blend")
     private Boolean blend = null;
 
+    private AnimationStep() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

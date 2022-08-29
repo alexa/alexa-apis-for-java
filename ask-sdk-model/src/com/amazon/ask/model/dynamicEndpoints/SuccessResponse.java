@@ -28,6 +28,9 @@ public final class SuccessResponse extends com.amazon.ask.model.dynamicEndpoints
     @JsonProperty("responsePayload")
     private String responsePayload = null;
 
+    private SuccessResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

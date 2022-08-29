@@ -35,6 +35,9 @@ public final class PlaybackFailedRequest extends com.amazon.ask.model.Request  {
     @JsonProperty("token")
     private String token = null;
 
+    private PlaybackFailedRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

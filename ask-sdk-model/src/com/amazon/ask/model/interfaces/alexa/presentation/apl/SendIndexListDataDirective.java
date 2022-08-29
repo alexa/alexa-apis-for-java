@@ -49,6 +49,9 @@ public final class SendIndexListDataDirective extends com.amazon.ask.model.Direc
     @JsonProperty("items")
     private List<Object> items = new ArrayList<Object>();
 
+    private SendIndexListDataDirective() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

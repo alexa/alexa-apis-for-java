@@ -31,6 +31,9 @@ public final class SkewTransformProperty extends com.amazon.ask.model.interfaces
     @JsonProperty("skewY")
     private String skewY = String.valueOf(1.0d);
 
+    private SkewTransformProperty() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

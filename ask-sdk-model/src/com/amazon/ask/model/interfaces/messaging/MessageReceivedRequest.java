@@ -32,6 +32,9 @@ public final class MessageReceivedRequest extends com.amazon.ask.model.Request  
     @JsonProperty("message")
     private Map<String, Object> message = new HashMap<String, Object>();
 
+    private MessageReceivedRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

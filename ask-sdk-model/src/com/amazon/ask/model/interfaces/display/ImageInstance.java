@@ -37,6 +37,9 @@ public final class ImageInstance {
     @JsonProperty("heightPixels")
     private Integer heightPixels = null;
 
+    private ImageInstance() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

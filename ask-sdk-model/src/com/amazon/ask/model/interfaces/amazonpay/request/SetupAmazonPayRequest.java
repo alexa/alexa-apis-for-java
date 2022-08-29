@@ -49,6 +49,9 @@ public final class SetupAmazonPayRequest extends com.amazon.ask.model.interfaces
     @JsonProperty("sandboxCustomerEmailId")
     private String sandboxCustomerEmailId = null;
 
+    private SetupAmazonPayRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

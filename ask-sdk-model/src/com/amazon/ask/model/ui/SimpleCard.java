@@ -31,6 +31,9 @@ public final class SimpleCard extends com.amazon.ask.model.ui.Card  {
     @JsonProperty("content")
     private String content = null;
 
+    private SimpleCard() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

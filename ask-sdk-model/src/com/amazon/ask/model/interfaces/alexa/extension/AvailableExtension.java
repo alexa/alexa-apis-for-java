@@ -25,6 +25,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = AvailableExtension.Builder.class)
 public final class AvailableExtension {
 
+    private AvailableExtension() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

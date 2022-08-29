@@ -32,6 +32,9 @@ public final class PlaybackStartedRequest extends com.amazon.ask.model.Request  
     @JsonProperty("token")
     private String token = null;
 
+    private PlaybackStartedRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

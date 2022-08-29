@@ -28,6 +28,9 @@ public final class DisplayExperience {
     @JsonProperty("visibility")
     private String visibility = null;
 
+    private DisplayExperience() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

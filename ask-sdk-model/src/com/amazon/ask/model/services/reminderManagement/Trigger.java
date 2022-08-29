@@ -42,6 +42,9 @@ public final class Trigger {
     @JsonProperty("recurrence")
     private com.amazon.ask.model.services.reminderManagement.Recurrence recurrence = null;
 
+    private Trigger() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

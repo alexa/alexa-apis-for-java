@@ -34,6 +34,9 @@ public final class ScheduleFoodEstablishmentReservationRequest extends com.amazo
     @JsonProperty("restaurant")
     private com.amazon.ask.model.interfaces.connections.entities.Restaurant restaurant = null;
 
+    private ScheduleFoodEstablishmentReservationRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

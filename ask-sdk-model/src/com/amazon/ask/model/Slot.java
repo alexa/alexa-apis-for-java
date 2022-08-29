@@ -40,6 +40,9 @@ public final class Slot {
     @JsonProperty("slotValue")
     private com.amazon.ask.model.SlotValue slotValue = null;
 
+    private Slot() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

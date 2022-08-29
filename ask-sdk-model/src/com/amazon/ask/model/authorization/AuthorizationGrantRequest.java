@@ -29,6 +29,9 @@ public final class AuthorizationGrantRequest extends com.amazon.ask.model.Reques
     @JsonProperty("body")
     private com.amazon.ask.model.authorization.AuthorizationGrantBody body = null;
 
+    private AuthorizationGrantRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -31,6 +31,9 @@ public final class AlexaListsMetadata {
     @JsonProperty("lists")
     private List<com.amazon.ask.model.services.listManagement.AlexaListMetadata> lists = new ArrayList<com.amazon.ask.model.services.listManagement.AlexaListMetadata>();
 
+    private AlexaListsMetadata() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

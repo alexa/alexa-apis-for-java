@@ -38,6 +38,9 @@ public final class Experience {
     @JsonProperty("canResize")
     private Boolean canResize = null;
 
+    private Experience() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

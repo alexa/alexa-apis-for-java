@@ -42,6 +42,9 @@ public final class StartInputHandlerDirective extends com.amazon.ask.model.Direc
     @JsonProperty("events")
     private Map<String, com.amazon.ask.model.services.gameEngine.Event> events = new HashMap<String, com.amazon.ask.model.services.gameEngine.Event>();
 
+    private StartInputHandlerDirective() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

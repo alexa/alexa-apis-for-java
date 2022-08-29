@@ -34,6 +34,9 @@ public final class BodyTemplate7 extends com.amazon.ask.model.interfaces.display
     @JsonProperty("backgroundImage")
     private com.amazon.ask.model.interfaces.display.Image backgroundImage = null;
 
+    private BodyTemplate7() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

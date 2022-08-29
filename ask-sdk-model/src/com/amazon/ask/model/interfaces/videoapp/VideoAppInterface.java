@@ -25,6 +25,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = VideoAppInterface.Builder.class)
 public final class VideoAppInterface {
 
+    private VideoAppInterface() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

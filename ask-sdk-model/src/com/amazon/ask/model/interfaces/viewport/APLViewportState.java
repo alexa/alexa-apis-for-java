@@ -41,6 +41,9 @@ public final class APLViewportState extends com.amazon.ask.model.interfaces.view
     @JsonProperty("configuration")
     private com.amazon.ask.model.interfaces.viewport.apl.ViewportConfiguration _configuration = null;
 
+    private APLViewportState() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

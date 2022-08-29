@@ -28,6 +28,9 @@ public final class ResultSet {
     @JsonProperty("nextToken")
     private String nextToken = null;
 
+    private ResultSet() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

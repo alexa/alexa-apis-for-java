@@ -41,6 +41,9 @@ public final class LoadIndexListDataEvent extends com.amazon.ask.model.Request  
     @JsonProperty("count")
     private Integer count = null;
 
+    private LoadIndexListDataEvent() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

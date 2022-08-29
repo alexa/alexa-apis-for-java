@@ -40,6 +40,9 @@ public final class BillingAgreementAttributes extends com.amazon.ask.model.inter
     @JsonProperty("subscriptionAmount")
     private com.amazon.ask.model.interfaces.amazonpay.model.request.Price subscriptionAmount = null;
 
+    private BillingAgreementAttributes() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

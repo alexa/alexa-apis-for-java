@@ -37,6 +37,9 @@ public final class SendRequestDirective extends com.amazon.ask.model.Directive  
     @JsonProperty("token")
     private String token = null;
 
+    private SendRequestDirective() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

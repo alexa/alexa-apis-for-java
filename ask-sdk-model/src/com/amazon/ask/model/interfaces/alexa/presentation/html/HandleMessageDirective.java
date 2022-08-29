@@ -34,6 +34,9 @@ public final class HandleMessageDirective extends com.amazon.ask.model.Directive
     @JsonProperty("transformers")
     private List<com.amazon.ask.model.interfaces.alexa.presentation.html.Transformer> transformers = new ArrayList<com.amazon.ask.model.interfaces.alexa.presentation.html.Transformer>();
 
+    private HandleMessageDirective() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

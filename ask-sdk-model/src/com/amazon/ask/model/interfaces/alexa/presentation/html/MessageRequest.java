@@ -29,6 +29,9 @@ public final class MessageRequest extends com.amazon.ask.model.Request  {
     @JsonProperty("message")
     private Object message = null;
 
+    private MessageRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -28,6 +28,9 @@ public final class DeleteMultipleItemsOperation extends com.amazon.ask.model.int
     @JsonProperty("count")
     private Integer count = null;
 
+    private DeleteMultipleItemsOperation() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

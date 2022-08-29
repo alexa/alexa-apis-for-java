@@ -34,6 +34,9 @@ public final class SetStateCommand extends com.amazon.ask.model.interfaces.alexa
     @JsonProperty("value")
     private String value = null;
 
+    private SetStateCommand() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

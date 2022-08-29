@@ -34,6 +34,9 @@ public final class ConnectionCompleted extends com.amazon.ask.model.Cause  {
     @JsonProperty("result")
     private Object result = null;
 
+    private ConnectionCompleted() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

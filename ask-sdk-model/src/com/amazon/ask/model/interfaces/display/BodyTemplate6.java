@@ -34,6 +34,9 @@ public final class BodyTemplate6 extends com.amazon.ask.model.interfaces.display
     @JsonProperty("image")
     private com.amazon.ask.model.interfaces.display.Image image = null;
 
+    private BodyTemplate6() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -32,6 +32,9 @@ public final class SessionEndedRequest extends com.amazon.ask.model.Request  {
     @JsonProperty("error")
     private com.amazon.ask.model.SessionEndedError error = null;
 
+    private SessionEndedRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

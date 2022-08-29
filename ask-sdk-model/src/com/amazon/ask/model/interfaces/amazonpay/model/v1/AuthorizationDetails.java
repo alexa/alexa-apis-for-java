@@ -68,6 +68,9 @@ public final class AuthorizationDetails {
     @JsonProperty("softDescriptor")
     private String softDescriptor = null;
 
+    private AuthorizationDetails() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

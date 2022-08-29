@@ -35,6 +35,9 @@ public final class ConnectionsRequest extends com.amazon.ask.model.Request  {
     @JsonProperty("payload")
     private Map<String, Object> payload = new HashMap<String, Object>();
 
+    private ConnectionsRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

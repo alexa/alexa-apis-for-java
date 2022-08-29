@@ -28,6 +28,9 @@ public final class SetFocusCommand extends com.amazon.ask.model.interfaces.alexa
     @JsonProperty("componentId")
     private String componentId = null;
 
+    private SetFocusCommand() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

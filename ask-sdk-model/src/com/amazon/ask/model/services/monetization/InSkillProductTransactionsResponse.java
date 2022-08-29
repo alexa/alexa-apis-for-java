@@ -34,6 +34,9 @@ public final class InSkillProductTransactionsResponse {
     @JsonProperty("metadata")
     private com.amazon.ask.model.services.monetization.Metadata metadata = null;
 
+    private InSkillProductTransactionsResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

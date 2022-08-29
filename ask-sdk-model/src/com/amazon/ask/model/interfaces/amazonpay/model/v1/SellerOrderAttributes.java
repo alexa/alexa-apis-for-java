@@ -37,6 +37,9 @@ public final class SellerOrderAttributes {
     @JsonProperty("sellerNote")
     private String sellerNote = null;
 
+    private SellerOrderAttributes() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

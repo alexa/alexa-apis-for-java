@@ -34,6 +34,9 @@ public final class Permissions {
     @JsonProperty("scopes")
     private Map<String, com.amazon.ask.model.Scope> scopes = new HashMap<String, com.amazon.ask.model.Scope>();
 
+    private Permissions() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

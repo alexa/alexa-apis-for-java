@@ -34,6 +34,9 @@ public final class SendResponseDirective extends com.amazon.ask.model.Directive 
     @JsonProperty("payload")
     private Map<String, Object> payload = new HashMap<String, Object>();
 
+    private SendResponseDirective() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

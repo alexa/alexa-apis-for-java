@@ -40,6 +40,9 @@ public final class StartConnectionDirective extends com.amazon.ask.model.Directi
     @JsonProperty("token")
     private String token = null;
 
+    private StartConnectionDirective() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

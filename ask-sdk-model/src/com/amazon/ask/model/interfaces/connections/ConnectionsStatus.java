@@ -31,6 +31,9 @@ public final class ConnectionsStatus {
     @JsonProperty("message")
     private String message = null;
 
+    private ConnectionsStatus() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

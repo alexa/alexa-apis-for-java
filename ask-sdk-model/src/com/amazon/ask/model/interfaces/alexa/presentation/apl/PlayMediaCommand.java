@@ -37,6 +37,9 @@ public final class PlayMediaCommand extends com.amazon.ask.model.interfaces.alex
     @JsonProperty("source")
     private List<com.amazon.ask.model.interfaces.alexa.presentation.apl.VideoSource> source = new ArrayList<com.amazon.ask.model.interfaces.alexa.presentation.apl.VideoSource>();
 
+    private PlayMediaCommand() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

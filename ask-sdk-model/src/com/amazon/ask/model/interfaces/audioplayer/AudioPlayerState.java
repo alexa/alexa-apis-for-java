@@ -34,6 +34,9 @@ public final class AudioPlayerState {
     @JsonProperty("playerActivity")
     private String playerActivity = null;
 
+    private AudioPlayerState() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -28,6 +28,9 @@ public final class InSkillProduct {
     @JsonProperty("productId")
     private String productId = null;
 
+    private InSkillProduct() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

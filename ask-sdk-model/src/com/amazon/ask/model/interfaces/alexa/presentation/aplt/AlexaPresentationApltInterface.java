@@ -28,6 +28,9 @@ public final class AlexaPresentationApltInterface {
     @JsonProperty("runtime")
     private com.amazon.ask.model.interfaces.alexa.presentation.aplt.Runtime runtime = null;
 
+    private AlexaPresentationApltInterface() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

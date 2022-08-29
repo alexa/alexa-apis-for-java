@@ -34,6 +34,9 @@ public final class Input {
     @JsonProperty("slots")
     private Map<String, com.amazon.ask.model.Slot> slots = new HashMap<String, com.amazon.ask.model.Slot>();
 
+    private Input() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

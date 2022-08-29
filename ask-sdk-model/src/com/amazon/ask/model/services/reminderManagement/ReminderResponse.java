@@ -43,6 +43,9 @@ public final class ReminderResponse {
     @JsonProperty("href")
     private String href = null;
 
+    private ReminderResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

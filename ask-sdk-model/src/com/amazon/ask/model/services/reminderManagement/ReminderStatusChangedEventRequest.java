@@ -29,6 +29,9 @@ public final class ReminderStatusChangedEventRequest extends com.amazon.ask.mode
     @JsonProperty("body")
     private com.amazon.ask.model.services.reminderManagement.Event body = null;
 
+    private ReminderStatusChangedEventRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -25,6 +25,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = AutomotiveState.Builder.class)
 public final class AutomotiveState {
 
+    private AutomotiveState() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

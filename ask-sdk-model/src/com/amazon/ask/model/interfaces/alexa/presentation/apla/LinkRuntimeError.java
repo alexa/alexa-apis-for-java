@@ -28,6 +28,9 @@ public final class LinkRuntimeError extends com.amazon.ask.model.interfaces.alex
     @JsonProperty("reason")
     private com.amazon.ask.model.interfaces.alexa.presentation.apla.LinkErrorReason reason = null;
 
+    private LinkRuntimeError() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

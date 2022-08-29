@@ -34,6 +34,9 @@ public final class StartEventHandlerDirective extends com.amazon.ask.model.Direc
     @JsonProperty("expiration")
     private com.amazon.ask.model.interfaces.customInterfaceController.Expiration expiration = null;
 
+    private StartEventHandlerDirective() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

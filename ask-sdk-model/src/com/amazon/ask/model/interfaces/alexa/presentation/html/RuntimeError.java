@@ -34,6 +34,9 @@ public final class RuntimeError {
     @JsonProperty("code")
     private String code = null;
 
+    private RuntimeError() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -32,6 +32,9 @@ public final class ExceptionEncounteredRequest extends com.amazon.ask.model.Requ
     @JsonProperty("cause")
     private com.amazon.ask.model.interfaces.system.ErrorCause cause = null;
 
+    private ExceptionEncounteredRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

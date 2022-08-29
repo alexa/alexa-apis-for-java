@@ -31,6 +31,9 @@ public final class ProgressRecognizer extends com.amazon.ask.model.services.game
     @JsonProperty("completion")
     private Double completion = null;
 
+    private ProgressRecognizer() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -38,6 +38,9 @@ public final class Transactions {
     @JsonProperty("lastModifiedTime")
     private OffsetDateTime lastModifiedTime = null;
 
+    private Transactions() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

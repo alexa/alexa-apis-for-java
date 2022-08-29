@@ -34,6 +34,9 @@ public final class SendDirectiveDirective extends com.amazon.ask.model.Directive
     @JsonProperty("endpoint")
     private com.amazon.ask.model.interfaces.customInterfaceController.Endpoint endpoint = null;
 
+    private SendDirectiveDirective() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

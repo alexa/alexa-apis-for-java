@@ -31,6 +31,9 @@ public final class AskForPermissionsConsentCard extends com.amazon.ask.model.ui.
     @JsonProperty("permissions")
     private List<String> permissions = new ArrayList<String>();
 
+    private AskForPermissionsConsentCard() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

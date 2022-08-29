@@ -25,6 +25,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = GeolocationInterface.Builder.class)
 public final class GeolocationInterface {
 
+    private GeolocationInterface() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

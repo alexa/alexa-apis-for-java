@@ -28,6 +28,9 @@ public final class ListBody {
     @JsonProperty("listId")
     private String listId = null;
 
+    private ListBody() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

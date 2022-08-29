@@ -46,6 +46,9 @@ public final class Event {
     @JsonProperty("triggerTimeMilliseconds")
     private Long triggerTimeMilliseconds = null;
 
+    private Event() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

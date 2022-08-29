@@ -28,6 +28,9 @@ public final class Runtime {
     @JsonProperty("maxVersion")
     private String maxVersion = null;
 
+    private Runtime() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

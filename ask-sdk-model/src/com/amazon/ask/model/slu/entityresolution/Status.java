@@ -28,6 +28,9 @@ public final class Status {
     @JsonProperty("code")
     private String code = null;
 
+    private Status() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

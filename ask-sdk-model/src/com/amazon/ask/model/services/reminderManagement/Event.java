@@ -31,6 +31,9 @@ public final class Event {
     @JsonProperty("alertToken")
     private String alertToken = null;
 
+    private Event() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

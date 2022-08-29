@@ -31,6 +31,9 @@ public final class Price extends com.amazon.ask.model.interfaces.amazonpay.model
     @JsonProperty("currencyCode")
     private String currencyCode = null;
 
+    private Price() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

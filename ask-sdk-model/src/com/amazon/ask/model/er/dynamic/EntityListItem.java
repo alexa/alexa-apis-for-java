@@ -34,6 +34,9 @@ public final class EntityListItem {
     @JsonProperty("values")
     private List<com.amazon.ask.model.er.dynamic.Entity> values = new ArrayList<com.amazon.ask.model.er.dynamic.Entity>();
 
+    private EntityListItem() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

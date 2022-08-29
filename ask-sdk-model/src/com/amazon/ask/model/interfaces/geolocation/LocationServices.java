@@ -31,6 +31,9 @@ public final class LocationServices {
     @JsonProperty("access")
     private String access = null;
 
+    private LocationServices() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

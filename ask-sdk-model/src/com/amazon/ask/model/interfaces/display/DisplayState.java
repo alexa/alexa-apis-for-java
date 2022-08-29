@@ -28,6 +28,9 @@ public final class DisplayState {
     @JsonProperty("token")
     private String token = null;
 
+    private DisplayState() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

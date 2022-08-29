@@ -31,6 +31,9 @@ public final class InsertMultipleItemsOperation extends com.amazon.ask.model.int
     @JsonProperty("items")
     private List<Object> items = new ArrayList<Object>();
 
+    private InsertMultipleItemsOperation() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -28,6 +28,9 @@ public final class ComponentVisibleOnScreenListItemTag {
     @JsonProperty("index")
     private Integer index = null;
 
+    private ComponentVisibleOnScreenListItemTag() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

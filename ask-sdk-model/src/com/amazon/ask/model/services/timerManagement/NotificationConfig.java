@@ -28,6 +28,9 @@ public final class NotificationConfig {
     @JsonProperty("playAudible")
     private Boolean playAudible = null;
 
+    private NotificationConfig() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

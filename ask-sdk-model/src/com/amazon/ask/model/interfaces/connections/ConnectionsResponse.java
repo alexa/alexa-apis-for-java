@@ -41,6 +41,9 @@ public final class ConnectionsResponse extends com.amazon.ask.model.Request  {
     @JsonProperty("token")
     private String token = null;
 
+    private ConnectionsResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

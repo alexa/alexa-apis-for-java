@@ -31,6 +31,9 @@ public final class SimpleSlotValue extends com.amazon.ask.model.SlotValue  {
     @JsonProperty("resolutions")
     private com.amazon.ask.model.slu.entityresolution.Resolutions resolutions = null;
 
+    private SimpleSlotValue() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

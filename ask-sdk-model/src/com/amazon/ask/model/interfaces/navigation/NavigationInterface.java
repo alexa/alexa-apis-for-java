@@ -25,6 +25,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = NavigationInterface.Builder.class)
 public final class NavigationInterface {
 
+    private NavigationInterface() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

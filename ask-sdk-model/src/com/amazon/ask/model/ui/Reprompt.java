@@ -34,6 +34,9 @@ public final class Reprompt {
     @JsonProperty("directives")
     private List<com.amazon.ask.model.Directive> directives = new ArrayList<com.amazon.ask.model.Directive>();
 
+    private Reprompt() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

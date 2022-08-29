@@ -34,6 +34,9 @@ public final class Coordinate {
     @JsonProperty("accuracyInMeters")
     private Double accuracyInMeters = null;
 
+    private Coordinate() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

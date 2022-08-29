@@ -37,6 +37,9 @@ public final class ListRuntimeError extends com.amazon.ask.model.interfaces.alex
     @JsonProperty("operationIndex")
     private Integer operationIndex = null;
 
+    private ListRuntimeError() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

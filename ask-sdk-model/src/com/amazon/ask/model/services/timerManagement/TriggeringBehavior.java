@@ -31,6 +31,9 @@ public final class TriggeringBehavior {
     @JsonProperty("notificationConfig")
     private com.amazon.ask.model.services.timerManagement.NotificationConfig notificationConfig = null;
 
+    private TriggeringBehavior() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

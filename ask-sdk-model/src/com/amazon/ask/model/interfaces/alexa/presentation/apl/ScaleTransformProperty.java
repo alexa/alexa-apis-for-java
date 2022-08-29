@@ -34,6 +34,9 @@ public final class ScaleTransformProperty extends com.amazon.ask.model.interface
     @JsonProperty("scaleY")
     private String scaleY = String.valueOf(1.0d);
 
+    private ScaleTransformProperty() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

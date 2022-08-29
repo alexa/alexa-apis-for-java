@@ -25,6 +25,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = AnnounceRoadRegulation.Builder.class)
 public final class AnnounceRoadRegulation extends com.amazon.ask.model.Directive  {
 
+    private AnnounceRoadRegulation() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

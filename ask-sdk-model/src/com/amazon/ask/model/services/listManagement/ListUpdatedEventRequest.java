@@ -35,6 +35,9 @@ public final class ListUpdatedEventRequest extends com.amazon.ask.model.Request 
     @JsonProperty("eventPublishingTime")
     private OffsetDateTime eventPublishingTime = null;
 
+    private ListUpdatedEventRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

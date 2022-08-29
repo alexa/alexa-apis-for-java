@@ -28,6 +28,9 @@ public final class HintDirective extends com.amazon.ask.model.Directive  {
     @JsonProperty("hint")
     private com.amazon.ask.model.interfaces.display.Hint hint = null;
 
+    private HintDirective() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

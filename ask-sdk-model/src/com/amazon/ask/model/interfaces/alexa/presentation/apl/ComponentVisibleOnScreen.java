@@ -56,6 +56,9 @@ public final class ComponentVisibleOnScreen {
     @JsonProperty("visibility")
     private Float visibility = null;
 
+    private ComponentVisibleOnScreen() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

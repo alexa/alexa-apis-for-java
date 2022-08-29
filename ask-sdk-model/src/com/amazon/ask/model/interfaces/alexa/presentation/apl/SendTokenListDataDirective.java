@@ -43,6 +43,9 @@ public final class SendTokenListDataDirective extends com.amazon.ask.model.Direc
     @JsonProperty("items")
     private List<Object> items = new ArrayList<Object>();
 
+    private SendTokenListDataDirective() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

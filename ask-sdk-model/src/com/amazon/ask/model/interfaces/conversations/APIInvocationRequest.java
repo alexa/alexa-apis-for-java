@@ -29,6 +29,9 @@ public final class APIInvocationRequest extends com.amazon.ask.model.Request  {
     @JsonProperty("apiRequest")
     private com.amazon.ask.model.interfaces.conversations.APIRequest apiRequest = null;
 
+    private APIInvocationRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

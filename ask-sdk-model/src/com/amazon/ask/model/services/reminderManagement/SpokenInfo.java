@@ -31,6 +31,9 @@ public final class SpokenInfo {
     @JsonProperty("content")
     private List<com.amazon.ask.model.services.reminderManagement.SpokenText> content = new ArrayList<com.amazon.ask.model.services.reminderManagement.SpokenText>();
 
+    private SpokenInfo() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -31,6 +31,9 @@ public final class ExtensionsState {
     @JsonProperty("available")
     private Map<String, com.amazon.ask.model.interfaces.alexa.extension.AvailableExtension> available = new HashMap<String, com.amazon.ask.model.interfaces.alexa.extension.AvailableExtension>();
 
+    private ExtensionsState() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

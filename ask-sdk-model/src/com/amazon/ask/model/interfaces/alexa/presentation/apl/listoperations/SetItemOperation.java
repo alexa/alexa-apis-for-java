@@ -28,6 +28,9 @@ public final class SetItemOperation extends com.amazon.ask.model.interfaces.alex
     @JsonProperty("item")
     private Object item = null;
 
+    private SetItemOperation() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

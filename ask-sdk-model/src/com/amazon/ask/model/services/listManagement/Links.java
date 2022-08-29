@@ -28,6 +28,9 @@ public final class Links {
     @JsonProperty("next")
     private String next = null;
 
+    private Links() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

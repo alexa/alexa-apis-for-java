@@ -46,6 +46,9 @@ public final class AlexaListItem {
     @JsonProperty("href")
     private String href = null;
 
+    private AlexaListItem() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

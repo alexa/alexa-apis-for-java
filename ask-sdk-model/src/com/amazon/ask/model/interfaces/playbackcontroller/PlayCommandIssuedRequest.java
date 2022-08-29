@@ -26,6 +26,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = PlayCommandIssuedRequest.Builder.class)
 public final class PlayCommandIssuedRequest extends com.amazon.ask.model.Request  {
 
+    private PlayCommandIssuedRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

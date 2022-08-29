@@ -35,6 +35,9 @@ public final class AccountLinkedRequest extends com.amazon.ask.model.Request  {
     @JsonProperty("eventPublishingTime")
     private OffsetDateTime eventPublishingTime = null;
 
+    private AccountLinkedRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

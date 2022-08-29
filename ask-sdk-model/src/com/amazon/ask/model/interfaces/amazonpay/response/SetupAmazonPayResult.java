@@ -28,6 +28,9 @@ public final class SetupAmazonPayResult {
     @JsonProperty("billingAgreementDetails")
     private com.amazon.ask.model.interfaces.amazonpay.model.response.BillingAgreementDetails billingAgreementDetails = null;
 
+    private SetupAmazonPayResult() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

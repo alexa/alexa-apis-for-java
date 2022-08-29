@@ -28,6 +28,9 @@ public final class AlertInfo {
     @JsonProperty("spokenInfo")
     private com.amazon.ask.model.services.reminderManagement.SpokenInfo spokenInfo = null;
 
+    private AlertInfo() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

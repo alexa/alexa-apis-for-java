@@ -25,6 +25,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = ComponentVisibleOnScreenViewportTag.Builder.class)
 public final class ComponentVisibleOnScreenViewportTag {
 
+    private ComponentVisibleOnScreenViewportTag() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -58,6 +58,9 @@ public final class Destination {
     @JsonProperty("phone")
     private String phone = null;
 
+    private Destination() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -40,6 +40,9 @@ public final class Pattern {
     @JsonProperty("repeat")
     private Integer repeat = null;
 
+    private Pattern() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

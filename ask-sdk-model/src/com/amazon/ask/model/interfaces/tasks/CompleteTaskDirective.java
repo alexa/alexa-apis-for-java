@@ -34,6 +34,9 @@ public final class CompleteTaskDirective extends com.amazon.ask.model.Directive 
     @JsonProperty("result")
     private Map<String, Object> result = new HashMap<String, Object>();
 
+    private CompleteTaskDirective() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

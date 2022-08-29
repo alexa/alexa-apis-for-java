@@ -28,6 +28,9 @@ public final class Header {
     @JsonProperty("requestId")
     private String requestId = null;
 
+    private Header() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

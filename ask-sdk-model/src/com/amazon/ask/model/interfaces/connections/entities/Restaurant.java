@@ -31,6 +31,9 @@ public final class Restaurant extends com.amazon.ask.model.interfaces.connection
     @JsonProperty("location")
     private com.amazon.ask.model.interfaces.connections.entities.PostalAddress location = null;
 
+    private Restaurant() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

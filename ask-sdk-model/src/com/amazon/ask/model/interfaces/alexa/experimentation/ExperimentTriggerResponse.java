@@ -31,6 +31,9 @@ public final class ExperimentTriggerResponse {
     @JsonProperty("triggeredExperiments")
     private List<String> triggeredExperiments = new ArrayList<String>();
 
+    private ExperimentTriggerResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

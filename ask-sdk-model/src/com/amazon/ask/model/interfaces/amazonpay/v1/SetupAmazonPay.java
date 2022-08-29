@@ -52,6 +52,9 @@ public final class SetupAmazonPay {
     @JsonProperty("sandboxCustomerEmailId")
     private String sandboxCustomerEmailId = null;
 
+    private SetupAmazonPay() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -31,6 +31,9 @@ public final class SendSkillMessagingRequest {
     @JsonProperty("expiresAfterSeconds")
     private Long expiresAfterSeconds = null;
 
+    private SendSkillMessagingRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

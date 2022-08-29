@@ -28,6 +28,9 @@ public final class PushNotification {
     @JsonProperty("status")
     private String status = null;
 
+    private PushNotification() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

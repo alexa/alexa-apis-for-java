@@ -28,6 +28,9 @@ public final class PlainText extends com.amazon.ask.model.interfaces.display.Tex
     @JsonProperty("text")
     private String text = null;
 
+    private PlainText() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

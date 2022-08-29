@@ -31,6 +31,9 @@ public final class Image {
     @JsonProperty("largeImageUrl")
     private String largeImageUrl = null;
 
+    private Image() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

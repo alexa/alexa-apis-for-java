@@ -31,6 +31,9 @@ public final class Speed {
     @JsonProperty("accuracyInMetersPerSecond")
     private Double accuracyInMetersPerSecond = null;
 
+    private Speed() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

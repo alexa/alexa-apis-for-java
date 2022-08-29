@@ -31,6 +31,9 @@ public final class CreateListItemRequest {
     @JsonProperty("status")
     private String status = null;
 
+    private CreateListItemRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

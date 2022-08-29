@@ -31,6 +31,9 @@ public final class Expiration {
     @JsonProperty("expirationPayload")
     private Object expirationPayload = null;
 
+    private Expiration() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

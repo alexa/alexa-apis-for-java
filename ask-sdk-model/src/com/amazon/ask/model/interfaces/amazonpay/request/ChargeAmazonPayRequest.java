@@ -43,6 +43,9 @@ public final class ChargeAmazonPayRequest extends com.amazon.ask.model.interface
     @JsonProperty("providerAttributes")
     private com.amazon.ask.model.interfaces.amazonpay.model.request.ProviderAttributes providerAttributes = null;
 
+    private ChargeAmazonPayRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

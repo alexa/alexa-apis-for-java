@@ -34,6 +34,9 @@ public final class CanFulfillIntent {
     @JsonProperty("slots")
     private Map<String, com.amazon.ask.model.canfulfill.CanFulfillSlot> slots = new HashMap<String, com.amazon.ask.model.canfulfill.CanFulfillSlot>();
 
+    private CanFulfillIntent() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -28,6 +28,9 @@ public final class UpdatedIntentRequest extends com.amazon.ask.model.dialog.Upda
     @JsonProperty("intent")
     private com.amazon.ask.model.Intent intent = null;
 
+    private UpdatedIntentRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

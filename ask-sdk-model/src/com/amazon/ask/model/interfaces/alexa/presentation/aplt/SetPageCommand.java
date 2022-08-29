@@ -34,6 +34,9 @@ public final class SetPageCommand extends com.amazon.ask.model.interfaces.alexa.
     @JsonProperty("value")
     private String value = null;
 
+    private SetPageCommand() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

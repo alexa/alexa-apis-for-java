@@ -25,6 +25,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = LinkAccountCard.Builder.class)
 public final class LinkAccountCard extends com.amazon.ask.model.ui.Card  {
 
+    private LinkAccountCard() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

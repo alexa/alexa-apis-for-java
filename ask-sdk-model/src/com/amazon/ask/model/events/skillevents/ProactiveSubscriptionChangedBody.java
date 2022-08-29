@@ -31,6 +31,9 @@ public final class ProactiveSubscriptionChangedBody {
     @JsonProperty("subscriptions")
     private List<com.amazon.ask.model.events.skillevents.ProactiveSubscriptionEvent> subscriptions = new ArrayList<com.amazon.ask.model.events.skillevents.ProactiveSubscriptionEvent>();
 
+    private ProactiveSubscriptionChangedBody() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

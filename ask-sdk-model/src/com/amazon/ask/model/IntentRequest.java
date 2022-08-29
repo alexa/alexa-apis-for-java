@@ -32,6 +32,9 @@ public final class IntentRequest extends com.amazon.ask.model.Request  {
     @JsonProperty("intent")
     private com.amazon.ask.model.Intent intent = null;
 
+    private IntentRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

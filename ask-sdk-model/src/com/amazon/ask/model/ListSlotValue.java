@@ -31,6 +31,9 @@ public final class ListSlotValue extends com.amazon.ask.model.SlotValue  {
     @JsonProperty("values")
     private List<com.amazon.ask.model.SlotValue> values = new ArrayList<com.amazon.ask.model.SlotValue>();
 
+    private ListSlotValue() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

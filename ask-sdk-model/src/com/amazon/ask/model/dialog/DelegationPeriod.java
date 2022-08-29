@@ -28,6 +28,9 @@ public final class DelegationPeriod {
     @JsonProperty("until")
     private String until = null;
 
+    private DelegationPeriod() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -40,6 +40,9 @@ public final class SpeakListCommand extends com.amazon.ask.model.interfaces.alex
     @JsonProperty("start")
     private String start = null;
 
+    private SpeakListCommand() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -34,6 +34,9 @@ public final class PrintWebPageRequest extends com.amazon.ask.model.interfaces.c
     @JsonProperty("description")
     private String description = null;
 
+    private PrintWebPageRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -32,6 +32,9 @@ public final class CanFulfillIntentRequest extends com.amazon.ask.model.Request 
     @JsonProperty("intent")
     private com.amazon.ask.model.Intent intent = null;
 
+    private CanFulfillIntentRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

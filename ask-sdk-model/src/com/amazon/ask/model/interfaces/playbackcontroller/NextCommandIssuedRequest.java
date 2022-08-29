@@ -26,6 +26,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = NextCommandIssuedRequest.Builder.class)
 public final class NextCommandIssuedRequest extends com.amazon.ask.model.Request  {
 
+    private NextCommandIssuedRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

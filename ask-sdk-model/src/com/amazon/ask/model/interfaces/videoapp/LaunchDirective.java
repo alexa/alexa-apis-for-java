@@ -28,6 +28,9 @@ public final class LaunchDirective extends com.amazon.ask.model.Directive  {
     @JsonProperty("videoItem")
     private com.amazon.ask.model.interfaces.videoapp.VideoItem videoItem = null;
 
+    private LaunchDirective() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

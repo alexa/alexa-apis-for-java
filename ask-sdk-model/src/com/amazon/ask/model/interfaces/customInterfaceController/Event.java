@@ -34,6 +34,9 @@ public final class Event {
     @JsonProperty("endpoint")
     private com.amazon.ask.model.interfaces.customInterfaceController.Endpoint endpoint = null;
 
+    private Event() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -25,6 +25,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = NotifyOnlyOperation.Builder.class)
 public final class NotifyOnlyOperation extends com.amazon.ask.model.services.timerManagement.Operation  {
 
+    private NotifyOnlyOperation() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

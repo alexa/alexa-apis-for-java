@@ -33,6 +33,9 @@ public final class RelevantAudience {
     @JsonInclude(JsonInclude.Include.ALWAYS)
     private Object payload = null;
 
+    private RelevantAudience() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

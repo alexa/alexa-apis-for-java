@@ -28,6 +28,9 @@ public final class RenderTemplateDirective extends com.amazon.ask.model.Directiv
     @JsonProperty("template")
     private com.amazon.ask.model.interfaces.display.Template template = null;
 
+    private RenderTemplateDirective() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

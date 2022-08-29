@@ -31,6 +31,9 @@ public final class ProviderCredit {
     @JsonProperty("credit")
     private com.amazon.ask.model.interfaces.amazonpay.model.v1.Price credit = null;
 
+    private ProviderCredit() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

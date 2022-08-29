@@ -34,6 +34,9 @@ public final class SendEventCommand extends com.amazon.ask.model.interfaces.alex
     @JsonProperty("components")
     private List<String> components = new ArrayList<String>();
 
+    private SendEventCommand() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

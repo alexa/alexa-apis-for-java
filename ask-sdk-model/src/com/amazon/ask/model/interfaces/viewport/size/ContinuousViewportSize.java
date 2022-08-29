@@ -37,6 +37,9 @@ public final class ContinuousViewportSize extends com.amazon.ask.model.interface
     @JsonProperty("maxPixelHeight")
     private Integer maxPixelHeight = null;
 
+    private ContinuousViewportSize() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

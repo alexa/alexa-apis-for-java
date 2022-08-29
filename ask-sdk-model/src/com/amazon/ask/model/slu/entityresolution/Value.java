@@ -31,6 +31,9 @@ public final class Value {
     @JsonProperty("id")
     private String id = null;
 
+    private Value() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

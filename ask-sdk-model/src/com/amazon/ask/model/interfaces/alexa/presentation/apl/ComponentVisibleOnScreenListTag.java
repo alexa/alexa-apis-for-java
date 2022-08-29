@@ -40,6 +40,9 @@ public final class ComponentVisibleOnScreenListTag {
     @JsonProperty("highestOrdinalSeen")
     private Integer highestOrdinalSeen = null;
 
+    private ComponentVisibleOnScreenListTag() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

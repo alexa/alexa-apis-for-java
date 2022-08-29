@@ -28,6 +28,9 @@ public final class Application {
     @JsonProperty("applicationId")
     private String applicationId = null;
 
+    private Application() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

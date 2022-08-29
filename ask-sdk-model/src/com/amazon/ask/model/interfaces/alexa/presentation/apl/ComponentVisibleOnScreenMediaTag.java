@@ -52,6 +52,9 @@ public final class ComponentVisibleOnScreenMediaTag {
     @JsonProperty("url")
     private String url = null;
 
+    private ComponentVisibleOnScreenMediaTag() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

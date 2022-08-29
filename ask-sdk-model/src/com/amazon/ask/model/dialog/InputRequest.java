@@ -29,6 +29,9 @@ public final class InputRequest extends com.amazon.ask.model.Request  {
     @JsonProperty("input")
     private com.amazon.ask.model.dialog.Input input = null;
 
+    private InputRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

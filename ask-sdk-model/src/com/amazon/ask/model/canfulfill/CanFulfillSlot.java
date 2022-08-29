@@ -31,6 +31,9 @@ public final class CanFulfillSlot {
     @JsonProperty("canFulfill")
     private String canFulfill = null;
 
+    private CanFulfillSlot() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

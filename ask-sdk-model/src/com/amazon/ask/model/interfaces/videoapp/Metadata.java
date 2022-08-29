@@ -31,6 +31,9 @@ public final class Metadata {
     @JsonProperty("subtitle")
     private String subtitle = null;
 
+    private Metadata() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -34,6 +34,9 @@ public final class SetValueCommand extends com.amazon.ask.model.interfaces.alexa
     @JsonProperty("value")
     private String value = null;
 
+    private SetValueCommand() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

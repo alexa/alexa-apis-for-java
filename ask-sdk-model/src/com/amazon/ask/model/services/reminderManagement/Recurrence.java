@@ -48,6 +48,9 @@ public final class Recurrence {
     @JsonProperty("recurrenceRules")
     private List<String> recurrenceRules = new ArrayList<String>();
 
+    private Recurrence() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

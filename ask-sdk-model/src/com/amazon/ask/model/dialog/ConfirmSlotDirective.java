@@ -31,6 +31,9 @@ public final class ConfirmSlotDirective extends com.amazon.ask.model.Directive  
     @JsonProperty("slotToConfirm")
     private String slotToConfirm = null;
 
+    private ConfirmSlotDirective() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

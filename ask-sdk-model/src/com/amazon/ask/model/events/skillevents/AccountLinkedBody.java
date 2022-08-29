@@ -28,6 +28,9 @@ public final class AccountLinkedBody {
     @JsonProperty("accessToken")
     private String accessToken = null;
 
+    private AccountLinkedBody() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

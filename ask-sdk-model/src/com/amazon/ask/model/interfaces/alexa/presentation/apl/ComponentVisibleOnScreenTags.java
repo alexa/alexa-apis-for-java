@@ -61,6 +61,9 @@ public final class ComponentVisibleOnScreenTags {
     @JsonProperty("viewport")
     private com.amazon.ask.model.interfaces.alexa.presentation.apl.ComponentVisibleOnScreenViewportTag viewport = null;
 
+    private ComponentVisibleOnScreenTags() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

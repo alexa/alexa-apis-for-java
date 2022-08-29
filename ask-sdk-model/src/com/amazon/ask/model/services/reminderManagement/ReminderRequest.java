@@ -38,6 +38,9 @@ public final class ReminderRequest {
     @JsonProperty("pushNotification")
     private com.amazon.ask.model.services.reminderManagement.PushNotification pushNotification = null;
 
+    private ReminderRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

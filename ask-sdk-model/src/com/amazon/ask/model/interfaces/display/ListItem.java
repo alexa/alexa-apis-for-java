@@ -34,6 +34,9 @@ public final class ListItem {
     @JsonProperty("textContent")
     private com.amazon.ask.model.interfaces.display.TextContent textContent = null;
 
+    private ListItem() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

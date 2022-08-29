@@ -31,6 +31,9 @@ public final class Event {
     @JsonProperty("payload")
     private Object payload = null;
 
+    private Event() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

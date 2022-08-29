@@ -32,6 +32,9 @@ public final class PlaybackStoppedRequest extends com.amazon.ask.model.Request  
     @JsonProperty("token")
     private String token = null;
 
+    private PlaybackStoppedRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

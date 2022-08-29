@@ -34,6 +34,9 @@ public final class StandardCard extends com.amazon.ask.model.ui.Card  {
     @JsonProperty("image")
     private com.amazon.ask.model.ui.Image image = null;
 
+    private StandardCard() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

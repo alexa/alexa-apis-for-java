@@ -28,6 +28,9 @@ public final class ConfirmIntentDirective extends com.amazon.ask.model.Directive
     @JsonProperty("updatedIntent")
     private com.amazon.ask.model.Intent updatedIntent = null;
 
+    private ConfirmIntentDirective() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

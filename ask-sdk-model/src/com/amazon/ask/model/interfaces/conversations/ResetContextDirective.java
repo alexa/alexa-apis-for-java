@@ -25,6 +25,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = ResetContextDirective.Builder.class)
 public final class ResetContextDirective extends com.amazon.ask.model.Directive  {
 
+    private ResetContextDirective() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

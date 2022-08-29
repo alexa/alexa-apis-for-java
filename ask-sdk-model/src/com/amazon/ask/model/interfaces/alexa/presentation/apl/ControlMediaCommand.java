@@ -34,6 +34,9 @@ public final class ControlMediaCommand extends com.amazon.ask.model.interfaces.a
     @JsonProperty("value")
     private String value = null;
 
+    private ControlMediaCommand() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

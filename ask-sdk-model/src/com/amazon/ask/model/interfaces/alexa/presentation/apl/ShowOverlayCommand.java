@@ -37,6 +37,9 @@ public final class ShowOverlayCommand extends com.amazon.ask.model.interfaces.al
     @JsonProperty("duration")
     private Integer duration = null;
 
+    private ShowOverlayCommand() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

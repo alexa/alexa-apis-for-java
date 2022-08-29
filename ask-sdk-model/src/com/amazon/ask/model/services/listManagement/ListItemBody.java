@@ -34,6 +34,9 @@ public final class ListItemBody {
     @JsonProperty("listItemIds")
     private List<String> listItemIds = new ArrayList<String>();
 
+    private ListItemBody() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

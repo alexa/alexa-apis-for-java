@@ -40,6 +40,9 @@ public final class RenderDocumentDirective extends com.amazon.ask.model.Directiv
     @JsonProperty("datasources")
     private Map<String, Object> datasources = new HashMap<String, Object>();
 
+    private RenderDocumentDirective() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

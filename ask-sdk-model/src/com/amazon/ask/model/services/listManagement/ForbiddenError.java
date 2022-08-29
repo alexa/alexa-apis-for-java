@@ -28,6 +28,9 @@ public final class ForbiddenError {
     @JsonProperty("Message")
     private String message = null;
 
+    private ForbiddenError() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

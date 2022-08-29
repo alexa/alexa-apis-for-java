@@ -28,6 +28,9 @@ public final class SsmlOutputSpeech extends com.amazon.ask.model.ui.OutputSpeech
     @JsonProperty("ssml")
     private String ssml = null;
 
+    private SsmlOutputSpeech() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -25,6 +25,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = ClearFocusCommand.Builder.class)
 public final class ClearFocusCommand extends com.amazon.ask.model.interfaces.alexa.presentation.apl.Command  {
 
+    private ClearFocusCommand() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

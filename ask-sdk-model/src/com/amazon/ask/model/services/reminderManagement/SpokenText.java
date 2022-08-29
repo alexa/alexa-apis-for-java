@@ -34,6 +34,9 @@ public final class SpokenText {
     @JsonProperty("text")
     private String text = null;
 
+    private SpokenText() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

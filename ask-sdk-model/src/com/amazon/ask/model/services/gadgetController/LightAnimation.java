@@ -37,6 +37,9 @@ public final class LightAnimation {
     @JsonProperty("sequence")
     private List<com.amazon.ask.model.services.gadgetController.AnimationStep> sequence = new ArrayList<com.amazon.ask.model.services.gadgetController.AnimationStep>();
 
+    private LightAnimation() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

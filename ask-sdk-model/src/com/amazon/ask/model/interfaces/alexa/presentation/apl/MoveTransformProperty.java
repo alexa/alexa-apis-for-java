@@ -31,6 +31,9 @@ public final class MoveTransformProperty extends com.amazon.ask.model.interfaces
     @JsonProperty("translateY")
     private String translateY = null;
 
+    private MoveTransformProperty() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

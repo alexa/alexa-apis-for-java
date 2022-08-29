@@ -43,6 +43,9 @@ public final class PatternRecognizer extends com.amazon.ask.model.services.gameE
     @JsonProperty("pattern")
     private List<com.amazon.ask.model.services.gameEngine.Pattern> pattern = new ArrayList<com.amazon.ask.model.services.gameEngine.Pattern>();
 
+    private PatternRecognizer() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

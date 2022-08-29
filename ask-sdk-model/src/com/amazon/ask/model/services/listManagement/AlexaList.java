@@ -46,6 +46,9 @@ public final class AlexaList {
     @JsonProperty("links")
     private com.amazon.ask.model.services.listManagement.Links links = null;
 
+    private AlexaList() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

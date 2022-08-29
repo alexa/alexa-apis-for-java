@@ -31,6 +31,9 @@ public final class Grant {
     @JsonProperty("code")
     private String code = null;
 
+    private Grant() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

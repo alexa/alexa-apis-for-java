@@ -37,6 +37,9 @@ public final class APIRequest {
     @JsonProperty("slots")
     private Map<String, com.amazon.ask.model.SlotValue> slots = new HashMap<String, com.amazon.ask.model.SlotValue>();
 
+    private APIRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

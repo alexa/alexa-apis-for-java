@@ -50,6 +50,9 @@ public final class GetReminderResponse {
     @JsonProperty("version")
     private String version = null;
 
+    private GetReminderResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

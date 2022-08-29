@@ -40,6 +40,9 @@ public final class RenderedDocumentState {
     @JsonProperty("dataSources")
     private List<Object> dataSources = new ArrayList<Object>();
 
+    private RenderedDocumentState() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

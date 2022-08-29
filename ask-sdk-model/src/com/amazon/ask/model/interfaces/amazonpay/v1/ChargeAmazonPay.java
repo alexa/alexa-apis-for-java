@@ -46,6 +46,9 @@ public final class ChargeAmazonPay {
     @JsonProperty("providerAttributes")
     private com.amazon.ask.model.interfaces.amazonpay.model.v1.ProviderAttributes providerAttributes = null;
 
+    private ChargeAmazonPay() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

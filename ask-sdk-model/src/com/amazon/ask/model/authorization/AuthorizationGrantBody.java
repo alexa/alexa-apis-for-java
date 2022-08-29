@@ -28,6 +28,9 @@ public final class AuthorizationGrantBody {
     @JsonProperty("grant")
     private com.amazon.ask.model.authorization.Grant grant = null;
 
+    private AuthorizationGrantBody() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

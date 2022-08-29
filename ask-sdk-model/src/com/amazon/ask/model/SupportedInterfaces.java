@@ -52,6 +52,9 @@ public final class SupportedInterfaces {
     @JsonProperty("Navigation")
     private com.amazon.ask.model.interfaces.navigation.NavigationInterface navigation = null;
 
+    private SupportedInterfaces() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

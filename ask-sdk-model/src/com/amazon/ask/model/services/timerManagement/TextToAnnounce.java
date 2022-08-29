@@ -31,6 +31,9 @@ public final class TextToAnnounce {
     @JsonProperty("text")
     private String text = null;
 
+    private TextToAnnounce() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -31,6 +31,9 @@ public final class PhoneNumber {
     @JsonProperty("phoneNumber")
     private String phoneNumber = null;
 
+    private PhoneNumber() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

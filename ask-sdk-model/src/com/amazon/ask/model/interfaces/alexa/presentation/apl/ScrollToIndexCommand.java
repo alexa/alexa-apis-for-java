@@ -34,6 +34,9 @@ public final class ScrollToIndexCommand extends com.amazon.ask.model.interfaces.
     @JsonProperty("index")
     private String index = null;
 
+    private ScrollToIndexCommand() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

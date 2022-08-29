@@ -32,6 +32,9 @@ public final class SkillDisabledRequest extends com.amazon.ask.model.Request  {
     @JsonProperty("eventPublishingTime")
     private OffsetDateTime eventPublishingTime = null;
 
+    private SkillDisabledRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

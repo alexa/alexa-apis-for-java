@@ -31,6 +31,9 @@ public final class Header {
     @JsonProperty("name")
     private String name = null;
 
+    private Header() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -40,6 +40,9 @@ public final class StartDirective extends com.amazon.ask.model.Directive  {
     @JsonProperty("configuration")
     private com.amazon.ask.model.interfaces.alexa.presentation.html.ModelConfiguration _configuration = null;
 
+    private StartDirective() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

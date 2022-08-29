@@ -37,6 +37,9 @@ public final class AppLinkState {
     @JsonProperty("sendToDevice")
     private com.amazon.ask.model.interfaces.applink.SendToDevice sendToDevice = null;
 
+    private AppLinkState() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

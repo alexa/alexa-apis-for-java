@@ -31,6 +31,9 @@ public final class Altitude {
     @JsonProperty("accuracyInMeters")
     private Double accuracyInMeters = null;
 
+    private Altitude() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

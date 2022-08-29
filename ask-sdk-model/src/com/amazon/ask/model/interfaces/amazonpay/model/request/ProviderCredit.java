@@ -31,6 +31,9 @@ public final class ProviderCredit extends com.amazon.ask.model.interfaces.amazon
     @JsonProperty("credit")
     private com.amazon.ask.model.interfaces.amazonpay.model.request.Price credit = null;
 
+    private ProviderCredit() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

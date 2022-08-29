@@ -29,6 +29,9 @@ public final class ReminderDeletedEventRequest extends com.amazon.ask.model.Requ
     @JsonProperty("body")
     private com.amazon.ask.model.services.reminderManagement.ReminderDeletedEvent body = null;
 
+    private ReminderDeletedEventRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

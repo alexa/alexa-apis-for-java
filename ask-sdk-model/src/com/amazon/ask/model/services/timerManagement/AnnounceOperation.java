@@ -31,6 +31,9 @@ public final class AnnounceOperation extends com.amazon.ask.model.services.timer
     @JsonProperty("textToAnnounce")
     private List<com.amazon.ask.model.services.timerManagement.TextToAnnounce> textToAnnounce = new ArrayList<com.amazon.ask.model.services.timerManagement.TextToAnnounce>();
 
+    private AnnounceOperation() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

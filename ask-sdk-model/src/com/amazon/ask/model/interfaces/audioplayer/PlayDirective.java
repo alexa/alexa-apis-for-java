@@ -31,6 +31,9 @@ public final class PlayDirective extends com.amazon.ask.model.Directive  {
     @JsonProperty("audioItem")
     private com.amazon.ask.model.interfaces.audioplayer.AudioItem audioItem = null;
 
+    private PlayDirective() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

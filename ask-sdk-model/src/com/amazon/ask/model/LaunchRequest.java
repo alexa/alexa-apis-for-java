@@ -29,6 +29,9 @@ public final class LaunchRequest extends com.amazon.ask.model.Request  {
     @JsonProperty("task")
     private com.amazon.ask.model.Task task = null;
 
+    private LaunchRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -31,6 +31,9 @@ public final class ScrollCommand extends com.amazon.ask.model.interfaces.alexa.p
     @JsonProperty("componentId")
     private String componentId = null;
 
+    private ScrollCommand() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

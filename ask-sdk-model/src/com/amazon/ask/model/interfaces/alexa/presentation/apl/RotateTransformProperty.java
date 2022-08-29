@@ -28,6 +28,9 @@ public final class RotateTransformProperty extends com.amazon.ask.model.interfac
     @JsonProperty("rotate")
     private String rotate = String.valueOf(0.0d);
 
+    private RotateTransformProperty() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

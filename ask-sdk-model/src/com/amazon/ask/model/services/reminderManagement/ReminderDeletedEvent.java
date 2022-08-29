@@ -31,6 +31,9 @@ public final class ReminderDeletedEvent {
     @JsonProperty("alertTokens")
     private List<String> alertTokens = new ArrayList<String>();
 
+    private ReminderDeletedEvent() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

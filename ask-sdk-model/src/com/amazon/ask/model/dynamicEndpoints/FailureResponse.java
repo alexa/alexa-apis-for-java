@@ -31,6 +31,9 @@ public final class FailureResponse extends com.amazon.ask.model.dynamicEndpoints
     @JsonProperty("errorMessage")
     private String errorMessage = null;
 
+    private FailureResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

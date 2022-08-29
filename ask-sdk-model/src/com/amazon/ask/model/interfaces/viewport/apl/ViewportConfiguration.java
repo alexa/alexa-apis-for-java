@@ -28,6 +28,9 @@ public final class ViewportConfiguration {
     @JsonProperty("current")
     private com.amazon.ask.model.interfaces.viewport.apl.CurrentConfiguration current = null;
 
+    private ViewportConfiguration() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -31,6 +31,9 @@ public final class ChargeAmazonPayResult {
     @JsonProperty("authorizationDetails")
     private com.amazon.ask.model.interfaces.amazonpay.model.v1.AuthorizationDetails authorizationDetails = null;
 
+    private ChargeAmazonPayResult() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

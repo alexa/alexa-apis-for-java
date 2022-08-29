@@ -28,6 +28,9 @@ public final class Scope {
     @JsonProperty("status")
     private String status = null;
 
+    private Scope() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

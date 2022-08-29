@@ -31,6 +31,9 @@ public final class AmazonPayErrorResponse {
     @JsonProperty("errorMessage")
     private String errorMessage = null;
 
+    private AmazonPayErrorResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

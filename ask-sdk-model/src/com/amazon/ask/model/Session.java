@@ -43,6 +43,9 @@ public final class Session {
     @JsonProperty("application")
     private com.amazon.ask.model.Application application = null;
 
+    private Session() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

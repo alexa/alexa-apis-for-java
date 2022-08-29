@@ -31,6 +31,9 @@ public final class AudioItem {
     @JsonProperty("metadata")
     private com.amazon.ask.model.interfaces.audioplayer.AudioItemMetadata metadata = null;
 
+    private AudioItem() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -37,6 +37,9 @@ public final class BodyTemplate3 extends com.amazon.ask.model.interfaces.display
     @JsonProperty("textContent")
     private com.amazon.ask.model.interfaces.display.TextContent textContent = null;
 
+    private BodyTemplate3() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

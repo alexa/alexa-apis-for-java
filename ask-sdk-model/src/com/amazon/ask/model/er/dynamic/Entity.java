@@ -31,6 +31,9 @@ public final class Entity {
     @JsonProperty("name")
     private com.amazon.ask.model.er.dynamic.EntityValueAndSynonyms name = null;
 
+    private Entity() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

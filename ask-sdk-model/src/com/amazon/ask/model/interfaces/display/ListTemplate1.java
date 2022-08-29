@@ -37,6 +37,9 @@ public final class ListTemplate1 extends com.amazon.ask.model.interfaces.display
     @JsonProperty("listItems")
     private List<com.amazon.ask.model.interfaces.display.ListItem> listItems = new ArrayList<com.amazon.ask.model.interfaces.display.ListItem>();
 
+    private ListTemplate1() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

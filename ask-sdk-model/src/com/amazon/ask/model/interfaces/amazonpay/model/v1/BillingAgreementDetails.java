@@ -44,6 +44,9 @@ public final class BillingAgreementDetails {
     @JsonProperty("billingAgreementStatus")
     private String billingAgreementStatus = null;
 
+    private BillingAgreementDetails() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

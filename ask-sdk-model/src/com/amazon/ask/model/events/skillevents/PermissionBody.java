@@ -34,6 +34,9 @@ public final class PermissionBody {
     @JsonProperty("acceptedPersonPermissions")
     private List<com.amazon.ask.model.events.skillevents.Permission> acceptedPersonPermissions = new ArrayList<com.amazon.ask.model.events.skillevents.Permission>();
 
+    private PermissionBody() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

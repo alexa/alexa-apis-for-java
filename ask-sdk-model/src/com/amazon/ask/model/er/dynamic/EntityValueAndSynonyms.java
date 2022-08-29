@@ -34,6 +34,9 @@ public final class EntityValueAndSynonyms {
     @JsonProperty("synonyms")
     private List<String> synonyms = new ArrayList<String>();
 
+    private EntityValueAndSynonyms() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

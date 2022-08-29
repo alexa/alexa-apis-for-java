@@ -50,6 +50,9 @@ public final class TimerResponse {
     @JsonProperty("remainingTimeWhenPaused")
     private String remainingTimeWhenPaused = null;
 
+    private TimerResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

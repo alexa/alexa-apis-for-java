@@ -34,6 +34,9 @@ public final class Transformer {
     @JsonProperty("outputName")
     private String outputName = null;
 
+    private Transformer() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

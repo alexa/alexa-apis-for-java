@@ -31,6 +31,9 @@ public final class EndpointEnumerationResponse {
     @JsonProperty("endpoints")
     private List<com.amazon.ask.model.services.endpointEnumeration.EndpointInfo> endpoints = new ArrayList<com.amazon.ask.model.services.endpointEnumeration.EndpointInfo>();
 
+    private EndpointEnumerationResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

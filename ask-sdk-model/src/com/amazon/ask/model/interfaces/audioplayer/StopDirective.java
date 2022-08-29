@@ -25,6 +25,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = StopDirective.Builder.class)
 public final class StopDirective extends com.amazon.ask.model.Directive  {
 
+    private StopDirective() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

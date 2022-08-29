@@ -34,6 +34,9 @@ public final class SellerBillingAgreementAttributes {
     @JsonProperty("customInformation")
     private String customInformation = null;
 
+    private SellerBillingAgreementAttributes() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

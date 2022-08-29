@@ -31,6 +31,9 @@ public final class VideoItem {
     @JsonProperty("metadata")
     private com.amazon.ask.model.interfaces.videoapp.Metadata metadata = null;
 
+    private VideoItem() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

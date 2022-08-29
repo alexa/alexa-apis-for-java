@@ -28,6 +28,9 @@ public final class Error {
     @JsonProperty("message")
     private String message = null;
 
+    private Error() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -35,6 +35,9 @@ public final class RuntimeErrorEvent extends com.amazon.ask.model.Request  {
     @JsonProperty("errors")
     private List<com.amazon.ask.model.interfaces.alexa.presentation.apl.RuntimeError> errors = new ArrayList<com.amazon.ask.model.interfaces.alexa.presentation.apl.RuntimeError>();
 
+    private RuntimeErrorEvent() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

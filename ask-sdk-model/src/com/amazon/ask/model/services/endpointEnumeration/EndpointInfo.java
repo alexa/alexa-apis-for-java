@@ -37,6 +37,9 @@ public final class EndpointInfo {
     @JsonProperty("capabilities")
     private List<com.amazon.ask.model.services.endpointEnumeration.EndpointCapability> capabilities = new ArrayList<com.amazon.ask.model.services.endpointEnumeration.EndpointCapability>();
 
+    private EndpointInfo() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

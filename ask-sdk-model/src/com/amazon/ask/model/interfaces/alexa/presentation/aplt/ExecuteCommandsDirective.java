@@ -34,6 +34,9 @@ public final class ExecuteCommandsDirective extends com.amazon.ask.model.Directi
     @JsonProperty("token")
     private String token = null;
 
+    private ExecuteCommandsDirective() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -37,6 +37,9 @@ public final class TimerRequest {
     @JsonProperty("triggeringBehavior")
     private com.amazon.ask.model.services.timerManagement.TriggeringBehavior triggeringBehavior = null;
 
+    private TimerRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

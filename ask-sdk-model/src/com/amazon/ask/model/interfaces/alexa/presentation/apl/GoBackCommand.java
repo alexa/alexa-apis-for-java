@@ -31,6 +31,9 @@ public final class GoBackCommand extends com.amazon.ask.model.interfaces.alexa.p
     @JsonProperty("backValue")
     private String backValue = null;
 
+    private GoBackCommand() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

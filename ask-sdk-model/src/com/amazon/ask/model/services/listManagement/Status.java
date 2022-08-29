@@ -31,6 +31,9 @@ public final class Status {
     @JsonProperty("status")
     private String status = null;
 
+    private Status() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

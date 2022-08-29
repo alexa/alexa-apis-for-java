@@ -37,6 +37,9 @@ public final class SetLightParameters {
     @JsonProperty("animations")
     private List<com.amazon.ask.model.services.gadgetController.LightAnimation> animations = new ArrayList<com.amazon.ask.model.services.gadgetController.LightAnimation>();
 
+    private SetLightParameters() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

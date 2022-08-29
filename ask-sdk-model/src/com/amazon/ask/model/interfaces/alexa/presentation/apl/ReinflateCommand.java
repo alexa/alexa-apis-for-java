@@ -25,6 +25,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = ReinflateCommand.Builder.class)
 public final class ReinflateCommand extends com.amazon.ask.model.interfaces.alexa.presentation.apl.Command  {
 
+    private ReinflateCommand() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

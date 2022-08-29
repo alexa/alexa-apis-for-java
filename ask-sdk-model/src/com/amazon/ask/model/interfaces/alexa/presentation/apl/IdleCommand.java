@@ -25,6 +25,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = IdleCommand.Builder.class)
 public final class IdleCommand extends com.amazon.ask.model.interfaces.alexa.presentation.apl.Command  {
 
+    private IdleCommand() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

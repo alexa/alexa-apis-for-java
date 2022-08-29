@@ -37,6 +37,9 @@ public final class RequestEnvelope {
     @JsonProperty("request")
     private com.amazon.ask.model.Request request = null;
 
+    private RequestEnvelope() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

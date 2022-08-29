@@ -38,6 +38,9 @@ public final class AuthorizationStatus {
     @JsonProperty("lastUpdateTimestamp")
     private OffsetDateTime lastUpdateTimestamp = null;
 
+    private AuthorizationStatus() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

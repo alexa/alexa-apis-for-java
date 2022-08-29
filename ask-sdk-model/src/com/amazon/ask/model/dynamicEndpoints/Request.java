@@ -37,6 +37,9 @@ public final class Request {
     @JsonProperty("requestPayload")
     private String requestPayload = null;
 
+    private Request() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

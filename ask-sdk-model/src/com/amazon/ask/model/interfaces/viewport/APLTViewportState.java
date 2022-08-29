@@ -43,6 +43,9 @@ public final class APLTViewportState extends com.amazon.ask.model.interfaces.vie
     @JsonProperty("interSegments")
     private List<com.amazon.ask.model.interfaces.viewport.aplt.InterSegment> interSegments = new ArrayList<com.amazon.ask.model.interfaces.viewport.aplt.InterSegment>();
 
+    private APLTViewportState() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

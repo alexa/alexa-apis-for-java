@@ -31,6 +31,9 @@ public final class SendDirectiveRequest {
     @JsonProperty("directive")
     private com.amazon.ask.model.services.directive.Directive directive = null;
 
+    private SendDirectiveRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -46,6 +46,9 @@ public final class SystemState {
     @JsonProperty("apiAccessToken")
     private String apiAccessToken = null;
 
+    private SystemState() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

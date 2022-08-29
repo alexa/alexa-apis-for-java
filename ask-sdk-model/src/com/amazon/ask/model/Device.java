@@ -34,6 +34,9 @@ public final class Device {
     @JsonProperty("supportedInterfaces")
     private com.amazon.ask.model.SupportedInterfaces supportedInterfaces = null;
 
+    private Device() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

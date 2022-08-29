@@ -34,6 +34,9 @@ public final class InterSegment {
     @JsonProperty("characters")
     private String characters = null;
 
+    private InterSegment() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

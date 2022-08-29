@@ -34,6 +34,9 @@ public final class StartRequest {
     @JsonProperty("headers")
     private Object headers = null;
 
+    private StartRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

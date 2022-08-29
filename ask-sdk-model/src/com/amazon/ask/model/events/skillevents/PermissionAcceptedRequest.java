@@ -35,6 +35,9 @@ public final class PermissionAcceptedRequest extends com.amazon.ask.model.Reques
     @JsonProperty("eventPublishingTime")
     private OffsetDateTime eventPublishingTime = null;
 
+    private PermissionAcceptedRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

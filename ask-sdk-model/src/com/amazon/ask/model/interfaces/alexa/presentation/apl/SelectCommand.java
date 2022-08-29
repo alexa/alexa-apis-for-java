@@ -37,6 +37,9 @@ public final class SelectCommand extends com.amazon.ask.model.interfaces.alexa.p
     @JsonProperty("otherwise")
     private List<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command> otherwise = new ArrayList<com.amazon.ask.model.interfaces.alexa.presentation.apl.Command>();
 
+    private SelectCommand() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

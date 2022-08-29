@@ -25,6 +25,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = DeleteItemOperation.Builder.class)
 public final class DeleteItemOperation extends com.amazon.ask.model.interfaces.alexa.presentation.apl.listoperations.Operation  {
 
+    private DeleteItemOperation() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

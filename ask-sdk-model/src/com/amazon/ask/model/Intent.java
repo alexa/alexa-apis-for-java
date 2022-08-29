@@ -37,6 +37,9 @@ public final class Intent {
     @JsonProperty("confirmationStatus")
     private String confirmationStatus = null;
 
+    private Intent() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -29,6 +29,9 @@ public final class ReminderCreatedEventRequest extends com.amazon.ask.model.Requ
     @JsonProperty("body")
     private com.amazon.ask.model.services.reminderManagement.Event body = null;
 
+    private ReminderCreatedEventRequest() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

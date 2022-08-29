@@ -40,6 +40,9 @@ public final class AuthorizeAttributes extends com.amazon.ask.model.interfaces.a
     @JsonProperty("softDescriptor")
     private String softDescriptor = null;
 
+    private AuthorizeAttributes() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

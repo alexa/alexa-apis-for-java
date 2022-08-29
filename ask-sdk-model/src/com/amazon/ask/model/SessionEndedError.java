@@ -31,6 +31,9 @@ public final class SessionEndedError {
     @JsonProperty("message")
     private String message = null;
 
+    private SessionEndedError() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

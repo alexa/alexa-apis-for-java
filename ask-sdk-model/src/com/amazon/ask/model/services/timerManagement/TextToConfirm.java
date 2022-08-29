@@ -31,6 +31,9 @@ public final class TextToConfirm {
     @JsonProperty("text")
     private String text = null;
 
+    private TextToConfirm() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }

@@ -37,6 +37,9 @@ public final class InSkillProductsResponse {
     @JsonProperty("nextToken")
     private String nextToken = null;
 
+    private InSkillProductsResponse() {
+    }
+
     public static Builder builder() {
         return new Builder();
     }
