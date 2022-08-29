@@ -47,6 +47,7 @@ public class SubTypesManifest {
     baseTypes.put(com.amazon.ask.smapi.model.v1.skill.Manifest.DialogManager.class, v1SkillManifestDialogManagerSubTypes);
 
     Map<String, Class> v1SkillManifestInterfaceSubTypes = new HashMap<>();
+    v1SkillManifestInterfaceSubTypes.put("ALEXA_SEARCH", com.amazon.ask.smapi.model.v1.skill.Manifest.AlexaSearch.class);
     v1SkillManifestInterfaceSubTypes.put("ALEXA_PRESENTATION_APL", com.amazon.ask.smapi.model.v1.skill.Manifest.AlexaPresentationAplInterface.class);
     v1SkillManifestInterfaceSubTypes.put("APP_LINKS", com.amazon.ask.smapi.model.v1.skill.Manifest.AppLinkInterface.class);
     v1SkillManifestInterfaceSubTypes.put("ALEXA_PRESENTATION_HTML", com.amazon.ask.smapi.model.v1.skill.Manifest.AlexaPresentationHtmlInterface.class);

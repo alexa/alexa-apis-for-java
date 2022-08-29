@@ -54,6 +54,8 @@ public enum InterfaceType {
   
   APP_LINKS_V2("APP_LINKS_V2"),
   
+  ALEXA_SEARCH("ALEXA_SEARCH"),
+  
   UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;

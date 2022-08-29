@@ -26,6 +26,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = true )
 @JsonSubTypes({
+  @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.Manifest.AlexaSearch.class, name = "ALEXA_SEARCH"),
   @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.Manifest.AlexaPresentationAplInterface.class, name = "ALEXA_PRESENTATION_APL"),
   @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.Manifest.AppLinkInterface.class, name = "APP_LINKS"),
   @JsonSubTypes.Type(value = com.amazon.ask.smapi.model.v1.skill.Manifest.AlexaPresentationHtmlInterface.class, name = "ALEXA_PRESENTATION_HTML"),
