@@ -28,6 +28,9 @@ public final class ShoppingKit {
     @JsonProperty("isShoppingActionsEnabled")
     private Boolean isShoppingActionsEnabled = null;
 
+    @JsonProperty("isAmazonAssociatesOnAlexaEnabled")
+    private Boolean isAmazonAssociatesOnAlexaEnabled = null;
+
     private ShoppingKit() {
     }
 
@@ -38,6 +41,9 @@ public final class ShoppingKit {
     private ShoppingKit(Builder builder) {
         if (builder.isShoppingActionsEnabled != null) {
             this.isShoppingActionsEnabled = builder.isShoppingActionsEnabled;
+        }
+        if (builder.isAmazonAssociatesOnAlexaEnabled != null) {
+            this.isAmazonAssociatesOnAlexaEnabled = builder.isAmazonAssociatesOnAlexaEnabled;
         }
     }
 
@@ -51,6 +57,16 @@ public final class ShoppingKit {
     }
 
 
+    /**
+     * True if the skill uses Shopping Actions with Amazon Associates, false otherwise.
+     * @return isAmazonAssociatesOnAlexaEnabled
+    **/
+    @JsonProperty("isAmazonAssociatesOnAlexaEnabled")
+    public Boolean getIsAmazonAssociatesOnAlexaEnabled() {
+        return isAmazonAssociatesOnAlexaEnabled;
+    }
+
+
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -60,12 +76,13 @@ public final class ShoppingKit {
             return false;
         }
         ShoppingKit v1SkillBlueprintShoppingKit = (ShoppingKit) o;
-        return Objects.equals(this.isShoppingActionsEnabled, v1SkillBlueprintShoppingKit.isShoppingActionsEnabled);
+        return Objects.equals(this.isShoppingActionsEnabled, v1SkillBlueprintShoppingKit.isShoppingActionsEnabled) &&
+            Objects.equals(this.isAmazonAssociatesOnAlexaEnabled, v1SkillBlueprintShoppingKit.isAmazonAssociatesOnAlexaEnabled);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(isShoppingActionsEnabled);
+        return Objects.hash(isShoppingActionsEnabled, isAmazonAssociatesOnAlexaEnabled);
     }
 
     @Override
@@ -74,6 +91,7 @@ public final class ShoppingKit {
         sb.append("class ShoppingKit {\n");
         
         sb.append("    isShoppingActionsEnabled: ").append(toIndentedString(isShoppingActionsEnabled)).append("\n");
+        sb.append("    isAmazonAssociatesOnAlexaEnabled: ").append(toIndentedString(isAmazonAssociatesOnAlexaEnabled)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -91,6 +109,7 @@ public final class ShoppingKit {
   
     public static class Builder {
         private Boolean isShoppingActionsEnabled;
+        private Boolean isAmazonAssociatesOnAlexaEnabled;
 
         private Builder() {}
 
@@ -98,6 +117,14 @@ public final class ShoppingKit {
 
         public Builder withIsShoppingActionsEnabled(Boolean isShoppingActionsEnabled) {
             this.isShoppingActionsEnabled = isShoppingActionsEnabled;
+            return this;
+        }
+
+
+        @JsonProperty("isAmazonAssociatesOnAlexaEnabled")
+
+        public Builder withIsAmazonAssociatesOnAlexaEnabled(Boolean isAmazonAssociatesOnAlexaEnabled) {
+            this.isAmazonAssociatesOnAlexaEnabled = isAmazonAssociatesOnAlexaEnabled;
             return this;
         }
 
