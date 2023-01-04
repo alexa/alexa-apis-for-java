@@ -31,7 +31,7 @@ public class ListManagementServiceClient extends BaseServiceClient implements Li
   private final UserAgentHelper userAgentHelper;
   public ListManagementServiceClient(ApiConfiguration apiConfiguration) {
       super(apiConfiguration);
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.40.0").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.41.0").build();
   }
 
   /**

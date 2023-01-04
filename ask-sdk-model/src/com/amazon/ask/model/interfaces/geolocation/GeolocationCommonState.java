@@ -19,11 +19,11 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * The geolocation object used in the Context of API
+ * The common object to define the basic geolocation states
  */
 
-@JsonDeserialize(builder = GeolocationState.Builder.class)
-public final class GeolocationState {
+@JsonDeserialize(builder = GeolocationCommonState.Builder.class)
+public final class GeolocationCommonState {
 
     @JsonProperty("timestamp")
     private String timestamp = null;
@@ -40,17 +40,14 @@ public final class GeolocationState {
     @JsonProperty("speed")
     private com.amazon.ask.model.interfaces.geolocation.Speed speed = null;
 
-    @JsonProperty("locationServices")
-    private com.amazon.ask.model.interfaces.geolocation.LocationServices locationServices = null;
-
-    private GeolocationState() {
+    private GeolocationCommonState() {
     }
 
     public static Builder builder() {
         return new Builder();
     }
 
-    private GeolocationState(Builder builder) {
+    private GeolocationCommonState(Builder builder) {
         if (builder.timestamp != null) {
             this.timestamp = builder.timestamp;
         }
@@ -65,9 +62,6 @@ public final class GeolocationState {
         }
         if (builder.speed != null) {
             this.speed = builder.speed;
-        }
-        if (builder.locationServices != null) {
-            this.locationServices = builder.locationServices;
         }
     }
 
@@ -121,16 +115,6 @@ public final class GeolocationState {
     }
 
 
-    /**
-     * Get locationServices
-     * @return locationServices
-    **/
-    @JsonProperty("locationServices")
-    public com.amazon.ask.model.interfaces.geolocation.LocationServices getLocationServices() {
-        return locationServices;
-    }
-
-
     @Override
     public boolean equals(java.lang.Object o) {
         if (this == o) {
@@ -139,31 +123,29 @@ public final class GeolocationState {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        GeolocationState interfacesGeolocationGeolocationState = (GeolocationState) o;
-        return Objects.equals(this.timestamp, interfacesGeolocationGeolocationState.timestamp) &&
-            Objects.equals(this.coordinate, interfacesGeolocationGeolocationState.coordinate) &&
-            Objects.equals(this.altitude, interfacesGeolocationGeolocationState.altitude) &&
-            Objects.equals(this.heading, interfacesGeolocationGeolocationState.heading) &&
-            Objects.equals(this.speed, interfacesGeolocationGeolocationState.speed) &&
-            Objects.equals(this.locationServices, interfacesGeolocationGeolocationState.locationServices);
+        GeolocationCommonState interfacesGeolocationGeolocationCommonState = (GeolocationCommonState) o;
+        return Objects.equals(this.timestamp, interfacesGeolocationGeolocationCommonState.timestamp) &&
+            Objects.equals(this.coordinate, interfacesGeolocationGeolocationCommonState.coordinate) &&
+            Objects.equals(this.altitude, interfacesGeolocationGeolocationCommonState.altitude) &&
+            Objects.equals(this.heading, interfacesGeolocationGeolocationCommonState.heading) &&
+            Objects.equals(this.speed, interfacesGeolocationGeolocationCommonState.speed);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(timestamp, coordinate, altitude, heading, speed, locationServices);
+        return Objects.hash(timestamp, coordinate, altitude, heading, speed);
     }
 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("class GeolocationState {\n");
+        sb.append("class GeolocationCommonState {\n");
         
         sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
         sb.append("    coordinate: ").append(toIndentedString(coordinate)).append("\n");
         sb.append("    altitude: ").append(toIndentedString(altitude)).append("\n");
         sb.append("    heading: ").append(toIndentedString(heading)).append("\n");
         sb.append("    speed: ").append(toIndentedString(speed)).append("\n");
-        sb.append("    locationServices: ").append(toIndentedString(locationServices)).append("\n");
         sb.append("}");
         return sb.toString();
     }
@@ -185,7 +167,6 @@ public final class GeolocationState {
         private com.amazon.ask.model.interfaces.geolocation.Altitude altitude;
         private com.amazon.ask.model.interfaces.geolocation.Heading heading;
         private com.amazon.ask.model.interfaces.geolocation.Speed speed;
-        private com.amazon.ask.model.interfaces.geolocation.LocationServices locationServices;
 
         private Builder() {}
 
@@ -229,16 +210,8 @@ public final class GeolocationState {
         }
 
 
-        @JsonProperty("locationServices")
-
-        public Builder withLocationServices(com.amazon.ask.model.interfaces.geolocation.LocationServices locationServices) {
-            this.locationServices = locationServices;
-            return this;
-        }
-
-
-        public GeolocationState build() {
-            return new GeolocationState(this);
+        public GeolocationCommonState build() {
+            return new GeolocationCommonState(this);
         }
     }
 }
