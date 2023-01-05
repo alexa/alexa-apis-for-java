@@ -40,6 +40,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
   @JsonSubTypes.Type(value = com.amazon.ask.model.canfulfill.CanFulfillIntentRequest.class, name = "CanFulfillIntentRequest"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.customInterfaceController.ExpiredRequest.class, name = "CustomInterfaceController.Expired"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.html.MessageRequest.class, name = "Alexa.Presentation.HTML.Message"),
+  @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.datastore.DataStoreError.class, name = "Alexa.DataStore.Error"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.LaunchRequest.class, name = "LaunchRequest"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.authorization.AuthorizationGrantRequest.class, name = "Alexa.Authorization.Grant"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.services.reminderManagement.ReminderCreatedEventRequest.class, name = "Reminders.ReminderCreated"),

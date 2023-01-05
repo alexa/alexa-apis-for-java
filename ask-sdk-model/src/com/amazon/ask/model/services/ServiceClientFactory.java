@@ -15,6 +15,7 @@ package com.amazon.ask.model.services;
 
 import com.amazon.ask.model.services.ApiConfiguration;
 
+import com.amazon.ask.model.services.datastore.DatastoreServiceClient;
 import com.amazon.ask.model.services.deviceAddress.DeviceAddressServiceClient;
 import com.amazon.ask.model.services.directive.DirectiveServiceClient;
 import com.amazon.ask.model.services.endpointEnumeration.EndpointEnumerationServiceClient;

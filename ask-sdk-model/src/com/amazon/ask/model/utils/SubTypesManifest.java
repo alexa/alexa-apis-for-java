@@ -81,6 +81,7 @@ public class SubTypesManifest {
     requestSubTypes.put("CanFulfillIntentRequest", com.amazon.ask.model.canfulfill.CanFulfillIntentRequest.class);
     requestSubTypes.put("CustomInterfaceController.Expired", com.amazon.ask.model.interfaces.customInterfaceController.ExpiredRequest.class);
     requestSubTypes.put("Alexa.Presentation.HTML.Message", com.amazon.ask.model.interfaces.alexa.presentation.html.MessageRequest.class);
+    requestSubTypes.put("Alexa.DataStore.Error", com.amazon.ask.model.interfaces.alexa.datastore.DataStoreError.class);
     requestSubTypes.put("LaunchRequest", com.amazon.ask.model.LaunchRequest.class);
     requestSubTypes.put("Alexa.Authorization.Grant", com.amazon.ask.model.authorization.AuthorizationGrantRequest.class);
     requestSubTypes.put("Reminders.ReminderCreated", com.amazon.ask.model.services.reminderManagement.ReminderCreatedEventRequest.class);
@@ -134,6 +135,13 @@ public class SubTypesManifest {
     dynamicEndpointsBaseResponseSubTypes.put("SkillResponseFailureMessage", com.amazon.ask.model.dynamicEndpoints.FailureResponse.class);
     dynamicEndpointsBaseResponseSubTypes.put("SkillResponseSuccessMessage", com.amazon.ask.model.dynamicEndpoints.SuccessResponse.class);
     baseTypes.put(com.amazon.ask.model.dynamicEndpoints.BaseResponse.class, dynamicEndpointsBaseResponseSubTypes);
+
+    Map<String, Class> interfacesAlexaDatastoreCommandsErrorSubTypes = new HashMap<>();
+    interfacesAlexaDatastoreCommandsErrorSubTypes.put("DEVICE_UNAVAILABLE", com.amazon.ask.model.interfaces.alexa.datastore.DeviceUnavailableError.class);
+    interfacesAlexaDatastoreCommandsErrorSubTypes.put("DEVICE_PERMANENTLY_UNAVAILABLE", com.amazon.ask.model.interfaces.alexa.datastore.DevicePermanantlyUnavailableError.class);
+    interfacesAlexaDatastoreCommandsErrorSubTypes.put("DATASTORE_INTERNAL_ERROR", com.amazon.ask.model.interfaces.alexa.datastore.DataStoreInternalError.class);
+    interfacesAlexaDatastoreCommandsErrorSubTypes.put("STORAGE_LIMIT_EXCEEDED", com.amazon.ask.model.interfaces.alexa.datastore.StorageLimitExeceededError.class);
+    baseTypes.put(com.amazon.ask.model.interfaces.alexa.datastore.CommandsError.class, interfacesAlexaDatastoreCommandsErrorSubTypes);
 
     Map<String, Class> interfacesAlexaPresentationAplAnimatedPropertySubTypes = new HashMap<>();
     interfacesAlexaPresentationAplAnimatedPropertySubTypes.put("opacity", com.amazon.ask.model.interfaces.alexa.presentation.apl.AnimatedOpacityProperty.class);
@@ -251,6 +259,19 @@ public class SubTypesManifest {
     interfacesViewportSizeViewportSizeSubTypes.put("CONTINUOUS", com.amazon.ask.model.interfaces.viewport.size.ContinuousViewportSize.class);
     interfacesViewportSizeViewportSizeSubTypes.put("DISCRETE", com.amazon.ask.model.interfaces.viewport.size.DiscreteViewportSize.class);
     baseTypes.put(com.amazon.ask.model.interfaces.viewport.size.ViewportSize.class, interfacesViewportSizeViewportSizeSubTypes);
+
+    Map<String, Class> servicesDatastoreV1CommandSubTypes = new HashMap<>();
+    servicesDatastoreV1CommandSubTypes.put("REMOVE_NAMESPACE", com.amazon.ask.model.services.datastore.v1.RemoveNamespaceCommand.class);
+    servicesDatastoreV1CommandSubTypes.put("REMOVE_OBJECT", com.amazon.ask.model.services.datastore.v1.RemoveObjectCommand.class);
+    servicesDatastoreV1CommandSubTypes.put("PUT_OBJECT", com.amazon.ask.model.services.datastore.v1.PutObjectCommand.class);
+    servicesDatastoreV1CommandSubTypes.put("CLEAR", com.amazon.ask.model.services.datastore.v1.ClearCommand.class);
+    servicesDatastoreV1CommandSubTypes.put("PUT_NAMESPACE", com.amazon.ask.model.services.datastore.v1.PutNamespaceCommand.class);
+    baseTypes.put(com.amazon.ask.model.services.datastore.v1.Command.class, servicesDatastoreV1CommandSubTypes);
+
+    Map<String, Class> servicesDatastoreV1TargetSubTypes = new HashMap<>();
+    servicesDatastoreV1TargetSubTypes.put("USER", com.amazon.ask.model.services.datastore.v1.User.class);
+    servicesDatastoreV1TargetSubTypes.put("DEVICES", com.amazon.ask.model.services.datastore.v1.Devices.class);
+    baseTypes.put(com.amazon.ask.model.services.datastore.v1.Target.class, servicesDatastoreV1TargetSubTypes);
 
     Map<String, Class> servicesDirectiveDirectiveSubTypes = new HashMap<>();
     servicesDirectiveDirectiveSubTypes.put("VoicePlayer.Speak", com.amazon.ask.model.services.directive.SpeakDirective.class);
