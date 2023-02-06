@@ -31,7 +31,7 @@ public class DeviceAddressServiceClient extends BaseServiceClient implements Dev
   private final UserAgentHelper userAgentHelper;
   public DeviceAddressServiceClient(ApiConfiguration apiConfiguration) {
       super(apiConfiguration);
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.45.0").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.46.0").build();
   }
 
   /**
