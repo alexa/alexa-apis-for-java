@@ -378,66 +378,6 @@ public interface SkillManagementService {
     ApiResponse<com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillRepositoryCredentialsList> callGenerateCredentialsForAlexaHostedSkillV1(String skillId, com.amazon.ask.smapi.model.v1.skill.AlexaHosted.HostedSkillRepositoryCredentialsRequest hostedSkillRepositoryCredentialsRequest) throws ServiceException;
 
 
-    com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.GetAsrAnnotationSetAnnotationsResponse getAnnotationsForASRAnnotationSetV1(String skillId, String annotationSetId, String accept, String nextToken, BigDecimal maxResults) throws ServiceException;
-
-    ApiResponse<com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.GetAsrAnnotationSetAnnotationsResponse> callGetAnnotationsForASRAnnotationSetV1(String skillId, String annotationSetId, String accept, String nextToken, BigDecimal maxResults) throws ServiceException;
-
-
-    void setAnnotationsForASRAnnotationSetV1(String skillId, String annotationSetId, com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.UpdateAsrAnnotationSetContentsPayload updateAsrAnnotationSetContentsRequest) throws ServiceException;
-
-    ApiResponse<Void> callSetAnnotationsForASRAnnotationSetV1(String skillId, String annotationSetId, com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.UpdateAsrAnnotationSetContentsPayload updateAsrAnnotationSetContentsRequest) throws ServiceException;
-
-
-    void deleteASRAnnotationSetV1(String skillId, String annotationSetId) throws ServiceException;
-
-    ApiResponse<Void> callDeleteASRAnnotationSetV1(String skillId, String annotationSetId) throws ServiceException;
-
-
-    com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.GetASRAnnotationSetsPropertiesResponse getASRAnnotationSetV1(String skillId, String annotationSetId) throws ServiceException;
-
-    ApiResponse<com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.GetASRAnnotationSetsPropertiesResponse> callGetASRAnnotationSetV1(String skillId, String annotationSetId) throws ServiceException;
-
-
-    void setASRAnnotationSetV1(String skillId, String annotationSetId, com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.UpdateAsrAnnotationSetPropertiesRequestObject updateAsrAnnotationSetPropertiesRequestV1) throws ServiceException;
-
-    ApiResponse<Void> callSetASRAnnotationSetV1(String skillId, String annotationSetId, com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.UpdateAsrAnnotationSetPropertiesRequestObject updateAsrAnnotationSetPropertiesRequestV1) throws ServiceException;
-
-
-    com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.ListASRAnnotationSetsResponse listASRAnnotationSetsV1(String skillId, String nextToken, BigDecimal maxResults) throws ServiceException;
-
-    ApiResponse<com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.ListASRAnnotationSetsResponse> callListASRAnnotationSetsV1(String skillId, String nextToken, BigDecimal maxResults) throws ServiceException;
-
-
-    com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.CreateAsrAnnotationSetResponse createASRAnnotationSetV1(String skillId, com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.CreateAsrAnnotationSetRequestObject createAsrAnnotationSetRequest) throws ServiceException;
-
-    ApiResponse<com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.CreateAsrAnnotationSetResponse> callCreateASRAnnotationSetV1(String skillId, com.amazon.ask.smapi.model.v1.skill.asr.annotationSets.CreateAsrAnnotationSetRequestObject createAsrAnnotationSetRequest) throws ServiceException;
-
-
-    void deleteASREvaluationV1(String skillId, String evaluationId) throws ServiceException;
-
-    ApiResponse<Void> callDeleteASREvaluationV1(String skillId, String evaluationId) throws ServiceException;
-
-
-    com.amazon.ask.smapi.model.v1.skill.asr.evaluations.GetAsrEvaluationsResultsResponse listASREvaluationsResultsV1(String skillId, String evaluationId, String nextToken, BigDecimal maxResults, String status) throws ServiceException;
-
-    ApiResponse<com.amazon.ask.smapi.model.v1.skill.asr.evaluations.GetAsrEvaluationsResultsResponse> callListASREvaluationsResultsV1(String skillId, String evaluationId, String nextToken, BigDecimal maxResults, String status) throws ServiceException;
-
-
-    com.amazon.ask.smapi.model.v1.skill.asr.evaluations.GetAsrEvaluationStatusResponseObject getASREvaluationStatusV1(String skillId, String evaluationId) throws ServiceException;
-
-    ApiResponse<com.amazon.ask.smapi.model.v1.skill.asr.evaluations.GetAsrEvaluationStatusResponseObject> callGetASREvaluationStatusV1(String skillId, String evaluationId) throws ServiceException;
-
-
-    com.amazon.ask.smapi.model.v1.skill.asr.evaluations.ListAsrEvaluationsResponse listASREvaluationsV1(String skillId, String nextToken, String locale, String stage, String annotationSetId, BigDecimal maxResults) throws ServiceException;
-
-    ApiResponse<com.amazon.ask.smapi.model.v1.skill.asr.evaluations.ListAsrEvaluationsResponse> callListASREvaluationsV1(String skillId, String nextToken, String locale, String stage, String annotationSetId, BigDecimal maxResults) throws ServiceException;
-
-
-    com.amazon.ask.smapi.model.v1.skill.asr.evaluations.PostAsrEvaluationsResponseObject createASREvaluationV1(com.amazon.ask.smapi.model.v1.skill.asr.evaluations.PostAsrEvaluationsRequestObject postAsrEvaluationsRequest, String skillId) throws ServiceException;
-
-    ApiResponse<com.amazon.ask.smapi.model.v1.skill.asr.evaluations.PostAsrEvaluationsResponseObject> callCreateASREvaluationV1(com.amazon.ask.smapi.model.v1.skill.asr.evaluations.PostAsrEvaluationsRequestObject postAsrEvaluationsRequest, String skillId) throws ServiceException;
-
-
     void endBetaTestV1(String skillId) throws ServiceException;
 
     ApiResponse<Void> callEndBetaTestV1(String skillId) throws ServiceException;
