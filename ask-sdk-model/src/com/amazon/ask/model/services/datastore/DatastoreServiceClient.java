@@ -41,13 +41,13 @@ public class DatastoreServiceClient extends BaseServiceClient implements Datasto
                                     .withSerializer(apiConfiguration.getSerializer())
                                     .build())
           .build();
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.56.0").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.57.0").build();
   }
 
   public DatastoreServiceClient(ApiConfiguration apiConfiguration, LwaClient lwaClient) {
       super(apiConfiguration);
       this.lwaClient = lwaClient;
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.56.0").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.57.0").build();
   }
 
   /**
@@ -97,6 +97,55 @@ public class DatastoreServiceClient extends BaseServiceClient implements Datasto
    */
   public com.amazon.ask.model.services.datastore.v1.CommandsResponse commandsV1(String authorization, com.amazon.ask.model.services.datastore.v1.CommandsRequest commandsRequest) throws ServiceException {
     return this.callCommandsV1(authorization, commandsRequest).getResponse();
+  }
+
+  /**
+   * 
+   * Cancel pending DataStore commands.
+   * @param authorization  (required)
+   * @param queuedResultId A unique identifier to query result for queued delivery for offline devices (DEVICE_UNAVAILABLE). (required)
+   * @throws ServiceException if fails to make API call
+   */
+  public ApiResponse<Void> callCancelCommandsV1(String authorization, String queuedResultId) throws ServiceException {
+    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
+    Map<String, String> pathParams = new HashMap<String, String>();
+    pathParams.put("queuedResultId", queuedResultId);
+    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
+    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
+
+    if (authorization != null) {
+      headerParams.add(new Pair<String, String>("Authorization", authorization));
+    }
+
+    String accessToken = lwaClient.getAccessTokenForScope("alexa::datastore");
+    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
+
+    String resourcePath = "/v1/datastore/queue/{queuedResultId}/cancel";
+
+    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
+    serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "Success. No content."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.datastore.v1.CancelCommandsRequestError.class, 400, "Request validation fails."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.datastore.v1.CancelCommandsRequestError.class, 401, "Not Authorized."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.datastore.v1.CancelCommandsRequestError.class, 403, "The skill is not allowed to call this API commands."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.datastore.v1.CancelCommandsRequestError.class, 404, "Unable to find the pending request."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.datastore.v1.CancelCommandsRequestError.class, 429, "The client has made more calls than the allowed limit."));
+    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.model.services.datastore.v1.CancelCommandsRequestError.class, 0, "Unexpected error."));
+    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
+
+
+    return this.executeRequest("POST", this.apiEndpoint, resourcePath, queryParams, headerParams,
+      pathParams, serviceResponseDefinitions, null, null, false);
+  }
+
+  /**
+   * 
+   * Cancel pending DataStore commands.
+   * @param authorization  (required)
+   * @param queuedResultId A unique identifier to query result for queued delivery for offline devices (DEVICE_UNAVAILABLE). (required)
+   * @throws ServiceException if fails to make API call
+   */
+  public void cancelCommandsV1(String authorization, String queuedResultId) throws ServiceException {
+    this.callCancelCommandsV1(authorization, queuedResultId).getResponse();
   }
 
   /**

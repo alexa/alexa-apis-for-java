@@ -55,6 +55,9 @@ public final class Context {
     @JsonProperty("Extensions")
     private com.amazon.ask.model.interfaces.alexa.extension.ExtensionsState extensions = null;
 
+    @JsonProperty("Alexa.DataStore.PackageManager")
+    private com.amazon.ask.model.interfaces.alexa.datastore.packagemanager.PackageManagerState alexaDataStorePackageManager = null;
+
     @JsonProperty("AppLink")
     private com.amazon.ask.model.interfaces.applink.AppLinkState appLink = null;
 
@@ -95,6 +98,9 @@ public final class Context {
         }
         if (builder.extensions != null) {
             this.extensions = builder.extensions;
+        }
+        if (builder.alexaDataStorePackageManager != null) {
+            this.alexaDataStorePackageManager = builder.alexaDataStorePackageManager;
         }
         if (builder.appLink != null) {
             this.appLink = builder.appLink;
@@ -195,6 +201,16 @@ public final class Context {
 
 
     /**
+     * Provides the current state for the Alexa.DataStore.PackageManager interface.
+     * @return alexaDataStorePackageManager
+    **/
+    @JsonProperty("Alexa.DataStore.PackageManager")
+    public com.amazon.ask.model.interfaces.alexa.datastore.packagemanager.PackageManagerState getAlexaDataStorePackageManager() {
+        return alexaDataStorePackageManager;
+    }
+
+
+    /**
      * Provides the current state for app link capability.
      * @return appLink
     **/
@@ -232,13 +248,14 @@ public final class Context {
             Objects.equals(this.viewport, context.viewport) &&
             Objects.equals(this.viewports, context.viewports) &&
             Objects.equals(this.extensions, context.extensions) &&
+            Objects.equals(this.alexaDataStorePackageManager, context.alexaDataStorePackageManager) &&
             Objects.equals(this.appLink, context.appLink) &&
             Objects.equals(this.experimentation, context.experimentation);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(system, alexaPresentationAPL, audioPlayer, automotive, display, geolocation, viewport, viewports, extensions, appLink, experimentation);
+        return Objects.hash(system, alexaPresentationAPL, audioPlayer, automotive, display, geolocation, viewport, viewports, extensions, alexaDataStorePackageManager, appLink, experimentation);
     }
 
     @Override
@@ -255,6 +272,7 @@ public final class Context {
         sb.append("    viewport: ").append(toIndentedString(viewport)).append("\n");
         sb.append("    viewports: ").append(toIndentedString(viewports)).append("\n");
         sb.append("    extensions: ").append(toIndentedString(extensions)).append("\n");
+        sb.append("    alexaDataStorePackageManager: ").append(toIndentedString(alexaDataStorePackageManager)).append("\n");
         sb.append("    appLink: ").append(toIndentedString(appLink)).append("\n");
         sb.append("    experimentation: ").append(toIndentedString(experimentation)).append("\n");
         sb.append("}");
@@ -282,6 +300,7 @@ public final class Context {
         private com.amazon.ask.model.interfaces.viewport.ViewportState viewport;
         private List<com.amazon.ask.model.interfaces.viewport.TypedViewportState> viewports;
         private com.amazon.ask.model.interfaces.alexa.extension.ExtensionsState extensions;
+        private com.amazon.ask.model.interfaces.alexa.datastore.packagemanager.PackageManagerState alexaDataStorePackageManager;
         private com.amazon.ask.model.interfaces.applink.AppLinkState appLink;
         private com.amazon.ask.model.interfaces.alexa.experimentation.ExperimentationState experimentation;
 
@@ -362,6 +381,14 @@ public final class Context {
 
         public Builder withExtensions(com.amazon.ask.model.interfaces.alexa.extension.ExtensionsState extensions) {
             this.extensions = extensions;
+            return this;
+        }
+
+
+        @JsonProperty("Alexa.DataStore.PackageManager")
+
+        public Builder withAlexaDataStorePackageManager(com.amazon.ask.model.interfaces.alexa.datastore.packagemanager.PackageManagerState alexaDataStorePackageManager) {
+            this.alexaDataStorePackageManager = alexaDataStorePackageManager;
             return this;
         }
 

@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Defines success or a type of error from dispatch. * `SUCCESS` - device has received the payload. * `INVALID_DEVICE` - device is not capable of processing the payload. * `DEVICE_UNAVAILABLE` - dispatch failed because device is offline. * `DEVICE_PERMANENTLY_UNAVAILABLE` - target no longer available to receive data. This is reported for a failed delivery attempt related to an unregistered device. * `CONCURRENCY_ERROR` - there are concurrent attempts to update to the same device. * `INTERNAL_ERROR`- dispatch failed because of unknown error - see message. 
+ * Defines success or a type of error from dispatch. * `SUCCESS` - device has received the payload. * `INVALID_DEVICE` - device is not capable of processing the payload. * `DEVICE_UNAVAILABLE` - dispatch failed because device is offline. * `DEVICE_PERMANENTLY_UNAVAILABLE` - target no longer available to receive data. This is reported for a failed delivery attempt related to an unregistered device. * `CONCURRENCY_ERROR` - there are concurrent attempts to update to the same device. * `INTERNAL_ERROR`- dispatch failed because of unknown error - see message. * `PENDING_REQUEST_COUNT_EXCEEDS_LIMIT` - the count of pending requests exceeds the limit. 
  */
 public enum DispatchResultType {
   
@@ -35,6 +35,8 @@ public enum DispatchResultType {
   CONCURRENCY_ERROR("CONCURRENCY_ERROR"),
   
   INTERNAL_ERROR("INTERNAL_ERROR"),
+  
+  PENDING_REQUEST_COUNT_EXCEEDS_LIMIT("PENDING_REQUEST_COUNT_EXCEEDS_LIMIT"),
   
   UNKNOWN_TO_SDK_VERSION(null);
 
