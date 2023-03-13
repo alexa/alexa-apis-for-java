@@ -41,32 +41,27 @@ public class DatastoreServiceClient extends BaseServiceClient implements Datasto
                                     .withSerializer(apiConfiguration.getSerializer())
                                     .build())
           .build();
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.58.0").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.59.0").build();
   }
 
   public DatastoreServiceClient(ApiConfiguration apiConfiguration, LwaClient lwaClient) {
       super(apiConfiguration);
       this.lwaClient = lwaClient;
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.58.0").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.59.0").build();
   }
 
   /**
    * 
    * Send DataStore commands to Alexa device.
-   * @param authorization  (required)
    * @param commandsRequest  (required)
    * @return com.amazon.ask.model.services.datastore.v1.CommandsResponse
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.model.services.datastore.v1.CommandsResponse> callCommandsV1(String authorization, com.amazon.ask.model.services.datastore.v1.CommandsRequest commandsRequest) throws ServiceException {
+  public ApiResponse<com.amazon.ask.model.services.datastore.v1.CommandsResponse> callCommandsV1(com.amazon.ask.model.services.datastore.v1.CommandsRequest commandsRequest) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
     List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
     headerParams.add(new Pair<String, String>("Content-type", "application/json"));
-
-    if (authorization != null) {
-      headerParams.add(new Pair<String, String>("Authorization", authorization));
-    }
 
     String accessToken = lwaClient.getAccessTokenForScope("alexa::datastore");
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
@@ -90,32 +85,26 @@ public class DatastoreServiceClient extends BaseServiceClient implements Datasto
   /**
    * 
    * Send DataStore commands to Alexa device.
-   * @param authorization  (required)
    * @param commandsRequest  (required)
    * @return com.amazon.ask.model.services.datastore.v1.CommandsResponse
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.model.services.datastore.v1.CommandsResponse commandsV1(String authorization, com.amazon.ask.model.services.datastore.v1.CommandsRequest commandsRequest) throws ServiceException {
-    return this.callCommandsV1(authorization, commandsRequest).getResponse();
+  public com.amazon.ask.model.services.datastore.v1.CommandsResponse commandsV1(com.amazon.ask.model.services.datastore.v1.CommandsRequest commandsRequest) throws ServiceException {
+    return this.callCommandsV1(commandsRequest).getResponse();
   }
 
   /**
    * 
    * Cancel pending DataStore commands.
-   * @param authorization  (required)
    * @param queuedResultId A unique identifier to query result for queued delivery for offline devices (DEVICE_UNAVAILABLE). (required)
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<Void> callCancelCommandsV1(String authorization, String queuedResultId) throws ServiceException {
+  public ApiResponse<Void> callCancelCommandsV1(String queuedResultId) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
     Map<String, String> pathParams = new HashMap<String, String>();
     pathParams.put("queuedResultId", queuedResultId);
     List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
     headerParams.add(new Pair<String, String>("Content-type", "application/json"));
-
-    if (authorization != null) {
-      headerParams.add(new Pair<String, String>("Authorization", authorization));
-    }
 
     String accessToken = lwaClient.getAccessTokenForScope("alexa::datastore");
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
@@ -140,25 +129,23 @@ public class DatastoreServiceClient extends BaseServiceClient implements Datasto
   /**
    * 
    * Cancel pending DataStore commands.
-   * @param authorization  (required)
    * @param queuedResultId A unique identifier to query result for queued delivery for offline devices (DEVICE_UNAVAILABLE). (required)
    * @throws ServiceException if fails to make API call
    */
-  public void cancelCommandsV1(String authorization, String queuedResultId) throws ServiceException {
-    this.callCancelCommandsV1(authorization, queuedResultId).getResponse();
+  public void cancelCommandsV1(String queuedResultId) throws ServiceException {
+    this.callCancelCommandsV1(queuedResultId).getResponse();
   }
 
   /**
    * 
    * Query statuses of deliveries to offline devices returned by commands API.
-   * @param authorization  (required)
    * @param queuedResultId A unique identifier to query result for queued delivery for offline devices (DEVICE_UNAVAILABLE). (required)
    * @param maxResults Maximum number of CommandsDispatchResult items to return. (optional, default to 20)
    * @param nextToken The value of nextToken in the response to fetch next page. If not specified, the request fetches result for the first page.  (optional)
    * @return com.amazon.ask.model.services.datastore.v1.QueuedResultResponse
    * @throws ServiceException if fails to make API call
    */
-  public ApiResponse<com.amazon.ask.model.services.datastore.v1.QueuedResultResponse> callQueuedResultV1(String authorization, String queuedResultId, Integer maxResults, String nextToken) throws ServiceException {
+  public ApiResponse<com.amazon.ask.model.services.datastore.v1.QueuedResultResponse> callQueuedResultV1(String queuedResultId, Integer maxResults, String nextToken) throws ServiceException {
     List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
 
     if(maxResults != null) {
@@ -172,10 +159,6 @@ public class DatastoreServiceClient extends BaseServiceClient implements Datasto
     pathParams.put("queuedResultId", queuedResultId);
     List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
     headerParams.add(new Pair<String, String>("Content-type", "application/json"));
-
-    if (authorization != null) {
-      headerParams.add(new Pair<String, String>("Authorization", authorization));
-    }
 
     String accessToken = lwaClient.getAccessTokenForScope("alexa::datastore");
     headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
@@ -199,15 +182,14 @@ public class DatastoreServiceClient extends BaseServiceClient implements Datasto
   /**
    * 
    * Query statuses of deliveries to offline devices returned by commands API.
-   * @param authorization  (required)
    * @param queuedResultId A unique identifier to query result for queued delivery for offline devices (DEVICE_UNAVAILABLE). (required)
    * @param maxResults Maximum number of CommandsDispatchResult items to return. (optional, default to 20)
    * @param nextToken The value of nextToken in the response to fetch next page. If not specified, the request fetches result for the first page.  (optional)
    * @return com.amazon.ask.model.services.datastore.v1.QueuedResultResponse
    * @throws ServiceException if fails to make API call
    */
-  public com.amazon.ask.model.services.datastore.v1.QueuedResultResponse queuedResultV1(String authorization, String queuedResultId, Integer maxResults, String nextToken) throws ServiceException {
-    return this.callQueuedResultV1(authorization, queuedResultId, maxResults, nextToken).getResponse();
+  public com.amazon.ask.model.services.datastore.v1.QueuedResultResponse queuedResultV1(String queuedResultId, Integer maxResults, String nextToken) throws ServiceException {
+    return this.callQueuedResultV1(queuedResultId, maxResults, nextToken).getResponse();
   }
 
 }

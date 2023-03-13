@@ -23,18 +23,18 @@ import java.util.List;
 
 public interface DatastoreService {
 
-    com.amazon.ask.model.services.datastore.v1.CommandsResponse commandsV1(String authorization, com.amazon.ask.model.services.datastore.v1.CommandsRequest commandsRequest) throws ServiceException;
+    com.amazon.ask.model.services.datastore.v1.CommandsResponse commandsV1(com.amazon.ask.model.services.datastore.v1.CommandsRequest commandsRequest) throws ServiceException;
 
-    ApiResponse<com.amazon.ask.model.services.datastore.v1.CommandsResponse> callCommandsV1(String authorization, com.amazon.ask.model.services.datastore.v1.CommandsRequest commandsRequest) throws ServiceException;
-
-
-    void cancelCommandsV1(String authorization, String queuedResultId) throws ServiceException;
-
-    ApiResponse<Void> callCancelCommandsV1(String authorization, String queuedResultId) throws ServiceException;
+    ApiResponse<com.amazon.ask.model.services.datastore.v1.CommandsResponse> callCommandsV1(com.amazon.ask.model.services.datastore.v1.CommandsRequest commandsRequest) throws ServiceException;
 
 
-    com.amazon.ask.model.services.datastore.v1.QueuedResultResponse queuedResultV1(String authorization, String queuedResultId, Integer maxResults, String nextToken) throws ServiceException;
+    void cancelCommandsV1(String queuedResultId) throws ServiceException;
 
-    ApiResponse<com.amazon.ask.model.services.datastore.v1.QueuedResultResponse> callQueuedResultV1(String authorization, String queuedResultId, Integer maxResults, String nextToken) throws ServiceException;
+    ApiResponse<Void> callCancelCommandsV1(String queuedResultId) throws ServiceException;
+
+
+    com.amazon.ask.model.services.datastore.v1.QueuedResultResponse queuedResultV1(String queuedResultId, Integer maxResults, String nextToken) throws ServiceException;
+
+    ApiResponse<com.amazon.ask.model.services.datastore.v1.QueuedResultResponse> callQueuedResultV1(String queuedResultId, Integer maxResults, String nextToken) throws ServiceException;
 
 }
