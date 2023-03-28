@@ -31,7 +31,7 @@ public class UpsServiceClient extends BaseServiceClient implements UpsService {
   private final UserAgentHelper userAgentHelper;
   public UpsServiceClient(ApiConfiguration apiConfiguration) {
       super(apiConfiguration);
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.61.0").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.62.0").build();
   }
 
   /**
