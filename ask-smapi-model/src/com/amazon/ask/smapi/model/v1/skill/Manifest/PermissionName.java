@@ -100,6 +100,8 @@ public enum PermissionName {
   
   DASH_VENDOR_READ_ENDPOINTS("dash::vendor:read:endpoints"),
   
+  DASH_READ_ENDPOINTS_SENSORS("dash::read:endpoints:sensors"),
+  
   UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
