@@ -46,8 +46,6 @@ public enum SuppressedInterface {
   
   ALEXADATASTORE("AlexaDataStore"),
   
-  ALEXADATASTOREPACKAGEMANAGER("AlexaDataStorePackageManager"),
-  
   PHOTOCAPTURECONTROLLER("PhotoCaptureController"),
   
   VIDEOCAPTURECONTROLLER("VideoCaptureController"),
