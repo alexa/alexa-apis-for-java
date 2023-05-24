@@ -43,13 +43,13 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
                                     .withSerializer(apiConfiguration.getSerializer())
                                     .build())
           .build();
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.49.0").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.50.0").build();
   }
 
   public SkillManagementServiceClient(ApiConfiguration apiConfiguration, LwaClient lwaClient) {
       super(apiConfiguration);
       this.lwaClient = lwaClient;
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.49.0").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.50.0").build();
   }
 
   /**
@@ -6827,128 +6827,6 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    */
   public com.amazon.ask.smapi.model.v1.skill.evaluations.ProfileNluResponse profileNluV1(com.amazon.ask.smapi.model.v1.skill.evaluations.ProfileNluRequest profileNluRequest, String skillId, String stage, String locale) throws ServiceException {
     return this.callProfileNluV1(profileNluRequest, skillId, stage, locale).getResponse();
-  }
-
-  /**
-   * Retrieve conflict detection job status for skill.
-   * This API returns the job status of conflict detection job for a specified interaction model.
-   * @param skillId The skill ID. (required)
-   * @param locale The locale for the model requested e.g. en-GB, en-US, de-DE. (required)
-   * @param stage Stage of the interaction model. (required)
-   * @param version Version of interaction model. Use \&quot;~current\&quot; to get the model of the current version. (required)
-   * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.GetConflictDetectionJobStatusResponse
-   * @throws ServiceException if fails to make API call
-   */
-  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.GetConflictDetectionJobStatusResponse> callGetConflictDetectionJobStatusForInteractionModelV1(String skillId, String locale, String stage, String version) throws ServiceException {
-    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
-    Map<String, String> pathParams = new HashMap<String, String>();
-    pathParams.put("skillId", skillId);
-    pathParams.put("locale", locale);
-    pathParams.put("stage", stage);
-    pathParams.put("version", version);
-    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
-    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
-
-    String accessToken = lwaClient.getAccessTokenForRefreshToken();
-    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
-
-    String resourcePath = "/v1/skills/{skillId}/stages/{stage}/interactionModel/locales/{locale}/versions/{version}/conflictDetectionJobStatus";
-
-    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.GetConflictDetectionJobStatusResponse.class, 200, "Get conflict detection results successfully."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 404, "There is no catalog defined for the catalogId."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 500, "Internal Server Error."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 503, "Service Unavailable."));
-    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
-
-
-    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.GetConflictDetectionJobStatusResponse.class, false);
-  }
-
-  /**
-   * Retrieve conflict detection job status for skill.
-   * This API returns the job status of conflict detection job for a specified interaction model.
-   * @param skillId The skill ID. (required)
-   * @param locale The locale for the model requested e.g. en-GB, en-US, de-DE. (required)
-   * @param stage Stage of the interaction model. (required)
-   * @param version Version of interaction model. Use \&quot;~current\&quot; to get the model of the current version. (required)
-   * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.GetConflictDetectionJobStatusResponse
-   * @throws ServiceException if fails to make API call
-   */
-  public com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.GetConflictDetectionJobStatusResponse getConflictDetectionJobStatusForInteractionModelV1(String skillId, String locale, String stage, String version) throws ServiceException {
-    return this.callGetConflictDetectionJobStatusForInteractionModelV1(skillId, locale, stage, version).getResponse();
-  }
-
-  /**
-   * Retrieve conflict detection results for a specified interaction model.
-   * This is a paginated API that retrieves results of conflict detection job for a specified interaction model.
-   * @param skillId The skill ID. (required)
-   * @param locale The locale for the model requested e.g. en-GB, en-US, de-DE. (required)
-   * @param stage Stage of the interaction model. (required)
-   * @param version Version of interaction model. Use \&quot;~current\&quot; to get the model of the current version. (required)
-   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
-   * @param maxResults Sets the maximum number of results returned in the response body. Defaults to 100. If more results are present, the response will contain a nextToken and a _link.next href. (optional, default to 100)
-   * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.GetConflictsResponse
-   * @throws ServiceException if fails to make API call
-   */
-  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.GetConflictsResponse> callGetConflictsForInteractionModelV1(String skillId, String locale, String stage, String version, String nextToken, BigDecimal maxResults) throws ServiceException {
-    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
-
-    if(nextToken != null) {
-    queryParams.add(new Pair<String, String>("nextToken", nextToken));
-  }
-
-    if(maxResults != null) {
-    queryParams.add(new Pair<String, String>("maxResults", maxResults.toString()));
-  }
-    Map<String, String> pathParams = new HashMap<String, String>();
-    pathParams.put("skillId", skillId);
-    pathParams.put("locale", locale);
-    pathParams.put("stage", stage);
-    pathParams.put("version", version);
-    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
-    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
-
-    String accessToken = lwaClient.getAccessTokenForRefreshToken();
-    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
-
-    String resourcePath = "/v1/skills/{skillId}/stages/{stage}/interactionModel/locales/{locale}/versions/{version}/conflicts";
-
-    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.GetConflictsResponse.class, 200, "Get conflict detection results sucessfully."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 404, "There is no catalog defined for the catalogId."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 500, "Internal Server Error."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 503, "Service Unavailable."));
-    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
-
-
-    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.GetConflictsResponse.class, false);
-  }
-
-  /**
-   * Retrieve conflict detection results for a specified interaction model.
-   * This is a paginated API that retrieves results of conflict detection job for a specified interaction model.
-   * @param skillId The skill ID. (required)
-   * @param locale The locale for the model requested e.g. en-GB, en-US, de-DE. (required)
-   * @param stage Stage of the interaction model. (required)
-   * @param version Version of interaction model. Use \&quot;~current\&quot; to get the model of the current version. (required)
-   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
-   * @param maxResults Sets the maximum number of results returned in the response body. Defaults to 100. If more results are present, the response will contain a nextToken and a _link.next href. (optional, default to 100)
-   * @return com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.GetConflictsResponse
-   * @throws ServiceException if fails to make API call
-   */
-  public com.amazon.ask.smapi.model.v1.skill.interactionModel.conflictDetection.GetConflictsResponse getConflictsForInteractionModelV1(String skillId, String locale, String stage, String version, String nextToken, BigDecimal maxResults) throws ServiceException {
-    return this.callGetConflictsForInteractionModelV1(skillId, locale, stage, version, nextToken, maxResults).getResponse();
   }
 
   /**
