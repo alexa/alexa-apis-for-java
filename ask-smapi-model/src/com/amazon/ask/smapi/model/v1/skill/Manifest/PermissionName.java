@@ -96,6 +96,8 @@ public enum PermissionName {
   
   ALEXA_DEVICES_ALL_TOKENIZED_GEOLOCATION_READ("alexa::devices:all:tokenized_geolocation:read"),
   
+  ALEXA_DEVICES_ALL_INTENT_TOKENS_READ("alexa::devices:all:intent_tokens:read"),
+  
   ALEXA_MEASUREMENT_SYSTEM_READWRITE("alexa::measurement_system::readwrite"),
   
   DASH_VENDOR_READ_ENDPOINTS("dash::vendor:read:endpoints"),
