@@ -31,6 +31,9 @@ public final class Context {
     @JsonProperty("System")
     private com.amazon.ask.model.interfaces.system.SystemState system = null;
 
+    @JsonProperty("Alexa.Presentation")
+    private com.amazon.ask.model.interfaces.alexa.presentation.PresentationState alexaPresentation = null;
+
     @JsonProperty("Alexa.Presentation.APL")
     private com.amazon.ask.model.interfaces.alexa.presentation.apl.RenderedDocumentState alexaPresentationAPL = null;
 
@@ -75,6 +78,9 @@ public final class Context {
         if (builder.system != null) {
             this.system = builder.system;
         }
+        if (builder.alexaPresentation != null) {
+            this.alexaPresentation = builder.alexaPresentation;
+        }
         if (builder.alexaPresentationAPL != null) {
             this.alexaPresentationAPL = builder.alexaPresentationAPL;
         }
@@ -117,6 +123,16 @@ public final class Context {
     @JsonProperty("System")
     public com.amazon.ask.model.interfaces.system.SystemState getSystem() {
         return system;
+    }
+
+
+    /**
+     * Provides the current state for the Alexa.Presentation interface.
+     * @return alexaPresentation
+    **/
+    @JsonProperty("Alexa.Presentation")
+    public com.amazon.ask.model.interfaces.alexa.presentation.PresentationState getAlexaPresentation() {
+        return alexaPresentation;
     }
 
 
@@ -240,6 +256,7 @@ public final class Context {
         }
         Context context = (Context) o;
         return Objects.equals(this.system, context.system) &&
+            Objects.equals(this.alexaPresentation, context.alexaPresentation) &&
             Objects.equals(this.alexaPresentationAPL, context.alexaPresentationAPL) &&
             Objects.equals(this.audioPlayer, context.audioPlayer) &&
             Objects.equals(this.automotive, context.automotive) &&
@@ -255,7 +272,7 @@ public final class Context {
 
     @Override
     public int hashCode() {
-        return Objects.hash(system, alexaPresentationAPL, audioPlayer, automotive, display, geolocation, viewport, viewports, extensions, alexaDataStorePackageManager, appLink, experimentation);
+        return Objects.hash(system, alexaPresentation, alexaPresentationAPL, audioPlayer, automotive, display, geolocation, viewport, viewports, extensions, alexaDataStorePackageManager, appLink, experimentation);
     }
 
     @Override
@@ -264,6 +281,7 @@ public final class Context {
         sb.append("class Context {\n");
         
         sb.append("    system: ").append(toIndentedString(system)).append("\n");
+        sb.append("    alexaPresentation: ").append(toIndentedString(alexaPresentation)).append("\n");
         sb.append("    alexaPresentationAPL: ").append(toIndentedString(alexaPresentationAPL)).append("\n");
         sb.append("    audioPlayer: ").append(toIndentedString(audioPlayer)).append("\n");
         sb.append("    automotive: ").append(toIndentedString(automotive)).append("\n");
@@ -292,6 +310,7 @@ public final class Context {
   
     public static class Builder {
         private com.amazon.ask.model.interfaces.system.SystemState system;
+        private com.amazon.ask.model.interfaces.alexa.presentation.PresentationState alexaPresentation;
         private com.amazon.ask.model.interfaces.alexa.presentation.apl.RenderedDocumentState alexaPresentationAPL;
         private com.amazon.ask.model.interfaces.audioplayer.AudioPlayerState audioPlayer;
         private com.amazon.ask.model.interfaces.automotive.AutomotiveState automotive;
@@ -310,6 +329,14 @@ public final class Context {
 
         public Builder withSystem(com.amazon.ask.model.interfaces.system.SystemState system) {
             this.system = system;
+            return this;
+        }
+
+
+        @JsonProperty("Alexa.Presentation")
+
+        public Builder withAlexaPresentation(com.amazon.ask.model.interfaces.alexa.presentation.PresentationState alexaPresentation) {
+            this.alexaPresentation = alexaPresentation;
             return this;
         }
 

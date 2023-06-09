@@ -68,6 +68,7 @@ public class SubTypesManifest {
     baseTypes.put(com.amazon.ask.model.Directive.class, directiveSubTypes);
 
     Map<String, Class> requestSubTypes = new HashMap<>();
+    requestSubTypes.put("Alexa.DataStore.PackageManager.InstallationError", com.amazon.ask.model.interfaces.alexa.datastore.packagemanager.InstallationError.class);
     requestSubTypes.put("AlexaSkillEvent.SkillEnabled", com.amazon.ask.model.events.skillevents.SkillEnabledRequest.class);
     requestSubTypes.put("AlexaHouseholdListEvent.ListUpdated", com.amazon.ask.model.services.listManagement.ListUpdatedEventRequest.class);
     requestSubTypes.put("Alexa.Presentation.APL.UserEvent", com.amazon.ask.model.interfaces.alexa.presentation.apl.UserEvent.class);
@@ -104,14 +105,18 @@ public class SubTypesManifest {
     requestSubTypes.put("Display.ElementSelected", com.amazon.ask.model.interfaces.display.ElementSelectedRequest.class);
     requestSubTypes.put("AlexaSkillEvent.SkillPermissionChanged", com.amazon.ask.model.events.skillevents.PermissionChangedRequest.class);
     requestSubTypes.put("Reminders.ReminderUpdated", com.amazon.ask.model.services.reminderManagement.ReminderUpdatedEventRequest.class);
+    requestSubTypes.put("Alexa.DataStore.PackageManager.UpdateRequest", com.amazon.ask.model.interfaces.alexa.datastore.packagemanager.UpdateRequest.class);
     requestSubTypes.put("Alexa.Presentation.APL.RuntimeError", com.amazon.ask.model.interfaces.alexa.presentation.apl.RuntimeErrorEvent.class);
     requestSubTypes.put("Alexa.Presentation.HTML.RuntimeError", com.amazon.ask.model.interfaces.alexa.presentation.html.RuntimeErrorRequest.class);
     requestSubTypes.put("Dialog.InputRequest", com.amazon.ask.model.dialog.InputRequest.class);
     requestSubTypes.put("IntentRequest", com.amazon.ask.model.IntentRequest.class);
+    requestSubTypes.put("Alexa.DataStore.PackageManager.UsagesRemoved", com.amazon.ask.model.interfaces.alexa.datastore.packagemanager.UsagesRemoved.class);
+    requestSubTypes.put("AlexaSkillEvent.NotificationSubscriptionChanged", com.amazon.ask.model.events.skillevents.NotificationSubscriptionChangedRequest.class);
     requestSubTypes.put("Dialog.API.Invoked", com.amazon.ask.model.interfaces.conversations.APIInvocationRequest.class);
     requestSubTypes.put("Reminders.ReminderStarted", com.amazon.ask.model.services.reminderManagement.ReminderStartedEventRequest.class);
     requestSubTypes.put("AudioPlayer.PlaybackStopped", com.amazon.ask.model.interfaces.audioplayer.PlaybackStoppedRequest.class);
     requestSubTypes.put("PlaybackController.PreviousCommandIssued", com.amazon.ask.model.interfaces.playbackcontroller.PreviousCommandIssuedRequest.class);
+    requestSubTypes.put("Alexa.DataStore.PackageManager.UsagesInstalled", com.amazon.ask.model.interfaces.alexa.datastore.packagemanager.UsagesInstalled.class);
     requestSubTypes.put("AlexaSkillEvent.SkillAccountLinked", com.amazon.ask.model.events.skillevents.AccountLinkedRequest.class);
     requestSubTypes.put("Messaging.MessageReceived", com.amazon.ask.model.interfaces.messaging.MessageReceivedRequest.class);
     requestSubTypes.put("Connections.Request", com.amazon.ask.model.interfaces.connections.ConnectionsRequest.class);
@@ -142,6 +147,10 @@ public class SubTypesManifest {
     interfacesAlexaDatastoreCommandsErrorSubTypes.put("DATASTORE_INTERNAL_ERROR", com.amazon.ask.model.interfaces.alexa.datastore.DataStoreInternalError.class);
     interfacesAlexaDatastoreCommandsErrorSubTypes.put("STORAGE_LIMIT_EXCEEDED", com.amazon.ask.model.interfaces.alexa.datastore.StorageLimitExeceededError.class);
     baseTypes.put(com.amazon.ask.model.interfaces.alexa.datastore.CommandsError.class, interfacesAlexaDatastoreCommandsErrorSubTypes);
+
+    Map<String, Class> interfacesAlexaPresentationPresentationStateContextSubTypes = new HashMap<>();
+    interfacesAlexaPresentationPresentationStateContextSubTypes.put("Alexa.Presentation.APL", com.amazon.ask.model.interfaces.alexa.presentation.AplPresentationStateContext.class);
+    baseTypes.put(com.amazon.ask.model.interfaces.alexa.presentation.PresentationStateContext.class, interfacesAlexaPresentationPresentationStateContextSubTypes);
 
     Map<String, Class> interfacesAlexaPresentationAplAnimatedPropertySubTypes = new HashMap<>();
     interfacesAlexaPresentationAplAnimatedPropertySubTypes.put("opacity", com.amazon.ask.model.interfaces.alexa.presentation.apl.AnimatedOpacityProperty.class);
