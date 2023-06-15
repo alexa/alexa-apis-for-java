@@ -31,7 +31,7 @@ public class ReminderManagementServiceClient extends BaseServiceClient implement
   private final UserAgentHelper userAgentHelper;
   public ReminderManagementServiceClient(ApiConfiguration apiConfiguration) {
       super(apiConfiguration);
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.67.0").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.68.0").build();
   }
 
   /**

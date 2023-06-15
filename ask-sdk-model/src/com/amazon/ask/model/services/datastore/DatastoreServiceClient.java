@@ -41,13 +41,13 @@ public class DatastoreServiceClient extends BaseServiceClient implements Datasto
                                     .withSerializer(apiConfiguration.getSerializer())
                                     .build())
           .build();
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.67.0").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.68.0").build();
   }
 
   public DatastoreServiceClient(ApiConfiguration apiConfiguration, LwaClient lwaClient) {
       super(apiConfiguration);
       this.lwaClient = lwaClient;
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.67.0").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.68.0").build();
   }
 
   /**
