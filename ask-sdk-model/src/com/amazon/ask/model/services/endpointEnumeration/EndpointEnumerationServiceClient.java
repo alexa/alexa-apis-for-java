@@ -31,7 +31,7 @@ public class EndpointEnumerationServiceClient extends BaseServiceClient implemen
   private final UserAgentHelper userAgentHelper;
   public EndpointEnumerationServiceClient(ApiConfiguration apiConfiguration) {
       super(apiConfiguration);
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.70.0").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.71.0").build();
   }
 
   /**
