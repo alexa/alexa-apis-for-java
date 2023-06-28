@@ -40,6 +40,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apla.RenderDocumentDirective.class, name = "Alexa.Presentation.APLA.RenderDocument"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.dialog.ElicitSlotDirective.class, name = "Dialog.ElicitSlot"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.html.StartDirective.class, name = "Alexa.Presentation.HTML.Start"),
+  @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.smartvision.snapshotprovider.GetSnapshotDirective.class, name = "Alexa.SmartVision.SnapshotProvider.GetSnapshotDirective"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.audioplayer.StopDirective.class, name = "AudioPlayer.Stop"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.dialog.ConfirmSlotDirective.class, name = "Dialog.ConfirmSlot"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.audioplayer.PlayDirective.class, name = "AudioPlayer.Play"),

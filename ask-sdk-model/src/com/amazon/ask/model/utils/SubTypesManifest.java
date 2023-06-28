@@ -45,6 +45,7 @@ public class SubTypesManifest {
     directiveSubTypes.put("Alexa.Presentation.APLA.RenderDocument", com.amazon.ask.model.interfaces.alexa.presentation.apla.RenderDocumentDirective.class);
     directiveSubTypes.put("Dialog.ElicitSlot", com.amazon.ask.model.dialog.ElicitSlotDirective.class);
     directiveSubTypes.put("Alexa.Presentation.HTML.Start", com.amazon.ask.model.interfaces.alexa.presentation.html.StartDirective.class);
+    directiveSubTypes.put("Alexa.SmartVision.SnapshotProvider.GetSnapshotDirective", com.amazon.ask.model.interfaces.alexa.smartvision.snapshotprovider.GetSnapshotDirective.class);
     directiveSubTypes.put("AudioPlayer.Stop", com.amazon.ask.model.interfaces.audioplayer.StopDirective.class);
     directiveSubTypes.put("Dialog.ConfirmSlot", com.amazon.ask.model.dialog.ConfirmSlotDirective.class);
     directiveSubTypes.put("AudioPlayer.Play", com.amazon.ask.model.interfaces.audioplayer.PlayDirective.class);
