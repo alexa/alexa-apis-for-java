@@ -43,13 +43,13 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
                                     .withSerializer(apiConfiguration.getSerializer())
                                     .build())
           .build();
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.57.0").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.58.0").build();
   }
 
   public SkillManagementServiceClient(ApiConfiguration apiConfiguration, LwaClient lwaClient) {
       super(apiConfiguration);
       this.lwaClient = lwaClient;
-      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.57.0").build();
+      this.userAgentHelper = UserAgentHelper.builder().withSdkVersion("1.58.0").build();
   }
 
   /**
@@ -6827,167 +6827,6 @@ public class SkillManagementServiceClient extends BaseServiceClient implements S
    */
   public com.amazon.ask.smapi.model.v1.skill.evaluations.ProfileNluResponse profileNluV1(com.amazon.ask.smapi.model.v1.skill.evaluations.ProfileNluRequest profileNluRequest, String skillId, String stage, String locale) throws ServiceException {
     return this.callProfileNluV1(profileNluRequest, skillId, stage, locale).getResponse();
-  }
-
-  /**
-   * 
-   * List private distribution accounts. 
-   * @param skillId The skill ID. (required)
-   * @param stage Stage for skill. (required)
-   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
-   * @return com.amazon.ask.smapi.model.v1.skill.Private.ListPrivateDistributionAccountsResponse
-   * @throws ServiceException if fails to make API call
-   */
-  public ApiResponse<com.amazon.ask.smapi.model.v1.skill.Private.ListPrivateDistributionAccountsResponse> callListPrivateDistributionAccountsV1(String skillId, String stage, String nextToken, Integer maxResults) throws ServiceException {
-    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
-
-    if(nextToken != null) {
-    queryParams.add(new Pair<String, String>("nextToken", nextToken));
-  }
-
-    if(maxResults != null) {
-    queryParams.add(new Pair<String, String>("maxResults", maxResults.toString()));
-  }
-    Map<String, String> pathParams = new HashMap<String, String>();
-    pathParams.put("skillId", skillId);
-    pathParams.put("stage", stage);
-    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
-    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
-
-    String accessToken = lwaClient.getAccessTokenForRefreshToken();
-    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
-
-    String resourcePath = "/v1/skills/{skillId}/stages/{stage}/privateDistributionAccounts";
-
-    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.Private.ListPrivateDistributionAccountsResponse.class, 200, "Returns list of private distribution accounts on success."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 404, "The resource being requested is not found."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 500, "Internal Server Error."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 503, "Service Unavailable."));
-    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
-
-
-    return this.executeRequest("GET", this.apiEndpoint, resourcePath, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, null, com.amazon.ask.smapi.model.v1.skill.Private.ListPrivateDistributionAccountsResponse.class, false);
-  }
-
-  /**
-   * 
-   * List private distribution accounts. 
-   * @param skillId The skill ID. (required)
-   * @param stage Stage for skill. (required)
-   * @param nextToken When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours. (optional)
-   * @param maxResults Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated &#x3D; true. (optional)
-   * @return com.amazon.ask.smapi.model.v1.skill.Private.ListPrivateDistributionAccountsResponse
-   * @throws ServiceException if fails to make API call
-   */
-  public com.amazon.ask.smapi.model.v1.skill.Private.ListPrivateDistributionAccountsResponse listPrivateDistributionAccountsV1(String skillId, String stage, String nextToken, Integer maxResults) throws ServiceException {
-    return this.callListPrivateDistributionAccountsV1(skillId, stage, nextToken, maxResults).getResponse();
-  }
-
-  /**
-   * 
-   * Remove an id from the private distribution accounts. 
-   * @param skillId The skill ID. (required)
-   * @param stage Stage for skill. (required)
-   * @param id ARN that a skill can be privately distributed to. (required)
-   * @throws ServiceException if fails to make API call
-   */
-  public ApiResponse<Void> callDeletePrivateDistributionAccountIdV1(String skillId, String stage, String id) throws ServiceException {
-    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
-    Map<String, String> pathParams = new HashMap<String, String>();
-    pathParams.put("skillId", skillId);
-    pathParams.put("stage", stage);
-    pathParams.put("id", id);
-    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
-    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
-
-    String accessToken = lwaClient.getAccessTokenForRefreshToken();
-    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
-
-    String resourcePath = "/v1/skills/{skillId}/stages/{stage}/privateDistributionAccounts/{id}";
-
-    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
-    serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "Success."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 404, "The resource being requested is not found."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 500, "Internal Server Error."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 503, "Service Unavailable."));
-    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
-
-
-    return this.executeRequest("DELETE", this.apiEndpoint, resourcePath, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, null, null, false);
-  }
-
-  /**
-   * 
-   * Remove an id from the private distribution accounts. 
-   * @param skillId The skill ID. (required)
-   * @param stage Stage for skill. (required)
-   * @param id ARN that a skill can be privately distributed to. (required)
-   * @throws ServiceException if fails to make API call
-   */
-  public void deletePrivateDistributionAccountIdV1(String skillId, String stage, String id) throws ServiceException {
-    this.callDeletePrivateDistributionAccountIdV1(skillId, stage, id).getResponse();
-  }
-
-  /**
-   * 
-   * Add an id to the private distribution accounts. 
-   * @param skillId The skill ID. (required)
-   * @param stage Stage for skill. (required)
-   * @param id ARN that a skill can be privately distributed to. (required)
-   * @throws ServiceException if fails to make API call
-   */
-  public ApiResponse<Void> callSetPrivateDistributionAccountIdV1(String skillId, String stage, String id) throws ServiceException {
-    List<Pair<String, String>> queryParams = new ArrayList<Pair<String, String>>();
-    Map<String, String> pathParams = new HashMap<String, String>();
-    pathParams.put("skillId", skillId);
-    pathParams.put("stage", stage);
-    pathParams.put("id", id);
-    List<Pair<String, String>> headerParams = new ArrayList<Pair<String, String>>();
-    headerParams.add(new Pair<String, String>("Content-type", "application/json"));
-
-    String accessToken = lwaClient.getAccessTokenForRefreshToken();
-    headerParams.add(new Pair<>("Authorization", "Bearer " + accessToken));
-
-    String resourcePath = "/v1/skills/{skillId}/stages/{stage}/privateDistributionAccounts/{id}";
-
-    List<ServiceClientResponse> serviceResponseDefinitions = new ArrayList<>();
-    serviceResponseDefinitions.add(new ServiceClientResponse(null, 204, "Success."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 400, "Server cannot process the request due to a client error."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 401, "The auth token is invalid/expired or doesn't have access to the resource."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.BadRequestError.class, 403, "The operation being requested is not allowed."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 404, "The resource being requested is not found."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 429, "Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 500, "Internal Server Error."));
-    serviceResponseDefinitions.add(new ServiceClientResponse(com.amazon.ask.smapi.model.v1.skill.StandardizedError.class, 503, "Service Unavailable."));
-    headerParams.add(new Pair<>("User-Agent", userAgentHelper.getUserAgent()));
-
-
-    return this.executeRequest("PUT", this.apiEndpoint, resourcePath, queryParams, headerParams,
-      pathParams, serviceResponseDefinitions, null, null, false);
-  }
-
-  /**
-   * 
-   * Add an id to the private distribution accounts. 
-   * @param skillId The skill ID. (required)
-   * @param stage Stage for skill. (required)
-   * @param id ARN that a skill can be privately distributed to. (required)
-   * @throws ServiceException if fails to make API call
-   */
-  public void setPrivateDistributionAccountIdV1(String skillId, String stage, String id) throws ServiceException {
-    this.callSetPrivateDistributionAccountIdV1(skillId, stage, id).getResponse();
   }
 
   /**

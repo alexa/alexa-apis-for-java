@@ -678,21 +678,6 @@ public interface SkillManagementService {
     ApiResponse<com.amazon.ask.smapi.model.v1.skill.evaluations.ProfileNluResponse> callProfileNluV1(com.amazon.ask.smapi.model.v1.skill.evaluations.ProfileNluRequest profileNluRequest, String skillId, String stage, String locale) throws ServiceException;
 
 
-    com.amazon.ask.smapi.model.v1.skill.Private.ListPrivateDistributionAccountsResponse listPrivateDistributionAccountsV1(String skillId, String stage, String nextToken, Integer maxResults) throws ServiceException;
-
-    ApiResponse<com.amazon.ask.smapi.model.v1.skill.Private.ListPrivateDistributionAccountsResponse> callListPrivateDistributionAccountsV1(String skillId, String stage, String nextToken, Integer maxResults) throws ServiceException;
-
-
-    void deletePrivateDistributionAccountIdV1(String skillId, String stage, String id) throws ServiceException;
-
-    ApiResponse<Void> callDeletePrivateDistributionAccountIdV1(String skillId, String stage, String id) throws ServiceException;
-
-
-    void setPrivateDistributionAccountIdV1(String skillId, String stage, String id) throws ServiceException;
-
-    ApiResponse<Void> callSetPrivateDistributionAccountIdV1(String skillId, String stage, String id) throws ServiceException;
-
-
     void deleteAccountLinkingInfoV1(String skillId, String stageV2) throws ServiceException;
 
     ApiResponse<Void> callDeleteAccountLinkingInfoV1(String skillId, String stageV2) throws ServiceException;
