@@ -20,7 +20,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Reason for the entitlement status. * 'PURCHASED' - The user is entitled to the product because they purchased it. * 'NOT_PURCHASED' - The user is not entitled to the product because they have not purchased it. * 'AUTO_ENTITLED' - The user is auto entitled to the product because they have subscribed to a broader service.
+ * Reason for the entitlement status. * 'PURCHASED' - The user is entitled to the product because they purchased it directly. * 'NOT_PURCHASED' - The user is not entitled to the product because they have not purchased it. * 'AUTO_ENTITLED' - The user is auto entitled to the product because they have subscribed to a broader service. * 'BUNDLE_ENTITLED' - The user is entitled to the product because they purchased it indirectly as part of a bundle. If the user is entitled via both PURCHASED and BUNDLE_ENTITLED, then BUNDLE_ENTITLED takes priority.
  */
 public enum EntitlementReason {
   
@@ -29,6 +29,8 @@ public enum EntitlementReason {
   NOT_PURCHASED("NOT_PURCHASED"),
   
   AUTO_ENTITLED("AUTO_ENTITLED"),
+  
+  BUNDLE_ENTITLED("BUNDLE_ENTITLED"),
   
   UNKNOWN_TO_SDK_VERSION(null);
 
