@@ -60,6 +60,8 @@ public enum InterfaceType {
   
   ALEXA_DATA_STORE("ALEXA_DATA_STORE"),
   
+  CUSTOMER_UTTERANCE_TRANSCRIPT("CUSTOMER_UTTERANCE_TRANSCRIPT"),
+  
   UNKNOWN_TO_SDK_VERSION(null);
 
   private String value;
