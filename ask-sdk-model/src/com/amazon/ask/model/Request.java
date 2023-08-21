@@ -27,6 +27,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type", visible = true )
 @JsonSubTypes({
+  @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.advertisement.AdNotRendered.class, name = "Alexa.Advertisement.AdNotRendered"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.datastore.packagemanager.InstallationError.class, name = "Alexa.DataStore.PackageManager.InstallationError"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.events.skillevents.SkillEnabledRequest.class, name = "AlexaSkillEvent.SkillEnabled"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.services.listManagement.ListUpdatedEventRequest.class, name = "AlexaHouseholdListEvent.ListUpdated"),
@@ -46,6 +47,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
   @JsonSubTypes.Type(value = com.amazon.ask.model.authorization.AuthorizationGrantRequest.class, name = "Alexa.Authorization.Grant"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.services.reminderManagement.ReminderCreatedEventRequest.class, name = "Reminders.ReminderCreated"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.aplt.UserEvent.class, name = "Alexa.Presentation.APLT.UserEvent"),
+  @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.advertisement.ReadyToEnqueueAudio.class, name = "Alexa.Advertisement.ReadyToEnqueueAudio"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.services.listManagement.ListItemsUpdatedEventRequest.class, name = "AlexaHouseholdListEvent.ItemsUpdated"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.services.listManagement.ListCreatedEventRequest.class, name = "AlexaHouseholdListEvent.ListCreated"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.audioplayer.PlaybackStartedRequest.class, name = "AudioPlayer.PlaybackStarted"),
@@ -64,6 +66,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.display.ElementSelectedRequest.class, name = "Display.ElementSelected"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.events.skillevents.PermissionChangedRequest.class, name = "AlexaSkillEvent.SkillPermissionChanged"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.services.reminderManagement.ReminderUpdatedEventRequest.class, name = "Reminders.ReminderUpdated"),
+  @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.advertisement.AdCompleted.class, name = "Alexa.Advertisement.AdCompleted"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.datastore.packagemanager.UpdateRequest.class, name = "Alexa.DataStore.PackageManager.UpdateRequest"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.RuntimeErrorEvent.class, name = "Alexa.Presentation.APL.RuntimeError"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.html.RuntimeErrorRequest.class, name = "Alexa.Presentation.HTML.RuntimeError"),

@@ -40,6 +40,7 @@ public class SubTypesManifest {
     directiveSubTypes.put("Alexa.Presentation.APL.SendIndexListData", com.amazon.ask.model.interfaces.alexa.presentation.apl.SendIndexListDataDirective.class);
     directiveSubTypes.put("Dialog.Delegate", com.amazon.ask.model.dialog.DelegateDirective.class);
     directiveSubTypes.put("Dialog.ConfirmIntent", com.amazon.ask.model.dialog.ConfirmIntentDirective.class);
+    directiveSubTypes.put("Alexa.Advertisement.InjectAds", com.amazon.ask.model.interfaces.alexa.advertisement.InjectAds.class);
     directiveSubTypes.put("CustomInterfaceController.SendDirective", com.amazon.ask.model.interfaces.customInterfaceController.SendDirectiveDirective.class);
     directiveSubTypes.put("Alexa.Presentation.HTML.HandleMessage", com.amazon.ask.model.interfaces.alexa.presentation.html.HandleMessageDirective.class);
     directiveSubTypes.put("Alexa.Presentation.APLA.RenderDocument", com.amazon.ask.model.interfaces.alexa.presentation.apla.RenderDocumentDirective.class);
@@ -69,6 +70,7 @@ public class SubTypesManifest {
     baseTypes.put(com.amazon.ask.model.Directive.class, directiveSubTypes);
 
     Map<String, Class> requestSubTypes = new HashMap<>();
+    requestSubTypes.put("Alexa.Advertisement.AdNotRendered", com.amazon.ask.model.interfaces.alexa.advertisement.AdNotRendered.class);
     requestSubTypes.put("Alexa.DataStore.PackageManager.InstallationError", com.amazon.ask.model.interfaces.alexa.datastore.packagemanager.InstallationError.class);
     requestSubTypes.put("AlexaSkillEvent.SkillEnabled", com.amazon.ask.model.events.skillevents.SkillEnabledRequest.class);
     requestSubTypes.put("AlexaHouseholdListEvent.ListUpdated", com.amazon.ask.model.services.listManagement.ListUpdatedEventRequest.class);
@@ -88,6 +90,7 @@ public class SubTypesManifest {
     requestSubTypes.put("Alexa.Authorization.Grant", com.amazon.ask.model.authorization.AuthorizationGrantRequest.class);
     requestSubTypes.put("Reminders.ReminderCreated", com.amazon.ask.model.services.reminderManagement.ReminderCreatedEventRequest.class);
     requestSubTypes.put("Alexa.Presentation.APLT.UserEvent", com.amazon.ask.model.interfaces.alexa.presentation.aplt.UserEvent.class);
+    requestSubTypes.put("Alexa.Advertisement.ReadyToEnqueueAudio", com.amazon.ask.model.interfaces.alexa.advertisement.ReadyToEnqueueAudio.class);
     requestSubTypes.put("AlexaHouseholdListEvent.ItemsUpdated", com.amazon.ask.model.services.listManagement.ListItemsUpdatedEventRequest.class);
     requestSubTypes.put("AlexaHouseholdListEvent.ListCreated", com.amazon.ask.model.services.listManagement.ListCreatedEventRequest.class);
     requestSubTypes.put("AudioPlayer.PlaybackStarted", com.amazon.ask.model.interfaces.audioplayer.PlaybackStartedRequest.class);
@@ -106,6 +109,7 @@ public class SubTypesManifest {
     requestSubTypes.put("Display.ElementSelected", com.amazon.ask.model.interfaces.display.ElementSelectedRequest.class);
     requestSubTypes.put("AlexaSkillEvent.SkillPermissionChanged", com.amazon.ask.model.events.skillevents.PermissionChangedRequest.class);
     requestSubTypes.put("Reminders.ReminderUpdated", com.amazon.ask.model.services.reminderManagement.ReminderUpdatedEventRequest.class);
+    requestSubTypes.put("Alexa.Advertisement.AdCompleted", com.amazon.ask.model.interfaces.alexa.advertisement.AdCompleted.class);
     requestSubTypes.put("Alexa.DataStore.PackageManager.UpdateRequest", com.amazon.ask.model.interfaces.alexa.datastore.packagemanager.UpdateRequest.class);
     requestSubTypes.put("Alexa.Presentation.APL.RuntimeError", com.amazon.ask.model.interfaces.alexa.presentation.apl.RuntimeErrorEvent.class);
     requestSubTypes.put("Alexa.Presentation.HTML.RuntimeError", com.amazon.ask.model.interfaces.alexa.presentation.html.RuntimeErrorRequest.class);

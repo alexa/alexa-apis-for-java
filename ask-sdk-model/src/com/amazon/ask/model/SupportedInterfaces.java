@@ -25,6 +25,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @JsonDeserialize(builder = SupportedInterfaces.Builder.class)
 public final class SupportedInterfaces {
 
+    @JsonProperty("Alexa.Advertisement")
+    private com.amazon.ask.model.interfaces.alexa.advertisement.AlexaAdvertisementInterface alexaAdvertisement = null;
+
     @JsonProperty("Alexa.Presentation.APL")
     private com.amazon.ask.model.interfaces.alexa.presentation.apl.AlexaPresentationAplInterface alexaPresentationAPL = null;
 
@@ -60,6 +63,9 @@ public final class SupportedInterfaces {
     }
 
     private SupportedInterfaces(Builder builder) {
+        if (builder.alexaAdvertisement != null) {
+            this.alexaAdvertisement = builder.alexaAdvertisement;
+        }
         if (builder.alexaPresentationAPL != null) {
             this.alexaPresentationAPL = builder.alexaPresentationAPL;
         }
@@ -88,6 +94,16 @@ public final class SupportedInterfaces {
             this.navigation = builder.navigation;
         }
     }
+
+    /**
+     * Get alexaAdvertisement
+     * @return alexaAdvertisement
+    **/
+    @JsonProperty("Alexa.Advertisement")
+    public com.amazon.ask.model.interfaces.alexa.advertisement.AlexaAdvertisementInterface getAlexaAdvertisement() {
+        return alexaAdvertisement;
+    }
+
 
     /**
      * Get alexaPresentationAPL
@@ -188,7 +204,8 @@ public final class SupportedInterfaces {
             return false;
         }
         SupportedInterfaces supportedInterfaces = (SupportedInterfaces) o;
-        return Objects.equals(this.alexaPresentationAPL, supportedInterfaces.alexaPresentationAPL) &&
+        return Objects.equals(this.alexaAdvertisement, supportedInterfaces.alexaAdvertisement) &&
+            Objects.equals(this.alexaPresentationAPL, supportedInterfaces.alexaPresentationAPL) &&
             Objects.equals(this.alexaPresentationAPLT, supportedInterfaces.alexaPresentationAPLT) &&
             Objects.equals(this.alexaPresentationHTML, supportedInterfaces.alexaPresentationHTML) &&
             Objects.equals(this.appLink, supportedInterfaces.appLink) &&
@@ -201,7 +218,7 @@ public final class SupportedInterfaces {
 
     @Override
     public int hashCode() {
-        return Objects.hash(alexaPresentationAPL, alexaPresentationAPLT, alexaPresentationHTML, appLink, audioPlayer, display, videoApp, geolocation, navigation);
+        return Objects.hash(alexaAdvertisement, alexaPresentationAPL, alexaPresentationAPLT, alexaPresentationHTML, appLink, audioPlayer, display, videoApp, geolocation, navigation);
     }
 
     @Override
@@ -209,6 +226,7 @@ public final class SupportedInterfaces {
         StringBuilder sb = new StringBuilder();
         sb.append("class SupportedInterfaces {\n");
         
+        sb.append("    alexaAdvertisement: ").append(toIndentedString(alexaAdvertisement)).append("\n");
         sb.append("    alexaPresentationAPL: ").append(toIndentedString(alexaPresentationAPL)).append("\n");
         sb.append("    alexaPresentationAPLT: ").append(toIndentedString(alexaPresentationAPLT)).append("\n");
         sb.append("    alexaPresentationHTML: ").append(toIndentedString(alexaPresentationHTML)).append("\n");
@@ -234,6 +252,7 @@ public final class SupportedInterfaces {
     }
   
     public static class Builder {
+        private com.amazon.ask.model.interfaces.alexa.advertisement.AlexaAdvertisementInterface alexaAdvertisement;
         private com.amazon.ask.model.interfaces.alexa.presentation.apl.AlexaPresentationAplInterface alexaPresentationAPL;
         private com.amazon.ask.model.interfaces.alexa.presentation.aplt.AlexaPresentationApltInterface alexaPresentationAPLT;
         private com.amazon.ask.model.interfaces.alexa.presentation.html.AlexaPresentationHtmlInterface alexaPresentationHTML;
@@ -245,6 +264,14 @@ public final class SupportedInterfaces {
         private com.amazon.ask.model.interfaces.navigation.NavigationInterface navigation;
 
         private Builder() {}
+
+        @JsonProperty("Alexa.Advertisement")
+
+        public Builder withAlexaAdvertisement(com.amazon.ask.model.interfaces.alexa.advertisement.AlexaAdvertisementInterface alexaAdvertisement) {
+            this.alexaAdvertisement = alexaAdvertisement;
+            return this;
+        }
+
 
         @JsonProperty("Alexa.Presentation.APL")
 

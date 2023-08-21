@@ -35,6 +35,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apl.SendIndexListDataDirective.class, name = "Alexa.Presentation.APL.SendIndexListData"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.dialog.DelegateDirective.class, name = "Dialog.Delegate"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.dialog.ConfirmIntentDirective.class, name = "Dialog.ConfirmIntent"),
+  @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.advertisement.InjectAds.class, name = "Alexa.Advertisement.InjectAds"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.customInterfaceController.SendDirectiveDirective.class, name = "CustomInterfaceController.SendDirective"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.html.HandleMessageDirective.class, name = "Alexa.Presentation.HTML.HandleMessage"),
   @JsonSubTypes.Type(value = com.amazon.ask.model.interfaces.alexa.presentation.apla.RenderDocumentDirective.class, name = "Alexa.Presentation.APLA.RenderDocument"),
